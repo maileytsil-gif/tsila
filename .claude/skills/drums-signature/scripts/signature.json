@@ -1,0 +1,22 @@
+{
+  "signature": "deep chill minimal house — palette validée le 14 sept. 2026 (morceau « deep chill minimal house », 120 BPM, fa mineur)",
+  "familles": {
+    "KIT Kick": {"type": "serum", "preset": "Factory/Drum/DR - Kick Minimal", "note_midi": "C1 (suit la hauteur ; transposer en F si besoin)", "chaine": "EQ HP 28 Hz / LP 9 kHz -> Saturator Warmth", "niveau_pre_fader_db": -3},
+    "KIT Clap-Rim": {"type": "drum-rack", "pads": [
+      {"pad": "pC1", "nom": "Clap 808 Light Quick", "sample": "/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Core Library/Samples/One Shots/Drums/Clap/Clap 808 Light Quick.aif", "gainDb": -5, "pan": 0},
+      {"pad": "pD1", "nom": "Rim 808", "sample": "/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Core Library/Samples/One Shots/Drums/Rim/Rim 808.aif", "gainDb": -2, "pan": 0.07}],
+      "chaine": "REQ 6 HP 180 Hz, creux 650 Hz -2 dB", "niveau_pre_fader_db": -6},
+    "KIT Hats": {"type": "drum-rack", "pads": [
+      {"pad": "pF#1", "nom": "Hihat Closed Kaninchen", "sample": "/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Core Library/Samples/One Shots/Drums/Hihat/Hihat Closed Kaninchen.wav", "gainDb": 2, "pan": 0},
+      {"pad": "pA#1", "nom": "Hihat Open RKTD", "sample": "/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Core Library/Samples/One Shots/Drums/Hihat/Hihat Open RKTD.wav", "gainDb": 2, "pan": -0.06}],
+      "chaine": "Auto Filter LP automatisé, REQ 6 HP 400 Hz, shelf 12 kHz -1.6 dB", "swing_16e": 0.03, "niveau_pre_fader_db": -12},
+    "KIT Perc": {"type": "drum-rack", "pads": [
+      {"pad": "pC1", "nom": "Cabasa Short Mid", "sample": "/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Core Library/Samples/One Shots/Drums/Shaker/Cabasa Short Mid.aif", "gainDb": 0, "pan": -0.11},
+      {"pad": "pD1", "nom": "Conga Acoustified Low", "sample": "/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Core Library/Samples/One Shots/Drums/Conga/Conga Acoustified Low.wav", "gainDb": 0, "pan": 0.13},
+      {"pad": "pE1", "nom": "Conga Soft", "sample": "/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Core Library/Samples/One Shots/Drums/Conga/Conga Soft.aif", "gainDb": 0, "pan": -0.06}],
+      "chaine": "REQ 6 HP 200 Hz, creux 430 Hz -2 dB", "niveau_pre_fader_db": -14},
+    "SUB": {"type": "serum", "preset": "osc SUB sinus, mono+legato, release 90 ms", "note": "F0 = tonique", "chaine": "Utility mono -> EQ 24-130 Hz -> sidechain kick (4:1, 0.1 ms, 110 ms)"}
+  },
+  "bus": "AUDIO - X -> BUS - BATTERIE : bx_glue 4:1 3 ms auto -13 +1.5 SC HP 60 -> API-2500 // 30 % -> REQ 6",
+  "historique": [{"date": "2026-09-14", "morceau": "deep chill minimal house", "note": "première palette ; kick Serum choisi après un Drum Rack sample"}]
+}

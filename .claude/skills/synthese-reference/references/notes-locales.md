@@ -1,0 +1,4 @@
+# Notes locales (installation du 14 sept. 2026)
+- NumPy 2.5.3 et SoundFile 0.14.0 **installés le 14 sept. 2026** (pip3, Python 3.14) : `scripts/analyze_synth.py` est opérationnel. En complément : analyse d'un extrait par l'analyseur de Pro-Q 4 ou SPAN pendant la lecture (capture d'écran), et `live-export-wav/scripts/analyze_wav.py` pour durée/crêtes.
+- Pilotage de Serum 2 et des synthés natifs (paramètres exposés, coordonnées de fenêtre, presets, ce qui ne passe pas en arrière-plan) : `../../vst-sound-design/references/serum2.md`, `instruments-natifs.md` et `recettes.md` (skill `vst-sound-design`). Chaînes d'effets et fiches par plug-in : skill `effets-plugins`. Niveaux avant fader : `ableton-live-session/scripts/levels.sh`.
+- Règle en vigueur sur le projet en cours : plus d'effets natifs dans les chaînes ; instruments natifs tolérés.

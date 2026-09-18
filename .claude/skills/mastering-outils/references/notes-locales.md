@@ -1,0 +1,4 @@
+# Notes locales (ajoutées à l'installation, 14 sept. 2026)
+- Pilotage effectif dans Live (paramètres exposés à l'API ou fenêtre, méthode de vérification, valeurs déjà validées) : `../../effets-plugins/references/fiches.md`. Méthode de mix en amont : skill `mixage`. Procédure prémaster → mastering → livraison : skill `live-mix-mastering`. Export et contrôle du fichier : skill `live-export-wav` (`analyze_wav.py` mesure le sample peak exact en PCM 32 bits ; ni LUFS ni true peak).
+- **FFmpeg est absent sur ce Mac** : LUFS et true peak se lisent dans Insight 2 en bout de Main ou WLM en mesure seule.
+- Chaîne en place sur le morceau en cours : BUS MASTER 3 = Tonal Balance Control 3 → SPAN → L2 (seuil −5,1, plafond −1,0 dBFS — sample peak, ne garantit pas le true peak — ARC) ; Main = Utility 0 dB → Insight 2 ; REF → Main hors limiteur.

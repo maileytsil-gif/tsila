@@ -1,0 +1,136 @@
+{
+  "_doc": "Spec d'automations pour « el21 » (126 BPM, La mineur, positions après le décalage de 4 mesures). python3 lom.py apply automations_el21.json --dry puis sans --dry. unit=rel : offsets par rapport à la valeur courante ; accept : pertes acceptées (fades pour un clip audio, expressions pour un clip MIDI).",
+  "beatsPerBar": 4,
+  "automations": [
+    {
+      "note": "Build vers le drop 2 : filtre 1 du Wavetable de CHORDS 2 (clip Build 29→37), 300 Hz → 18 kHz exp sur 33→37, retour 4,39 kHz à 37|1. DÉJÀ APPLIQUÉ le 12 sept.",
+      "track": "CHORDS 2 - Stab long",
+      "device": "Wavetable",
+      "param": "Flt 1 Freq",
+      "unit": "disp",
+      "res": 8,
+      "curve": "exp",
+      "accept": [
+        "expressions"
+      ],
+      "points": [
+        [
+          "33|1",
+          300
+        ],
+        [
+          "36|4.75",
+          18000
+        ],
+        [
+          "37|1",
+          4390
+        ]
+      ],
+      "skip": true
+    },
+    {
+      "note": "Drop 3 différencié : largeur du riff (Utility) 100 → 140 % sur 77→85, retour 100 % à 85|1 — vérifier le nom du device/paramètre avec lom.py params",
+      "track": "AUDIO - Riff",
+      "device": "Utility",
+      "param": "Stereo Width",
+      "unit": "disp",
+      "res": 4,
+      "curve": "lin",
+      "accept": [
+        "fades"
+      ],
+      "points": [
+        [
+          "77|1",
+          100
+        ],
+        [
+          "84|4.5",
+          140
+        ],
+        [
+          "85|1",
+          100
+        ]
+      ],
+      "skip": true
+    },
+    {
+      "note": "Sub intro : déjà baissé dans le bounce (clip 9→13, vélocité v56) et fader automatisé à la main — ne pas appliquer",
+      "track": "AUDIO - Sub",
+      "device": "mixer",
+      "param": "Volume",
+      "unit": "rel",
+      "res": 8,
+      "curve": "lin",
+      "accept": [
+        "fades"
+      ],
+      "points": [
+        [
+          "9|1",
+          -5
+        ],
+        [
+          "12|4.5",
+          -5
+        ],
+        [
+          "13|1",
+          0
+        ]
+      ],
+      "skip": true
+    },
+    {
+      "note": "Send reverb du lead +6 dB sur 65→69 : AUDIO - Lead n'a pas de clip (impossible) ; alternative : déplacer le send sur LEAD - Hook (clip 45→85) — décision utilisateur",
+      "track": "LEAD - Hook",
+      "device": "mixer",
+      "param": "Send A",
+      "unit": "disp",
+      "res": 4,
+      "curve": "lin",
+      "accept": [
+        "expressions"
+      ],
+      "points": [
+        [
+          "65|1",
+          -15.6
+        ],
+        [
+          "68|4.5",
+          -9.6
+        ],
+        [
+          "69|1",
+          -15.6
+        ]
+      ],
+      "skip": true
+    },
+    {
+      "note": "Fondu de sortie : bus master 1 n'a pas de clip — à dessiner à la main",
+      "track": "bus master 1",
+      "device": "mixer",
+      "param": "Volume",
+      "unit": "rel",
+      "res": 8,
+      "curve": "exp",
+      "hold": true,
+      "accept": [],
+      "points": [
+        [
+          "97|1",
+          0
+        ],
+        [
+          "101|1",
+          -40
+        ]
+      ],
+      "skip": true
+    }
+  ]
+}
