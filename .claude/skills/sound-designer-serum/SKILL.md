@@ -51,6 +51,25 @@ Toujours produire un tableau, une ligne par paramètre, avec la preuve :
 
 Puis : niveau mesuré avant/après, preset sauvé sous quel nom, ce qui a été noté dans la mémoire du projet (`../memoire-projet/SKILL.md`, journal après validation).
 
+## Fiches de référence (`references/`)
+Documentation constituée par recherche web le 18 septembre 2026. Chaque affirmation y porte sa source, et distingue `[D]` documenté, `[I]` interprétation, `[⚠]` sources contradictoires. **Les consulter avant de chercher en ligne.**
+
+| Fiche | Contenu |
+|---|---|
+| **`fiches-pratiques.md`** | **40 fiches actionnables, à ouvrir en premier pendant une session.** Une par idée : problème résolu, réglages Serum 2, application dans Live, exemples bass house / future house / DnB, erreurs fréquentes, source |
+| **`serum2-automation-et-migration.md`** | **Pourquoi Serum n'expose que « Device On » à l'API de Live, et comment le débloquer.** Plafond de 128, procédure Configure, « Save as Default Configuration », ce qui casse la reproductibilité, différences Serum 1 → 2 |
+| `serum2-fx-clip-arp.md` | Manuel officiel : mixer et routage, les 13 effets et 3 splitters avec leurs paramètres, module CLIP, arpégiateur. Numéros de page cités |
+| `ableton-instruments.md` | Manuel Live 12 : matrice de Wavetable, les 11 algorithmes d'Operator, Drift, Meld, Simpler et Sampler, modes de warp |
+| `patches-genres.md` | Patchs chiffrés bass house et future house, tables de conversion de tempo, ce qui distingue bass house de dubstep |
+| `moteurs-synthese.md` | Soustractive, FM, wavetable, granulaire, additive, modélisation physique, distorsion de phase. Liste complète des warp modes de Serum 2. Tableau « quel moteur pour quoi » |
+| `basses.md` | Sub, Reese, growl, 808, deep house contre bass house, division du grave, relation kick-basse |
+| `leads-nappes-textures.md` | Plucks, supersaw mesuré (thèse Szabo), nappes avec trois patchs chiffrés, keys, textures, risers et impacts, les trois échelles de mouvement |
+| `percussions.md` | Kick synthétique, circuits 808 et 909 mesurés, **accordage du kick d'après l'article ISMIR 2024**, snare, clap, hats, layering, facteur de crête |
+| `modulation-effets.md` | LFO, enveloppes et leurs limites, matrice, macros, distorsion, filtres et formants, chorus/flanger/phaser, reverb comme matière, ordre des effets, resampling |
+| `ressources.md` | Où apprendre : Synth Secrets (gratuit, 63 articles), manuels officiels, Reverb Machine, Syntorial, livres |
+
+**Deux points à retenir avant toute recette trouvée en ligne** : le manuel officiel de Serum 2 existe (354 pages, xferrecords.com) et prime sur les blogs ; et les recettes de growl publiées sont calées sur 140–150 BPM, donc leurs valeurs de LFO sont à retransposer.
+
 ## Passer la main
 - Le son est bon mais les notes ou le registre ne conviennent pas → `compositeur-arrangeur`.
 - Le kick sonne mais ne groove pas, pattern, vélocités → `producteur-rythmique`.
