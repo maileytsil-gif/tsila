@@ -5,7 +5,7 @@
 | Champ | Valeur |
 |---|---|
 | Géométrie de référence des repères ci-dessous | **1190 × 759** |
-| Géométrie actuelle de la fenêtre | **non mesurée** — prédite à 1595 × 1017, voir « Hypothèse d'échelle » |
+| Géométrie actuelle de la fenêtre | **≈ 1596 × 1024** — mesurée par détection d'arêtes sur capture, voir « Hypothèse d'échelle » |
 | Échelle / zoom d'interface Serum | **134 %** (réglée le 19 sept. 2026) |
 | Capture de référence du bouton « fenêtre » du device | 1568 px de large |
 | Repères vérifiés le | — |
@@ -42,7 +42,20 @@ L'échelle est à **134 %**. L'ancienne fiche notait « 1190 × 759 » **sans di
 de conclure ici. Sous l'hypothèse que 1190 × 759 avait été relevé à 100 %, le facteur
 est 1,34 et la fenêtre fait **1595 × 1017**.
 
-Une capture tranche en une fois :
+**Mesure du 19 sept. 2026.** Une capture de la fenêtre (avec le bureau autour) a été
+analysée par détection d'arêtes : bords à x ≈ 16 et 1612, y ≈ 16 et 1040, soit une
+fenêtre d'environ **1596 × 1024**.
+
+- **Largeur : 1596 contre 1595 prédits — le facteur 1,34 est confirmé à 1 pixel près.**
+- Hauteur : 1024 contre 1017 prédits, **7 px de plus, inexpliqués**. Probablement du
+  chrome de fenêtre qui ne suit pas le zoom de Serum — c'est exactement la
+  non-uniformité annoncée plus bas. Non confirmé.
+
+Ces bords sont détectés sur une capture qui contenait aussi Ableton et le bureau : ils
+valent mieux qu'une prédiction, moins qu'une capture propre de la seule fenêtre. La
+ligne « Repères vérifiés le » reste vide tant que l'étape 4 n'a pas été faite.
+
+Une capture propre trancherait définitivement :
 
 | Taille de la capture | Conclusion |
 |---|---|
@@ -104,11 +117,11 @@ Bass › Electric/Sub, Keys/Pad pour nappes. Banques perso dans
 Preset enregistré par l'utilisateur comme **point de départ réutilisable**, pas comme
 son fini.
 
-**Nom : « serum sound designer »**, confirmé par l'utilisateur le 19 sept. 2026.
-La capture du même jour affichait **« serum design »** dans le champ de preset. Donc
-soit le template a été renommé ou réenregistré ensuite, soit **les deux fichiers
-coexistent dans la banque User**. À trancher : s'il y en a deux, écarter celui qui n'est
-pas le template, sinon on repartira un jour du mauvais sans s'en apercevoir.
+**Nom : « serum sound designer »** — lu dans le champ de preset de Serum sur la
+deuxième capture du 19 sept. 2026. La première capture du même jour affichait
+« serum design » : le template a donc été renommé ou réenregistré entre les deux.
+**Reste à vérifier sur le disque si l'ancien fichier subsiste** ; s'il y en a deux, on
+repartira un jour du mauvais sans s'en apercevoir.
 
 Chemin du fichier : **toujours inconnu**. ARTIST et DESC vides.
 
@@ -123,7 +136,8 @@ numériques des boutons, seulement leurs positions.
 | FILTER 1 | **off** |
 | FILTER 2 | **on** — « MG Low 12 » (ladder Moog 12 dB), banque A |
 | Voicing | **POLY 8**, MONO décoché, LEGATO décoché |
-| ENV 4 (panneau affiché) | ATK 0,5 ms · HOLD 0,0 ms · DEC 1,00 s · SUS 100 % · REL 15 ms · RETRIG |
+| **ENV 1** (amplitude) | ATK **1,0 ms** · HOLD **0,0 ms** · DEC **1,00 s** · SUS **0,0 dB** · REL **15 ms** · RETRIG |
+| ENV 4 | ATK 0,5 ms · HOLD 0,0 ms · DEC 1,00 s · SUS 100 % · REL 15 ms · RETRIG |
 | LFO 1 | triangle, Forward, 1/4, synchro BPM |
 | Global | TRANSPOSE 0, SWING OFF, macros 1–8 au minimum |
 
@@ -149,17 +163,30 @@ ne sont pas remis en cause.
   son passe quand même par FILTER 2. Ne pas rejouer ce faux diagnostic ; sur une
   question de routage Serum 2, écouter ou mesurer avant d'affirmer.
 
+### Enveloppe d'amplitude — ce qu'elle implique
+
+ENV 1 est **une porte, pas une enveloppe sculptée** : attaque quasi immédiate (1 ms),
+maintien à plein niveau tant que la note dure, extinction en 15 ms.
+
+**Conséquence à connaître avant de partir de ce template : DEC = 1,00 s ne fait rien.**
+Dans une ADSR, le decay ne descend que vers le sustain ; comme SUS est à **0,0 dB**,
+c'est-à-dire le niveau plein, il n'y a rien à descendre. Tourner DEC restera sans effet
+audible tant que SUS n'aura pas été baissé. Pour un pluck ou un stab au départ de ce
+template : **baisser SUS d'abord, régler DEC ensuite.**
+
+À noter aussi, utile pour lire une capture : **ENV 1 affiche son sustain en dB**
+(enveloppe d'amplitude) alors que les enveloppes de modulation l'affichent en **%** —
+ENV 4 montre `SUS 100 %`. Même position de bouton, deux unités.
+
 ### Reste à vérifier
 
-1. **ENV 1** n'est pas visible sur la capture (le panneau montre ENV 4). Dans Serum c'est
-   ENV 1 qui porte l'amplitude : ses valeurs restent inconnues, et ce sont elles qui
-   décideront de l'attaque et de la chute de tout ce qui partira de ce template.
-2. **Valeurs chiffrées** des boutons (CUTOFF, RES, DRIVE, LEVEL) : positions lues,
+1. **Valeurs chiffrées** des boutons (CUTOFF, RES, DRIVE, LEVEL) : positions lues,
    nombres non affichés. À relever par survol ou double-clic.
-3. **Chemin du fichier** et présence éventuelle d'un doublon « serum design », pour
+2. **Chemin du fichier** et présence éventuelle d'un doublon « serum design », pour
    pouvoir le recharger sans le chercher et sans se tromper de version.
 
-État du template : **sain sur le trajet du signal**, incomplet sur la documentation.
+État du template : **sain sur le trajet du signal, enveloppe d'amplitude connue**,
+incomplet sur les valeurs de filtre et le rangement du fichier.
 
 ## Ce qui marche, ce qui ne marche pas
 
