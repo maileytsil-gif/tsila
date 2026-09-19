@@ -1,6 +1,6 @@
 ---
 name: ableton-live-session
-description: Méthode de travail pour produire dans Ableton Live 12 avec Producer Pal, le LOM Bridge (lom.py) et le contrôle d'écran, telle que cet utilisateur la pratique, et **carte d'entrée vers les 25 autres skills musique** (situation → chaîne de skills). Utilise ce skill dès que la demande touche Ableton, un Set Live, une piste, un clip, un device, un plug-in (Serum, Waves, FabFilter, iZotope…), un bus, un niveau, une sauvegarde ou une vérification dans Live — même si l'utilisateur n'écrit que « la basse », « le drop », « le master » ou « corrige ». Utilise-le aussi en tout premier quand l'utilisateur commence un NOUVEAU morceau (« nouveau projet », brief de style/BPM/tonalité) : il donne l'ordre des 8 étapes et les règles apprises à la dure (hot-swap, transport, relecture, sauvegarde, natifs tolérés, une étape par échange).
+description: Méthode de travail pour produire dans Ableton Live 12 avec Producer Pal, le LOM Bridge (lom.py) et le contrôle d'écran, telle que cet utilisateur la pratique, et **carte d'entrée vers les 40 autres skills musique** (situation → chaîne de skills). Utilise ce skill dès que la demande touche Ableton, un Set Live, une piste, un clip, un device, un plug-in (Serum, Waves, FabFilter, iZotope…), un bus, un niveau, une sauvegarde ou une vérification dans Live — même si l'utilisateur n'écrit que « la basse », « le drop », « le master » ou « corrige ». Utilise-le aussi en tout premier quand l'utilisateur commence un NOUVEAU morceau (« nouveau projet », brief de style/BPM/tonalité) : il donne l'ordre des 8 étapes et les règles apprises à la dure (hot-swap, transport, relecture, sauvegarde, natifs tolérés, une étape par échange).
 ---
 
 # Session Ableton Live (Producer Pal + LOM Bridge + écran)
@@ -44,6 +44,19 @@ Mémoire projet : créer un fichier `projet-<nom>.md` dès l'étape 1 et le teni
 ## Quatre rôles complémentaires (15 sept. 2026)
 Quand la demande est un métier entier plutôt qu'une opération, passer par la méthode du rôle, qui orchestre les skills spécialisés et porte les règles communes (capacités vérifiées, session préservée, modifications contrôlées, jamais « entendu » sans mesure) : `compositeur-arrangeur` (notes, harmonie, forme), `producteur-rythmique` (batterie, basse, groove, Maschine), `sound-designer-serum` (timbre, Serum 2, synthèse), `ingenieur-mixage` (équilibre, masquage, contrôle qualité). Chaque rôle dit quand passer la main aux trois autres.
 
+## Deux familles de skills (19 sept. 2026)
+
+Depuis l'import du pack v18, le dossier contient **28 skills maison** (français, cette
+installation, ces plug-ins, ces pièges) et **13 skills du pack** (`composer-producer-director`,
+`bass-house-*`, `studio-grade-*`, `modern-*`, `afro-caribbean-latin-detroit-theory`).
+
+Arbitrage : **le maison décide et exécute, le pack fournit la matière musicale.**
+`bass-house-ableton-bridge` **ne pilote pas Live** — il produit un `BridgeActionBatch` ;
+l'exécution reste ici, avec Producer Pal, `lom.py` et l'écran. Le pack ignore le hot-swap,
+le transport, les mètres relatifs et l'inventaire réel de plug-ins : ne jamais lui laisser
+le dernier mot sur une opération ou un chiffre. Détail par domaine et écart de plug-ins :
+`../INTEGRATION-v18.md`. Règles courtes : `/CLAUDE.md`.
+
 ## Carte « situation → skills » (vérifiée en simulation le 15 sept. 2026)
 
 Entrer par la ligne qui correspond à la demande, dans l'ordre ; chaque skill dit quand passer au suivant. Toute session s'ouvre et se ferme par `memoire-projet`.
@@ -64,5 +77,13 @@ Entrer par la ligne qui correspond à la demande, dans l'ordre ; chaque skill di
 | Voix | suno-vocals → effets-plugins → live-automation |
 | Maschine / Komplete Kontrol | native-instruments-control (écran au premier plan, aucune API) |
 | Citer une œuvre existante | partition-recherche → partition-telechargement → melodie-composition |
+| Brief de style marqué (Bass/Future/Tech House, Afro, Latin, Detroit, Jazz/Chill) | composer-producer-director (choisir la branche, produire les contrats) → la ligne « Nouveau morceau » pour l'exécution |
+| Théorie d'un genre précis (clave, montuno, voicings jazz, topline pop) | modern-pop-electronic-music-theory / modern-jazz-chillout-theory / afro-caribbean-latin-detroit-theory → theorie-musicale-electronique pour le calcul (`theorie.py`) |
+| Concevoir un kick de zéro, un sub, un rumble | studio-grade-kick-low-end-sound-design (conception) → vst-sound-design (exécution) → kick-bass-equilibre (mesure, décision finale) |
+| Basse électronique typée (rolling, reese, donk, acid) | studio-grade-bass-sound-design → bass-house-serum2-sound-design (sous-type) → vst-sound-design |
+| Percussions hors kick, claps, hats, glitch, perc FM | studio-grade-drums-electronic-percussion → producteur-rythmique (groove) → drums-signature (signature) |
+| Riser, impact, sweep, tape-stop, throw, pre-drop fill | studio-grade-transition-fx-director (⚠ vérifier les plug-ins dans `../INTEGRATION-v18.md`) → arrangement-avance (où) → live-automation (exécution) |
+| Vocal chop, slicing, warp, break FX | studio-grade-sample-vocal-break-design → resampling → sampling-composition-avancee |
+| Exécuter un plan compilé (AbletonClipPlan / BridgeActionBatch) | bass-house-ableton-bridge produit et valide le batch → **ableton-live-session exécute**, une étape à la fois, relue |
 
 Pièges relevés en simulation, à ne pas refaire : la numérotation des mesures de la mémoire peut être périmée (relire les repères avant d'écrire) ; `check_scale.py`, `clip_summary.py`, `expression_report.py`, `snapshot_clips.py` n'existent que dans Live (hors Live, calculer avec `theorie.py`) ; les scripts à paramètres en tête se copient dans le scratchpad avant édition ; les chiffres de `levels.sh` sont relatifs ; aucun outil local ne mesure LUFS ni true peak.
