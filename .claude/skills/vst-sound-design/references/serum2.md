@@ -103,6 +103,41 @@ le bouton « fenêtre » dans le titre du device (fenêtre principale, vue Sessi
   ouvre un champ mais la validation Entrée n'arrive pas en arrière-plan ; le glisser
   des boutons ne passe pas non plus.
 
+## Relever des valeurs sans toucher au patch
+
+Serum n'affiche pas les nombres sous ses boutons. Deux façons de les obtenir, dans cet
+ordre — la première ne touche pas à l'interface, donc ne peut rien dérégler.
+
+### 1. Par le bridge (lecture seule, à préférer)
+
+`scripts/pyl.sh lire_serum.py` avec :
+
+```python
+# Lecture seule : relève les paramètres Serum exposés à Live.
+# N'écrit rien — ne fait que lire p.value et demander son affichage.
+res = []
+for t in song.tracks:
+    for d in t.devices:
+        if 'Serum' in d.name:
+            for p in d.parameters:
+                res.append([t.name, p.name, p.str_for_value(p.value)])
+result = res
+```
+
+Renvoie une liste de `[piste, paramètre, valeur affichée]`. Aucune écriture.
+
+**Limite** : Live ne voit que les paramètres que le plug-in publie à l'hôte. Si CUTOFF,
+RES ou DRIVE n'apparaissent pas dans la sortie, c'est qu'ils ne sont pas exposés sur
+cette instance — passer à la méthode 2. Le nom affiché dans Serum ne garantit pas une
+adresse accessible.
+
+### 2. Par l'interface (avec une précaution)
+
+Double-cliquer le bouton ouvre un champ qui **affiche la valeur courante**. Lire, puis
+**quitter par Échap, jamais par Entrée** : Échap annule, Entrée valide, et la fiche note
+déjà que la validation se comporte mal en arrière-plan. Sur un template, un chiffre
+validé par accident se propage à tout ce qui en descendra.
+
 ## Navigateur de presets
 
 Icône liste (1010,36) → arbre à gauche (Factory › Arp/Bass/Bell/…/Drum…) → double-clic
