@@ -1,0 +1,2565 @@
+{
+  "summary": {
+    "version": "18.0",
+    "physical_file_count": 512,
+    "indexed_checksum_files": 509,
+    "excluded_generated_metadata": [
+      "MANIFEST.md",
+      "VALIDATION.json",
+      "core/index/file-index.json"
+    ],
+    "skill_count": 13,
+    "json_schema_count": 9,
+    "example_count": 3,
+    "midi_count": 51,
+    "validation_checks": 66,
+    "validation_passed": true
+  },
+  "files": [
+    {
+      "path": "CHANGELOG-v18.md",
+      "bytes": 829,
+      "sha256": "32f25763b5d0f5d4409e347b78bd1355e0b2d791179afb31550a11f022230cb9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10191,
+      "sha256": "8da1f36becaee9ca6772e78aa68ee1dbbc0eaf1ee99a52152dbfd028519ffd5d"
+    },
+    {
+      "path": "RESEARCH-LEDGER.md",
+      "bytes": 17419,
+      "sha256": "cc6239d243dde8155640fd810690be3e4fc16ca06249c444cfe3772e8fb48e92"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/README.md",
+      "bytes": 800,
+      "sha256": "955f25a390c47b594c7282494e94c8e8fbcc7d64a942308acba88c98c2879f13"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/SKILL.md",
+      "bytes": 10385,
+      "sha256": "199f1326e26c522a15046df230636491812f7a45f1613ddd4cc52a95c0071f01"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/exercises/01-clave-orientation.md",
+      "bytes": 260,
+      "sha256": "d7a95fe7ab3dafe477e588f6326018c668952bd15d3233f5418e29b88912bb36"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/exercises/02-polyrhythm-layering.md",
+      "bytes": 198,
+      "sha256": "0b70e6d87068808aa80f2c44b7c4a301ea33891685837cab1025a1fb6b49fc96"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/exercises/03-montuno-tumbao-interlock.md",
+      "bytes": 217,
+      "sha256": "55bd38d1d4ff76cdbc41a9ff3211d254c7bffe283435ac0db6b60bf987824a8e"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/exercises/04-samba-suingue-test.md",
+      "bytes": 240,
+      "sha256": "d8507ae6ea64fdba8482bcfb374b070dc85838a328dbd208efa7124ea2c9abaf"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/exercises/05-reggae-dub-space.md",
+      "bytes": 231,
+      "sha256": "69836e37160e3982458eb79df54b949ec763c268f863668fa8c960898da2d8db"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/exercises/06-cumbia-role-translation.md",
+      "bytes": 249,
+      "sha256": "ecce766ef5154f2c94bf42d791cb9077c47b084297db37b201acb24ff83ec3cc"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/exercises/07-detroit-mutation.md",
+      "bytes": 222,
+      "sha256": "e3da6e1d488fbf2602fdf3c0da2d1dbf0792643ecfae1e5de54935d2ea9a7c8e"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/exercises/08-cultural-label-check.md",
+      "bytes": 261,
+      "sha256": "012ae9aa8f57e5e57f2e6c37ce5388d199c30adfedacb5289016c2546e861597"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/library/data/patterns.json",
+      "bytes": 3070,
+      "sha256": "a51b0f88c1629fbd563c9c59177d59da59b3c5ebd0a899b669c1da396cc7552c"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/library/midi-clips/01-son-clave-3-2-guide.mid",
+      "bytes": 104,
+      "sha256": "a50d98434f052b446dd16a80122669097eba46f088eb90e6a0915f4ae850287b"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/library/midi-clips/02-son-clave-2-3-guide.mid",
+      "bytes": 105,
+      "sha256": "74eab7b96e6d0e4608ac62f6700a6ca2237c56b115a7ee6ab03a5b9421501f12"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/library/midi-clips/03-tresillo-study.mid",
+      "bytes": 81,
+      "sha256": "df4a23de94cfbe421d866cbf9a573b9220775f5c6af9800959119d5a708dd147"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/library/midi-clips/04-afro-house-interlock-exercise.mid",
+      "bytes": 212,
+      "sha256": "3660fa8ef873185caae60a725eae519f6e0d0813ad03eaea8deba9b1dfcc62ca"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/library/midi-clips/05-reggae-offbeat-chord-exercise.mid",
+      "bytes": 154,
+      "sha256": "90621d9b480e44e0a4314e026eb8992aab99d52cd5a686d5a9b523c346991d0d"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/library/midi-clips/06-samba-suingue-microtiming-exercise.mid",
+      "bytes": 202,
+      "sha256": "8e1fda2e14e4a17de716fdabdba7528369e0d92708880c8ba7d65f104af3d086"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/library/midi-clips/07-detroit-stab-bass-exercise.mid",
+      "bytes": 246,
+      "sha256": "0eb68c1143b3e38365784a52071db23f16922efe69a777bac2756ba9cca5fa35"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/library/midi-clips/08-montuno-inspired-original-exercise.mid",
+      "bytes": 243,
+      "sha256": "0b725d48b6278e3c190630982dece8f8b37d60274bacd64d32a36fd49fdf1e7c"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/library/midi-clips/README.md",
+      "bytes": 415,
+      "sha256": "886329c2987a7e2eeba739ae937a625457b40f86db16e8e194a9324628a12473"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/recipes/afro-house.md",
+      "bytes": 548,
+      "sha256": "d8b0eef1d7b6875c16c5483b64dea3bf91953849f574a4942f67469bd154a008"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/recipes/afro-latin-house.md",
+      "bytes": 278,
+      "sha256": "64863c9ef4710eb21518d03f6402606a23157f2edec082708520a206d2e9bcbf"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/recipes/afro-tech.md",
+      "bytes": 264,
+      "sha256": "3595a3cbb86ca1d28c2178d82ed592501b0b4d17c9db576f8eca0f5a4a2a24ce"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/recipes/brazilian-house.md",
+      "bytes": 288,
+      "sha256": "27c9a4d6a6500d6b7d6b972c7a9d3a87c063712508afa87dd759e29b3cac64b3"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/recipes/caribbean-house.md",
+      "bytes": 318,
+      "sha256": "a0da75ce908dd974be773a6e2f2e0e27750a7109f0021af55bafe496e4061423"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/recipes/cumbia-house.md",
+      "bytes": 298,
+      "sha256": "8a0c23f23b7ece453379c11fba4279abc88e86344864ef19b292b22ab62139e7"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/recipes/detroit-house.md",
+      "bytes": 259,
+      "sha256": "ac061b291f0f38e9da43c860a6093312092ecec71008ef64b68a73c597401808"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/recipes/detroit-soulful-techno.md",
+      "bytes": 278,
+      "sha256": "221763c59db17cbf697ba4a86f233ff8aacccf0c467fbb5b0913d137ef1b5804"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/recipes/hybrid-afro-detroit.md",
+      "bytes": 312,
+      "sha256": "f7da33edca56e5207dbfc1645ef1d1a4e7224251e09ca1a45ec69eddd9261eb6"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/recipes/latin-house.md",
+      "bytes": 313,
+      "sha256": "ac96c91b57f7a489135f791cfcdf2d93476493999cc954ddd9a61658733a157e"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/ableton-workflow.md",
+      "bytes": 815,
+      "sha256": "882d85c0fcd3a3e7ce66bbf66a269d9bc41b0d4c8a068b0fdb8eec7a7d8208c8"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/afro-cuban.md",
+      "bytes": 799,
+      "sha256": "272f851d5923b9c1ed22d0cf97d54e5d432cf0996f7b52ce9c50302b13474762"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/afro-house.md",
+      "bytes": 1158,
+      "sha256": "4576b3d7370c52c4f9080c7f316597ac503ae81250d0a7bbade670d78c607580"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/bassline-interlock.md",
+      "bytes": 614,
+      "sha256": "baeda7d4489bb9b86b3cc812ab660c895bc44f766b7411d70f10fc06523f73da"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/brazil.md",
+      "bytes": 933,
+      "sha256": "54d9b24fa730af374095e3c87da9f07cffb141ff65c8e239fb1fda81be9269de"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/caribbean-map.md",
+      "bytes": 1379,
+      "sha256": "5249da4c7f1b04381515d2132c87ee1dda23cdf3586fc8abca9b326918faf4d6"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/colombia-cumbia.md",
+      "bytes": 806,
+      "sha256": "cad535e2ff5743f19e5c8398bc20859929bbd86e546b42eb3b5ecaa4cff678e6"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/cultural-boundaries.md",
+      "bytes": 1034,
+      "sha256": "59d234bf2b1af7a5e93a3e89f3742dc003bc7dea04a62499b30b877f2f60e739"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/detroit-techno-house-continuum.md",
+      "bytes": 1365,
+      "sha256": "1302f79bc0c3a14a64d07581bca7ff8fb69818502f19a6750a615b2ce955a3a6"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/dominican-merengue.md",
+      "bytes": 544,
+      "sha256": "014396fd7bce6677de47e1e9c95170c8cdca88e0abe909269fcdf319e12bf28c"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/harmony-modal-voicing.md",
+      "bytes": 872,
+      "sha256": "13be5ce09334b3122a03a092b6ef6fd4cd41e6bc31aa7bb84994a94db1ff604a"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/jamaican-reggae-dub.md",
+      "bytes": 616,
+      "sha256": "6c58e45a2f7b2d4c8aabce3c5c157f8d4feb15862c6754ae4eea88b2a53620a3"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/originality-cultural-respect.md",
+      "bytes": 789,
+      "sha256": "a909df3a7a521ac6d1768a8df41bbd1d602a553d77e2443bac467d74756a29be"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/percussion-role-map.md",
+      "bytes": 505,
+      "sha256": "7590f99f9f13ae7a2e62817749afb551dc767f56fb2be2c3f73abb368c80efb3"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/puerto-rico-bomba-plena.md",
+      "bytes": 612,
+      "sha256": "7b0493ec950239a2319d6b08d6b83b88e1d700e17444b9677567fdfcf6d85d66"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/rhythm-framework.md",
+      "bytes": 798,
+      "sha256": "37291b878754102b25a679835bd6780d1207e90796ed99d4015358035b11fad5"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/source-authority.md",
+      "bytes": 644,
+      "sha256": "a86f94be44bf0b15f14cb71ffe879e3498f1fdad7edcbe3254c58f58d3829e5b"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/sources.md",
+      "bytes": 3674,
+      "sha256": "0b93f7d24004b881fd02cf7ae5b0e4e66340cbb3ac6ed09ec989a976c9390eb3"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/south-american-club-adaptation.md",
+      "bytes": 619,
+      "sha256": "b7f546c6d44bf0f6658f8e70550e9a49a09606060efacd9ce1345af8fbb5b957"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/timeline-clave-tresillo-cinquillo.md",
+      "bytes": 1139,
+      "sha256": "66971d95f217e9653de9c01f9793da551df0ac49007e4fb57e7e8e788c48cdd8"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/trinidad-calypso-soca.md",
+      "bytes": 722,
+      "sha256": "53f96ea219f202bcef186357314b4abc0b609226c8993bbd60833dcc6395d4cf"
+    },
+    {
+      "path": "afro-caribbean-latin-detroit-theory/references/west-african-diasporic-rhythm.md",
+      "bytes": 601,
+      "sha256": "fb0f3c88d041e4cb97307cd9dfff476083901d053e0a25f4deff256db224e742"
+    },
+    {
+      "path": "bass-house-ableton-bridge/SKILL.md",
+      "bytes": 6236,
+      "sha256": "e9fc86be881fbb52b3e007f686c5d8d397e0cddcf015a814ba6f723e433200e6"
+    },
+    {
+      "path": "bass-house-ableton-bridge/references/ableton-automation-model.md",
+      "bytes": 1773,
+      "sha256": "a5ff93a37fab8252ad85786f2cb82949642c3e51e2236f0404623b4b4f651d5b"
+    },
+    {
+      "path": "bass-house-ableton-bridge/references/action-schema.md",
+      "bytes": 712,
+      "sha256": "b91ac477d8cbfec65ff415db36ce1b377dbfd836828fc4c2a59a4611fecb127b"
+    },
+    {
+      "path": "bass-house-ableton-bridge/references/capability-matrix.md",
+      "bytes": 956,
+      "sha256": "d77ab87c51d50d9490ce1fbfbabc1977470ec7c6e62bc0ecd5955bb0020b5779"
+    },
+    {
+      "path": "bass-house-ableton-bridge/references/documentation-map.md",
+      "bytes": 1984,
+      "sha256": "ef49aabeb1a2dfdc4efc3293e1832763a0a98aefc7c4e000ffff037c867ce021"
+    },
+    {
+      "path": "bass-house-ableton-bridge/references/execution-protocol.md",
+      "bytes": 2350,
+      "sha256": "ca815e552ae45ce6e6c56495de99b0500ee807c726c70f8dfd1b832c335a4438"
+    },
+    {
+      "path": "bass-house-ableton-bridge/references/machine-validation.md",
+      "bytes": 1843,
+      "sha256": "8698c3942a67e82618b8b44571adc99b4c29379b93faaf6c045746b0b6abb38b"
+    },
+    {
+      "path": "bass-house-ableton-bridge/references/reference-analysis-automation-v7.md",
+      "bytes": 950,
+      "sha256": "a41e1e701dd2ba9e126d89cf62cc3eb6a2625e3473a2ac62edac1985cbfcd2ee"
+    },
+    {
+      "path": "bass-house-ableton-bridge/references/sources.md",
+      "bytes": 1033,
+      "sha256": "b02f209221b7b2469edcbb7e397ea1f36a9b794a6658829a45d7e287515f1fa6"
+    },
+    {
+      "path": "bass-house-ableton-bridge/references/vst-control.md",
+      "bytes": 1586,
+      "sha256": "1ad535b6c3bb1bb2ba1665aaa51a1143805ce8bef276bf036564c27105230fbf"
+    },
+    {
+      "path": "bass-house-composition/SKILL.md",
+      "bytes": 6056,
+      "sha256": "12c3488f0bbfaa0b8dbbd91581d5ea6d9496b02f05246db13a4613a6b48ad907"
+    },
+    {
+      "path": "bass-house-composition/references/composition-system.md",
+      "bytes": 3663,
+      "sha256": "8c1394ec0eeda53d0a01c053def456e0170511352671c24267efc849b080baa1"
+    },
+    {
+      "path": "bass-house-composition/references/documentation-map.md",
+      "bytes": 2213,
+      "sha256": "d592f44c2a91b1fb3696d50288863b2870854066e6429a469d3fe332b3939fe3"
+    },
+    {
+      "path": "bass-house-composition/references/live12-midi-workflow.md",
+      "bytes": 1822,
+      "sha256": "50c2d228e0e16c9d48ca246d0f4e62eb5d5c5734bfe28dc68a007033779df6a8"
+    },
+    {
+      "path": "bass-house-composition/references/producer-intelligence.md",
+      "bytes": 606,
+      "sha256": "aa1ce32feb6e27e3a7c4452448baaa0190ce1f5349eed3eac520fb1c7e97e7b7"
+    },
+    {
+      "path": "bass-house-composition/references/review-checklist.md",
+      "bytes": 1308,
+      "sha256": "bd91b951471440205657a4d80cbb80f1edf076326ed196c8a2835f0668da53ba"
+    },
+    {
+      "path": "bass-house-composition/references/sources.md",
+      "bytes": 1334,
+      "sha256": "76ffa8abd4d4f57b7ff57e6a2ab36c84eb4dd39eda235983de5090e01331e6d5"
+    },
+    {
+      "path": "bass-house-mixing-mastering/SKILL.md",
+      "bytes": 5303,
+      "sha256": "3831616c2402fcb8d82f7de8d8353ae7a8a83c569cd95c5b52e507b1fbe480fd"
+    },
+    {
+      "path": "bass-house-mixing-mastering/references/documentation-map.md",
+      "bytes": 1609,
+      "sha256": "9e88b7fca7b1d14587e2deed6338a2515c80955283af4028db13e590a20b5250"
+    },
+    {
+      "path": "bass-house-mixing-mastering/references/kick-bass-system.md",
+      "bytes": 2199,
+      "sha256": "f08e2b3e801d4c311c212a98467b03ae40524ee48fae21901d3ae247c4733434"
+    },
+    {
+      "path": "bass-house-mixing-mastering/references/mix-master-checklist.md",
+      "bytes": 1461,
+      "sha256": "b16095cebfa941d50a68ff6db1c91af467a5809d329b60f8e44b87d011dba87c"
+    },
+    {
+      "path": "bass-house-mixing-mastering/references/native-tools-decision-tree.md",
+      "bytes": 1797,
+      "sha256": "96400c0395864225acf2d509d21be5266c92f41fe03d324aa412b21c32ffec84"
+    },
+    {
+      "path": "bass-house-mixing-mastering/references/producer-informed-mix-principles.md",
+      "bytes": 784,
+      "sha256": "e6d0bfbee7a99b6436cb1d8f7ee86f1cb1e94d0982091dc24c37eed57b222673"
+    },
+    {
+      "path": "bass-house-mixing-mastering/references/sources.md",
+      "bytes": 925,
+      "sha256": "6f8367dfd469cfd2f3d829ea7a0d62267664d5526ca36c8607832fc7229ce28a"
+    },
+    {
+      "path": "bass-house-mixing-mastering/references/third-party-tools.md",
+      "bytes": 2009,
+      "sha256": "bbc4675c524234c30fb0869341df2ab74c603d79b03b76744746d810cad2e192"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/SKILL.md",
+      "bytes": 8586,
+      "sha256": "6e9726d90657cf85857c8f998b56c9441bf677c5a1dfc8319d862eb952508de0"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/documentation-map.md",
+      "bytes": 2165,
+      "sha256": "eaf8a0132e2532bcc28c410ae09e459c0d3c0ef28ef21fcefedb156a562d9dfe"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/family-patch-output-schema.md",
+      "bytes": 1381,
+      "sha256": "2d524625e7424906d7cfa10269864e0580a42f24ea8d5cbd0527c4644f7a9f4c"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/family-validation-protocol.md",
+      "bytes": 1236,
+      "sha256": "f235344daa6505d8dfa8a5629caabe87f0f4a6b3b500b8516072dfa639d8105b"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/macro-templates-v5.md",
+      "bytes": 1672,
+      "sha256": "ee539290ed913550c42a1e55692f50cca8d9d9b84dd04483a5b01135429e2bbe"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/modulation-macros.md",
+      "bytes": 1589,
+      "sha256": "bc31edc44773e0a4c57b9b76ef51f6926d779e0e5a5bafd4707f9f357da55198"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/native-ableton-instruments.md",
+      "bytes": 3747,
+      "sha256": "81a5a8bc4961eb4f914b28caf849662729ff33a5000cf572acb7e80c51cf951b"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/patch-engines.md",
+      "bytes": 1641,
+      "sha256": "5c7351c5b31b961944d520539d0bfc485680e8f66381749d775e813202eda68c"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/producer-intelligence.md",
+      "bytes": 1120,
+      "sha256": "9bbfa01b1853d1213578ca44884af065085b4335eebc935beeede4e52cbe144c"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/professional-layering.md",
+      "bytes": 2272,
+      "sha256": "2cfcfb808ce39fa88573955cc7411750c007f162a0d6ddd08262081466438715"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/serum2-verified.md",
+      "bytes": 3576,
+      "sha256": "e3f8715cd69e93a84be3b02eab45c9f0d158c54d51e2a4bd070d2d73e316f6a7"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/serum2-workflows.md",
+      "bytes": 2466,
+      "sha256": "acae52741a73391bde883283bd5ba963c5e26fa713960155f3bf4170af410548"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sound-families/drone.md",
+      "bytes": 2244,
+      "sha256": "2b8a35a06ea7a408551a7825aafc9793ddcedc4daa09300687ea7e6f1c3ba044"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sound-families/impact.md",
+      "bytes": 2012,
+      "sha256": "cc44def55f0be39047ff03ea9f5d6718fd0a6cf8feb53fee88b409e3a2999912"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sound-families/keys.md",
+      "bytes": 2085,
+      "sha256": "ebd341deff66be6df2a805be3902296db1cf4677895ed34fe56d97772df1eca6"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sound-families/nappe.md",
+      "bytes": 2782,
+      "sha256": "1852032552c5a0164502df5e5f9e6284f5ef15edcd1edb7e419855aa8eef62bf"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sound-families/pad.md",
+      "bytes": 2085,
+      "sha256": "47e40c1455254946c0d710a91e4dce82ee3b966048ffc07b84e066f3d4f16574"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sound-families/pluck.md",
+      "bytes": 2022,
+      "sha256": "063d7d9a15bc2f46d2aea2b4ad3753added9d535eacad95a7fa052584e2a829c"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sound-families/riser.md",
+      "bytes": 2274,
+      "sha256": "a4382875a6773aece92b58173f3e716bddc69a82e0da1f0fbd2029b9475133ef"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sound-families/stab.md",
+      "bytes": 1939,
+      "sha256": "35e25a30fdee2dd27ee0a9cb14e4d9b115dff8bdfc9a9101370567d02f9b1bdb"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sound-families/synth-fx-routing.md",
+      "bytes": 1576,
+      "sha256": "15649ceb55d97f3d415513ae09ae48c7baacc0e531808db81145cdfe808ad1d6"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sound-families/synth.md",
+      "bytes": 2608,
+      "sha256": "43a1c439d0cd1542ddbd381a51a5c454eb34aeb410264bb9d3485977990f9de1"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sound-family-documentation-map.md",
+      "bytes": 2073,
+      "sha256": "709646d0c0b41965778762bd65d679c3cc57efa8385b7233129d3963a9fda195"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sound-family-index.md",
+      "bytes": 1924,
+      "sha256": "aa829f6907d476eccd6b67a4e59eaca00fd53fda1d781ac598988905b8bd976d"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sources-sound-families.md",
+      "bytes": 1899,
+      "sha256": "3b01bbc1993bf681b27245b55dbaa85f490b7b952e7d2d738f3717b773c97673"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sources-subtypes.md",
+      "bytes": 3019,
+      "sha256": "6b7e1e18d2ea3f7eb9147583591673dae5b7c1fe318a56369e667aea4cba9f24"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/sources.md",
+      "bytes": 1375,
+      "sha256": "b90a39d3156002a7c8b9b9b61f3aac960ff4b04b549eee2a154398db29332433"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/subtype-selection-matrix.md",
+      "bytes": 4438,
+      "sha256": "61c611c5a0bbf1d5b6eca2f573d36f4450f5e6bad2864b21e11cb02af1ab15bb"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/subtype-validation.md",
+      "bytes": 1576,
+      "sha256": "dad9bdbf5f8dc2185fd3f9659c45dcd1df3017e2fc1839da38531ba3c7b2f7e0"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/subtypes/drone-subtypes.md",
+      "bytes": 3241,
+      "sha256": "2d60bf3f7b202609318779ea1ecec6348961e501a20454c653bb00a7b2f0f394"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/subtypes/impact-subtypes.md",
+      "bytes": 3114,
+      "sha256": "64c46e68cadc355533b301ec7fcd6364cbe9335e637fc553b552ce8418fc36fd"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/subtypes/keys-subtypes.md",
+      "bytes": 3652,
+      "sha256": "d2b57499f6f5d09f8cf033f8e1c7ee81c2a61b90a588a9dd40b2bf714f5e6637"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/subtypes/nappe-subtypes.md",
+      "bytes": 3717,
+      "sha256": "e8add832f562c042b92c258838bd830eb0a3e9ced19166d7740bd57679f51093"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/subtypes/pad-subtypes.md",
+      "bytes": 3266,
+      "sha256": "1a7c94ed694976101a57685a4aa3c3af3f7268339a637dd82ab25010c3ff37f4"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/subtypes/pluck-subtypes.md",
+      "bytes": 3323,
+      "sha256": "f74861c77306fc3c0a96e383b06786d0e63d16e47ffb9084280cd7f648deb8a1"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/subtypes/riser-subtypes.md",
+      "bytes": 3538,
+      "sha256": "eeacf7a69312d152579601fa35751b636c3d66a11894aa37cb9b0b8deb8da678"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/subtypes/stab-subtypes.md",
+      "bytes": 2942,
+      "sha256": "4032a889f5f85a59702fb77a1f6f7e2e8c9dcb6113a6bac757fb498847e33d6e"
+    },
+    {
+      "path": "bass-house-serum2-sound-design/references/subtypes/synth-subtypes.md",
+      "bytes": 4312,
+      "sha256": "2a05bf3f2ba4e8383a29faebb8c7e8666f3399637da068c274decaddccbace38"
+    },
+    {
+      "path": "composer-producer-director/SKILL.md",
+      "bytes": 4374,
+      "sha256": "8a196ff3e00271a40f70b45bfa38101e680c0faa8097a91ab43e3cc29e4f3c47"
+    },
+    {
+      "path": "composer-producer-director/blueprints/bass-house-dark-126-fm.md",
+      "bytes": 1080,
+      "sha256": "29af476c508a9c0a7cfc0179897dbec8b26f52686e54efee632d069ec18341c6"
+    },
+    {
+      "path": "composer-producer-director/blueprints/future-house-emotional-124-am.md",
+      "bytes": 716,
+      "sha256": "7d886950e99c828bd5d44e462114ab095921cdcd6ea42df55f2004ae368982d2"
+    },
+    {
+      "path": "composer-producer-director/blueprints/tech-house-minimal-128.md",
+      "bytes": 600,
+      "sha256": "c464197f40a5ef5dc37c15b63c48e5721d735240fd7056daaf242315af011526"
+    },
+    {
+      "path": "composer-producer-director/blueprints/techno-rumble-132.md",
+      "bytes": 602,
+      "sha256": "390bd997eb491218acaa48ef62d1cd75b4bda3351012ffdc6a2da2d107723ddb"
+    },
+    {
+      "path": "composer-producer-director/references/conflict-resolution.md",
+      "bytes": 1266,
+      "sha256": "2e3b7b233cd911733629bbaff6ff08fedb13671b1c19c2bf66dfd85247f6070c"
+    },
+    {
+      "path": "composer-producer-director/references/director-output-schema.md",
+      "bytes": 533,
+      "sha256": "45042bec46770bc394db6f6613257abd4620f747aa5fa3c3dcad7950403c5f48"
+    },
+    {
+      "path": "composer-producer-director/references/evidence-policy.md",
+      "bytes": 714,
+      "sha256": "8fa837102eaced38c2c6f6746b3a25ddfb0c1a38b73dab9ebfc0e52b254c9192"
+    },
+    {
+      "path": "composer-producer-director/references/macro-orchestration.md",
+      "bytes": 963,
+      "sha256": "6a56d6932b6ec79d3c664ba5d6dd52042f59e870a3d6ad13264a0ca60f6882bf"
+    },
+    {
+      "path": "composer-producer-director/references/production-brief-schema.md",
+      "bytes": 981,
+      "sha256": "35737baa05cd49073e4016351c95686799abd3c14d065b1122d602e64258adf6"
+    },
+    {
+      "path": "composer-producer-director/references/project-state-machine.md",
+      "bytes": 815,
+      "sha256": "f0f890ccdc8743c6d11d90f19b3236cd48b389afadd528863689fa6dc2a21ee3"
+    },
+    {
+      "path": "composer-producer-director/references/routing-matrix.md",
+      "bytes": 1065,
+      "sha256": "6df3a4a328a451b14f36902774b5f26a372d64cf8b61088b797b451dc595a11e"
+    },
+    {
+      "path": "composer-producer-director/references/sound-role-budget.md",
+      "bytes": 917,
+      "sha256": "ed0cc948819d18ec4d27505d13999d9edf7ed59d3a882118eb346b569caa2978"
+    },
+    {
+      "path": "composer-producer-director/references/stage-gates.md",
+      "bytes": 806,
+      "sha256": "192728aa58d9bf5c66334c5e7ce5ad8b1cf4eea76a1aeb006a1e66402af2aec7"
+    },
+    {
+      "path": "core/INTEGRATION-REPORT.md",
+      "bytes": 865,
+      "sha256": "6b979cf0fe991764406f736f5ee086796b2927e2bed62ded4bb1cdf2f2c9ba04"
+    },
+    {
+      "path": "core/README.md",
+      "bytes": 885,
+      "sha256": "d8396e4262236cca153fc803f0f6aad22d12ef906cc4e4d18e4ab55fcd57bb4e"
+    },
+    {
+      "path": "core/compiler/README.md",
+      "bytes": 569,
+      "sha256": "7d8dd81e29e3990e5fd20a7b7b19c24ffe2d10bcadd560ed31d6915953e04835"
+    },
+    {
+      "path": "core/compiler/compile_project.py",
+      "bytes": 5698,
+      "sha256": "451fa07347e008d5a5f4fa3897fbfadf49bd42b3d6e2dd0286b88d43928d2c23"
+    },
+    {
+      "path": "core/compiler/export_plan_to_midi.py",
+      "bytes": 998,
+      "sha256": "22e00def69348e1f8e080b05750285ed4d30702de6d51eab939d8f2faf883618"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/ableton-clip-plan.json",
+      "bytes": 12508,
+      "sha256": "2d9cc71085c002ab883b88b3559ea29c0e836b45c20a571971a5f880e0287cf0"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/automation-spec.json",
+      "bytes": 406,
+      "sha256": "f1a6f12fd30217fdd6ae7f00dd642617f5c785dd7a30902e7a4c91268d6144c4"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/bass-interlock-spec.json",
+      "bytes": 1253,
+      "sha256": "987aa2f9b3a0f504a591c6d84b17cb1b40a4ebb7ca45eef152017421496c6619"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/bridge-action-batch.json",
+      "bytes": 24166,
+      "sha256": "c25b7062d03de631da23b55d976f54f8051d5d386a9f83581c2c672b254699df"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/cultural-style-lock.json",
+      "bytes": 553,
+      "sha256": "bd92bc8ccfeeca22b86413291903a39dda1d3683f57dda4ede309ce7bef1ba98"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/groove-spec.json",
+      "bytes": 8425,
+      "sha256": "a1b7d047e41ebfdb9d899d1fbd2b8cf1bb179dc06af648ad3a0c190375462a39"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/harmony-spec.json",
+      "bytes": 1003,
+      "sha256": "740bbe79addd439753692ff86e7226b325c1ebbe2ee3fe9c1f089a53b1c661df"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/midi/BASS.mid",
+      "bytes": 96,
+      "sha256": "0fd34e84966ec409bbf1fa1e7cdbe6202f3ef54dbac68ec53580c475f6215088"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/midi/CHORD_STAB.mid",
+      "bytes": 152,
+      "sha256": "1b091ab4fbcb0710b7e56088d019e9e49a10588a95e1645bab6c9714f20990d2"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/midi/KICK.mid",
+      "bytes": 97,
+      "sha256": "bbc69b3dc03160f03921864b918f3d088ef3a97d22e5289fa41589fcf36cce86"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/midi/PERC_MID.mid",
+      "bytes": 62,
+      "sha256": "1ff3e7715eb1629da839c0faf987a21f9f630701bb9309f24ee90ac8178bf19b"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/midi/PERC_TIMELINE.mid",
+      "bytes": 106,
+      "sha256": "b21313b753ae6109d1731ab6bc37af09d594bb8459a919622faa80840b21b439"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/midi/SHAKER.mid",
+      "bytes": 169,
+      "sha256": "c3a118e70ec885d73faef8dcdebde4df2cec518b5187850e766c77335240d6dd"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/production-brief.json",
+      "bytes": 984,
+      "sha256": "8fa99e395a450d46538b5fee5e7b297eb0f0c227c7f7e47d978ac7aeb07516f7"
+    },
+    {
+      "path": "core/examples/01-afro-house-fsharp-minor-122/sound-spec.json",
+      "bytes": 1264,
+      "sha256": "bb5b6ae111870cf56c7c564a2c59bf9664bf84d4a06d1fc9dd226b7ef2d2a471"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/ableton-clip-plan.json",
+      "bytes": 12855,
+      "sha256": "a565efcce68719f10f2db8c4807fcd456deb9e5ed17a964b9df44a77e763c4ee"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/automation-spec.json",
+      "bytes": 408,
+      "sha256": "a6d52fc8e50d0415478fa6106f8ff96087d86c20933a0bd1b722f680cb7ff958"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/bass-interlock-spec.json",
+      "bytes": 1302,
+      "sha256": "5a4d2ddb67e153db745f93599608db7cb82c730e9bfbabf48cb50cbc94db0eb7"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/bridge-action-batch.json",
+      "bytes": 24521,
+      "sha256": "ba4e6b02899bfde5bba547472efa308d582bc28181770edd7cdc852b934f26ba"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/cultural-style-lock.json",
+      "bytes": 513,
+      "sha256": "44f60e90ea826253cd86a079798be0abc3d00060415eab80b7f242533013e275"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/groove-spec.json",
+      "bytes": 7754,
+      "sha256": "2ca19ad9afae4ba4839428e144f56f9bb4759ea680c3fc11fcf4ed26bd26efd1"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/harmony-spec.json",
+      "bytes": 1266,
+      "sha256": "7b41c58369d3676978ba93bdd1494d5967738a41b4de1bc03ebf2184fc101875"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/midi/BASS.mid",
+      "bytes": 96,
+      "sha256": "9320cbe86a07d5494d4599d6fbcd69069e30537ff9ac1605004522c331c8ef90"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/midi/CLAVE_GUIDE.mid",
+      "bytes": 70,
+      "sha256": "b4f2113300c3ed95bd9a2a3bcb0529e6e7570e7426c50b452c2eb49b01be12d9"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/midi/CONGA_ROLE.mid",
+      "bytes": 71,
+      "sha256": "07f200cbb87e97b429e0c6dc10517158c5161b2fb0e652bc2c877cfc4a171957"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/midi/KICK.mid",
+      "bytes": 97,
+      "sha256": "bb5bd9f4fff39b0d25ec173e5b4b7ff450bed0f692dbbd0fc81ec43d8ca81487"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/midi/MONTUNO_STAB.mid",
+      "bytes": 190,
+      "sha256": "3e02891750bf14c07338d1f8303ecdaa98d2072284a49609b302d44c8673e7e7"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/midi/SHAKER.mid",
+      "bytes": 169,
+      "sha256": "d35c5a4798abb2631cc6f133a993a72b5baf0bdf8120d33567208b7016c5349a"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/production-brief.json",
+      "bytes": 1006,
+      "sha256": "542105d7242a195460cf801a9195ab325f7f6d3fc65fc976be1845b568cf5d30"
+    },
+    {
+      "path": "core/examples/02-afro-cuban-house-c-minor-124/sound-spec.json",
+      "bytes": 1295,
+      "sha256": "ecc2c7ad37e6c9e4046f86d79a1bc739ea8bbb523f7ab65c81809789f67ca661"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/ableton-clip-plan.json",
+      "bytes": 9006,
+      "sha256": "e6835b7f08c152ae4b0edc9a213cc3283a56b41c41d88f2937a57c6acda780eb"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/automation-spec.json",
+      "bytes": 751,
+      "sha256": "0c0868e789be1f2d66dae6c7e8c91b43769517737c02c98f769d0e6243ffeaab"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/bass-interlock-spec.json",
+      "bytes": 986,
+      "sha256": "37c8a11d79373c5fb8086289afe16747f33b54149b53131478e65d4a6abb13c6"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/bridge-action-batch.json",
+      "bytes": 19748,
+      "sha256": "ec2b74cf3c590635b91b79a83e529784d839fb5903d6b970b0c9208c09a0fd90"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/cultural-style-lock.json",
+      "bytes": 451,
+      "sha256": "aa80b44b949c0935594dd15d86a5f9577fb36b0ace1c45e75c6a254de2e8f6dc"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/groove-spec.json",
+      "bytes": 4883,
+      "sha256": "7298ff9dd2a9dc623dcb05ebe7f30adfd7804905f5b5fc0ccdc04f956c64b22e"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/harmony-spec.json",
+      "bytes": 838,
+      "sha256": "36a32dfd573c0d407bf559aa6f8683c3738bed9d52fe0d715bb376a402773c61"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/midi/BASS.mid",
+      "bytes": 76,
+      "sha256": "dfa33a69c571335fcb4e0fb6d383fde426005ee8691220c5007cf780b13e2b3a"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/midi/HAT.mid",
+      "bytes": 98,
+      "sha256": "5f81eba72a7fdbc14d2fa908dc03846e50fef275fc40dd4421ccda6ef60601a7"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/midi/KICK.mid",
+      "bytes": 97,
+      "sha256": "bbbfcf0e5070b4643777ac1a608cc5c44f9c144e4603880a6a33bb6d60f1ceb4"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/midi/MACHINE_PERC.mid",
+      "bytes": 62,
+      "sha256": "108b8727b3184e8bd4d7ffe97d125dbee88c690f13e76a2e7e24b2e309d26d36"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/midi/STAB.mid",
+      "bytes": 128,
+      "sha256": "63e6cb05d81baed201637899535bc61d80428a1603b17e625555218eca49bd13"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/production-brief.json",
+      "bytes": 1001,
+      "sha256": "9dbc5ee494184fd8c89b7a9e4570c95e6df50044f3e071b55f3bdf0c2b237045"
+    },
+    {
+      "path": "core/examples/03-detroit-soulful-techno-d-dorian-128/sound-spec.json",
+      "bytes": 1220,
+      "sha256": "d5b97006ea22609cb77c024a25688b42269d3576e75a47286904375a24272795"
+    },
+    {
+      "path": "core/examples/README.md",
+      "bytes": 561,
+      "sha256": "f8d3e9f67dcc0e6c1165b597a3938559f32e609f056c09118954b2e8ee82b7d8"
+    },
+    {
+      "path": "core/index/capability-index.json",
+      "bytes": 5293,
+      "sha256": "ba17490d4fe243a16fc1fa55fcb57dd8a9143560d20f418d1ada7af6d80bfb9f"
+    },
+    {
+      "path": "core/index/director-graph.json",
+      "bytes": 1845,
+      "sha256": "3f20ff31c5866528d9a420b186919e395ce5b268fcbffd1202182ceb90218e79"
+    },
+    {
+      "path": "core/index/logical-package-map.json",
+      "bytes": 875,
+      "sha256": "5107d272d19934ec70cb2def8e7ec239cdd75ad1860591573680bf8e7aaefa4a"
+    },
+    {
+      "path": "core/provenance/README.md",
+      "bytes": 441,
+      "sha256": "523526145d243c8a622b95181cf9f8ec7c7cb3ecd5d57ef0f5e920348d5f68f2"
+    },
+    {
+      "path": "core/provenance/source-registry.json",
+      "bytes": 1800,
+      "sha256": "07c77016587bb382c30ad43644399b7b6d704b8038ec77e0fd65b3878edf13db"
+    },
+    {
+      "path": "core/schemas/ableton-clip-plan.schema.json",
+      "bytes": 3551,
+      "sha256": "e79e2bb4406a815a73a295a4a6c8fb435a0274edc65fa27b7e42f47d8f8c9dbf"
+    },
+    {
+      "path": "core/schemas/automation-spec.schema.json",
+      "bytes": 2627,
+      "sha256": "950dd5f8960279cea6cb55d22fe3a3f71c80b3a0663a729c3bd42fa17d12ad76"
+    },
+    {
+      "path": "core/schemas/bass-interlock-spec.schema.json",
+      "bytes": 2267,
+      "sha256": "5f6a66851e5c2a4df863453058ec3bbd3972afa587c7b555f5c60fc220903e99"
+    },
+    {
+      "path": "core/schemas/bridge-action-batch.schema.json",
+      "bytes": 3164,
+      "sha256": "61c8fc65bcc46ddc2c7f669ceb027072d2c690f6afa26c65294b89abc527a33f"
+    },
+    {
+      "path": "core/schemas/cultural-style-lock.schema.json",
+      "bytes": 1532,
+      "sha256": "6064ed392b37e40a5fd35f5fa29b51c231afb837bab3a78c7e9d2fb6d2931605"
+    },
+    {
+      "path": "core/schemas/groove-spec.schema.json",
+      "bytes": 4860,
+      "sha256": "5794ede49f2d49c8ff7378d5975326e41dcbe349b3a00c194573afd26b7f9c75"
+    },
+    {
+      "path": "core/schemas/harmony-spec.schema.json",
+      "bytes": 2032,
+      "sha256": "390b634650ceaabcecc2ab7c0b6391e58ab281e3836a3b27dfec2b5e3a9a8b0b"
+    },
+    {
+      "path": "core/schemas/production-brief.schema.json",
+      "bytes": 4594,
+      "sha256": "029680b1a6e86b0afb56ba57820ece179aad0abf4a608469a63a097a05e05ead"
+    },
+    {
+      "path": "core/schemas/sound-spec.schema.json",
+      "bytes": 2269,
+      "sha256": "b8820f2419d703f8a5dc0a1cb5b63bfea7808306795e911a79b957948dd0977c"
+    },
+    {
+      "path": "core/validation/README.md",
+      "bytes": 406,
+      "sha256": "129ad7e5dc753a5228b03031bcbfeddbfafc0b24e9ad1fa2169466894682a00b"
+    },
+    {
+      "path": "core/validation/validate_v18.py",
+      "bytes": 6202,
+      "sha256": "cb2c008df1a0ecb47216e37965cce154d1b66ad46a4690959c89a94f895524d3"
+    },
+    {
+      "path": "data/hybridization/hybridization-matrix.json",
+      "bytes": 1365,
+      "sha256": "32d1b862ec5481570cb71c8383645932383ca76de15b0dabe26aac2a722f5762"
+    },
+    {
+      "path": "data/patterns/patterns-v17-legacy.json",
+      "bytes": 1612,
+      "sha256": "4fe28f0a4ec4c666c024e1160dadd6c6fd66361b7fb61024bf3b4df0afd1880a"
+    },
+    {
+      "path": "data/patterns/patterns-v18.json",
+      "bytes": 3070,
+      "sha256": "a51b0f88c1629fbd563c9c59177d59da59b3c5ebd0a899b669c1da396cc7552c"
+    },
+    {
+      "path": "data/timing/timing-profiles.json",
+      "bytes": 808,
+      "sha256": "86a8f06ce71a24e9aada7fe37d02cb6431aa64aa36cfd097178cd62a2ab7c34e"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v10.md",
+      "bytes": 985,
+      "sha256": "f18ee2179954288f3b018b42d3b6a6646672f2ba50a4f6b75fef79597de272ad"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v11.md",
+      "bytes": 671,
+      "sha256": "380f2dc109e362602c6d107f32369ea3b5535355ce7b8bf4326eca9168e3c4f5"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v12.md",
+      "bytes": 540,
+      "sha256": "91661131b97f3ef4b1b4348161eeac8a5c4c9742de6999bc459b842869455264"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v13.md",
+      "bytes": 651,
+      "sha256": "53d17963ca7b21221de342fc79d4d395e02640944934599c43d177c9e4c60241"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v14.md",
+      "bytes": 569,
+      "sha256": "9fbeda9f259d5ffc339e57dc27403beba0070295d082ff05157f518eeff7634c"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v15.md",
+      "bytes": 895,
+      "sha256": "a13716511b4fc833c85156a609b83b2bf02eee7ca0ac164d9774cc5b67c19af3"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v16.md",
+      "bytes": 732,
+      "sha256": "6d9a238797d67375caae951c1480dd77c7a7b8be244e2a6edcd6a9f0e266b9af"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v17.md",
+      "bytes": 600,
+      "sha256": "ed79920714a36742e8a3470dae832784b1f02f3b1c3fd1e05f2cd9efbce79ffc"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v4.md",
+      "bytes": 797,
+      "sha256": "e9ec9eea1b46eeb4a156c35d642b4689d30d48837cf7d9d34a8f948ee96ac948"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v5.md",
+      "bytes": 823,
+      "sha256": "4a1f7dfb773c6fedb165e661bc744a5d8852e2d710abb997e8ef88b0acbcbd5e"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v6.md",
+      "bytes": 596,
+      "sha256": "b0e12013e92b6797b2d47dca687bd184f7dcb782f956fe3fe50827b6b7180112"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v7.md",
+      "bytes": 711,
+      "sha256": "316130375bf9edf153d457e5d2f20167bc48cefc2fc3de8a7650592a0810456b"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v8.md",
+      "bytes": 655,
+      "sha256": "5ab4da95fa52057b03e8c60e301cf4bf943e05df2ad6764f2b8fc11c15e84ce8"
+    },
+    {
+      "path": "history/changelog/CHANGELOG-v9.md",
+      "bytes": 1058,
+      "sha256": "a487216debe811392ab101cf526265719684ddb2f4cd21332466189de9d5d7bd"
+    },
+    {
+      "path": "history/validation/VALIDATION-legacy-current.json",
+      "bytes": 934,
+      "sha256": "e049cfc6da58214ee38da2a5ebff326dc62d7fa090e86d4266619b459b1a1e17"
+    },
+    {
+      "path": "history/validation/VALIDATION-v11.json",
+      "bytes": 205,
+      "sha256": "146d90eb45d28cfd968315fc9578e65401a8172fb69a3ea0eb237e3f340f6220"
+    },
+    {
+      "path": "history/validation/VALIDATION-v12.json",
+      "bytes": 162,
+      "sha256": "f911110e75d4a72dc4ac0b890c87f755f6ec82de1cf7a923ef85309c5ae0080c"
+    },
+    {
+      "path": "history/validation/VALIDATION-v13.json",
+      "bytes": 131,
+      "sha256": "19eba6496b17ad7e0d29126e9f4c80780467446201adbf2510bcc39886968fac"
+    },
+    {
+      "path": "history/validation/VALIDATION-v15.json",
+      "bytes": 145,
+      "sha256": "688da7e87bc251659ec816a21c58cb50d67c5164d6ca3ab5d3804fa5de8726f6"
+    },
+    {
+      "path": "history/validation/VALIDATION-v16.json",
+      "bytes": 92,
+      "sha256": "2c5adfd63ed44aad899b1e28f98a4ec73d63b7a9acb421d08c3bcc55050446f7"
+    },
+    {
+      "path": "history/validation/VALIDATION-v17.json",
+      "bytes": 128,
+      "sha256": "7e3014fe6f0b51c263f42a7b4a3bfea2e49513522102527ee88d8e245b2bc2e0"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/SKILL.md",
+      "bytes": 4774,
+      "sha256": "46734c254258b10b46ecc227dbcd5fb70e3f43b29b44d52aee977541f4a55742"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/exercises/01-one-note-funk-phrasing.md",
+      "bytes": 287,
+      "sha256": "d683e780d432402b376afbe90fc6172e5dc414484e2932e80f7b6c4c31edae8b"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/exercises/02-target-and-approach.md",
+      "bytes": 233,
+      "sha256": "1cf85465949dcf9943cca6cdf1bb25438190c6ca324887c773d4d76ed363d476"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/exercises/03-across-barline.md",
+      "bytes": 224,
+      "sha256": "4159ff4fc5568867d89b40ce6c45d4ef89c0e228c6dbb5ee3eac1cae6b9d89ad"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/exercises/04-tight-pocket-loose.md",
+      "bytes": 239,
+      "sha256": "7fa4b04edb9de290d8a1c79a64e5827edaf7f7a918b71e49427b0d7a50fa94b6"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/exercises/05-voicing-topline.md",
+      "bytes": 233,
+      "sha256": "4aae0f4c5e24cdee1ce0c9f2967bb2cbd6feb722b78e70382f38ce34a3df4f86"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/exercises/06-chill-two-chords.md",
+      "bytes": 227,
+      "sha256": "73c5797d7bdec33f8f13ead89d365a00c0f84a98ca8f8487112c70e3476d1edf"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/midi-examples/chill-extended-voicings-c.mid",
+      "bytes": 194,
+      "sha256": "53c52e38600ca99631444d7b9a4080c0339733ea5360e8a1ee3e14168a856507"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/midi-examples/chromatic-enclosure-target-a.mid",
+      "bytes": 133,
+      "sha256": "16a90473906e4298b7a670bcc2e29e999f945baece088511e283879a25dfbde7"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/midi-examples/jazz-funk-bass-motif-d.mid",
+      "bytes": 185,
+      "sha256": "43b348bd5332c2874afe5f881751a67987f00dd6531250126c6690254657e0de"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/midi-examples/jazz-funk-horn-call-response.mid",
+      "bytes": 189,
+      "sha256": "45142d3607b4a7e0fdc3a72c1cb9d0011e37f6dbb1fc2699ee03cad817f8876e"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/midi-examples/jazz-funk-lead-cell-d-dorian.mid",
+      "bytes": 198,
+      "sha256": "6950157d8a089f8d3514b90ac99289f55592598aeb273a4b20a76fbd32122328"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/midi-examples/laid-back-rhodes-pocket.mid",
+      "bytes": 146,
+      "sha256": "5d891c6c2e906f89ea29a919ecab15c6e55a8b22c08dbdb7a8b9c27478e1aa4b"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/midi-examples/quartal-d-dorian-voicings.mid",
+      "bytes": 149,
+      "sha256": "06e58422ee89f69300856e46570786f096159e703c03a5b096e99a0378624449"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/midi-examples/sixteenth-motif-displacement.mid",
+      "bytes": 196,
+      "sha256": "ff4d5d2d534d97e441ac16e2f1ce78d1f443f9c3ce7ddda0c625a55065751b7a"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/profiles/herbie-hancock.md",
+      "bytes": 521,
+      "sha256": "b4f39e19ee5a72eacf36b5b9b288acefb0a4fd37ccba8aee9556e21930389746"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/profiles/michael-league-snarky-puppy.md",
+      "bytes": 682,
+      "sha256": "955a91cfbf4f51a3929ba86860dda4a19fd7b59745dccb9ce0ac9d7b6405954b"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/profiles/robert-glasper.md",
+      "bytes": 535,
+      "sha256": "41edc2e315d21cc11a01eee6644a7d1d5de1298815c771e25ca300d433931439"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/recipes/chillout-downtempo.md",
+      "bytes": 322,
+      "sha256": "c56eb6257332ba9073616ce73f6c7f4b28b281ea7e1554a0b777bca0a51438e0"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/recipes/electronic-jazz-fusion.md",
+      "bytes": 381,
+      "sha256": "431327ed75316278d54c1eeaf109e7d6933b71077504107c4af016ba5b6369db"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/recipes/jazz-funk.md",
+      "bytes": 573,
+      "sha256": "368691b727e6deeccd4f542784f4592481e071b3218986453232d7652b16b535"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/recipes/neo-soul-modern-jazz.md",
+      "bytes": 324,
+      "sha256": "9af24cd31b97f919a95f34ee094d68a6beacc2f7b65f6707900820d2433ac68a"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/ableton-live-workflow.md",
+      "bytes": 1092,
+      "sha256": "c0950670044bac5f856a9b4d11b20395f8d6a0c6373d9ebe198cc494fb2645ef"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/bass-keys-interlock.md",
+      "bytes": 679,
+      "sha256": "43dcf49c1093bb95e92784b30233942a22b4f7fef16bbab6d08a97ef07dcd960"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/chillout-harmony.md",
+      "bytes": 664,
+      "sha256": "bce65c52887e62aceb1c0c98a6fda56917b308da47a190c0e5329c98f6dd7529"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/chillout-melody-space.md",
+      "bytes": 450,
+      "sha256": "455cb6144bc30cb48b26c3becfeda90e934311a95c517493645a175860ee1e65"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/chromatic-approach-enclosures.md",
+      "bytes": 550,
+      "sha256": "15f67571441c92302d4b219bf1d84fa18e6f6fb456bc29570d292817ad5aac14"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/harmony-core.md",
+      "bytes": 719,
+      "sha256": "90b3240ecd4980c3d84f722097e6bef69752cad790b7a5daa5219f71a0bd3e44"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/instrument-phrasing.md",
+      "bytes": 902,
+      "sha256": "6f4d5e67c7e18ffe402ffe8a440347a493bd27255f48b815325504d3244393ed"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/jazz-funk-phrasing.md",
+      "bytes": 2199,
+      "sha256": "ba802237eced5190790e9f241952324a60f9dd0baebef6d4449cb63fed04f762"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/jazz-funk-rhythm-grid.md",
+      "bytes": 663,
+      "sha256": "6b601ce7d15020d4cd2fc5ba5c9144a4eab745de5c2db428eb9ad811e4f0c878"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/laid-back-microtiming.md",
+      "bytes": 806,
+      "sha256": "4184f530b287235d14f45bd1ed4bc1cd973449d99ad1ea9ff015b68e87405b0f"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/modern-voicings.md",
+      "bytes": 957,
+      "sha256": "b71d9a8d38be5afbf1204fbef3387cab00bc530ca6af33b35e8ff01ef3f7144f"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/output-schema.md",
+      "bytes": 472,
+      "sha256": "55db1e0554f43e638042b7164e945e6f2a48422395d801396c29bf8ab40ff9a1"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/pentatonic-blues-superimposition.md",
+      "bytes": 716,
+      "sha256": "04d9402c049536d7b57bf23690af05d5d58918b71d7a7003a14b0b7395399b3a"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/sources.md",
+      "bytes": 1442,
+      "sha256": "dca19b904200b82ba7799f5ae4610258a8ba812347260651668707c7d3c35549"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/tension-resolution.md",
+      "bytes": 597,
+      "sha256": "05dda1173cd7bfddb8507f0104da7a3fe252bcb5a4108c0a424869dce8a56042"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/validation-protocol.md",
+      "bytes": 547,
+      "sha256": "afdf878affbf83560e9a6c0ef2b41005877fa68c4d58081c8a333ecdd0e7728e"
+    },
+    {
+      "path": "modern-jazz-chillout-theory/references/voice-leading.md",
+      "bytes": 723,
+      "sha256": "12a28f78a2ebe6c22c7dac5950bb9c2b51ef19eb78183de26eec45a5f0b95e81"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/README.md",
+      "bytes": 1074,
+      "sha256": "5192a42b02396413dca1d1a5f77836ca089f5d5d4dce82d6c666cb3a5a1e7205"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/SKILL.md",
+      "bytes": 6801,
+      "sha256": "cbf00d911cd57a8b5ef3aaf88ec03153651c226c04bbbbd2632eae12451ecd4f"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/exercises/01-scale-degree-hearing.md",
+      "bytes": 334,
+      "sha256": "f98437ce5239dd3fd149d648560b3cd88d99a13673dd3cf1bbd132421503c715"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/exercises/02-voice-leading.md",
+      "bytes": 308,
+      "sha256": "bc694284ac2176a0fea7aae050b14ae8f8f05bdb05e610a02d3e8a632f04d69f"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/exercises/03-hook-variants.md",
+      "bytes": 342,
+      "sha256": "0027f200c07b968d4740acf2fee9d17cad227c878ecf2540f7529891f8f94def"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/exercises/04-prechorus-lift.md",
+      "bytes": 303,
+      "sha256": "4ef0f9aca68c310bceacf409ef6c11d237492e89968670d2173618a2d34aed5a"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/exercises/05-drop-call-response.md",
+      "bytes": 369,
+      "sha256": "f7e5a0a4d0f7b7832e260e9ab4cf073b661a18edffcad348759912e5778cac08"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/exercises/06-reference-catalog.md",
+      "bytes": 370,
+      "sha256": "4726f314dbd2dda04d297e779a5f3786c6f0dc3465e754bb26e9b7747a4d7912"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/ableton-midi-generation-workflow-v11.md",
+      "bytes": 1496,
+      "sha256": "5a8c0389020dd77617eea014635c1b8e29b69f1342dc1544d6fc34f9b7906474"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/bassline-generation-engine.md",
+      "bytes": 1054,
+      "sha256": "5dbd5efe2078988f8bb2b7fc6b5a4899d0568e480c5d1530130102abdcaa14a1"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/data/bassline-cells.json",
+      "bytes": 1800,
+      "sha256": "cfd06a3d695b247c891d4daaedd817b3ef035af25b9f06998d4cda6aa330645b"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/data/melody-cells.json",
+      "bytes": 3840,
+      "sha256": "e6ffead67fb7afd714155e48658446609ec81409b1df49a8a2679a6c7d9d110e"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/data/midi-clip-index.json",
+      "bytes": 3451,
+      "sha256": "6463abf7e68760b5a7a1284fd2a94cbdbd8b1a8d89e8971a0937ad7072e669cd"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/data/progressions.json",
+      "bytes": 9120,
+      "sha256": "fb2552674d26116dd38ebcfc76afd0b32b4132235c86f519cd0f44d501d6dcb1"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/data/voicings.json",
+      "bytes": 2611,
+      "sha256": "5caee95c7030b83485d2e6e8bfadb1a7c2877383811aeffde40a185d92ac69bc"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/melody-generation-engine.md",
+      "bytes": 1249,
+      "sha256": "a7f3a49a8fd322e597234e5693666c07a52879744fc9394fdb523db378ec7027"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/README.md",
+      "bytes": 697,
+      "sha256": "84a60f00d775cd4b5e4e72b70ebbb0c79e7b5befc183efe171ac9baaa98c80a1"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/bass-house/bass.mid",
+      "bytes": 192,
+      "sha256": "3b84ce6672e5debdd7e725ad8d3e12cb58f4928dff5f9f4d721a43e98bf8bf52"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/bass-house/chords.mid",
+      "bytes": 142,
+      "sha256": "4e6bdfb702dcb45345daabc6f14e0f8b8d18c62a8104815a149f6881fa5bd0e8"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/bass-house/motif.mid",
+      "bytes": 158,
+      "sha256": "eb923c7edb73b8a79062978634c80d07a9302159c22477b10acc59b69209c8f5"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/commercial-pop/bass.mid",
+      "bytes": 96,
+      "sha256": "40f646b7cbc24c9c1d8214f5783c98d40221c3b500b353c23555d2e84b90da4e"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/commercial-pop/chords.mid",
+      "bytes": 142,
+      "sha256": "bad1191a3d0e95a6dcec5e1107b7ae8cc14dbfe3b6691a677545c768e466ac11"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/commercial-pop/motif.mid",
+      "bytes": 204,
+      "sha256": "662d0dec3312c0c65d0026c7938ac69d821df73389e22f0c005c3b2969f6af07"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/dance-pop/bass.mid",
+      "bytes": 149,
+      "sha256": "2a19f512617c850e8ec8855d97bef6bcc8aa458b65752f052b1789bb85413ecf"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/dance-pop/chords.mid",
+      "bytes": 154,
+      "sha256": "6c1e0c84c3589bf7e2e4f98fa54456c04f2de80c58469b4ce975e97ac44bae29"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/dance-pop/motif.mid",
+      "bytes": 204,
+      "sha256": "4bc938794edeed003b9a3605af8cefddb5f6e6077e69064bbaf3bbfcf3cddb8c"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/electro/bass.mid",
+      "bytes": 205,
+      "sha256": "05592f80014ecd1166b6b78f6167a49cafce659e650a70f073403f29224ed15c"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/electro/chords.mid",
+      "bytes": 151,
+      "sha256": "0241350e14e1ab7666f21a99fb47cd80e732ce9ea4523361054952d413a4926a"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/electro/motif.mid",
+      "bytes": 207,
+      "sha256": "bf8e3218015209182d6d7e26a4dabeef35ea18585ae0f5e5dd7d3db01df4b5e0"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/future-house/bass.mid",
+      "bytes": 214,
+      "sha256": "0114a8ac1d3967a59b7bea0fb924b9c402617bf85992bbc8f64179df216e8a6f"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/future-house/chords.mid",
+      "bytes": 140,
+      "sha256": "675cd87420b9e12a95c6fc888ef54d88dc74adc4172e344982a2dd7b1096fc23"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/future-house/motif.mid",
+      "bytes": 206,
+      "sha256": "22915738a67f88acd682a6b842877cf98567866a37b977b1b6de90d829d8bc68"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/tech-house-minimal/bass.mid",
+      "bytes": 254,
+      "sha256": "86118c360a555f2027c3d1c629062cc69611a9fbcd7a0096044125cc0e65a2ee"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/tech-house-minimal/chords.mid",
+      "bytes": 241,
+      "sha256": "a07dd35982f9ba6365a220f94355982ad45e1b0ecfd787a926b85cad6dd515bf"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-clips/tech-house-minimal/motif.mid",
+      "bytes": 172,
+      "sha256": "4210195b290da78e27a9a83b97bda93322fc039bdaa9dcad1b43669793b7969c"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/midi-number-convention.md",
+      "bytes": 692,
+      "sha256": "404467d777eb63c6f1922be892287cee326dd6df035b9d0fbd0da09cd7701205"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/originality-guardrails-v11.md",
+      "bytes": 824,
+      "sha256": "16e8efb18542c34ac9fc6c502c8770da6ccbf5b4937a243ad138736309ea4071"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/sources-v11.md",
+      "bytes": 1997,
+      "sha256": "8e1e04151d40cff3e44d652a793e6a8c594d6e195b7fe3e9e34aae86f37df9b3"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/styles/bass-house.md",
+      "bytes": 1467,
+      "sha256": "bae6041eaabf3c8f5b724602910318cfb285e605e862a97eb40f4af8a5731645"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/styles/commercial-pop.md",
+      "bytes": 1470,
+      "sha256": "3d5a78ef005f6094904547001fcc84abe6ef9f27de5b616e5124ee6643d4942d"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/styles/dance-pop.md",
+      "bytes": 1430,
+      "sha256": "f8afaca810819481940306db6d30fac7e1eb6d0c6d4b61d6456e951c6daae5f9"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/styles/electro.md",
+      "bytes": 1435,
+      "sha256": "593921ac373f2229eac528239d6a1d6086960f693dffbbcf7164742ab31ee892"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/styles/future-house.md",
+      "bytes": 1414,
+      "sha256": "f76d17e8438d73483cc7e14ff7f42fa1d88521cfb1092782f55fbcaf99617d27"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/styles/tech-house-minimal.md",
+      "bytes": 1338,
+      "sha256": "cae526c78f022d8721535b84173c69e30ebcb629bea4f4c571bd2f18bc8a9f9d"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/transposition-engine.md",
+      "bytes": 1274,
+      "sha256": "b77e011df19db55ba481788dd3a88e008e69e8094b1550d07301110d2a082a9c"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/variation-matrix.md",
+      "bytes": 917,
+      "sha256": "3627324dd88e644cd84c33e0278c60516b7f0bced9b567a4d630b3a21e045507"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/library/voicing-engine.md",
+      "bytes": 1446,
+      "sha256": "9df33c6380b5cdac22fe7847b235cd84a04d67b7aa4fe75a9ac5b6a074b2ac85"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/profiles/amy-allen.md",
+      "bytes": 690,
+      "sha256": "57639795c873c65485d1f204f35496ce954d2befcb6a0631019c826f16644884"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/profiles/calvin-harris.md",
+      "bytes": 518,
+      "sha256": "1e69f9e5b0be233051912add63e205f2cb8e9f72eebe814a204b365ea9489a5d"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/profiles/cirkut.md",
+      "bytes": 668,
+      "sha256": "801f486a22598780e57f0efa98e5b974acaf704f455d1ea6b9e1a4550c86019b"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/profiles/dan-nigro.md",
+      "bytes": 655,
+      "sha256": "dbb4f8ac806f43fa9ed7eaa6e756988af4fa5b1e0ccd43b8970d02ab7cbd737b"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/profiles/finneas-billie-eilish.md",
+      "bytes": 611,
+      "sha256": "57608228a0947a3b39efd2cec846295f67cc9c57df52510f21076edb6f058ac0"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/profiles/fred-again.md",
+      "bytes": 554,
+      "sha256": "488b6b4cfe8cc1074f21faa5ff56429c80558332353908e89b455e30dff9de41"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/profiles/jack-antonoff.md",
+      "bytes": 580,
+      "sha256": "b92eb40002c71e08be38124aef7d409d0a6e80ea193c84bcb3e64f84dd02a0a3"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/profiles/max-martin.md",
+      "bytes": 842,
+      "sha256": "166995c853d4baf621b915956f2522628cb8369325711419b70deaca6bec005e"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/profiles/ryan-tedder.md",
+      "bytes": 547,
+      "sha256": "a81000141abfbb67583ce44a9c28b1c6b6d471466b661a544295fde5d3f9f21a"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/profiles/skrillex.md",
+      "bytes": 529,
+      "sha256": "ad859845730e86ad7d0a246bd1007a566d3845e8be070a3f33423d00a707547b"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/recipes/bass-house.md",
+      "bytes": 645,
+      "sha256": "ab955eeeed14dfa0fa8e2f0be88a978189ba8ec91b4f16fa09c55630ec5f21ce"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/recipes/commercial-pop.md",
+      "bytes": 595,
+      "sha256": "131493b2f33a8a7bb420e10ff315bfc619b932e81894b65e1f6039881c0fde6c"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/recipes/dance-pop-electronic.md",
+      "bytes": 479,
+      "sha256": "5a7ba509b0eced44b1dfaccc1876b0bdef82670e8a02cafc35c5432b501ff524"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/recipes/emotional-electronic.md",
+      "bytes": 546,
+      "sha256": "3a79d0348b699b12097086fe78001c8294cf9de1ae762b281fa1b939a3d1a9c1"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/recipes/future-house.md",
+      "bytes": 556,
+      "sha256": "2ae1e28992acbcab5bd5f8e90aac074f10c063bb0809df1b0e6f1cc7da43da0b"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/recipes/tech-house-minimal.md",
+      "bytes": 506,
+      "sha256": "cdebc3a9a1b1d97c09e4dcf216fedbe63e0095a9c7d3a93e775a9cfca228fbbb"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/ableton-live12-composition-workflow.md",
+      "bytes": 1382,
+      "sha256": "ae64e1cf65f60fdc39ebefabbcff609eafd1dac46f6c140446cc220e560059d4"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/bassline-harmony-counterpoint.md",
+      "bytes": 1133,
+      "sha256": "c2c490c97ce28726ac5e76f200a86d0dc4d95e81c2b52f36e4816cf58a64695b"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/chord-vocabulary.md",
+      "bytes": 1166,
+      "sha256": "3e4f54b187f9f5e0b8d4eb5a77eca3e123ce8047b413b3f8ad5507ac724e6327"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/composer-corpus.md",
+      "bytes": 1489,
+      "sha256": "25422f8ee50113039f80b2338e4b005afe95a5de62f9f92c0fd8c855761d65bf"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/creator-principle-matrix.md",
+      "bytes": 1787,
+      "sha256": "98b870a9211c1495fa10aef18811f564795c178126099b87fda5c3905d4cd1a8"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/electronic-drop-composition.md",
+      "bytes": 1104,
+      "sha256": "e8c53ce890ec81be53282b87ad269aae9403df139b4601ae9e14564c8c3d4b67"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/harmonic-function-and-loops.md",
+      "bytes": 1438,
+      "sha256": "ded645f545bcbc3a452adee62cbb49b7ea74cb4075835b78d2838a250e531aae"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/melody-hook-design.md",
+      "bytes": 1626,
+      "sha256": "dbc1a9f43df5aedb80203e70c2e1a95bee7658878bee3a2d801ff72eae1fee77"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/output-schema.md",
+      "bytes": 738,
+      "sha256": "8a8df8a106657fa51cb9cd086a8227da54138edcb06a7f9e320e3dbf4bfd7e38"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/pop-prosody-topline.md",
+      "bytes": 971,
+      "sha256": "23405c7b2355951a7764952201c7844d1681240b16cc1794870bd1378a1476a0"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/reference-analysis-without-copying.md",
+      "bytes": 1165,
+      "sha256": "f0308b01992513b255e024ce45ced1dbd1da2bb9da949eea6888d01a117a3cf3"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/rhythm-groove-harmonic-rhythm.md",
+      "bytes": 1184,
+      "sha256": "ee692a84948e7f53814e9099e4e4e5196629b41553f92eb5222d082a548e5e97"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/scales-modes-degree-system.md",
+      "bytes": 1262,
+      "sha256": "f1c5f7658ddbacc3932b9f5bb1f362172d5f75bf182ffe7147b143ee2faa6bb1"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/song-form-energy.md",
+      "bytes": 1094,
+      "sha256": "f231d0d3ded17b6061bb74bf083f9ac3ff35067ea44fa174b66894f11a31045d"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/source-authority.md",
+      "bytes": 657,
+      "sha256": "4387dd7b9dd0bafd2ebf8194b7f900b40c33fea025087457ea829c00dbeddb3d"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/sources.md",
+      "bytes": 3904,
+      "sha256": "20ae917ed2a66275bfab41723199536a6e65c3ea952b093950de3ec7424533d4"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/tension-release-toolkit.md",
+      "bytes": 800,
+      "sha256": "bcdc0dd986f75a3a674081e53c003267da5a3c878a420e7d609d58bf6bc04aff"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/theory-core.md",
+      "bytes": 1923,
+      "sha256": "18fd37b523cda7e0e40f630d457de38dea605be9a6b4e26ade8372bf39216d97"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/theory-decision-tree.md",
+      "bytes": 1247,
+      "sha256": "2295d19247174eb7b1c8e36dc87019a7ac759dc2fc794d80235a4000a8d7f5bf"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/validation-protocol.md",
+      "bytes": 917,
+      "sha256": "75682835205e3e08a19e770f9bf34bc3513a3a59c82108bf5f4e84a120fbba78"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/references/voice-leading-inversions.md",
+      "bytes": 1255,
+      "sha256": "881ac739b4e60d0dd43b0cb11c8dd433cdc4929a90b4cc10905561c959510d33"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/tools/transpose_progression.py",
+      "bytes": 760,
+      "sha256": "153adc499f89830041a869905318d68811a8aa13429a82f7b5cc04cb8f8339ca"
+    },
+    {
+      "path": "modern-pop-electronic-music-theory/tools/validate_library.py",
+      "bytes": 426,
+      "sha256": "ed121d566d0b32cb65fc57ee88d8ab589f236657e91296f7f2f29702708774cb"
+    },
+    {
+      "path": "producer-intelligence/README.md",
+      "bytes": 1744,
+      "sha256": "90dbcb83b43fa6eb629e761e105c21d30dc7553d0ca67442550ec267536bbe95"
+    },
+    {
+      "path": "producer-intelligence/SOURCES-v7.md",
+      "bytes": 2546,
+      "sha256": "ccddca8b3bd557183981673a7596c7becbd7002037dfef90facd1c1af0f70619"
+    },
+    {
+      "path": "producer-intelligence/SOURCES.md",
+      "bytes": 2678,
+      "sha256": "cccef92f76668b42396f68921022c86c806468ea4bcd712f18e8f54ca92a3249"
+    },
+    {
+      "path": "producer-intelligence/analysis-template.md",
+      "bytes": 643,
+      "sha256": "016d65dccaa2a23873d510d32d02a51293c369c85c62f8a4fb72a2979ac54a61"
+    },
+    {
+      "path": "producer-intelligence/cross-producer-patterns.md",
+      "bytes": 3075,
+      "sha256": "0d31312a60fad7bc777fae5e55fc77608aea253c787a396606f288b7806eaaa2"
+    },
+    {
+      "path": "producer-intelligence/cross-track-synthesis-v7.md",
+      "bytes": 2054,
+      "sha256": "2becc9787f9c2cf780349e23d847846b13eaa58ac6abca97d5cf74664186f590"
+    },
+    {
+      "path": "producer-intelligence/deep-track-analysis-method.md",
+      "bytes": 1778,
+      "sha256": "2f401b2f417c8ef022c54948ad7574f7693931c21d87276fe31147a01eae501b"
+    },
+    {
+      "path": "producer-intelligence/deep-track-comparison-matrix.md",
+      "bytes": 1783,
+      "sha256": "2fe24c838b430bc7211ab1a1b0524b1190d00e3d288f86087270c0fbf704a931"
+    },
+    {
+      "path": "producer-intelligence/deep-track-index.md",
+      "bytes": 4187,
+      "sha256": "8c39c77d55980c013672a65a6d90e7490721b5f96a48b896be88191853410a02"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/01-chicken-soup-skrillex-habstrakt.md",
+      "bytes": 5252,
+      "sha256": "b4630e5e7047d7cb8f1af32aab9ea9c475fa142419b5f086918cd7ca39a8acfc"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/02-quantum-brooks-martin-garrix.md",
+      "bytes": 4999,
+      "sha256": "b8458ff87fbf031c26f6eb5bc0a3544f82be6f62b5fba166e402261b3a9bb24a"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/03-gecko-overdrive-oliver-heldens-becky-hill.md",
+      "bytes": 4849,
+      "sha256": "f18dde11d323e4b5fdba21a0b55dd43bb20748faebecb09a06fb73bc57e77a50"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/04-losing-it-fisher.md",
+      "bytes": 4727,
+      "sha256": "7cbd4f20bb9b689f35b56152dca1b28e07436481f9e7a6951fcb9803b0ecc4e0"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/05-adieu-tchami.md",
+      "bytes": 4533,
+      "sha256": "32000120b3a81a15b679cbe0ebbd01bbc264c272651ca3f1726ea4f6078c31b9"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/06-hot-drum-joyryde.md",
+      "bytes": 4525,
+      "sha256": "6708a46b33d723a686a99dd807477a9dd0763070f138de6ab3f540438c72bb1a"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/07-notorious-malaa.md",
+      "bytes": 4421,
+      "sha256": "f9b48fdf3832cc5ee3b5105d65c3bb632ed1825b7df2396a970f8c330b6a133a"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/08-survive-don-diablo.md",
+      "bytes": 4682,
+      "sha256": "7f9ad85b2bfabd3c7a2a2a1c7b1f4ee2c4a1f0ac24be562cfcde766aad213830"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/09-san-frandisco-dom-dolla.md",
+      "bytes": 4551,
+      "sha256": "56bf36988547add668bf64a26f675f44c7801459fc2fc041799ea633be95a52d"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/10-where-you-are-john-summit-hayla.md",
+      "bytes": 4614,
+      "sha256": "d7e26d9d2b540939964fdea00d28a1932fe46939e5ec719ae7e1447c38916553"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/11-the-business-tiesto.md",
+      "bytes": 4479,
+      "sha256": "85feb1c44c25d09eb6deb029918217226e2a428a937edc33b928572167fd5f3f"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/12-on-my-mind-diplo-sidepiece.md",
+      "bytes": 4425,
+      "sha256": "95984be5efba0e6329877c001e90f6ad98f9ff7ffc5b4a721aae4571bdc9390a"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/13-the-one-habstrakt.md",
+      "bytes": 4470,
+      "sha256": "6b98acaeb84164c7442b6d97416dec0749bb2fa608a94a801b9905789b23258e"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/14-la-danza-john-summit.md",
+      "bytes": 4393,
+      "sha256": "dfce4951e8e184ab0f527cbc6a44069fc6279d341a2e13318eb636fb16be7601"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/15-animals-martin-garrix.md",
+      "bytes": 4587,
+      "sha256": "9caed526b14f38cde1eda7fc477915485efbc6112ba22d79ad0a4e00ea34e44d"
+    },
+    {
+      "path": "producer-intelligence/deep-tracks/README.md",
+      "bytes": 1103,
+      "sha256": "d72584c17d7c2b26f3363bfc1d1d6a0ebb7104f6ea804ad766c1aa83338af281"
+    },
+    {
+      "path": "producer-intelligence/inspiration-without-copying.md",
+      "bytes": 1385,
+      "sha256": "dfed5557460129b1e1916aaa4c258e039d45e7fe8b493188ae26acc597288b15"
+    },
+    {
+      "path": "producer-intelligence/producer-hybrid-bundles.md",
+      "bytes": 1561,
+      "sha256": "4b3310806d99b724d43c530c9be79be843506815ba54ccd5f940f4aabe324140"
+    },
+    {
+      "path": "producer-intelligence/producer-vector-map.md",
+      "bytes": 1326,
+      "sha256": "0c70b0efb4a752712b9839d79e3b71f9ab238be917b6aa0d8ca8a24036a44ed9"
+    },
+    {
+      "path": "producer-intelligence/profiles/calvin-harris.md",
+      "bytes": 1476,
+      "sha256": "ece300b11a76a0a764b1f574615dc950b2a23e73059b3341670ecbed3448d59e"
+    },
+    {
+      "path": "producer-intelligence/profiles/david-guetta.md",
+      "bytes": 1846,
+      "sha256": "47ac9ec20d173d7f906eb285458a30ce3ab397ed57c3ba6b5c4256d1e24ee519"
+    },
+    {
+      "path": "producer-intelligence/profiles/dom-dolla.md",
+      "bytes": 1702,
+      "sha256": "c3e526392cf86b0f89ea8c8b3871c4ee0a9ad8d597515dfb1c880ec7a5c6fc83"
+    },
+    {
+      "path": "producer-intelligence/profiles/don-diablo.md",
+      "bytes": 1579,
+      "sha256": "1785b368548fccb0fa7d51746c017a80bdede266b7ec4533a4df00573227e571"
+    },
+    {
+      "path": "producer-intelligence/profiles/fisher.md",
+      "bytes": 1546,
+      "sha256": "56e69849a81f6c5553d5a3eda651b7e4bfd7d990ed8adcffc64a39c975fe720b"
+    },
+    {
+      "path": "producer-intelligence/profiles/john-summit.md",
+      "bytes": 1792,
+      "sha256": "e53679197996dee423909b8d87166a192fed666d5755c1840e3a716959eea27e"
+    },
+    {
+      "path": "producer-intelligence/profiles/martin-garrix.md",
+      "bytes": 1875,
+      "sha256": "eb8ab9d277496fc3120fd04249497ff676f922283717e9864dd4989139ccc184"
+    },
+    {
+      "path": "producer-intelligence/profiles/oliver-heldens.md",
+      "bytes": 1551,
+      "sha256": "548f03c593f0b55fb56a8b482fc1b201f75b9b3a9ebbfab91c2ceaefd494d5dd"
+    },
+    {
+      "path": "producer-intelligence/profiles/skrillex.md",
+      "bytes": 1825,
+      "sha256": "294b23acca6281a4e7ea58698e504fc69e7c9e3514ec75f8fa33ee038c5dc8f9"
+    },
+    {
+      "path": "producer-intelligence/profiles/tiesto.md",
+      "bytes": 1415,
+      "sha256": "c581aab827fd702165e40e18d0b0e82fc7cc16228221651337fdbec8e632a621"
+    },
+    {
+      "path": "producer-intelligence/project-reference-selector-v7.md",
+      "bytes": 1368,
+      "sha256": "e34d2e2093c8f583e963df9b223aebdab548e27aa821b1f4af55f429bf61b3bf"
+    },
+    {
+      "path": "producer-intelligence/reference-track-library.md",
+      "bytes": 2052,
+      "sha256": "40f2c4d3903de89faca2191d7b9ba16417f4036dcc6bc33b4b42459401733131"
+    },
+    {
+      "path": "producer-intelligence/translation-to-serum-ableton.md",
+      "bytes": 1746,
+      "sha256": "c2b2694b1cb2e9131fd0e6e1e3a197e30f8cff949d20efb90305854d12eaf659"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/SKILL.md",
+      "bytes": 8828,
+      "sha256": "18f95c74b41934818fe3f2bffb9441078e56aa74833ad28807d87b0d845e078b"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/recipes/acid-resonant-bass.md",
+      "bytes": 681,
+      "sha256": "f399c2983611b34d9cdbe4ed340bd82766a107813f55bb52cc2f495b8f96c4bd"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/recipes/bass-house-growl-reese.md",
+      "bytes": 898,
+      "sha256": "97b9c1d1793fee84e19f903da9b4bf079b4f03938c41cd2265d751cfd98e02ef"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/recipes/call-response-bass.md",
+      "bytes": 814,
+      "sha256": "ddba72092f072f5226c47729914ca2be4040d750b9459117f3778155d3fbc787"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/recipes/clean-sine-sub.md",
+      "bytes": 734,
+      "sha256": "1e33248152b2ff0c9e1f25a621682712cd5a3c3129dbbd194ed2385976a766c4"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/recipes/donk-bounce-bass.md",
+      "bytes": 715,
+      "sha256": "052d84139b52fac4421bc2fa6907233b68502a17443b51c56dd3eb6452625396"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/recipes/fm-metallic-bass.md",
+      "bytes": 743,
+      "sha256": "130f9cc958bede59b7dd7415e41caeffa156c2cc516fe563a87ce2bc9d115f9f"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/recipes/future-house-offbeat-bass.md",
+      "bytes": 645,
+      "sha256": "a96d541fac112da6cc8da448628559b278c2c066fa5aee49e7dfc2e08f4adc3d"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/recipes/minimal-house-rubber-bass.md",
+      "bytes": 792,
+      "sha256": "e52476ddbdc29e3c3fd48584420c06e75d095ae4c7feea3bb97210ee75054673"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/recipes/tech-house-rolling-bass.md",
+      "bytes": 811,
+      "sha256": "e994136babfd23d23baeb3a1bdfef5772e13a256185ae551cbc6826dac3e9a95"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/recipes/techno-rumble-bass.md",
+      "bytes": 665,
+      "sha256": "1fdf7559f77e11bc62df0a6c9f14825231a044a29c3ec1f8f16f3f3dd594d348"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/ableton-bass-design.md",
+      "bytes": 1755,
+      "sha256": "dbb65bfc62431b1e449c4c31d005ee4db1e1ae28c60f1efcbe83c71ec32b2153"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/bass-architecture.md",
+      "bytes": 1907,
+      "sha256": "8d1b82f5f0fab0d5e3ade02c0ba656d657ff747ddd16e01a8d6c31c6341361aa"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/fabfilter-processing.md",
+      "bytes": 1146,
+      "sha256": "d2d9e729a992821a6e0c71ca148f33701178e5f43b79657ac97d94ae3dce2bd6"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/genre-bass-specifications.md",
+      "bytes": 1675,
+      "sha256": "e1a1b134abd0a20f126f9e019a19b45e037fff5463eed44f23fe84e9878859cc"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/izotope-processing.md",
+      "bytes": 1071,
+      "sha256": "726a7fc569542736babca1db62801e128e5b9fe70815f16dca1c0f35c6212e89"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/kick-bass-ownership.md",
+      "bytes": 1401,
+      "sha256": "3d7e5debb2f66d61b27ec49a59ca5a55dae7c3921ca016d49f2d265131c86cf8"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/macro-bridge-schema.md",
+      "bytes": 824,
+      "sha256": "df9f3cea8af0b6173d96a9e5f7a6190fec431d265781b456036d6c94e64d2e6a"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/modulation-movement.md",
+      "bytes": 1088,
+      "sha256": "5ce1061f7d0dacca7fc61a317ca5e9e53b621951174cc16fd2e3fdba49dae879"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/mono-phase-stereo.md",
+      "bytes": 1001,
+      "sha256": "6f30f19fa94d2fc6a811eb158fb9630c59469813935efb60f48a02a24a866dcc"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/native-instruments-processing.md",
+      "bytes": 1053,
+      "sha256": "c4b15819800c728da64dd61117c47cb2ded8351dd681733de36c6c9e80490d8b"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/output-schema.md",
+      "bytes": 728,
+      "sha256": "d96546194bfa533fcc6a07475d87825ae1cb2ca75615981a5e3ddaf38c16cc38"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/plugin-role-matrix.md",
+      "bytes": 1383,
+      "sha256": "e7efa0a643dd28ae3f0646059617a2425dfc0fdc0cd682ec511978a58523c958"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/resampling-layering.md",
+      "bytes": 669,
+      "sha256": "9cb6296da54532e34d26340eeb8693720b8089e3f002025dae735a35e71d377e"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/serum2-bass-design.md",
+      "bytes": 2196,
+      "sha256": "b3a2075e6fb5bc2d5bd6a5a4864a12377d7c483dbfed6a753ba65b820325d71d"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/source-authority.md",
+      "bytes": 4222,
+      "sha256": "e7f6715322b613b1460295b77fe0b26191611c66cd76e01d13122dd7b2c7f71b"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/valhalla-processing.md",
+      "bytes": 905,
+      "sha256": "ba3516003ed53e5dac74846dc32469a8534140669d350dc11f337cd8e7e47393"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/validation-protocol.md",
+      "bytes": 973,
+      "sha256": "c0da728d34f4f4687412aaf6d4106dbf88f4ffc9652b0e09b466fdb2a194fe5c"
+    },
+    {
+      "path": "studio-grade-bass-sound-design/references/waves-processing.md",
+      "bytes": 1230,
+      "sha256": "3343248e9c949c88ebcbcdcc954b6a8d19fe1ce2f129dcd778d73a01d923aa16"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/SKILL.md",
+      "bytes": 9039,
+      "sha256": "230d3f0a6c70b2e470c330a9cdc1824896b3ff69f5b8aba86c65ac19e1e97625"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/bass-house-kit.md",
+      "bytes": 205,
+      "sha256": "277e6f5d38da9af411d27999dd01d7692141a31b1a1dc17bc62cc4298840a3fd"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/clap-snare.md",
+      "bytes": 509,
+      "sha256": "cc0f1a4fb8837a108af95ff0a7f6b67851009f716b026b5936897ced85bb48df"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/electro-kit.md",
+      "bytes": 224,
+      "sha256": "e2ec8e858e00f06dee0e04a10cb4011aedd891f7c43634331c32cd42f29237c9"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/fills-rolls-transitions.md",
+      "bytes": 370,
+      "sha256": "65425de2a104391adc41fb6d24a542f2d95401a3b9589d3cd775faa8746ef0f9"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/future-house-kit.md",
+      "bytes": 186,
+      "sha256": "35b551d636ea667ef688c6b4e6eb0ccab4f225d5f632530b657d2008c0541581"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/glitch-micro-percussion.md",
+      "bytes": 358,
+      "sha256": "3a9bd3875254c2cb658fae823d87c3c37fc3bbf6a610f6eb54b17512051d68e7"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/hats-shakers-rides.md",
+      "bytes": 486,
+      "sha256": "b1133023ea0b715104bdde3c187d17ea12593777c3d47efe687ce2df862afb35"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/hybrid-sample-synth.md",
+      "bytes": 347,
+      "sha256": "26670ed8bdc30f7f00aef28470eef5149b1dfbcd20ad6df3421d749a14e6636e"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/metallic-fm-percussion.md",
+      "bytes": 364,
+      "sha256": "5169afced1de1716ab32ea738255f5261238cbcec79d6656449bf08902c66d05"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/minimal-house-kit.md",
+      "bytes": 229,
+      "sha256": "9ac3da8eedf4248c8d1c189d57096c65a2182daf65d02c676225984a67850c19"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/noise-percussion.md",
+      "bytes": 344,
+      "sha256": "5b9fb1025906e9fc24f32aadd3921cb97cee7af39fd9f74368aa49ab01a4297e"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/tech-house-kit.md",
+      "bytes": 212,
+      "sha256": "ee0f3f17a6df74ef2acc51d11883166da93636c37caf26d982005c64d2a61d09"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/techno-kit.md",
+      "bytes": 224,
+      "sha256": "5a5c7560927c6c340ca35dbda099e371a372b85e63b438354af7c0d613dac1db"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/toms-rims-claves.md",
+      "bytes": 435,
+      "sha256": "2478ffb89d6414cb2ca4a44a5e9632b5ce00d201ca7da6149db042398bb0d4b4"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/tuned-percussion.md",
+      "bytes": 390,
+      "sha256": "6d7c5ea721ce3b18ec04948819768c47ad89e5511d1b3720fc9e3e2b45cdea35"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/recipes/zaps-lasers-bleeps.md",
+      "bytes": 390,
+      "sha256": "7befa3269c82f59a82b887c40be411b5c3571a629e7c619b112daec5a6a5c222"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/ableton-drum-synthesis.md",
+      "bytes": 1799,
+      "sha256": "062c0d24019e101ce755165307f44a022f7d04450297f7a231e453b338998b88"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/drum-bus-processing.md",
+      "bytes": 745,
+      "sha256": "43ddb32d2179137a6b50e00460dc4699742f6064e9a8158aafc7862b9ed828c9"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/electronic-percussion-taxonomy.md",
+      "bytes": 1084,
+      "sha256": "dc1aface906d5b0f16bd136f6918ea4773455b40ca60d906aec2bfa39646e1f0"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/fabfilter-processing.md",
+      "bytes": 894,
+      "sha256": "8b238451aad2d98fec70a4aa7d0600af506fad56c91fc62fd681922e932dde7a"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/groove-microtiming.md",
+      "bytes": 770,
+      "sha256": "866b9d33471b759b2b58bc3f4ed327c19de7066be630070a3ee74fed2981ae80"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/izotope-processing.md",
+      "bytes": 629,
+      "sha256": "5b090ef3bc412da8f9ae410b046469ae2e21adcdaf33bc622eed82a43a4e9e76"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/layering-phase-stereo.md",
+      "bytes": 690,
+      "sha256": "0d227d78a8f9dd3f175e956d8b86718ee2fe69e387f1f48952da5c59ef4e461f"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/macro-bridge-schema.md",
+      "bytes": 608,
+      "sha256": "c12f300e3ee84f618e91ded8b7da8aa3a00560b113101f3acf4bf34b2ea24b67"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/native-instruments.md",
+      "bytes": 812,
+      "sha256": "157a48783522e0de2fa56494d0dd59a42705c114cdae334bc115a101618f91b6"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/output-schema.md",
+      "bytes": 438,
+      "sha256": "031fdc0946b862889bf7cd8a7c0f467f31f8c971dcde951be6844a0f22485deb"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/plugin-role-matrix.md",
+      "bytes": 1118,
+      "sha256": "56bf75f02db300248a5822f079eba448d6f62f0491b827f012966e73ba52899d"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/serum2-electronic-percussion.md",
+      "bytes": 1447,
+      "sha256": "dab6553ffb54e8cc5dd8b3d75546e9efa3b6b23635813dbdf193ef92e9bba9fa"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/source-authority.md",
+      "bytes": 2101,
+      "sha256": "2aa5f513cea9f8cf44efba6a1c63e193bcde65b99bb8bcd7b6113023b97d74a9"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/style-specifications.md",
+      "bytes": 1009,
+      "sha256": "e3a644456611839fd4c75ecb39c0dd9fd64363de173c280f6405efe9426b334a"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/valhalla-spatial.md",
+      "bytes": 838,
+      "sha256": "0e551a1290a546f00e789ef35205fa3b987c5a807943e2cd7443c3a33afc7213"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/validation-protocol.md",
+      "bytes": 670,
+      "sha256": "c4999ed8e0f2a896c8ab51758dac982bf295dc644104141a85285929888853e4"
+    },
+    {
+      "path": "studio-grade-drums-electronic-percussion/references/waves-processing.md",
+      "bytes": 692,
+      "sha256": "10ef5decc23808a0134cc7da699d82d436eaa2b11a17f262bb7643fa4b7dd111"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/SKILL.md",
+      "bytes": 9134,
+      "sha256": "a7e7046ee8a6f267b5e5cf89e49f4ac8905042d8847ea2e871312892eca9cfd1"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/recipes/bass-house-kick.md",
+      "bytes": 619,
+      "sha256": "215ff4bb7fd1d4370c642ddf699993b6927b71d75337db11971f17e77cbfaab6"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/recipes/future-house-kick.md",
+      "bytes": 458,
+      "sha256": "3345d9b024d673ebc74be541008784c1963259690a02c5abc757cd6ef014b7bf"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/recipes/minimal-house-808.md",
+      "bytes": 607,
+      "sha256": "ead9cf32e8f5a7191234cb7987a821928cdc516aede0643d98ec10deca3a19a8"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/recipes/tech-house-kick.md",
+      "bytes": 474,
+      "sha256": "a2b0f13fb14fcdb4cf7e5d57ed8c755f1a0a3aa559b6c0d251025d2d7397d4e2"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/recipes/techno-kick-rumble.md",
+      "bytes": 690,
+      "sha256": "112de194fa4c0f4e6b5280cb8f9f53fa2241bd7244d7b6240e2e52acdaa02846"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/ableton-kick-design.md",
+      "bytes": 1620,
+      "sha256": "801fbb057937297fa1737eaae08c71a52a76db85c0978539a82c9a7916c262d6"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/fabfilter-processing.md",
+      "bytes": 1375,
+      "sha256": "dc021ac9dea688fcd89aeacebaef098b4b8bdbb6ff864b368499e23a3e667e62"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/genre-specifications.md",
+      "bytes": 1615,
+      "sha256": "4aa2a57ca57fed6a5ff35cc6508c72c59f9f13d2553162367dd5979a96fd74c3"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/izotope-processing.md",
+      "bytes": 1187,
+      "sha256": "95078a08441c0700584631a9889f145292e5301c11677d6a99270a6511eb3cc6"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/kick-architecture.md",
+      "bytes": 1541,
+      "sha256": "37008f13b321fff803d6ec667df113440c8bfa83a8a621a9be4dda28726b72e7"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/low-end-integration.md",
+      "bytes": 1500,
+      "sha256": "c71332884f0babdee3f8b74cc0720f31e6dab06242b4a3f6ae1782a1bc3b0a02"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/native-instruments-processing.md",
+      "bytes": 973,
+      "sha256": "8e659b408fd1405556faab4e013110bbe318843864e5861442327e806a0fa6be"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/output-schema.md",
+      "bytes": 642,
+      "sha256": "035b642baf677ee748b4c25afd8c8e539a82933bc34f835f47599b33846fd717"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/plugin-role-matrix.md",
+      "bytes": 1293,
+      "sha256": "4f3c2038963c6c8e567091b207c4184605c1ce99711c4b1a9254789d9892fceb"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/serum2-kick-design.md",
+      "bytes": 1614,
+      "sha256": "ad13e77405df1f3593ca891a09971926bc376fdcbdd39df71f596ac6a7e7d58a"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/source-authority.md",
+      "bytes": 2732,
+      "sha256": "c9b03dfaabc705a76cb17c029d88aaa8655e2d19deaec8db224d28a85af64d42"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/valhalla-processing.md",
+      "bytes": 1027,
+      "sha256": "3ec00bd175f258949dbcfe444325a7277d3955ec7a54785d24a9d46e3b8b22eb"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/validation-protocol.md",
+      "bytes": 1055,
+      "sha256": "6b5308c7300ccb7390584946e9f1f831a5e8e86869ae6a7ce710345157ee3228"
+    },
+    {
+      "path": "studio-grade-kick-low-end-sound-design/references/waves-processing.md",
+      "bytes": 1239,
+      "sha256": "5b31d81f0e9b893a65c31365cf76ff80e2b3ac462954a19fd5a156a3b8df84a8"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/SKILL.md",
+      "bytes": 6425,
+      "sha256": "8cc3b953b985ecd99fdc242479c339c3601b5bc2f89a15efa41d0f397ea7c5bc"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/ableton-warp-and-stretch.md",
+      "bytes": 1846,
+      "sha256": "9ec62d81d0c560e0bcc487f546c840e49503a059a82de0064ae5c486c7001c37"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/break-architecture.md",
+      "bytes": 1026,
+      "sha256": "f9bfdc50959016739a406bdd41618518810244748cab00c378497a2af979bbf6"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/bridge-macro-map.md",
+      "bytes": 846,
+      "sha256": "510d3c3554736f4919a0345816e3e4b9ff211e26bf926b105a5502ecef801c35"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/creative-fx-matrix.md",
+      "bytes": 1347,
+      "sha256": "29e111f1b08a00f9dcce940c3b9d763427a019df677a33e2171d9298d2eb3c64"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/resampling-workflow.md",
+      "bytes": 753,
+      "sha256": "78b985b45e73de65456a7acb0d1bf0dad0a2702bd18150890e8d5ae6e27f5066"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/sample-selection-and-prep.md",
+      "bytes": 1057,
+      "sha256": "6ba442147514cb9d347d7fb3d8d2ca56eeff6f3559b981119504c67b6115ca3a"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/serum2-sample-granular-spectral.md",
+      "bytes": 1483,
+      "sha256": "cac2d094ba772b32568a91dbcfc7128d80718ad81728b663fdd2b884e0cd3020"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/simpler-slicing-workflow.md",
+      "bytes": 930,
+      "sha256": "0a6c36e67eff8b950f4cc62b5d4184101330a40c6659bcfd11027e338b491c87"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/sources.md",
+      "bytes": 2487,
+      "sha256": "1a4d20b2507f0ec3c7a5e40e4d1babcc1617a69bda2fb775971ea029e560cfcb"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/style-recipes.md",
+      "bytes": 1051,
+      "sha256": "79d7bb60ab4554fbbfdd9fc3a8d13fc955ba42f6d361ee6d40c6aea76af3bf0b"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/third-party-tools.md",
+      "bytes": 2386,
+      "sha256": "755b999a3e5cb1fb605e08b219a8164f14283050c56ed9a325424c9571100177"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/validation-checklist.md",
+      "bytes": 646,
+      "sha256": "1ac025125ef0d1b8730e3a3cf32bd26cda817df1eef73cf8e3cd99a41481dca9"
+    },
+    {
+      "path": "studio-grade-sample-vocal-break-design/references/vocal-shot-design.md",
+      "bytes": 1408,
+      "sha256": "9f69a9b4adadd67206320007b20065c7d8572d8223d7e64e1e189e3571fbdd06"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/SKILL.md",
+      "bytes": 7961,
+      "sha256": "40983bd6d3176899f3e5070781d9fe08858132fff46872e73dd7d76bc1c92fe9"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/recipes/bass-house.md",
+      "bytes": 381,
+      "sha256": "72fab752dba3573514f9a7d8695c0b331f2ba590e31d599d85f7ed386c7b4184"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/recipes/future-house.md",
+      "bytes": 334,
+      "sha256": "7a78efa8e45ef88fb5fcda1beca10a38cc16f888d41a1100616181bb99321b8c"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/recipes/minimal-house.md",
+      "bytes": 280,
+      "sha256": "5a0b51156ac199339fab0fcd19d85a11d9ca351617d24d013577e32d923e7074"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/recipes/pop-electronic.md",
+      "bytes": 360,
+      "sha256": "6ff547ec51dc3b3bb25d3effa344a6960d4176f1198eed036f842c181df65e95"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/recipes/tech-house.md",
+      "bytes": 325,
+      "sha256": "8ddc7e6d44be1f96476e8653356663380b8a26b52b4e1816c750ccfeea2e5775"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/recipes/techno.md",
+      "bytes": 369,
+      "sha256": "14db199ac549aef2925e1a6e67c82f9570fd3107e051c8c07998d3ea66c73f30"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/automation-curves.md",
+      "bytes": 758,
+      "sha256": "1d0188768ab8371202e0beec5463d5d17429c13051e64e92e1397c779d8617ba"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/bridge-macro-map.md",
+      "bytes": 678,
+      "sha256": "ba2750f90594f0f5e0a1b64c21f3b9c1f988315b5eb2c52ccc6c55caf633669b"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/fabfilter-transition-toolbox.md",
+      "bytes": 1304,
+      "sha256": "aa316d0da5059258d044d1d8519117227401b487283cf38a437644905f64be0d"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/impact-layering.md",
+      "bytes": 764,
+      "sha256": "6c41c7f357adae3ccaf6248ef94ed14d46625d8e038265eca452562edee9ef18"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/izotope-transition-toolbox.md",
+      "bytes": 752,
+      "sha256": "73fb24c7fba0ee75736950616a44d423457624418c014666b4caf4f5db0b8f85"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/native-ableton-transition-toolbox.md",
+      "bytes": 1854,
+      "sha256": "b8922f652581bc0065e2288b6c52e19c42979fb17ceb8176d087c2221703c7ba"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/native-instruments-transition-toolbox.md",
+      "bytes": 766,
+      "sha256": "f518536d6972952a174e9d0f0420626848e7d0c99af21c39a2a8be8db1b71838"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/pre-drop-fill-and-vacuum.md",
+      "bytes": 680,
+      "sha256": "50bd3f21ad14916c89c3dcf49120f2e1de0f1791976f1b8c3e0deae63e535390"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/resampling-and-printing.md",
+      "bytes": 511,
+      "sha256": "63b4534e9d510f2be7526f76833cf80aaf2821f34b61047ad14141bbb65d3f5f"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/serum2-transition-design.md",
+      "bytes": 1570,
+      "sha256": "86ba06059cd8aa6217706914f58123015ec703ee3523934a64731a61687f8ace"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/sources.md",
+      "bytes": 2002,
+      "sha256": "fa7c87c5aaf7d7a8ae62e72ccb77fababa366dc254953470950c813a2075fc73"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/time-scale-1-2-4-8-bars.md",
+      "bytes": 672,
+      "sha256": "64560b86c5dbea353be660f5d44efc6eec76e8751dc8fdcec260349715d26724"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/transition-taxonomy.md",
+      "bytes": 836,
+      "sha256": "e4cb14ecebf0933116a83d42e649e5f596a6a0880612357d4ac12206ce2c0e29"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/valhalla-transition-toolbox.md",
+      "bytes": 837,
+      "sha256": "3e062d3825d7a6873e7b0662b0592a20711ad0b43afa38d71951387a7cf88cb3"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/validation-checklist.md",
+      "bytes": 641,
+      "sha256": "9f43f4c7280019fdd35e79048048f2daf127de292fb883f3e424f144a0c85ad1"
+    },
+    {
+      "path": "studio-grade-transition-fx-director/references/waves-transition-toolbox.md",
+      "bytes": 1082,
+      "sha256": "6f8026bb64dfd8a31b37ceac09f56f913179c7b191a2fcad949c07093f7795a0"
+    }
+  ]
+}

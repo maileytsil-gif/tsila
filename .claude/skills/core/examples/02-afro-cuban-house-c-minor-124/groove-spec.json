@@ -1,0 +1,335 @@
+{
+  "schema_version": "18.0",
+  "style_lock": "AFRO_CUBAN electronic house adaptation",
+  "bpm": 124,
+  "meter": {
+    "numerator": 4,
+    "denominator": 4
+  },
+  "ppq": 960,
+  "bars": 2,
+  "pulse": "quarter-note house pulse",
+  "timeline": {
+    "pattern_id": "son_clave_3_2",
+    "orientation": "3-2",
+    "evidence": {
+      "level": "DOC",
+      "source_ids": [
+        "BERKLEE_CLAVE_001"
+      ]
+    }
+  },
+  "timing_profile": "POCKET_LIGHT",
+  "roles": [
+    {
+      "role_id": "kick",
+      "function": "BACKBONE",
+      "track_name": "KICK",
+      "midi_note": 36,
+      "events": [
+        {
+          "bar": 1,
+          "beat": 0,
+          "duration_beats": 0.11,
+          "velocity": 114,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 1,
+          "duration_beats": 0.11,
+          "velocity": 114,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 2,
+          "duration_beats": 0.11,
+          "velocity": 114,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 3,
+          "duration_beats": 0.11,
+          "velocity": 114,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 0,
+          "duration_beats": 0.11,
+          "velocity": 114,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 1,
+          "duration_beats": 0.11,
+          "velocity": 114,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 2,
+          "duration_beats": 0.11,
+          "velocity": 114,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 3,
+          "duration_beats": 0.11,
+          "velocity": 114,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        }
+      ]
+    },
+    {
+      "role_id": "clave",
+      "function": "TIMELINE",
+      "track_name": "CLAVE_GUIDE",
+      "midi_note": 37,
+      "events": [
+        {
+          "bar": 1,
+          "beat": 0,
+          "duration_beats": 0.1,
+          "velocity": 100,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 1.5,
+          "duration_beats": 0.1,
+          "velocity": 96,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 3,
+          "duration_beats": 0.1,
+          "velocity": 103,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 1,
+          "duration_beats": 0.1,
+          "velocity": 98,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 2,
+          "duration_beats": 0.1,
+          "velocity": 102,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        }
+      ]
+    },
+    {
+      "role_id": "conga",
+      "function": "MID_PERC",
+      "track_name": "CONGA_ROLE",
+      "midi_note": 64,
+      "events": [
+        {
+          "bar": 1,
+          "beat": 0.75,
+          "duration_beats": 0.1,
+          "velocity": 88,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 2.5,
+          "duration_beats": 0.1,
+          "velocity": 98,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 3.75,
+          "duration_beats": 0.1,
+          "velocity": 84,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 0.5,
+          "duration_beats": 0.1,
+          "velocity": 90,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 2.75,
+          "duration_beats": 0.1,
+          "velocity": 100,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        }
+      ]
+    },
+    {
+      "role_id": "shaker",
+      "function": "HIGH_TIMEKEEPER",
+      "track_name": "SHAKER",
+      "midi_note": 42,
+      "events": [
+        {
+          "bar": 1,
+          "beat": 0,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 0.5,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 1,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 1.5,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 2,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 2.5,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 3,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 3.5,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 0,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 0.5,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 1,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 1.5,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 2,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 2.5,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 3,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 3.5,
+          "duration_beats": 0.07,
+          "velocity": 70,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        }
+      ]
+    }
+  ],
+  "evidence": {
+    "level": "HEUR",
+    "source_ids": [
+      "BERKLEE_CLAVE_001"
+    ]
+  }
+}

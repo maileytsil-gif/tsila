@@ -1,0 +1,250 @@
+{
+  "schema_version": "18.0",
+  "skills": [
+    {
+      "skill": "composer-producer-director",
+      "path": "composer-producer-director/SKILL.md",
+      "inputs": [
+        "ProductionBrief"
+      ],
+      "outputs": [
+        "GrooveSpec",
+        "HarmonySpec",
+        "BassInterlockSpec",
+        "SoundSpec",
+        "AutomationSpec",
+        "AbletonClipPlan",
+        "BridgeActionBatch"
+      ],
+      "dependencies": [
+        "all-specialists"
+      ],
+      "capabilities": [
+        "orchestrate",
+        "route",
+        "validate"
+      ]
+    },
+    {
+      "skill": "bass-house-ableton-bridge",
+      "path": "bass-house-ableton-bridge/SKILL.md",
+      "inputs": [
+        "AbletonClipPlan",
+        "BridgeActionBatch"
+      ],
+      "outputs": [
+        "ExecutionReport"
+      ],
+      "dependencies": [],
+      "capabilities": [
+        "discover",
+        "resolve",
+        "execute",
+        "verify",
+        "rollback"
+      ]
+    },
+    {
+      "skill": "afro-caribbean-latin-detroit-theory",
+      "path": "afro-caribbean-latin-detroit-theory/SKILL.md",
+      "inputs": [
+        "ProductionBrief"
+      ],
+      "outputs": [
+        "GrooveSpec",
+        "BassInterlockSpec",
+        "HarmonySpec"
+      ],
+      "dependencies": [],
+      "capabilities": [
+        "cultural-style-lock",
+        "timeline",
+        "interlock",
+        "detroit-machine-funk"
+      ]
+    },
+    {
+      "skill": "modern-jazz-chillout-theory",
+      "path": "modern-jazz-chillout-theory/SKILL.md",
+      "inputs": [
+        "ProductionBrief"
+      ],
+      "outputs": [
+        "GrooveSpec",
+        "HarmonySpec",
+        "BassInterlockSpec"
+      ],
+      "dependencies": [],
+      "capabilities": [
+        "jazz-harmony",
+        "phrasing",
+        "pocket"
+      ]
+    },
+    {
+      "skill": "modern-pop-electronic-music-theory",
+      "path": "modern-pop-electronic-music-theory/SKILL.md",
+      "inputs": [
+        "ProductionBrief"
+      ],
+      "outputs": [
+        "HarmonySpec",
+        "BassInterlockSpec"
+      ],
+      "dependencies": [],
+      "capabilities": [
+        "harmony",
+        "melody",
+        "hook",
+        "voicing"
+      ]
+    },
+    {
+      "skill": "bass-house-composition",
+      "path": "bass-house-composition/SKILL.md",
+      "inputs": [
+        "ProductionBrief",
+        "HarmonySpec"
+      ],
+      "outputs": [
+        "ArrangementPlan",
+        "GrooveSpec"
+      ],
+      "dependencies": [],
+      "capabilities": [
+        "arrangement",
+        "drop",
+        "groove"
+      ]
+    },
+    {
+      "skill": "studio-grade-kick-low-end-sound-design",
+      "path": "studio-grade-kick-low-end-sound-design/SKILL.md",
+      "inputs": [
+        "GrooveSpec",
+        "BassInterlockSpec"
+      ],
+      "outputs": [
+        "SoundSpec"
+      ],
+      "dependencies": [],
+      "capabilities": [
+        "kick",
+        "808",
+        "rumble"
+      ]
+    },
+    {
+      "skill": "studio-grade-bass-sound-design",
+      "path": "studio-grade-bass-sound-design/SKILL.md",
+      "inputs": [
+        "BassInterlockSpec",
+        "HarmonySpec"
+      ],
+      "outputs": [
+        "SoundSpec"
+      ],
+      "dependencies": [],
+      "capabilities": [
+        "bass",
+        "sub",
+        "growl",
+        "rolling"
+      ]
+    },
+    {
+      "skill": "studio-grade-drums-electronic-percussion",
+      "path": "studio-grade-drums-electronic-percussion/SKILL.md",
+      "inputs": [
+        "GrooveSpec"
+      ],
+      "outputs": [
+        "SoundSpec"
+      ],
+      "dependencies": [],
+      "capabilities": [
+        "drums",
+        "percussion"
+      ]
+    },
+    {
+      "skill": "bass-house-serum2-sound-design",
+      "path": "bass-house-serum2-sound-design/SKILL.md",
+      "inputs": [
+        "HarmonySpec",
+        "GrooveSpec"
+      ],
+      "outputs": [
+        "SoundSpec"
+      ],
+      "dependencies": [],
+      "capabilities": [
+        "serum2",
+        "ableton-instruments",
+        "sound-design"
+      ]
+    },
+    {
+      "skill": "studio-grade-sample-vocal-break-design",
+      "path": "studio-grade-sample-vocal-break-design/SKILL.md",
+      "inputs": [
+        "ProductionBrief"
+      ],
+      "outputs": [
+        "SoundSpec",
+        "AutomationSpec"
+      ],
+      "dependencies": [],
+      "capabilities": [
+        "sample",
+        "warp",
+        "vocal-shot",
+        "resample"
+      ]
+    },
+    {
+      "skill": "studio-grade-transition-fx-director",
+      "path": "studio-grade-transition-fx-director/SKILL.md",
+      "inputs": [
+        "ArrangementPlan",
+        "SoundSpec"
+      ],
+      "outputs": [
+        "AutomationSpec"
+      ],
+      "dependencies": [],
+      "capabilities": [
+        "transitions",
+        "fx"
+      ]
+    },
+    {
+      "skill": "bass-house-mixing-mastering",
+      "path": "bass-house-mixing-mastering/SKILL.md",
+      "inputs": [
+        "SoundSpec",
+        "GrooveSpec"
+      ],
+      "outputs": [
+        "MixPlan"
+      ],
+      "dependencies": [],
+      "capabilities": [
+        "mix",
+        "premaster",
+        "translation"
+      ]
+    }
+  ],
+  "contracts": [
+    "ProductionBrief",
+    "CulturalStyleLock",
+    "GrooveSpec",
+    "BassInterlockSpec",
+    "HarmonySpec",
+    "SoundSpec",
+    "AutomationSpec",
+    "AbletonClipPlan",
+    "BridgeActionBatch"
+  ]
+}

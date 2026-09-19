@@ -1,0 +1,148 @@
+{
+  "clips": [
+    {
+      "style": "commercial-pop",
+      "kind": "chords",
+      "file": "library/midi-clips/commercial-pop/chords.mid",
+      "bpm": 112,
+      "key": "C major",
+      "status": "HEUR"
+    },
+    {
+      "style": "commercial-pop",
+      "kind": "bass",
+      "file": "library/midi-clips/commercial-pop/bass.mid",
+      "bpm": 112,
+      "key": "C major",
+      "status": "HEUR"
+    },
+    {
+      "style": "commercial-pop",
+      "kind": "motif",
+      "file": "library/midi-clips/commercial-pop/motif.mid",
+      "bpm": 112,
+      "key": "C major",
+      "status": "HEUR"
+    },
+    {
+      "style": "dance-pop",
+      "kind": "chords",
+      "file": "library/midi-clips/dance-pop/chords.mid",
+      "bpm": 124,
+      "key": "F# minor",
+      "status": "HEUR"
+    },
+    {
+      "style": "dance-pop",
+      "kind": "bass",
+      "file": "library/midi-clips/dance-pop/bass.mid",
+      "bpm": 124,
+      "key": "F# minor",
+      "status": "HEUR"
+    },
+    {
+      "style": "dance-pop",
+      "kind": "motif",
+      "file": "library/midi-clips/dance-pop/motif.mid",
+      "bpm": 124,
+      "key": "F# minor",
+      "status": "HEUR"
+    },
+    {
+      "style": "future-house",
+      "kind": "chords",
+      "file": "library/midi-clips/future-house/chords.mid",
+      "bpm": 124,
+      "key": "A minor",
+      "status": "HEUR"
+    },
+    {
+      "style": "future-house",
+      "kind": "bass",
+      "file": "library/midi-clips/future-house/bass.mid",
+      "bpm": 124,
+      "key": "A minor",
+      "status": "HEUR"
+    },
+    {
+      "style": "future-house",
+      "kind": "motif",
+      "file": "library/midi-clips/future-house/motif.mid",
+      "bpm": 124,
+      "key": "A minor",
+      "status": "HEUR"
+    },
+    {
+      "style": "bass-house",
+      "kind": "chords",
+      "file": "library/midi-clips/bass-house/chords.mid",
+      "bpm": 126,
+      "key": "F minor",
+      "status": "HEUR"
+    },
+    {
+      "style": "bass-house",
+      "kind": "bass",
+      "file": "library/midi-clips/bass-house/bass.mid",
+      "bpm": 126,
+      "key": "F minor",
+      "status": "HEUR"
+    },
+    {
+      "style": "bass-house",
+      "kind": "motif",
+      "file": "library/midi-clips/bass-house/motif.mid",
+      "bpm": 126,
+      "key": "F minor",
+      "status": "HEUR"
+    },
+    {
+      "style": "tech-house-minimal",
+      "kind": "chords",
+      "file": "library/midi-clips/tech-house-minimal/chords.mid",
+      "bpm": 126,
+      "key": "G Dorian",
+      "status": "HEUR"
+    },
+    {
+      "style": "tech-house-minimal",
+      "kind": "bass",
+      "file": "library/midi-clips/tech-house-minimal/bass.mid",
+      "bpm": 126,
+      "key": "G Dorian",
+      "status": "HEUR"
+    },
+    {
+      "style": "tech-house-minimal",
+      "kind": "motif",
+      "file": "library/midi-clips/tech-house-minimal/motif.mid",
+      "bpm": 126,
+      "key": "G Dorian",
+      "status": "HEUR"
+    },
+    {
+      "style": "electro",
+      "kind": "chords",
+      "file": "library/midi-clips/electro/chords.mid",
+      "bpm": 128,
+      "key": "E minor",
+      "status": "HEUR"
+    },
+    {
+      "style": "electro",
+      "kind": "bass",
+      "file": "library/midi-clips/electro/bass.mid",
+      "bpm": 128,
+      "key": "E minor",
+      "status": "HEUR"
+    },
+    {
+      "style": "electro",
+      "kind": "motif",
+      "file": "library/midi-clips/electro/motif.mid",
+      "bpm": 128,
+      "key": "E minor",
+      "status": "HEUR"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "18.0",
+  "unit": "beats",
+  "profiles": [
+    {
+      "id": "GRID",
+      "evidence": "HEUR",
+      "description": "No intentional timing offset.",
+      "role_offsets": {}
+    },
+    {
+      "id": "POCKET_LIGHT",
+      "evidence": "HEUR",
+      "description": "Small role-dependent offsets; starting points only, not tradition claims.",
+      "role_offsets": {
+        "HIGH_TIMEKEEPER": 0.01,
+        "MID_PERC": -0.01,
+        "CHORD": 0.015,
+        "BASS": -0.005
+      }
+    },
+    {
+      "id": "PUSH_PULL_TEST",
+      "evidence": "TEST",
+      "description": "A/B test profile; values must be adjusted by ear at project BPM.",
+      "role_offsets": {
+        "HIGH_TIMEKEEPER": 0.02,
+        "MID_PERC": -0.015,
+        "CHORD": 0.02,
+        "BASS": -0.01
+      }
+    }
+  ]
+}

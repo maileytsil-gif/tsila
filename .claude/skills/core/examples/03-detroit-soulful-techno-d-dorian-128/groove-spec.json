@@ -1,0 +1,215 @@
+{
+  "schema_version": "18.0",
+  "style_lock": "DETROIT_TECHNO soulful branch",
+  "bpm": 128,
+  "meter": {
+    "numerator": 4,
+    "denominator": 4
+  },
+  "ppq": 960,
+  "bars": 2,
+  "pulse": "quarter-note house pulse",
+  "timeline": {
+    "pattern_id": "detroit_machine_syncopation_v18",
+    "orientation": null,
+    "evidence": {
+      "level": "HEUR",
+      "source_ids": [
+        "DETROIT_HIST_001"
+      ]
+    }
+  },
+  "timing_profile": "GRID",
+  "roles": [
+    {
+      "role_id": "kick",
+      "function": "BACKBONE",
+      "track_name": "KICK",
+      "midi_note": 36,
+      "events": [
+        {
+          "bar": 1,
+          "beat": 0,
+          "duration_beats": 0.1,
+          "velocity": 116,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 1,
+          "duration_beats": 0.1,
+          "velocity": 116,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 2,
+          "duration_beats": 0.1,
+          "velocity": 116,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 3,
+          "duration_beats": 0.1,
+          "velocity": 116,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 0,
+          "duration_beats": 0.1,
+          "velocity": 116,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 1,
+          "duration_beats": 0.1,
+          "velocity": 116,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 2,
+          "duration_beats": 0.1,
+          "velocity": 116,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 3,
+          "duration_beats": 0.1,
+          "velocity": 116,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        }
+      ]
+    },
+    {
+      "role_id": "hat",
+      "function": "HIGH_TIMEKEEPER",
+      "track_name": "HAT",
+      "midi_note": 42,
+      "events": [
+        {
+          "bar": 1,
+          "beat": 0.5,
+          "duration_beats": 0.06,
+          "velocity": 76,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 1.5,
+          "duration_beats": 0.06,
+          "velocity": 76,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 2.5,
+          "duration_beats": 0.06,
+          "velocity": 76,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 3.5,
+          "duration_beats": 0.06,
+          "velocity": 76,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 0.5,
+          "duration_beats": 0.06,
+          "velocity": 76,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 1.5,
+          "duration_beats": 0.06,
+          "velocity": 76,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 2.5,
+          "duration_beats": 0.06,
+          "velocity": 76,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 3.5,
+          "duration_beats": 0.06,
+          "velocity": 76,
+          "micro_offset_beats": 0.005,
+          "articulation": "short"
+        }
+      ]
+    },
+    {
+      "role_id": "perc",
+      "function": "SYNCOPATION",
+      "track_name": "MACHINE_PERC",
+      "midi_note": 39,
+      "events": [
+        {
+          "bar": 1,
+          "beat": 0.75,
+          "duration_beats": 0.1,
+          "velocity": 88,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 1,
+          "beat": 2.5,
+          "duration_beats": 0.1,
+          "velocity": 96,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 1.75,
+          "duration_beats": 0.1,
+          "velocity": 90,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        },
+        {
+          "bar": 2,
+          "beat": 3.25,
+          "duration_beats": 0.1,
+          "velocity": 98,
+          "micro_offset_beats": 0,
+          "articulation": "short"
+        }
+      ]
+    }
+  ],
+  "evidence": {
+    "level": "HEUR",
+    "source_ids": [
+      "DETROIT_HIST_001"
+    ]
+  }
+}

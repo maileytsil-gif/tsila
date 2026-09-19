@@ -1,0 +1,94 @@
+{
+  "schema_version": "18.0",
+  "branches": {
+    "default_electronic": [
+      "IDENTITY",
+      "THEORY",
+      "GROOVE_LOW_END",
+      "DRUMS",
+      "SIGNATURE_SOUND",
+      "ARRANGEMENT",
+      "TRANSITIONS",
+      "MIX",
+      "BRIDGE",
+      "VALIDATE"
+    ],
+    "afro_latin_caribbean": [
+      "IDENTITY",
+      "CULTURAL_STYLE_LOCK",
+      "GROOVE_SPEC",
+      "PERCUSSION_ROLES",
+      "BASS_INTERLOCK",
+      "HARMONY_OSTINATO",
+      "SIGNATURE_SOUND",
+      "ARRANGEMENT",
+      "TRANSITIONS",
+      "MIX",
+      "BRIDGE",
+      "VALIDATE"
+    ],
+    "detroit": [
+      "IDENTITY",
+      "DETROIT_STYLE_LOCK",
+      "MACHINE_GRID",
+      "BASS_STAB_INTERLOCK",
+      "HARMONIC_COLOR",
+      "MUTATION_SYSTEM",
+      "SIGNATURE_SOUND",
+      "ARRANGEMENT",
+      "TRANSITIONS",
+      "MIX",
+      "BRIDGE",
+      "VALIDATE"
+    ],
+    "jazz_chill": [
+      "IDENTITY",
+      "HARMONIC_POCKET_LOCK",
+      "GROOVE_SPEC",
+      "BASS_KEYS_INTERLOCK",
+      "MELODY_PHRASING",
+      "SIGNATURE_SOUND",
+      "ARRANGEMENT",
+      "TRANSITIONS",
+      "MIX",
+      "BRIDGE",
+      "VALIDATE"
+    ]
+  },
+  "routing_rules": [
+    {
+      "if_style_contains": [
+        "afro",
+        "latin",
+        "cuban",
+        "caribbean",
+        "brazil",
+        "cumbia",
+        "reggae",
+        "dub",
+        "soca",
+        "merengue"
+      ],
+      "branch": "afro_latin_caribbean"
+    },
+    {
+      "if_style_contains": [
+        "detroit"
+      ],
+      "branch": "detroit"
+    },
+    {
+      "if_style_contains": [
+        "jazz",
+        "neo-soul",
+        "chill",
+        "downtempo"
+      ],
+      "branch": "jazz_chill"
+    },
+    {
+      "fallback": "default_electronic"
+    }
+  ],
+  "regression_rule": "On structural failure, return to earliest node that owns the invariant; never patch composition failures at mastering."
+}

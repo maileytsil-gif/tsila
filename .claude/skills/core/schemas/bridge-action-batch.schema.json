@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bridge-action-batch.schema.json",
+  "title": "BridgeActionBatch v18",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "session_policy",
+    "actions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "18.0"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "session_policy": {
+      "const": "discover-current-session"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "request_id",
+          "depends_on",
+          "requires_capability",
+          "target",
+          "operation",
+          "postconditions",
+          "rollback",
+          "risk"
+        ],
+        "properties": {
+          "request_id": {
+            "type": "string"
+          },
+          "depends_on": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "requires_capability": {
+            "type": "string"
+          },
+          "target": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "track_signature"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string"
+              },
+              "track_signature": {
+                "type": "string"
+              },
+              "clip_signature": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "device_signature": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "parameter_signature": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "operation": {
+            "type": "object",
+            "required": [
+              "type",
+              "payload"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "inspect",
+                  "ensure_track",
+                  "create_clip",
+                  "replace_notes",
+                  "set_value",
+                  "start_realtime_control",
+                  "update_realtime_control",
+                  "stop_realtime_control",
+                  "write_persistent_automation",
+                  "snapshot",
+                  "restore"
+                ]
+              },
+              "payload": {
+                "type": "object"
+              }
+            },
+            "additionalProperties": false
+          },
+          "postconditions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rollback": {
+            "type": "object"
+          },
+          "risk": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

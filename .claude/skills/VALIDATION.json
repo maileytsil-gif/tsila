@@ -1,0 +1,336 @@
+{
+  "schema_version": "18.0",
+  "passed": true,
+  "checks": [
+    {
+      "check": "schema:production-brief.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:cultural-style-lock.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:groove-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:bass-interlock-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:harmony-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:sound-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:automation-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:ableton-clip-plan.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:bridge-action-batch.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:production-brief.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:cultural-style-lock.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:groove-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:bass-interlock-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:harmony-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:sound-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:automation-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:ableton-clip-plan.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:bridge-action-batch.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:production-brief.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:cultural-style-lock.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:groove-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:bass-interlock-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:harmony-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:sound-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:automation-spec.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:ableton-clip-plan.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schema:bridge-action-batch.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "pattern-provenance:son_clave_3_2",
+      "passed": true,
+      "detail": "missing="
+    },
+    {
+      "check": "documented-has-source:son_clave_3_2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "pattern-provenance:son_clave_2_3",
+      "passed": true,
+      "detail": "missing="
+    },
+    {
+      "check": "documented-has-source:son_clave_2_3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "pattern-provenance:tresillo_study",
+      "passed": true,
+      "detail": "missing="
+    },
+    {
+      "check": "pattern-provenance:afro_house_interlock_v18",
+      "passed": true,
+      "detail": "missing="
+    },
+    {
+      "check": "pattern-provenance:detroit_machine_syncopation_v18",
+      "passed": true,
+      "detail": "missing="
+    },
+    {
+      "check": "groove-event-bounds:01-afro-house-fsharp-minor-122",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "event-bounds:01-afro-house-fsharp-minor-122:bass-interlock-spec.json",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "event-bounds:01-afro-house-fsharp-minor-122:harmony-spec.json",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "automation-bounds:01-afro-house-fsharp-minor-122",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "hybridization-not-rejected:01-afro-house-fsharp-minor-122",
+      "passed": true,
+      "detail": "status=CAUTION"
+    },
+    {
+      "check": "no-authenticity-claim:01-afro-house-fsharp-minor-122",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "unique-action-ids:01-afro-house-fsharp-minor-122",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "known-capabilities:01-afro-house-fsharp-minor-122",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "dependency-order:01-afro-house-fsharp-minor-122",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "groove-event-bounds:02-afro-cuban-house-c-minor-124",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "event-bounds:02-afro-cuban-house-c-minor-124:bass-interlock-spec.json",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "event-bounds:02-afro-cuban-house-c-minor-124:harmony-spec.json",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "automation-bounds:02-afro-cuban-house-c-minor-124",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "hybridization-not-rejected:02-afro-cuban-house-c-minor-124",
+      "passed": true,
+      "detail": "status=OK"
+    },
+    {
+      "check": "no-authenticity-claim:02-afro-cuban-house-c-minor-124",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "unique-action-ids:02-afro-cuban-house-c-minor-124",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "known-capabilities:02-afro-cuban-house-c-minor-124",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "dependency-order:02-afro-cuban-house-c-minor-124",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "groove-event-bounds:03-detroit-soulful-techno-d-dorian-128",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "event-bounds:03-detroit-soulful-techno-d-dorian-128:bass-interlock-spec.json",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "event-bounds:03-detroit-soulful-techno-d-dorian-128:harmony-spec.json",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "automation-bounds:03-detroit-soulful-techno-d-dorian-128",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "hybridization-not-rejected:03-detroit-soulful-techno-d-dorian-128",
+      "passed": true,
+      "detail": "status=OK"
+    },
+    {
+      "check": "no-authenticity-claim:03-detroit-soulful-techno-d-dorian-128",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "unique-action-ids:03-detroit-soulful-techno-d-dorian-128",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "known-capabilities:03-detroit-soulful-techno-d-dorian-128",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "dependency-order:03-detroit-soulful-techno-d-dorian-128",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "midi-semantic-parse",
+      "passed": true,
+      "detail": "51 midi files; all parse and contain notes"
+    },
+    {
+      "check": "root-history-clean",
+      "passed": true,
+      "detail": "old-root-files="
+    },
+    {
+      "check": "action-deps:01-afro-house-fsharp-minor-122",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "action-deps:02-afro-cuban-house-c-minor-124",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "action-deps:03-detroit-soulful-techno-d-dorian-128",
+      "passed": true,
+      "detail": "[]"
+    }
+  ]
+}

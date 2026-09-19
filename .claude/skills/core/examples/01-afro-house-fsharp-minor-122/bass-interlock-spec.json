@@ -1,0 +1,68 @@
+{
+  "schema_version": "18.0",
+  "ownership": "bass",
+  "track_name": "BASS",
+  "midi_note_default": 36,
+  "events": [
+    {
+      "bar": 1,
+      "beat": 0.5,
+      "duration_beats": 0.45,
+      "midi_note": 42,
+      "velocity": 104,
+      "function": "RESPONSE"
+    },
+    {
+      "bar": 1,
+      "beat": 1.75,
+      "duration_beats": 0.2,
+      "midi_note": 42,
+      "velocity": 92,
+      "function": "GHOST"
+    },
+    {
+      "bar": 1,
+      "beat": 2.5,
+      "duration_beats": 0.4,
+      "midi_note": 45,
+      "velocity": 100,
+      "function": "ANCHOR"
+    },
+    {
+      "bar": 1,
+      "beat": 3.75,
+      "duration_beats": 0.2,
+      "midi_note": 40,
+      "velocity": 88,
+      "function": "ANTICIPATION"
+    },
+    {
+      "bar": 2,
+      "beat": 0.5,
+      "duration_beats": 0.45,
+      "midi_note": 42,
+      "velocity": 104,
+      "function": "RESPONSE"
+    },
+    {
+      "bar": 2,
+      "beat": 2.25,
+      "duration_beats": 0.4,
+      "midi_note": 45,
+      "velocity": 100,
+      "function": "ANCHOR"
+    },
+    {
+      "bar": 2,
+      "beat": 3.5,
+      "duration_beats": 0.3,
+      "midi_note": 40,
+      "velocity": 94,
+      "function": "ANTICIPATION"
+    }
+  ],
+  "evidence": {
+    "level": "HEUR",
+    "source_ids": []
+  }
+}

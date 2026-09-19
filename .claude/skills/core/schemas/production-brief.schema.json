@@ -1,0 +1,235 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "production-brief.schema.json",
+  "title": "ProductionBrief v18",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project",
+    "music",
+    "creative",
+    "low_end",
+    "execution"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "18.0"
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "state",
+        "destination"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "state": {
+          "enum": [
+            "idea",
+            "core_loop",
+            "signature_loop",
+            "arrangement",
+            "premix",
+            "mix",
+            "delivery",
+            "revision"
+          ]
+        },
+        "destination": {
+          "enum": [
+            "club",
+            "streaming",
+            "dj-set",
+            "radio",
+            "festival",
+            "hybrid"
+          ]
+        }
+      }
+    },
+    "music": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "style",
+        "bpm",
+        "emotion",
+        "energy"
+      ],
+      "properties": {
+        "style": {
+          "type": "string"
+        },
+        "substyle": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bpm": {
+          "type": "number",
+          "minimum": 40,
+          "maximum": 240
+        },
+        "key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "emotion": {
+          "type": "string"
+        },
+        "energy": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "duration_target_sec": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 30
+        }
+      }
+    },
+    "cultural": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "primary_axis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "secondary_axis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "hybridization_level": {
+          "enum": [
+            "none",
+            "light",
+            "medium",
+            "high"
+          ]
+        },
+        "authenticity_claim": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "creative": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hook_type",
+        "references",
+        "must_keep",
+        "avoid",
+        "freedom"
+      ],
+      "properties": {
+        "hook_type": {
+          "enum": [
+            "bass",
+            "vocal",
+            "synth",
+            "chord",
+            "rhythm",
+            "hybrid"
+          ]
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_keep": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "avoid": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "freedom": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      }
+    },
+    "low_end": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ownership",
+        "rumble"
+      ],
+      "properties": {
+        "ownership": {
+          "enum": [
+            "undecided",
+            "kick",
+            "bass",
+            "alternating",
+            "kick-rumble"
+          ]
+        },
+        "rumble": {
+          "type": "boolean"
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ableton_actions_requested",
+        "bridge_available",
+        "destructive_actions_allowed"
+      ],
+      "properties": {
+        "ableton_actions_requested": {
+          "type": "boolean"
+        },
+        "bridge_available": {
+          "enum": [
+            "unknown",
+            "yes",
+            "no"
+          ]
+        },
+        "destructive_actions_allowed": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

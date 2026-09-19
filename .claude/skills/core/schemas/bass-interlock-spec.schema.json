@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bass-interlock-spec.schema.json",
+  "title": "BassInterlockSpec v18",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "ownership",
+    "track_name",
+    "midi_note_default",
+    "events",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "18.0"
+    },
+    "ownership": {
+      "enum": [
+        "kick",
+        "bass",
+        "alternating",
+        "kick-rumble"
+      ]
+    },
+    "track_name": {
+      "type": "string"
+    },
+    "midi_note_default": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 127
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "bar",
+          "beat",
+          "duration_beats",
+          "midi_note",
+          "velocity",
+          "function"
+        ],
+        "properties": {
+          "bar": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "beat": {
+            "type": "number",
+            "minimum": 0
+          },
+          "duration_beats": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "midi_note": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "velocity": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 127
+          },
+          "function": {
+            "enum": [
+              "ANCHOR",
+              "ANTICIPATION",
+              "RESPONSE",
+              "GHOST",
+              "HOLD",
+              "REST_INTENT"
+            ]
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "source_ids"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "DOC",
+            "ATTRIB",
+            "ANALYSIS",
+            "HEUR",
+            "TEST"
+          ]
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

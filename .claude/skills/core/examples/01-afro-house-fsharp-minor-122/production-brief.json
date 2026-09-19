@@ -1,0 +1,45 @@
+{
+  "schema_version": "18.0",
+  "project": {
+    "title": "Afro House F# minor 122",
+    "state": "core_loop",
+    "destination": "club"
+  },
+  "music": {
+    "style": "Afro House",
+    "substyle": null,
+    "bpm": 122,
+    "key": "F#",
+    "mode": "Aeolian",
+    "emotion": "dark / hypnotic",
+    "energy": 7,
+    "duration_target_sec": null
+  },
+  "cultural": {
+    "primary_axis": "AFRO_HOUSE_SA",
+    "secondary_axis": "AFRO_CUBAN",
+    "hybridization_level": "light",
+    "authenticity_claim": false,
+    "notes": "Electronic adaptation; no authenticity claim."
+  },
+  "creative": {
+    "hook_type": "rhythm",
+    "references": [],
+    "must_keep": [
+      "clear groove identity"
+    ],
+    "avoid": [
+      "generic world-house labeling"
+    ],
+    "freedom": "medium"
+  },
+  "low_end": {
+    "ownership": "bass",
+    "rumble": false
+  },
+  "execution": {
+    "ableton_actions_requested": true,
+    "bridge_available": "unknown",
+    "destructive_actions_allowed": false
+  }
+}

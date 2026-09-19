@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "automation-spec.schema.json",
+  "title": "AutomationSpec v18",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "lanes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "18.0"
+    },
+    "lanes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "lane_id",
+          "track_name",
+          "target_macro",
+          "start_beat",
+          "end_beat",
+          "start_value",
+          "end_value",
+          "curve",
+          "persistence",
+          "evidence"
+        ],
+        "properties": {
+          "lane_id": {
+            "type": "string"
+          },
+          "track_name": {
+            "type": "string"
+          },
+          "target_macro": {
+            "enum": [
+              "TONE",
+              "MOTION",
+              "BITE",
+              "WEIGHT",
+              "WIDTH",
+              "SPACE",
+              "ATTACK",
+              "VARIATION"
+            ]
+          },
+          "start_beat": {
+            "type": "number",
+            "minimum": 0
+          },
+          "end_beat": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "start_value": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "end_value": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "curve": {
+            "enum": [
+              "linear",
+              "ease-in",
+              "ease-out",
+              "s-curve",
+              "step",
+              "custom"
+            ]
+          },
+          "persistence": {
+            "enum": [
+              "realtime",
+              "persistent_if_supported",
+              "set_value"
+            ]
+          },
+          "evidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "level",
+              "source_ids"
+            ],
+            "properties": {
+              "level": {
+                "enum": [
+                  "DOC",
+                  "ATTRIB",
+                  "ANALYSIS",
+                  "HEUR",
+                  "TEST"
+                ]
+              },
+              "source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

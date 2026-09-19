@@ -1,0 +1,798 @@
+{
+  "schema_version": "18.0",
+  "project_id": "03-detroit-soulful-techno-d-dorian-128",
+  "session_policy": "discover-current-session",
+  "actions": [
+    {
+      "request_id": "req-0001",
+      "depends_on": [],
+      "requires_capability": "ensure_track",
+      "target": {
+        "kind": "track",
+        "track_signature": "KICK",
+        "clip_signature": null,
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "ensure_track",
+        "payload": {
+          "kind": "midi"
+        }
+      },
+      "postconditions": [
+        "track_resolved_or_created"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0002",
+      "depends_on": [
+        "req-0001"
+      ],
+      "requires_capability": "create_clip",
+      "target": {
+        "kind": "clip",
+        "track_signature": "KICK",
+        "clip_signature": "03-detroit-soulful-techno-d-dorian-128_kick",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "create_clip",
+        "payload": {
+          "start_beat": 0,
+          "length_beats": 8.0
+        }
+      },
+      "postconditions": [
+        "clip_exists_with_length"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0003",
+      "depends_on": [
+        "req-0002"
+      ],
+      "requires_capability": "write_notes",
+      "target": {
+        "kind": "clip",
+        "track_signature": "KICK",
+        "clip_signature": "03-detroit-soulful-techno-d-dorian-128_kick",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "replace_notes",
+        "payload": {
+          "notes": [
+            {
+              "pitch": 36,
+              "start_beat": 0.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 1.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 2.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 3.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 4.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 5.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 6.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 7.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            }
+          ]
+        }
+      },
+      "postconditions": [
+        "roundtrip_notes_equal"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    },
+    {
+      "request_id": "req-0004",
+      "depends_on": [],
+      "requires_capability": "ensure_track",
+      "target": {
+        "kind": "track",
+        "track_signature": "HAT",
+        "clip_signature": null,
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "ensure_track",
+        "payload": {
+          "kind": "midi"
+        }
+      },
+      "postconditions": [
+        "track_resolved_or_created"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0005",
+      "depends_on": [
+        "req-0004"
+      ],
+      "requires_capability": "create_clip",
+      "target": {
+        "kind": "clip",
+        "track_signature": "HAT",
+        "clip_signature": "03-detroit-soulful-techno-d-dorian-128_hat",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "create_clip",
+        "payload": {
+          "start_beat": 0,
+          "length_beats": 8.0
+        }
+      },
+      "postconditions": [
+        "clip_exists_with_length"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0006",
+      "depends_on": [
+        "req-0005"
+      ],
+      "requires_capability": "write_notes",
+      "target": {
+        "kind": "clip",
+        "track_signature": "HAT",
+        "clip_signature": "03-detroit-soulful-techno-d-dorian-128_hat",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "replace_notes",
+        "payload": {
+          "notes": [
+            {
+              "pitch": 42,
+              "start_beat": 0.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 1.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 2.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 3.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 4.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 5.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 6.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 7.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            }
+          ]
+        }
+      },
+      "postconditions": [
+        "roundtrip_notes_equal"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    },
+    {
+      "request_id": "req-0007",
+      "depends_on": [],
+      "requires_capability": "ensure_track",
+      "target": {
+        "kind": "track",
+        "track_signature": "MACHINE_PERC",
+        "clip_signature": null,
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "ensure_track",
+        "payload": {
+          "kind": "midi"
+        }
+      },
+      "postconditions": [
+        "track_resolved_or_created"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0008",
+      "depends_on": [
+        "req-0007"
+      ],
+      "requires_capability": "create_clip",
+      "target": {
+        "kind": "clip",
+        "track_signature": "MACHINE_PERC",
+        "clip_signature": "03-detroit-soulful-techno-d-dorian-128_perc",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "create_clip",
+        "payload": {
+          "start_beat": 0,
+          "length_beats": 8.0
+        }
+      },
+      "postconditions": [
+        "clip_exists_with_length"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0009",
+      "depends_on": [
+        "req-0008"
+      ],
+      "requires_capability": "write_notes",
+      "target": {
+        "kind": "clip",
+        "track_signature": "MACHINE_PERC",
+        "clip_signature": "03-detroit-soulful-techno-d-dorian-128_perc",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "replace_notes",
+        "payload": {
+          "notes": [
+            {
+              "pitch": 39,
+              "start_beat": 0.75,
+              "duration_beats": 0.1,
+              "velocity": 88
+            },
+            {
+              "pitch": 39,
+              "start_beat": 2.5,
+              "duration_beats": 0.1,
+              "velocity": 96
+            },
+            {
+              "pitch": 39,
+              "start_beat": 5.75,
+              "duration_beats": 0.1,
+              "velocity": 90
+            },
+            {
+              "pitch": 39,
+              "start_beat": 7.25,
+              "duration_beats": 0.1,
+              "velocity": 98
+            }
+          ]
+        }
+      },
+      "postconditions": [
+        "roundtrip_notes_equal"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    },
+    {
+      "request_id": "req-0010",
+      "depends_on": [],
+      "requires_capability": "ensure_track",
+      "target": {
+        "kind": "track",
+        "track_signature": "BASS",
+        "clip_signature": null,
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "ensure_track",
+        "payload": {
+          "kind": "midi"
+        }
+      },
+      "postconditions": [
+        "track_resolved_or_created"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0011",
+      "depends_on": [
+        "req-0010"
+      ],
+      "requires_capability": "create_clip",
+      "target": {
+        "kind": "clip",
+        "track_signature": "BASS",
+        "clip_signature": "03-detroit-soulful-techno-d-dorian-128_BASS",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "create_clip",
+        "payload": {
+          "start_beat": 0,
+          "length_beats": 8.0
+        }
+      },
+      "postconditions": [
+        "clip_exists_with_length"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0012",
+      "depends_on": [
+        "req-0011"
+      ],
+      "requires_capability": "write_notes",
+      "target": {
+        "kind": "clip",
+        "track_signature": "BASS",
+        "clip_signature": "03-detroit-soulful-techno-d-dorian-128_BASS",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "replace_notes",
+        "payload": {
+          "notes": [
+            {
+              "pitch": 38,
+              "start_beat": 0.75,
+              "duration_beats": 0.25,
+              "velocity": 100
+            },
+            {
+              "pitch": 41,
+              "start_beat": 1.75,
+              "duration_beats": 0.25,
+              "velocity": 94
+            },
+            {
+              "pitch": 45,
+              "start_beat": 2.75,
+              "duration_beats": 0.25,
+              "velocity": 102
+            },
+            {
+              "pitch": 38,
+              "start_beat": 4.75,
+              "duration_beats": 0.25,
+              "velocity": 100
+            },
+            {
+              "pitch": 41,
+              "start_beat": 6.5,
+              "duration_beats": 0.3,
+              "velocity": 98
+            }
+          ]
+        }
+      },
+      "postconditions": [
+        "roundtrip_notes_equal"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    },
+    {
+      "request_id": "req-0013",
+      "depends_on": [],
+      "requires_capability": "ensure_track",
+      "target": {
+        "kind": "track",
+        "track_signature": "STAB",
+        "clip_signature": null,
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "ensure_track",
+        "payload": {
+          "kind": "midi"
+        }
+      },
+      "postconditions": [
+        "track_resolved_or_created"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0014",
+      "depends_on": [
+        "req-0013"
+      ],
+      "requires_capability": "create_clip",
+      "target": {
+        "kind": "clip",
+        "track_signature": "STAB",
+        "clip_signature": "03-detroit-soulful-techno-d-dorian-128_HARMONY",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "create_clip",
+        "payload": {
+          "start_beat": 0,
+          "length_beats": 8.0
+        }
+      },
+      "postconditions": [
+        "clip_exists_with_length"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0015",
+      "depends_on": [
+        "req-0014"
+      ],
+      "requires_capability": "write_notes",
+      "target": {
+        "kind": "clip",
+        "track_signature": "STAB",
+        "clip_signature": "03-detroit-soulful-techno-d-dorian-128_HARMONY",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "replace_notes",
+        "payload": {
+          "notes": [
+            {
+              "pitch": 50,
+              "start_beat": 0.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 53,
+              "start_beat": 0.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 57,
+              "start_beat": 0.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 60,
+              "start_beat": 0.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 64,
+              "start_beat": 0.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 55,
+              "start_beat": 2.5,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 60,
+              "start_beat": 2.5,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 65,
+              "start_beat": 2.5,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 69,
+              "start_beat": 2.5,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 76,
+              "start_beat": 2.5,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 50,
+              "start_beat": 5.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 53,
+              "start_beat": 5.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 57,
+              "start_beat": 5.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 60,
+              "start_beat": 5.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 64,
+              "start_beat": 5.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            }
+          ]
+        }
+      },
+      "postconditions": [
+        "roundtrip_notes_equal"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    },
+    {
+      "request_id": "req-0016",
+      "depends_on": [],
+      "requires_capability": "read_tracks_devices",
+      "target": {
+        "kind": "device",
+        "track_signature": "STAB",
+        "clip_signature": null,
+        "device_signature": "Operator/Wavetable",
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "inspect",
+        "payload": {
+          "purpose": "resolve_sound_binding",
+          "macros": {
+            "TONE": 0.48,
+            "SPACE": 0.24,
+            "WIDTH": 0.4
+          }
+        }
+      },
+      "postconditions": [
+        "device_or_manual_binding_resolved"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0017",
+      "depends_on": [],
+      "requires_capability": "read_tracks_devices",
+      "target": {
+        "kind": "device",
+        "track_signature": "BASS",
+        "clip_signature": null,
+        "device_signature": "Operator",
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "inspect",
+        "payload": {
+          "purpose": "resolve_sound_binding",
+          "macros": {
+            "WEIGHT": 0.62,
+            "ATTACK": 0.5
+          }
+        }
+      },
+      "postconditions": [
+        "device_or_manual_binding_resolved"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0018",
+      "depends_on": [],
+      "requires_capability": "read_tracks_devices",
+      "target": {
+        "kind": "device",
+        "track_signature": "MACHINE_PERC",
+        "clip_signature": null,
+        "device_signature": "Drum Rack",
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "inspect",
+        "payload": {
+          "purpose": "resolve_sound_binding",
+          "macros": {
+            "ATTACK": 0.6,
+            "VARIATION": 0.2
+          }
+        }
+      },
+      "postconditions": [
+        "device_or_manual_binding_resolved"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0019",
+      "depends_on": [],
+      "requires_capability": "automation_persistent",
+      "target": {
+        "kind": "device_parameter",
+        "track_signature": "STAB",
+        "clip_signature": null,
+        "device_signature": "resolve-current-device-or-rack",
+        "parameter_signature": "MOTION"
+      },
+      "operation": {
+        "type": "write_persistent_automation",
+        "payload": {
+          "lane_id": "stab_motion",
+          "track_name": "STAB",
+          "target_macro": "MOTION",
+          "start_beat": 0,
+          "end_beat": 8,
+          "start_value": 0.12,
+          "end_value": 0.3,
+          "curve": "ease-in",
+          "persistence": "persistent_if_supported",
+          "evidence": {
+            "level": "HEUR",
+            "source_ids": []
+          }
+        }
+      },
+      "postconditions": [
+        "readback_or_envelope_verify"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    },
+    {
+      "request_id": "req-0020",
+      "depends_on": [],
+      "requires_capability": "automation_persistent",
+      "target": {
+        "kind": "device_parameter",
+        "track_signature": "STAB",
+        "clip_signature": null,
+        "device_signature": "resolve-current-device-or-rack",
+        "parameter_signature": "SPACE"
+      },
+      "operation": {
+        "type": "write_persistent_automation",
+        "payload": {
+          "lane_id": "stab_space",
+          "track_name": "STAB",
+          "target_macro": "SPACE",
+          "start_beat": 4,
+          "end_beat": 8,
+          "start_value": 0.2,
+          "end_value": 0.32,
+          "curve": "ease-out",
+          "persistence": "persistent_if_supported",
+          "evidence": {
+            "level": "HEUR",
+            "source_ids": []
+          }
+        }
+      },
+      "postconditions": [
+        "readback_or_envelope_verify"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    }
+  ]
+}

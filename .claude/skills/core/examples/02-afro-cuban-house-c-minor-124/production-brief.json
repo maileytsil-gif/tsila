@@ -1,0 +1,45 @@
+{
+  "schema_version": "18.0",
+  "project": {
+    "title": "Afro-Cuban House C minor 124",
+    "state": "core_loop",
+    "destination": "club"
+  },
+  "music": {
+    "style": "Latin House / Afro-Cuban-informed",
+    "substyle": null,
+    "bpm": 124,
+    "key": "C",
+    "mode": "Dorian",
+    "emotion": "energetic / warm",
+    "energy": 8,
+    "duration_target_sec": null
+  },
+  "cultural": {
+    "primary_axis": "AFRO_CUBAN",
+    "secondary_axis": null,
+    "hybridization_level": "none",
+    "authenticity_claim": false,
+    "notes": "Electronic adaptation; no authenticity claim."
+  },
+  "creative": {
+    "hook_type": "rhythm",
+    "references": [],
+    "must_keep": [
+      "clear groove identity"
+    ],
+    "avoid": [
+      "generic world-house labeling"
+    ],
+    "freedom": "medium"
+  },
+  "low_end": {
+    "ownership": "alternating",
+    "rumble": false
+  },
+  "execution": {
+    "ableton_actions_requested": true,
+    "bridge_available": "unknown",
+    "destructive_actions_allowed": false
+  }
+}

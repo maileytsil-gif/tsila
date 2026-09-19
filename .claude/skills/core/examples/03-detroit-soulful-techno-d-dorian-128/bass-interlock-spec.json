@@ -1,0 +1,54 @@
+{
+  "schema_version": "18.0",
+  "ownership": "kick",
+  "track_name": "BASS",
+  "midi_note_default": 36,
+  "events": [
+    {
+      "bar": 1,
+      "beat": 0.75,
+      "duration_beats": 0.25,
+      "midi_note": 38,
+      "velocity": 100,
+      "function": "RESPONSE"
+    },
+    {
+      "bar": 1,
+      "beat": 1.75,
+      "duration_beats": 0.25,
+      "midi_note": 41,
+      "velocity": 94,
+      "function": "RESPONSE"
+    },
+    {
+      "bar": 1,
+      "beat": 2.75,
+      "duration_beats": 0.25,
+      "midi_note": 45,
+      "velocity": 102,
+      "function": "RESPONSE"
+    },
+    {
+      "bar": 2,
+      "beat": 0.75,
+      "duration_beats": 0.25,
+      "midi_note": 38,
+      "velocity": 100,
+      "function": "RESPONSE"
+    },
+    {
+      "bar": 2,
+      "beat": 2.5,
+      "duration_beats": 0.3,
+      "midi_note": 41,
+      "velocity": 98,
+      "function": "ANTICIPATION"
+    }
+  ],
+  "evidence": {
+    "level": "HEUR",
+    "source_ids": [
+      "DETROIT_HIST_001"
+    ]
+  }
+}

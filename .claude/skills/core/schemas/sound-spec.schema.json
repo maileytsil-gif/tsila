@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sound-spec.schema.json",
+  "title": "SoundSpec v18",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "elements"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "18.0"
+    },
+    "elements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "element_id",
+          "role",
+          "track_name",
+          "engine",
+          "macros",
+          "processing_intent",
+          "evidence"
+        ],
+        "properties": {
+          "element_id": {
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "CORE",
+              "FOUNDATION",
+              "SUPPORT",
+              "MOTION",
+              "AIR",
+              "SPACE",
+              "TRANSITION",
+              "IMPACT"
+            ]
+          },
+          "track_name": {
+            "type": "string"
+          },
+          "engine": {
+            "type": "string"
+          },
+          "preset_or_patch": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "macros": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "processing_intent": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "level",
+              "source_ids"
+            ],
+            "properties": {
+              "level": {
+                "enum": [
+                  "DOC",
+                  "ATTRIB",
+                  "ANALYSIS",
+                  "HEUR",
+                  "TEST"
+                ]
+              },
+              "source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

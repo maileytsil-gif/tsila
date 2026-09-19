@@ -1,0 +1,60 @@
+{
+  "schema_version": "18.0",
+  "elements": [
+    {
+      "element_id": "clave",
+      "role": "MOTION",
+      "track_name": "CLAVE_GUIDE",
+      "engine": "sample/Drum Rack",
+      "preset_or_patch": null,
+      "macros": {
+        "ATTACK": 0.7,
+        "SPACE": 0.08
+      },
+      "processing_intent": [
+        "dry guide; optional mute after lock"
+      ],
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    },
+    {
+      "element_id": "montuno",
+      "role": "CORE",
+      "track_name": "MONTUNO_STAB",
+      "engine": "Ableton Electric or sampled keys",
+      "preset_or_patch": null,
+      "macros": {
+        "ATTACK": 0.65,
+        "TONE": 0.58,
+        "SPACE": 0.2
+      },
+      "processing_intent": [
+        "short rhythmic voicing; no authenticity claim"
+      ],
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    },
+    {
+      "element_id": "bass",
+      "role": "FOUNDATION",
+      "track_name": "BASS",
+      "engine": "Operator or Serum 2",
+      "preset_or_patch": null,
+      "macros": {
+        "WEIGHT": 0.68,
+        "ATTACK": 0.45
+      },
+      "processing_intent": [
+        "clean interlocking bass"
+      ],
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    }
+  ]
+}

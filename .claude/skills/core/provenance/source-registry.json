@@ -1,0 +1,54 @@
+{
+  "schema_version": "18.0",
+  "sources": [
+    {
+      "id": "BERKLEE_CLAVE_001",
+      "authority": "Berklee PULSE",
+      "kind": "education",
+      "local_ref": "afro-caribbean-latin-detroit-theory/references/sources.md",
+      "topic": "clave orientation / Afro-Cuban rhythm"
+    },
+    {
+      "id": "BERKLEE_LATIN_PIANO_001",
+      "authority": "Berklee Online",
+      "kind": "education",
+      "local_ref": "afro-caribbean-latin-detroit-theory/references/sources.md",
+      "topic": "Latin piano / montuno / tumbao roles"
+    },
+    {
+      "id": "SMITHSONIAN_BELL_001",
+      "authority": "Smithsonian Folkways",
+      "kind": "archive-education",
+      "local_ref": "afro-caribbean-latin-detroit-theory/references/sources.md",
+      "topic": "bell/timeline roles"
+    },
+    {
+      "id": "SMITHSONIAN_BRAZIL_001",
+      "authority": "Smithsonian Folkways",
+      "kind": "archive-education",
+      "local_ref": "afro-caribbean-latin-detroit-theory/references/sources.md",
+      "topic": "Brazilian samba / suingue context"
+    },
+    {
+      "id": "SMITHSONIAN_CUMBIA_001",
+      "authority": "Smithsonian Folkways",
+      "kind": "archive",
+      "local_ref": "afro-caribbean-latin-detroit-theory/references/sources.md",
+      "topic": "cumbia instrumental/percussion roles"
+    },
+    {
+      "id": "DETROIT_HIST_001",
+      "authority": "Detroit Historical Society",
+      "kind": "historical",
+      "local_ref": "afro-caribbean-latin-detroit-theory/references/sources.md",
+      "topic": "Detroit techno history"
+    },
+    {
+      "id": "BEATPORT_AFRO_001",
+      "authority": "Beatportal/Beatport",
+      "kind": "scene-classification",
+      "local_ref": "afro-caribbean-latin-detroit-theory/references/sources.md",
+      "topic": "Afro House / Amapiano distinction"
+    }
+  ]
+}
