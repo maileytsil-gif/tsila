@@ -140,21 +140,26 @@ recettes qui s'appuieront dessus.
 wavetable) : le niveau ≈ −3/−4 dB du sub, sa chaîne EQ 24–130 Hz et la mesure kick/sub
 ne sont pas remis en cause.
 
-### À vérifier dans Live — le premier point bloque le template
+### Vérifié
 
-1. **Routage du filtre.** OSC A porte un badge **F1** alors que FILTER 1 est éteint et
-   que FILTER 2 est celui qui est actif. Si ce badge signifie « routé vers Filter 1 »,
-   OSC A ne traverse aucun filtre actif. Sur un son isolé ce serait un détail ; **sur un
-   template c'est un défaut qui se recopie dans tous les patchs qui en descendront**.
-   Test : bouger le CUTOFF de FILTER 2 et écouter si quelque chose change. Si rien ne
-   bouge, corriger le routage puis **réenregistrer le template**.
-2. **ENV 1** n'est pas visible sur la capture (le panneau montre ENV 4). Dans Serum c'est
+- **Routage du filtre — OK** (vérifié à l'écoute par l'utilisateur, 19 sept. 2026).
+  Bouger le CUTOFF de FILTER 2 change bien le son : OSC A traverse FILTER 2.
+  **Leçon à retenir : le badge `F1` d'un oscillateur ne suffit pas à conclure au
+  routage.** OSC A porte `F1` alors que FILTER 1 est éteint et FILTER 2 actif, et le
+  son passe quand même par FILTER 2. Ne pas rejouer ce faux diagnostic ; sur une
+  question de routage Serum 2, écouter ou mesurer avant d'affirmer.
+
+### Reste à vérifier
+
+1. **ENV 1** n'est pas visible sur la capture (le panneau montre ENV 4). Dans Serum c'est
    ENV 1 qui porte l'amplitude : ses valeurs restent inconnues, et ce sont elles qui
    décideront de l'attaque et de la chute de tout ce qui partira de ce template.
-3. **Valeurs chiffrées** des boutons (CUTOFF, RES, DRIVE, LEVEL) : positions lues,
+2. **Valeurs chiffrées** des boutons (CUTOFF, RES, DRIVE, LEVEL) : positions lues,
    nombres non affichés. À relever par survol ou double-clic.
-4. **Chemin du fichier** et présence éventuelle d'un doublon « serum design », pour
+3. **Chemin du fichier** et présence éventuelle d'un doublon « serum design », pour
    pouvoir le recharger sans le chercher et sans se tromper de version.
+
+État du template : **sain sur le trajet du signal**, incomplet sur la documentation.
 
 ## Ce qui marche, ce qui ne marche pas
 
