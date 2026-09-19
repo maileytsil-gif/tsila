@@ -99,15 +99,18 @@ Bass › Electric/Sub, Keys/Pad pour nappes. Banques perso dans
 `/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/User`
 (TKNVLT Techno Kick Collection, « Kick Future House Tsila », F Brooks kicks).
 
-## Preset « serum design » — état lu sur capture le 19 sept. 2026
+## Template de départ Serum — état lu sur capture le 19 sept. 2026
 
-Relevé **visuellement sur une capture d'écran**, pas dans Live : aucune valeur
-numérique de bouton n'est affichée par Serum, seules les positions le sont. À
-confirmer côté Mac avant d'entrer au registre de signature.
+Preset enregistré par l'utilisateur comme **point de départ réutilisable**, pas comme
+son fini. Nom affiché dans Serum sur la capture : **« serum design »** (ARTIST et DESC
+vides) — l'utilisateur l'a aussi appelé « serum sound designer », **nom exact et chemin
+à confirmer**.
+
+Relevé **visuellement sur une capture**, pas dans Live : Serum n'affiche pas les valeurs
+numériques des boutons, seulement leurs positions.
 
 | Élément | État lu |
 |---|---|
-| Nom du preset | **serum design** (ARTIST et DESC vides) |
 | SUB | **off** |
 | OSC A | **on** — WAVETABLE, « Default Shapes », OCT 0 / SEM 0 / FIN 0, position 1, phase 180°, RAND 100, UNISON 1, WARP 1 et 2 off |
 | OSC B · OSC C · NOISE | **off** (NOISE chargé sur « AC hum1 ») |
@@ -118,23 +121,33 @@ confirmer côté Mac avant d'entrer au registre de signature.
 | LFO 1 | triangle, Forward, 1/4, synchro BPM |
 | Global | TRANSPOSE 0, SWING OFF, macros 1–8 au minimum |
 
-**Ce n'est pas le sub validé du registre.** Le sub de `drums-signature` est
-« osc SUB sinus, mono + legato, release 90 ms ». Ici le SUB est éteint, la voix est
-polyphonique et le son vient d'OSC A en wavetable à travers un filtre Moog. C'est donc
-un **son nouveau et séparé** : le niveau ≈ −3/−4 dB du sub, sa chaîne EQ 24–130 Hz et
-la mesure kick/sub ne sont pas remis en cause.
+L'état est cohérent avec une intention de template : un seul oscillateur sur la wavetable
+par défaut, aucune transposition, unison à 1, warp désactivé, macros à zéro, un filtre
+prêt à travailler. Rien n'est sculpté — c'est une toile vierge jouable.
 
-### À vérifier dans Live
+**Ne pas le mettre au registre de signature.** Le registre de `drums-signature` est
+réservé aux sons **déjà validés à l'écoute** dans un morceau. Un point de départ neutre
+n'en est pas un : sa place est ici, dans les références de `vst-sound-design`, avec les
+recettes qui s'appuieront dessus.
+
+**Ce n'est pas non plus le sub validé** du registre (SUB éteint, polyphonique, source
+wavetable) : le niveau ≈ −3/−4 dB du sub, sa chaîne EQ 24–130 Hz et la mesure kick/sub
+ne sont pas remis en cause.
+
+### À vérifier dans Live — le premier point bloque le template
 
 1. **Routage du filtre.** OSC A porte un badge **F1** alors que FILTER 1 est éteint et
    que FILTER 2 est celui qui est actif. Si ce badge signifie « routé vers Filter 1 »,
-   OSC A ne traverse pas Filter 2 et l'ouverture entendue ne vient pas du filtre réglé.
-   Test : bouger le CUTOFF de FILTER 2 et écouter si quelque chose change.
-2. **ENV 1** n'est pas visible sur la capture (le panneau montre ENV 4). Dans Serum
-   c'est ENV 1 qui porte l'amplitude : ses valeurs restent inconnues.
-3. **Valeurs des boutons** (CUTOFF, RES, DRIVE, LEVEL) : positions lues, chiffres non
-   affichés. À relever par survol ou double-clic.
-4. **Chemin du fichier** du preset et **niveau avant fader** : inconnus.
+   OSC A ne traverse aucun filtre actif. Sur un son isolé ce serait un détail ; **sur un
+   template c'est un défaut qui se recopie dans tous les patchs qui en descendront**.
+   Test : bouger le CUTOFF de FILTER 2 et écouter si quelque chose change. Si rien ne
+   bouge, corriger le routage puis **réenregistrer le template**.
+2. **ENV 1** n'est pas visible sur la capture (le panneau montre ENV 4). Dans Serum c'est
+   ENV 1 qui porte l'amplitude : ses valeurs restent inconnues, et ce sont elles qui
+   décideront de l'attaque et de la chute de tout ce qui partira de ce template.
+3. **Valeurs chiffrées** des boutons (CUTOFF, RES, DRIVE, LEVEL) : positions lues,
+   nombres non affichés. À relever par survol ou double-clic.
+4. **Nom exact et chemin du fichier**, pour pouvoir le recharger sans le chercher.
 
 ## Ce qui marche, ce qui ne marche pas
 
