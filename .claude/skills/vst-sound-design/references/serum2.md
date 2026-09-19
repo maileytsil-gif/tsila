@@ -99,12 +99,18 @@ Bass › Electric/Sub, Keys/Pad pour nappes. Banques perso dans
 `/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/User`
 (TKNVLT Techno Kick Collection, « Kick Future House Tsila », F Brooks kicks).
 
-## Template de départ Serum — état lu sur capture le 19 sept. 2026
+## Template « serum sound designer » — état lu sur capture le 19 sept. 2026
 
 Preset enregistré par l'utilisateur comme **point de départ réutilisable**, pas comme
-son fini. Nom affiché dans Serum sur la capture : **« serum design »** (ARTIST et DESC
-vides) — l'utilisateur l'a aussi appelé « serum sound designer », **nom exact et chemin
-à confirmer**.
+son fini.
+
+**Nom : « serum sound designer »**, confirmé par l'utilisateur le 19 sept. 2026.
+La capture du même jour affichait **« serum design »** dans le champ de preset. Donc
+soit le template a été renommé ou réenregistré ensuite, soit **les deux fichiers
+coexistent dans la banque User**. À trancher : s'il y en a deux, écarter celui qui n'est
+pas le template, sinon on repartira un jour du mauvais sans s'en apercevoir.
+
+Chemin du fichier : **toujours inconnu**. ARTIST et DESC vides.
 
 Relevé **visuellement sur une capture**, pas dans Live : Serum n'affiche pas les valeurs
 numériques des boutons, seulement leurs positions.
@@ -147,7 +153,8 @@ ne sont pas remis en cause.
    décideront de l'attaque et de la chute de tout ce qui partira de ce template.
 3. **Valeurs chiffrées** des boutons (CUTOFF, RES, DRIVE, LEVEL) : positions lues,
    nombres non affichés. À relever par survol ou double-clic.
-4. **Nom exact et chemin du fichier**, pour pouvoir le recharger sans le chercher.
+4. **Chemin du fichier** et présence éventuelle d'un doublon « serum design », pour
+   pouvoir le recharger sans le chercher et sans se tromper de version.
 
 ## Ce qui marche, ce qui ne marche pas
 
