@@ -99,6 +99,43 @@ Bass › Electric/Sub, Keys/Pad pour nappes. Banques perso dans
 `/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/User`
 (TKNVLT Techno Kick Collection, « Kick Future House Tsila », F Brooks kicks).
 
+## Preset « serum design » — état lu sur capture le 19 sept. 2026
+
+Relevé **visuellement sur une capture d'écran**, pas dans Live : aucune valeur
+numérique de bouton n'est affichée par Serum, seules les positions le sont. À
+confirmer côté Mac avant d'entrer au registre de signature.
+
+| Élément | État lu |
+|---|---|
+| Nom du preset | **serum design** (ARTIST et DESC vides) |
+| SUB | **off** |
+| OSC A | **on** — WAVETABLE, « Default Shapes », OCT 0 / SEM 0 / FIN 0, position 1, phase 180°, RAND 100, UNISON 1, WARP 1 et 2 off |
+| OSC B · OSC C · NOISE | **off** (NOISE chargé sur « AC hum1 ») |
+| FILTER 1 | **off** |
+| FILTER 2 | **on** — « MG Low 12 » (ladder Moog 12 dB), banque A |
+| Voicing | **POLY 8**, MONO décoché, LEGATO décoché |
+| ENV 4 (panneau affiché) | ATK 0,5 ms · HOLD 0,0 ms · DEC 1,00 s · SUS 100 % · REL 15 ms · RETRIG |
+| LFO 1 | triangle, Forward, 1/4, synchro BPM |
+| Global | TRANSPOSE 0, SWING OFF, macros 1–8 au minimum |
+
+**Ce n'est pas le sub validé du registre.** Le sub de `drums-signature` est
+« osc SUB sinus, mono + legato, release 90 ms ». Ici le SUB est éteint, la voix est
+polyphonique et le son vient d'OSC A en wavetable à travers un filtre Moog. C'est donc
+un **son nouveau et séparé** : le niveau ≈ −3/−4 dB du sub, sa chaîne EQ 24–130 Hz et
+la mesure kick/sub ne sont pas remis en cause.
+
+### À vérifier dans Live
+
+1. **Routage du filtre.** OSC A porte un badge **F1** alors que FILTER 1 est éteint et
+   que FILTER 2 est celui qui est actif. Si ce badge signifie « routé vers Filter 1 »,
+   OSC A ne traverse pas Filter 2 et l'ouverture entendue ne vient pas du filtre réglé.
+   Test : bouger le CUTOFF de FILTER 2 et écouter si quelque chose change.
+2. **ENV 1** n'est pas visible sur la capture (le panneau montre ENV 4). Dans Serum
+   c'est ENV 1 qui porte l'amplitude : ses valeurs restent inconnues.
+3. **Valeurs des boutons** (CUTOFF, RES, DRIVE, LEVEL) : positions lues, chiffres non
+   affichés. À relever par survol ou double-clic.
+4. **Chemin du fichier** du preset et **niveau avant fader** : inconnus.
+
 ## Ce qui marche, ce qui ne marche pas
 
 En arrière-plan : toggles (SUB, OSC, MONO, LEGATO), onglets, navigateur, double-clic de
