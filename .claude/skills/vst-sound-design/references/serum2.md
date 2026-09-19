@@ -5,8 +5,8 @@
 | Champ | Valeur |
 |---|---|
 | Géométrie de référence des repères ci-dessous | **1190 × 759** |
-| Géométrie actuelle de la fenêtre | **inconnue** — fenêtre redimensionnée « pour plus de visibilité » |
-| Échelle / zoom d'interface Serum | **à relever** |
+| Géométrie actuelle de la fenêtre | **non mesurée** — prédite à 1595 × 1017, voir « Hypothèse d'échelle » |
+| Échelle / zoom d'interface Serum | **134 %** (réglée le 19 sept. 2026) |
 | Capture de référence du bouton « fenêtre » du device | 1568 px de large |
 | Repères vérifiés le | — |
 
@@ -34,6 +34,44 @@ d'abord, clic ensuite.
    MONO/LEGATO/PORTA, readouts ENV 1, icône du navigateur de presets. Remplacer les
    coordonnées ci-dessous, dater la ligne « Repères vérifiés le », et retester
    l'ouverture du navigateur de presets de bout en bout.
+
+## Hypothèse d'échelle — non vérifiée
+
+L'échelle est à **134 %**. L'ancienne fiche notait « 1190 × 759 » **sans dire à quelle
+échelle** : c'est le défaut qui a rendu cette recalibration nécessaire, et il empêche
+de conclure ici. Sous l'hypothèse que 1190 × 759 avait été relevé à 100 %, le facteur
+est 1,34 et la fenêtre fait **1595 × 1017**.
+
+Une capture tranche en une fois :
+
+| Taille de la capture | Conclusion |
+|---|---|
+| 1595 × 1017 | Hypothèse confirmée, facteur 1,34 |
+| 3190 × 2034 | Idem, mais capture Retina 2× — diviser par 2 avant de mapper |
+| autre chose | 1190 × 759 n'était pas à 100 %. Le vrai facteur est `largeur_capture / 1190` |
+
+Repères mappés à 1,34 — **hypothèses de départ, aucune n'est vérifiée** :
+
+| Repère | 1190 × 759 | × 1,34 |
+|---|---|---|
+| SUB on/off | (11,101) | (15,135) |
+| OSC A | (86,101) | (115,135) |
+| OSC B | (356,101) | (477,135) |
+| NOISE | (896,101) | (1201,135) |
+| FILTER 1 | (996,101) | (1335,135) |
+| onglets OSC / MIX / FX / MATRIX / GLOBAL | 199/266/334/403/470 × 50 | 267/356/448/540/630 × 67 |
+| MONO | (1058,627) | (1418,840) |
+| LEGATO | (1058,653) | (1418,875) |
+| PORTA | (1081,720) | (1449,965) |
+| ENV 1 ATK/HOLD/DEC/SUS/REL | 200/255/308/362/413 × 593 | 268/342/413/485/553 × 795 |
+| icône navigateur | (1010,36) | (1353,48) |
+
+**Multiplier ne remplace pas vérifier.** Une interface de plug-in ne se remet pas
+forcément à l'échelle de façon uniforme : les tailles de police et les bords s'alignent
+sur des pixels entiers, et un élément peut se replacer au lieu de grandir. L'erreur se
+cumule vers la droite et vers le bas — les repères les plus éloignés de l'origine
+(FILTER 1, PORTA, MONO/LEGATO) sont les moins sûrs. L'étape 4 reste obligatoire : le
+mapping fait gagner le relevé, pas la vérification.
 
 ## Ouvrir la fenêtre
 
