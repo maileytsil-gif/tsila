@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""LOM Bridge v0.4.1 — Remote Script Ableton Live (Python) : pont OSC/UDP vers l'API Live, automation d'arrangement comprise.
+"""LOM Bridge v0.4.4 — Remote Script Ableton Live (Python) : pont OSC/UDP vers l'API Live, automation d'arrangement comprise.
 
 Principe (contraintes de l'API Live 12.4) : une enveloppe ne se crée que sur un clip de SESSION et n'agit que dans l'étendue
 de SON clip. Le bridge reconstruit donc chaque clip d'arrangement concerné depuis la session (mêmes notes / même fichier audio,
@@ -13,7 +13,7 @@ import socket, struct, re, math, traceback, os, json, random
 import Live
 from _Framework.ControlSurface import ControlSurface
 
-VERSION = "0.4.3"
+VERSION = "0.4.4"
 RX_PORT = 7421
 CONN_FILE = os.path.join(os.path.expanduser("~"), "Library", "Application Support", "LOMBridge", "connection.json")
 MAX_READ_POINTS = 400
@@ -401,12 +401,20 @@ class LOMBridge(ControlSurface):
     def _rel(self, clip, t_abs): return t_abs - float(clip.start_time) + float(clip.start_marker)
 
     def _free_slot(self, track):
-        """(slot libre, index de scène créée ou None)."""
+        """(slot libre, index de scène créée ou None). Refuse une piste de groupe : ses slots (existants
+        ou créés par une nouvelle scène) sont tous des is_group_slot, aucun ne peut recevoir de clip."""
         for s in track.clip_slots:
             if not s.has_clip and not getattr(s, "is_group_slot", False): return s, None
+        if getattr(track, "is_foldable", False):
+            raise ValueError("piste de groupe « %s » : impossible d'y créer un clip, cibler une piste enfant" % track.name)
         song = self.song(); song.create_scene(-1)
         idx = len(song.scenes) - 1
-        return track.clip_slots[idx], idx
+        slot = track.clip_slots[idx]
+        if getattr(slot, "is_group_slot", False):
+            try: song.delete_scene(idx)
+            except Exception: pass
+            raise ValueError("piste de groupe « %s » : impossible d'y créer un clip, cibler une piste enfant" % track.name)
+        return slot, idx
 
     def _check_clip(self, clip, accept):
         """(fatal[], refus sans acceptation[]) pour la reconstruction d'un clip."""
@@ -641,7 +649,7 @@ class LOMBridge(ControlSurface):
             if plan["sampling_seconds"] > 0 and song.is_playing: raise ValueError("lecture en cours : arrêter le transport (échantillonnage nécessaire)")
             try: float(p.value)
             except Exception: raise ValueError("paramètre disparu : replanifier")
-            song.begin_undo_step(); mismatch = None
+            song.begin_undo_step(); failure = None
             try:
                 for c, s, e, entry in targets:
                     if self._cancel_requested(): raise ValueError("annulée")
@@ -654,14 +662,17 @@ class LOMBridge(ControlSurface):
                     merged = sorted(old["before"] + new + old["after"], key=lambda x: x[0])
                     nc = self._rebuild(track, c, [(p, merged)], warnings, accept)
                     rebuilt.append((self._ref(nc), str(nc.name), len(old["before"]) + len(old["after"])))
-            except RebuildMismatch as e:
-                mismatch = e
+            except Exception as e:
+                # tout échec ici (mismatch, clip suivant qui casse, annulation) peut survenir
+                # APRÈS que duplicate_clip_to_arrangement a déjà remplacé un clip précédent dans
+                # cette même étape d'annulation : un seul song.undo() défait tout, sans exception.
+                failure = e
             finally:
                 song.end_undo_step()
-            if mismatch is not None:
+            if failure is not None:
                 try: song.undo()
-                except Exception as e2: raise ValueError("%s ; ANNULATION AUTOMATIQUE IMPOSSIBLE (%s) : faire Cmd+Z" % (mismatch, e2))
-                raise ValueError("%s ; étape annulée automatiquement, rien n'est modifié" % mismatch)
+                except Exception as e2: raise ValueError("%s ; ANNULATION AUTOMATIQUE IMPOSSIBLE (%s) : faire Cmd+Z" % (failure, e2))
+                raise ValueError("%s ; étape annulée automatiquement, rien n'est modifié" % failure)
             reply("shape", len(rebuilt), len(bps), plan.get("gap", 0))
             for ref, name, nold in rebuilt: reply("rebuilt", ref, name, nold)
             for w in warnings: reply("warn", w)
@@ -756,19 +767,19 @@ class LOMBridge(ControlSurface):
         if problems: raise ValueError("refus : " + " ; ".join(problems))
         def job():
             song = self.song(); n = 0; warnings = []
-            song.begin_undo_step(); mismatch = None
+            song.begin_undo_step(); failure = None
             try:
                 for c, s, e in targets:
                     if self._cancel_requested(): raise ValueError("annulée")
                     old = {}
                     for _ in self._old_points(c, p, (max(tA, s), min(tB, e)), old): yield
                     self._rebuild(t, c, [(p, old["before"] + old["after"])], warnings, accept); n += 1
-            except RebuildMismatch as e: mismatch = e
+            except Exception as e: failure = e   # même raisonnement que /shape : un clip précédent a pu être remplacé
             finally: song.end_undo_step()
-            if mismatch is not None:
+            if failure is not None:
                 try: song.undo()
-                except Exception as e2: raise ValueError("%s ; ANNULATION AUTOMATIQUE IMPOSSIBLE (%s) : faire Cmd+Z" % (mismatch, e2))
-                raise ValueError("%s ; étape annulée automatiquement" % mismatch)
+                except Exception as e2: raise ValueError("%s ; ANNULATION AUTOMATIQUE IMPOSSIBLE (%s) : faire Cmd+Z" % (failure, e2))
+                raise ValueError("%s ; étape annulée automatiquement" % failure)
             reply("cleared", n)
             for w in warnings: reply("warn", w)
         return job()

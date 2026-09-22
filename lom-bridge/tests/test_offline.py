@@ -64,10 +64,16 @@ class FakeMixer:
         self.volume = FakeParam("Track Volume"); self.panning = FakeParam("Track Panning", -1, 1, 0.0, disp=lambda v: "%.0f" % (v * 50)); self.sends = [FakeParam("A-Reverb", 0, 1, 0.1)]
 class FakeTrack:
     _n = 0
-    def __init__(self, name, clips=None, midi=True):
+    def __init__(self, name, clips=None, midi=True, is_foldable=False):
         FakeTrack._n += 1; self._live_ptr = 100 + FakeTrack._n
         self.name, self.arrangement_clips, self.devices, self.mixer_device = name, clips or [], [], FakeMixer()
-        self.clip_slots = [FakeSlot(self) for _ in range(4)]; self.has_midi_input = midi; self.dup_calls = []; self.fail_duplicate = False
+        self.is_foldable = is_foldable
+        self.clip_slots = [FakeSlot(self) for _ in range(4)]
+        for s in self.clip_slots: s.is_group_slot = is_foldable
+        self.has_midi_input = midi; self.dup_calls = []; self.fail_duplicate = False
+    def add_slot(self):
+        """Une nouvelle scène (song.create_scene) ajoute un slot à CHAQUE piste, comme dans Live."""
+        s = FakeSlot(self); s.is_group_slot = self.is_foldable; self.clip_slots.append(s); return s
     def duplicate_clip_to_arrangement(self, clip, t):
         self.dup_calls.append((clip, t))
         if self.fail_duplicate: raise RuntimeError("duplicate refused")
@@ -83,7 +89,9 @@ class FakeSong:
         self.tempo = 126.0
     def begin_undo_step(self): self.undo_log.append("begin")
     def end_undo_step(self): self.undo_log.append("end")
-    def create_scene(self, i): self.scenes.append(len(self.scenes) + 1)
+    def create_scene(self, i):
+        self.scenes.append(len(self.scenes) + 1)
+        for t in self.tracks + self.return_tracks + [self.master_track]: t.add_slot()
     def delete_scene(self, i): self.scenes.pop(i)
 
 def make_live_module():
@@ -275,6 +283,79 @@ class TestPlanAndRebuild(unittest.TestCase):
         rows = []; gen = self.b.cmd_shape(lambda *a: rows.append(a), ["3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions", 16.0, 0.2, 20.0, 0.4])
         with self.assertRaises(ValueError) as cm: list(gen)
         self.assertIn("annulée automatiquement", str(cm.exception)); self.assertEqual(self.song.undo_calls, [1]); self.assertEqual(self.song.undo_log[-1], "end")
+    def test_shape_second_clip_failure_rolls_back_first(self):
+        # le premier clip est déjà reconstruit (duplicate_clip_to_arrangement a remplacé l'ancien) quand le second casse
+        # avec une erreur "normale" (pas un RebuildMismatch) : song.undo() doit quand même être appelé.
+        orig = self.track.duplicate_clip_to_arrangement; calls = []
+        def flaky(clip, t):
+            calls.append(t)
+            if len(calls) == 2: raise RuntimeError("panne simulée sur le 2e clip")
+            return orig(clip, t)
+        self.track.duplicate_clip_to_arrangement = flaky
+        self.song.undo_calls = []; self.song.undo = lambda: self.song.undo_calls.append(1)
+        rows = []; gen = self.b.cmd_shape(lambda *a: rows.append(a), ["3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions", 16.0, 0.2, 40.0, 0.8])
+        with self.assertRaises(ValueError) as cm: list(gen)
+        self.assertIn("annulée automatiquement", str(cm.exception)); self.assertEqual(calls, [16.0, 32.0])
+        self.assertEqual(self.song.undo_calls, [1]); self.assertEqual(self.song.undo_log[-1], "end")
+    def test_clear_second_clip_failure_rolls_back_first(self):
+        clipA, clipB = self.track.arrangement_clips
+        clipA.automation_envelopes = [FakeEnvelope(self.vol, [(0.0, 0.2), (16.0, 0.4)])]
+        clipB.automation_envelopes = [FakeEnvelope(self.vol, [(0.0, 0.4), (16.0, 0.6)])]
+        orig = self.track.duplicate_clip_to_arrangement; calls = []
+        def flaky(clip, t):
+            calls.append(t)
+            if len(calls) == 2: raise RuntimeError("panne simulée sur le 2e clip")
+            return orig(clip, t)
+        self.track.duplicate_clip_to_arrangement = flaky
+        self.song.undo_calls = []; self.song.undo = lambda: self.song.undo_calls.append(1)
+        rows = []; gen = self.b.cmd_clear(lambda *a: rows.append(a), ["3-MIDI", self.vref, 16.0, 48.0, "expressions"])
+        with self.assertRaises(ValueError) as cm: list(gen)
+        self.assertIn("annulée automatiquement", str(cm.exception)); self.assertEqual(calls, [16.0, 32.0])
+        self.assertEqual(self.song.undo_calls, [1]); self.assertEqual(self.song.undo_log[-1], "end")
+    def test_partial_clip_coverage_both_ends(self):
+        # fenêtre 20-40 : recoupe partiellement A (16-32) et B (32-48), sans les couvrir en entier
+        p = self.plan("3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions", 20.0, 0.2, 40.0, 0.8)
+        self.assertEqual(p["errors"], []); self.assertEqual(p["gap"], 0)
+        a, b = p["clips"]; self.assertEqual(a["window"], [20.0, 32.0]); self.assertEqual(b["window"], [32.0, 40.0])
+        clipA, clipB = self.track.arrangement_clips
+        clipA.automation_envelopes = [FakeEnvelope(self.vol, [(0.0, 0.0), (16.0, 1.0)])]
+        clipB.automation_envelopes = [FakeEnvelope(self.vol, [(0.0, 1.0), (16.0, 0.0)])]
+        rows = []; gen = self.b.cmd_shape(lambda *a: rows.append(a), ["3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions", 20.0, 0.2, 40.0, 0.8])
+        list(gen)
+        (sA, tA), (sB, tB) = self.track.dup_calls
+        evA = sA.envs_created["Track Volume"].created; evB = sB.envs_created["Track Volume"].created
+        # ancienne rampe conservée avant la fenêtre (clip A, t relatif 0-4) puis nouvelle valeur dès le début de fenêtre
+        self.assertEqual(evA[0], (0.0, 0.0)); self.assertAlmostEqual(evA[1][1], 0.25, places=4); self.assertEqual(evA[1][0], 4.0)
+        self.assertEqual(evA[2], (4.0, 0.2)); self.assertEqual(evA[-1], (16.0, 0.56))
+        # ancienne rampe conservée après la fenêtre (clip B, t relatif 8-16)
+        self.assertEqual(evB[0], (0.0, 0.56)); self.assertEqual(evB[-1], (16.0, 0.0)); self.assertAlmostEqual(evB[-2][1], 0.5, places=4)
+    def test_boundary_tie_uses_post_jump_at_start_pre_jump_at_end(self):
+        # deux points au même instant à chaque bord de la fenêtre : au début on prend la valeur d'ARRIVÉE
+        # du saut (celle qui s'applique à partir de cet instant), à la fin la valeur d'AVANT (celle qui
+        # s'applique jusqu'à cet instant) — même convention que pour un saut à l'intérieur de la fenêtre.
+        rows = []
+        gen = self.b.cmd_shape(lambda *a: rows.append(a), ["3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions",
+                                                            16.0, 0.2, 16.0, 0.8, 32.0, 0.5, 32.0, 0.9])
+        list(gen)
+        (sess, t), = self.track.dup_calls
+        self.assertEqual(sess.envs_created["Track Volume"].created, [(0.0, 0.8), (16.0, 0.5)])
+    def test_hold_without_next_clip_warns_and_leaves_window_unchanged(self):
+        solo = FakeTrack("SOLO", [FakeClip("A", 16.0, 32.0)])   # rien après ce clip
+        self.song.tracks.append(solo); vref = self.b._ref(solo.mixer_device.volume)
+        p = self.b._build_plan(["SOLO", vref, "raw", 8, "lin", 1, "expressions", 20.0, 0.2, 32.0, 0.8])
+        self.assertEqual(p["errors"], []); self.assertEqual(p["t_hi"], 32.0)
+        self.assertTrue(any("hold sans effet" in w for w in p["warnings"]))
+    def test_free_slot_refuses_group_track(self):
+        group = FakeTrack("GROUP", is_foldable=True); self.song.tracks.append(group)
+        n_scenes = len(self.song.scenes)
+        with self.assertRaises(ValueError) as cm: self.b._free_slot(group)
+        self.assertIn("groupe", str(cm.exception)); self.assertEqual(len(self.song.scenes), n_scenes)
+    def test_free_slot_creates_scene_when_track_full(self):
+        for s in self.track.clip_slots: s.has_clip = True
+        n_scenes = len(self.song.scenes)
+        slot, idx = self.b._free_slot(self.track)
+        self.assertFalse(slot.has_clip); self.assertFalse(getattr(slot, "is_group_slot", False))
+        self.assertEqual(idx, n_scenes); self.assertEqual(len(self.song.scenes), n_scenes + 1)
     def test_rebuild_cleans_up_on_error(self):
         clip = self.track.arrangement_clips[0]; self.track.fail_duplicate = True; slot = self.track.clip_slots[0]
         with self.assertRaises(RuntimeError): self.b._rebuild(self.track, clip, [(self.vol, [(0.0, 0.5)])], [], set(["expressions"]))

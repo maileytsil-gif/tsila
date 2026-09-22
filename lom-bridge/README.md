@@ -1,11 +1,11 @@
-# LOM Bridge 0.4.2 — écriture d'automation d'arrangement dans Ableton Live, pilotable par une IA ou un script
+# LOM Bridge 0.4.4 — écriture d'automation d'arrangement dans Ableton Live, pilotable par une IA ou un script
 
 | Fichier | Rôle |
 |---|---|
 | `LOMBridge/__init__.py` | Remote Script Python (dans Live) : UDP 7421, API Live complète, plan et écriture d'automation |
 | `lom.py` | Client Python 3 sans dépendance : CLI, `apply spec.json [--dry]`, serveur HTTP JSON |
 | `automations_el21.json` | Spec d'exemple pour le morceau el21 |
-| `tests/test_offline.py` | 24 tests logiciels sans Live (`python3 -W ignore -m unittest tests/test_offline.py`) |
+| `tests/test_offline.py` | 33 tests logiciels sans Live (`python3 -W ignore -m unittest tests/test_offline.py`) |
 | `tests/live_suite.py` | Suite d'essais dans Live sur deux pistes temporaires créées puis supprimées |
 | `legacy/` | Ancien device Max for Live (protocole obsolète, sans automation) — non maintenu |
 
@@ -14,7 +14,7 @@ Contexte de développement : macOS 26.6, Live 12.4.5 Suite, Python embarqué de 
 ## Installation
 1. Copier `LOMBridge/` dans `User Library/Remote Scripts/` (Live ne lit ce dossier qu'au lancement).
 2. Relancer Live → Réglages → Link, Tempo & MIDI → Surface de contrôle : **LOMBridge** (entrée/sortie : Aucune).
-3. Le bridge écrit `~/Library/Application Support/LOMBridge/connection.json` (0600) : `port`, `token`, `session`, `version`. `python3 lom.py ping` doit répondre `pong 0.4.2 … session <n>`.
+3. Le bridge écrit `~/Library/Application Support/LOMBridge/connection.json` (0600) : `port`, `token`, `session`, `version`. `python3 lom.py ping` doit répondre `pong 0.4.4 … session <n>`.
 4. Après modification du script : `python3 lom.py reload`. Attention : à chaque **chargement de Set**, Live réinstancie la surface de contrôle avec le module importé au **démarrage** de Live ; un rechargement à chaud est perdu jusqu'au redémarrage (le fichier sur disque fait foi).
 
 ## Protocole (OSC sur UDP 127.0.0.1:7421)
@@ -73,5 +73,5 @@ Spec `apply` : `{"beatsPerBar":4,"automations":[{"track":"AUDIO - Sub","device":
 HTTP : `POST /cmd {"cmd":"/plan","args":[…]}`, `POST /apply {"spec":{…},"dry":true}`, `GET /` = aide. Jeton obligatoire dans l'en-tête `Authorization`, en-tête `Origin` refusé.
 
 ## Ce qui a été vérifié
-- **Tests logiciels** (24, sans Live) : OSC int64 sans perte, références inchangées sur le fil, client qui ignore les lignes d'autres requêtes, jeton exigé et fichier créé à l'init, id sur chaque ligne, refus des ids numériques et des sessions étrangères, interpolation gauche/droite, budget = nombre de points générés, fenêtre nulle, saturation, `accept`, clips bouclés étirés, ancrages exacts, ordre des points d'un saut, nettoyage après erreur de reconstruction, annulation par id, revalidation quand un clip disparaît, liste blanche HTTP.
+- **Tests logiciels** (33, sans Live) : OSC int64 sans perte, références inchangées sur le fil, client qui ignore les lignes d'autres requêtes, jeton exigé et fichier créé à l'init, id sur chaque ligne, refus des ids numériques et des sessions étrangères, interpolation gauche/droite, budget = nombre de points générés, fenêtre nulle, saturation, `accept`, clips bouclés étirés, ancrages exacts, ordre des points d'un saut, nettoyage après erreur de reconstruction, annulation par id, revalidation quand un clip disparaît, liste blanche HTTP. Depuis 0.4.4 : deux points au même instant sur un bord de fenêtre (valeur d'arrivée au début, valeur d'avant à la fin), clip ne couvrant que partiellement la plage (ancienne rampe conservée hors fenêtre des deux côtés), `hold` sans clip suivant (avertissement, fenêtre inchangée), `/shape` et `/clear` annulent bien **tout** (`song.undo()`) si un clip échoue après qu'un précédent a déjà été remplacé dans l'arrangement, piste de groupe refusée explicitement par `_free_slot` (ses slots, existants ou créés par une nouvelle scène, ne peuvent jamais recevoir de clip).
 - **Dans Live 12.4.5** (`tests/live_suite.py`, 26 contrôles, copie d'el21) : saut au bord d'un clip, 192 points hors fenêtre inchangés, validations `/read` et `/plan`, fusion audio par échantillonnage avec conservation de l'ancienne rampe et du Pan, annulation d'une tâche en cours par id, curseur restauré, revalidation. Sur la copie d'el21 : zones non ciblées d'autres pistes identiques ; sweep du même clip conservé à 0,0011 près (échantillonné) ; Cmd+Z défait tout en une étape ; après sauvegarde et réouverture, valeurs identiques à 0,0000 près.
