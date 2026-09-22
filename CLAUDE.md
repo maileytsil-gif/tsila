@@ -16,7 +16,39 @@ dans le dossier du projet, ex. `/Volumes/NO NAME/caude`), où le skill
 le relais.
 
 Cette session cloud reste utile pour tout ce qui touche au code du dépôt
-lui-même : `lom-bridge/`, scripts, revues, documentation.
+lui-même : `lom-bridge/`, scripts, revues, documentation. Elle sait aussi
+analyser des fichiers audio fournis (mesures, spectrogrammes) et écrire la
+mémoire projet.
 
 Cette règle s'applique à **chaque nouveau morceau**, pas seulement à celui en
 cours au moment de son écriture (le morceau "funk is not dead").
+
+## Ouvrir une session qui peut piloter Live
+
+**Claude Code web** (claude.ai/code) = conteneur cloud : ni Ableton, ni écran,
+ni route réseau vers le Mac. **Claude Code dans le Terminal du Mac** = accès
+complet. C'est le seul choix qui compte — tout le reste est déjà en place.
+
+Sur le Mac :
+
+```sh
+cd "/Volumes/NO NAME/caude"
+claude
+```
+
+Puis reprendre par « on reprend \<nom du morceau\> ».
+
+### Déjà configuré, à ne pas refaire
+
+| Élément | Où il est déclaré |
+|---|---|
+| Producer Pal (`ppal-*`) | config utilisateur → présent dans **toutes** les sessions locales |
+| LOM Bridge | `.claude/skills/ableton-live-session/scripts/pyl.sh` |
+| Les 26 skills musique | `.claude/skills/` (dans ce dépôt) |
+| Les permissions | `.claude/settings.local.json` |
+
+### Pourquoi aucun réglage GitHub ne peut y changer quoi que ce soit
+
+Producer Pal joint Ableton par **localhost**, le bridge est un **script local**,
+et le contrôle d'écran a besoin d'**un écran**. Un conteneur cloud n'a aucun des
+trois. Ce n'est pas une permission manquante — c'est une autre machine.
