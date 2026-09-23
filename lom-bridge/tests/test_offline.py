@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Tests logiciels hors Live pour LOM Bridge 0.4.1 : python3 -m unittest tests/test_offline.py -v
-Un faux module `Live` et un faux `_Framework.ControlSurface` sont injectés ; aucun accès à Ableton."""
+"""Tests logiciels hors Live pour LOM Bridge : python3 -m unittest tests/test_offline.py -v
+Un faux module `Live` et un faux `_Framework.ControlSurface` sont injectés ; aucun accès à Ableton.
+Les faux reproduisent ce qui compte pour l'écriture : le clip dupliqué dans l'arrangement porte les enveloppes créées en session
+(exposées, ou cachées comme pour l'audio réel), `song.undo()` remet les clips d'avant `begin_undo_step`, et `FollowParam`
+suit l'automation au curseur comme un paramètre de Live transport arrêté."""
 import sys, os, types, json, tempfile, unittest, importlib.util, struct
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -14,6 +17,23 @@ class FakeParam:
         self.name, self.min, self.max, self.value, self.is_quantized, self.automation_state = name, mn, mx, value, quantized, automation_state
         self._disp = disp or (lambda v: "%.3f dB" % (20 * (v - 0.85) * 3))   # affichage croissant simple
     def str_for_value(self, v): return self._disp(v)
+
+class FollowParam(FakeParam):
+    """Paramètre dont la valeur suit l'automation d'arrangement de sa piste au curseur (état 1), exposée ou cachée ;
+    en état 0 ou 2 (surchargé), la valeur manuelle."""
+    def __init__(self, name, **kw):
+        self.song = self.track = None; FakeParam.__init__(self, name, **kw)
+    @property
+    def value(self):
+        if self.automation_state != 1 or self.song is None: return self._value
+        t = self.song.current_song_time
+        for c in self.track.arrangement_clips:
+            if c.start_time <= t < c.end_time:
+                for ev in list(c.automation_envelopes) + list(getattr(c, "hidden_envelopes", [])):
+                    if ev.parameter is self: return ev.value_at_time(t - c.start_time + c.start_marker)
+        return self._value
+    @value.setter
+    def value(self, v): self._value = v
 
 class FakeEvent:
     def __init__(self, t, v): self.time, self.value = t, v
@@ -50,6 +70,8 @@ class FakeClip:
         object.__setattr__(self, k, v)
     def get_all_notes_extended(self): return list(self.notes)
     def add_new_notes(self, specs): self.notes.extend(specs)
+    def remove_notes_extended(self, from_pitch, pitch_span, from_time, time_span):
+        self.notes = [n for n in self.notes if not (from_pitch <= n.pitch < from_pitch + pitch_span and from_time <= n.start_time < from_time + time_span)]
     def create_automation_envelope(self, p):
         e = FakeEnvelope(p); self.envs_created[p.name] = e; return e
 class FakeSlot:
@@ -62,17 +84,35 @@ class FakeSlot:
 class FakeMixer:
     def __init__(self):
         self.volume = FakeParam("Track Volume"); self.panning = FakeParam("Track Panning", -1, 1, 0.0, disp=lambda v: "%.0f" % (v * 50)); self.sends = [FakeParam("A-Reverb", 0, 1, 0.1)]
+class FakeDevice:
+    _n = 0
+    def __init__(self, name, params):
+        FakeDevice._n += 1; self._live_ptr = 9000 + FakeDevice._n
+        self.name, self.parameters, self.class_name, self.is_active = name, params, "PluginDevice", True
+class FakeCue:
+    _n = 0
+    def __init__(self, t, name=""): FakeCue._n += 1; self._live_ptr = 7000 + FakeCue._n; self.time, self.name = t, name
 class FakeTrack:
     _n = 0
-    def __init__(self, name, clips=None, midi=True):
+    def __init__(self, name, clips=None, midi=True, expose=True):
         FakeTrack._n += 1; self._live_ptr = 100 + FakeTrack._n
         self.name, self.arrangement_clips, self.devices, self.mixer_device = name, clips or [], [], FakeMixer()
         self.clip_slots = [FakeSlot(self) for _ in range(4)]; self.has_midi_input = midi; self.dup_calls = []; self.fail_duplicate = False
+        self.expose = expose   # False : le clip d'arrangement n'expose pas ses enveloppes (audio réel), elles restent cachées
+        self.mute = self.solo = False; self.is_foldable = False; self.meter = 0.0
+    @property
+    def output_meter_left(self): return self.meter if self._song_playing() else 0.0
+    @property
+    def output_meter_right(self): return self.meter * 0.9 if self._song_playing() else 0.0
+    def _song_playing(self): return bool(getattr(self, "song", None) and self.song.is_playing)
     def duplicate_clip_to_arrangement(self, clip, t):
         self.dup_calls.append((clip, t))
         if self.fail_duplicate: raise RuntimeError("duplicate refused")
         nc = FakeClip(clip.name, t, t + (clip.end_marker - clip.start_marker), audio=clip.is_audio_clip)
         nc.timeline = getattr(clip, "timeline", 1e18); nc.end_marker = clip.end_marker; nc.start_marker = clip.start_marker
+        envs = [FakeEnvelope(e.parameter, sorted(e.created)) for e in clip.envs_created.values()]
+        if self.expose: nc.automation_envelopes = envs
+        else: nc.hidden_envelopes = envs
         old = [c for c in self.arrangement_clips if abs(c.start_time - t) < 1e-9]
         for c in old: self.arrangement_clips.remove(c)
         self.arrangement_clips.append(nc); return nc
@@ -80,9 +120,33 @@ class FakeSong:
     def __init__(self, tracks):
         self.tracks, self.return_tracks, self.master_track = tracks, [], FakeTrack("Main")
         self.is_playing, self.current_song_time, self.scenes, self.undo_log = False, 0.0, [1, 2, 3, 4], []
-        self.tempo = 126.0
-    def begin_undo_step(self): self.undo_log.append("begin")
+        self.tempo = 126.0; self.undo_calls = []; self._snapshot = None
+        self.view = types.SimpleNamespace(selected_track=None, selected_device=None, select_device=lambda d: setattr(self.view, "selected_device", d))
+        self.signature_numerator, self.signature_denominator, self.loop, self.loop_start, self.loop_length = 4, 4, False, 0.0, 16.0
+        self.cue_points = []
+        for t in tracks + [self.master_track]: t.song = self
+    def start_playing(self): self.is_playing = True
+    def stop_playing(self): self.is_playing = False
+    def set_or_delete_cue(self):
+        hit = [c for c in self.cue_points if abs(c.time - self.current_song_time) < 1e-6]
+        if hit: self.cue_points.remove(hit[0])
+        else: self.cue_points.append(FakeCue(self.current_song_time, "%g" % self.current_song_time))
+    def _all_params(self):
+        for t in self.tracks + [self.master_track]:
+            yield from [t.mixer_device.volume, t.mixer_device.panning] + list(t.mixer_device.sends)
+            for d in t.devices: yield from d.parameters
+    def begin_undo_step(self):
+        self.undo_log.append("begin")
+        self._snapshot = ([(t, list(t.arrangement_clips)) for t in self.tracks], [(p, p.value) for p in self._all_params()],
+                          [(c, list(c.notes)) for t in self.tracks for c in t.arrangement_clips])
     def end_undo_step(self): self.undo_log.append("end")
+    def undo(self):
+        """Remet clips d'arrangement, valeurs de paramètres et notes tels qu'avant la dernière étape (une seule étape, comme Cmd+Z)."""
+        self.undo_calls.append(1)
+        clips, params, notes = self._snapshot or ([], [], [])
+        for t, cl in clips: t.arrangement_clips = list(cl)
+        for p, v in params: p.value = v
+        for c, ns in notes: c.notes = list(ns)
     def create_scene(self, i): self.scenes.append(len(self.scenes) + 1)
     def delete_scene(self, i): self.scenes.pop(i)
 
@@ -98,6 +162,17 @@ def make_live_module():
         def __init__(self, **kw): self.__dict__.update(kw)
     Live.Clip = types.SimpleNamespace(WarpMarker=WarpMarker, MidiNoteSpecification=MidiNoteSpecification)
     app = types.SimpleNamespace(get_major_version=lambda: 12, get_minor_version=lambda: 4, get_bugfix_version=lambda: 5)
+    class Item:
+        def __init__(self, name, children=(), loadable=False): self.name, self.children, self.is_loadable, self.is_folder = name, list(children), loadable, not loadable
+    plugins = Item("Plug-ins", [Item("VST3", [Item("Xfer Records", [Item("Serum 2", loadable=True), Item("Serum 2 FX", loadable=True)]), Item("FabFilter", [Item("Pro-Q 4", loadable=True)])]),
+                               Item("Audio Units", [Item("Serum 2", loadable=True)])])
+    audio_effects = Item("Audio Effects", [Item("Utility", loadable=True), Item("EQ Eight", loadable=True)])
+    class Browser:
+        def __init__(s): s.plugins, s.audio_effects, s.sounds = plugins, audio_effects, Item("Sounds", []); s.loaded = []; s.on_load = None
+        def load_item(s, item):
+            s.loaded.append(item)
+            if s.on_load: s.on_load(item)
+    app.browser = Browser()
     Live.Application = types.SimpleNamespace(get_application=lambda: app)
     return Live
 
@@ -177,7 +252,7 @@ class TestProtocol(unittest.TestCase):
         c = _load(self.mod.CONN_FILE); self.assertEqual(c["port"], 7421); self.assertEqual(len(c["token"]), 32)
         self.assertEqual(oct(os.stat(self.mod.CONN_FILE).st_mode & 0o777), "0o600")
     def test_token_required(self):
-        out = self.send("/ping", token="faux"); self.assertEqual(out[1][0], "/err"); self.assertIn("jeton", out[1][1][1])
+        out = self.send("/ping", token="faux"); self.assertEqual(out[1][0], "/err"); self.assertEqual(out[1][1][1], "E_AUTH"); self.assertIn("jeton", out[1][1][2])
     def test_every_line_carries_rid(self):
         out = self.send("/children", "live_set", "tracks", rid="abc")
         self.assertEqual([o[0] for o in out], ["/begin", "/r", "/end"]); self.assertTrue(all(o[1][0] == "abc" for o in out))
@@ -279,6 +354,97 @@ class TestPlanAndRebuild(unittest.TestCase):
         clip = self.track.arrangement_clips[0]; self.track.fail_duplicate = True; slot = self.track.clip_slots[0]
         with self.assertRaises(RuntimeError): self.b._rebuild(self.track, clip, [(self.vol, [(0.0, 0.5)])], [], set(["expressions"]))
         self.assertEqual(slot.deleted, 1); self.assertFalse(slot.has_clip)
+    def shape(self, *a, **kw):
+        rows = []; gen = self.b.cmd_shape(lambda *x: rows.append(x), list(a)); return rows, gen
+    def verified_row(self, rows): return next(r for r in rows if r[0] == "verified")
+    def test_verified_exact_after_shape(self):
+        rows, gen = self.shape("3-MIDI", self.vref, "raw", 8, "exp", 0, "expressions", 16.0, 0.1, 40.0, 0.9); list(gen)
+        v = self.verified_row(rows); self.assertEqual(v[4], "exact"); self.assertGreater(v[1], 10); self.assertLessEqual(v[2], v[3])
+        self.assertEqual(self.song.undo_calls, [])
+    def test_partial_failure_rolls_back_all(self):
+        before = list(self.track.arrangement_clips); orig = self.track.duplicate_clip_to_arrangement
+        def dup(clip, t):
+            if self.track.dup_calls: raise RuntimeError("clip B impossible")   # le 1er clip est déjà remplacé
+            return orig(clip, t)
+        self.track.duplicate_clip_to_arrangement = dup
+        rows, gen = self.shape("3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions", 16.0, 0.2, 48.0, 0.8)
+        with self.assertRaises(ValueError) as cm: list(gen)
+        self.assertIn("1 clip(s) remis", str(cm.exception)); self.assertIn("rien n'est modifié", str(cm.exception))
+        self.assertEqual(self.song.undo_calls, [1]); self.assertEqual(self.track.arrangement_clips, before)
+        self.assertEqual(self.song.undo_log, ["begin", "end"]); self.assertEqual(rows, [])
+    def test_failure_before_any_write_does_not_undo(self):
+        before = list(self.track.arrangement_clips); self.track.fail_duplicate = True
+        rows, gen = self.shape("3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions", 16.0, 0.2, 20.0, 0.8)
+        with self.assertRaises(ValueError) as cm: list(gen)
+        self.assertIn("rien n'est modifié", str(cm.exception)); self.assertNotIn("annulée automatiquement", str(cm.exception))
+        self.assertEqual(self.song.undo_calls, []); self.assertEqual(self.track.arrangement_clips, before)
+    def test_verify_failure_triggers_undo(self):
+        before = list(self.track.arrangement_clips); orig = self.track.duplicate_clip_to_arrangement
+        def corrupt(clip, t):
+            nc = orig(clip, t)
+            for ev in nc.automation_envelopes: ev.events = [(tt, 0.0) for tt, _ in ev.events]   # Live n'aurait pas écrit ce qu'on lui a donné
+            return nc
+        self.track.duplicate_clip_to_arrangement = corrupt
+        rows, gen = self.shape("3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions", 16.0, 0.2, 20.0, 0.8)
+        with self.assertRaises(ValueError) as cm: list(gen)
+        self.assertIn("relecture", str(cm.exception)); self.assertIn("annulée automatiquement", str(cm.exception))
+        self.assertEqual(self.song.undo_calls, [1]); self.assertEqual(self.track.arrangement_clips, before)
+        self.assertEqual(rows[0][0], "shape")   # les lignes d'écriture ont été émises avant la relecture, puis l'erreur
+    def test_accept_unverified_skips_verification(self):
+        orig = self.track.duplicate_clip_to_arrangement
+        def corrupt(clip, t):
+            nc = orig(clip, t)
+            for ev in nc.automation_envelopes: ev.events = [(tt, 0.0) for tt, _ in ev.events]
+            return nc
+        self.track.duplicate_clip_to_arrangement = corrupt
+        rows, gen = self.shape("3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions,unverified", 16.0, 0.2, 20.0, 0.8); list(gen)
+        self.assertEqual(self.verified_row(rows)[4], "skipped"); self.assertEqual(self.song.undo_calls, [])
+    def _audio_following(self):
+        """Piste audio réelle : enveloppes non exposées, paramètre qui suit l'automation existante 0,2 → 0,8 sur 16–24."""
+        self.audio.expose = False; vol = FollowParam("Track Volume", automation_state=1); vol.song, vol.track = self.song, self.audio
+        self.audio.mixer_device.volume = vol; clip = self.audio.arrangement_clips[0]
+        clip.hidden_envelopes = [FakeEnvelope(vol, [(0.0, 0.2), (8.0, 0.8)])]
+        return vol, self.b._ref(vol)
+    def test_no_undo_step_open_across_pauses_and_sampled_verify(self):
+        vol, vref = self._audio_following()
+        rows, gen = self.shape("1-tone", vref, "raw", 8, "lin", 0, "fades", 18.0, 0.5, 20.0, 0.5)
+        pauses = 0
+        for _ in gen:
+            pauses += 1; self.assertEqual(self.song.undo_log.count("begin"), self.song.undo_log.count("end"), "étape d'annulation ouverte pendant une pause")
+        self.assertGreater(pauses, 5); self.assertEqual(self.song.undo_log, ["begin", "end"])
+        v = self.verified_row(rows); self.assertEqual(v[4], "sampled"); self.assertEqual(v[1], 5); self.assertLessEqual(v[2], v[3])
+        self.song.current_song_time = 17.0; self.assertAlmostEqual(vol.value, 0.275, places=3)   # ancienne rampe conservée
+        self.song.current_song_time = 19.0; self.assertAlmostEqual(vol.value, 0.5, places=3)
+        self.song.current_song_time = 23.0; self.assertAlmostEqual(vol.value, 0.725, places=3)
+    def test_sampled_verify_catches_wrong_write(self):
+        vol, vref = self._audio_following(); before = list(self.audio.arrangement_clips); orig = self.audio.duplicate_clip_to_arrangement
+        def corrupt(clip, t):
+            nc = orig(clip, t)
+            for ev in nc.hidden_envelopes: ev.events = [(tt, min(1.0, v + 0.1)) for tt, v in ev.events]
+            return nc
+        self.audio.duplicate_clip_to_arrangement = corrupt
+        rows, gen = self.shape("1-tone", vref, "raw", 8, "lin", 0, "fades", 18.0, 0.5, 20.0, 0.5)
+        with self.assertRaises(ValueError) as cm: list(gen)
+        self.assertIn("(sampled)", str(cm.exception)); self.assertEqual(self.song.undo_calls, [1]); self.assertEqual(self.audio.arrangement_clips, before)
+    def test_override_refused_when_sampling_needed(self):
+        vol, vref = self._audio_following(); vol.automation_state = 2
+        p = self.plan("1-tone", vref, "raw", 8, "lin", 0, "fades", 18.0, 0.5, 20.0, 0.5)
+        self.assertTrue(any("surchargée" in e for e in p["errors"]))
+        # enveloppe exposée : pas d'échantillonnage, l'état 2 n'empêche rien
+        self.vol.automation_state = 2; self.track.arrangement_clips[0].automation_envelopes = [FakeEnvelope(self.vol, [(0.0, 0.0), (16.0, 1.0)])]
+        p = self.plan("3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions", 18.0, 0.5, 20.0, 0.5); self.assertEqual(p["errors"], [])
+    def test_clear_transactional_and_verified(self):
+        clip = self.track.arrangement_clips[0]; clip.automation_envelopes = [FakeEnvelope(self.vol, [(0.0, 0.0), (16.0, 1.0)])]
+        rows = []; gen = self.b.cmd_clear(lambda *x: rows.append(x), ["3-MIDI", self.vref, 20.0, 24.0, "expressions"]); list(gen)
+        self.assertEqual(rows[0], ("cleared", 1)); self.assertEqual(self.verified_row(rows)[4], "exact")
+        (sess, _), = self.track.dup_calls; times = [t for t, _ in sess.envs_created["Track Volume"].created]
+        self.assertTrue(all(t <= 4.0 or t >= 8.0 for t in times)); self.assertIn(4.0, times); self.assertIn(8.0, times)
+        self.assertEqual(self.song.undo_log, ["begin", "end"]); self.assertEqual(self.song.undo_calls, [])
+    def test_ping_lists_commands_and_single_version(self):
+        rows = []; self.b.cmd_ping(lambda *x: rows.append(x), [])
+        self.assertEqual(rows[0][:2], ("pong", self.mod.VERSION)); self.assertEqual(lom.VERSION, self.mod.VERSION)
+        cmds = next(r for r in rows if r[0] == "commands"); self.assertIn("/shape", cmds); self.assertIn("/ping", cmds)
+        self.assertIn("unverified", next(r for r in rows if r[0] == "accept")[1])
     def test_job_cancel_by_id_and_revalidation(self):
         self.song.is_playing = False; rows = []
         def dispatch(cmd, args, rid):
@@ -287,13 +453,249 @@ class TestPlanAndRebuild(unittest.TestCase):
         dispatch("/read", ["3-MIDI", self.vref, 0, 4, 1], "j1"); dispatch("/read", ["3-MIDI", self.vref, 0, 4, 1], "j2")
         self.assertEqual([j["rid"] for j in self.b._jobs], ["j1", "j2"])
         self.b._sock.sent = []; dispatch("/cancel", ["j2"], "c1")
-        out = decode_sent(self.mod, self.b._sock); self.assertIn(("/err", ["j2", "/read: annulée"]), out); self.assertEqual([j["rid"] for j in self.b._jobs], ["j1"])
+        out = decode_sent(self.mod, self.b._sock); self.assertIn(("/err", ["j2", "E_CANCELLED", "/read: annulée"]), out); self.assertEqual([j["rid"] for j in self.b._jobs], ["j1"])
         for _ in range(10): self.b._job_tick()
         self.assertEqual(self.b._jobs, [])
+        # annulation d'une tâche EN COURS : elle s'arrête d'elle-même à sa prochaine pause, sans fermeture forcée
+        self.song.current_song_time = 3.0
+        dispatch("/read", ["3-MIDI", self.vref, 0, 40, 1], "j3"); self.b._job_tick(); self.b._job_tick()
+        self.b._sock.sent = []; dispatch("/cancel", ["j3"], "c2"); self.b._job_tick()
+        out = decode_sent(self.mod, self.b._sock); self.assertIn(("/err", ["j3", "E_CANCELLED", "/read: annulée"]), out); self.assertEqual(self.b._jobs, [])
+        self.assertEqual(self.song.current_song_time, 3.0)   # curseur restauré
+    def test_cancel_during_verification_keeps_the_write(self):
+        vol, vref = self._audio_following()
+        rows, gen = self.shape("1-tone", vref, "raw", 8, "lin", 0, "fades", 18.0, 0.5, 20.0, 0.5)
+        while not any(r[0] == "shape" for r in rows): next(gen)     # écrit ; la relecture par curseur commence
+        self.b._jobs = [{"gen": gen, "cancel": True, "started": True, "rid": "x", "cmd": "/shape", "addr": None}]
+        list(gen)
+        self.assertEqual(self.verified_row(rows)[4], "interrupted"); self.assertTrue(any(r[0] == "warn" and "interrompue" in r[1] for r in rows))
+        self.assertEqual(self.song.undo_calls, []); self.song.current_song_time = 19.0; self.assertAlmostEqual(vol.value, 0.5, places=3)
         # revalidation : clip disparu entre plan et exécution
         rows = []; gen = self.b.cmd_shape(lambda *a: rows.append(a), ["3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions", 16.0, 0.2, 20.0, 0.4])
         self.track.arrangement_clips.pop(0)
         with self.assertRaises(ValueError) as cm: list(gen)
         self.assertIn("disparu", str(cm.exception)); self.assertEqual(self.track.dup_calls, [])
+
+class TestTypedCommands(unittest.TestCase):
+    """Commandes typées qui remplacent les /py courants : transport, vu-mètres, réglage, snapshot/restore, repères, état."""
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        self.midi = FakeTrack("3-MIDI", [FakeClip("A", 16.0, 32.0)]); self.audio = FakeTrack("1-tone", [], midi=False)
+        self.cut = FakeParam("Cutoff", 0.0, 1.0, 0.5, disp=lambda v: "%.0f Hz" % (20 * (1000 ** v)))
+        self.midi.devices = [FakeDevice("Serum 2", [FakeParam("Device On", 0, 1, 1, quantized=1), self.cut])]
+        self.song = FakeSong([self.midi, self.audio]); self.mod, self.b = load_bridge(self.song, self.tmp)
+    def call(self, name, *a):
+        rows = []; r = getattr(self.b, "cmd_" + name)(lambda *x: rows.append(x), list(a))
+        if hasattr(r, "__next__"): list(r)
+        return rows
+    def test_transport(self):
+        self.assertEqual(self.call("transport")[0], ("transport", 0, 0.0, 126.0, "4/4", 0, 0.0, 16.0))
+        self.assertEqual(self.call("transport", "pos", 32.0)[0][2], 32.0)
+        self.assertEqual(self.call("transport", "loop", 64.0, 8.0)[0][6:], (64.0, 8.0)); self.assertEqual(self.call("transport", "loop", "on")[0][5], 1)
+        self.assertEqual(self.call("transport", "play", 8.0)[0][1], 1); self.assertTrue(self.song.is_playing)
+        with self.assertRaises(ValueError): self.call("transport", "pos", 1.0)   # curseur pendant la lecture : refus
+        self.assertEqual(self.call("transport", "stop")[0][1], 0)
+        with self.assertRaises(ValueError): self.call("transport", "loop", -1.0, 4.0)
+    def test_meters_starts_stops_and_restores(self):
+        self.midi.meter, self.audio.meter, self.song.master_track.meter = 0.85, 0.5, 0.7; self.song.current_song_time = 3.0
+        rows = self.call("meters", 64.0, 1.0, "3-MIDI", "1-tone")
+        self.assertEqual(rows[0][:2], ("meters", 64.0)); self.assertEqual(rows[0][3], 10)
+        m = dict((r[2], r) for r in rows[1:]); self.assertEqual(m["3-MIDI"][4], 0.85); self.assertEqual(m["3-MIDI"][5], "0.000 dB"); self.assertEqual(m["Main"][3], "master")
+        self.assertFalse(self.song.is_playing); self.assertEqual(self.song.current_song_time, 3.0)   # arrêt et curseur restauré
+        self.song.is_playing = True; rows = self.call("meters", 0.0, 0.5, "3-MIDI"); self.assertTrue(self.song.is_playing)   # déjà en lecture : rien touché
+        with self.assertRaises(ValueError): self.call("meters", 0.0, 60.0)
+    def test_setparam_disp_raw_and_automation_guard(self):
+        r = self.call("setparam", "3-MIDI", "Serum", "Cutoff", 200.0)[0]
+        self.assertEqual(r[0], "set"); self.assertEqual(r[1], self.b._ref(self.cut)); self.assertEqual(r[3], 0.5); self.assertIn(r[6], ("199 Hz", "200 Hz", "201 Hz"))
+        r = self.call("setparam", "3-MIDI", "mixer", "Volume", 0.6, "raw")[0]; self.assertEqual(self.midi.mixer_device.volume.value, 0.6)
+        with self.assertRaises(ValueError): self.call("setparam", "3-MIDI", "mixer", "Volume", 2.0, "raw")
+        with self.assertRaises(ValueError): self.call("setparam", "3-MIDI", "Serum", "Device On", 0.0)   # quantifié : raw obligatoire
+        self.call("setparam", "3-MIDI", "Serum", "Device On", 0, "raw"); self.assertEqual(self.midi.devices[0].parameters[0].value, 0)
+        self.cut.automation_state = 1
+        with self.assertRaises(ValueError) as cm: self.call("setparam", "3-MIDI", "Serum", "Cutoff", 400.0)
+        self.assertIn("automatisé", str(cm.exception)); self.assertEqual(self.cut.value, self.b._solve(self.cut, 200.0)[0])
+        self.call("setparam", "3-MIDI", "Serum", "Cutoff", 400.0, "override"); self.assertEqual(self.cut.str_for_value(self.cut.value), "400 Hz")
+        # écriture non appliquée (plug-in qui refuse) → erreur
+        class Stubborn(FakeParam):
+            value = property(lambda s: 0.3, lambda s, v: None)
+        self.midi.devices[0].parameters.append(Stubborn("Stuck"))
+        with self.assertRaises(ValueError) as cm: self.call("setparam", "3-MIDI", "Serum", "Stuck", 0.9, "raw")
+        self.assertIn("non appliqué", str(cm.exception))
+    def test_snapshot_restore(self):
+        rows = self.call("snapshot", "3-MIDI"); sid = rows[0][1]; self.assertEqual(rows[0][2], 5)   # volume, pan, send A, Device On, Cutoff
+        self.assertEqual(self.call("snapshots")[0][:2], (sid, "3-MIDI"))
+        self.cut.value = 0.9; self.midi.mixer_device.volume.value = 0.1
+        r = self.call("restore", sid)[0]; self.assertEqual(r[:3], ("restored", sid, 2)); self.assertEqual(self.cut.value, 0.5); self.assertEqual(self.midi.mixer_device.volume.value, 0.85)
+        self.assertEqual(self.song.undo_log, ["begin", "end"])
+        self.cut.automation_state = 1; self.cut.value = 0.2
+        with self.assertRaises(ValueError) as cm: self.call("restore", sid)
+        self.assertIn("automatisés", str(cm.exception)); self.assertEqual(self.cut.value, 0.2)
+        self.call("restore", sid, "override"); self.assertEqual(self.cut.value, 0.5)
+        with self.assertRaises(ValueError): self.call("restore", "s99")
+        rows = self.call("snapshot", "3-MIDI", "mixer"); self.assertEqual(rows[0][2], 3)
+    def test_restore_rolls_back_if_a_param_rejects(self):
+        rows = self.call("snapshot", "3-MIDI"); sid = rows[0][1]
+        self.cut.value = 0.9; vol = self.midi.mixer_device.volume; vol.value = 0.1
+        class Boom(FakeParam):
+            def _set(s, v):
+                if getattr(s, "armed", False): raise RuntimeError("plug-in absent")
+                s._v = v
+            value = property(lambda s: s._v, _set)
+        boom = Boom("Boom"); boom.armed = True; self.b._snaps[sid]["values"].append((boom, 0.4))
+        with self.assertRaises(ValueError) as cm: self.call("restore", sid)
+        self.assertIn("annulée automatiquement", str(cm.exception)); self.assertEqual(self.song.undo_calls, [1]); self.assertEqual(self.cut.value, 0.9); self.assertEqual(vol.value, 0.1)
+    def test_locators(self):
+        self.song.current_song_time = 5.0
+        r = self.call("locator", 64.0, "Drop")[0]; self.assertEqual(r[2:4], (64.0, "Drop")); self.assertEqual(self.song.current_song_time, 5.0)
+        r = self.call("locator", 64.0, "Drop 1")[0]; self.assertEqual(r[3], "Drop 1"); self.assertEqual(len(self.song.cue_points), 1)   # renommage, pas de suppression
+        self.call("locator", 32.0, "Break"); self.assertEqual([r[1:] for r in self.call("locators")], [(32.0, "Break"), (64.0, "Drop 1")])
+        self.song.is_playing = True
+        with self.assertRaises(ValueError): self.call("locator", 96.0, "X")
+    def test_state_json(self):
+        self.cut.automation_state = 1; self.call("locator", 64.0, "Drop")
+        st = json.loads(self.call("state")[0][1])
+        self.assertEqual(st["version"], self.mod.VERSION); self.assertEqual(st["signature"], "4/4"); self.assertEqual(st["locators"], [{"time": 64.0, "name": "Drop"}])
+        t = st["tracks"][0]; self.assertEqual((t["name"], t["kind"], t["arrangement_clips"], t["automated_params"]), ("3-MIDI", "midi", 1, 1))
+        self.assertEqual(t["devices"][0]["name"], "Serum 2"); self.assertEqual(t["devices"][0]["automated_params"], 1)
+        self.assertEqual([x["kind"] for x in st["tracks"]], ["midi", "audio", "master"])
+    def test_error_codes_stable(self):
+        ec = self.mod.error_code
+        self.assertEqual(ec("lecture en cours : arrêter le transport"), "E_TRANSPORT_PLAYING"); self.assertEqual(ec("piste introuvable: X"), "E_NOT_FOUND")
+        self.assertEqual(ec("piste ambiguë « a » : b, c"), "E_AMBIGUOUS"); self.assertEqual(ec("clip A disparu depuis le plan : replanifier"), "E_STALE")
+        self.assertEqual(ec("relecture : écart 0.1 > 0.002 ; étape annulée automatiquement, rien n'est modifié"), "E_ROLLED_BACK")
+        self.assertEqual(ec("x ; ANNULATION AUTOMATIQUE IMPOSSIBLE (y) : faire Cmd+Z"), "E_ROLLBACK_FAILED"); self.assertEqual(ec("/read: annulée"), "E_CANCELLED")
+        self.assertEqual(ec("automation de V surchargée (…)"), "E_AUTOMATION_OVERRIDDEN"); self.assertEqual(ec("Cutoff est automatisé (état 1)"), "E_AUTOMATED")
+        self.assertEqual(ec("référence d'une autre session"), "E_REF"); self.assertEqual(ec("n'importe quoi"), "E_ERROR")
+    def test_err_line_carries_code_and_client_reads_it(self):
+        rows = []; self.b._sock.sent = []
+        self.b._dispatch(("127.0.0.1", 1), "/setparam", ["3-MIDI", "mixer", "Volume", 2.0, "raw"], "e1")
+        out = decode_sent(self.mod, self.b._sock); err = next(o for o in out if o[0] == "/err")
+        self.assertEqual(err[1][:2], ["e1", "E_RANGE"]); self.assertIn("hors", err[1][2])
+        # côté client : send() sépare code et texte
+        class S:
+            def __init__(s): s.q = []
+            def setblocking(s, b): pass
+            def settimeout(s, t): pass
+            def sendto(s, d, a):
+                rid = [x for x in lom.osc_unpack(d)[1] if str(x).startswith("#")][0][1:]
+                s.q = [lom.osc_pack("/begin", [rid, "/x"]), lom.osc_pack("/err", [rid, "E_RANGE", "valeur hors plage"]), lom.osc_pack("/end", [rid, "/x"])]
+            def recvfrom(s, n):
+                if not s.q: raise BlockingIOError()
+                return s.q.pop(0), ("127.0.0.1", 1)
+        br = lom.Bridge.__new__(lom.Bridge); br.host, br.tx, br.timeout, br.token, br._seq = "127.0.0.1", 1, 2, "t", 0; br.sock = S()
+        r = br.send("/x"); self.assertFalse(r["ok"]); self.assertEqual(r["codes"], ["E_RANGE"]); self.assertEqual(r["errors"], ["valeur hors plage"])
+    def test_journal_records_writes_only(self):
+        path = self.b._journal_path(); self.assertEqual(os.path.dirname(path), os.path.dirname(self.mod.CONN_FILE))
+        addr = ("127.0.0.1", 1)
+        self.b._dispatch(addr, "/param", ["3-MIDI", "mixer", "Volume"], "r1")                       # lecture : pas journalisée
+        self.b._dispatch(addr, "/setparam", ["3-MIDI", "mixer", "Volume", 0.6, "raw"], "w1")       # écriture réussie
+        self.b._dispatch(addr, "/setparam", ["3-MIDI", "mixer", "Volume", 9.0, "raw"], "w2")       # écriture refusée
+        self.b._dispatch(addr, "/shape", ["3-MIDI", self.b._ref(self.midi.mixer_device.volume), "raw", 8, "lin", 0, "expressions", 16.0, 0.2, 20.0, 0.8], "w3")
+        for _ in range(20): self.b._job_tick()                                                         # tâche asynchrone journalisée à sa fin
+        entries = [json.loads(l) for l in open(path, encoding="utf-8").read().splitlines()]
+        self.assertEqual([(e["rid"], e["cmd"], e["ok"]) for e in entries], [("w1", "/setparam", True), ("w2", "/setparam", False), ("w3", "/shape", True)])
+        self.assertEqual(entries[0]["rows"][0][0], "set"); self.assertEqual(entries[1]["code"], "E_RANGE"); self.assertEqual(entries[2]["rows"][0][0], "shape")
+        self.assertTrue(any(r[0] == "verified" for r in entries[2]["rows"])); self.assertEqual(entries[2]["version"], self.mod.VERSION)
+        rows = self.call("journal", 2); self.assertEqual(rows[-1][0], "journal"); self.assertEqual(rows[-1][2], 3); self.assertEqual(json.loads(rows[0][1])["rid"], "w2")
+    def test_policy_merge_and_bpb(self):
+        self.assertEqual(lom.merge_accept(["fades"], {"accept": ["expressions", "fades"]}), ["fades", "expressions"])
+        with self.assertRaises(ValueError): lom.merge_accept(["nimporte"], {"accept": []})
+        p = os.path.join(self.tmp, "policy.json"); lom.write_policy({"accept": ["expressions"]}, p); self.assertEqual(lom.read_policy(p), {"accept": ["expressions"]})
+        self.assertEqual(lom.read_policy(os.path.join(self.tmp, "absent.json")), {"accept": []})
+        self.assertEqual(lom.parse_time("3|1", 3), 6.0); self.assertEqual(lom.parse_time("3|1", 4), 8.0)
+        class B:   # signature 3/4 lue dans Live via /transport
+            def send(s, cmd, *a): return {"ok": True, "rows": [["transport", 0, 0.0, 120.0, "3/4", 0, 0.0, 12.0]], "errors": [], "codes": []}
+        self.assertEqual(lom.Bridge.beats_per_bar(B()), 3)
+    # ---- /load ----
+    def browser(self): return sys.modules["Live"].Application.get_application().browser
+    def test_load_adds_without_hot_swap(self):
+        br = self.browser(); serum = self.midi.devices[0]
+        br.on_load = lambda item: self.song.view.selected_track.devices.append(FakeDevice(item.name, []))
+        r = self.call("load", "3-MIDI", "Pro-Q 4")[0]
+        self.assertEqual((r[0], r[2], r[3], r[4], r[5], r[7]), ("loaded", "Pro-Q 4", 1, 1, 2, "added")); self.assertEqual(r[6], "VST3/FabFilter/Pro-Q 4")
+        self.assertIs(self.song.view.selected_device, serum); self.assertIs(self.midi.devices[0], serum)   # l'ancien device sélectionné avant, et toujours là
+        r = self.call("load", "1-tone", "Utility", "audio_effects")[0]; self.assertEqual((r[3], r[4], r[5]), (0, 0, 1))
+    def test_load_refuses_ambiguous_and_unknown(self):
+        with self.assertRaises(ValueError) as cm: self.call("load", "3-MIDI", "Serum 2")     # VST3 et Audio Units
+        self.assertIn("ambigu", str(cm.exception))
+        with self.assertRaises(ValueError) as cm: self.call("load", "3-MIDI", "Nexus")
+        self.assertIn("introuvable", str(cm.exception))
+        with self.assertRaises(ValueError): self.call("load", "3-MIDI", "Utility", "nimporte")
+        self.assertEqual(self.browser().loaded, [])
+    def test_load_detects_hot_swap_and_other_track_changes(self):
+        br = self.browser()
+        br.on_load = lambda item: self.song.view.selected_track.devices.__setitem__(-1, FakeDevice(item.name, []))   # Live a remplacé au lieu d'ajouter
+        with self.assertRaises(ValueError) as cm: self.call("load", "3-MIDI", "Pro-Q 4")
+        self.assertIn("non appliqué", str(cm.exception))
+        br.on_load = lambda item: self.audio.devices.append(FakeDevice(item.name, []))              # chargé sur la mauvaise piste
+        with self.assertRaises(ValueError) as cm: self.call("load", "3-MIDI", "EQ Eight", "audio_effects")
+        self.assertIn("autre piste", str(cm.exception))
+    def test_load_replace(self):
+        br = self.browser(); old = self.midi.devices[0]
+        def swap(item):
+            t = self.song.view.selected_track; t.devices[t.devices.index(self.song.view.selected_device)] = FakeDevice(item.name, [])
+        br.on_load = swap
+        r = self.call("load", "3-MIDI", "Pro-Q 4", "replace=Serum")[0]
+        self.assertEqual((r[2], r[3], r[4], r[5], r[7]), ("Pro-Q 4", 0, 1, 1, "replaced")); self.assertNotIn(old, self.midi.devices)
+    # ---- /notes ----
+    def _clip_with_notes(self):
+        N = sys.modules["Live"].Clip.MidiNoteSpecification; c = self.midi.arrangement_clips[0]
+        c.notes = [N(pitch=60, start_time=0.0, duration=1.0, velocity=100, mute=False), N(pitch=64, start_time=4.0, duration=0.5, velocity=90, mute=False), N(pitch=67, start_time=8.0, duration=2.0, velocity=80, mute=True)]
+        return c
+    def test_notes_get(self):
+        c = self._clip_with_notes()
+        rows = self.call("notes", "get", "3-MIDI", 20.0); self.assertEqual(rows[0][:2], ("clip", self.b._ref(c))); self.assertEqual(rows[0][6], 3)
+        self.assertEqual([r[1:] for r in rows[1:]], [(60, 0.0, 1.0, 100, 0), (64, 4.0, 0.5, 90, 0), (67, 8.0, 2.0, 80, 1)])
+        rows = self.call("notes", "get", "3-MIDI", self.b._ref(c), 4.0, 8.0); self.assertEqual(len(rows) - 1, 1); self.assertEqual(rows[1][1], 64)
+        with self.assertRaises(ValueError): self.call("notes", "get", "3-MIDI", 99.0)
+    def test_notes_set_window_add_and_verify(self):
+        c = self._clip_with_notes()
+        r = self.call("notes", "set", "3-MIDI", 20.0, json.dumps([[62, 4.0, 1.0, 110], {"pitch": 65, "start": 6.0, "duration": 1.0}]), 4.0, 8.0)[0]
+        self.assertEqual((r[0], r[1], r[4], r[5], r[6]), ("notes", "set", 3, 4, 2))
+        self.assertEqual([(n.pitch, n.start_time) for n in c.notes], [(60, 0.0), (67, 8.0), (62, 4.0), (65, 6.0)]); self.assertEqual(c.notes[-1].velocity, 100)
+        self.assertEqual(self.song.undo_log, ["begin", "end"])
+        with self.assertRaises(ValueError): self.call("notes", "set", "3-MIDI", 20.0, json.dumps([[62, 9.0, 1.0, 110]]), 4.0, 8.0)   # note hors fenêtre
+        r = self.call("notes", "add", "3-MIDI", 20.0, json.dumps([[72, 12.0, 0.25, 100]]))[0]; self.assertEqual((r[4], r[5]), (4, 5))
+        r = self.call("notes", "set", "3-MIDI", 20.0, "[]")[0]; self.assertEqual(c.notes, []); self.assertEqual(r[5], 0)
+        for bad in ("pas du json", "[[200, 0, 1, 100]]", "[[60, 0, 0, 100]]", "[{\"pitch\": 60}]"):
+            with self.assertRaises(ValueError): self.call("notes", "set", "3-MIDI", 20.0, bad)
+        with self.assertRaises(ValueError): self.call("notes", "get", "1-tone", 16.0)   # piste audio sans clip → aucun clip
+    def test_notes_set_rolls_back_when_live_disagrees(self):
+        c = self._clip_with_notes(); orig = c.add_new_notes
+        c.add_new_notes = lambda specs: orig(tuple(specs)[:1])   # Live n'a gardé qu'une note
+        with self.assertRaises(ValueError) as cm: self.call("notes", "set", "3-MIDI", 20.0, json.dumps([[62, 4.0, 1.0, 110], [65, 6.0, 1.0, 100]]), 4.0, 8.0)
+        self.assertIn("annulée automatiquement", str(cm.exception)); self.assertEqual(self.song.undo_calls, [1])
+        self.assertEqual([n.pitch for n in c.notes], [60, 64, 67])
+    def test_http_time_args_follow_live_signature(self):
+        calls = []
+        def live_bpb(): calls.append(1); return 3
+        self.assertEqual(lom.http_args(["3-MIDI", "o:1:2", "3|1", 0.5, "[[60,0,1,100]]"], live_bpb), ["3-MIDI", "o:1:2", 6.0, 0.5, "[[60,0,1,100]]"])
+        self.assertEqual(calls, [1])                                                       # signature lue une fois, et seulement si un temps « mesure|temps » est présent
+        self.assertEqual(lom.http_args(["3|1", "5|3"], 4), [8.0, 18.0]); self.assertEqual(lom.http_args(["a|b"], live_bpb), ["a|b"])
+        self.assertEqual(lom.http_args(["x"], lambda: (_ for _ in ()).throw(AssertionError("ne doit pas lire Live"))), ["x"])
+    def test_ping_lists_typed_commands_and_http_allows_them(self):
+        rows = []; self.b.cmd_ping(lambda *x: rows.append(x), []); cmds = next(r for r in rows if r[0] == "commands")
+        for c in ("/transport", "/meters", "/setparam", "/snapshot", "/restore", "/snapshots", "/locators", "/locator", "/state", "/load", "/notes", "/journal"):
+            self.assertIn(c, cmds); self.assertTrue(lom.http_allowed(c), c)
+        self.assertFalse(lom.http_allowed("/py"))
+
+class TestCoverage(unittest.TestCase):
+    """Garde-fou P4 : chaque commande du bridge doit être exercée par la suite dans Live (sauf accès générique au LOM),
+    autorisée ou bloquée explicitement en HTTP, et journalisée si elle modifie le Set."""
+    GENERIC = {"/get", "/set", "/call", "/children", "/info", "/path", "/py", "/reload"}
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp(); self.song = FakeSong([FakeTrack("t")]); self.mod, self.b = load_bridge(self.song, self.tmp)
+        self.cmds = sorted("/" + n[4:].replace("_", "-") for n in dir(self.b) if n.startswith("cmd_"))
+    def test_every_command_in_live_suite(self):
+        src = open(os.path.join(ROOT, "tests", "live_suite.py"), encoding="utf-8").read()
+        missing = [c for c in self.cmds if c not in self.GENERIC and ('"%s"' % c) not in src and ("lom.py %s" % c[1:]) not in src]
+        self.assertEqual(missing, [], "commandes sans contrôle dans tests/live_suite.py")
+    def test_http_policy_is_explicit(self):
+        blocked = {"/py", "/set", "/call", "/reload"}
+        for c in self.cmds:
+            self.assertEqual(lom.http_allowed(c), c not in blocked, c)
+    def test_writes_are_journaled(self):
+        writes = {"/shape", "/clear", "/setparam", "/restore", "/locator", "/transport", "/load", "/notes"}
+        self.assertEqual(set(self.mod.JOURNAL_CMDS), writes)
 
 if __name__ == "__main__": unittest.main()

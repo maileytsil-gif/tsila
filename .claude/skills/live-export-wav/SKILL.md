@@ -8,7 +8,7 @@ Règles communes (capacités vérifiées, session préservée, relecture après 
 
 ## Avant
 1. Boucle/sélection d'export = étendue exacte : `ppal-playback update-arrangement` avec `loopStart 1|1`, `loopEnd <dernière mesure + 1>|1` (le dialogue reprend Début/Longueur de la boucle). Ex. 128 mesures → `129|1`.
-2. Muter la piste **REF** (référence) si elle existe ; s'assurer que rien ne joue (`int(song.is_playing)`).
+2. Muter la piste **REF** (référence) si elle existe ; s'assurer que rien ne joue (`lom.py transport`, premier chiffre 0).
 3. Sauver le Set (Fichier › Sauver Set Live).
 
 ## Dialogue (contrôle d'écran)

@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
-"""LOM Bridge v0.4.1 — Remote Script Ableton Live (Python) : pont OSC/UDP vers l'API Live, automation d'arrangement comprise.
+"""LOM Bridge — Remote Script Ableton Live (Python) : pont OSC/UDP vers l'API Live, automation d'arrangement comprise.
+Numéro de version : LOMBridge/version.py (seule source, partagée avec lom.py).
 
 Principe (contraintes de l'API Live 12.4) : une enveloppe ne se crée que sur un clip de SESSION et n'agit que dans l'étendue
 de SON clip. Le bridge reconstruit donc chaque clip d'arrangement concerné depuis la session (mêmes notes / même fichier audio,
 marqueurs, warp, enveloppes existantes recopiées) en y ajoutant les nouveaux points, puis le remet à sa place.
+
+Toute écriture (/shape, /clear) se fait en trois phases : lecture de l'existant (peut prendre du temps, rien n'est modifié),
+écriture de tous les clips d'un bloc dans une seule étape d'annulation et sans pause, puis relecture de contrôle. Si l'écriture
+échoue après qu'un clip a été remplacé, ou si la relecture s'écarte de ce qui devait être écrit, l'étape est défaite (song.undo).
 
 Protocole : OSC sur UDP 127.0.0.1:7421 ; chaque commande se termine par "!<jeton>" puis "#<id de requête>".
 Réponses (l'id de requête est TOUJOURS le premier argument) : /begin <id> <cmd> · /r <id> … · /err <id> <texte> · /end <id> <cmd>.
@@ -13,7 +18,11 @@ import socket, struct, re, math, traceback, os, json, random
 import Live
 from _Framework.ControlSurface import ControlSurface
 
-VERSION = "0.4.3"
+def _read_version():
+    ns = {}
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "version.py"), encoding="utf-8") as f: exec(f.read(), ns)
+    return ns["VERSION"]
+VERSION = _read_version()
 RX_PORT = 7421
 CONN_FILE = os.path.join(os.path.expanduser("~"), "Library", "Application Support", "LOMBridge", "connection.json")
 MAX_READ_POINTS = 400
@@ -21,7 +30,12 @@ MAX_SHAPE_POINTS = 4096
 MAX_JOBS = 4
 SAMPLE_STEP = 0.125        # pas d'échantillonnage (temps) de l'automation existante non exposée
 TICK_SECONDS = 0.1          # période approximative d'update_display
-ACCEPT_KEYS = ("fades", "expressions", "warp", "clamp")
+CANCEL_GRACE_TICKS = 50     # ticks laissés à une tâche en cours pour s'arrêter d'elle-même après /cancel, avant fermeture forcée
+ACCEPT_KEYS = ("fades", "expressions", "warp", "clamp", "unverified")   # unverified : écrire sans relecture de contrôle
+VERIFY_TOL = 0.002          # écart toléré à la relecture, en fraction de la plage du paramètre
+VERIFY_MAX_CHECKS = 600     # relecture exacte : nombre maximal d'instants contrôlés par clip
+VERIFY_EPS = 1e-4           # relecture exacte : distance aux points (de part et d'autre d'une marche)
+VERIFY_STEP = 0.0625        # relecture par curseur : distance aux bords de la fenêtre (temps)
 
 # ---------- OSC minimal (int32 'i', int64 'h', float32 'f', string 's') ----------
 def _pad(b): return b + b"\0" * ((4 - len(b) % 4) % 4)
@@ -118,6 +132,52 @@ def breakpoints(pts, cf, res, linear):
         for k in range(1, n + 1): out.append((t0 + dur * k / n, v0 + (v1 - v0) * cf(k / n)))
     return out
 
+_ident = lambda x: x
+
+# Codes d'erreur stables (premier argument de /err après l'id), déduits du message ; l'ordre compte (premier motif trouvé).
+ERROR_CODES = (
+    ("ANNULATION AUTOMATIQUE IMPOSSIBLE", "E_ROLLBACK_FAILED"), ("annulée automatiquement", "E_ROLLED_BACK"),
+    ("jeton", "E_AUTH"), ("commande inconnue", "E_UNKNOWN_CMD"), ("usage:", "E_USAGE"), ("file de tâches pleine", "E_QUEUE_FULL"),
+    ("annulée", "E_CANCELLED"), ("lecture en cours", "E_TRANSPORT_PLAYING"), ("transport démarré", "E_TRANSPORT_PLAYING"),
+    ("lecture arrêtée", "E_TRANSPORT_STOPPED"), ("curseur déplacé", "E_CURSOR_MOVED"), ("replanifier", "E_STALE"),
+    ("plan invalide", "E_PLAN"), ("surchargée", "E_AUTOMATION_OVERRIDDEN"), ("automatisé", "E_AUTOMATED"),
+    ("référence", "E_REF"), ("ids numériques", "E_REF"), ("introuvable", "E_NOT_FOUND"), ("inconnu", "E_NOT_FOUND"),
+    ("ambigu", "E_AMBIGUOUS"), ("plusieurs", "E_AMBIGUOUS"), ("accept", "E_ACCEPT"), ("non appliqué", "E_NOT_APPLIED"),
+    ("relecture", "E_VERIFY"), ("hors", "E_RANGE"), ("quantifié", "E_RANGE"), ("trop de points", "E_LIMIT"),
+    ("invalide", "E_INVALID"), ("non fini", "E_INVALID"), ("négatif", "E_INVALID"), ("disparu", "E_STALE"),
+)
+def error_code(msg):
+    m = str(msg)
+    for needle, code in ERROR_CODES:
+        if needle in m: return code
+    return "E_ERROR"
+
+JOURNAL_CMDS = ("/shape", "/clear", "/setparam", "/restore", "/locator", "/transport", "/load", "/notes")   # commandes qui modifient le Set : journalisées
+JOURNAL_MAX_ROWS = 40
+
+def check_points_exact(pts, eps=VERIFY_EPS, limit=VERIFY_MAX_CHECKS):
+    """Instants de contrôle d'une enveloppe exposée : de part et d'autre de chaque point (marches comprises) et au milieu
+    de chaque segment ; [(t, valeur attendue)], au plus `limit` instants répartis uniformément."""
+    times = sorted(set(t for t, _ in pts))
+    if not times: return []
+    out = []
+    for i, t in enumerate(times):
+        if i > 0: out.append(t - eps)
+        if i < len(times) - 1: out.append(t + eps); out.append((t + times[i + 1]) / 2.0)
+    if not out: out = [times[0]]
+    if len(out) > limit: out = [out[int(k * (len(out) - 1) / (limit - 1))] for k in range(limit)]
+    return [(t, interp(pts, _ident, t)) for t in out]
+
+def check_points_sampled(pts, lo, hi, s, e, rel, step=VERIFY_STEP):
+    """Instants de contrôle par curseur (enveloppe non exposée), en temps ABSOLU : près des deux bords et au milieu de la
+    fenêtre [lo, hi], plus un ancrage juste avant / juste après quand la fenêtre ne touche pas le bord du clip [s, e].
+    `pts` est l'enveloppe attendue en temps relatif, `rel` convertit absolu → relatif ; [(t_abs, valeur attendue)]."""
+    d = min(step, (hi - lo) / 4.0)
+    times = [lo + d, (lo + hi) / 2.0, hi - d]
+    if lo - d > s + 1e-9: times.insert(0, lo - d)
+    if hi + d < e - 1e-9: times.append(hi + d)
+    return [(t, interp(pts, _ident, rel(t))) for t in times]
+
 
 class RebuildMismatch(Exception):
     """Le clip a été remplacé mais ne correspond pas à l'original : l'appelant annule l'étape."""
@@ -196,21 +256,42 @@ class LOMBridge(ControlSurface):
             tok = None
             if args and isinstance(args[-1], str) and args[-1].startswith("!"): tok = args[-1][1:]; args = args[:-1]
             if tok != self._token():
-                self._send(addr, "/begin", rid, cmd); self._send(addr, "/err", rid, "jeton absent ou invalide (lire %s)" % CONN_FILE); self._send(addr, "/end", rid, cmd); continue
+                self._send(addr, "/begin", rid, cmd); self._fail(addr, rid, "jeton absent ou invalide (lire %s)" % CONN_FILE); self._send(addr, "/end", rid, cmd); continue
             self._dispatch(addr, cmd, args, rid)
+
+    def _fail(self, addr, rid, msg):
+        """/err <id> <code> <texte> : le code est stable (E_…), le texte est pour l'humain."""
+        self._send(addr, "/err", rid, error_code(msg), str(msg))
+
+    # ---------- journal des écritures ----------
+    def _journal_path(self): return os.path.join(os.path.dirname(CONN_FILE), "journal.jsonl")
+
+    def _journal(self, job, error=None):
+        """Une ligne JSON par commande qui modifie le Set : quand, quoi (commande, arguments), résultat (lignes) ou erreur."""
+        if job["cmd"] not in JOURNAL_CMDS: return
+        import time
+        entry = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S"), "session": self._session(), "version": VERSION, "rid": job["rid"], "cmd": job["cmd"],
+                 "args": [str(x)[:120] for x in job["args"]][:60], "ok": error is None, "rows": job["rows"][:JOURNAL_MAX_ROWS]}
+        if error is not None: entry["error"] = str(error)[:500]; entry["code"] = error_code(error)
+        try:
+            with open(self._journal_path(), "a", encoding="utf-8") as f: f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+        except Exception as e: self.log_message("LOMBridge journal: %s" % e)
 
     def _dispatch(self, addr, cmd, args, rid=""):
         self._send(addr, "/begin", rid, cmd)
-        reply = lambda *a: self._send(addr, "/r", rid, *a)
+        job = {"addr": addr, "cmd": cmd, "rid": rid, "args": list(args), "rows": [], "cancel": False, "started": False}
+        def reply(*a):
+            job["rows"].append([str(x) if not isinstance(x, (int, float)) else x for x in a]); self._send(addr, "/r", rid, *a)
         try:
             h = getattr(self, "cmd_" + cmd.strip("/").replace("-", "_"), None)
             if h is None or not cmd.startswith("/"): raise ValueError("commande inconnue " + cmd)
             r = h(reply, list(args))
             if hasattr(r, "__next__"):
                 if len(self._jobs) >= MAX_JOBS: r.close(); raise ValueError("file de tâches pleine (%d) : attendre ou /cancel" % MAX_JOBS)
-                self._jobs.append({"gen": r, "addr": addr, "cmd": cmd, "rid": rid, "cancel": False, "started": False}); return
+                job["gen"] = r; self._jobs.append(job); return
+            self._journal(job)
         except Exception as e:
-            self._send(addr, "/err", rid, "%s: %s" % (cmd, e))
+            self._fail(addr, rid, "%s: %s" % (cmd, e)); self._journal(job, e)
             self.log_message("LOMBridge %s: %s\n%s" % (cmd, e, traceback.format_exc()))
         self._send(addr, "/end", rid, cmd)
 
@@ -220,44 +301,119 @@ class LOMBridge(ControlSurface):
         if not jobs: return
         job = jobs[0]; gen, addr, cmd, rid = job["gen"], job["addr"], job["cmd"], job["rid"]
         if job["cancel"]:
-            jobs.pop(0)
-            try: gen.close()
-            except Exception as e: self.log_message("LOMBridge cancel %s: %s" % (cmd, e))
-            self._send(addr, "/err", rid, "%s: annulée" % cmd); self._send(addr, "/end", rid, cmd); return
+            # la tâche en cours décide elle-même comment s'arrêter à sa prochaine pause (_sample_at lit le drapeau) : en phase de
+            # lecture elle abandonne sans rien modifier, en relecture elle termine en signalant « interrupted » ; sécurité si elle
+            # ne réagit pas dans les CANCEL_GRACE_TICKS : fermeture forcée
+            job["cancel_ticks"] = job.get("cancel_ticks", 0) + 1
+            if job["cancel_ticks"] > CANCEL_GRACE_TICKS:
+                jobs.pop(0)
+                try: gen.close()
+                except Exception as e: self.log_message("LOMBridge cancel %s: %s" % (cmd, e))
+                self._fail(addr, rid, "%s: annulée (fermeture forcée)" % cmd); self._journal(job, "annulée (fermeture forcée)"); self._send(addr, "/end", rid, cmd); return
         job["started"] = True
         try: next(gen)
         except StopIteration:
-            jobs.pop(0); self._send(addr, "/end", rid, cmd)
+            jobs.pop(0); self._journal(job); self._send(addr, "/end", rid, cmd)
         except Exception as e:
-            jobs.pop(0); self._send(addr, "/err", rid, "%s: %s" % (cmd, e)); self._send(addr, "/end", rid, cmd)
+            jobs.pop(0); self._fail(addr, rid, "%s: %s" % (cmd, e)); self._journal(job, e); self._send(addr, "/end", rid, cmd)
             self.log_message("LOMBridge job %s: %s\n%s" % (cmd, e, traceback.format_exc()))
 
     def _cancel_requested(self):
         jobs = getattr(self, "_jobs", None)
         return bool(jobs) and jobs[0]["cancel"]
 
-    def _sample(self, params, t0, t1, step, out):
-        """Générateur : échantillonne la valeur réelle des paramètres en déplaçant le curseur (transport arrêté).
-        Dernier échantillon exactement sur t1. Abandon si transport démarré, curseur déplacé par un tiers, ou annulation."""
-        if not (step > 0) or not math.isfinite(step): raise ValueError("pas d'échantillonnage invalide")
-        if t1 < t0: raise ValueError("plage inversée")
-        if t0 < 0: raise ValueError("temps négatif")
+    def _sample_at(self, params, times, out):
+        """Générateur : lit la valeur réelle des paramètres aux instants donnés en déplaçant le curseur (transport arrêté),
+        puis le restaure. Abandon si transport démarré, curseur déplacé par un tiers, ou annulation."""
+        times = [float(t) for t in times]
+        if not times: return
+        if any(not math.isfinite(t) or t < 0 for t in times): raise ValueError("instant d'échantillonnage invalide")
         song = self.song()
         if song.is_playing: raise ValueError("lecture en cours : arrêter le transport (l'échantillonnage déplace le curseur)")
-        saved = float(song.current_song_time); tt = t0
+        saved = float(song.current_song_time)
         try:
-            song.current_song_time = tt; yield
-            while True:
+            for tt in times:
+                song.current_song_time = tt; yield
                 if self._cancel_requested(): raise ValueError("annulée")
                 if song.is_playing: raise ValueError("transport démarré pendant l'échantillonnage : abandon")
                 if abs(float(song.current_song_time) - tt) > 1e-3: raise ValueError("curseur déplacé pendant l'échantillonnage : abandon")
                 for i, p in enumerate(params): out.setdefault(i, []).append((round(tt, 6), float(p.value)))
-                if tt >= t1 - 1e-9: break
-                tt = min(tt + step, t1)
-                song.current_song_time = tt; yield
         finally:
             try: song.current_song_time = saved
             except Exception: pass
+
+    def _sample(self, params, t0, t1, step, out):
+        """Générateur : échantillonne de t0 à t1 au pas `step`, dernier échantillon exactement sur t1."""
+        if not (step > 0) or not math.isfinite(step): raise ValueError("pas d'échantillonnage invalide")
+        if t1 < t0: raise ValueError("plage inversée")
+        if t0 < 0: raise ValueError("temps négatif")
+        times, tt = [t0], t0
+        while tt < t1 - 1e-9:
+            tt = min(tt + step, t1); times.append(tt)
+        for _ in self._sample_at(params, times, out): yield
+
+    # ---------- transaction (écriture d'un bloc, défaite sur erreur) ----------
+    def _commit(self, song, write):
+        """Exécute write(touched) dans UNE étape d'annulation, sans pause. `touched` reçoit le nom de chaque clip effectivement
+        remplacé. Sur erreur : rien de remplacé → l'erreur remonte telle quelle ; sinon l'étape est défaite (song.undo)."""
+        touched, failure = [], None
+        song.begin_undo_step()
+        try: result = write(touched)
+        except Exception as e: failure = e
+        finally: song.end_undo_step()
+        if failure is None: return result
+        if not touched: raise ValueError("%s ; rien n'est modifié" % failure) from failure
+        try: song.undo()
+        except Exception as e2: raise ValueError("%s après %d clip(s) remplacé(s) ; ANNULATION AUTOMATIQUE IMPOSSIBLE (%s) : faire Cmd+Z" % (failure, len(touched), e2)) from failure
+        raise ValueError("%s ; étape annulée automatiquement (%d clip(s) remis), rien n'est modifié" % (failure, len(touched))) from failure
+
+    def _revalidate(self, track, entries, p, accept):
+        """Contrôle que les clips visés (entrées de plan : ref, name, start, end) sont toujours là, au même endroit, et
+        toujours reconstructibles, et que le paramètre existe. [(clip, début, fin, entrée)] dans l'ordre des entrées."""
+        live_clips = dict((getattr(c, "_live_ptr", id(c)), (c, s, e)) for c, s, e in self._arr_clips(track))
+        targets = []
+        for entry in entries:
+            c = self._obj(entry["ref"]); key = getattr(c, "_live_ptr", id(c))
+            if key not in live_clips: raise ValueError("clip %s disparu depuis le plan : replanifier" % entry["name"])
+            c, s, e = live_clips[key]
+            if abs(s - entry["start"]) > 1e-6 or abs(e - entry["end"]) > 1e-6: raise ValueError("clip %s déplacé depuis le plan : replanifier" % entry["name"])
+            fatal, need = self._check_clip(c, accept)
+            if fatal or need: raise ValueError("clip %s : " % entry["name"] + " ; ".join(fatal + need))
+            targets.append((c, s, e, entry))
+        try: float(p.value)
+        except Exception: raise ValueError("paramètre disparu : replanifier")
+        return targets
+
+    def _verify(self, song, p, done, reply, warnings):
+        """Générateur : relit l'automation écrite (done = [(clip reconstruit, lo, hi, points relatifs attendus)]) et compare.
+        Enveloppe exposée → relecture exacte, immédiate ; sinon → quelques points par curseur. Écart > tolérance → étape défaite.
+        Relecture interrompue (transport, annulation) → avertissement, l'écriture reste."""
+        tol = VERIFY_TOL * max(1e-9, float(p.max) - float(p.min))
+        n, worst, method = 0, (0.0, None), "exact"
+        try:
+            for nc, lo, hi, pts in done:
+                ev = self._env_of(nc, p)
+                if ev is not None:
+                    for t_rel, exp in check_points_exact(pts):
+                        dev = abs(float(ev.value_at_time(t_rel)) - exp); n += 1
+                        if dev > worst[0]: worst = (dev, t_rel - float(nc.start_marker) + float(nc.start_time))
+                else:
+                    method = "sampled"
+                    checks = check_points_sampled(pts, lo, hi, float(nc.start_time), float(nc.end_time), lambda t: self._rel(nc, t))
+                    got = {}
+                    for _ in self._sample_at([p], [t for t, _ in checks], got): yield
+                    for (t_abs, exp), (_, v) in zip(checks, got.get(0, [])):
+                        dev = abs(v - exp); n += 1
+                        if dev > worst[0]: worst = (dev, t_abs)
+        except ValueError as e:
+            warnings.append("écrit mais relecture interrompue (%s) : contrôler avec /read" % e)
+            reply("verified", n, round(worst[0], 6), round(tol, 6), "interrupted"); return
+        if worst[0] > tol:
+            msg = "relecture : écart %.5f > tolérance %.5f à t=%.3f (%s)" % (worst[0], tol, worst[1], method)
+            try: song.undo()
+            except Exception as e2: raise ValueError("%s ; ANNULATION AUTOMATIQUE IMPOSSIBLE (%s) : faire Cmd+Z" % (msg, e2))
+            raise ValueError("%s ; étape annulée automatiquement, rien n'est modifié" % msg)
+        reply("verified", n, round(worst[0], 6), round(tol, 6), method)
 
     # ---------- références ----------
     def _ref(self, obj):
@@ -427,8 +583,9 @@ class LOMBridge(ControlSurface):
         except Exception as e: fatal.append("%s : contrôle impossible (%s)" % (name, e))
         return fatal, need
 
-    def _rebuild(self, track, clip, env_specs, warnings, accept):
-        """Reconstruit le clip d'arrangement depuis la session avec les enveloppes demandées. Nettoie sur erreur."""
+    def _rebuild(self, track, clip, env_specs, warnings, accept, touched=None):
+        """Reconstruit le clip d'arrangement depuis la session avec les enveloppes demandées. Nettoie sur erreur.
+        `touched` (liste) reçoit le nom du clip dès que l'original a été remplacé dans l'arrangement."""
         E = Live.Envelope.EnvelopeEvent
         song = self.song()
         old_start, old_end = float(clip.start_time), float(clip.end_time)
@@ -492,6 +649,7 @@ class LOMBridge(ControlSurface):
                 e2 = n.create_automation_envelope(p)
                 for t_rel, v in sorted(pts, key=lambda x: x[0]): e2.create_event(E(float(t_rel), float(v)))
             new_clip = track.duplicate_clip_to_arrangement(n, old_start)
+            if touched is not None: touched.append(str(clip.name))
         except Exception:
             try:
                 if n is not None: slot.delete_clip()
@@ -524,6 +682,7 @@ class LOMBridge(ControlSurface):
             if lo_abs > s + 1e-9: before.append((lo, float(ev.value_at_time(lo - 1e-6))))
             if hi_abs < e - 1e-9: after.insert(0, (hi, float(ev.value_at_time(hi + 1e-6))))
         elif int(getattr(p, "automation_state", 0)) != 0:
+            if int(getattr(p, "automation_state", 0)) == 2: raise ValueError(self._override_msg(p))
             if lo_abs > s + 1e-9:
                 got = {}
                 for _ in self._sample([p], s, lo_abs, SAMPLE_STEP, got): yield
@@ -535,6 +694,10 @@ class LOMBridge(ControlSurface):
         out["before"] = before; out["after"] = after
 
     # ---------- plan (commun à /plan et /shape) ----------
+    def _override_msg(self, p):
+        return ("automation de %s surchargée (valeur modifiée à la main, état 2) : l'échantillonnage lirait la valeur manuelle et "
+                "non l'automation ; réactiver l'automation dans Live (ou song.re_enable_automation()) puis replanifier" % p.name)
+
     def _parse_accept(self, s):
         acc = set(x.strip() for x in str(s or "").split(",") if x.strip() and x.strip() != "-")
         bad = acc - set(ACCEPT_KEYS)
@@ -585,23 +748,27 @@ class LOMBridge(ControlSurface):
         n_est = count_breakpoints(pts, res, is_linear(curve))
         plan["n_points"] = n_est
         if n_est > MAX_SHAPE_POINTS: plan["errors"].append("trop de points (%d > %d) : réduire res" % (n_est, MAX_SHAPE_POINTS)); return plan
-        covered = 0.0; total_sampling = 0.0
+        covered = 0.0; total_sampling = 0.0; total_verify = 0.0
+        state = int(getattr(p, "automation_state", 0))
         for c, s, e in clips:
             if e <= t_lo or s >= t_hi: continue
             lo, hi = max(t_lo, s), min(t_hi, e)
             fatal, need = self._check_clip(c, accept)
             exposes = self._env_of(c, p) is not None
-            automated = int(getattr(p, "automation_state", 0)) != 0
             samp = 0.0
-            if not exposes and automated:
+            if not exposes and state != 0:
+                if state == 2: fatal.append(self._override_msg(p))
                 samp = ((max(0.0, lo - s) + max(0.0, e - hi)) / SAMPLE_STEP + 2) * TICK_SECONDS
+            # relecture de contrôle : le clip MIDI reconstruit expose son enveloppe (exact, immédiat) ; l'audio jamais (5 points par curseur)
+            verify = 0.0 if "unverified" in accept else (5 * TICK_SECONDS if c.is_audio_clip else 0.0)
             entry = {"ref": self._ref(c), "name": str(c.name), "start": s, "end": e, "window": [lo, hi], "audio": int(c.is_audio_clip), "start_marker": float(c.start_marker), "end_marker": float(c.end_marker),
-                     "exposes_envelope": int(exposes), "sampling": int(bool(samp)), "sampling_seconds": round(samp, 1), "problems": fatal + need}
-            plan["clips"].append(entry); covered += hi - lo; total_sampling += samp
+                     "exposes_envelope": int(exposes), "sampling": int(bool(samp)), "sampling_seconds": round(samp, 1), "verify_seconds": round(verify, 1), "problems": fatal + need}
+            plan["clips"].append(entry); covered += hi - lo; total_sampling += samp; total_verify += verify
             for x in fatal: plan["errors"].append(x)
             for x in need: plan["errors"].append(x)
         if not plan["clips"]: plan["errors"].append("aucun clip ne couvre la plage %g-%g" % (t_lo, t_hi))
         gap = max(0.0, (t_hi - t_lo) - covered); plan["gap"] = round(gap, 4); plan["sampling_seconds"] = round(total_sampling, 1)
+        plan["verify"] = int("unverified" not in accept); plan["verify_seconds"] = round(total_verify, 1)
         if gap > 1e-3: plan["warnings"].append("%.2f temps de la plage ne sont couverts par aucun clip" % gap)
         plan["_pts"] = pts
         return plan
@@ -626,51 +793,48 @@ class LOMBridge(ControlSurface):
         bps = breakpoints(pts, cf, plan["res"], linear)
         t_lo, t_hi = plan["t_lo"], plan["t_hi"]
         def job():
-            song = self.song(); warnings = list(plan["warnings"]); rebuilt = []
+            song = self.song(); warnings = list(plan["warnings"])
             # revalidation au démarrage effectif de la tâche
-            live_clips = dict((getattr(c, "_live_ptr", id(c)), (c, s, e)) for c, s, e in self._arr_clips(track))
-            targets = []
-            for entry in plan["clips"]:
-                c = self._obj(entry["ref"]); key = getattr(c, "_live_ptr", id(c))
-                if key not in live_clips: raise ValueError("clip %s disparu depuis le plan : replanifier" % entry["name"])
-                c, s, e = live_clips[key]
-                if abs(s - entry["start"]) > 1e-6 or abs(e - entry["end"]) > 1e-6: raise ValueError("clip %s déplacé depuis le plan : replanifier" % entry["name"])
-                fatal, need = self._check_clip(c, accept)
-                if fatal or need: raise ValueError("clip %s : " % entry["name"] + " ; ".join(fatal + need))
-                targets.append((c, s, e, entry))
+            targets = self._revalidate(track, plan["clips"], p, accept)
             if plan["sampling_seconds"] > 0 and song.is_playing: raise ValueError("lecture en cours : arrêter le transport (échantillonnage nécessaire)")
-            try: float(p.value)
-            except Exception: raise ValueError("paramètre disparu : replanifier")
-            song.begin_undo_step(); mismatch = None
-            try:
-                for c, s, e, entry in targets:
-                    if self._cancel_requested(): raise ValueError("annulée")
-                    lo, hi = max(t_lo, s), min(t_hi, e)
-                    old = {}
-                    for _ in self._old_points(c, p, (lo, hi), old): yield
-                    new = [(self._rel(c, lo), interp(pts, cf, lo, "right"))]
-                    new += [(self._rel(c, bt), bv) for bt, bv in bps if lo < bt < hi]
-                    new.append((self._rel(c, hi), interp(pts, cf, hi, "left")))
-                    merged = sorted(old["before"] + new + old["after"], key=lambda x: x[0])
-                    nc = self._rebuild(track, c, [(p, merged)], warnings, accept)
-                    rebuilt.append((self._ref(nc), str(nc.name), len(old["before"]) + len(old["after"])))
-            except RebuildMismatch as e:
-                mismatch = e
-            finally:
-                song.end_undo_step()
-            if mismatch is not None:
-                try: song.undo()
-                except Exception as e2: raise ValueError("%s ; ANNULATION AUTOMATIQUE IMPOSSIBLE (%s) : faire Cmd+Z" % (mismatch, e2))
-                raise ValueError("%s ; étape annulée automatiquement, rien n'est modifié" % mismatch)
-            reply("shape", len(rebuilt), len(bps), plan.get("gap", 0))
-            for ref, name, nold in rebuilt: reply("rebuilt", ref, name, nold)
+            # phase 1 : lecture de l'existant (peut prendre du temps ; rien n'est modifié, aucune étape d'annulation ouverte)
+            work = []
+            for c, s, e, entry in targets:
+                if self._cancel_requested(): raise ValueError("annulée")
+                lo, hi = max(t_lo, s), min(t_hi, e)
+                old = {}
+                for _ in self._old_points(c, p, (lo, hi), old): yield
+                new = [(self._rel(c, lo), interp(pts, cf, lo, "right"))]
+                new += [(self._rel(c, bt), bv) for bt, bv in bps if lo < bt < hi]
+                new.append((self._rel(c, hi), interp(pts, cf, hi, "left")))
+                merged = sorted(old["before"] + new + old["after"], key=lambda x: x[0])
+                work.append((lo, hi, merged, len(old["before"]) + len(old["after"])))
+            # phase 2 : écriture de tous les clips d'un bloc (une étape d'annulation, sans pause) ; défaite si un clip échoue
+            targets = self._revalidate(track, plan["clips"], p, accept)   # rien n'a bougé pendant la lecture
+            def write(touched):
+                done = []
+                for (lo, hi, merged, nold), (c, s, e, entry) in zip(work, targets):
+                    nc = self._rebuild(track, c, [(p, merged)], warnings, accept, touched)
+                    done.append((nc, lo, hi, merged, nold))
+                return done
+            done = self._commit(song, write)
+            reply("shape", len(done), len(bps), plan.get("gap", 0))
+            for nc, lo, hi, merged, nold in done: reply("rebuilt", self._ref(nc), str(nc.name), nold)
+            # phase 3 : relecture de contrôle ; écart > tolérance → étape défaite
+            if "unverified" in accept: reply("verified", 0, 0, 0, "skipped")
+            else:
+                for _ in self._verify(song, p, [(nc, lo, hi, merged) for nc, lo, hi, merged, _ in done], reply, warnings): yield
             for w in warnings: reply("warn", w)
         return job()
 
     # ---------- autres commandes ----------
     def cmd_ping(self, reply, a):
+        """pong <version> live <version Live> session <n> · commands <liste> · accept <clés> · limits …"""
         app = Live.Application.get_application()
         reply("pong", VERSION, "live", "%d.%d.%d" % (app.get_major_version(), app.get_minor_version(), app.get_bugfix_version()), "session", self._session())
+        reply("commands", *sorted("/" + n[4:].replace("_", "-") for n in dir(self) if n.startswith("cmd_")))
+        reply("accept", ",".join(ACCEPT_KEYS))
+        reply("limits", "read_points", MAX_READ_POINTS, "shape_points", MAX_SHAPE_POINTS, "jobs", MAX_JOBS, "verify_tol", VERIFY_TOL)
 
     def cmd_path(self, reply, a):
         o = self._resolve(a[0]); reply(self._ref(o), type(o).__name__)
@@ -730,6 +894,7 @@ class LOMBridge(ControlSurface):
         if not (0 < res <= 64): raise ValueError("res doit être dans ]0, 64]")
         if (tB - tA) * res + 1 > MAX_READ_POINTS: raise ValueError("trop de points (> %d)" % MAX_READ_POINTS)
         def job():
+            if int(getattr(p, "automation_state", 0)) == 2: reply("warn", "automation de %s surchargée (état 2) : les valeurs lues sont la valeur manuelle, pas l'automation" % p.name)
             got = {}
             for _ in self._sample([p], tA, tB, 1.0 / res, got): yield
             for tt, v in got.get(0, []): reply(tt, v, str(p.str_for_value(v)))
@@ -749,29 +914,333 @@ class LOMBridge(ControlSurface):
         if len(a) < 5: raise ValueError("usage: /clear <piste> <paramRef> <tA> <tB> <accept|->")
         t = self._find_track(a[0]); p = self._resolve(a[1]); tA, tB = float(a[2]), float(a[3]); accept = self._parse_accept(a[4])
         if tA < 0 or tB <= tA: raise ValueError("plage invalide")
-        targets = [(c, s, e) for c, s, e in self._arr_clips(t) if not (e <= tA or s >= tB) and (self._env_of(c, p) is not None or int(getattr(p, "automation_state", 0)) != 0)]
+        state = int(getattr(p, "automation_state", 0))
+        targets = [(c, s, e) for c, s, e in self._arr_clips(t) if not (e <= tA or s >= tB) and (self._env_of(c, p) is not None or state != 0)]
         problems = []
         for c, s, e in targets:
             f, n = self._check_clip(c, accept); problems += f + n
+            if state == 2 and self._env_of(c, p) is None: problems.append(self._override_msg(p))
         if problems: raise ValueError("refus : " + " ; ".join(problems))
+        entries = [{"ref": self._ref(c), "name": str(c.name), "start": s, "end": e} for c, s, e in targets]
         def job():
-            song = self.song(); n = 0; warnings = []
-            song.begin_undo_step(); mismatch = None
-            try:
-                for c, s, e in targets:
-                    if self._cancel_requested(): raise ValueError("annulée")
-                    old = {}
-                    for _ in self._old_points(c, p, (max(tA, s), min(tB, e)), old): yield
-                    self._rebuild(t, c, [(p, old["before"] + old["after"])], warnings, accept); n += 1
-            except RebuildMismatch as e: mismatch = e
-            finally: song.end_undo_step()
-            if mismatch is not None:
-                try: song.undo()
-                except Exception as e2: raise ValueError("%s ; ANNULATION AUTOMATIQUE IMPOSSIBLE (%s) : faire Cmd+Z" % (mismatch, e2))
-                raise ValueError("%s ; étape annulée automatiquement" % mismatch)
-            reply("cleared", n)
+            song = self.song(); warnings = []
+            # phase 1 : lecture (rien n'est modifié)
+            work = []
+            for c, s, e, entry in self._revalidate(t, entries, p, accept):
+                if self._cancel_requested(): raise ValueError("annulée")
+                lo, hi = max(tA, s), min(tB, e); old = {}
+                for _ in self._old_points(c, p, (lo, hi), old): yield
+                work.append((lo, hi, sorted(old["before"] + old["after"], key=lambda x: x[0])))
+            # phase 2 : écriture d'un bloc ; phase 3 : relecture
+            cur = self._revalidate(t, entries, p, accept)
+            def write(touched):
+                return [(self._rebuild(t, c, [(p, merged)], warnings, accept, touched), lo, hi, merged) for (lo, hi, merged), (c, s, e, entry) in zip(work, cur)]
+            done = self._commit(song, write)
+            reply("cleared", len(done))
+            if "unverified" in accept: reply("verified", 0, 0, 0, "skipped")
+            else:
+                for _ in self._verify(song, p, done, reply, warnings): yield
             for w in warnings: reply("warn", w)
         return job()
+
+    # ---------- commandes typées (remplacent les /py courants) ----------
+    def _track_kind(self, t):
+        song = self.song()
+        if t is song.master_track: return "master"
+        if t in list(song.return_tracks): return "return"
+        if getattr(t, "is_foldable", False): return "group"
+        return "midi" if getattr(t, "has_midi_input", False) else "audio"
+
+    def _meter_db(self, v):
+        """Lecture de vu-mètre (échelle du fader : 0,85 = 0 dB) → dB affiché par le fader du master ; ±1 dB entre −7 et −16 dB."""
+        try: return str(self.song().master_track.mixer_device.volume.str_for_value(float(v)))
+        except Exception: return "?"
+
+    def cmd_transport(self, reply, a):
+        """/transport → état ; /transport play [t] | stop | pos <t> | loop on|off | loop <début> <longueur>"""
+        song = self.song()
+        if a:
+            op = str(a[0]).lower()
+            if op == "play":
+                if len(a) > 1: song.current_song_time = float(a[1])
+                if not song.is_playing: song.start_playing()
+            elif op == "stop":
+                if song.is_playing: song.stop_playing()
+            elif op == "pos":
+                if len(a) < 2: raise ValueError("usage: /transport pos <t>")
+                if song.is_playing: raise ValueError("lecture en cours : /transport stop avant de déplacer le curseur")
+                song.current_song_time = float(a[1])
+            elif op == "loop":
+                if len(a) == 2 and str(a[1]).lower() in ("on", "off", "1", "0"): song.loop = str(a[1]).lower() in ("on", "1")
+                elif len(a) == 3:
+                    st, ln = float(a[1]), float(a[2])
+                    if st < 0 or ln <= 0: raise ValueError("boucle invalide (début >= 0, longueur > 0)")
+                    song.loop_start = st; song.loop_length = ln
+                else: raise ValueError("usage: /transport loop on|off | loop <début> <longueur>")
+            else: raise ValueError("opération inconnue : " + op)
+        reply("transport", int(song.is_playing), float(song.current_song_time), float(song.tempo), "%d/%d" % (int(song.signature_numerator), int(song.signature_denominator)),
+              int(bool(song.loop)), float(song.loop_start), float(song.loop_length))
+
+    def cmd_meters(self, reply, a):
+        """/meters <t_départ> <secondes> [piste …] : lit les vu-mètres pendant la lecture (crête par piste + master), tâche asynchrone.
+        Transport arrêté : lance la lecture à t_départ puis l'arrête et restaure le curseur ; déjà en lecture : lit sans rien déplacer.
+        Lecture post-devices ET post-fader pour une piste, pré-devices du master pour le master ; dB via la courbe du fader (relatif)."""
+        if len(a) < 2: raise ValueError("usage: /meters <t_départ> <secondes> [piste …]")
+        t0, secs = float(a[0]), float(a[1])
+        if t0 < 0 or not (0 < secs <= 30): raise ValueError("t_départ >= 0 et secondes dans ]0, 30]")
+        song = self.song()
+        tracks = [self._find_track(x) for x in a[2:]] or list(song.tracks)
+        targets = tracks + ([song.master_track] if song.master_track not in tracks else [])
+        def job():
+            was_playing = bool(song.is_playing); saved = float(song.current_song_time)
+            peaks = dict((i, 0.0) for i in range(len(targets))); ticks = max(1, int(round(secs / TICK_SECONDS))); n = 0; start = saved
+            try:
+                if not was_playing: song.current_song_time = t0; song.start_playing(); start = t0
+                for _ in range(ticks):
+                    yield
+                    if self._cancel_requested(): break
+                    if not song.is_playing: raise ValueError("lecture arrêtée pendant la mesure : abandon")
+                    for i, t in enumerate(targets): peaks[i] = max(peaks[i], float(t.output_meter_left), float(t.output_meter_right))
+                    n += 1
+                end = float(song.current_song_time)
+            finally:
+                if not was_playing:
+                    try: song.stop_playing(); song.current_song_time = saved
+                    except Exception: pass
+            reply("meters", start, end, n)
+            for i, t in enumerate(targets): reply("meter", self._ref(t), str(t.name), self._track_kind(t), round(peaks[i], 4), self._meter_db(peaks[i]))
+        return job()
+
+    def cmd_setparam(self, reply, a):
+        """/setparam <piste> <device|mixer> <param> <valeur> [disp|raw] [override] → set <ref> <nom> <avant> <aff. avant> <après> <aff. après> <état automation>
+        Refus si le paramètre est automatisé (une écriture manuelle surcharge l'automation) sauf `override` ; relecture après écriture."""
+        if len(a) < 4: raise ValueError("usage: /setparam <piste> <device|mixer> <param> <valeur> [disp|raw] [override]")
+        t = self._find_track(a[0]); p = self._find_param(t, a[1], a[2]); target = float(a[3])
+        opts = [str(x).lower() for x in a[4:]]; unit = "raw" if "raw" in opts else "disp"; override = "override" in opts
+        state = int(getattr(p, "automation_state", 0))
+        if state != 0 and not override: raise ValueError("%s est automatisé (état %d) : une écriture manuelle surcharge l'automation (« Réactiver l'automation ») ; ajouter override, ou écrire l'automation avec /shape" % (p.name, state))
+        mn, mx = float(p.min), float(p.max)
+        if int(getattr(p, "is_quantized", 0)) and unit != "raw": raise ValueError("paramètre quantifié : raw avec une valeur entière")
+        if unit == "raw":
+            raw = target
+            if raw < mn or raw > mx: raise ValueError("valeur %g hors [%g, %g]" % (raw, mn, mx))
+        else:
+            raw, clamped = self._solve(p, target)
+            if clamped: raise ValueError("valeur %g hors plage affichable (%r … %r)" % (target, p.str_for_value(mn), p.str_for_value(mx)))
+        before = float(p.value); before_disp = str(p.str_for_value(before))
+        p.value = raw
+        got = float(p.value)
+        if abs(got - raw) > VERIFY_TOL * max(1e-9, mx - mn) and not (int(getattr(p, "is_quantized", 0)) and abs(got - raw) < 0.5):
+            raise ValueError("non appliqué : demandé %g, relu %g (%s)" % (raw, got, p.str_for_value(got)))
+        reply("set", self._ref(p), str(p.name), before, before_disp, got, str(p.str_for_value(got)), int(getattr(p, "automation_state", 0)))
+
+    def _snap_store(self):
+        if not hasattr(self, "_snaps"): self._snaps = {}; self._snap_n = 0
+        return self._snaps
+
+    def cmd_snapshot(self, reply, a):
+        """/snapshot <piste> [device|mixer] → snapshot <id> <n> puis <ref> <nom> <valeur> <affichage> ; gardé jusqu'au redémarrage de Live."""
+        if not a: raise ValueError("usage: /snapshot <piste> [device|mixer]")
+        t = self._find_track(a[0]); what = str(a[1]) if len(a) > 1 else None
+        if what is None: devs = [t.mixer_device] + list(t.devices)
+        elif what.lower() == "mixer": devs = [t.mixer_device]
+        else: devs = [self._obj(what) if what.startswith("o:") else self._find_named(list(t.devices), what, "device")]
+        params = []
+        for d in devs:
+            if d is t.mixer_device: params += [d.volume, d.panning] + list(d.sends)
+            else: params += list(d.parameters)
+        store = self._snap_store(); self._snap_n += 1; sid = "s%d" % self._snap_n
+        store[sid] = {"track": str(t.name), "what": what or "all", "values": [(p, float(p.value)) for p in params]}
+        reply("snapshot", sid, len(params), str(t.name), what or "all")
+        for p, v in store[sid]["values"]: reply(self._ref(p), str(p.name), v, str(p.str_for_value(v)))
+
+    def cmd_snapshots(self, reply, a):
+        for sid, s in sorted(self._snap_store().items(), key=lambda kv: int(kv[0][1:])): reply(sid, s["track"], s["what"], len(s["values"]))
+
+    def cmd_restore(self, reply, a):
+        """/restore <id> [override] : remet les valeurs d'un snapshot, en une étape d'annulation, puis relit ; refus si un paramètre est automatisé sauf override."""
+        if not a: raise ValueError("usage: /restore <id> [override]")
+        s = self._snap_store().get(str(a[0]))
+        if s is None: raise ValueError("snapshot inconnu %s (voir /snapshots)" % a[0])
+        override = any(str(x).lower() == "override" for x in a[1:])
+        song = self.song(); blocked, gone = [], []
+        for p, v in s["values"]:
+            try: float(p.value)
+            except Exception: gone.append(str(getattr(p, "name", "?"))); continue
+            if int(getattr(p, "automation_state", 0)) != 0 and not override: blocked.append(str(p.name))
+        if gone: raise ValueError("paramètres disparus (device supprimé ?) : " + ", ".join(gone))
+        if blocked: raise ValueError("automatisés (ajouter override pour surcharger) : " + ", ".join(blocked))
+        def write(touched):
+            changed = []
+            for p, v in s["values"]:
+                if abs(float(p.value) - v) < 1e-9: continue
+                p.value = v; touched.append(str(p.name)); changed.append(p)
+            return changed
+        changed = self._commit(song, write)
+        worst = 0.0
+        for p, v in s["values"]:
+            dev = abs(float(p.value) - v) / max(1e-9, float(p.max) - float(p.min)); worst = max(worst, dev)
+        if worst > VERIFY_TOL:
+            try: song.undo()
+            except Exception: pass
+            raise ValueError("relecture : écart %.4f de la plage > %.4f ; étape annulée" % (worst, VERIFY_TOL))
+        reply("restored", str(a[0]), len(changed), round(worst, 6))
+
+    def cmd_locators(self, reply, a):
+        for c in sorted(self.song().cue_points, key=lambda c: float(c.time)): reply(self._ref(c), float(c.time), str(c.name))
+
+    def cmd_locator(self, reply, a):
+        """/locator <t> <nom> : pose (ou renomme) un repère à t ; le curseur est déplacé puis restauré (transport arrêté)."""
+        if len(a) < 2: raise ValueError("usage: /locator <t> <nom>")
+        t, name = float(a[0]), str(a[1]); song = self.song()
+        if t < 0: raise ValueError("temps négatif")
+        found = [c for c in song.cue_points if abs(float(c.time) - t) < 1e-6]
+        if not found:
+            if song.is_playing: raise ValueError("lecture en cours : arrêter le transport (le curseur est déplacé pour poser le repère)")
+            saved = float(song.current_song_time)
+            try: song.current_song_time = t; song.set_or_delete_cue()
+            finally: song.current_song_time = saved
+            found = [c for c in song.cue_points if abs(float(c.time) - t) < 1e-6]
+            if not found: raise ValueError("repère non créé à t=%g" % t)
+        c = found[0]; c.name = name
+        reply("locator", self._ref(c), float(c.time), str(c.name), "renamed" if len(a) > 2 else "ok")
+
+    def cmd_state(self, reply, a):
+        """/state → une ligne `state <json>` : transport, pistes (type, mute/solo, volume, pan, devices, clips, paramètres automatisés), repères."""
+        song = self.song(); tracks = []
+        for t in list(song.tracks) + list(song.return_tracks) + [song.master_track]:
+            kind = self._track_kind(t); mix = t.mixer_device; devs = []; automated = 0
+            for d in t.devices:
+                n_auto = 0
+                try: n_auto = sum(1 for p in d.parameters if int(getattr(p, "automation_state", 0)) != 0)
+                except Exception: pass
+                automated += n_auto
+                devs.append({"ref": self._ref(d), "name": str(d.name), "class": str(getattr(d, "class_name", type(d).__name__)), "on": int(bool(getattr(d, "is_active", 1))), "automated_params": n_auto})
+            for p in [mix.volume, mix.panning] + list(mix.sends):
+                if int(getattr(p, "automation_state", 0)) != 0: automated += 1
+            try: n_clips = len(list(t.arrangement_clips))
+            except Exception: n_clips = 0
+            tracks.append({"ref": self._ref(t), "name": str(t.name), "kind": kind, "mute": int(bool(getattr(t, "mute", 0))), "solo": int(bool(getattr(t, "solo", 0))),
+                           "volume": str(mix.volume.str_for_value(mix.volume.value)), "pan": str(mix.panning.str_for_value(mix.panning.value)),
+                           "sends": [str(s.str_for_value(s.value)) for s in mix.sends], "devices": devs, "arrangement_clips": n_clips, "automated_params": automated})
+        st = {"version": VERSION, "session": self._session(), "tempo": float(song.tempo), "signature": "%d/%d" % (int(song.signature_numerator), int(song.signature_denominator)),
+              "playing": int(song.is_playing), "position": float(song.current_song_time), "loop": {"on": int(bool(song.loop)), "start": float(song.loop_start), "length": float(song.loop_length)},
+              "tracks": tracks, "locators": [{"time": float(c.time), "name": str(c.name)} for c in sorted(song.cue_points, key=lambda c: float(c.time))]}
+        reply("state", json.dumps(st, ensure_ascii=False))
+
+    # ---------- devices (navigateur) et notes ----------
+    BROWSER_SOURCES = ("plugins", "sounds", "instruments", "audio_effects", "midi_effects", "drums", "max_for_live", "user_library")
+
+    def _browser_find(self, root, name, depth=4):
+        """Éléments chargeables du navigateur dont le nom correspond (exact, sinon sous-chaîne), parcours en profondeur ≤ depth."""
+        k = str(name).lower(); exact, subs = [], []
+        def walk(item, d, path):
+            for c in list(getattr(item, "children", []) or []):
+                n = str(getattr(c, "name", "")); p = path + [n]
+                if getattr(c, "is_loadable", False):
+                    if n.lower() == k: exact.append((c, p))
+                    elif k in n.lower(): subs.append((c, p))
+                if d < depth and (getattr(c, "is_folder", False) or not getattr(c, "is_loadable", False)): walk(c, d + 1, p)
+        walk(root, 1, [])
+        return exact, subs
+
+    def cmd_load(self, reply, a):
+        """/load <piste> <nom> [source] [replace=<device>] : charge un device par le navigateur SANS écraser (le dernier device de la
+        piste est sélectionné avant, ou celui à remplacer avec replace=…), puis vérifie : +1 device sur la piste (ou même nombre avec
+        replace) et aucune autre piste modifiée. source : plugins (défaut, VST3/AU), sounds, instruments, audio_effects, midi_effects, drums, max_for_live, user_library."""
+        if len(a) < 2: raise ValueError("usage: /load <piste> <nom> [source] [replace=<device>]")
+        t = self._find_track(a[0]); name = str(a[1]); source = "plugins"; replace = None
+        for x in a[2:]:
+            x = str(x)
+            if x.startswith("replace="): replace = x[8:]
+            elif x in self.BROWSER_SOURCES: source = x
+            else: raise ValueError("argument inconnu %s (sources : %s ; replace=<device>)" % (x, ", ".join(self.BROWSER_SOURCES)))
+        app = Live.Application.get_application(); root = getattr(app.browser, source)
+        exact, subs = self._browser_find(root, name)
+        hits = exact if exact else subs
+        if not hits: raise ValueError("%s introuvable dans le navigateur (%s)" % (name, source))
+        if len(hits) > 1: raise ValueError("%s ambigu dans %s : %s" % (name, source, " ; ".join("/".join(p) for _, p in hits[:8])))
+        item, path = hits[0]
+        song = self.song(); all_tracks = list(song.tracks) + list(song.return_tracks) + [song.master_track]
+        counts = dict((getattr(x, "_live_ptr", id(x)), len(list(x.devices))) for x in all_tracks)
+        before = list(t.devices); n0 = len(before)
+        song.view.selected_track = t
+        if replace is not None:
+            target = self._obj(replace) if replace.startswith("o:") else self._find_named(before, replace, "device")
+            song.view.select_device(target); idx = before.index(target)
+        elif before: song.view.select_device(before[-1]); idx = n0
+        else: idx = 0
+        app.browser.load_item(item)
+        after = list(t.devices)
+        touched_elsewhere = [str(x.name) for x in all_tracks if x is not t and len(list(x.devices)) != counts[getattr(x, "_live_ptr", id(x))]]
+        if touched_elsewhere: raise ValueError("non appliqué comme prévu : une autre piste a changé (%s) — vérifier et Cmd+Z" % ", ".join(touched_elsewhere))
+        expected = n0 if replace is not None else n0 + 1
+        if len(after) != expected: raise ValueError("non appliqué comme prévu : %d device(s) après chargement, %d attendu(s) — vérifier et Cmd+Z" % (len(after), expected))
+        if replace is None and any(getattr(x, "_live_ptr", id(x)) != getattr(y, "_live_ptr", id(y)) for x, y in zip(before, after[:n0])):
+            raise ValueError("non appliqué comme prévu : un device existant a été remplacé (hot-swap) — vérifier et Cmd+Z")
+        new = after[idx]
+        reply("loaded", self._ref(new), str(new.name), idx, n0, len(after), "/".join(path), "replaced" if replace is not None else "added")
+
+    def _find_clip(self, track, ref):
+        s = str(ref)
+        if s.startswith("o:"): return self._obj(s)
+        c = self._clip_at(self._arr_clips(track), float(s))
+        if c is None: raise ValueError("aucun clip d'arrangement à t=%s" % s)
+        return c[0]
+
+    def _note_rows(self, notes):
+        return sorted(((int(n.pitch), round(float(n.start_time), 6), round(float(n.duration), 6), int(n.velocity), int(bool(n.mute))) for n in notes), key=lambda x: (x[1], x[0]))
+
+    def _parse_notes(self, s):
+        try: data = json.loads(str(s))
+        except Exception as e: raise ValueError("notes : JSON invalide (%s)" % e)
+        if not isinstance(data, list): raise ValueError("notes : liste attendue")
+        out = []
+        for i, n in enumerate(data):
+            if isinstance(n, list): n = dict(zip(("pitch", "start", "duration", "velocity", "mute"), n))
+            if not isinstance(n, dict): raise ValueError("note %d mal formée" % i)
+            try: p, st, du = int(n["pitch"]), float(n["start"]), float(n["duration"])
+            except Exception: raise ValueError("note %d : pitch, start, duration requis" % i)
+            v = int(n.get("velocity", 100)); m = bool(n.get("mute", False))
+            if not (0 <= p <= 127) or not (1 <= v <= 127) or st < 0 or du <= 0: raise ValueError("note %d hors limites (pitch 0–127, velocity 1–127, start ≥ 0, duration > 0)" % i)
+            out.append((p, st, du, v, m))
+        return out
+
+    def cmd_notes(self, reply, a):
+        """/notes get <piste> <clipRef|t> [tA tB] → `clip …` puis `note <pitch> <début> <durée> <vélocité> <mute>` (temps relatifs au clip, comme Live)
+        /notes set <piste> <clipRef|t> <json> [tA tB] : remplace les notes du clip (ou de la fenêtre [tA, tB[) — une étape d'annulation, relecture, défaite sur écart
+        /notes add <piste> <clipRef|t> <json> : ajoute sans rien retirer. json = [{"pitch":60,"start":0,"duration":1,"velocity":100,"mute":false}, …] ou [[60,0,1,100], …]"""
+        if len(a) < 3: raise ValueError("usage: /notes get|set|add <piste> <clipRef|t> [json] [tA tB]")
+        op = str(a[0]).lower(); t = self._find_track(a[1]); clip = self._find_clip(t, a[2])
+        if clip.is_audio_clip: raise ValueError("%s : clip audio, pas de notes" % clip.name)
+        if op == "get":
+            notes = clip.get_all_notes_extended()
+            if len(a) >= 5: tA, tB = float(a[3]), float(a[4]); notes = [n for n in notes if tA <= float(n.start_time) < tB]
+            reply("clip", self._ref(clip), str(clip.name), float(clip.start_time), float(clip.end_time), float(clip.start_marker), len(notes))
+            for row in self._note_rows(notes): reply("note", *row)
+            return
+        if op not in ("set", "add"): raise ValueError("opération inconnue : " + op)
+        if len(a) < 4: raise ValueError("usage: /notes %s <piste> <clipRef|t> <json> [tA tB]" % op)
+        new = self._parse_notes(a[3]); win = (float(a[4]), float(a[5])) if len(a) >= 6 else None
+        if win and win[1] <= win[0]: raise ValueError("fenêtre invalide")
+        if op == "set" and win and any(not (win[0] <= st < win[1]) for _, st, _, _, _ in new): raise ValueError("une note écrite est hors de la fenêtre [%g, %g[" % win)
+        N = Live.Clip.MidiNoteSpecification; song = self.song()
+        old_rows = self._note_rows(clip.get_all_notes_extended())
+        kept = [r for r in old_rows if op == "add" or (win and not (win[0] <= r[1] < win[1]))]
+        expected = sorted(kept + [(p, round(st, 6), round(du, 6), v, int(m)) for p, st, du, v, m in new], key=lambda x: (x[1], x[0]))
+        def write(touched):
+            if op == "set":
+                if win: clip.remove_notes_extended(0, 128, win[0], win[1] - win[0])
+                else: clip.remove_notes_extended(0, 128, 0.0, 1e6)
+                touched.append(str(clip.name))
+            if new: clip.add_new_notes(tuple(N(pitch=p, start_time=st, duration=du, velocity=v, mute=m) for p, st, du, v, m in new)); touched.append(str(clip.name))
+        self._commit(song, write)
+        got = self._note_rows(clip.get_all_notes_extended())
+        if got != expected:
+            try: song.undo()
+            except Exception as e2: raise ValueError("relecture des notes : %d obtenues, %d attendues ; ANNULATION AUTOMATIQUE IMPOSSIBLE (%s) : faire Cmd+Z" % (len(got), len(expected), e2))
+            raise ValueError("relecture des notes : %d obtenues, %d attendues ; étape annulée automatiquement, rien n'est modifié" % (len(got), len(expected)))
+        reply("notes", op, self._ref(clip), str(clip.name), len(old_rows), len(got), len(new))
 
     def cmd_jobs(self, reply, a):
         for j in self._jobs: reply(j["rid"], j["cmd"], "running" if j["started"] else "queued", int(j["cancel"]))
@@ -782,13 +1251,22 @@ class LOMBridge(ControlSurface):
         for j in list(self._jobs):
             if target is not None and j["rid"] != target: continue
             if j is self._jobs[0] and j["started"]:
-                j["cancel"] = True; n += 1   # la tâche en cours s'arrête à son prochain point d'attente
+                j["cancel"] = True; n += 1   # la tâche en cours s'arrête à sa prochaine pause (voir _job_tick) ; une écriture déjà faite n'est pas défaite
             else:
                 self._jobs.remove(j)
                 try: j["gen"].close()
                 except Exception: pass
-                self._send(j["addr"], "/err", j["rid"], "%s: annulée" % j["cmd"]); self._send(j["addr"], "/end", j["rid"], j["cmd"]); n += 1
+                self._fail(j["addr"], j["rid"], "%s: annulée" % j["cmd"]); self._send(j["addr"], "/end", j["rid"], j["cmd"]); n += 1
         reply("cancelled", n)
+
+    def cmd_journal(self, reply, a):
+        """/journal [n] : les n dernières écritures journalisées (défaut 20), une ligne `entry <json>` chacune, plus ancienne d'abord."""
+        n = int(a[0]) if a else 20
+        try:
+            with open(self._journal_path(), encoding="utf-8") as f: lines = [l for l in f.read().splitlines() if l.strip()]
+        except FileNotFoundError: lines = []
+        for l in lines[-n:]: reply("entry", l)
+        reply("journal", self._journal_path(), len(lines))
 
     def cmd_py(self, reply, a):
         code = " ".join(str(x) for x in a)

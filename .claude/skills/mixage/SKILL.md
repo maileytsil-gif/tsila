@@ -7,9 +7,9 @@ Règles communes (capacités vérifiées, session préservée, relecture après 
 # Mixage : méthode, outils, mesures
 
 ## Ordre de travail (une étape validée par échange)
-1. **Carte du mix** : `scripts/mix_snapshot.py` (via `pyl.sh`) — par piste : fader, pan, envois, devices, sortie ; état des bus. Relire avant chaque étape : l'utilisateur bouge les faders lui-même.
+1. **Carte du mix** : `lom.py state --json` puis `scripts/mix_snapshot.py` (via `pyl.sh`) — par piste : fader, pan, envois, devices, sortie ; état des bus. Relire avant chaque étape : l'utilisateur bouge les faders lui-même.
 2. **Grave d'abord** : sub sinus mono (≤ 110 Hz), kick rond et court ; les deux se partagent 40–120 Hz par sidechain (compresseur sur SUB/BASS, source piste KICK Post FX, attaque 0,1–1 ms, release ≈ 110 ms, 4:1) plutôt que par EQ. Grave centré (Mono Maker/Utility < 120 Hz sur le bus BASSES).
-3. **Balance statique** sur le passage le plus dense (souvent le dernier drop) : crêtes avant fader relevées avec `levels.sh` (pré-fader ! le master est pré-devices), faders posés, puis vérification par bus.
+3. **Balance statique** sur le passage le plus dense (souvent le dernier drop) : crêtes relevées avec `lom.py meters` / `levels.sh` (post-fader pour une piste, pré-devices pour le master ; relatif), faders posés, puis vérification par bus.
 4. **EQ correctif à la source** (pistes AUDIO, REQ 6) : coupe-bas partout sauf kick/sub, un creux de désencombrement (250–900 Hz) là où deux éléments se chevauchent, shelf doux sur les aigus agressifs. Résonances → dynamique/spectral (soothe3, Pro-Q 4 spectral, F6) avant la compression.
 5. **Bus** : glue légère (bx_glue 2–4:1, attaque lente, release auto, 1–2 dB), compression parallèle pour la densité (API-2500, mix 30–60 %), une seule couleur (J37) au master 1, largeur seulement au-dessus de 120 Hz (Imager, largeur des textures automatisée).
 6. **Profondeur** : envois (réverb courte A, delay B, grande salle sombre C) automatisés par section, envois post-fader pour que les queues suivent les fondus ; les envois automatisés restent sur les pistes MIDI.
