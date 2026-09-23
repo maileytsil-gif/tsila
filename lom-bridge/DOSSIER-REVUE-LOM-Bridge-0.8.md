@@ -39,7 +39,7 @@ Point de départ : la 0.4.1 que tu as revue (références opaques, plan commun d
 5. `/load` : `app.browser.plugins` / `audio_effects` / … — la profondeur 4 et la règle « descendre dans tout ce qui n'est pas chargeable » couvrent-elles les dossiers de presets de plug-ins (un item chargeable qui a des enfants) ? Est-ce que `song.view.select_device(t.devices[-1])` suffit pour que `load_item` ajoute **après** ce device, sur toutes les configurations (piste vide, rack, chaîne de rack sélectionnée ailleurs) ?
 6. `/setparam` sur un paramètre en `automation_state == 1` avec `override` : après écriture, l'état passe-t-il bien à 2, et `/read` le signale-t-il ? Le message conseille `apply` plutôt que `override` — est-ce le bon conseil dans tous les cas (paramètre quantifié « Device On » automatisé) ?
 7. Codes d'erreur : la table `ERROR_CODES` est ordonnée et déduite du texte ; trouve un message qui tombe dans le mauvais code (par exemple un nom de piste contenant « annulée » ou « hors »).
-8. Tout ce qui manque pour que ChatGPT (via `lom.py serve`, HTTP + jeton) pilote le bridge sans erreur : le `GET /` liste les commandes et la version ; `POST /cmd {"cmd": "/shape", "args": […]}` ; les temps `mesure|temps` sont convertis en 4/4 côté HTTP (`parse_time` sans signature de Live) — c'est une incohérence avec la CLI, à confirmer.
+8. Tout ce qui manque pour que ChatGPT (via `lom.py serve`, HTTP + jeton) pilote le bridge sans erreur : le `GET /` liste les commandes et la version ; `POST /cmd {"cmd": "/shape", "args": […]}` ; les temps `mesure|temps` suivent la signature de Live aussi en HTTP depuis 0.8.1 (`http_args`, `beatsPerBar` facultatif dans le corps) — confirmer qu'aucun autre chemin ne suppose 4/4.
 
 ## Ce qui n'est pas dans le périmètre
 

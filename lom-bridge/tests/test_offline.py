@@ -666,6 +666,13 @@ class TestTypedCommands(unittest.TestCase):
         with self.assertRaises(ValueError) as cm: self.call("notes", "set", "3-MIDI", 20.0, json.dumps([[62, 4.0, 1.0, 110], [65, 6.0, 1.0, 100]]), 4.0, 8.0)
         self.assertIn("annulée automatiquement", str(cm.exception)); self.assertEqual(self.song.undo_calls, [1])
         self.assertEqual([n.pitch for n in c.notes], [60, 64, 67])
+    def test_http_time_args_follow_live_signature(self):
+        calls = []
+        def live_bpb(): calls.append(1); return 3
+        self.assertEqual(lom.http_args(["3-MIDI", "o:1:2", "3|1", 0.5, "[[60,0,1,100]]"], live_bpb), ["3-MIDI", "o:1:2", 6.0, 0.5, "[[60,0,1,100]]"])
+        self.assertEqual(calls, [1])                                                       # signature lue une fois, et seulement si un temps « mesure|temps » est présent
+        self.assertEqual(lom.http_args(["3|1", "5|3"], 4), [8.0, 18.0]); self.assertEqual(lom.http_args(["a|b"], live_bpb), ["a|b"])
+        self.assertEqual(lom.http_args(["x"], lambda: (_ for _ in ()).throw(AssertionError("ne doit pas lire Live"))), ["x"])
     def test_ping_lists_typed_commands_and_http_allows_them(self):
         rows = []; self.b.cmd_ping(lambda *x: rows.append(x), []); cmds = next(r for r in rows if r[0] == "commands")
         for c in ("/transport", "/meters", "/setparam", "/snapshot", "/restore", "/snapshots", "/locators", "/locator", "/state", "/load", "/notes", "/journal"):

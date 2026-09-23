@@ -270,6 +270,17 @@ def apply_spec(b, spec, dry=False, log=print, policy=None):
 # ---------- serveur HTTP (clients non-OSC : ChatGPT, curl) ----------
 def http_allowed(cmd, unsafe=False): return unsafe or cmd in SAFE_HTTP
 
+def http_args(args, bpb):
+    """Arguments d'un POST /cmd : une chaîne « mesure|temps » devient un temps absolu selon la signature — celle du corps
+    (`beatsPerBar`) ou, sinon, celle lue dans Live (`bpb` peut être un entier ou une fonction qui le lit à la demande)."""
+    out = []
+    for x in args:
+        if isinstance(x, str) and re.match(r"^\d+\|\d+(?:\.\d+)?(?:\|\d+(?:\.\d+)?)?$", x.strip()):
+            if callable(bpb): bpb = bpb()
+            x = parse_time(x, int(bpb))
+        out.append(x)
+    return out
+
 def serve(port, unsafe=False):
     from http.server import BaseHTTPRequestHandler, HTTPServer
     b = Bridge(); token = b.token
@@ -285,7 +296,7 @@ def serve(port, unsafe=False):
         def do_GET(self):
             if not self._auth(): return
             self._json(200, {"service": "LOM Bridge HTTP", "version": VERSION, "commands": sorted(SAFE_HTTP), "unsafe": unsafe,
-                             "usage": {"POST /cmd": {"cmd": "/param", "args": ["AUDIO - Sub", "mixer", "Volume"]}, "POST /apply": {"spec": {"automations": []}, "dry": True}}})
+                             "usage": {"POST /cmd": {"cmd": "/param", "args": ["AUDIO - Sub", "mixer", "Volume"], "beatsPerBar": "facultatif : signature de Live sinon"}, "POST /apply": {"spec": {"automations": []}, "dry": True}}})
         def do_POST(self):
             if not self._auth(): return
             n = int(self.headers.get("Content-Length", 0))
@@ -296,8 +307,7 @@ def serve(port, unsafe=False):
                 if self.path == "/cmd":
                     cmd = str(body.get("cmd", ""))
                     if not http_allowed(cmd, unsafe): self._json(403, {"error": "commande non autorisée en HTTP : " + cmd}); return
-                    args = [parse_time(x) if isinstance(x, str) and "|" in x else x for x in body.get("args", [])]
-                    self._json(200, b.send(cmd, *args))
+                    self._json(200, b.send(cmd, *http_args(body.get("args", []), body.get("beatsPerBar") or b.beats_per_bar)))
                 elif self.path == "/apply":
                     logs = []; res = apply_spec(b, body["spec"], body.get("dry", True), logs.append)
                     self._json(200, {"log": logs, "results": res})
