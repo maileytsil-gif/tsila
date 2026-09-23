@@ -136,7 +136,7 @@ _ident = lambda x: x
 
 # Codes d'erreur stables (premier argument de /err après l'id), déduits du message ; l'ordre compte (premier motif trouvé).
 ERROR_CODES = (
-    ("ANNULATION AUTOMATIQUE IMPOSSIBLE", "E_ROLLBACK_FAILED"), ("annulée automatiquement", "E_ROLLED_BACK"),
+    ("état du Set incertain", "E_UNCERTAIN"), ("ANNULATION AUTOMATIQUE IMPOSSIBLE", "E_ROLLBACK_FAILED"), ("annulée automatiquement", "E_ROLLED_BACK"),
     ("jeton", "E_AUTH"), ("commande inconnue", "E_UNKNOWN_CMD"), ("usage:", "E_USAGE"), ("file de tâches pleine", "E_QUEUE_FULL"),
     ("annulée", "E_CANCELLED"), ("lecture en cours", "E_TRANSPORT_PLAYING"), ("transport démarré", "E_TRANSPORT_PLAYING"),
     ("lecture arrêtée", "E_TRANSPORT_STOPPED"), ("curseur déplacé", "E_CURSOR_MOVED"), ("replanifier", "E_STALE"),
@@ -356,11 +356,15 @@ class LOMBridge(ControlSurface):
     def _commit(self, song, write):
         """Exécute write(touched) dans UNE étape d'annulation, sans pause. `touched` reçoit le nom de chaque clip effectivement
         remplacé. Sur erreur : rien de remplacé → l'erreur remonte telle quelle ; sinon l'étape est défaite (song.undo)."""
-        touched, failure = [], None
+        touched, failure, result = [], None, None
         song.begin_undo_step()
         try: result = write(touched)
         except Exception as e: failure = e
-        finally: song.end_undo_step()
+        finally:
+            try: song.end_undo_step()
+            except Exception as e:
+                # la pile d'annulation est dans un état inconnu : ne surtout pas appeler undo à l'aveugle ni prétendre à l'atomicité
+                raise ValueError("fin d'étape d'annulation impossible (%s) ; état du Set incertain : vérifier dans Live avant toute autre écriture" % e) from e
         if failure is None: return result
         if not touched: raise ValueError("%s ; rien n'est modifié" % failure) from failure
         try: song.undo()
@@ -1229,11 +1233,14 @@ class LOMBridge(ControlSurface):
         kept = [r for r in old_rows if op == "add" or (win and not (win[0] <= r[1] < win[1]))]
         expected = sorted(kept + [(p, round(st, 6), round(du, 6), v, int(m)) for p, st, du, v, m in new], key=lambda x: (x[1], x[0]))
         def write(touched):
+            # `touched` est marqué AVANT chaque appel à Live : une écriture partielle (remove ou add qui lève à mi-chemin) est ainsi défaite
             if op == "set":
+                touched.append(str(clip.name))
                 if win: clip.remove_notes_extended(0, 128, win[0], win[1] - win[0])
                 else: clip.remove_notes_extended(0, 128, 0.0, 1e6)
-                touched.append(str(clip.name))
-            if new: clip.add_new_notes(tuple(N(pitch=p, start_time=st, duration=du, velocity=v, mute=m) for p, st, du, v, m in new)); touched.append(str(clip.name))
+            if new:
+                if not touched: touched.append(str(clip.name))
+                clip.add_new_notes(tuple(N(pitch=p, start_time=st, duration=du, velocity=v, mute=m) for p, st, du, v, m in new))
         self._commit(song, write)
         got = self._note_rows(clip.get_all_notes_extended())
         if got != expected:

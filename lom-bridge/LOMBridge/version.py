@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 # Seule source du numero de version du LOM Bridge (Remote Script ET client lom.py).
-VERSION = "0.8.1"
+VERSION = "0.8.2"
