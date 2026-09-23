@@ -152,7 +152,7 @@ def error_code(msg):
         if needle in m: return code
     return "E_ERROR"
 
-JOURNAL_CMDS = ("/shape", "/clear", "/setparam", "/restore", "/locator", "/transport")   # commandes qui modifient le Set : journalisées
+JOURNAL_CMDS = ("/shape", "/clear", "/setparam", "/restore", "/locator", "/transport", "/load", "/notes")   # commandes qui modifient le Set : journalisées
 JOURNAL_MAX_ROWS = 40
 
 def check_points_exact(pts, eps=VERIFY_EPS, limit=VERIFY_MAX_CHECKS):

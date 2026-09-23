@@ -672,4 +672,23 @@ class TestTypedCommands(unittest.TestCase):
             self.assertIn(c, cmds); self.assertTrue(lom.http_allowed(c), c)
         self.assertFalse(lom.http_allowed("/py"))
 
+class TestCoverage(unittest.TestCase):
+    """Garde-fou P4 : chaque commande du bridge doit être exercée par la suite dans Live (sauf accès générique au LOM),
+    autorisée ou bloquée explicitement en HTTP, et journalisée si elle modifie le Set."""
+    GENERIC = {"/get", "/set", "/call", "/children", "/info", "/path", "/py", "/reload"}
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp(); self.song = FakeSong([FakeTrack("t")]); self.mod, self.b = load_bridge(self.song, self.tmp)
+        self.cmds = sorted("/" + n[4:].replace("_", "-") for n in dir(self.b) if n.startswith("cmd_"))
+    def test_every_command_in_live_suite(self):
+        src = open(os.path.join(ROOT, "tests", "live_suite.py"), encoding="utf-8").read()
+        missing = [c for c in self.cmds if c not in self.GENERIC and ('"%s"' % c) not in src and ("lom.py %s" % c[1:]) not in src]
+        self.assertEqual(missing, [], "commandes sans contrôle dans tests/live_suite.py")
+    def test_http_policy_is_explicit(self):
+        blocked = {"/py", "/set", "/call", "/reload"}
+        for c in self.cmds:
+            self.assertEqual(lom.http_allowed(c), c not in blocked, c)
+    def test_writes_are_journaled(self):
+        writes = {"/shape", "/clear", "/setparam", "/restore", "/locator", "/transport", "/load", "/notes"}
+        self.assertEqual(set(self.mod.JOURNAL_CMDS), writes)
+
 if __name__ == "__main__": unittest.main()

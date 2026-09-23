@@ -1,0 +1,22 @@
+name: LOM Bridge — tests hors Live
+on:
+  push:
+    paths: ["lom-bridge/**", ".github/workflows/tests.yml"]
+  pull_request:
+    paths: ["lom-bridge/**", ".github/workflows/tests.yml"]
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.12"]   # 3.11 = Python embarqué de Live 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "${{ matrix.python }}" }
+      - name: tests hors Live
+        working-directory: lom-bridge
+        run: python3 -W ignore -m unittest tests/test_offline.py -v
+      - name: syntaxe de la suite Live et du client
+        working-directory: lom-bridge
+        run: python3 -m py_compile tests/live_suite.py lom.py LOMBridge/__init__.py
