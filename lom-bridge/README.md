@@ -8,7 +8,7 @@ Version : **une seule source**, `LOMBridge/version.py` (lue par le Remote Script
 | `LOMBridge/version.py` | Numéro de version (seule source) |
 | `lom.py` | Client Python 3 sans dépendance : CLI, `apply spec.json [--dry]`, serveur HTTP JSON |
 | `automations_el21.json` | Spec d'exemple pour le morceau el21 |
-| `tests/test_offline.py` | 37 tests logiciels sans Live (`python3 -W ignore -m unittest tests/test_offline.py`) |
+| `tests/test_offline.py` | 45 tests logiciels sans Live (`python3 -W ignore -m unittest tests/test_offline.py`) |
 | `tests/live_suite.py` | Suite d'essais dans Live sur deux pistes temporaires créées puis supprimées |
 | `legacy/` | Ancien device Max for Live (protocole obsolète, sans automation) — non maintenu |
 
@@ -40,6 +40,12 @@ Contexte de développement : macOS 26.6, Live 12.4.5 Suite, Python embarqué de 
 | `/events <piste> <paramRef> [tA tB]` | points des enveloppes **exposées** (voir limites) |
 | `/clear <piste> <paramRef> <tA> <tB> <accept\|-> ` | supprime les points de la plage (reconstruction, tout ou rien, relecture). Lignes `cleared <n>`, `verified …`, `warn …` |
 | `/jobs`, `/cancel [<id>]` | tâches en file (max 4) ; annulation d'une tâche par id, ou de toutes. Une tâche en cours s'arrête à sa prochaine pause : en lecture, rien n'est modifié ; en relecture, l'écriture reste (`verified … interrupted`) |
+| `/transport [play [t] \| stop \| pos <t> \| loop on\|off \| loop <début> <longueur>]` | → `transport <lecture> <position> <tempo> <signature> <boucle> <début> <longueur>`. `pos` refusé pendant la lecture |
+| `/meters <t_départ> <secondes> [piste …]` | tâche : lit les vu-mètres pendant la lecture (≤ 30 s). Transport arrêté → lecture lancée à `t_départ`, puis arrêtée et curseur restauré ; déjà en lecture → rien n'est touché. `meters <début> <fin> <ticks>` puis `meter <ref> <nom> <type> <crête brute> <dB>` (piste : post-devices **et** post-fader ; master : pré-devices ; dB par la courbe du fader, fiable ±1 dB entre −7 et −16 dB, **relatif** seulement) |
+| `/setparam <piste> <device\|mixer> <param> <valeur> [disp\|raw] [override]` | règle un paramètre et le relit → `set <ref> <nom> <avant> <aff.> <après> <aff.> <état automation>`. **Refusé si le paramètre est automatisé** (une écriture manuelle surcharge l'automation) sauf `override` ; quantifié → `raw` ; hors plage → refus ; non appliqué par le plug-in → erreur |
+| `/snapshot <piste> [device\|mixer]`, `/snapshots`, `/restore <id> [override]` | photo des valeurs (mixer + devices, ou un seul), gardée jusqu'au redémarrage de Live ; `restore` remet tout en **une étape d'annulation**, relit, et défait l'étape si un paramètre refuse ; refus si automatisé sauf `override` |
+| `/locators`, `/locator <t> <nom>` | repères d'arrangement ; `locator` pose (curseur déplacé puis restauré, transport arrêté) ou **renomme** s'il existe déjà à `t` |
+| `/state` | `state <json>` : tempo, signature, transport, boucle, pistes (type, mute/solo, volume, pan, envois, devices avec nombre de paramètres automatisés, clips d'arrangement), repères — à lire en début de séance |
 | `/get /set /call /children /info /path` | accès générique au LOM (`live_set tracks 2 mixer_device volume`, références) |
 | `/py <code>` | Python arbitraire dans Live — **UDP seulement, jamais via HTTP** |
 | `/reload` | rechargement à chaud |
@@ -72,6 +78,12 @@ python3 lom.py read  "AUDIO - Sub" o:493090:4 5|1 9|1 --res 1
 python3 lom.py apply automations_el21.json --dry      # plan serveur pour chaque entrée, rien n'est écrit
 python3 lom.py apply automations_el21.json
 python3 lom.py jobs ; python3 lom.py cancel <id>
+python3 lom.py state --json                            # carte du Set en JSON
+python3 lom.py transport ; python3 lom.py transport play 17|1 ; python3 lom.py transport stop
+python3 lom.py meters 17|1 5 "AUDIO - Kick" "AUDIO - Sub"   # crêtes pendant 5 s à partir de 17|1, transport restauré
+python3 lom.py setparam "BUS - HARMONIE" "REQ 6 Stereo" "Band1 Frq" 0.2565 raw
+python3 lom.py snapshot "AUDIO - Sub" ; python3 lom.py restore s1
+python3 lom.py locator 65|1 "Drop 2" ; python3 lom.py locators
 python3 lom.py serve --port 7480                       # HTTP JSON ; Authorization: Bearer <token> ; /py /set /call /reload bloqués sauf --unsafe
 ```
 Spec `apply` : `{"beatsPerBar":4,"automations":[{"track":"AUDIO - Sub","device":"mixer","param":"Volume","unit":"rel|disp|raw","res":8,"curve":"lin","hold":false,"accept":["fades"],"points":[["5|1",-5],["9|1",0]],"note":"…","skip":false}]}`. `rel` = offsets par rapport à la valeur courante affichée. `--dry` appelle `/plan` avec les mêmes arguments que l'écriture.
@@ -79,6 +91,7 @@ Spec `apply` : `{"beatsPerBar":4,"automations":[{"track":"AUDIO - Sub","device":
 HTTP : `POST /cmd {"cmd":"/plan","args":[…]}`, `POST /apply {"spec":{…},"dry":true}`, `GET /` = aide. Jeton obligatoire dans l'en-tête `Authorization`, en-tête `Origin` refusé.
 
 ## Ce qui a été vérifié
-- **Tests logiciels** (37, sans Live) : OSC int64 sans perte, références inchangées sur le fil, client qui ignore les lignes d'autres requêtes, jeton exigé et fichier créé à l'init, id sur chaque ligne, refus des ids numériques et des sessions étrangères, interpolation gauche/droite, budget = nombre de points générés, fenêtre nulle, saturation, `accept`, clips bouclés étirés, ancrages exacts, ordre des points d'un saut, nettoyage après erreur de reconstruction, annulation par id (en file et en cours), revalidation quand un clip disparaît, liste blanche HTTP. Depuis 0.5.0 : échec sur le 2ᵉ clip → le 1ᵉʳ est remis (tout ou rien) ; échec avant toute écriture → pas d'annulation ; aucune étape d'annulation ouverte pendant une pause ; relecture exacte et par curseur ; relecture fausse → annulation ; `unverified` ; `/cancel` pendant la relecture → l'écriture reste ; automation surchargée refusée quand il faut échantillonner ; `/clear` en tout ou rien et relu ; `/ping` liste les commandes ; version du client = version du script.
+- **Tests logiciels** (45, sans Live) : OSC int64 sans perte, références inchangées sur le fil, client qui ignore les lignes d'autres requêtes, jeton exigé et fichier créé à l'init, id sur chaque ligne, refus des ids numériques et des sessions étrangères, interpolation gauche/droite, budget = nombre de points générés, fenêtre nulle, saturation, `accept`, clips bouclés étirés, ancrages exacts, ordre des points d'un saut, nettoyage après erreur de reconstruction, annulation par id (en file et en cours), revalidation quand un clip disparaît, liste blanche HTTP. Depuis 0.5.0 : échec sur le 2ᵉ clip → le 1ᵉʳ est remis (tout ou rien) ; échec avant toute écriture → pas d'annulation ; aucune étape d'annulation ouverte pendant une pause ; relecture exacte et par curseur ; relecture fausse → annulation ; `unverified` ; `/cancel` pendant la relecture → l'écriture reste ; automation surchargée refusée quand il faut échantillonner ; `/clear` en tout ou rien et relu ; `/ping` liste les commandes ; version du client = version du script.
 - **Dans Live 12.4.5** (`tests/live_suite.py`, copie d'el21) — **rejoué pour la dernière fois en 0.4.x** (26/26) : saut au bord d'un clip, 192 points hors fenêtre inchangés, validations `/read` et `/plan`, fusion audio par échantillonnage avec conservation de l'ancienne rampe et du Pan, annulation d'une tâche en cours par id, curseur restauré, revalidation. Sur la copie d'el21 : zones non ciblées d'autres pistes identiques ; sweep du même clip conservé à 0,0011 près (échantillonné) ; Cmd+Z défait tout en une étape ; après sauvegarde et réouverture, valeurs identiques à 0,0000 près.
+- **Commandes typées 0.6.0** (transport, meters, setparam, snapshot/restore, locators, state) : 9 tests hors Live (arrêt et curseur restaurés après `meters`, refus de `setparam` sur paramètre automatisé, écriture non appliquée détectée, `restore` défait si un paramètre refuse, renommage d'un repère existant sans suppression, `state`). **Pas encore passées dans Live** : contrôles ajoutés à `tests/live_suite.py` (§ 8).
 - **À rejouer dans Live pour 0.5.0** (contrôles ajoutés à `tests/live_suite.py`, pas encore passés dans Live) : ligne `verified … exact` après une écriture MIDI et `verified 5 … sampled` après une écriture audio, `song.undo()` après une écriture audio qui défait exactement l'écriture du bridge (§ 4b), refus du plan sur automation surchargée puis `re_enable_automation()` (§ 4c), `/ping` avec `commands` et version identique au disque.

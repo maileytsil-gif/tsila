@@ -13,6 +13,11 @@
   lom.py clear "AUDIO - Sub" <paramRef> 5|1 9|1 --accept fades
   lom.py apply spec.json [--dry]                            -> plan serveur (dry) ou écriture, mêmes contrôles
   lom.py jobs | cancel [<id>] | py "song.tempo" | serve --port 7480 [--unsafe]
+  lom.py transport [play [t] | stop | pos <t> | loop on|off | loop <début> <longueur>]
+  lom.py meters <t_départ> <secondes> [piste …]            -> crête par piste (+ master) pendant la lecture, transport restauré
+  lom.py setparam "<piste>" <device|mixer> <param> <valeur> [raw] [override]   -> avant/après, relu ; refus si automatisé sans override
+  lom.py snapshot "<piste>" [device|mixer] | snapshots | restore <id> [override]
+  lom.py locators | locator <t> <nom> | state [--json]
 
 Références d'objets : chaînes opaques "o:<session>:<n>" renvoyées par le bridge, jamais des nombres.
 Temps : nombre de temps (noires) depuis 1|1, ou « mesure|temps » (17|1, 17|3.5, 5|2|3), 4/4 par défaut.
@@ -30,7 +35,9 @@ VERSION = _script_version()
 HOST, TX = "127.0.0.1", 7421
 CONN_FILE = os.path.join(os.path.expanduser("~"), "Library", "Application Support", "LOMBridge", "connection.json")
 BEATS_PER_BAR = 4
-SAFE_HTTP = {"/ping", "/track", "/param", "/params", "/solve", "/clips", "/plan", "/shape", "/read", "/events", "/clear", "/jobs", "/cancel", "/children", "/get", "/info", "/path"}
+SAFE_HTTP = {"/ping", "/track", "/param", "/params", "/solve", "/clips", "/plan", "/shape", "/read", "/events", "/clear", "/jobs", "/cancel", "/children", "/get", "/info", "/path",
+             "/transport", "/meters", "/setparam", "/snapshot", "/snapshots", "/restore", "/locators", "/locator", "/state"}
+TIME_ARGS = {"transport": (1, 2), "meters": (0,), "locator": (0,)}   # positions des arguments « temps » (mesure|temps accepté) par commande générique
 
 # ---------- OSC minimal (i, h, f, s) ----------
 def _pad(b): return b + b"\0" * ((4 - len(b) % 4) % 4)
@@ -278,7 +285,11 @@ def main():
         r = b.send("/clear", o.args[0], o.args[1], parse_time(o.args[2]), parse_time(o.args[3]), ",".join(accept) or "-")
     elif o.cmd in ("py", "js"):
         r = b.send("/py", " ".join(o.args))
+    elif o.cmd == "setparam":
+        r = b.send("/setparam", o.args[0], o.args[1], o.args[2], float(o.args[3]), *o.args[4:])
     else:
+        for i in TIME_ARGS.get(o.cmd, ()):
+            if i < len(a) and isinstance(a[i], str) and "|" in a[i]: a[i] = parse_time(a[i])
         r = b.send("/" + o.cmd, *a)
     if o.cmd == "ping":
         w = version_warning(r["rows"])
