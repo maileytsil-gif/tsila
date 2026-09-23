@@ -429,7 +429,12 @@ class TestPlanAndRebuild(unittest.TestCase):
     def test_override_refused_when_sampling_needed(self):
         vol, vref = self._audio_following(); vol.automation_state = 2
         p = self.plan("1-tone", vref, "raw", 8, "lin", 0, "fades", 18.0, 0.5, 20.0, 0.5)
-        self.assertTrue(any("surchargée" in e for e in p["errors"]))
+        # 0.8.3 : l'état 2 seul ne prouve rien (Live le pose aussi quand le curseur est hors des clips) : au plan, avertissement
+        # « indécidable » ; /plan tranche ensuite en tâche par sondage du curseur — ici la valeur manuelle reste constante → surcharge avérée
+        self.assertEqual(p["errors"], []); self.assertTrue(any("indécidable" in w for w in p["warnings"]))
+        rows = []; gen = self.b.cmd_plan(lambda *x: rows.append(x), ["1-tone", vref, "raw", 8, "lin", 0, "fades", 18.0, 0.5, 20.0, 0.5])
+        if gen is not None: list(gen)
+        self.assertTrue(any(x[0] == "error" and "surchargée" in str(x[1]) for x in rows), rows)
         # enveloppe exposée : pas d'échantillonnage, l'état 2 n'empêche rien
         self.vol.automation_state = 2; self.track.arrangement_clips[0].automation_envelopes = [FakeEnvelope(self.vol, [(0.0, 0.0), (16.0, 1.0)])]
         p = self.plan("3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions", 18.0, 0.5, 20.0, 0.5); self.assertEqual(p["errors"], [])
