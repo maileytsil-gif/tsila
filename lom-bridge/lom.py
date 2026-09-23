@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""lom.py 0.4.1 — client du LOM Bridge (Remote Script Ableton Live). Zéro dépendance (Python 3.8+).
+"""lom.py — client du LOM Bridge (Remote Script Ableton Live). Zéro dépendance (Python 3.8+). Version : LOMBridge/version.py.
 
   lom.py ping
   lom.py children live_set tracks
@@ -19,6 +19,14 @@ Temps : nombre de temps (noires) depuis 1|1, ou « mesure|temps » (17|1, 17|3.5
 """
 import socket, struct, sys, json, time, argparse, re, os, math
 
+def _script_version():
+    """Version du script sur le disque (LOMBridge/version.py à côté de ce fichier) ; None si le dossier n'est pas là."""
+    try:
+        ns = {}
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "LOMBridge", "version.py"), encoding="utf-8") as f: exec(f.read(), ns)
+        return ns["VERSION"]
+    except Exception: return None
+VERSION = _script_version()
 HOST, TX = "127.0.0.1", 7421
 CONN_FILE = os.path.join(os.path.expanduser("~"), "Library", "Application Support", "LOMBridge", "connection.json")
 BEATS_PER_BAR = 4
@@ -128,7 +136,15 @@ def resolve_param(b, track, device, param):
             "quantized": int(r["rows"][0][6]) if len(r["rows"][0]) > 6 else 0}
 
 VALID_CURVES = {"lin", "linear", "exp", "log", "sc", "scurve", "sin"}
-ACCEPT_KEYS = ("fades", "expressions", "warp", "clamp")
+ACCEPT_KEYS = ("fades", "expressions", "warp", "clamp", "unverified")
+
+def version_warning(ping_rows):
+    """Après /ping : message si le bridge chargé dans Live n'a pas la version du script sur le disque (rechargement à chaud
+    perdu au chargement d'un Set : relancer Live), sinon None."""
+    if not VERSION: return None
+    row = next((r for r in ping_rows if r and r[0] == "pong"), None)
+    if not row or len(row) < 2 or str(row[1]) == VERSION: return None
+    return "ATTENTION : bridge chargé dans Live = %s, script sur le disque = %s (relancer Live pour charger le script du disque)" % (row[1], VERSION)
 
 def validate_entry(a, i):
     if not isinstance(a, dict): raise ValueError(f"[{i}] entrée non objet")
@@ -187,6 +203,9 @@ def apply_spec(b, spec, dry=False, log=print):
             if plan.get("gap"): desc += f"\n      non couvert: {plan['gap']:g} temps"
             for w in plan["warnings"]: desc += f"\n      avertissement: {w}"
             for e in plan["errors"]: desc += f"\n      ERREUR: {e}"
+        for x in r["rows"]:
+            if x and x[0] == "verified": desc += f"\n      relecture: {x[4]}" + (f", {x[1]} points, écart max {x[2]:g} (tolérance {x[3]:g})" if x[1] else "")
+            elif x and x[0] == "warn": desc += f"\n      avertissement: {x[1]}"
         ok = r["ok"] and (not plan or not plan["errors"])
         log(("DRY " if dry else "OK  ") + desc if ok else "ERR " + desc + ("\n      " + "; ".join(r["errors"]) if r["errors"] else ""))
         results.append({"index": i, "ok": ok, "dry": dry, "param": info, "plan": plan, "reply": r["rows"], "errors": r["errors"]})
@@ -209,7 +228,7 @@ def serve(port, unsafe=False):
             return True
         def do_GET(self):
             if not self._auth(): return
-            self._json(200, {"service": "LOM Bridge HTTP", "commands": sorted(SAFE_HTTP), "unsafe": unsafe,
+            self._json(200, {"service": "LOM Bridge HTTP", "version": VERSION, "commands": sorted(SAFE_HTTP), "unsafe": unsafe,
                              "usage": {"POST /cmd": {"cmd": "/param", "args": ["AUDIO - Sub", "mixer", "Volume"]}, "POST /apply": {"spec": {"automations": []}, "dry": True}}})
         def do_POST(self):
             if not self._auth(): return
@@ -261,6 +280,9 @@ def main():
         r = b.send("/py", " ".join(o.args))
     else:
         r = b.send("/" + o.cmd, *a)
+    if o.cmd == "ping":
+        w = version_warning(r["rows"])
+        if w: r["errors"].append(w)
     if o.json: print(json.dumps(r, ensure_ascii=False)); return
     for row in r["rows"]: print(" ".join(f"{x:.4f}" if isinstance(x, float) else str(x) for x in row))
     for e in r["errors"]: print("ERREUR:", e, file=sys.stderr)

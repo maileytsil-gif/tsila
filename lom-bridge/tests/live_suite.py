@@ -27,8 +27,12 @@ with wave.open(wav, "w") as w:
     w.setnchannels(1); w.setsampwidth(2); w.setframerate(44100)
     w.writeframes(b"".join(struct.pack("<h", int(6000 * math.sin(2 * math.pi * 220 * i / 44100))) for i in range(44100 * 4)))
 
-print("== ping :", b.send("/ping")["rows"])
+ping = b.send("/ping")["rows"]; print("== ping :", ping[0])
+check("ping : version du bridge = version du script sur le disque", lom.version_warning(ping) is None, lom.version_warning(ping))
+check("ping : liste des commandes", any(r[0] == "commands" and "/shape" in r for r in ping), ping)
 check("transport arrêté", py("int(song.is_playing)") == "0", "arrêter la lecture avant la suite")
+def verified(r):
+    return next((x for x in r["rows"] if x and x[0] == "verified"), None)
 n0 = int(py("len(song.tracks)"))
 py("song.create_midi_track(-1); t=song.tracks[len(song.tracks)-1]; t.name='LOM TEST'; s=t.clip_slots[0]; c=s.create_clip(16.0); t.duplicate_clip_to_arrangement(c, 16.0); t.duplicate_clip_to_arrangement(c, 32.0); s.delete_clip(); result='ok'")
 py("song.create_audio_track(-1); t=song.tracks[len(song.tracks)-1]; t.name='LOM TEST AUDIO'; s=t.clip_slots[0]; c=s.create_audio_clip(%r); t.duplicate_clip_to_arrangement(c, 16.0); s.delete_clip(); result='ok'" % wav)
@@ -38,6 +42,7 @@ check("références opaques", str(vol).startswith("o:") and str(avol).startswith
 
 # 1. saut descendant au début du clip 2
 r = shape("LOM TEST", vol, [(16, 1.0), (32, 1.0), (32, 0.0), (48, 0.0)]); check("shape saut", r["ok"], r["errors"])
+vr = verified(r); check("relecture exacte après écriture MIDI (écart ≤ tolérance)", vr is not None and vr[4] == "exact" and vr[1] > 0 and vr[2] <= vr[3], vr)
 v = read("LOM TEST", vol, 31.5, 32.5, 4); check("saut au bord : 1,0 avant, 0,0 dès 32", v[1][1] > 0.95 and v[2][1] < 0.05, v)
 # 2. voisinage strictement identique
 shape("LOM TEST", vol, [(16, 0.0), (32, 1.0)]); before = read("LOM TEST", vol, 16, 32, 16)
@@ -59,8 +64,23 @@ apan = b.send("/param", "LOM TEST AUDIO", "mixer", "Pan")["rows"][0][0]
 r = shape("LOM TEST AUDIO", apan, [(16, -0.8), (24, 0.8)], accept=("fades",)); check("shape audio pan", r["ok"], r["errors"])
 t0 = time.time(); r = shape("LOM TEST AUDIO", avol, [(17, 0.3), (18, 0.3)], accept=("fades",)); dt = time.time() - t0
 check("shape audio 2 (échantillonnage %.1fs)" % dt, r["ok"], r["errors"])
+vr = verified(r); check("relecture par curseur après écriture audio (5 points, écart ≤ tolérance)", vr is not None and vr[4] == "sampled" and vr[1] == 5 and vr[2] <= vr[3], vr)
 v = dict(read("LOM TEST AUDIO", avol, 16, 24, 1)); check("ancienne rampe conservée à 20 (0,55) et 22 (0,7), 0,3 sur 17–18", abs(v[20.0] - 0.55) < 0.01 and abs(v[22.0] - 0.70) < 0.01 and abs(v[17.0] - 0.3) < 0.01, v)
 p = dict(read("LOM TEST AUDIO", apan, 16, 24, 2)); check("pan conservé par Live", abs(p[20.0] - 0.0) < 0.02 and abs(p[16.0] + 0.8) < 0.02, p)
+# 4b. song.undo() après une écriture audio (relecture par curseur entre la fin de l'étape et un éventuel undo) défait bien l'écriture, pas autre chose
+before_undo = read("LOM TEST AUDIO", avol, 16, 24, 1)
+r = shape("LOM TEST AUDIO", avol, [(21, 0.1), (22, 0.1)], accept=("fades",)); check("shape audio 3", r["ok"], r["errors"])
+v = dict(read("LOM TEST AUDIO", avol, 16, 24, 1)); check("0,1 écrit sur 21–22", abs(v[21.0] - 0.1) < 0.01, v)
+py("song.undo(); result='undone'"); time.sleep(0.3)
+after_undo = read("LOM TEST AUDIO", avol, 16, 24, 1)
+check("song.undo() défait exactement l'écriture du bridge (une étape)", all(abs(x - y) < 0.005 for (_, x), (_, y) in zip(before_undo, after_undo)), (before_undo, after_undo))
+# 4c. automation surchargée (valeur modifiée à la main) : refus tant que l'automation n'est pas réactivée
+py("t=[x for x in song.tracks if x.name=='LOM TEST AUDIO'][0]; t.mixer_device.volume.value=0.6; result=int(t.mixer_device.volume.automation_state)")
+st = py("t=[x for x in song.tracks if x.name=='LOM TEST AUDIO'][0]; result=int(t.mixer_device.volume.automation_state)")
+r = b.send("/plan", *lom.shape_args("LOM TEST AUDIO", avol, "raw", 8, "lin", 0, ["fades"], [(17, 0.4), (18, 0.4)]))
+check("plan refusé sur automation surchargée (état %s)" % st, st != "2" or any("surchargée" in str(x) for x in r["rows"]), r["rows"][-3:])
+py("song.re_enable_automation(); result='ok'"); time.sleep(0.2)
+check("automation réactivée", py("t=[x for x in song.tracks if x.name=='LOM TEST AUDIO'][0]; result=int(t.mixer_device.volume.automation_state)") == "1")
 # 5. annulation par id d'une tâche en file, et d'une tâche en cours
 b2 = lom.Bridge(timeout=0.5); r1 = b2.send("/read", "LOM TEST", vol, 16, 48, 4)   # expire côté client, continue côté serveur
 jobs = m.send("/jobs")["rows"]; check("tâche en cours visible", any(j[1] == "/read" for j in jobs), jobs)

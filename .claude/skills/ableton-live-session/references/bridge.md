@@ -5,6 +5,8 @@
 - `python3 lom.py param "<piste>" "<device|mixer>" "<param>"` → `ref nom min max valeur affichage …` (la ref sert à `read`).
 - `python3 lom.py read "<piste>" <paramRef> <tA> <tB> <res>` : valeur réelle le long de la plage (transport ARRÊTÉ). `res` = points par temps : 0,25 = un par mesure, 1 = un par temps.
 - `python3 lom.py apply spec.json [--dry]` : écrit l'automation d'arrangement. Attendre la fin : boucler sur `python3 lom.py jobs` tant que `running|queued`.
+- Depuis 0.5.0, chaque écriture (`apply`, `shape`, `clear`) est **tout ou rien** (un clip qui échoue → tout est remis, message « étape annulée automatiquement ») puis **relue** : ligne `relecture: exact|sampled, n points, écart max …` dans le journal d'`apply`. `relecture: interrupted` = écrit mais non contrôlé → relire avec `read`. Un plan refusé pour « automation surchargée » = un paramètre automatisé a été bougé à la main : `python3 lom.py py "song.re_enable_automation()"` puis relancer.
+- `python3 lom.py ping` prévient si le bridge chargé dans Live n'a pas la version du script sur le disque (après un chargement de Set, le rechargement à chaud est perdu : relancer Live).
 
 ## Spec d'automation
 ```json
