@@ -9,12 +9,12 @@ Règles communes (capacités vérifiées, session préservée, relecture après 
 ## Avant de régler
 1. Lire la chaîne (`[d.name for d in t.devices]`) et le routage (skill `ableton-live-session`).
 2. Ouvrir la **fiche du plug-in** dans `references/` (une par plug-in et version) : paramètres exposés à Live (scriptables et relisibles), opérations qui exigent la fenêtre, méthode de vérification, réglages déjà validés. Plug-in inconnu → `probe_params.py` (skill `vst-sound-design`) sur une piste vide, puis créer sa fiche.
-3. Charger avec la règle anti-hot-swap ; pour insérer avant un device existant, charger en fin puis `ppal-update-device toPath`.
+3. Charger avec `lom.py load "<piste>" "<plug-in>"` (anti hot-swap vérifié) ; pour insérer avant un device existant, charger en fin puis `ppal-update-device toPath`.
 
 ## Régler
 - Exposé → `helpers.solve(p, valeur)` / `set_enum(p, 'label')` (skill `ableton-live-session`), relecture `str_for_value`.
 - Fenêtre seulement → clics/glisser/molette avec capture après chaque geste ; ce qui ne passe pas en arrière-plan (saisie clavier FabFilter, glisser Serum) → plein écran ou demander à l'utilisateur ; ne jamais affirmer un réglage non relu.
-- Toujours à **niveau équivalent** : comparer les crêtes du bus device actif / `is_active = False` sur une boucle (`levels.sh`), compenser par le makeup ou un Utility, pas par un fader automatisé.
+- Toujours à **niveau équivalent** : comparer les crêtes du bus device actif / `is_active = False` sur une boucle (`lom.py meters`), compenser par le makeup ou un Utility, pas par un fader automatisé.
 - « Laisser de la place » : coupe-bas et creux sur la piste qui gêne (REQ 6), sidechain sur celle qui doit céder (source = piste kick, Post FX), plutôt qu'un boost sur l'autre.
 - Dynamique/spectral à la source (soothe3, F6, Pro-Q dynamique), master léger ; limiteur uniquement en fin de BUS MASTER 3, la REF routée hors limiteur.
 

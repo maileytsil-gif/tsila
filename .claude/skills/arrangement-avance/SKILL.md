@@ -7,7 +7,7 @@ Règles communes (capacités vérifiées, session préservée, relecture après 
 # Arrangement avancé dans Live
 
 ## Lire avant de toucher
-`scripts/arrangement_map.py` (via `pyl.sh`) : tableau piste × sections (clips présents, nombre de notes), repères, durée totale. L'utilisateur édite à la main : reconstruire la carte avant chaque changement de structure.
+`scripts/arrangement_map.py` (via `pyl.sh`) : tableau piste × sections (clips présents, nombre de notes), repères, durée totale ; repères par `lom.py locators` / `lom.py locator <t> "<nom>"` (renomme s'il existe déjà, ne supprime jamais). L'utilisateur édite à la main : reconstruire la carte avant chaque changement de structure.
 
 ## Construire une structure
 - Grille par genre (house, techno, trance, DnB, dubstep, hip-hop, tempos) : `../theorie-musicale-electronique/references/forme-tension.md`. Exemple deep/minimal house 120 BPM : intro DJ (16–24 mes., pulsation seule puis entrées progressives) · break · drop 16 · pont 8 · break · drop 16 · refrain 8 · pont 8 · drop 16 · outro DJ 16. Chaque section = un repère nommé (`ppal-update-live-set locatorOperation create`), fin d'export = repère « FIN export m:ss ».
