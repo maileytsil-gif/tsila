@@ -18,6 +18,8 @@
   lom.py setparam "<piste>" <device|mixer> <param> <valeur> [raw] [override]   -> avant/après, relu ; refus si automatisé sans override
   lom.py snapshot "<piste>" [device|mixer] | snapshots | restore <id> [override]
   lom.py locators | locator <t> <nom> | state [--json]
+  lom.py load "<piste>" "<nom>" [plugins|sounds|audio_effects|…] [replace=<device>]   -> charge sans hot-swap, vérifié
+  lom.py notes get "<piste>" <clipRef|t> [tA tB] | notes set|add "<piste>" <clipRef|t> '<json>' [tA tB]
   lom.py wait [<id>]                                        -> attend la fin d'une tâche (ou de toutes)
   lom.py journal [n]                                        -> dernières écritures journalisées par le bridge
   lom.py policy [accept=fades,expressions]                  -> accords acceptés d'office par ce client (policy.json)
@@ -40,8 +42,8 @@ HOST, TX = "127.0.0.1", 7421
 CONN_FILE = os.path.join(os.path.expanduser("~"), "Library", "Application Support", "LOMBridge", "connection.json")
 BEATS_PER_BAR = 4
 SAFE_HTTP = {"/ping", "/track", "/param", "/params", "/solve", "/clips", "/plan", "/shape", "/read", "/events", "/clear", "/jobs", "/cancel", "/children", "/get", "/info", "/path",
-             "/transport", "/meters", "/setparam", "/snapshot", "/snapshots", "/restore", "/locators", "/locator", "/state", "/journal"}
-TIME_ARGS = {"transport": (1, 2), "meters": (0,), "locator": (0,)}   # positions des arguments « temps » (mesure|temps accepté) par commande générique
+             "/transport", "/meters", "/setparam", "/snapshot", "/snapshots", "/restore", "/locators", "/locator", "/state", "/journal", "/load", "/notes"}
+TIME_ARGS = {"transport": (1, 2), "meters": (0,), "locator": (0,), "notes": (2, 3, 4, 5)}   # positions des arguments « temps » (mesure|temps accepté) par commande générique
 
 # ---------- OSC minimal (i, h, f, s) ----------
 def _pad(b): return b + b"\0" * ((4 - len(b) % 4) % 4)

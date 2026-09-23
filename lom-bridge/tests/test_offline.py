@@ -70,6 +70,8 @@ class FakeClip:
         object.__setattr__(self, k, v)
     def get_all_notes_extended(self): return list(self.notes)
     def add_new_notes(self, specs): self.notes.extend(specs)
+    def remove_notes_extended(self, from_pitch, pitch_span, from_time, time_span):
+        self.notes = [n for n in self.notes if not (from_pitch <= n.pitch < from_pitch + pitch_span and from_time <= n.start_time < from_time + time_span)]
     def create_automation_envelope(self, p):
         e = FakeEnvelope(p); self.envs_created[p.name] = e; return e
 class FakeSlot:
@@ -119,6 +121,7 @@ class FakeSong:
         self.tracks, self.return_tracks, self.master_track = tracks, [], FakeTrack("Main")
         self.is_playing, self.current_song_time, self.scenes, self.undo_log = False, 0.0, [1, 2, 3, 4], []
         self.tempo = 126.0; self.undo_calls = []; self._snapshot = None
+        self.view = types.SimpleNamespace(selected_track=None, selected_device=None, select_device=lambda d: setattr(self.view, "selected_device", d))
         self.signature_numerator, self.signature_denominator, self.loop, self.loop_start, self.loop_length = 4, 4, False, 0.0, 16.0
         self.cue_points = []
         for t in tracks + [self.master_track]: t.song = self
@@ -133,14 +136,17 @@ class FakeSong:
             yield from [t.mixer_device.volume, t.mixer_device.panning] + list(t.mixer_device.sends)
             for d in t.devices: yield from d.parameters
     def begin_undo_step(self):
-        self.undo_log.append("begin"); self._snapshot = ([(t, list(t.arrangement_clips)) for t in self.tracks], [(p, p.value) for p in self._all_params()])
+        self.undo_log.append("begin")
+        self._snapshot = ([(t, list(t.arrangement_clips)) for t in self.tracks], [(p, p.value) for p in self._all_params()],
+                          [(c, list(c.notes)) for t in self.tracks for c in t.arrangement_clips])
     def end_undo_step(self): self.undo_log.append("end")
     def undo(self):
-        """Remet clips d'arrangement et valeurs de paramètres tels qu'avant la dernière étape (une seule étape, comme Cmd+Z)."""
+        """Remet clips d'arrangement, valeurs de paramètres et notes tels qu'avant la dernière étape (une seule étape, comme Cmd+Z)."""
         self.undo_calls.append(1)
-        clips, params = self._snapshot or ([], [])
+        clips, params, notes = self._snapshot or ([], [], [])
         for t, cl in clips: t.arrangement_clips = list(cl)
         for p, v in params: p.value = v
+        for c, ns in notes: c.notes = list(ns)
     def create_scene(self, i): self.scenes.append(len(self.scenes) + 1)
     def delete_scene(self, i): self.scenes.pop(i)
 
@@ -156,6 +162,17 @@ def make_live_module():
         def __init__(self, **kw): self.__dict__.update(kw)
     Live.Clip = types.SimpleNamespace(WarpMarker=WarpMarker, MidiNoteSpecification=MidiNoteSpecification)
     app = types.SimpleNamespace(get_major_version=lambda: 12, get_minor_version=lambda: 4, get_bugfix_version=lambda: 5)
+    class Item:
+        def __init__(self, name, children=(), loadable=False): self.name, self.children, self.is_loadable, self.is_folder = name, list(children), loadable, not loadable
+    plugins = Item("Plug-ins", [Item("VST3", [Item("Xfer Records", [Item("Serum 2", loadable=True), Item("Serum 2 FX", loadable=True)]), Item("FabFilter", [Item("Pro-Q 4", loadable=True)])]),
+                               Item("Audio Units", [Item("Serum 2", loadable=True)])])
+    audio_effects = Item("Audio Effects", [Item("Utility", loadable=True), Item("EQ Eight", loadable=True)])
+    class Browser:
+        def __init__(s): s.plugins, s.audio_effects, s.sounds = plugins, audio_effects, Item("Sounds", []); s.loaded = []; s.on_load = None
+        def load_item(s, item):
+            s.loaded.append(item)
+            if s.on_load: s.on_load(item)
+    app.browser = Browser()
     Live.Application = types.SimpleNamespace(get_application=lambda: app)
     return Live
 
@@ -589,9 +606,69 @@ class TestTypedCommands(unittest.TestCase):
         class B:   # signature 3/4 lue dans Live via /transport
             def send(s, cmd, *a): return {"ok": True, "rows": [["transport", 0, 0.0, 120.0, "3/4", 0, 0.0, 12.0]], "errors": [], "codes": []}
         self.assertEqual(lom.Bridge.beats_per_bar(B()), 3)
+    # ---- /load ----
+    def browser(self): return sys.modules["Live"].Application.get_application().browser
+    def test_load_adds_without_hot_swap(self):
+        br = self.browser(); serum = self.midi.devices[0]
+        br.on_load = lambda item: self.song.view.selected_track.devices.append(FakeDevice(item.name, []))
+        r = self.call("load", "3-MIDI", "Pro-Q 4")[0]
+        self.assertEqual((r[0], r[2], r[3], r[4], r[5], r[7]), ("loaded", "Pro-Q 4", 1, 1, 2, "added")); self.assertEqual(r[6], "VST3/FabFilter/Pro-Q 4")
+        self.assertIs(self.song.view.selected_device, serum); self.assertIs(self.midi.devices[0], serum)   # l'ancien device sélectionné avant, et toujours là
+        r = self.call("load", "1-tone", "Utility", "audio_effects")[0]; self.assertEqual((r[3], r[4], r[5]), (0, 0, 1))
+    def test_load_refuses_ambiguous_and_unknown(self):
+        with self.assertRaises(ValueError) as cm: self.call("load", "3-MIDI", "Serum 2")     # VST3 et Audio Units
+        self.assertIn("ambigu", str(cm.exception))
+        with self.assertRaises(ValueError) as cm: self.call("load", "3-MIDI", "Nexus")
+        self.assertIn("introuvable", str(cm.exception))
+        with self.assertRaises(ValueError): self.call("load", "3-MIDI", "Utility", "nimporte")
+        self.assertEqual(self.browser().loaded, [])
+    def test_load_detects_hot_swap_and_other_track_changes(self):
+        br = self.browser()
+        br.on_load = lambda item: self.song.view.selected_track.devices.__setitem__(-1, FakeDevice(item.name, []))   # Live a remplacé au lieu d'ajouter
+        with self.assertRaises(ValueError) as cm: self.call("load", "3-MIDI", "Pro-Q 4")
+        self.assertIn("non appliqué", str(cm.exception))
+        br.on_load = lambda item: self.audio.devices.append(FakeDevice(item.name, []))              # chargé sur la mauvaise piste
+        with self.assertRaises(ValueError) as cm: self.call("load", "3-MIDI", "EQ Eight", "audio_effects")
+        self.assertIn("autre piste", str(cm.exception))
+    def test_load_replace(self):
+        br = self.browser(); old = self.midi.devices[0]
+        def swap(item):
+            t = self.song.view.selected_track; t.devices[t.devices.index(self.song.view.selected_device)] = FakeDevice(item.name, [])
+        br.on_load = swap
+        r = self.call("load", "3-MIDI", "Pro-Q 4", "replace=Serum")[0]
+        self.assertEqual((r[2], r[3], r[4], r[5], r[7]), ("Pro-Q 4", 0, 1, 1, "replaced")); self.assertNotIn(old, self.midi.devices)
+    # ---- /notes ----
+    def _clip_with_notes(self):
+        N = sys.modules["Live"].Clip.MidiNoteSpecification; c = self.midi.arrangement_clips[0]
+        c.notes = [N(pitch=60, start_time=0.0, duration=1.0, velocity=100, mute=False), N(pitch=64, start_time=4.0, duration=0.5, velocity=90, mute=False), N(pitch=67, start_time=8.0, duration=2.0, velocity=80, mute=True)]
+        return c
+    def test_notes_get(self):
+        c = self._clip_with_notes()
+        rows = self.call("notes", "get", "3-MIDI", 20.0); self.assertEqual(rows[0][:2], ("clip", self.b._ref(c))); self.assertEqual(rows[0][6], 3)
+        self.assertEqual([r[1:] for r in rows[1:]], [(60, 0.0, 1.0, 100, 0), (64, 4.0, 0.5, 90, 0), (67, 8.0, 2.0, 80, 1)])
+        rows = self.call("notes", "get", "3-MIDI", self.b._ref(c), 4.0, 8.0); self.assertEqual(len(rows) - 1, 1); self.assertEqual(rows[1][1], 64)
+        with self.assertRaises(ValueError): self.call("notes", "get", "3-MIDI", 99.0)
+    def test_notes_set_window_add_and_verify(self):
+        c = self._clip_with_notes()
+        r = self.call("notes", "set", "3-MIDI", 20.0, json.dumps([[62, 4.0, 1.0, 110], {"pitch": 65, "start": 6.0, "duration": 1.0}]), 4.0, 8.0)[0]
+        self.assertEqual((r[0], r[1], r[4], r[5], r[6]), ("notes", "set", 3, 4, 2))
+        self.assertEqual([(n.pitch, n.start_time) for n in c.notes], [(60, 0.0), (67, 8.0), (62, 4.0), (65, 6.0)]); self.assertEqual(c.notes[-1].velocity, 100)
+        self.assertEqual(self.song.undo_log, ["begin", "end"])
+        with self.assertRaises(ValueError): self.call("notes", "set", "3-MIDI", 20.0, json.dumps([[62, 9.0, 1.0, 110]]), 4.0, 8.0)   # note hors fenêtre
+        r = self.call("notes", "add", "3-MIDI", 20.0, json.dumps([[72, 12.0, 0.25, 100]]))[0]; self.assertEqual((r[4], r[5]), (4, 5))
+        r = self.call("notes", "set", "3-MIDI", 20.0, "[]")[0]; self.assertEqual(c.notes, []); self.assertEqual(r[5], 0)
+        for bad in ("pas du json", "[[200, 0, 1, 100]]", "[[60, 0, 0, 100]]", "[{\"pitch\": 60}]"):
+            with self.assertRaises(ValueError): self.call("notes", "set", "3-MIDI", 20.0, bad)
+        with self.assertRaises(ValueError): self.call("notes", "get", "1-tone", 16.0)   # piste audio sans clip → aucun clip
+    def test_notes_set_rolls_back_when_live_disagrees(self):
+        c = self._clip_with_notes(); orig = c.add_new_notes
+        c.add_new_notes = lambda specs: orig(tuple(specs)[:1])   # Live n'a gardé qu'une note
+        with self.assertRaises(ValueError) as cm: self.call("notes", "set", "3-MIDI", 20.0, json.dumps([[62, 4.0, 1.0, 110], [65, 6.0, 1.0, 100]]), 4.0, 8.0)
+        self.assertIn("annulée automatiquement", str(cm.exception)); self.assertEqual(self.song.undo_calls, [1])
+        self.assertEqual([n.pitch for n in c.notes], [60, 64, 67])
     def test_ping_lists_typed_commands_and_http_allows_them(self):
         rows = []; self.b.cmd_ping(lambda *x: rows.append(x), []); cmds = next(r for r in rows if r[0] == "commands")
-        for c in ("/transport", "/meters", "/setparam", "/snapshot", "/restore", "/snapshots", "/locators", "/locator", "/state"):
+        for c in ("/transport", "/meters", "/setparam", "/snapshot", "/restore", "/snapshots", "/locators", "/locator", "/state", "/load", "/notes", "/journal"):
             self.assertIn(c, cmds); self.assertTrue(lom.http_allowed(c), c)
         self.assertFalse(lom.http_allowed("/py"))
 

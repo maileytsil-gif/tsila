@@ -8,8 +8,9 @@
 ## Bridge (lom.py)
 - `read` et `apply` exigent le transport arrêté ; l'utilisateur relance souvent la lecture juste après un `apply` → tester `int(song.is_playing)` juste avant, et ne pas l'arrêter sans le dire.
 - `read` : bornes en **temps** (beats), pas en mesures ; max 400 points par appel.
-- `apply` : une plage dont un segment n'est couvert par aucun clip fait planter `/shape` → une entrée par zone couverte, dernier point = valeur du fader.
-- Les clips support silencieux n'ont pas d'enveloppe de clip : le bridge écrit l'automation de piste et n'a besoin du clip que pour échantillonner. Ne pas supprimer un clip pour le réécrire (réécrire ses notes dedans).
+- `apply` : une plage dont un segment n'est couvert par aucun clip n'est pas refusée (depuis 0.4.x : avertissement « n temps non couverts »), mais **rien n'est écrit dans le trou** : l'automation y reste ce qu'elle était. Si la plage ne touche aucun clip → erreur. Faire une entrée par zone couverte, dernier point = valeur du fader.
+- Rien n'est automatisable hors d'un clip : sur un bus ou une piste sans clip, poser un clip audio silencieux comme support. Le bridge reconstruit ce clip pour y écrire l'enveloppe (audio → accepter `fades`, souvent `warp`). Ne pas supprimer un clip pour le réécrire : réécrire ses notes dedans (`lom.py notes set`, ou `remove_notes_extended` + `add_new_notes`).
+- Depuis 0.5.0 : écriture tout ou rien puis relecture (`verified …`) ; `E_ROLLED_BACK` = rien n'est modifié ; `E_AUTOMATION_OVERRIDDEN` = un paramètre automatisé a été bougé à la main → `song.re_enable_automation()` avant d'écrire. `lom.py journal` relit les dernières écritures.
 - Nom du paramètre mixer : `Volume`, `Send A`… (pas `Track Volume`). Après un `param.value =` manuel, `song.re_enable_automation()` et vérifier `automation_state == 1`.
 - Le solveur refuse « −inf » : viser −40 dB pour couper un envoi.
 - `apply_note_modifications` refuse une liste Python → remove + add_new_notes. `duplicate_clip_to_arrangement` marche d'une piste à l'autre.

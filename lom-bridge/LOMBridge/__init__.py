@@ -1128,6 +1128,120 @@ class LOMBridge(ControlSurface):
               "tracks": tracks, "locators": [{"time": float(c.time), "name": str(c.name)} for c in sorted(song.cue_points, key=lambda c: float(c.time))]}
         reply("state", json.dumps(st, ensure_ascii=False))
 
+    # ---------- devices (navigateur) et notes ----------
+    BROWSER_SOURCES = ("plugins", "sounds", "instruments", "audio_effects", "midi_effects", "drums", "max_for_live", "user_library")
+
+    def _browser_find(self, root, name, depth=4):
+        """Éléments chargeables du navigateur dont le nom correspond (exact, sinon sous-chaîne), parcours en profondeur ≤ depth."""
+        k = str(name).lower(); exact, subs = [], []
+        def walk(item, d, path):
+            for c in list(getattr(item, "children", []) or []):
+                n = str(getattr(c, "name", "")); p = path + [n]
+                if getattr(c, "is_loadable", False):
+                    if n.lower() == k: exact.append((c, p))
+                    elif k in n.lower(): subs.append((c, p))
+                if d < depth and (getattr(c, "is_folder", False) or not getattr(c, "is_loadable", False)): walk(c, d + 1, p)
+        walk(root, 1, [])
+        return exact, subs
+
+    def cmd_load(self, reply, a):
+        """/load <piste> <nom> [source] [replace=<device>] : charge un device par le navigateur SANS écraser (le dernier device de la
+        piste est sélectionné avant, ou celui à remplacer avec replace=…), puis vérifie : +1 device sur la piste (ou même nombre avec
+        replace) et aucune autre piste modifiée. source : plugins (défaut, VST3/AU), sounds, instruments, audio_effects, midi_effects, drums, max_for_live, user_library."""
+        if len(a) < 2: raise ValueError("usage: /load <piste> <nom> [source] [replace=<device>]")
+        t = self._find_track(a[0]); name = str(a[1]); source = "plugins"; replace = None
+        for x in a[2:]:
+            x = str(x)
+            if x.startswith("replace="): replace = x[8:]
+            elif x in self.BROWSER_SOURCES: source = x
+            else: raise ValueError("argument inconnu %s (sources : %s ; replace=<device>)" % (x, ", ".join(self.BROWSER_SOURCES)))
+        app = Live.Application.get_application(); root = getattr(app.browser, source)
+        exact, subs = self._browser_find(root, name)
+        hits = exact if exact else subs
+        if not hits: raise ValueError("%s introuvable dans le navigateur (%s)" % (name, source))
+        if len(hits) > 1: raise ValueError("%s ambigu dans %s : %s" % (name, source, " ; ".join("/".join(p) for _, p in hits[:8])))
+        item, path = hits[0]
+        song = self.song(); all_tracks = list(song.tracks) + list(song.return_tracks) + [song.master_track]
+        counts = dict((getattr(x, "_live_ptr", id(x)), len(list(x.devices))) for x in all_tracks)
+        before = list(t.devices); n0 = len(before)
+        song.view.selected_track = t
+        if replace is not None:
+            target = self._obj(replace) if replace.startswith("o:") else self._find_named(before, replace, "device")
+            song.view.select_device(target); idx = before.index(target)
+        elif before: song.view.select_device(before[-1]); idx = n0
+        else: idx = 0
+        app.browser.load_item(item)
+        after = list(t.devices)
+        touched_elsewhere = [str(x.name) for x in all_tracks if x is not t and len(list(x.devices)) != counts[getattr(x, "_live_ptr", id(x))]]
+        if touched_elsewhere: raise ValueError("non appliqué comme prévu : une autre piste a changé (%s) — vérifier et Cmd+Z" % ", ".join(touched_elsewhere))
+        expected = n0 if replace is not None else n0 + 1
+        if len(after) != expected: raise ValueError("non appliqué comme prévu : %d device(s) après chargement, %d attendu(s) — vérifier et Cmd+Z" % (len(after), expected))
+        if replace is None and any(getattr(x, "_live_ptr", id(x)) != getattr(y, "_live_ptr", id(y)) for x, y in zip(before, after[:n0])):
+            raise ValueError("non appliqué comme prévu : un device existant a été remplacé (hot-swap) — vérifier et Cmd+Z")
+        new = after[idx]
+        reply("loaded", self._ref(new), str(new.name), idx, n0, len(after), "/".join(path), "replaced" if replace is not None else "added")
+
+    def _find_clip(self, track, ref):
+        s = str(ref)
+        if s.startswith("o:"): return self._obj(s)
+        c = self._clip_at(self._arr_clips(track), float(s))
+        if c is None: raise ValueError("aucun clip d'arrangement à t=%s" % s)
+        return c[0]
+
+    def _note_rows(self, notes):
+        return sorted(((int(n.pitch), round(float(n.start_time), 6), round(float(n.duration), 6), int(n.velocity), int(bool(n.mute))) for n in notes), key=lambda x: (x[1], x[0]))
+
+    def _parse_notes(self, s):
+        try: data = json.loads(str(s))
+        except Exception as e: raise ValueError("notes : JSON invalide (%s)" % e)
+        if not isinstance(data, list): raise ValueError("notes : liste attendue")
+        out = []
+        for i, n in enumerate(data):
+            if isinstance(n, list): n = dict(zip(("pitch", "start", "duration", "velocity", "mute"), n))
+            if not isinstance(n, dict): raise ValueError("note %d mal formée" % i)
+            try: p, st, du = int(n["pitch"]), float(n["start"]), float(n["duration"])
+            except Exception: raise ValueError("note %d : pitch, start, duration requis" % i)
+            v = int(n.get("velocity", 100)); m = bool(n.get("mute", False))
+            if not (0 <= p <= 127) or not (1 <= v <= 127) or st < 0 or du <= 0: raise ValueError("note %d hors limites (pitch 0–127, velocity 1–127, start ≥ 0, duration > 0)" % i)
+            out.append((p, st, du, v, m))
+        return out
+
+    def cmd_notes(self, reply, a):
+        """/notes get <piste> <clipRef|t> [tA tB] → `clip …` puis `note <pitch> <début> <durée> <vélocité> <mute>` (temps relatifs au clip, comme Live)
+        /notes set <piste> <clipRef|t> <json> [tA tB] : remplace les notes du clip (ou de la fenêtre [tA, tB[) — une étape d'annulation, relecture, défaite sur écart
+        /notes add <piste> <clipRef|t> <json> : ajoute sans rien retirer. json = [{"pitch":60,"start":0,"duration":1,"velocity":100,"mute":false}, …] ou [[60,0,1,100], …]"""
+        if len(a) < 3: raise ValueError("usage: /notes get|set|add <piste> <clipRef|t> [json] [tA tB]")
+        op = str(a[0]).lower(); t = self._find_track(a[1]); clip = self._find_clip(t, a[2])
+        if clip.is_audio_clip: raise ValueError("%s : clip audio, pas de notes" % clip.name)
+        if op == "get":
+            notes = clip.get_all_notes_extended()
+            if len(a) >= 5: tA, tB = float(a[3]), float(a[4]); notes = [n for n in notes if tA <= float(n.start_time) < tB]
+            reply("clip", self._ref(clip), str(clip.name), float(clip.start_time), float(clip.end_time), float(clip.start_marker), len(notes))
+            for row in self._note_rows(notes): reply("note", *row)
+            return
+        if op not in ("set", "add"): raise ValueError("opération inconnue : " + op)
+        if len(a) < 4: raise ValueError("usage: /notes %s <piste> <clipRef|t> <json> [tA tB]" % op)
+        new = self._parse_notes(a[3]); win = (float(a[4]), float(a[5])) if len(a) >= 6 else None
+        if win and win[1] <= win[0]: raise ValueError("fenêtre invalide")
+        if op == "set" and win and any(not (win[0] <= st < win[1]) for _, st, _, _, _ in new): raise ValueError("une note écrite est hors de la fenêtre [%g, %g[" % win)
+        N = Live.Clip.MidiNoteSpecification; song = self.song()
+        old_rows = self._note_rows(clip.get_all_notes_extended())
+        kept = [r for r in old_rows if op == "add" or (win and not (win[0] <= r[1] < win[1]))]
+        expected = sorted(kept + [(p, round(st, 6), round(du, 6), v, int(m)) for p, st, du, v, m in new], key=lambda x: (x[1], x[0]))
+        def write(touched):
+            if op == "set":
+                if win: clip.remove_notes_extended(0, 128, win[0], win[1] - win[0])
+                else: clip.remove_notes_extended(0, 128, 0.0, 1e6)
+                touched.append(str(clip.name))
+            if new: clip.add_new_notes(tuple(N(pitch=p, start_time=st, duration=du, velocity=v, mute=m) for p, st, du, v, m in new)); touched.append(str(clip.name))
+        self._commit(song, write)
+        got = self._note_rows(clip.get_all_notes_extended())
+        if got != expected:
+            try: song.undo()
+            except Exception as e2: raise ValueError("relecture des notes : %d obtenues, %d attendues ; ANNULATION AUTOMATIQUE IMPOSSIBLE (%s) : faire Cmd+Z" % (len(got), len(expected), e2))
+            raise ValueError("relecture des notes : %d obtenues, %d attendues ; étape annulée automatiquement, rien n'est modifié" % (len(got), len(expected)))
+        reply("notes", op, self._ref(clip), str(clip.name), len(old_rows), len(got), len(new))
+
     def cmd_jobs(self, reply, a):
         for j in self._jobs: reply(j["rid"], j["cmd"], "running" if j["started"] else "queued", int(j["cancel"]))
 
