@@ -110,6 +110,10 @@ r = m.send("/locator", 24.0, "LOM TEST REPÈRE"); check("locator posé à 24", r
 r = m.send("/locator", 24.0, "LOM TEST REPÈRE 2"); check("locator renommé sans suppression", r["ok"] and r["rows"][0][3] == "LOM TEST REPÈRE 2", r)
 py("c=[c for c in song.cue_points if abs(c.time-24.0)<1e-6][0]; song.current_song_time=24.0; song.set_or_delete_cue(); song.current_song_time=20.0; result='cue removed'")
 r = m.send("/state"); st = json.loads(r["rows"][0][1]); check("state : pistes de test présentes", any(t["name"] == "LOM TEST" for t in st["tracks"]) and st["tracks"][-1]["kind"] == "master", r["errors"])
+# 9. codes d'erreur et journal (0.7.0)
+r = m.send("/track", "PISTE QUI N EXISTE PAS"); check("code d'erreur stable sur piste introuvable", not r["ok"] and r["codes"] == ["E_NOT_FOUND"], (r["codes"], r["errors"]))
+r = m.send("/journal", 3); check("journal : la dernière entrée est une écriture de cette suite", r["ok"] and any(x[0] == "entry" and json.loads(x[1])["cmd"] in ("/shape", "/setparam", "/restore", "/locator", "/transport") for x in r["rows"]), r["rows"][-1:])
+check("signature lue dans Live", b.beats_per_bar() in (3, 4, 5, 6, 7), b.beats_per_bar())
 if not KEEP:
     py("for name in ('LOM TEST','LOM TEST AUDIO'):\n    t=[x for x in song.tracks if x.name==name][0]; song.delete_track(list(song.tracks).index(t))\nresult='cleaned'")
     check("pistes de test supprimées", int(py("len(song.tracks)")) == n0, py("len(song.tracks)"))

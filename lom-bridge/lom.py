@@ -18,6 +18,10 @@
   lom.py setparam "<piste>" <device|mixer> <param> <valeur> [raw] [override]   -> avant/après, relu ; refus si automatisé sans override
   lom.py snapshot "<piste>" [device|mixer] | snapshots | restore <id> [override]
   lom.py locators | locator <t> <nom> | state [--json]
+  lom.py wait [<id>]                                        -> attend la fin d'une tâche (ou de toutes)
+  lom.py journal [n]                                        -> dernières écritures journalisées par le bridge
+  lom.py policy [accept=fades,expressions]                  -> accords acceptés d'office par ce client (policy.json)
+  --bpb <n> : temps par mesure pour « mesure|temps » (sinon la signature est lue dans Live) ; erreurs : `ERREUR [E_CODE]: texte`
 
 Références d'objets : chaînes opaques "o:<session>:<n>" renvoyées par le bridge, jamais des nombres.
 Temps : nombre de temps (noires) depuis 1|1, ou « mesure|temps » (17|1, 17|3.5, 5|2|3), 4/4 par défaut.
@@ -36,7 +40,7 @@ HOST, TX = "127.0.0.1", 7421
 CONN_FILE = os.path.join(os.path.expanduser("~"), "Library", "Application Support", "LOMBridge", "connection.json")
 BEATS_PER_BAR = 4
 SAFE_HTTP = {"/ping", "/track", "/param", "/params", "/solve", "/clips", "/plan", "/shape", "/read", "/events", "/clear", "/jobs", "/cancel", "/children", "/get", "/info", "/path",
-             "/transport", "/meters", "/setparam", "/snapshot", "/snapshots", "/restore", "/locators", "/locator", "/state"}
+             "/transport", "/meters", "/setparam", "/snapshot", "/snapshots", "/restore", "/locators", "/locator", "/state", "/journal"}
 TIME_ARGS = {"transport": (1, 2), "meters": (0,), "locator": (0,)}   # positions des arguments « temps » (mesure|temps accepté) par commande générique
 
 # ---------- OSC minimal (i, h, f, s) ----------
@@ -112,27 +116,68 @@ class Bridge:
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.sock.bind((host, 0)); self.sock.settimeout(0.5); self._seq = 0
     def send(self, cmd, *args):
-        """{'ok', 'rows', 'errors'} ; chaque ligne reçue porte l'id de requête en premier argument, le reste est ignoré."""
+        """{'ok', 'rows', 'errors', 'codes'} ; chaque ligne reçue porte l'id de requête en premier argument, le reste est ignoré.
+        Une erreur arrive comme `/err <id> <code E_…> <texte>` : le code va dans 'codes', le texte dans 'errors' (même index)."""
         self._drain()
         rid = "%d-%d" % (time.time_ns() % 10**9, self._seq); self._seq += 1
         self.sock.sendto(osc_pack(cmd, list(args) + ["!" + self.token, "#" + rid]), (self.host, self.tx))
-        rows, errors, t0 = [], [], time.time()
+        rows, errors, codes, t0 = [], [], [], time.time()
         while time.time() - t0 < self.timeout:
             try: data, _ = self.sock.recvfrom(65536)
             except socket.timeout: continue
             addr, a = osc_unpack(data)
             if not a or str(a[0]) != rid: continue
             body = a[1:]
-            if addr == "/end": return {"ok": not errors, "rows": rows, "errors": errors}
-            if addr == "/err": errors.append(" ".join(map(str, body)))
+            if addr == "/end": return {"ok": not errors, "rows": rows, "errors": errors, "codes": codes}
+            if addr == "/err":
+                if body and isinstance(body[0], str) and body[0].startswith("E_"): codes.append(body[0]); body = body[1:]
+                else: codes.append("E_ERROR")
+                errors.append(" ".join(map(str, body)))
             elif addr == "/r": rows.append(body)
-        return {"ok": False, "rows": rows, "errors": errors + [f"timeout {self.timeout}s (LOMBridge actif ? transport arrêté ?)"]}
+        return {"ok": False, "rows": rows, "errors": errors + [f"timeout {self.timeout}s (LOMBridge actif ? transport arrêté ?)"], "codes": codes + ["E_TIMEOUT"]}
     def _drain(self):
         self.sock.setblocking(False)
         try:
             while True: self.sock.recvfrom(65536)
         except (BlockingIOError, OSError): pass
         finally: self.sock.settimeout(0.5)
+    def beats_per_bar(self):
+        """Signature lue dans Live (numérateur), mise en cache ; 4 si le bridge ne répond pas."""
+        if getattr(self, "_bpb", None): return self._bpb
+        r = self.send("/transport"); sig = str(r["rows"][0][4]) if r["ok"] and r["rows"] else "4/4"
+        self._bpb = int(sig.split("/")[0]) or 4; return self._bpb
+    def wait(self, rid=None, poll=0.5, log=None):
+        """Attend la fin d'une tâche (par id) ou de toutes ; renvoie True si la file s'est vidée avant le délai."""
+        t0 = time.time()
+        while time.time() - t0 < self.timeout:
+            r = self.send("/jobs")
+            if not r["ok"]: raise RuntimeError("; ".join(r["errors"]))
+            pending = [j for j in r["rows"] if rid is None or str(j[0]) == str(rid)]
+            if not pending: return True
+            if log: log("en attente : " + ", ".join(f"{j[1]} {j[0]} {j[2]}" for j in pending))
+            time.sleep(poll)
+        return False
+
+# ---------- accords par défaut (côté client) ----------
+POLICY_FILE = os.path.join(os.path.dirname(CONN_FILE), "policy.json")
+def read_policy(path=POLICY_FILE):
+    """{'accept': [...]} : pertes acceptées d'office par ce client (ex. expressions sur tout clip MIDI sans MPE)."""
+    try:
+        with open(path, encoding="utf-8") as f: p = json.load(f)
+        acc = p.get("accept", [])
+        return {"accept": [x for x in acc if isinstance(x, str)]} if isinstance(acc, list) else {"accept": []}
+    except Exception: return {"accept": []}
+def write_policy(policy, path=POLICY_FILE):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f: json.dump(policy, f, ensure_ascii=False)
+def merge_accept(accept, policy=None):
+    """Union ordonnée des accords demandés et de ceux de la politique ; refuse une clé inconnue."""
+    policy = read_policy() if policy is None else policy
+    out = []
+    for x in list(accept or []) + list(policy.get("accept", [])):
+        if x not in ACCEPT_KEYS: raise ValueError("accept invalide : %s (valides : %s)" % (x, ", ".join(ACCEPT_KEYS)))
+        if x not in out: out.append(x)
+    return out
 
 # ---------- haut niveau ----------
 def resolve_param(b, track, device, param):
@@ -180,10 +225,12 @@ def validate_entry(a, i):
 def shape_args(track, ref, unit, res, curve, hold, accept, pts):
     return [track, ref, unit, float(res), curve, int(bool(hold)), ",".join(accept) if accept else "-"] + [x for t, v in pts for x in (float(t), float(v))]
 
-def apply_spec(b, spec, dry=False, log=print):
-    """dry=True : /plan côté serveur (mêmes contrôles que l'écriture, rien n'est modifié) ; sinon /shape."""
+def apply_spec(b, spec, dry=False, log=print, policy=None):
+    """dry=True : /plan côté serveur (mêmes contrôles que l'écriture, rien n'est modifié) ; sinon /shape.
+    beatsPerBar : celui de la spec, sinon la signature lue dans Live. accept : ceux de l'entrée + la politique du client."""
     global BEATS_PER_BAR
-    BEATS_PER_BAR = spec.get("beatsPerBar", 4)
+    BEATS_PER_BAR = spec.get("beatsPerBar") or b.beats_per_bar()
+    policy = read_policy() if policy is None else policy
     results = []
     for i, a in enumerate(spec.get("automations", [])):
         if isinstance(a, dict) and a.get("skip"): continue
@@ -191,7 +238,7 @@ def apply_spec(b, spec, dry=False, log=print):
         except Exception as e:
             log(f"ERR {e}"); results.append({"index": i, "ok": False, "errors": [str(e)]}); continue
         track, device, param = a["track"], a.get("device", "mixer"), a.get("param", "Volume")
-        unit, res, curve, hold, accept = a.get("unit", "disp"), a.get("res", 8), a.get("curve", "lin"), a.get("hold", False), a.get("accept", [])
+        unit, res, curve, hold, accept = a.get("unit", "disp"), a.get("res", 8), a.get("curve", "lin"), a.get("hold", False), merge_accept(a.get("accept", []), policy)
         try: info = resolve_param(b, track, device, param)
         except Exception as e:
             log(f"ERR [{i}] {track} / {device} / {param} : {e}"); results.append({"index": i, "ok": False, "errors": [str(e)]}); continue
@@ -214,8 +261,8 @@ def apply_spec(b, spec, dry=False, log=print):
             if x and x[0] == "verified": desc += f"\n      relecture: {x[4]}" + (f", {x[1]} points, écart max {x[2]:g} (tolérance {x[3]:g})" if x[1] else "")
             elif x and x[0] == "warn": desc += f"\n      avertissement: {x[1]}"
         ok = r["ok"] and (not plan or not plan["errors"])
-        log(("DRY " if dry else "OK  ") + desc if ok else "ERR " + desc + ("\n      " + "; ".join(r["errors"]) if r["errors"] else ""))
-        results.append({"index": i, "ok": ok, "dry": dry, "param": info, "plan": plan, "reply": r["rows"], "errors": r["errors"]})
+        log(("DRY " if dry else "OK  ") + desc if ok else "ERR " + desc + ("\n      " + "; ".join(f"[{c}] {e}" for c, e in zip(r.get("codes", []), r["errors"])) if r["errors"] else ""))
+        results.append({"index": i, "ok": ok, "dry": dry, "param": info, "plan": plan, "reply": r["rows"], "errors": r["errors"], "codes": r.get("codes", [])})
     return results
 
 # ---------- serveur HTTP (clients non-OSC : ChatGPT, curl) ----------
@@ -265,13 +312,29 @@ def main():
     ap.add_argument("--hold", type=int, default=0); ap.add_argument("--accept", default=""); ap.add_argument("--dry", action="store_true")
     ap.add_argument("--port", type=int, default=7480); ap.add_argument("--unsafe", action="store_true")
     ap.add_argument("--timeout", type=float, default=240.0); ap.add_argument("--json", action="store_true")
+    ap.add_argument("--bpb", type=int, default=0, help="temps par mesure pour « mesure|temps » (défaut : signature lue dans Live)")
     o = ap.parse_args()
+    global BEATS_PER_BAR
     if o.cmd == "serve": return serve(o.port, o.unsafe)
+    if o.cmd == "policy":
+        pol = read_policy()
+        for x in o.args:
+            k, _, v = x.partition("=")
+            if k != "accept": raise SystemExit("usage: lom.py policy [accept=fades,expressions,…]  (accept= vide pour effacer)")
+            pol["accept"] = merge_accept([y for y in v.split(",") if y], {"accept": []}); write_policy(pol)
+        print(json.dumps({"file": POLICY_FILE, **pol}, ensure_ascii=False)); return
     b = Bridge(timeout=o.timeout)
-    accept = [x for x in o.accept.split(",") if x]
+    if o.bpb: BEATS_PER_BAR = o.bpb
+    elif any("|" in x for x in o.args): BEATS_PER_BAR = b.beats_per_bar()
+    accept = merge_accept([x for x in o.accept.split(",") if x]) if o.cmd in ("shape", "plan", "clear") else []
     if o.cmd == "apply":
-        spec = json.load(open(o.args[0])); res = apply_spec(b, spec, o.dry)
+        spec = json.load(open(o.args[0]))
+        if o.bpb: spec["beatsPerBar"] = o.bpb
+        res = apply_spec(b, spec, o.dry)
         return sys.exit(0 if all(r.get("ok") for r in res) else 1)
+    if o.cmd == "wait":
+        done = b.wait(o.args[0] if o.args else None, log=lambda m: print(m, file=sys.stderr))
+        print("terminé" if done else "toujours en cours"); return sys.exit(0 if done else 1)
     a = [num(x) for x in o.args]
     if o.cmd in ("shape", "plan"):
         track, ref = o.args[0], o.args[1]
@@ -296,7 +359,7 @@ def main():
         if w: r["errors"].append(w)
     if o.json: print(json.dumps(r, ensure_ascii=False)); return
     for row in r["rows"]: print(" ".join(f"{x:.4f}" if isinstance(x, float) else str(x) for x in row))
-    for e in r["errors"]: print("ERREUR:", e, file=sys.stderr)
+    for c, e in zip(r.get("codes", []) + ["E_ERROR"] * len(r["errors"]), r["errors"]): print(f"ERREUR [{c}]:", e, file=sys.stderr)
     sys.exit(0 if r["ok"] else 1)
 
 if __name__ == "__main__": main()

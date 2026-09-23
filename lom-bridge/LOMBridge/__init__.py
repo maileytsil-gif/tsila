@@ -134,6 +134,27 @@ def breakpoints(pts, cf, res, linear):
 
 _ident = lambda x: x
 
+# Codes d'erreur stables (premier argument de /err après l'id), déduits du message ; l'ordre compte (premier motif trouvé).
+ERROR_CODES = (
+    ("ANNULATION AUTOMATIQUE IMPOSSIBLE", "E_ROLLBACK_FAILED"), ("annulée automatiquement", "E_ROLLED_BACK"),
+    ("jeton", "E_AUTH"), ("commande inconnue", "E_UNKNOWN_CMD"), ("usage:", "E_USAGE"), ("file de tâches pleine", "E_QUEUE_FULL"),
+    ("annulée", "E_CANCELLED"), ("lecture en cours", "E_TRANSPORT_PLAYING"), ("transport démarré", "E_TRANSPORT_PLAYING"),
+    ("lecture arrêtée", "E_TRANSPORT_STOPPED"), ("curseur déplacé", "E_CURSOR_MOVED"), ("replanifier", "E_STALE"),
+    ("plan invalide", "E_PLAN"), ("surchargée", "E_AUTOMATION_OVERRIDDEN"), ("automatisé", "E_AUTOMATED"),
+    ("référence", "E_REF"), ("ids numériques", "E_REF"), ("introuvable", "E_NOT_FOUND"), ("inconnu", "E_NOT_FOUND"),
+    ("ambigu", "E_AMBIGUOUS"), ("plusieurs", "E_AMBIGUOUS"), ("accept", "E_ACCEPT"), ("non appliqué", "E_NOT_APPLIED"),
+    ("relecture", "E_VERIFY"), ("hors", "E_RANGE"), ("quantifié", "E_RANGE"), ("trop de points", "E_LIMIT"),
+    ("invalide", "E_INVALID"), ("non fini", "E_INVALID"), ("négatif", "E_INVALID"), ("disparu", "E_STALE"),
+)
+def error_code(msg):
+    m = str(msg)
+    for needle, code in ERROR_CODES:
+        if needle in m: return code
+    return "E_ERROR"
+
+JOURNAL_CMDS = ("/shape", "/clear", "/setparam", "/restore", "/locator", "/transport")   # commandes qui modifient le Set : journalisées
+JOURNAL_MAX_ROWS = 40
+
 def check_points_exact(pts, eps=VERIFY_EPS, limit=VERIFY_MAX_CHECKS):
     """Instants de contrôle d'une enveloppe exposée : de part et d'autre de chaque point (marches comprises) et au milieu
     de chaque segment ; [(t, valeur attendue)], au plus `limit` instants répartis uniformément."""
@@ -235,21 +256,42 @@ class LOMBridge(ControlSurface):
             tok = None
             if args and isinstance(args[-1], str) and args[-1].startswith("!"): tok = args[-1][1:]; args = args[:-1]
             if tok != self._token():
-                self._send(addr, "/begin", rid, cmd); self._send(addr, "/err", rid, "jeton absent ou invalide (lire %s)" % CONN_FILE); self._send(addr, "/end", rid, cmd); continue
+                self._send(addr, "/begin", rid, cmd); self._fail(addr, rid, "jeton absent ou invalide (lire %s)" % CONN_FILE); self._send(addr, "/end", rid, cmd); continue
             self._dispatch(addr, cmd, args, rid)
+
+    def _fail(self, addr, rid, msg):
+        """/err <id> <code> <texte> : le code est stable (E_…), le texte est pour l'humain."""
+        self._send(addr, "/err", rid, error_code(msg), str(msg))
+
+    # ---------- journal des écritures ----------
+    def _journal_path(self): return os.path.join(os.path.dirname(CONN_FILE), "journal.jsonl")
+
+    def _journal(self, job, error=None):
+        """Une ligne JSON par commande qui modifie le Set : quand, quoi (commande, arguments), résultat (lignes) ou erreur."""
+        if job["cmd"] not in JOURNAL_CMDS: return
+        import time
+        entry = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S"), "session": self._session(), "version": VERSION, "rid": job["rid"], "cmd": job["cmd"],
+                 "args": [str(x)[:120] for x in job["args"]][:60], "ok": error is None, "rows": job["rows"][:JOURNAL_MAX_ROWS]}
+        if error is not None: entry["error"] = str(error)[:500]; entry["code"] = error_code(error)
+        try:
+            with open(self._journal_path(), "a", encoding="utf-8") as f: f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+        except Exception as e: self.log_message("LOMBridge journal: %s" % e)
 
     def _dispatch(self, addr, cmd, args, rid=""):
         self._send(addr, "/begin", rid, cmd)
-        reply = lambda *a: self._send(addr, "/r", rid, *a)
+        job = {"addr": addr, "cmd": cmd, "rid": rid, "args": list(args), "rows": [], "cancel": False, "started": False}
+        def reply(*a):
+            job["rows"].append([str(x) if not isinstance(x, (int, float)) else x for x in a]); self._send(addr, "/r", rid, *a)
         try:
             h = getattr(self, "cmd_" + cmd.strip("/").replace("-", "_"), None)
             if h is None or not cmd.startswith("/"): raise ValueError("commande inconnue " + cmd)
             r = h(reply, list(args))
             if hasattr(r, "__next__"):
                 if len(self._jobs) >= MAX_JOBS: r.close(); raise ValueError("file de tâches pleine (%d) : attendre ou /cancel" % MAX_JOBS)
-                self._jobs.append({"gen": r, "addr": addr, "cmd": cmd, "rid": rid, "cancel": False, "started": False}); return
+                job["gen"] = r; self._jobs.append(job); return
+            self._journal(job)
         except Exception as e:
-            self._send(addr, "/err", rid, "%s: %s" % (cmd, e))
+            self._fail(addr, rid, "%s: %s" % (cmd, e)); self._journal(job, e)
             self.log_message("LOMBridge %s: %s\n%s" % (cmd, e, traceback.format_exc()))
         self._send(addr, "/end", rid, cmd)
 
@@ -267,13 +309,13 @@ class LOMBridge(ControlSurface):
                 jobs.pop(0)
                 try: gen.close()
                 except Exception as e: self.log_message("LOMBridge cancel %s: %s" % (cmd, e))
-                self._send(addr, "/err", rid, "%s: annulée (fermeture forcée)" % cmd); self._send(addr, "/end", rid, cmd); return
+                self._fail(addr, rid, "%s: annulée (fermeture forcée)" % cmd); self._journal(job, "annulée (fermeture forcée)"); self._send(addr, "/end", rid, cmd); return
         job["started"] = True
         try: next(gen)
         except StopIteration:
-            jobs.pop(0); self._send(addr, "/end", rid, cmd)
+            jobs.pop(0); self._journal(job); self._send(addr, "/end", rid, cmd)
         except Exception as e:
-            jobs.pop(0); self._send(addr, "/err", rid, "%s: %s" % (cmd, e)); self._send(addr, "/end", rid, cmd)
+            jobs.pop(0); self._fail(addr, rid, "%s: %s" % (cmd, e)); self._journal(job, e); self._send(addr, "/end", rid, cmd)
             self.log_message("LOMBridge job %s: %s\n%s" % (cmd, e, traceback.format_exc()))
 
     def _cancel_requested(self):
@@ -1100,8 +1142,17 @@ class LOMBridge(ControlSurface):
                 self._jobs.remove(j)
                 try: j["gen"].close()
                 except Exception: pass
-                self._send(j["addr"], "/err", j["rid"], "%s: annulée" % j["cmd"]); self._send(j["addr"], "/end", j["rid"], j["cmd"]); n += 1
+                self._fail(j["addr"], j["rid"], "%s: annulée" % j["cmd"]); self._send(j["addr"], "/end", j["rid"], j["cmd"]); n += 1
         reply("cancelled", n)
+
+    def cmd_journal(self, reply, a):
+        """/journal [n] : les n dernières écritures journalisées (défaut 20), une ligne `entry <json>` chacune, plus ancienne d'abord."""
+        n = int(a[0]) if a else 20
+        try:
+            with open(self._journal_path(), encoding="utf-8") as f: lines = [l for l in f.read().splitlines() if l.strip()]
+        except FileNotFoundError: lines = []
+        for l in lines[-n:]: reply("entry", l)
+        reply("journal", self._journal_path(), len(lines))
 
     def cmd_py(self, reply, a):
         code = " ".join(str(x) for x in a)

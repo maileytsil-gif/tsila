@@ -235,7 +235,7 @@ class TestProtocol(unittest.TestCase):
         c = _load(self.mod.CONN_FILE); self.assertEqual(c["port"], 7421); self.assertEqual(len(c["token"]), 32)
         self.assertEqual(oct(os.stat(self.mod.CONN_FILE).st_mode & 0o777), "0o600")
     def test_token_required(self):
-        out = self.send("/ping", token="faux"); self.assertEqual(out[1][0], "/err"); self.assertIn("jeton", out[1][1][1])
+        out = self.send("/ping", token="faux"); self.assertEqual(out[1][0], "/err"); self.assertEqual(out[1][1][1], "E_AUTH"); self.assertIn("jeton", out[1][1][2])
     def test_every_line_carries_rid(self):
         out = self.send("/children", "live_set", "tracks", rid="abc")
         self.assertEqual([o[0] for o in out], ["/begin", "/r", "/end"]); self.assertTrue(all(o[1][0] == "abc" for o in out))
@@ -436,14 +436,14 @@ class TestPlanAndRebuild(unittest.TestCase):
         dispatch("/read", ["3-MIDI", self.vref, 0, 4, 1], "j1"); dispatch("/read", ["3-MIDI", self.vref, 0, 4, 1], "j2")
         self.assertEqual([j["rid"] for j in self.b._jobs], ["j1", "j2"])
         self.b._sock.sent = []; dispatch("/cancel", ["j2"], "c1")
-        out = decode_sent(self.mod, self.b._sock); self.assertIn(("/err", ["j2", "/read: annulée"]), out); self.assertEqual([j["rid"] for j in self.b._jobs], ["j1"])
+        out = decode_sent(self.mod, self.b._sock); self.assertIn(("/err", ["j2", "E_CANCELLED", "/read: annulée"]), out); self.assertEqual([j["rid"] for j in self.b._jobs], ["j1"])
         for _ in range(10): self.b._job_tick()
         self.assertEqual(self.b._jobs, [])
         # annulation d'une tâche EN COURS : elle s'arrête d'elle-même à sa prochaine pause, sans fermeture forcée
         self.song.current_song_time = 3.0
         dispatch("/read", ["3-MIDI", self.vref, 0, 40, 1], "j3"); self.b._job_tick(); self.b._job_tick()
         self.b._sock.sent = []; dispatch("/cancel", ["j3"], "c2"); self.b._job_tick()
-        out = decode_sent(self.mod, self.b._sock); self.assertIn(("/err", ["j3", "/read: annulée"]), out); self.assertEqual(self.b._jobs, [])
+        out = decode_sent(self.mod, self.b._sock); self.assertIn(("/err", ["j3", "E_CANCELLED", "/read: annulée"]), out); self.assertEqual(self.b._jobs, [])
         self.assertEqual(self.song.current_song_time, 3.0)   # curseur restauré
     def test_cancel_during_verification_keeps_the_write(self):
         vol, vref = self._audio_following()
@@ -541,6 +541,54 @@ class TestTypedCommands(unittest.TestCase):
         t = st["tracks"][0]; self.assertEqual((t["name"], t["kind"], t["arrangement_clips"], t["automated_params"]), ("3-MIDI", "midi", 1, 1))
         self.assertEqual(t["devices"][0]["name"], "Serum 2"); self.assertEqual(t["devices"][0]["automated_params"], 1)
         self.assertEqual([x["kind"] for x in st["tracks"]], ["midi", "audio", "master"])
+    def test_error_codes_stable(self):
+        ec = self.mod.error_code
+        self.assertEqual(ec("lecture en cours : arrêter le transport"), "E_TRANSPORT_PLAYING"); self.assertEqual(ec("piste introuvable: X"), "E_NOT_FOUND")
+        self.assertEqual(ec("piste ambiguë « a » : b, c"), "E_AMBIGUOUS"); self.assertEqual(ec("clip A disparu depuis le plan : replanifier"), "E_STALE")
+        self.assertEqual(ec("relecture : écart 0.1 > 0.002 ; étape annulée automatiquement, rien n'est modifié"), "E_ROLLED_BACK")
+        self.assertEqual(ec("x ; ANNULATION AUTOMATIQUE IMPOSSIBLE (y) : faire Cmd+Z"), "E_ROLLBACK_FAILED"); self.assertEqual(ec("/read: annulée"), "E_CANCELLED")
+        self.assertEqual(ec("automation de V surchargée (…)"), "E_AUTOMATION_OVERRIDDEN"); self.assertEqual(ec("Cutoff est automatisé (état 1)"), "E_AUTOMATED")
+        self.assertEqual(ec("référence d'une autre session"), "E_REF"); self.assertEqual(ec("n'importe quoi"), "E_ERROR")
+    def test_err_line_carries_code_and_client_reads_it(self):
+        rows = []; self.b._sock.sent = []
+        self.b._dispatch(("127.0.0.1", 1), "/setparam", ["3-MIDI", "mixer", "Volume", 2.0, "raw"], "e1")
+        out = decode_sent(self.mod, self.b._sock); err = next(o for o in out if o[0] == "/err")
+        self.assertEqual(err[1][:2], ["e1", "E_RANGE"]); self.assertIn("hors", err[1][2])
+        # côté client : send() sépare code et texte
+        class S:
+            def __init__(s): s.q = []
+            def setblocking(s, b): pass
+            def settimeout(s, t): pass
+            def sendto(s, d, a):
+                rid = [x for x in lom.osc_unpack(d)[1] if str(x).startswith("#")][0][1:]
+                s.q = [lom.osc_pack("/begin", [rid, "/x"]), lom.osc_pack("/err", [rid, "E_RANGE", "valeur hors plage"]), lom.osc_pack("/end", [rid, "/x"])]
+            def recvfrom(s, n):
+                if not s.q: raise BlockingIOError()
+                return s.q.pop(0), ("127.0.0.1", 1)
+        br = lom.Bridge.__new__(lom.Bridge); br.host, br.tx, br.timeout, br.token, br._seq = "127.0.0.1", 1, 2, "t", 0; br.sock = S()
+        r = br.send("/x"); self.assertFalse(r["ok"]); self.assertEqual(r["codes"], ["E_RANGE"]); self.assertEqual(r["errors"], ["valeur hors plage"])
+    def test_journal_records_writes_only(self):
+        path = self.b._journal_path(); self.assertEqual(os.path.dirname(path), os.path.dirname(self.mod.CONN_FILE))
+        addr = ("127.0.0.1", 1)
+        self.b._dispatch(addr, "/param", ["3-MIDI", "mixer", "Volume"], "r1")                       # lecture : pas journalisée
+        self.b._dispatch(addr, "/setparam", ["3-MIDI", "mixer", "Volume", 0.6, "raw"], "w1")       # écriture réussie
+        self.b._dispatch(addr, "/setparam", ["3-MIDI", "mixer", "Volume", 9.0, "raw"], "w2")       # écriture refusée
+        self.b._dispatch(addr, "/shape", ["3-MIDI", self.b._ref(self.midi.mixer_device.volume), "raw", 8, "lin", 0, "expressions", 16.0, 0.2, 20.0, 0.8], "w3")
+        for _ in range(20): self.b._job_tick()                                                         # tâche asynchrone journalisée à sa fin
+        entries = [json.loads(l) for l in open(path, encoding="utf-8").read().splitlines()]
+        self.assertEqual([(e["rid"], e["cmd"], e["ok"]) for e in entries], [("w1", "/setparam", True), ("w2", "/setparam", False), ("w3", "/shape", True)])
+        self.assertEqual(entries[0]["rows"][0][0], "set"); self.assertEqual(entries[1]["code"], "E_RANGE"); self.assertEqual(entries[2]["rows"][0][0], "shape")
+        self.assertTrue(any(r[0] == "verified" for r in entries[2]["rows"])); self.assertEqual(entries[2]["version"], self.mod.VERSION)
+        rows = self.call("journal", 2); self.assertEqual(rows[-1][0], "journal"); self.assertEqual(rows[-1][2], 3); self.assertEqual(json.loads(rows[0][1])["rid"], "w2")
+    def test_policy_merge_and_bpb(self):
+        self.assertEqual(lom.merge_accept(["fades"], {"accept": ["expressions", "fades"]}), ["fades", "expressions"])
+        with self.assertRaises(ValueError): lom.merge_accept(["nimporte"], {"accept": []})
+        p = os.path.join(self.tmp, "policy.json"); lom.write_policy({"accept": ["expressions"]}, p); self.assertEqual(lom.read_policy(p), {"accept": ["expressions"]})
+        self.assertEqual(lom.read_policy(os.path.join(self.tmp, "absent.json")), {"accept": []})
+        self.assertEqual(lom.parse_time("3|1", 3), 6.0); self.assertEqual(lom.parse_time("3|1", 4), 8.0)
+        class B:   # signature 3/4 lue dans Live via /transport
+            def send(s, cmd, *a): return {"ok": True, "rows": [["transport", 0, 0.0, 120.0, "3/4", 0, 0.0, 12.0]], "errors": [], "codes": []}
+        self.assertEqual(lom.Bridge.beats_per_bar(B()), 3)
     def test_ping_lists_typed_commands_and_http_allows_them(self):
         rows = []; self.b.cmd_ping(lambda *x: rows.append(x), []); cmds = next(r for r in rows if r[0] == "commands")
         for c in ("/transport", "/meters", "/setparam", "/snapshot", "/restore", "/snapshots", "/locators", "/locator", "/state"):
