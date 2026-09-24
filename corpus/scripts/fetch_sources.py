@@ -12,15 +12,40 @@ constructeur) et `sources-a-telecharger-funk.json` (funk, constructeur) avec leu
   python3 corpus/scripts/build_index.py              # met à jour INDEX.md
 
 Chaque page devient `<dossier>/<slug>.md` avec un en-tête YAML (titre, source, recupere_le,
-mode: texte integral). Les échecs (403, 404, délai) sont listés en fin d'exécution ; les PDF sont
+mode: texte integral). Si Python n'a pas ses certificats SSL (erreur CERTIFICATE_VERIFY_FAILED sur
+macOS), le script bascule de lui-même sur `curl` ; pour corriger Python durablement :
+`open "/Applications/Python 3.13/Install Certificates.command"` (adapter le numéro de version). Les échecs (403, 404, délai) sont listés en fin d'exécution ; les PDF sont
 enregistrés tels quels à côté (le texte n'en est pas extrait ici).
 """
-import argparse, html, json, os, re, sys, time, urllib.request, urllib.error
+import argparse, html, json, os, re, subprocess, sys, time, urllib.request, urllib.error
 
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LISTES = [os.path.join(RACINE, "sources-a-telecharger.json"),
           os.path.join(RACINE, "sources-a-telecharger-funk.json")]
-UA = "Mozilla/5.0 (Macintosh) corpus-sound-design/1.0 (usage personnel)"
+UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/605.1.15 (KHTML, like Gecko) "
+      "Version/17.0 Safari/605.1.15 corpus-sound-design/1.1")
+
+def telecharger(url):
+    """Octets de la page : urllib d'abord ; si Python n'a pas ses certificats (CERTIFICATE_VERIFY_FAILED,
+    fréquent sur macOS) ou refuse, réessai avec curl, qui utilise les certificats du système."""
+    e1 = None
+    if not os.environ.get("CORPUS_FORCE_CURL"):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "fr,en",
+                                                       "Accept": "text/html,application/xhtml+xml,application/pdf,*/*;q=0.8"})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return r.read()
+        except Exception as e:
+            e1 = e
+    try:
+        out = subprocess.run(["curl", "-fsSL", "--max-time", "90", "-A", UA, "-H", "Accept-Language: fr,en", url],
+                             capture_output=True, check=True)
+        return out.stdout
+    except FileNotFoundError:
+        raise RuntimeError(f"{e1} ; curl absent")
+    except subprocess.CalledProcessError as e2:
+        detail = e2.stderr.decode(errors="replace").strip().splitlines()
+        raise RuntimeError(f"urllib : {e1} ; curl : {detail[-1] if detail else e2}")
 
 def slug(s):
     s = re.sub(r"https?://(www\.)?", "", s.lower())
@@ -67,9 +92,7 @@ def main():
         if os.path.exists(cible) and not a.force:
             continue
         try:
-            req = urllib.request.Request(s["url"], headers={"User-Agent": UA, "Accept-Language": "fr,en"})
-            with urllib.request.urlopen(req, timeout=60) as r:
-                brut = r.read()
+            brut = telecharger(s["url"])
             if est_pdf:
                 with open(cible, "wb") as f: f.write(brut)
             else:
