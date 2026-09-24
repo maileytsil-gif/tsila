@@ -1638,15 +1638,6 @@
   "rapport": "funk-axe1"
  },
  {
-  "url": "https://support.roland.com/hc/en-us/articles/201966419-Juno-106-Technical-Specifications",
-  "dossier": "constructeur",
-  "titre": "support.roland.com — 201966419 Juno 106 Technical Specifications",
-  "langue": "en",
-  "axe": "synth funk historique",
-  "skills": "studio-grade-funk-keys-synth-sound-design",
-  "rapport": "funk-axe2"
- },
- {
   "url": "https://support.xferrecords.com/article/50-getting-started-with-serum",
   "dossier": "constructeur",
   "titre": "support.xferrecords.com — 50 getting started with serum",
@@ -2547,24 +2538,6 @@
   "rapport": "funk-axe3"
  },
  {
-  "url": "https://www.native-instruments.com/en/pricing/scarbee-mark-1/",
-  "dossier": "constructeur",
-  "titre": "native-instruments.com — scarbee mark 1",
-  "langue": "en",
-  "axe": "documentation constructeur",
-  "skills": "studio-grade-funk-keys-synth-sound-design",
-  "rapport": "funk-axe4"
- },
- {
-  "url": "https://www.native-instruments.com/en/products/nks-partners/scarbee/scarbee-classic-ep-88s/",
-  "dossier": "constructeur",
-  "titre": "native-instruments.com — scarbee classic ep 88s",
-  "langue": "en",
-  "axe": "documentation constructeur",
-  "skills": "studio-grade-funk-keys-synth-sound-design",
-  "rapport": "funk-axe4"
- },
- {
   "url": "https://www.native-instruments.com/products/komplete-start",
   "dossier": "constructeur",
   "titre": "native-instruments.com — komplete start",
@@ -3310,5 +3283,25 @@
   "axe": "funk moderne",
   "skills": "studio-grade-funk-keys-synth-sound-design",
   "rapport": "funk-axe3"
+ },
+ {
+  "url": "https://cdn.roland.com/assets/media/pdf/JUNO-106_OM.pdf",
+  "dossier": "funk-claviers",
+  "titre": "Roland JUNO-106 — owner’s manual (PDF officiel, CDN Roland)",
+  "langue": "en",
+  "axe": "synth funk historique",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "rapport": "funk-axe2",
+  "slug": "roland-juno-106-owners-manual"
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Roland_Juno-106",
+  "dossier": "funk-claviers",
+  "titre": "Wikipédia — Roland Juno-106 (spécifications, remplace la page support Roland refusée)",
+  "langue": "en",
+  "axe": "synth funk historique",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "rapport": "funk-axe2",
+  "slug": "wikipedia-roland-juno-106"
  }
 ]
