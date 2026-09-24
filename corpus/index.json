@@ -1,5 +1,25 @@
 [
  {
+  "fichier": "constructeur/btesser-serum-tables-affichage-filtres-warps-distorsions.md",
+  "titre": "Serum 1.3x — tables d’affichage lues dans le plug-in : types de filtre, warps, distorsions, stack d’unisson, formes du sub, EQ, modes de delay, ratios de compresseur, échelles de rate LFO et unités de 55 paramètres (btesser/serum2vital, tools/serum_display_tables.json)",
+  "source": "https://raw.githubusercontent.com/btesser/serum2vital/main/tools/serum_display_tables.json",
+  "mode": "extraction",
+  "skills": "sound-designer-serum, vst-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; format de preset et paramètres (rétro-ingénierie tierce)",
+  "recupere_le": "2026-09-24",
+  "mots": 4111
+ },
+ {
+  "fichier": "constructeur/btesser-serum2vital-readme.md",
+  "titre": "serum2vital — README : ce qui se convertit de Serum 1/2 vers Vital, limites (btesser/serum2vital)",
+  "source": "https://raw.githubusercontent.com/btesser/serum2vital/main/README.md",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; format de preset et paramètres (rétro-ingénierie tierce)",
+  "recupere_le": "2026-09-24",
+  "mots": 2041
+ },
+ {
   "fichier": "constructeur/fabfilter-pro-q-4-notes-tierces.md",
   "titre": "FabFilter Pro-Q 4 — notes d’utilisation tierces (ship-studios) : bandes, dynamic EQ, spectral dynamics, match",
   "source": "https://raw.githubusercontent.com/Blankenship-Daniel/ship-studios/HEAD/docs/vst/fabfilter-pro-q-4.md",
@@ -500,6 +520,56 @@
   "mots": 4018
  },
  {
+  "fichier": "constructeur/pycabbage-flp-extract-fxp-serum1-parametres.md",
+  "titre": "Serum 1 — table des paramètres et disposition du blob d’état (pycabbage/flp-extract-fxp)",
+  "source": "https://raw.githubusercontent.com/pycabbage/flp-extract-fxp/main/docs/s1-params.md",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; format de preset et paramètres (rétro-ingénierie tierce)",
+  "recupere_le": "2026-09-24",
+  "mots": 11994
+ },
+ {
+  "fichier": "constructeur/pycabbage-flp-extract-fxp-serum1-vers-serum2-mapping.md",
+  "titre": "Serum 1 → Serum 2 — conversion des presets : correspondance des 299 paramètres, matrice, FX, LFO (pycabbage/flp-extract-fxp)",
+  "source": "https://raw.githubusercontent.com/pycabbage/flp-extract-fxp/main/docs/s1-to-s2-mapping.md",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; format de preset et paramètres (rétro-ingénierie tierce)",
+  "recupere_le": "2026-09-24",
+  "mots": 5533
+ },
+ {
+  "fichier": "constructeur/pycabbage-flp-extract-fxp-serum2-runtime-tables.md",
+  "titre": "Serum 2.0.23 — tables d’exécution : 343 descripteurs de paramètres (min, max, défaut, options), 59 sources de modulation, listes de filtres et de warps (pycabbage/flp-extract-fxp)",
+  "source": "https://raw.githubusercontent.com/pycabbage/flp-extract-fxp/main/docs/s2-runtime-tables.md",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; format de preset et paramètres (rétro-ingénierie tierce)",
+  "recupere_le": "2026-09-24",
+  "mots": 11233
+ },
+ {
+  "fichier": "constructeur/pycabbage-flp-extract-fxp-serum2-state-format.md",
+  "titre": "Serum 2 — format d’état VST3 (XferJson + zstd + CBOR), inventaire des 162 sections (pycabbage/flp-extract-fxp)",
+  "source": "https://raw.githubusercontent.com/pycabbage/flp-extract-fxp/main/docs/serum2-state-format.md",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; format de preset et paramètres (rétro-ingénierie tierce)",
+  "recupere_le": "2026-09-24",
+  "mots": 2328
+ },
+ {
+  "fichier": "constructeur/pycabbage-flp-extract-fxp-serum2-verification-dynamique.md",
+  "titre": "Serum 2 — vérification dynamique du plug-in VST3 (setState/getState) (pycabbage/flp-extract-fxp)",
+  "source": "https://raw.githubusercontent.com/pycabbage/flp-extract-fxp/main/docs/serum2-dynamic-verification.md",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; format de preset et paramètres (rétro-ingénierie tierce)",
+  "recupere_le": "2026-09-24",
+  "mots": 1395
+ },
+ {
   "fichier": "constructeur/reaticulate-cinesamples-cinebrass-core.md",
   "titre": "Reaticulate — carte d’articulations Cinesamples CineBrass Core",
   "source": "https://raw.githubusercontent.com/jtackaberry/reaticulate/master/userbanks/Cinesamples/Cinesamples-CineBrass_Core.reabank",
@@ -558,6 +628,36 @@
   "axe": "articulations ; keyswitches ; banques de cuivres",
   "recupere_le": "2026-09-24",
   "mots": 3654
+ },
+ {
+  "fichier": "constructeur/rich6feet-fx-dossier-minimal-microhouse.md",
+  "titre": "FX dossier — effets, routage et chaînes pour minimal / microhouse / deep, avec table de correspondance rack FX Serum et devices Live (rich6feet/serum)",
+  "source": "https://raw.githubusercontent.com/rich6feet/serum/main/docs/fx_dossier.md",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; format de preset et paramètres (rétro-ingénierie tierce)",
+  "recupere_le": "2026-09-24",
+  "mots": 5551
+ },
+ {
+  "fichier": "constructeur/rich6feet-serum-factory-mining-report.md",
+  "titre": "Serum 2 — statistiques des presets d’usine et packs (894 presets : catégories, modes d’oscillateur, tables, samples, warps) (rich6feet/serum)",
+  "source": "https://raw.githubusercontent.com/rich6feet/serum/main/docs/factory-mining-report.md",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; format de preset et paramètres (rétro-ingénierie tierce)",
+  "recupere_le": "2026-09-24",
+  "mots": 2703
+ },
+ {
+  "fichier": "constructeur/rich6feet-serum2-feature-coverage.md",
+  "titre": "Serum 2 — couverture des fonctions par un générateur de presets (chemins de paramètres vérifiés) (rich6feet/serum)",
+  "source": "https://raw.githubusercontent.com/rich6feet/serum/main/docs/serum2-feature-coverage.md",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; format de preset et paramètres (rétro-ingénierie tierce)",
+  "recupere_le": "2026-09-24",
+  "mots": 1377
  },
  {
   "fichier": "constructeur/serum-2-content-setup-rich6feet.md",
