@@ -1800,14 +1800,324 @@
   "mots": 142
  },
  {
-  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-texte.md",
-  "titre": "xferrecords com manual serum 2 docs (texte du PDF, 354 pages)",
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-00-sommaire.md",
+  "titre": "xferrecords com manual serum 2 docs — couverture et sommaire (p. 1-12)",
   "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
   "mode": "texte integral (PDF → texte)",
-  "skills": "",
+  "skills": "sound-designer-serum, vst-sound-design",
   "axe": "documentation constructeur",
   "recupere_le": "2026-09-24",
-  "mots": 83716
+  "mots": 14191
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-01-welcome.md",
+  "titre": "xferrecords com manual serum 2 docs — Welcome (p. 13-15)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 522
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-02-exploring-serum.md",
+  "titre": "xferrecords com manual serum 2 docs — Exploring Serum (p. 16-17)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 465
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-03-getting-started.md",
+  "titre": "xferrecords com manual serum 2 docs — Getting Started (p. 18-36)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 4210
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-04-using-wavetable-oscillators.md",
+  "titre": "xferrecords com manual serum 2 docs — Using Wavetable Oscillators (p. 37-57)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 5019
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-05-using-multisample-instruments.md",
+  "titre": "xferrecords com manual serum 2 docs — Using Multisample Instruments (p. 58-67)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2261
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-06-using-sample-instruments.md",
+  "titre": "xferrecords com manual serum 2 docs — Using Sample Instruments (p. 68-84)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 3980
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-07-using-granular-synthesis.md",
+  "titre": "xferrecords com manual serum 2 docs — Using Granular Synthesis (p. 85-103)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 4007
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-08-using-spectral-synthesis.md",
+  "titre": "xferrecords com manual serum 2 docs — Using Spectral Synthesis (p. 104-122)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 3192
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-09-using-the-sub-oscillator.md",
+  "titre": "xferrecords com manual serum 2 docs — Using the Sub Oscillator (p. 123-127)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1157
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-10-using-the-noise-oscillator.md",
+  "titre": "xferrecords com manual serum 2 docs — Using the Noise Oscillator (p. 128-132)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1154
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-11-using-the-filter-modules.md",
+  "titre": "xferrecords com manual serum 2 docs — Using the Filter Modules (p. 133-143)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2101
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-12-using-the-mixer.md",
+  "titre": "xferrecords com manual serum 2 docs — Using the Mixer (p. 144-151)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1885
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-13-using-serum-fx.md",
+  "titre": "xferrecords com manual serum 2 docs — Using Serum FX (p. 152-182)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 7332
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-14-exploring-sound-modulation.md",
+  "titre": "xferrecords com manual serum 2 docs — Exploring Sound Modulation (p. 183-208)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 5144
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-15-using-the-modulation-matrix.md",
+  "titre": "xferrecords com manual serum 2 docs — Using the Modulation Matrix (p. 209-214)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1311
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-16-setting-voicing-and-portamento.md",
+  "titre": "xferrecords com manual serum 2 docs — Setting Voicing and Portamento (p. 215-218)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 980
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-17-using-clips.md",
+  "titre": "xferrecords com manual serum 2 docs — Using Clips (p. 219-243)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 4307
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-18-using-the-arpeggiator.md",
+  "titre": "xferrecords com manual serum 2 docs — Using the Arpeggiator (p. 244-266)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 3994
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-19-using-the-keyboard.md",
+  "titre": "xferrecords com manual serum 2 docs — Using the Keyboard (p. 267-273)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1234
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-20-using-the-wavetable-editor.md",
+  "titre": "xferrecords com manual serum 2 docs — Using the Wavetable Editor (p. 274-290)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 3723
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-21-importing-audio-as-wavetables.md",
+  "titre": "xferrecords com manual serum 2 docs — Importing Audio as Wavetables (p. 291-303)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 3323
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-22-using-the-formula-parser.md",
+  "titre": "xferrecords com manual serum 2 docs — Using the Formula Parser (p. 304-311)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1431
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-23-exploring-global-settings.md",
+  "titre": "xferrecords com manual serum 2 docs — Exploring Global Settings (p. 312-322)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2086
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-24-appendix-a-using-the-main-menu.md",
+  "titre": "xferrecords com manual serum 2 docs — Appendix A: Using the Main Menu (p. 323-326)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 882
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-25-appendix-b-using-the-presets-browser.md",
+  "titre": "xferrecords com manual serum 2 docs — Appendix B: Using the Presets Browser (p. 327-339)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2154
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-26-appendix-c-editing-the-serum-preferences-file.md",
+  "titre": "xferrecords com manual serum 2 docs — Appendix C: Editing the Serum Preferences File (p. 340-343)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1037
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-27-appendix-d-exploring-the-serum-file-structure.md",
+  "titre": "xferrecords com manual serum 2 docs — Appendix D: Exploring the Serum File Structure (p. 344-345)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 411
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-28-appendix-e-creating-wavetables.md",
+  "titre": "xferrecords com manual serum 2 docs — Appendix E: Creating Wavetables (p. 346-347)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 552
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-29-appendix-f-optimizing-serum.md",
+  "titre": "xferrecords com manual serum 2 docs — Appendix F: Optimizing Serum (p. 348-348)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 278
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-30-appendix-g-keyboard-shortcuts.md",
+  "titre": "xferrecords com manual serum 2 docs — Appendix G: Keyboard Shortcuts (p. 349-353)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 773
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-31-additional-credits.md",
+  "titre": "xferrecords com manual serum 2 docs — Additional Credits (p. 354-354)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 180
  },
  {
   "fichier": "constructeur/xferrecords-com-products-serum-2.md",

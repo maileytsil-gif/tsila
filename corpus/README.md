@@ -85,7 +85,7 @@ python3 corpus/scripts/build_index.py                   # met à jour INDEX.md e
 
 Les échecs (403, 404, délai) sont listés en fin d'exécution ; les PDF (reconnus à leur contenu, même sans
 extension) sont enregistrés tels quels, puis `python3 corpus/scripts/pdf_vers_md.py` en extrait le texte
-(un fichier par chapitre au-delà de 60 pages). Les PDF scannés sans couche texte (manuel Juno-106) ne donnent
+(un fichier par chapitre au-delà de 60 pages, d'après les signets ou, à défaut, le sommaire imprimé ; `--skills` remplit l'en-tête). Les PDF scannés sans couche texte (manuel Juno-106) ne donnent
 qu'un fichier quasi vide.
 
 ## Lien avec les skills
