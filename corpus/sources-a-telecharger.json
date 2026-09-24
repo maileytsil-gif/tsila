@@ -1341,8 +1341,7 @@
   "langue": "en",
   "url": "https://assets.wavescdn.com/pdf/plugins/f6.pdf",
   "titre": "Waves F6 Floating-Band Dynamic EQ — user guide (PDF officiel, CDN Waves)",
-  "skills": "effets-plugins, studio-grade-brass-sound-design",
-  "slug": "waves-f6-user-guide"
+  "skills": "effets-plugins, studio-grade-brass-sound-design"
  },
  {
   "dossier": "constructeur",
@@ -1350,8 +1349,7 @@
   "langue": "en",
   "url": "https://assets.wavescdn.com/pdf/plugins/api-2500.pdf",
   "titre": "Waves API-2500 — user guide (PDF officiel, nom de fichier à vérifier)",
-  "skills": "effets-plugins, studio-grade-funk-keys-synth-sound-design",
-  "slug": "waves-api-2500-user-guide"
+  "skills": "effets-plugins, studio-grade-funk-keys-synth-sound-design"
  },
  {
   "dossier": "constructeur",
@@ -1359,8 +1357,7 @@
   "langue": "en",
   "url": "https://assets.wavescdn.com/pdf/plugins/j37.pdf",
   "titre": "Waves J37 Tape — user guide (PDF officiel, nom de fichier à vérifier)",
-  "skills": "effets-plugins, studio-grade-funk-keys-synth-sound-design",
-  "slug": "waves-j37-user-guide"
+  "skills": "effets-plugins, studio-grade-funk-keys-synth-sound-design"
  },
  {
   "dossier": "constructeur",
@@ -1368,7 +1365,6 @@
   "langue": "en",
   "url": "https://www.ableton.com/en/packs/orchestral-brass/",
   "titre": "Ableton — pack Orchestral Brass (page produit, remplace l’article d’aide refusé)",
-  "skills": "studio-grade-brass-sound-design",
-  "slug": "ableton-pack-orchestral-brass"
+  "skills": "studio-grade-brass-sound-design"
  }
 ]
