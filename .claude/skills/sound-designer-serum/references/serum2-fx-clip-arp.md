@@ -23,7 +23,7 @@ Le mixer réunit **SUB, OSC A, OSC B, OSC C, NOISE**, les sorties de **FILTER 1*
 
 ## Filtres (p. 148-149)
 
-Par défaut les deux filtres sortent sur MAIN. Options : **Filter 1 ou Filter 2** (donc chaînage série des deux), Main, Direct, None.
+Par défaut les deux filtres sortent sur MAIN. Options : **Filter 1 ou Filter 2** (donc chaînage série des deux), Main, Direct, None ; Main et Direct font aussi apparaître le bouton enveloppe (ENV 1) (p. 149).
 
 **Piège documenté** : même après avoir activé un filtre en cliquant son en-tête, **il reste grisé tant qu'aucun signal d'oscillateur ne lui est envoyé** (p. 148).
 
@@ -88,7 +88,7 @@ Exception documentée : les bandes individuelles du COMPRESSOR en mode MULTIBAND
 
 # C. LES 13 MODULES (p. 161-182)
 
-Trois contrôles quasi communs : **MIX** (0 = dry, 100 = wet) et **LEVEL**. Exceptions : l'EQUALIZER n'a **pas** de MIX ; les splitters n'ont **que** LEVEL.
+Deux contrôles quasi communs : **MIX** (0 = dry, 100 = wet) et **LEVEL**. Exceptions : l'EQUALIZER n'a **pas** de MIX ; les splitters n'ont **que** LEVEL.
 
 **1. BODE** — frequency shifter (p. 161). SHIFT (clic droit → **Retrig** pour redémarrer à chaque note) · RANGE · **DIR** (au centre, les deux canaux partent en directions opposées) · WIDTH · DELAY · BPM · FEED · BALANCE · BLUR.
 
@@ -96,11 +96,11 @@ Trois contrôles quasi communs : **MIX** (0 = dry, 100 = wet) et **LEVEL**. Exce
 
 **3. COMPRESSOR** (p. 162-164). MODE **SINGLE** ou **MULTIBAND** · THRESH (**0 = 0 dB, 100 % = −120 dB**) · **RATIO : au maximum la mention Limit apparaît, et c'est un circuit DSP complètement différent, un vrai true peak limiter** ; l'attaque passe alors sur **0–10 ms** et le makeup sur **0–36 dB** ; clic droit → **Limiter Latency Comp** pour reporter la latence à l'hôte · ATTACK · RELEASE · GAIN (~30 dB en compresseur, 36 dB en limiteur) · en MULTIBAND : **X-LOW**, **BELOW** (ratio **sous** le seuil, donc compression ascendante), **X-HIGH**, **H / M / L**.
 
-**4. CONVOLVE** (p. 164-165). IMPULSE · SIZE · TONE · **ϕ MIN** (phase minimale : **réponse en fréquence inchangée**, supprime l'écho) · PRE-DLY · ATTACK · DECAY · DAMP · IR GAIN. **On peut charger des IR externes par glisser-déposer** ; l'option **Embed in Preset** apparaît alors.
+**4. CONVOLVE** (p. 164-165). IMPULSE · SIZE · TONE · **ϕ MIN** (phase minimale : **réponse en fréquence inchangée**, supprime l'écho) · PRE-DLY · ATTACK · DECAY · DAMP · IR GAIN. **On peut charger des IR externes par glisser-déposer ou clic droit › Load IR** ; l'option **Embed in Preset** (icône en haut à droite de l'affichage) apparaît alors (p. 165).
 
 **5. DELAY** (p. 165-167). Trois modes : **NORMAL**, **PING-PONG**, **TAP→DELAY** (les deux delays passent en mono et en série). **Deux réglages par canal** : la case du haut est le temps de base, celle du bas un **offset scalaire**. **En glissant la case du bas, Serum affiche « Trip » à 133 % et « Dot » à 150 %** pour poser triolets et pointés. **⚠ Le Q est inversé** : la valeur maximale donne le filtrage minimal. **Double-clic sur l'affichage bascule un overlay de fréquence en temps réel.**
 
-**6. DISTORTION** — **13 types**, dont **deux modes dual-waveshaper** (p. 167-169). OFF/PRE/POST (filtrage désactivé, avant ou après) · TYPE (**glisser pour morpher passe-bas → passe-bande → passe-haut**) · FREQ (clic droit → **Key Track**) · Q · DRIVE, **avec deux exceptions** : en **Downsample**, DRIVE contrôle la réduction de fréquence d'échantillonnage ; en **X-Shaper**, DRIVE morphe entre deux waveshapes.
+**6. DISTORTION** — **13 types**, dont **deux modes dual-waveshaper** (p. 167-169). OFF/PRE/POST (filtrage désactivé, avant ou après) · TYPE (**glisser pour morpher passe-bas → passe-bande → passe-haut**) · FREQ (clic droit → **Key Track**) · Q · DRIVE, **avec deux exceptions** : en **Downsample**, DRIVE contrôle la réduction de fréquence d'échantillonnage ; en **X-Shaper** et **X-Shaper (Asym)**, DRIVE morphe entre deux waveshapes. Le menu des types s'appelle **MODE** (`kParamMode`) ; TYPE est le fondu du filtre (p. 167-168).
 **X-Shaper** : éditeur graphique X-Y, **DRIVE 0 % = forme A, 100 % = forme B**. La version **symétrique** a le silence en bas à gauche ; la version **Asym** a **le silence au milieu du graphe**, et fait ressortir les **harmoniques d'ordre pair** absentes d'une distorsion symétrique.
 **MUET** : les 13 types ne sont pas énumérés dans le texte, seulement en image. Nommés au fil du texte : Tube (défaut), Downsample, X-Shaper, X-Shaper (Asym).
 
@@ -117,11 +117,12 @@ Affichage : clic droit → trois modes, **Frequency Response**, **Frequency Resp
 **11. PHASER** (p. 174-175). RATE · **POLES** (nombre de pôles empilés) · DEPTH · **DEPTH 2** (offset entre étages) · FREQ · FEEDBACK · PHASE.
 
 **12. REVERB** — **version modifiée de l'algorithme Tal Reverb**, **5 types**, **PLATE par défaut** (p. 175-177).
-- **PLATE** : LO CUT · HI CUT · SIZE · PRE-DLY · DAMP · WIDTH
-- **HALL** : + DECAY · **SPIN RATE** · **SPIN DEPTH**
-- **VINTAGE** : + **ER SIZE** · **DIFF A** · **DIFF B** · **CHORUS** (valeur du haut = vitesse, valeur du bas = profondeur de pitch)
-- **NITROUS** : + FEEDBACK · DIFFUSION · **MODE à 5 valeurs : Space, Marble, Rectangle, Hexagon, Box**
-- **BASIN** : LO CUT · HI CUT · SIZE · PRE-DLY · FEEDBACK · CHORUS
+Chaque type a **sa propre** liste (pas de cumul d'un type à l'autre) ; tous commencent par LO CUT · HI CUT · SIZE · PRE-DLY :
+- **PLATE** : + DAMP · **WIDTH** (seul type avec WIDTH)
+- **HALL** : + DECAY · **SPIN RATE** · **SPIN DEPTH** (ni DAMP ni WIDTH)
+- **VINTAGE** : + **ER SIZE** · DECAY · DAMP · **DIFF A** · **DIFF B** · **CHORUS** (valeur du haut = vitesse, valeur du bas = profondeur de pitch) ; ni WIDTH ni SPIN
+- **NITROUS** : + FEEDBACK · DIFFUSION · **MODE à 5 valeurs : Space, Marble, Rectangle, Hexagon, Box** · **CHORUS** (haut = vitesse, bas = profondeur)
+- **BASIN** : + FEEDBACK · CHORUS
 
 **13. UTILITY** (p. 182). **POLARITY INV sur le canal gauche et le droit séparément** · LPF · HPF · **MONO BASS + FREQ** · WIDTH · PAN.
 
@@ -196,11 +197,11 @@ Assignation par **glisser-déposer du sélecteur de macro sur le contrôle** ; *
 
 **Off** (défaut) · **Clip Player** (module CLIP seul, **sans quantification clé/gamme**) · **On** (à travers le module ARP si activé, **avec** quantification).
 
-**⚠ Contradiction interne au manuel** : page 265, les mêmes options sont définies autrement, **On** = « clip player **et** arpégiateur », sans mention de la quantification. Les deux passages ne se recoupent pas.
+Page 265 (chapitre ARP) : **On** = « clip player **et** arpégiateur », sans parler de quantification : c'est un résumé de la p. 239, pas une contradiction. L'affichage montre toujours les notes générées ; l'envoi vers une autre piste est possible avec On ou Clip Player, mais seul Logic Pro X est décrit (p. 239-240) : **procédure Live MUET**.
 
 ## MUET sur les clips
 
-Le manuel mentionne une « **automation lane** » (p. 227) et « velocity and expression » (p. 233) **sans jamais chiffrer le nombre de lanes d'un clip, ni lister les paramètres automatisables**. Il ne dit pas non plus combien de macros existent ni quels réglages de clip sont assignables.
+Le manuel mentionne une « **automation lane** » (p. 227) et « velocity and expression » (p. 233) **sans jamais chiffrer le nombre de lanes d'un clip, ni lister les paramètres automatisables**. Le manuel compte **huit macros** (p. 206) ; parmi les réglages de clip assignables, au moins RATE (« Clip 1 Rate », p. 243), la liste complète reste MUET.
 
 ---
 
@@ -261,16 +262,16 @@ VELOCITY : interrupteur · **RETRIG** · **DECAY** (vitesse de changement) · **
 
 ## Le swing n'est pas dans l'arpégiateur (p. 269)
 
-**Le swing est totalement absent de la section arpégiateur.** Il se trouve sur la page « Using the Keyboard » : champ **SWING** global, **OFF par défaut**, avec un champ de division qui apparaît dès qu'on quitte OFF.
+**Aucun réglage de swing dans le chapitre arpégiateur**, mais le SWING du clavier agit sur la grille des éditeurs CLIP **et** ARP (p. 25) et sur les LFO en BPM (p. 192). Il se trouve sur la page « Using the Keyboard » : champ **SWING** global, **OFF par défaut**, avec un champ de division qui apparaît dès qu'on quitte OFF.
 
 **La plage de valeurs dépend du DAW hôte** : Serum tente de reproduire la convention de l'hôte. Le manuel cite **Ableton Live : 12,5 % à 87,5 %** et FL Studio : −150 % à 150 %.
 
 ## Déclenchement (p. 263-264)
 
-Bouton play du slot, **le bouton devient violet**. **Pour arrêter un arp il faut couper l'entrée MIDI** : relâcher les touches, arrêter un clip, ou désactiver le latch. Sur le clavier ARP, **la touche s'allume en violet** et re-presser la même touche **relance** l'arp, contrairement aux clips où elle l'arrête.
+Cliquer un slot le **sélectionne** (bouton play violet) ; au lancement, le bouton change pour montrer l'arp qui joue. **Pour arrêter un arp il faut couper l'entrée MIDI** : relâcher les touches, arrêter un clip, ou désactiver le latch. Sur le clavier ARP, **la touche s'allume en violet** et re-presser la même touche **relance** l'arp, contrairement aux clips où elle l'arrête.
 
 ---
 
 # F. Synthèse des chiffres
 
-13 modules FX · 3 splitters · 3 racks (MAIN, BUS 1, BUS 2) · flux série haut vers bas · 2 bus auxiliaires · 4 options de routage par canal · **Direct contourne filtre ET effets** · **les FX opèrent sur la somme, pas par voix** · 12 clips par banque · 12 arps par banque · grille 1/16 par défaut · MODE de pattern : 8 valeurs · STEP MODE : 4 valeurs · formes de transposition : **18** · TIME aléatoire : 1/16 à 4 mesures · PITCH de wrap : 0 à 24 demi-tons · **KB SPAN relatif à C3** · swing Ableton : 12,5 à 87,5 %.
+13 modules FX · 3 splitters · 3 racks (MAIN, BUS 1, BUS 2) · flux série haut vers bas · 2 bus auxiliaires · 4 options de routage par canal · **Direct contourne filtre ET effets** · **les FX opèrent sur la somme, pas par voix** · 12 clips par banque · 12 arps par banque · TRANSPOSE du clavier −24…+24 st (p. 267) · vélocités d'OSC Mapping 1–127 (p. 273) · MIDI Input Trigger Octave : par défaut l'octave MIDI la plus basse lance clips et arps (p. 241, 266) · 8 macros (p. 206) · grille 1/16 par défaut · MODE de pattern : 8 valeurs · STEP MODE : 4 valeurs · formes de transposition : **18** · TIME aléatoire : 1/16 à 4 mesures · PITCH de wrap : 0 à 24 demi-tons · **KB SPAN relatif à C3** · swing Ableton : 12,5 à 87,5 %.
