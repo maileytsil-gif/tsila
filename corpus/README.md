@@ -12,6 +12,7 @@ Ce dossier conserve, en Markdown, les documents consultés pour construire les s
 | `synth-secrets/` | Les 63 articles *Synth Secrets* de Gordon Reid (Sound On Sound), copiés depuis le miroir GitHub `micjamking/synth-secrets`. Texte intégral. Parties 23 à 27 = formants, vents, cuivres ; 42 à 45 = pianos ; 55 à 59 = orgue Hammond ; 12 à 13 = FM ; 15 = vocodeur |
 | `cuivres/` | Pages lues pour le skill cuivres : acoustique, synth brass vintage, cuivres électroniques modernes, écriture de section, mix |
 | `funk-claviers/` | Pages lues pour le skill funk : Rhodes, Wurlitzer, Clavinet, Hammond, synth funk historique, funk moderne, jeu et mix |
+| `synthes-vintage/` | Données d'usine et sources de synthèse partagées par les deux skills : DX7 ROM1A décodée (32 voix), Juno-60/106 d'usine, presets OB-Xd, Chowning/CLM/Csound, Nord Modular Book |
 | `constructeur/` | Pages de manuels : Ableton Live 12, Serum 2, Native Instruments, Waves, FabFilter, iZotope, oeksound |
 | `scripts/` | `ask_corpus.py` (question → passages BM25 → réponse Ollama) et `build_context.py` (assemblage en un fichier ou en Modelfile) |
 | `INDEX.md` | Liste de tous les documents avec source, mode d'obtention et skill(s) qui les citent |
