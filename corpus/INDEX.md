@@ -1,8 +1,8 @@
-# Index du corpus — 822 documents, 2753200 mots
+# Index du corpus — 823 documents, 2836916 mots
 
 Généré par `scripts/build_index.py` à partir des en-têtes des fichiers. `texte integral` = fichier téléchargé tel quel ; `extraction` = page retranscrite par l'outil de lecture, possiblement incomplète (voir README.md).
 
-## `constructeur/` (189 fichiers)
+## `constructeur/` (190 fichiers)
 
 | Fichier | Titre | Source | Mode | Skills |
 |---|---|---|---|---|
@@ -186,6 +186,7 @@ Généré par `scripts/build_index.py` à partir des en-têtes des fichiers. `te
 | `xfer-serum-1-manuel-1-0-1.md` | Xfer Serum 1.0.1 — manuel utilisateur (octobre 2014), texte extrait du PDF | https://s3.amazonaws.com/decembercymatics/Serum_Manual.pdf | texte integral | studio-grade-brass-sound-design |
 | `xfer-serum-changelog-2-0-24-a-1-10.md` | Xfer Serum — changelog officiel 1.10 → 2.0.24 (copie 0xdevalias, extraction structurée) | https://gist.github.com/0xdevalias/a537a59d1389d5aed3bc63b544c70c8d | extraction | studio-grade-brass-sound-design |
 | `xferrecords-com-forums-general-sfz-file-import-issue.md` | xferrecords.com — sfz file import issue | https://xferrecords.com/forums/general/sfz-file-import-issue | texte integral | studio-grade-funk-keys-synth-sound-design |
+| `xferrecords-com-manual-serum-2-docs-texte.md` | xferrecords com manual serum 2 docs (texte du PDF, 354 pages) | constructeur/xferrecords-com-manual-serum-2-docs.pdf | texte integral (PDF → texte) |  |
 | `xferrecords-com-products-serum-2.md` | Xfer — page produit Serum 2 | https://xferrecords.com/products/serum-2 | texte integral | studio-grade-brass-sound-design |
 | `xferrecords-com-web-manual-serum-2-enabling-pitch-tracking.md` | Manuel Serum 2 — Enabling pitch tracking | https://xferrecords.com/web-manual/serum-2/enabling-pitch-tracking | texte integral | studio-grade-brass-sound-design |
 | `xferrecords-com-web-manual-serum-2-exploring-serum.md` | Manuel Serum 2 — Exploring Serum | https://xferrecords.com/web-manual/serum-2/exploring-serum | texte integral | studio-grade-brass-sound-design |

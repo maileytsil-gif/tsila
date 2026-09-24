@@ -1800,6 +1800,16 @@
   "mots": 142
  },
  {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs-texte.md",
+  "titre": "xferrecords com manual serum 2 docs (texte du PDF, 354 pages)",
+  "source": "constructeur/xferrecords-com-manual-serum-2-docs.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 83716
+ },
+ {
   "fichier": "constructeur/xferrecords-com-products-serum-2.md",
   "titre": "Xfer — page produit Serum 2",
   "source": "https://xferrecords.com/products/serum-2",
