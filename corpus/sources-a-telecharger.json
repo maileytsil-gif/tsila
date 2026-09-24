@@ -1326,5 +1326,45 @@
   "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
   "skills": "studio-grade-brass-sound-design",
   "langue": "en"
+ },
+ {
+  "url": "https://xferrecords.com/web-manual/serum-2/resizing-the-ui",
+  "titre": "Serum 2 Manual — Resizing the UI",
+  "dossier": "constructeur",
+  "axe": "documentation constructeur ; Serum 2 ; manuel officiel",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "langue": "en"
+ },
+ {
+  "url": "https://xferrecords.com/web-manual/serum-2/installing-serum",
+  "titre": "Serum 2 Manual — Installing Serum",
+  "dossier": "constructeur",
+  "axe": "documentation constructeur ; Serum 2 ; manuel officiel",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "langue": "en"
+ },
+ {
+  "url": "https://xferrecords.com/manual/serum-2/docs",
+  "titre": "Serum 2 Manual — PDF 354 pages (page de téléchargement)",
+  "dossier": "constructeur",
+  "axe": "documentation constructeur ; Serum 2 ; manuel officiel",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "langue": "en"
+ },
+ {
+  "url": "https://support.xferrecords.com/category/45-serum-2",
+  "titre": "Xfer Support — catégorie Serum 2",
+  "dossier": "constructeur",
+  "axe": "documentation constructeur ; Serum 2 ; manuel officiel",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "langue": "en"
+ },
+ {
+  "url": "https://support.xferrecords.com/article/52-serum-2-preset-previews",
+  "titre": "Xfer Support — Serum 2 preset previews",
+  "dossier": "constructeur",
+  "axe": "documentation constructeur ; Serum 2 ; manuel officiel",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "langue": "en"
  }
 ]

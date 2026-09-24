@@ -60,6 +60,7 @@ Documentation constituée par recherche web le 18 septembre 2026. Chaque affirma
 |---|---|
 | **`fiches-pratiques.md`** | **40 fiches actionnables, à ouvrir en premier pendant une session.** Une par idée : problème résolu, réglages Serum 2, application dans Live, exemples bass house / future house / DnB, erreurs fréquentes, source |
 | **`serum2-automation-et-migration.md`** | **Pourquoi Serum n'expose que « Device On » à l'API de Live, et comment le débloquer.** Plafond de 128, procédure Configure, « Save as Default Configuration », ce qui casse la reproductibilité, différences Serum 1 → 2 |
+| **`serum2-cartographie.md`** | **Carte complète de Serum 2** : flux du signal, les 5 onglets et leurs coordonnées, chaque paramètre avec sa plage et son nom interne, les 96 types de filtre et tous les warps, modulateurs et 59 sources, les 13 effets, page GLOBAL, clavier/CLIP/ARP, presets et dossiers, ce que Live voit, index « où est quoi », lacunes. À ouvrir pour situer un réglage avant une fiche détaillée |
 | `serum2-fx-clip-arp.md` | Manuel officiel : mixer et routage, les 13 effets et 3 splitters avec leurs paramètres, module CLIP, arpégiateur. Numéros de page cités |
 | `ableton-instruments.md` | Manuel Live 12 : matrice de Wavetable, les 11 algorithmes d'Operator, Drift, Meld, Simpler et Sampler, modes de warp |
 | `patches-genres.md` | Patchs chiffrés bass house et future house, tables de conversion de tempo, ce qui distingue bass house de dubstep |
