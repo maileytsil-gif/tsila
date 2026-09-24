@@ -25,7 +25,7 @@ DEPOT = os.path.dirname(RACINE)
 SKILLS = os.path.join(DEPOT, ".claude", "skills")
 # Skills dont les références et recettes sont indexées avec le corpus
 SKILLS_INDEXES = ["studio-grade-brass-sound-design", "studio-grade-funk-keys-synth-sound-design",
-                  "studio-grade-bass-sound-design", "sound-designer-serum", "vst-sound-design"]
+                  "studio-grade-bass-sound-design", "house-future-rave-bass-house-production", "sound-designer-serum", "vst-sound-design"]
 EXCLUS = {"README.md", "INDEX.md"}
 
 def normaliser(texte):

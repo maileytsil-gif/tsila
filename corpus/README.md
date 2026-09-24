@@ -12,9 +12,10 @@ Ce dossier conserve, en Markdown, les documents consultés pour construire les s
 | `synth-secrets/` | Les 63 articles *Synth Secrets* de Gordon Reid (Sound On Sound), copiés depuis le miroir GitHub `micjamking/synth-secrets`. Texte intégral. Parties 23 à 27 = formants, vents, cuivres ; 42 à 45 = pianos ; 55 à 59 = orgue Hammond ; 12 à 13 = FM ; 15 = vocodeur |
 | `cuivres/` | Pages lues pour le skill cuivres : acoustique, synth brass vintage, cuivres électroniques modernes, écriture de section, mix |
 | `funk-claviers/` | Pages lues pour le skill funk : Rhodes, Wurlitzer, Clavinet, Hammond, synth funk historique, funk moderne, jeu et mix |
+| `house-future-rave/` | Pages lues pour le skill house : fiches de genre (bitwize, JefroB, amen-sessions, edm-midi-studio), Harmonix Set (sections annotées), GiantSteps, WhatBPM, données Spotify et Beatport des six producteurs, copies Wikipédia, pyloudnorm et ffmpeg ebur128, et les six rapports de recherche (`recherche-house-axe1` à `axe6` : genres, producteurs, sound design, arrangement, mix-mastering, théorie) |
 | `synthes-vintage/` | Données d'usine et sources de synthèse partagées par les deux skills : DX7 ROM1A décodée (32 voix), Juno-60/106 d'usine, presets OB-Xd, Chowning/CLM/Csound, Nord Modular Book |
 | `constructeur/` | Pages de manuels : les 42 chapitres du manuel Live 12 (miroir GitHub), manuel Serum 1 et changelog Serum 2, format SFZ, cartes d'articulations Reaticulate (Session Horns Pro, CineBrass, Spitfire), notes tierces sur FabFilter Pro-Q 4, soothe2, Vulf Compressor, iZotope Imager ; rétro-ingénierie de Serum 2 (format `.SerumPreset`, 343 descripteurs de paramètres, listes de filtres et de warps, statistiques des presets d'usine) |
-| `sources-a-telecharger.json`, `sources-a-telecharger-funk.json` | Listes des pages que le conteneur n'a pas pu lire (sites constructeurs, Sound On Sound, Wikipédia, blogs) : 166 URL pour les cuivres et manuels, 368 pour le funk. `scripts/fetch_sources.py` les lit toutes les deux (dédoublonnées) et range chaque page dans son dossier |
+| `sources-a-telecharger.json`, `sources-a-telecharger-funk.json`, `sources-a-telecharger-house.json` | Listes des pages que le conteneur n'a pas pu lire (sites constructeurs, Sound On Sound, Wikipédia, blogs) : 166 URL pour les cuivres et manuels, 368 pour le funk, 419 pour la house. `scripts/fetch_sources.py` les lit toutes les trois (dédoublonnées) et range chaque page dans son dossier |
 | `scripts/` | `ask_corpus.py` (question → passages BM25 → réponse Ollama), `build_context.py` (assemblage en un fichier ou en Modelfile), `build_index.py` (régénère `INDEX.md` et `index.json`), `fetch_sources.py` (à lancer sur le Mac pour compléter le corpus), `pdf_vers_md.py` (texte des PDF téléchargés → Markdown, découpé par chapitres ; `pip3 install pymupdf`) |
 | `INDEX.md` | Liste de tous les documents avec source, mode d'obtention et skill(s) qui les citent |
 
@@ -71,13 +72,14 @@ produit par `build_context.py`), puis interroger avec `#nom-de-la-connaissance`.
 ## Compléter le corpus depuis le Mac
 
 Le conteneur de travail ne lit que GitHub. Les pages constructeur, Sound On Sound, Wikipédia et
-blogs cités par les skills sont donc listées dans les deux fichiers `sources-a-telecharger*.json`
+blogs cités par les skills sont donc listées dans les trois fichiers `sources-a-telecharger*.json`
 et se téléchargent depuis une machine sans restriction réseau :
 
 ```bash
 pip3 install html2text                                  # facultatif, meilleure conversion HTML → Markdown
-python3 corpus/scripts/fetch_sources.py                 # les deux listes, ne télécharge que ce qui manque
+python3 corpus/scripts/fetch_sources.py                 # les trois listes, ne télécharge que ce qui manque
 python3 corpus/scripts/fetch_sources.py --dossier funk-claviers
+python3 corpus/scripts/fetch_sources.py --dossier house-future-rave
 python3 corpus/scripts/build_index.py                   # met à jour INDEX.md et index.json
 ```
 

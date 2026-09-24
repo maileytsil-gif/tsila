@@ -3,7 +3,8 @@
 
 Le conteneur Claude Code cloud ne peut lire que GitHub ; les manuels (Ableton, Xfer, NI, Waves…),
 Sound On Sound, Wikipédia, les blogs, sont listés dans `sources-a-telecharger.json` (cuivres,
-constructeur) et `sources-a-telecharger-funk.json` (funk, constructeur) avec leur dossier cible. Sur le Mac (sans restriction réseau) :
+constructeur), `sources-a-telecharger-funk.json` (funk, constructeur) et `sources-a-telecharger-house.json`
+(house, bass house, future rave) avec leur dossier cible. Sur le Mac (sans restriction réseau) :
 
   pip3 install html2text        # facultatif : conversion HTML → Markdown de meilleure qualité
   python3 corpus/scripts/fetch_sources.py            # télécharge tout ce qui manque
@@ -21,7 +22,8 @@ import argparse, html, json, os, re, subprocess, sys, time, urllib.request, urll
 
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LISTES = [os.path.join(RACINE, "sources-a-telecharger.json"),
-          os.path.join(RACINE, "sources-a-telecharger-funk.json")]
+          os.path.join(RACINE, "sources-a-telecharger-funk.json"),
+          os.path.join(RACINE, "sources-a-telecharger-house.json")]
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/605.1.15 (KHTML, like Gecko) "
       "Version/17.0 Safari/605.1.15 corpus-sound-design/1.1")
 
@@ -68,8 +70,8 @@ def html_vers_md(page):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--force", action="store_true")
-    ap.add_argument("--dossier", default="", help="ne traiter qu'un dossier cible (cuivres, funk-claviers, constructeur)")
-    ap.add_argument("--liste", action="append", default=[], help="fichier JSON à lire (répétable) ; défaut : les deux listes du corpus")
+    ap.add_argument("--dossier", default="", help="ne traiter qu'un dossier cible (cuivres, funk-claviers, constructeur, house-future-rave)")
+    ap.add_argument("--liste", action="append", default=[], help="fichier JSON à lire (répétable) ; défaut : les trois listes du corpus")
     a = ap.parse_args()
     sources, vus = [], set()
     for chemin in (a.liste or LISTES):

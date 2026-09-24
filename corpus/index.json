@@ -7470,6 +7470,986 @@
   "mots": 451
  },
  {
+  "fichier": "house-future-rave/amen-foundations-09-bass.md",
+  "titre": "mekedron/claude-amen-sessions — 00-foundations / Bass (sub et mid, registre, kick vs basse, Reese, wobble, formants)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/ff63fa089a89d0c2f6da635dd58db6c0af6ecf55/theory/00-foundations/09-bass.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1750
+ },
+ {
+  "fichier": "house-future-rave/amen-foundations-11-form-and-arrangement.md",
+  "titre": "mekedron/claude-amen-sessions — 00-foundations / Form and Arrangement (contraste, squelette en mesures, formes club, courbe d'énergie, matrice d'arrangement, transitions, builds, breakdowns)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/main/theory/00-foundations/11-form-and-arrangement.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 2090
+ },
+ {
+  "fichier": "house-future-rave/amen-foundations-12-timbre-and-synthesis.md",
+  "titre": "mekedron/claude-amen-sessions — 00-foundations / Timbre and Synthesis (enveloppes, filtres, FM, recettes)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/ff63fa089a89d0c2f6da635dd58db6c0af6ecf55/theory/00-foundations/12-timbre-and-synthesis.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 2332
+ },
+ {
+  "fichier": "house-future-rave/amen-foundations-18-psychoacoustics-and-tension.md",
+  "titre": "mekedron/claude-amen-sessions — 00-foundations / Psychoacoustics, Expectation and Tension (attente, silence avant le drop, arc émotionnel, attention)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/main/theory/00-foundations/18-psychoacoustics-and-tension.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1800
+ },
+ {
+  "fichier": "house-future-rave/amen-foundations-20-spectral-arrangement.md",
+  "titre": "mekedron/claude-amen-sessions — 00-foundations / Spectral Arrangement (bandes occupées par section, budget spectral)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/main/theory/00-foundations/20-spectral-arrangement.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1428
+ },
+ {
+  "fichier": "house-future-rave/amen-instruments-08-drum-machines.md",
+  "titre": "mekedron/claude-amen-sessions — 10-instruments / Drum Machines (808, 909, LinnDrum, Simmons)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/ff63fa089a89d0c2f6da635dd58db6c0af6ecf55/theory/10-instruments/08-drum-machines.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1331
+ },
+ {
+  "fichier": "house-future-rave/amen-instruments-09-virtual-analog-and-90s.md",
+  "titre": "mekedron/claude-amen-sessions — 10-instruments / Virtual Analog and the 1990s (JP-8000 supersaw, Virus)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/ff63fa089a89d0c2f6da635dd58db6c0af6ecf55/theory/10-instruments/09-virtual-analog-and-90s.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1025
+ },
+ {
+  "fichier": "house-future-rave/amen-instruments-12-software-instruments.md",
+  "titre": "mekedron/claude-amen-sessions — 10-instruments / Software Instruments (Massive, Sylenth1, Serum, OTT)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/ff63fa089a89d0c2f6da635dd58db6c0af6ecf55/theory/10-instruments/12-software-instruments.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1725
+ },
+ {
+  "fichier": "house-future-rave/amen-memories-a-timbre-figure-must-not-repeat-exactly.md",
+  "titre": "mekedron/claude-amen-sessions — 90-memories / a-timbre-figure-must-not-repeat-exactly (basse à rythme timbral, drop)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/ff63fa089a89d0c2f6da635dd58db6c0af6ecf55/theory/90-memories/a-timbre-figure-must-not-repeat-exactly.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 415
+ },
+ {
+  "fichier": "house-future-rave/amen-memories-bass-must-keep-its-own-fundamental.md",
+  "titre": "mekedron/claude-amen-sessions — 90-memories / bass-must-keep-its-own-fundamental (coupe-bas du mid-bass sous la note jouée)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/ff63fa089a89d0c2f6da635dd58db6c0af6ecf55/theory/90-memories/bass-must-keep-its-own-fundamental.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 625
+ },
+ {
+  "fichier": "house-future-rave/amen-memories-one-oscillator-cut-in-half-not-two-oscillators.md",
+  "titre": "mekedron/claude-amen-sessions — 90-memories / one-oscillator-cut-in-half-not-two-oscillators (layering par split d'un seul oscillateur)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/ff63fa089a89d0c2f6da635dd58db6c0af6ecf55/theory/90-memories/one-oscillator-cut-in-half-not-two-oscillators.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 532
+ },
+ {
+  "fichier": "house-future-rave/amen-patterns-02-drop-and-buildup.md",
+  "titre": "mekedron/claude-amen-sessions — 30-patterns / The Drop and the Build-Up (build, gap, drop, second drop, breakdown, échecs)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/main/theory/30-patterns/02-drop-and-buildup.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1476
+ },
+ {
+  "fichier": "house-future-rave/amen-patterns-03-bassline-cookbook.md",
+  "titre": "mekedron/claude-amen-sessions — 30-patterns / Bassline Cookbook",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/ff63fa089a89d0c2f6da635dd58db6c0af6ecf55/theory/30-patterns/03-bassline-cookbook.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1568
+ },
+ {
+  "fichier": "house-future-rave/amen-patterns-06-transitions-and-fx.md",
+  "titre": "mekedron/claude-amen-sessions — 30-patterns / Transitions and FX (inventaire des transitions, riser, impact, sub-drop, silence, checklist de seam)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/main/theory/30-patterns/06-transitions-and-fx.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1280
+ },
+ {
+  "fichier": "house-future-rave/amen-patterns-08-sound-design-recipes.md",
+  "titre": "mekedron/claude-amen-sessions — 30-patterns / Sound Design Recipes",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/ff63fa089a89d0c2f6da635dd58db6c0af6ecf55/theory/30-patterns/08-sound-design-recipes.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1456
+ },
+ {
+  "fichier": "house-future-rave/amen-patterns-10-arrangement-templates.md",
+  "titre": "mekedron/claude-amen-sessions — 30-patterns / Arrangement Templates (cartes mesure par mesure : club 2 drops, EDM festival, trance, DnB, dubstep, techno, house, pop ; matrice ; durées)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/main/theory/30-patterns/10-arrangement-templates.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1216
+ },
+ {
+  "fichier": "house-future-rave/amen-patterns-11-signature-techniques.md",
+  "titre": "mekedron/claude-amen-sessions — 30-patterns / Signature Techniques (gestes par genre, automation dans la note)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/main/theory/30-patterns/11-signature-techniques.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 995
+ },
+ {
+  "fichier": "house-future-rave/amen-reference-03-bpm-and-timing-tables.md",
+  "titre": "mekedron/claude-amen-sessions — 40-reference / BPM and Timing Tables (ms par valeur de note, LFO en Hz, durées de sections par BPM)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/main/theory/40-reference/03-bpm-and-timing-tables.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 2313
+ },
+ {
+  "fichier": "house-future-rave/amen-reference-05-quick-decision-tables.md",
+  "titre": "mekedron/claude-amen-sessions — 40-reference / Quick Decision Tables (par où commencer, éléments par section, LUFS, checklist avant de finir)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/main/theory/40-reference/05-quick-decision-tables.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1222
+ },
+ {
+  "fichier": "house-future-rave/amen-sessions-02-techno.md",
+  "titre": "mekedron/claude-amen-sessions — 20-genres / Techno (parent rythmique de la future rave : kick, hats droits, rumble, filtre comme arrangement)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/main/theory/20-genres/02-techno.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 1135
+ },
+ {
+  "fichier": "house-future-rave/amen-sessions-03-trance.md",
+  "titre": "mekedron/claude-amen-sessions — 20-genres / Trance (parent mélodique de la future rave : basse offbeat roulante, supersaw, breakdown long)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/main/theory/20-genres/03-trance.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 1249
+ },
+ {
+  "fichier": "house-future-rave/amen-sessions-06-dubstep-and-bass-music.md",
+  "titre": "mekedron/claude-amen-sessions — 20-genres / Dubstep and Bass Music (wobble, growl, formant, multibande)",
+  "source": "https://raw.githubusercontent.com/mekedron/claude-amen-sessions/ff63fa089a89d0c2f6da635dd58db6c0af6ecf55/theory/20-genres/06-dubstep-and-bass-music.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1233
+ },
+ {
+  "fichier": "house-future-rave/bitwize-genre-bass-house-readme.md",
+  "titre": "bitwize claude-ai-music-skills — genre Bass House (caractéristiques de production : sidechain, couches de basse sub + growl + harmoniques, tempo, artistes, références)",
+  "source": "https://raw.githubusercontent.com/bitwize-music-studio/claude-ai-music-skills/main/genres/bass-house/README.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1937
+ },
+ {
+  "fichier": "house-future-rave/bitwize-genre-edm-readme.md",
+  "titre": "bitwize claude-ai-music-skills — genre EDM (tableau des sous-genres avec BPM : big room 126-132, electro house 125-135, future bass, progressive…)",
+  "source": "https://raw.githubusercontent.com/bitwize-music-studio/claude-ai-music-skills/main/genres/edm/README.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 1830
+ },
+ {
+  "fichier": "house-future-rave/bitwize-genre-future-house-readme.md",
+  "titre": "bitwize claude-ai-music-skills — genre Future House (basse FM métallique, vocal chops, sidechain, mix propre, artistes, références)",
+  "source": "https://raw.githubusercontent.com/bitwize-music-studio/claude-ai-music-skills/main/genres/future-house/README.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1959
+ },
+ {
+  "fichier": "house-future-rave/bitwize-genre-house-readme.md",
+  "titre": "bitwize claude-ai-music-skills — genre House (Chicago → future house ; caractéristiques, sous-styles, artistes, titres)",
+  "source": "https://raw.githubusercontent.com/bitwize-music-studio/claude-ai-music-skills/main/genres/house/README.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 2001
+ },
+ {
+  "fichier": "house-future-rave/bitwize-genre-progressive-house-readme.md",
+  "titre": "bitwize claude-ai-music-skills — genre Progressive House (Sasha/Digweed → Prydz ; big room progressive ; titres)",
+  "source": "https://raw.githubusercontent.com/bitwize-music-studio/claude-ai-music-skills/main/genres/progressive-house/README.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 2172
+ },
+ {
+  "fichier": "house-future-rave/bitwize-genre-tech-house-readme.md",
+  "titre": "bitwize claude-ai-music-skills — genre Tech House (grave serré, hats, basse roulante, sidechain, intros DJ, artistes dont Chris Lake, références)",
+  "source": "https://raw.githubusercontent.com/bitwize-music-studio/claude-ai-music-skills/main/genres/tech-house/README.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 2176
+ },
+ {
+  "fichier": "house-future-rave/bitwize-genres-deep-house.md",
+  "titre": "bitwize-music-studio/claude-ai-music-skills — genres / Deep House",
+  "source": "https://raw.githubusercontent.com/bitwize-music-studio/claude-ai-music-skills/main/genres/deep-house/README.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 2148
+ },
+ {
+  "fichier": "house-future-rave/bitwize-mastering-genre-presets-house-extrait.md",
+  "titre": "bitwize claude-ai-music-skills — mastering-engineer/genre-presets.md, extrait : cibles LUFS, dynamique et EQ pour EDM, tech house, deep house, progressive, future house, bass house, rave, vocal house, afro house",
+  "source": "https://raw.githubusercontent.com/bitwize-music-studio/claude-ai-music-skills/main/skills/mastering-engineer/genre-presets.md",
+  "mode": "texte integral (extrait)",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 1936
+ },
+ {
+  "fichier": "house-future-rave/ceth-x86-bass-house-playlist-notes.md",
+  "titre": "ceth-x86/music-genres-playlists — notes commentées « Bass House » (2014–2026, ~100 titres)",
+  "source": "https://raw.githubusercontent.com/ceth-x86/music-genres-playlists/main/electronic/house/bass%20house.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 4279
+ },
+ {
+  "fichier": "house-future-rave/ceth-x86-future-house-playlist-notes.md",
+  "titre": "ceth-x86/music-genres-playlists — notes commentées « Future House » (2013–2026)",
+  "source": "https://raw.githubusercontent.com/ceth-x86/music-genres-playlists/main/electronic/house/future%20house.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 4527
+ },
+ {
+  "fichier": "house-future-rave/colordj-spotify-audio-features-top-2005-2017.md",
+  "titre": "M1Hackers/ColorDJ — dataset audio features Spotify « top2005_2017.csv » (Titanium, Scared to Be Lonely, In the Name of Love…)",
+  "source": "https://raw.githubusercontent.com/M1Hackers/ColorDJ/master/data/top2005_2017.csv",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 2090
+ },
+ {
+  "fichier": "house-future-rave/dotbeat-priors-bass-basseries.md",
+  "titre": "wgpatrick/dotbeat — docs/priors/bass-basseries.md : 15 recettes Reese / wobble / growl / 808 (Attack, MusicRadar, NI, Noise Masters, Twin 3, SOS Dubstep Secrets, unison.audio, Dystopian Collective)",
+  "source": "https://raw.githubusercontent.com/wgpatrick/dotbeat/main/docs/priors/bass-basseries.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 4239
+ },
+ {
+  "fichier": "house-future-rave/dotbeat-priors-bass-house.md",
+  "titre": "wgpatrick/dotbeat — docs/priors/bass-house.md : 10 recettes de basse house / tech house / deep house (SoundBridge, MusicRadar, Attack Juno-60, Garage Bass, ModeAudio, Repro-1, Tracey Brakes Serum 2, M1-style, DX21, Phased Techno Bass)",
+  "source": "https://raw.githubusercontent.com/wgpatrick/dotbeat/main/docs/priors/bass-house.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 3107
+ },
+ {
+  "fichier": "house-future-rave/dotbeat-priors-bass-techno.md",
+  "titre": "wgpatrick/dotbeat — docs/priors/bass-techno.md : 18 recettes rumble / acid 303 / rolling techno bass / stabs (Attack, Roland, MusicTech, MusicRadar, Futureproof)",
+  "source": "https://raw.githubusercontent.com/wgpatrick/dotbeat/main/docs/priors/bass-techno.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 4029
+ },
+ {
+  "fichier": "house-future-rave/dotbeat-priors-chords-pads.md",
+  "titre": "wgpatrick/dotbeat — docs/priors/chords-pads.md : 16 recettes de stabs, pads, plucks (Attack Old-School House Chords, Techno Stabs ms, Detuned Pad, Sytrus deep house stab, KVR, Kerri Chandler, Zebra 3 pluck)",
+  "source": "https://raw.githubusercontent.com/wgpatrick/dotbeat/main/docs/priors/chords-pads.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 7336
+ },
+ {
+  "fichier": "house-future-rave/dotbeat-priors-drums.md",
+  "titre": "wgpatrick/dotbeat — docs/priors/drums.md : 12 recettes de kick/clap/hat (Attack Slave to the Rhythm, Beat Dissected jackin'/dirty tech/deep tech/organic/dusted, SampleFocus, KVR, sidechain EDMProd)",
+  "source": "https://raw.githubusercontent.com/wgpatrick/dotbeat/main/docs/priors/drums.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 3572
+ },
+ {
+  "fichier": "house-future-rave/dotbeat-priors-layering.md",
+  "titre": "wgpatrick/dotbeat — docs/priors/layering.md : architectures de layering basse / kick / lead / pads (crossovers, phase, règles anti-layering)",
+  "source": "https://raw.githubusercontent.com/wgpatrick/dotbeat/main/docs/priors/layering.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 4075
+ },
+ {
+  "fichier": "house-future-rave/dotbeat-priors-leads.md",
+  "titre": "wgpatrick/dotbeat — docs/priors/leads.md : 12 recettes de leads (supersaw Syntorial/FaderPro/Myloops, hoover Alpha Juno/ReDominator, acid, arps, table CMUSE)",
+  "source": "https://raw.githubusercontent.com/wgpatrick/dotbeat/main/docs/priors/leads.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 5408
+ },
+ {
+  "fichier": "house-future-rave/dotbeat-priors-readme.md",
+  "titre": "wgpatrick/dotbeat — docs/priors/README.md : index des veines de recherche (mined production priors, 2026-07-26)",
+  "source": "https://raw.githubusercontent.com/wgpatrick/dotbeat/main/docs/priors/README.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 394
+ },
+ {
+  "fichier": "house-future-rave/dotbeat-priors-sample-manipulation.md",
+  "titre": "wgpatrick/dotbeat — docs/priors/sample-manipulation.md : chopping, warp, pitch (vocal chops Attack), resampling, filtrage, dégradation, Beat Repeat, layering sample + synthèse",
+  "source": "https://raw.githubusercontent.com/wgpatrick/dotbeat/main/docs/priors/sample-manipulation.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 6300
+ },
+ {
+  "fichier": "house-future-rave/dotbeat-recipes-reference.md",
+  "titre": "wgpatrick/dotbeat — docs/recipes-reference.md : 13 recettes exécutables (rolling-sub-bass, reese-bass, acid-303, 808-glide-bass, three-layer-bass-stack, warm-pad-with-air, house-chord-stab, techno-stab, supersaw-trance-lead, pluck-delay-lead, hoover-lead, layered-lead-stack, layered-house-kit) avec chiffres mesurés sur 3 559 patchs Surge",
+  "source": "https://raw.githubusercontent.com/wgpatrick/dotbeat/main/docs/recipes-reference.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 16102
+ },
+ {
+  "fichier": "house-future-rave/dragoscv-mmo-tech-house-ghid-ro.md",
+  "titre": "dragoscv/mmo — Tech House, ghid complet (fiche DJ en roumain : BPM, structure, techniques de mix, transitions entre genres)",
+  "source": "https://raw.githubusercontent.com/dragoscv/mmo/main/docs/genuri/tech-house.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 399
+ },
+ {
+  "fichier": "house-future-rave/dubforge-subtronics-deep-dive.md",
+  "titre": "BITRAGER069/DUBFORGERAGE — reports/SUBTRONICS_DEEP_DIVE.md : resampling multi-passes, FM (ratios 1:3, 2:5, 3:7), vowel formant bass (fréquences F1/F2), multibande <120 / 120–2k / >2k, waveshaper stack, OTT, sidechain, structure de session",
+  "source": "https://raw.githubusercontent.com/BITRAGER069/DUBFORGERAGE/main/reports/SUBTRONICS_DEEP_DIVE.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 3597
+ },
+ {
+  "fichier": "house-future-rave/edm-midi-studio-genres-future-rave-extrait.md",
+  "titre": "KinhkhaTran/edm-midi-studio — README et lib/generators.js (extrait) : définition chiffrée « Future Rave » (126 BPM, mineur, swing 0, accords de quinte/add9/sus4, basse offbeat 8es, arpège 16es, lead « festival ») et voisins house/tech house",
+  "source": "https://raw.githubusercontent.com/KinhkhaTran/edm-midi-studio/main/lib/generators.js",
+  "mode": "texte integral (extrait)",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 3530
+ },
+ {
+  "fichier": "house-future-rave/emerged-agency-jauz-bio.md",
+  "titre": "emerged-agency.com (dépôt christophfranke) — biographie de booking de Jauz (2018)",
+  "source": "https://raw.githubusercontent.com/christophfranke/emerged-agency.com/master/backup/www.original/content/portfolio/0-jauz/artist.txt",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 420
+ },
+ {
+  "fichier": "house-future-rave/fearvox-syn-bass-house-structure-research.md",
+  "titre": "Fearvox/Syn — Bass House Music Structure & Arrangement: Comprehensive Research Summary (carte 160 mesures, grille section × élément, entrées par phrase de 16, build-up, sidechain, comparaison house/deep/electro)",
+  "source": "https://raw.githubusercontent.com/Fearvox/Syn/master/research/analysis/bass_house_research.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 3076
+ },
+ {
+  "fichier": "house-future-rave/ffmpeg-filters-loudnorm-ebur128.md",
+  "titre": "FFmpeg doc/filters.texi — filtres loudnorm (normalisation EBU R128 : I, LRA, TP) et ebur128 (mesure LUFS M/S/I, LRA, sample peak, true peak)",
+  "source": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/master/doc/filters.texi",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1275
+ },
+ {
+  "fichier": "house-future-rave/future-rave-dbpedia-avengerpenguin.md",
+  "titre": "avengerpenguin/musicgenres — fiche DBpedia « Future rave » (définition, influences)",
+  "source": "https://raw.githubusercontent.com/avengerpenguin/musicgenres/main/Music/Future%20rave.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 223
+ },
+ {
+  "fichier": "house-future-rave/gaku52-bpm-tempo-ja.md",
+  "titre": "Gaku52/dj-skills-guide — bpm-tempo.md : tableau BPM par genre (House 125, Tech House 128, Future House 128, Bass House 128, Progressive 128…) — japonais",
+  "source": "https://raw.githubusercontent.com/Gaku52/dj-skills-guide/main/docs/dj/01-basics/bpm-tempo.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 1021
+ },
+ {
+  "fichier": "house-future-rave/genresinspace-future-rave.md",
+  "titre": "genresinspace — fiche Wikipedia « Future rave » (JSON : description, top artists)",
+  "source": "https://raw.githubusercontent.com/genresinspace/genresinspace.github.io/main/website/public/genres/Future%20rave.json",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 154
+ },
+ {
+  "fichier": "house-future-rave/genresinspace-morten-breum.md",
+  "titre": "genresinspace — fiche Wikipedia « Morten Breum » (JSON)",
+  "source": "https://raw.githubusercontent.com/genresinspace/genresinspace.github.io/main/website/public/artists/Morten%20Breum.json",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 210
+ },
+ {
+  "fichier": "house-future-rave/giantsteps-key-dataset-beatport-604-tonalites-par-sous-genre.md",
+  "titre": "GiantSteps key dataset (Knees, Faraldo et al., ISMIR 2015) — README + tonalités manuelles de 604 extraits Beatport par sous-genre (tech house, deep house, progressive house, electro house, house, trance…)",
+  "source": "https://raw.githubusercontent.com/GiantSteps/giantsteps-key-dataset/master/README (+ sources.xlsx du même dépôt, + giantsteps-mtg-key-dataset/annotations/annotations.txt)",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "théorie spécifique (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1264
+ },
+ {
+  "fichier": "house-future-rave/harmonixset-readme.md",
+  "titre": "urinieto/harmonixset — README (Harmonix Set : beats, downbeats et annotations de sections fonctionnelles de 912 titres pop, ISMIR 2019)",
+  "source": "https://raw.githubusercontent.com/urinieto/harmonixset/main/README.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 688
+ },
+ {
+  "fichier": "house-future-rave/harmonixset-segments-dance-edm.md",
+  "titre": "urinieto/harmonixset — segments annotés de 31 titres dance/EDM (Guetta, SHM, Calvin Harris, Afrojack, Avicii, deadmau5…) + conversion en mesures",
+  "source": "https://raw.githubusercontent.com/urinieto/harmonixset/main/dataset/segments/",
+  "mode": "texte integral (fichiers de segments et metadata) + tableau de conversion en mesures calculé localement",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 6997
+ },
+ {
+  "fichier": "house-future-rave/heaterfy-spotify-audio-features-bass-house.md",
+  "titre": "akimbo-md/Heaterfy — export Spotify « bass_haus.csv » (Jauz, AC Slater, Malaa, Tchami : tempo, key, mode, label)",
+  "source": "https://raw.githubusercontent.com/akimbo-md/Heaterfy/main/spotify_rips/bass_haus.csv",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 816
+ },
+ {
+  "fichier": "house-future-rave/historical-parallax-david-guetta.md",
+  "titre": "parallax-ai-llc/historical-parallax — article de synthèse « David Guetta » (2026-09-14)",
+  "source": "https://raw.githubusercontent.com/parallax-ai-llc/historical-parallax/main/content/articles/david-guetta.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 866
+ },
+ {
+  "fichier": "house-future-rave/jefrob-genre-house-mixing-and-mastering.md",
+  "titre": "JefroB Electronic-Music-Genre-Skills — House : mixing-and-mastering.md (profils spectraux, LUFS club/streaming, largeur, EQ par sous-genre : deep, tech, progressive, funky, afro, jackin, soulful, UK garage, electro house, bass house, french touch…)",
+  "source": "https://raw.githubusercontent.com/JefroB/Electronic-Music-Genre-Skills/master/.agent/skills/genre-house/references/mixing-and-mastering.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 5046
+ },
+ {
+  "fichier": "house-future-rave/jefrob-genre-house-production-techniques.md",
+  "titre": "JefroB Electronic-Music-Genre-Skills — House : production-techniques.md (sidechain, mono du grave, outils, chaînes par sous-genre dont electro house, bass house, french touch)",
+  "source": "https://raw.githubusercontent.com/JefroB/Electronic-Music-Genre-Skills/master/.agent/skills/genre-house/references/production-techniques.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 4770
+ },
+ {
+  "fichier": "house-future-rave/jefrob-genre-house-sound-design.md",
+  "titre": "JefroB Electronic-Music-Genre-Skills — House : sound-design.md (kick, basse, sub, sidechain en dB, fréquences par élément et par sous-genre)",
+  "source": "https://raw.githubusercontent.com/JefroB/Electronic-Music-Genre-Skills/master/.agent/skills/genre-house/references/sound-design.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 3891
+ },
+ {
+  "fichier": "house-future-rave/jefrob-genre-techno-mixing-and-mastering.md",
+  "titre": "JefroB Electronic-Music-Genre-Skills — Techno : mixing-and-mastering.md (peak time / hard / industrial / minimal / acid / dub : LUFS, plage dynamique, glue, EQ du kick — voisinage de la future rave)",
+  "source": "https://raw.githubusercontent.com/JefroB/Electronic-Music-Genre-Skills/master/.agent/skills/genre-techno/references/mixing-and-mastering.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 4137
+ },
+ {
+  "fichier": "house-future-rave/jefrob-genre-trance-mixing-and-mastering.md",
+  "titre": "JefroB Electronic-Music-Genre-Skills — Trance : mixing-and-mastering.md (supersaw : largeur, coupe 200–400 Hz, contraste breakdown/drop, LUFS — voisinage big room / future rave)",
+  "source": "https://raw.githubusercontent.com/JefroB/Electronic-Music-Genre-Skills/master/.agent/skills/genre-trance/references/mixing-and-mastering.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 3690
+ },
+ {
+  "fichier": "house-future-rave/jefrob-house-arrangements.md",
+  "titre": "JefroB Electronic-Music-Genre-Skills — genre-house : structures d'arrangement par sous-genre (tech house, electro house, bass house… en mesures et minutes)",
+  "source": "https://raw.githubusercontent.com/JefroB/Electronic-Music-Genre-Skills/main/.agent/skills/genre-house/references/arrangements.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 3115
+ },
+ {
+  "fichier": "house-future-rave/jefrob-house-artists-and-history.md",
+  "titre": "JefroB Electronic-Music-Genre-Skills — genre-house : artistes, labels et histoire par sous-genre (tech house, electro house, bass house…)",
+  "source": "https://raw.githubusercontent.com/JefroB/Electronic-Music-Genre-Skills/main/.agent/skills/genre-house/references/artists-and-history.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 4472
+ },
+ {
+  "fichier": "house-future-rave/jefrob-house-dj-and-mixing-context.md",
+  "titre": "JefroB Electronic-Music-Genre-Skills — genre-house : compatibilités DJ, progression de set, notes harmoniques par sous-genre",
+  "source": "https://raw.githubusercontent.com/JefroB/Electronic-Music-Genre-Skills/main/.agent/skills/genre-house/references/dj-and-mixing-context.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 5357
+ },
+ {
+  "fichier": "house-future-rave/jefrob-house-music-theory.md",
+  "titre": "JefroB Electronic-Music-Genre-Skills — genre-house : théorie (gammes, tonalités, accords, progressions, rythme harmonique) par sous-genre",
+  "source": "https://raw.githubusercontent.com/JefroB/Electronic-Music-Genre-Skills/main/.agent/skills/genre-house/references/music-theory.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 4984
+ },
+ {
+  "fichier": "house-future-rave/jefrob-house-rhythm-and-groove.md",
+  "titre": "JefroB Electronic-Music-Genre-Skills — genre-house : grilles rythmiques notées, swing, polyrythmie par sous-genre (tech house 52-55 %, bass house 50-53 %…)",
+  "source": "https://raw.githubusercontent.com/JefroB/Electronic-Music-Genre-Skills/main/.agent/skills/genre-house/references/rhythm-and-groove.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 6329
+ },
+ {
+  "fichier": "house-future-rave/jefrob-house-skill.md",
+  "titre": "JefroB Electronic-Music-Genre-Skills — genre-house SKILL.md (17 sous-genres : tempos, courbes d'énergie, transitions, éléments clés, règles d'arrangement)",
+  "source": "https://raw.githubusercontent.com/JefroB/Electronic-Music-Genre-Skills/main/.agent/skills/genre-house/SKILL.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 2154
+ },
+ {
+  "fichier": "house-future-rave/loopsmith-edm-midi-studio-basse-hooks-contre-melodie-theory-js.md",
+  "titre": "KinhkhaTran/edm-midi-studio — lib/generators.js (suite : batterie, accords voice-led, archétypes de basse offbeat8/rolling/rolling8/rumble16/wobble/reese/sub/808, cellules rythmiques de lead, hooks « festival »/« tech »/« melodic », contre-mélodie) + lib/theory.js intégral (gammes, qualités d'accords, voice leading, swing16, grooveVel)",
+  "source": "https://raw.githubusercontent.com/KinhkhaTran/edm-midi-studio/main/lib/generators.js (+ https://raw.githubusercontent.com/KinhkhaTran/edm-midi-studio/main/lib/theory.js)",
+  "mode": "texte integral (extrait complémentaire)",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "théorie spécifique (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 3397
+ },
+ {
+  "fichier": "house-future-rave/microsoft-resource2skill-edm-arrangement-scaffolding-energy-map.md",
+  "titre": "microsoft/Resource2Skill — EDM Arrangement Scaffolding & Energy Map (squelette de sections 8/16 mesures et courbe d'énergie en pourcentage, extrait d'un tutoriel REAPER)",
+  "source": "https://raw.githubusercontent.com/microsoft/Resource2Skill/main/skills_wiki/reaper/edm_arrangement_scaffolding_energy_map_484eb2a8/text/overview.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1314
+ },
+ {
+  "fichier": "house-future-rave/misterteri-spotify-audio-features-techno-songs.md",
+  "titre": "misterteri/spotify-api — dataset audio features Spotify « techno_songs.csv » (tempo, key, mode, loudness) incl. Guetta & MORTEN future rave",
+  "source": "https://raw.githubusercontent.com/misterteri/spotify-api/main/datasets/techno_songs.csv",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 11431
+ },
+ {
+  "fichier": "house-future-rave/musicproductionwiki-bible-compression.md",
+  "titre": "Music Production Wiki — Bible : Compression (attaque/release chiffrés par source, bus de batterie, mix bus, HPF de sidechain, dépannage)",
+  "source": "https://raw.githubusercontent.com/musicproductionwiki/musicproductionwiki/master/bible/compression.html",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 17914
+ },
+ {
+  "fichier": "house-future-rave/musicproductionwiki-bible-loudness.md",
+  "titre": "Music Production Wiki — Bible : Loudness (LUFS intégré/short-term/momentary, true peak, crest factor, LRA, cibles plateformes, exemples mesurés)",
+  "source": "https://raw.githubusercontent.com/musicproductionwiki/musicproductionwiki/master/bible/loudness.html",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 6597
+ },
+ {
+  "fichier": "house-future-rave/musicproductionwiki-bible-mastering.md",
+  "titre": "Music Production Wiki — Bible : Mastering (ordre de chaîne, LUFS/dBTP, tableau par genre dont House et Trap, dither, mono, chaînes DAW)",
+  "source": "https://raw.githubusercontent.com/musicproductionwiki/musicproductionwiki/master/bible/mastering.html",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 10912
+ },
+ {
+  "fichier": "house-future-rave/musicproductionwiki-bible-mixing.md",
+  "titre": "Music Production Wiki — Bible : Mixing (gain staging −18 dBFS, tableau compression par instrument, tableau par genre dont House et Trap, mono sous 200 Hz)",
+  "source": "https://raw.githubusercontent.com/musicproductionwiki/musicproductionwiki/master/bible/mixing.html",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 11070
+ },
+ {
+  "fichier": "house-future-rave/musicproductionwiki-bible-sidechain.md",
+  "titre": "Music Production Wiki — Bible : Sidechain (seuil, attaque, release, ratio, HPF de détection, tableau de départ, release calé au tempo : 128 BPM = 469 ms)",
+  "source": "https://raw.githubusercontent.com/musicproductionwiki/musicproductionwiki/master/bible/sidechain.html",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 5780
+ },
+ {
+  "fichier": "house-future-rave/musicproductionwiki-tools-stereo-width-ms.md",
+  "titre": "Music Production Wiki — outil Stereo Width & M/S (encodage M/S, corrélation de phase, largeur par bande)",
+  "source": "https://raw.githubusercontent.com/musicproductionwiki/musicproductionwiki/master/tools/stereo-width-ms.html",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 863
+ },
+ {
+  "fichier": "house-future-rave/polifonia-wikipedia-chris-lake.md",
+  "titre": "polifonia-project/meetups_corpus_collection — texte Wikipedia « Chris Lake »",
+  "source": "https://raw.githubusercontent.com/polifonia-project/meetups_corpus_collection/main/dataset/4831502.txt",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 1182
+ },
+ {
+  "fichier": "house-future-rave/polifonia-wikipedia-dom-dolla.md",
+  "titre": "polifonia-project/meetups_corpus_collection — texte Wikipedia « Dom Dolla » (Dominic Matheson)",
+  "source": "https://raw.githubusercontent.com/polifonia-project/meetups_corpus_collection/main/dataset/58730216.txt",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 464
+ },
+ {
+  "fichier": "house-future-rave/polifonia-wikipedia-jauz.md",
+  "titre": "polifonia-project/meetups_corpus_collection — texte Wikipedia « Jauz » (Sam Vogel)",
+  "source": "https://raw.githubusercontent.com/polifonia-project/meetups_corpus_collection/main/dataset/52360607.txt",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 425
+ },
+ {
+  "fichier": "house-future-rave/prasertcbs-spotify-top-tracks-2017-audio-features.md",
+  "titre": "prasertcbs/basic-dataset — audio features Spotify des Top Tracks 2017 (Scared to Be Lonely, There for You, In the Name of Love)",
+  "source": "https://raw.githubusercontent.com/prasertcbs/basic-dataset/master/spotify_song_features_top_track2017.csv",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 484
+ },
+ {
+  "fichier": "house-future-rave/progression-wheel-track-presets.md",
+  "titre": "sebastiz/progression-wheel — track-presets.js : tempo, tonique, progression et forme d'arrangement de ~680 titres dance (dont Animals, Take It, San Frandisco, Turn Off The Lights, Feel the Volume)",
+  "source": "https://raw.githubusercontent.com/sebastiz/progression-wheel/main/src/track-presets.js",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 35416
+ },
+ {
+  "fichier": "house-future-rave/pyloudnorm-readme.md",
+  "titre": "pyloudnorm (csteinmetz1) — README : mesure ITU-R BS.1770-4 en Python, normalisation en LUFS et en crête, LRA (EBU Tech 3342)",
+  "source": "https://raw.githubusercontent.com/csteinmetz1/pyloudnorm/master/README.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 710
+ },
+ {
+  "fichier": "house-future-rave/recherche-house-axe1-genres-elements.md",
+  "titre": "Rapport de recherche — axe 1 : Recherche — axe 1 : définition des genres et éléments constitutifs d'un track",
+  "source": "recherche web et GitHub, session Claude Code du 2026-09-24 (agent de recherche)",
+  "mode": "synthese",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 6935
+ },
+ {
+  "fichier": "house-future-rave/recherche-house-axe2-producteurs.md",
+  "titre": "Rapport de recherche — axe 2 : Recherche house — Axe 2 : six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "source": "recherche web et GitHub, session Claude Code du 2026-09-24 (agent de recherche)",
+  "mode": "synthese",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 6446
+ },
+ {
+  "fichier": "house-future-rave/recherche-house-axe3-sound-design.md",
+  "titre": "Rapport de recherche — axe 3 : Recherche axe 3 — Sound design professionnel, recettes chiffrées",
+  "source": "recherche web et GitHub, session Claude Code du 2026-09-24 (agent de recherche)",
+  "mode": "synthese",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design professionnel (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 14245
+ },
+ {
+  "fichier": "house-future-rave/recherche-house-axe4-arrangement-methode.md",
+  "titre": "Rapport de recherche — axe 4 : Recherche — AXE 4 : Arrangement et méthode de production professionnelle (future rave, bass house, house de festival/club)",
+  "source": "recherche web et GitHub, session Claude Code du 2026-09-24 (agent de recherche)",
+  "mode": "synthese",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 8371
+ },
+ {
+  "fichier": "house-future-rave/recherche-house-axe5-mix-mastering.md",
+  "titre": "Rapport de recherche — axe 5 : Recherche — Axe 5 : mixage et mastering de la future rave, de la bass house et de la house de festival/club (future house, tech house, big room)",
+  "source": "recherche web et GitHub, session Claude Code du 2026-09-24 (agent de recherche)",
+  "mode": "synthese",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "mixage et mastering (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 5616
+ },
+ {
+  "fichier": "house-future-rave/recherche-house-axe6-theorie.md",
+  "titre": "Rapport de recherche — axe 6 : Axe 6 — Théorie musicale spécifique : future rave, bass house, house de festival/club (future house, tech house, big room)",
+  "source": "recherche web et GitHub, session Claude Code du 2026-09-24 (agent de recherche)",
+  "mode": "synthese",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "théorie spécifique (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 7820
+ },
+ {
+  "fichier": "house-future-rave/ryansavoia-ableton-mcp-house-production-skill.md",
+  "titre": "RyanSavoia/ableton-mcp — cursor-skills/ableton-house-production/SKILL.md : masterclass house (basse 3 couches, patterns, Wavetable, vélocité→cutoff, chaîne, drums, chords, mix « Guillotine », arrangement, vocal chops)",
+  "source": "https://raw.githubusercontent.com/RyanSavoia/ableton-mcp/main/cursor-skills/ableton-house-production/SKILL.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 8103
+ },
+ {
+  "fichier": "house-future-rave/salami-data-public-readme.md",
+  "titre": "DDMAL/salami-data-public — SALAMI Data Set v2.0 : readme et readme_metadata (annotations structurelles, format, métadonnées, licence CC0)",
+  "source": "https://raw.githubusercontent.com/DDMAL/salami-data-public/master/readme.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "arrangement et méthode de production (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 1357
+ },
+ {
+  "fichier": "house-future-rave/spotify-tracks-dataset-114k-readme-tonalites-tempos-par-genre.md",
+  "titre": "sai-chaitanya-reddy/spotify-tracks-dataset — README (114 000 titres, 114 genres, CC0) + tonalité/mode/tempo calculés pour les genres house, edm, techno, trance, progressive-house…",
+  "source": "https://raw.githubusercontent.com/sai-chaitanya-reddy/spotify-tracks-dataset/main/README.md (+ spotify-tracks-dataset-detailed.csv, 19,4 Mo, même dépôt)",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "théorie spécifique (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 2643
+ },
+ {
+  "fichier": "house-future-rave/technob-beatport-top100-2023-11-04.md",
+  "titre": "NimaMan/technob — Beatport Top 100 du 2023-11-04 (BPM et tonalité Beatport ; Dom Dolla Saving Up, Chris Lake More Baby)",
+  "source": "https://raw.githubusercontent.com/NimaMan/technob/master/data/bp100-20231104.csv",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 1343
+ },
+ {
+  "fichier": "house-future-rave/tkgally-electronic-and-dance.md",
+  "titre": "tkgally algorithmic-music — wiki « Electronic and dance music » (phrasé 8/16/32, boîte à outils de tension build/drop, sidechain, sub, supersaw, carte des sous-genres ; cite Butler, Solberg, Smith)",
+  "source": "https://raw.githubusercontent.com/tkgally/algorithmic-music/main/wiki/electronic-and-dance.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "genres et éléments constitutifs (house, bass house, future rave)",
+  "recupere_le": "2026-09-24",
+  "mots": 1814
+ },
+ {
+  "fichier": "house-future-rave/whatbpm-beatport-top100-bpm-tonalites-par-genre.md",
+  "titre": "sergree/whatbpm — README + extrait de latest.json : BPM, fondamentale et tonalité les plus fréquents par genre Beatport (Top 100 : Tech House, Bass House, Mainstage, House, Progressive, Deep House…)",
+  "source": "https://raw.githubusercontent.com/sergree/whatbpm/main/README.md (+ https://raw.githubusercontent.com/sergree/whatbpm/gh-pages/latest.json)",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "théorie spécifique (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 2644
+ },
+ {
+  "fichier": "house-future-rave/wikipedia-david-guetta-wikitext-alaym3.md",
+  "titre": "alaym3/musician-network-analysis — wikitext Wikipedia « David Guetta » (copie ~2021)",
+  "source": "https://raw.githubusercontent.com/alaym3/musician-network-analysis/main/Wikipages/David%20Guetta.txt",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "six producteurs de référence (Guetta, MORTEN, Garrix, Chris Lake, Jauz, Dom Dolla)",
+  "recupere_le": "2026-09-24",
+  "mots": 9649
+ },
+ {
+  "fichier": "house-future-rave/zayansalman-dance-gear-fingerprints.md",
+  "titre": "zayansalman/ableton-ai-stemcell-skill — references/dance-gear-fingerprints.md : empreintes des boîtes à rythmes (808/909/707/606/Linn/DMX/SP-1200/MPC) et presets (Korg M1 Piano 16 / Organ 2, Alpha Juno hoover, Juno-60, D-50)",
+  "source": "https://raw.githubusercontent.com/zayansalman/ableton-ai-stemcell-skill/main/references/dance-gear-fingerprints.md",
+  "mode": "texte integral",
+  "skills": "house-future-rave-bass-house-production",
+  "axe": "sound design (future rave, bass house, house)",
+  "recupere_le": "2026-09-24",
+  "mots": 3374
+ },
+ {
   "fichier": "synth-secrets/synth-secrets-01.md",
   "titre": "Synth Secrets, partie 1 : What's In A Sound?",
   "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-1.md",
