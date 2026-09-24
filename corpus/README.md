@@ -15,7 +15,7 @@ Ce dossier conserve, en Markdown, les documents consultés pour construire les s
 | `synthes-vintage/` | Données d'usine et sources de synthèse partagées par les deux skills : DX7 ROM1A décodée (32 voix), Juno-60/106 d'usine, presets OB-Xd, Chowning/CLM/Csound, Nord Modular Book |
 | `constructeur/` | Pages de manuels : les 42 chapitres du manuel Live 12 (miroir GitHub), manuel Serum 1 et changelog Serum 2, format SFZ, cartes d'articulations Reaticulate (Session Horns Pro, CineBrass, Spitfire), notes tierces sur FabFilter Pro-Q 4, soothe2, Vulf Compressor, iZotope Imager ; rétro-ingénierie de Serum 2 (format `.SerumPreset`, 343 descripteurs de paramètres, listes de filtres et de warps, statistiques des presets d'usine) |
 | `sources-a-telecharger.json`, `sources-a-telecharger-funk.json` | Listes des pages que le conteneur n'a pas pu lire (sites constructeurs, Sound On Sound, Wikipédia, blogs) : 166 URL pour les cuivres et manuels, 368 pour le funk. `scripts/fetch_sources.py` les lit toutes les deux (dédoublonnées) et range chaque page dans son dossier |
-| `scripts/` | `ask_corpus.py` (question → passages BM25 → réponse Ollama), `build_context.py` (assemblage en un fichier ou en Modelfile), `build_index.py` (régénère `INDEX.md` et `index.json`), `fetch_sources.py` (à lancer sur le Mac pour compléter le corpus) |
+| `scripts/` | `ask_corpus.py` (question → passages BM25 → réponse Ollama), `build_context.py` (assemblage en un fichier ou en Modelfile), `build_index.py` (régénère `INDEX.md` et `index.json`), `fetch_sources.py` (à lancer sur le Mac pour compléter le corpus), `pdf_vers_md.py` (texte des PDF téléchargés → Markdown, découpé par chapitres ; `pip3 install pymupdf`) |
 | `INDEX.md` | Liste de tous les documents avec source, mode d'obtention et skill(s) qui les citent |
 
 ## Trois modes d'obtention, indiqués dans l'en-tête de chaque fichier
@@ -81,7 +81,10 @@ python3 corpus/scripts/fetch_sources.py --dossier funk-claviers
 python3 corpus/scripts/build_index.py                   # met à jour INDEX.md et index.json
 ```
 
-Les échecs (403, 404, délai) sont listés en fin d'exécution ; les PDF sont enregistrés tels quels.
+Les échecs (403, 404, délai) sont listés en fin d'exécution ; les PDF (reconnus à leur contenu, même sans
+extension) sont enregistrés tels quels, puis `python3 corpus/scripts/pdf_vers_md.py` en extrait le texte
+(un fichier par chapitre au-delà de 60 pages). Les PDF scannés sans couche texte (manuel Juno-106) ne donnent
+qu'un fichier quasi vide.
 
 ## Lien avec les skills
 

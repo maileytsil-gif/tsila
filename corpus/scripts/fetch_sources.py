@@ -15,7 +15,7 @@ Chaque page devient `<dossier>/<slug>.md` avec un en-tête YAML (titre, source, 
 mode: texte integral). Si Python n'a pas ses certificats SSL (erreur CERTIFICATE_VERIFY_FAILED sur
 macOS), le script bascule de lui-même sur `curl` ; pour corriger Python durablement :
 `open "/Applications/Python 3.13/Install Certificates.command"` (adapter le numéro de version). Les échecs (403, 404, délai) sont listés en fin d'exécution ; les PDF sont
-enregistrés tels quels à côté (le texte n'en est pas extrait ici).
+enregistrés tels quels à côté ; `pdf_vers_md.py` en extrait ensuite le texte (pip3 install pymupdf).
 """
 import argparse, html, json, os, re, subprocess, sys, time, urllib.request, urllib.error
 
@@ -87,12 +87,13 @@ def main():
             continue
         cible_dir = os.path.join(RACINE, s["dossier"]); os.makedirs(cible_dir, exist_ok=True)
         base = s.get("slug") or slug(s["url"])
-        est_pdf = s["url"].lower().endswith(".pdf")
-        cible = os.path.join(cible_dir, base + (".pdf" if est_pdf else ".md"))
-        if os.path.exists(cible) and not a.force:
+        if not a.force and any(os.path.exists(os.path.join(cible_dir, base + ext)) for ext in (".md", ".pdf")):
             continue
         try:
             brut = telecharger(s["url"])
+            # Le type réel se lit dans les octets, pas dans l'URL (un manuel servi sans extension .pdf reste un PDF)
+            est_pdf = brut[:1024].lstrip().startswith(b"%PDF")
+            cible = os.path.join(cible_dir, base + (".pdf" if est_pdf else ".md"))
             if est_pdf:
                 with open(cible, "wb") as f: f.write(brut)
             else:

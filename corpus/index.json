@@ -160,6 +160,76 @@
   "mots": 639
  },
  {
+  "fichier": "constructeur/apiaudio-com-docs-manuals-2500-user-18-06-18-pdf-texte.md",
+  "titre": "2500 manual-v4.des (texte du PDF, 11 pages)",
+  "source": "constructeur/apiaudio-com-docs-manuals-2500-user-18-06-18-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2639
+ },
+ {
+  "fichier": "constructeur/assets-wavescdn-com-pdf-plugins-api-2500-pdf-texte.md",
+  "titre": "API-2500 User Manual (texte du PDF, 17 pages)",
+  "source": "constructeur/assets-wavescdn-com-pdf-plugins-api-2500-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1878
+ },
+ {
+  "fichier": "constructeur/assets-wavescdn-com-pdf-plugins-clavinet-pdf-texte.md",
+  "titre": "Clavinet User Guide (texte du PDF, 20 pages)",
+  "source": "constructeur/assets-wavescdn-com-pdf-plugins-clavinet-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2621
+ },
+ {
+  "fichier": "constructeur/assets-wavescdn-com-pdf-plugins-f6-pdf-texte.md",
+  "titre": "Waves F6 Floating-Band Dynamic EQ User Guide (texte du PDF, 16 pages)",
+  "source": "constructeur/assets-wavescdn-com-pdf-plugins-f6-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2598
+ },
+ {
+  "fichier": "constructeur/assets-wavescdn-com-pdf-plugins-j37-tape-pdf-texte.md",
+  "titre": "Waves & Abbey Road J37 User Guide (texte du PDF, 13 pages)",
+  "source": "constructeur/assets-wavescdn-com-pdf-plugins-j37-tape-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2809
+ },
+ {
+  "fichier": "constructeur/assets-wavescdn-com-pdf-plugins-metaflanger-pdf-texte.md",
+  "titre": "MetaFlanger User Manual (texte du PDF, 23 pages)",
+  "source": "constructeur/assets-wavescdn-com-pdf-plugins-metaflanger-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 7781
+ },
+ {
+  "fichier": "constructeur/assets-wavescdn-com-pdf-plugins-renaissance-equalizer-pdf-texte.md",
+  "titre": "Renaissance EQ User Guide (texte du PDF, 14 pages)",
+  "source": "constructeur/assets-wavescdn-com-pdf-plugins-renaissance-equalizer-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2291
+ },
+ {
   "fichier": "constructeur/blog-native-instruments-com-5-free-e-pianos-kontakt.md",
   "titre": "blog.native-instruments.com — 5 free e pianos kontakt",
   "source": "https://blog.native-instruments.com/5-free-e-pianos-kontakt/",
@@ -198,6 +268,166 @@
   "axe": "documentation constructeur ; Serum 2 ; format de preset et paramètres (rétro-ingénierie tierce)",
   "recupere_le": "2026-09-24",
   "mots": 2041
+ },
+ {
+  "fichier": "constructeur/cdn-docs-av-iq-com-other-f6-20floating-band-20dynamic-20eq-user-20guide-pdf-texte.md",
+  "titre": "Microsoft Word - F6 new cover.docx (texte du PDF, 10 pages)",
+  "source": "constructeur/cdn-docs-av-iq-com-other-f6-20floating-band-20dynamic-20eq-user-20guide-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1996
+ },
+ {
+  "fichier": "constructeur/cdn-inmusicbrands-com-moog-model-20d-minimoog-model-d-manual-pdf-texte.md",
+  "titre": "cdn inmusicbrands com moog model 20d minimoog model d manual pdf (texte du PDF, 84 pages)",
+  "source": "constructeur/cdn-inmusicbrands-com-moog-model-20d-minimoog-model-d-manual-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 12228
+ },
+ {
+  "fichier": "constructeur/cdn-resources-ableton-com-resources-packs-pallas-pallas-manual-pdf-texte.md",
+  "titre": "cdn resources ableton com resources packs pallas pallas manual pdf (texte du PDF, 17 pages)",
+  "source": "constructeur/cdn-resources-ableton-com-resources-packs-pallas-pallas-manual-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2011
+ },
+ {
+  "fichier": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf-01-title-page.md",
+  "titre": "Battery 4 Manual English —  Title Page (p. 1-1)",
+  "source": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 48
+ },
+ {
+  "fichier": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf-02-disclaimer.md",
+  "titre": "Battery 4 Manual English — Disclaimer (p. 2-2)",
+  "source": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 240
+ },
+ {
+  "fichier": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf-03-contact.md",
+  "titre": "Battery 4 Manual English — Contact (p. 3-3)",
+  "source": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 82
+ },
+ {
+  "fichier": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf-04-table-of-contents.md",
+  "titre": "Battery 4 Manual English —  Table of Contents (p. 4-6)",
+  "source": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 425
+ },
+ {
+  "fichier": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf-05-1-introduction.md",
+  "titre": "Battery 4 Manual English — 1 Introduction (p. 7-10)",
+  "source": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 942
+ },
+ {
+  "fichier": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf-06-2-quick-start.md",
+  "titre": "Battery 4 Manual English — 2 Quick Start (p. 11-28)",
+  "source": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 3181
+ },
+ {
+  "fichier": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf-07-3-software-reference.md",
+  "titre": "Battery 4 Manual English — 3 Software Reference (p. 29-114)",
+  "source": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 20395
+ },
+ {
+  "fichier": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf-08-4-additional-tutorials.md",
+  "titre": "Battery 4 Manual English — 4 Additional Tutorials (p. 115-128)",
+  "source": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1678
+ },
+ {
+  "fichier": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf-09-5-tips-and-tricks.md",
+  "titre": "Battery 4 Manual English — 5 Tips and Tricks (p. 129-131)",
+  "source": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 987
+ },
+ {
+  "fichier": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf-10-6-troubleshooting-support.md",
+  "titre": "Battery 4 Manual English — 6 Troubleshooting / Support (p. 132-135)",
+  "source": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 921
+ },
+ {
+  "fichier": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf-11-7-appendix.md",
+  "titre": "Battery 4 Manual English — 7 Appendix (p. 136-139)",
+  "source": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 566
+ },
+ {
+  "fichier": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf-12-index.md",
+  "titre": "Battery 4 Manual English — Index (p. 140-143)",
+  "source": "constructeur/crosstalk-arizona-edu-data-battery-204-20manual-20english-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 381
+ },
+ {
+  "fichier": "constructeur/d3a0bdvj9eysmp-cloudfront-net-ableton-brass-quartet-by-spitfire-audio-pdf-texte.md",
+  "titre": "d3a0bdvj9eysmp cloudfront net ableton brass quartet by spitfire audio pdf (texte du PDF, 9 pages)",
+  "source": "constructeur/d3a0bdvj9eysmp-cloudfront-net-ableton-brass-quartet-by-spitfire-audio-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2264
  },
  {
   "fichier": "constructeur/docs-cycling74-com-reference-abl-dsp-meldosc.md",
@@ -258,6 +488,16 @@
   "axe": "documentation tierce ; FabFilter Pro-Q 4",
   "recupere_le": "2026-09-24",
   "mots": 4017
+ },
+ {
+  "fichier": "constructeur/files-plugin-alliance-com-products-bx-glue-bx-glue-manual-pdf-texte.md",
+  "titre": "bx_glue Manual (texte du PDF, 16 pages)",
+  "source": "constructeur/files-plugin-alliance-com-products-bx-glue-bx-glue-manual-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2507
  },
  {
   "fichier": "constructeur/ghz-static-s3-website-us-east-1-amazonaws-com-catalog-0002-65541-c9cc0bfd-manual-index-htm.md",
@@ -328,6 +568,16 @@
   "axe": "traitement des claviers : soothe2 (résonances), Vulf Compressor, Pro-Q 4, Ozone Imager, Serum 2, revues",
   "recupere_le": "2026-09-24",
   "mots": 493
+ },
+ {
+  "fichier": "constructeur/images-equipboard-com-uploads-item-manual-127411-xfer-records-serum-2-advanced-wavetable-s-texte.md",
+  "titre": "images equipboard com uploads item manual 127411 xfer records serum 2 advanced wavetable s (texte du PDF, 20 pages)",
+  "source": "constructeur/images-equipboard-com-uploads-item-manual-127411-xfer-records-serum-2-advanced-wavetable-s.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2120
  },
  {
   "fichier": "constructeur/izotope-com-community-blog-eq-cheat-sheet.md",
@@ -880,6 +1130,196 @@
   "mots": 1036
  },
  {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-01-maschine-software-manual.md",
+  "titre": "Maschine Software Manual — Maschine Software Manual (p. 1-1)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 70
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-02-table-of-contents.md",
+  "titre": "Maschine Software Manual — Table of Contents (p. 2-3)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 580
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-03-1-disclaimer.md",
+  "titre": "Maschine Software Manual — 1. Disclaimer (p. 4-4)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 225
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-04-2-welcome-to-maschine-software.md",
+  "titre": "Maschine Software Manual — 2. Welcome to Maschine Software (p. 5-6)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 628
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-05-3-quick-reference.md",
+  "titre": "Maschine Software Manual — 3. Quick reference (p. 7-17)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 3184
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-06-4-basic-concepts.md",
+  "titre": "Maschine Software Manual — 4. Basic concepts (p. 18-56)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 11371
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-07-5-browser.md",
+  "titre": "Maschine Software Manual — 5. Browser (p. 57-88)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 10511
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-08-6-managing-sounds-groups-and-your-project.md",
+  "titre": "Maschine Software Manual — 6. Managing Sounds, Groups, and your Project (p. 89-120)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 9331
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-09-7-playing-on-the-controller.md",
+  "titre": "Maschine Software Manual — 7. Playing on the controller (p. 121-140)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 6880
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-10-8-working-with-plug-ins.md",
+  "titre": "Maschine Software Manual — 8. Working with Plug-ins (p. 141-239)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 34377
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-11-9-working-with-patterns-and-clips.md",
+  "titre": "Maschine Software Manual — 9. Working with Patterns and Clips (p. 240-288)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 17088
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-12-10-audio-routing-remote-control-and-macro-controls.md",
+  "titre": "Maschine Software Manual — 10. Audio routing, remote control, and Macro Controls (p. 289-320)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 10021
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-13-11-controlling-your-mix.md",
+  "titre": "Maschine Software Manual — 11. Controlling your mix (p. 321-340)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 6665
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-14-12-using-effects.md",
+  "titre": "Maschine Software Manual — 12. Using effects (p. 341-356)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 4828
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-15-13-effect-reference.md",
+  "titre": "Maschine Software Manual — 13. Effect reference (p. 357-406)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 10613
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-16-14-working-with-the-arranger.md",
+  "titre": "Maschine Software Manual — 14. Working with the Arranger (p. 407-436)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 8337
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-17-15-sampling-and-sample-mapping.md",
+  "titre": "Maschine Software Manual — 15. Sampling and sample mapping (p. 437-472)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 13470
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-18-16-appendix-tips-for-playing-live.md",
+  "titre": "Maschine Software Manual — 16. Appendix: tips for playing live (p. 473-474)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 852
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-19-17-troubleshooting.md",
+  "titre": "Maschine Software Manual — 17. Troubleshooting (p. 475-475)",
+  "source": "constructeur/native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 198
+ },
+ {
   "fichier": "constructeur/native-instruments-com-products-komplete-start.md",
   "titre": "native-instruments.com — komplete start",
   "source": "https://www.native-instruments.com/products/komplete-start",
@@ -948,6 +1388,26 @@
   "axe": "documentation constructeur",
   "recupere_le": "2026-09-24",
   "mots": 887
+ },
+ {
+  "fichier": "constructeur/promusic-cz-sites-default-files-product-field-files-api-2500-pdf-texte.md",
+  "titre": "API 2500 User Manual  (texte du PDF, 22 pages)",
+  "source": "constructeur/promusic-cz-sites-default-files-product-field-files-api-2500-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 3122
+ },
+ {
+  "fichier": "constructeur/promusic-cz-sites-default-files-product-field-files-f6-pdf-texte.md",
+  "titre": "Waves F6 Floating-Band Dynamic EQ User Guide (texte du PDF, 11 pages)",
+  "source": "constructeur/promusic-cz-sites-default-files-product-field-files-f6-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2039
  },
  {
   "fichier": "constructeur/pycabbage-flp-extract-fxp-serum1-parametres.md",
@@ -1180,6 +1640,16 @@
   "mots": 3680
  },
  {
+  "fichier": "constructeur/static-xferrecords-com-serum-202-20what-s-20new-pdf-texte.md",
+  "titre": "static xferrecords com serum 202 20what s 20new pdf (texte du PDF, 20 pages)",
+  "source": "constructeur/static-xferrecords-com-serum-202-20what-s-20new-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2115
+ },
+ {
   "fichier": "constructeur/support-apple-com-guide-logicpro-tremolo-effect-controls-lgsifc1b9de5-mac.md",
   "titre": "support.apple.com — mac",
   "source": "https://support.apple.com/guide/logicpro/tremolo-effect-controls-lgsifc1b9de5/mac",
@@ -1330,16 +1800,6 @@
   "mots": 142
  },
  {
-  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs.md",
-  "titre": "Manuel Serum 2 — docs",
-  "source": "https://www.xferrecords.com/manual/serum-2/docs",
-  "mode": "texte integral",
-  "skills": "studio-grade-brass-sound-design",
-  "axe": "documentation constructeur",
-  "recupere_le": "2026-09-24",
-  "mots": 533319
- },
- {
   "fichier": "constructeur/xferrecords-com-products-serum-2.md",
   "titre": "Xfer — page produit Serum 2",
   "source": "https://xferrecords.com/products/serum-2",
@@ -1448,6 +1908,16 @@
   "axe": "MIDI réaliste ; humanisation",
   "recupere_le": "2026-09-24",
   "mots": 4415
+ },
+ {
+  "fichier": "cuivres/acousticstoday-org-wp-content-uploads-2018-08-the-acoustics-of-brass-musical-instruments-t-texte.md",
+  "titre": "7716_AcousticsToday_WINTER2.indd (texte du PDF, 8 pages)",
+  "source": "cuivres/acousticstoday-org-wp-content-uploads-2018-08-the-acoustics-of-brass-musical-instruments-t.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 5626
  },
  {
   "fichier": "cuivres/adsrsounds-com-serum-tutorials-hardstyle-screech-sound-design-with-serum.md",
@@ -1810,6 +2280,16 @@
   "mots": 3080
  },
  {
+  "fichier": "cuivres/ccrma-stanford-edu-marl-benade-documents-benade-trumpet-1973-pdf-texte.md",
+  "titre": "\\\\Ccrma-gateway\\gary\\tmp\\TrumpetChapter.prn.pdf (texte du PDF, 26 pages)",
+  "source": "cuivres/ccrma-stanford-edu-marl-benade-documents-benade-trumpet-1973-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 15010
+ },
+ {
   "fichier": "cuivres/chowning-fm-brass-csound.md",
   "titre": "Exemple Csound FM d'après Chowning 1973 (cuivre 1:1, index 0→5, enveloppe trompette)",
   "source": "https://raw.githubusercontent.com/mjladd/devcontainer-csound/HEAD/csound_score_examples/FmChowningA.csd",
@@ -2140,6 +2620,16 @@
   "mots": 594
  },
  {
+  "fichier": "cuivres/impactsoundworks-com-manuals-shou-20drum-20-20serum-202-sfz-wav-20manual-pdf-texte.md",
+  "titre": "Shou Drum - Serum 2 · SFZ · WAV Manual (texte du PDF, 12 pages)",
+  "source": "cuivres/impactsoundworks-com-manuals-shou-20drum-20-20serum-202-sfz-wav-20manual-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1879
+ },
+ {
   "fichier": "cuivres/incognetsamples-com-tutorials-how-to-make-fisher-losing-it-oz-synth-tech-house-html.md",
   "titre": "incognetsamples.com — how to make fisher losing it oz synth tech house",
   "source": "https://incognetsamples.com/tutorials/how-to-make-fisher-losing-it-oz-synth-tech-house.html",
@@ -2158,6 +2648,16 @@
   "axe": "synthèse ; enveloppes",
   "recupere_le": "2026-09-24",
   "mots": 534
+ },
+ {
+  "fichier": "cuivres/javelinart-com-fm-synthesis-of-real-instruments-pdf-texte.md",
+  "titre": "javelinart com fm synthesis of real instruments pdf (texte du PDF, 51 pages)",
+  "source": "cuivres/javelinart-com-fm-synthesis-of-real-instruments-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 20834
  },
  {
   "fichier": "cuivres/jazzify-jazz-piano-block-chords.md",
@@ -2720,6 +3220,16 @@
   "mots": 805
  },
  {
+  "fichier": "cuivres/pure-tue-nl-ws-files-1503964-617406-pdf-texte.md",
+  "titre": "pure tue nl ws files 1503964 617406 pdf (texte du PDF, 6 pages)",
+  "source": "cuivres/pure-tue-nl-ws-files-1503964-617406-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 3153
+ },
+ {
   "fichier": "cuivres/reaper-mcp-mix-engine-shared.md",
   "titre": "Reaper-MCP — _shared.py : bibliothèque EQ/compression par rôle d’instrument (dont cuivres)",
   "source": "https://raw.githubusercontent.com/xDarkzx/Reaper-MCP/main/reaper_mcp/mix_engine/catalog/_shared.py",
@@ -3128,6 +3638,16 @@
   "axe": "acoustique des cuivres et synthèse classique",
   "recupere_le": "2026-09-24",
   "mots": 1399
+ },
+ {
+  "fichier": "cuivres/theorie-ikp-physik-tu-darmstadt-de-qcd-moore-ph225-shock-pdf-texte.md",
+  "titre": "theorie ikp physik tu darmstadt de qcd moore ph225 shock pdf (texte du PDF, 5 pages)",
+  "source": "cuivres/theorie-ikp-physik-tu-darmstadt-de-qcd-moore-ph225-shock-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2827
  },
  {
   "fichier": "cuivres/theproducerschool-com-blogs-news-the-ultimate-way-to-make-stabs-for-edm.md",
@@ -3878,6 +4398,16 @@
   "axe": "funk moderne",
   "recupere_le": "2026-09-24",
   "mots": 2628
+ },
+ {
+  "fichier": "funk-claviers/clavinet-com-clavfaq-pdf-texte.md",
+  "titre": "1 (texte du PDF, 11 pages)",
+  "source": "funk-claviers/clavinet-com-clavfaq-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 4016
  },
  {
   "fichier": "funk-claviers/clyphx-instant-mapping-electric-tension.md",
@@ -5130,6 +5660,16 @@
   "mots": 1514
  },
  {
+  "fichier": "funk-claviers/mat-ucsb-edu-masters-gregshearmasters2011-12-5-pdf-texte.md",
+  "titre": "mat ucsb edu masters gregshearmasters2011 12 5 pdf (texte du PDF, 51 pages)",
+  "source": "funk-claviers/mat-ucsb-edu-masters-gregshearmasters2011-12-5-pdf.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 8079
+ },
+ {
   "fichier": "funk-claviers/matrixsynth-com-2024-03-massive-live-modular-synthesizer-w-p-html.md",
   "titre": "matrixsynth.com — massive live modular synthesizer w p",
   "source": "https://www.matrixsynth.com/2024/03/massive-live-modular-synthesizer-w-p.html",
@@ -5928,6 +6468,16 @@
   "axe": "funk moderne ; jeu, voicings, mix",
   "recupere_le": "2026-09-24",
   "mots": 1107
+ },
+ {
+  "fichier": "funk-claviers/roland-juno-106-owners-manual-texte.md",
+  "titre": "roland juno 106 owners manual (texte du PDF, 36 pages)",
+  "source": "funk-claviers/roland-juno-106-owners-manual.pdf",
+  "mode": "texte integral (PDF → texte)",
+  "skills": "",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 185
  },
  {
   "fichier": "funk-claviers/sageaudio-com-articles-recording-and-engineering-techniques-from-random-access-memories-by.md",
