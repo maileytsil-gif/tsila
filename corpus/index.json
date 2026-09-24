@@ -1,5 +1,185 @@
 [
  {
+  "fichier": "constructeur/ableton-com-en-blog-learn-how-to-make-high-impact-sounds-for-movies-and-trailers.md",
+  "titre": "Ableton blog — Learn how to make high-impact sounds for movies and trailers (braam)",
+  "source": "https://www.ableton.com/en/blog/learn-how-to-make-high-impact-sounds-for-movies-and-trailers/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1579
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-blog-talkbox-sounds-live-new-tutorial-dubspot.md",
+  "titre": "ableton.com — talkbox sounds live new tutorial dubspot",
+  "source": "https://www.ableton.com/en/blog/talkbox-sounds-live-new-tutorial-dubspot/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 121
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-live-manual-12-live-instrument-reference.md",
+  "titre": "ableton.com — live instrument reference",
+  "source": "https://www.ableton.com/en/live-manual/12/live-instrument-reference/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 43971
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-manual-live-audio-effect-reference.md",
+  "titre": "ableton.com — live audio effect reference",
+  "source": "https://www.ableton.com/en/manual/live-audio-effect-reference/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur ; jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 42741
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-manual-live-instrument-reference.md",
+  "titre": "Manuel Live 12 — Live Instrument Reference (site officiel)",
+  "source": "https://www.ableton.com/en/manual/live-instrument-reference/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 43979
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-manual.md",
+  "titre": "Manuel Live 12 — sommaire (site officiel)",
+  "source": "https://www.ableton.com/en/manual/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
+  "recupere_le": "2026-09-24",
+  "mots": 3618
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-packs-brass-quartet.md",
+  "titre": "Ableton — pack Brass Quartet (Spitfire)",
+  "source": "https://ableton.com/en/packs/brass-quartet",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 596
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-packs-by-ableton.md",
+  "titre": "Ableton — packs Ableton",
+  "source": "https://ableton.com/en/packs/by/ableton",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2554
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-packs-clav.md",
+  "titre": "ableton.com — clav",
+  "source": "https://www.ableton.com/en/packs/clav/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 637
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-packs-electric-keyboards.md",
+  "titre": "ableton.com — electric keyboards",
+  "source": "https://www.ableton.com/en/packs/electric-keyboards/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 592
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-packs-electric-pianos.md",
+  "titre": "ableton.com — electric pianos",
+  "source": "https://www.ableton.com/en/packs/electric-pianos/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 659
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-packs-electric.md",
+  "titre": "ableton.com — electric",
+  "source": "https://www.ableton.com/en/packs/electric/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques ; documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 956
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-packs-microtron.md",
+  "titre": "ableton.com — microtron",
+  "source": "https://www.ableton.com/en/packs/microtron/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 770
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-packs-orchestral-brass.md",
+  "titre": "Ableton — pack Orchestral Brass",
+  "source": "https://www.ableton.com/en/packs/orchestral-brass/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 766
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-packs-orchestral-ensemble-essentials-2.md",
+  "titre": "Ableton — pack Orchestral Ensemble Essentials 2",
+  "source": "https://ableton.com/en/packs/orchestral-ensemble-essentials-2",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 587
+ },
+ {
+  "fichier": "constructeur/ableton-com-en-packs-orchestral-ensemble-essentials.md",
+  "titre": "Ableton — pack Orchestral Ensemble Essentials",
+  "source": "https://ableton.com/en/packs/orchestral-ensemble-essentials",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 639
+ },
+ {
+  "fichier": "constructeur/blog-native-instruments-com-5-free-e-pianos-kontakt.md",
+  "titre": "blog.native-instruments.com — 5 free e pianos kontakt",
+  "source": "https://blog.native-instruments.com/5-free-e-pianos-kontakt/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1024
+ },
+ {
+  "fichier": "constructeur/blog-native-instruments-com-realistic-horn-vst.md",
+  "titre": "NI blog — Realistic horn VST : 7 techniques",
+  "source": "https://blog.native-instruments.com/realistic-horn-vst/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
+  "recupere_le": "2026-09-24",
+  "mots": 2543
+ },
+ {
   "fichier": "constructeur/btesser-serum-tables-affichage-filtres-warps-distorsions.md",
   "titre": "Serum 1.3x — tables d’affichage lues dans le plug-in : types de filtre, warps, distorsions, stack d’unisson, formes du sub, EQ, modes de delay, ratios de compresseur, échelles de rate LFO et unités de 55 paramètres (btesser/serum2vital, tools/serum_display_tables.json)",
   "source": "https://raw.githubusercontent.com/btesser/serum2vital/main/tools/serum_display_tables.json",
@@ -20,6 +200,56 @@
   "mots": 2041
  },
  {
+  "fichier": "constructeur/docs-cycling74-com-reference-abl-dsp-meldosc.md",
+  "titre": "Cycling ’74 — référence abl.dsp.meldosc~ (oscillateur Meld)",
+  "source": "https://docs.cycling74.com/reference/abl.dsp.meldosc~",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1422
+ },
+ {
+  "fichier": "constructeur/docs-native-instruments-com-ni-tech-manuals-kontakt-factory-library-manual-en-orchestral-c.md",
+  "titre": "NI — Kontakt Factory Library manual : Orchestral collection",
+  "source": "https://docs.native-instruments.com/ni-tech-manuals/kontakt-factory-library-manual/en/orchestral-collection",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1522
+ },
+ {
+  "fichier": "constructeur/docs-native-instruments-com-ni-tech-manuals-massive-x-manual-en-filter.md",
+  "titre": "docs.native-instruments.com — filter",
+  "source": "https://docs.native-instruments.com/ni-tech-manuals/massive-x-manual/en/filter",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 3897
+ },
+ {
+  "fichier": "constructeur/fabfilter-com-help-pro-q-using-dynamic-eq.md",
+  "titre": "fabfilter.com — dynamic eq",
+  "source": "https://www.fabfilter.com/help/pro-q/using/dynamic-eq",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1572
+ },
+ {
+  "fichier": "constructeur/fabfilter-com-help-pro-q-using-spectral-dynamics.md",
+  "titre": "FabFilter — aide Pro-Q 4 : Spectral Dynamics",
+  "source": "https://www.fabfilter.com/help/pro-q/using/spectral-dynamics",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 954
+ },
+ {
   "fichier": "constructeur/fabfilter-pro-q-4-notes-tierces.md",
   "titre": "FabFilter Pro-Q 4 — notes d’utilisation tierces (ship-studios) : bandes, dynamic EQ, spectral dynamics, match",
   "source": "https://raw.githubusercontent.com/Blankenship-Daniel/ship-studios/HEAD/docs/vst/fabfilter-pro-q-4.md",
@@ -28,6 +258,56 @@
   "axe": "documentation tierce ; FabFilter Pro-Q 4",
   "recupere_le": "2026-09-24",
   "mots": 4017
+ },
+ {
+  "fichier": "constructeur/ghz-static-s3-website-us-east-1-amazonaws-com-catalog-0002-65541-c9cc0bfd-manual-index-htm.md",
+  "titre": "ghz-static.s3-website-us-east-1.amazonaws.com — index",
+  "source": "http://ghz-static.s3-website-us-east-1.amazonaws.com/catalog/0002/65541/c9cc0bfd/manual/index.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1334
+ },
+ {
+  "fichier": "constructeur/goodhertz-com-tonal-brief-history-of-vulf-comp.md",
+  "titre": "goodhertz.com — brief history of vulf comp",
+  "source": "https://goodhertz.com/tonal/brief-history-of-vulf-comp/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 264
+ },
+ {
+  "fichier": "constructeur/goodhertz-com-tonal-golden-age-of-samplers.md",
+  "titre": "goodhertz.com — golden age of samplers",
+  "source": "https://goodhertz.com/tonal/golden-age-of-samplers/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 921
+ },
+ {
+  "fichier": "constructeur/goodhertz-com-vulf-comp-manual.md",
+  "titre": "goodhertz.com — manual",
+  "source": "https://goodhertz.com/vulf-comp/manual/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne ; documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 3745
+ },
+ {
+  "fichier": "constructeur/goodhertz-com-vulf-comp.md",
+  "titre": "goodhertz.com — vulf comp",
+  "source": "https://goodhertz.com/vulf-comp/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne ; documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 744
  },
  {
   "fichier": "constructeur/goodhertz-vulf-compressor-3-csi-zone-libelles.md",
@@ -48,6 +328,46 @@
   "axe": "traitement des claviers : soothe2 (résonances), Vulf Compressor, Pro-Q 4, Ozone Imager, Serum 2, revues",
   "recupere_le": "2026-09-24",
   "mots": 493
+ },
+ {
+  "fichier": "constructeur/izotope-com-community-blog-eq-cheat-sheet.md",
+  "titre": "izotope.com — eq cheat sheet",
+  "source": "https://www.izotope.com/community/blog/eq-cheat-sheet",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 4138
+ },
+ {
+  "fichier": "constructeur/izotope-com-en-products-ozone-imager-html.md",
+  "titre": "iZotope — page produit Ozone Imager",
+  "source": "https://www.izotope.com/en/products/ozone-imager.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 675
+ },
+ {
+  "fichier": "constructeur/izotope-com-en-products-vocalsynth-features-talkbox-module.md",
+  "titre": "izotope.com — talkbox module",
+  "source": "https://www.izotope.com/en/products/vocalsynth/features/talkbox-module",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1356
+ },
+ {
+  "fichier": "constructeur/izotope-com-products-ozone-imager.md",
+  "titre": "iZotope — Ozone Imager",
+  "source": "https://izotope.com/products/ozone-imager",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 673
  },
  {
   "fichier": "constructeur/izotope-ozone-11-imager-ship-studios.md",
@@ -490,6 +810,46 @@
   "mots": 425
  },
  {
+  "fichier": "constructeur/manuals-goodhertz-com-3-13-vulf-comp.md",
+  "titre": "manuals.goodhertz.com — vulf comp",
+  "source": "https://manuals.goodhertz.com/3.13/vulf-comp/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne ; documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 3746
+ },
+ {
+  "fichier": "constructeur/manuals-plus-waves-api-2500-manual.md",
+  "titre": "Waves API-2500 manual (manuals.plus)",
+  "source": "https://manuals.plus/waves/api-2500-manual",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1687
+ },
+ {
+  "fichier": "constructeur/manuals-plus-waves-j37-tape-saturation-plugin-manual.md",
+  "titre": "Waves J37 manual (manuals.plus)",
+  "source": "https://manuals.plus/waves/j37-tape-saturation-plugin-manual",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2723
+ },
+ {
+  "fichier": "constructeur/manualslib-com-manual-2499395-native-instruments-battery-4-html.md",
+  "titre": "NI Battery 4 manual (ManualsLib)",
+  "source": "https://www.manualslib.com/manual/2499395/Native-Instruments-Battery-4.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 5243
+ },
+ {
   "fichier": "constructeur/musicproductionwiki-soothe-3-review.md",
   "titre": "Music Production Wiki — oeksound Soothe 3 review (2026)",
   "source": "https://raw.githubusercontent.com/musicproductionwiki/musicproductionwiki/main/articles/soothe-3-review.html",
@@ -510,6 +870,56 @@
   "mots": 4057
  },
  {
+  "fichier": "constructeur/native-instruments-com-en-products-komplete-cinematic-session-horns-pro.md",
+  "titre": "Native Instruments — Session Horns Pro (page produit)",
+  "source": "https://www.native-instruments.com/en/products/komplete/cinematic/session-horns-pro/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1036
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-products-komplete-start.md",
+  "titre": "native-instruments.com — komplete start",
+  "source": "https://www.native-instruments.com/products/komplete-start",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1295
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-products-maschine-3.md",
+  "titre": "native-instruments.com — maschine 3",
+  "source": "https://www.native-instruments.com/products/maschine-3",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1621
+ },
+ {
+  "fichier": "constructeur/native-instruments-com-products-monark.md",
+  "titre": "native-instruments.com — monark",
+  "source": "https://www.native-instruments.com/products/monark",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1234
+ },
+ {
+  "fichier": "constructeur/oeksound-com-manuals-soothe3.md",
+  "titre": "oeksound — manuel soothe3",
+  "source": "https://oeksound.com/manuals/soothe3/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 5838
+ },
+ {
   "fichier": "constructeur/oeksound-soothe2-manuel-timjmitchell.md",
   "titre": "oeksound soothe2 — manuel utilisateur (miroir timjmitchell/studio)",
   "source": "https://raw.githubusercontent.com/timjmitchell/studio/main/docs/manuals/plugins/oeksound-soothe2-User-Manual.md",
@@ -518,6 +928,26 @@
   "axe": "traitement des claviers : soothe2 (résonances), Vulf Compressor, Pro-Q 4, Ozone Imager, Serum 2, revues",
   "recupere_le": "2026-09-24",
   "mots": 4018
+ },
+ {
+  "fichier": "constructeur/plugin-alliance-com-en-products-bx-glue-html.md",
+  "titre": "Plugin Alliance — page produit bx_glue",
+  "source": "https://www.plugin-alliance.com/en/products/bx_glue.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 889
+ },
+ {
+  "fichier": "constructeur/plugin-alliance-com-products-bx-glue.md",
+  "titre": "Plugin Alliance — bx_glue",
+  "source": "https://plugin-alliance.com/products/bx_glue",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 887
  },
  {
   "fichier": "constructeur/pycabbage-flp-extract-fxp-serum1-parametres.md",
@@ -750,6 +1180,126 @@
   "mots": 3680
  },
  {
+  "fichier": "constructeur/support-apple-com-guide-logicpro-tremolo-effect-controls-lgsifc1b9de5-mac.md",
+  "titre": "support.apple.com — mac",
+  "source": "https://support.apple.com/guide/logicpro/tremolo-effect-controls-lgsifc1b9de5/mac",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 11963
+ },
+ {
+  "fichier": "constructeur/support-native-instruments-com-support-solutions-articles-69000879171-which-products-are-i.md",
+  "titre": "NI support — Which products are included in Komplete 15",
+  "source": "https://support.native-instruments.com/support/solutions/articles/69000879171-which-products-are-included-in-komplete-15-",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1635
+ },
+ {
+  "fichier": "constructeur/support-xferrecords-com-article-50-getting-started-with-serum.md",
+  "titre": "support.xferrecords.com — 50 getting started with serum",
+  "source": "https://support.xferrecords.com/article/50-getting-started-with-serum",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 508
+ },
+ {
+  "fichier": "constructeur/support-xferrecords-com-article-52-serum-2-preset-previews.md",
+  "titre": "Xfer Support — Serum 2 preset previews",
+  "source": "https://support.xferrecords.com/article/52-serum-2-preset-previews",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; manuel officiel",
+  "recupere_le": "2026-09-24",
+  "mots": 449
+ },
+ {
+  "fichier": "constructeur/support-xferrecords-com-article-59-converting-samples-to-wavetables.md",
+  "titre": "Xfer support — Converting samples to wavetables",
+  "source": "https://support.xferrecords.com/article/59-converting-samples-to-wavetables",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 333
+ },
+ {
+  "fichier": "constructeur/support-xferrecords-com-category-45-serum-2.md",
+  "titre": "Xfer Support — catégorie Serum 2",
+  "source": "https://support.xferrecords.com/category/45-serum-2",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; manuel officiel",
+  "recupere_le": "2026-09-24",
+  "mots": 111
+ },
+ {
+  "fichier": "constructeur/waves-com-in-the-studio-mark-ronson.md",
+  "titre": "waves.com — in the studio mark ronson",
+  "source": "https://www.waves.com/in-the-studio-mark-ronson",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 4857
+ },
+ {
+  "fichier": "constructeur/waves-com-mixing-and-layering-synth-bass-step-by-step.md",
+  "titre": "waves.com — mixing and layering synth bass step by step",
+  "source": "https://www.waves.com/mixing-and-layering-synth-bass-step-by-step",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 6304
+ },
+ {
+  "fichier": "constructeur/waves-com-plugins-f6-floating-band-dynamic-eq.md",
+  "titre": "waves.com — f6 floating band dynamic eq",
+  "source": "https://www.waves.com/plugins/f6-floating-band-dynamic-eq",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 11920
+ },
+ {
+  "fichier": "constructeur/waves-com-plugins-j37-tape.md",
+  "titre": "waves.com — j37 tape",
+  "source": "https://www.waves.com/plugins/j37-tape",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 11437
+ },
+ {
+  "fichier": "constructeur/waves-com-plugins-metaflanger.md",
+  "titre": "Waves — page produit MetaFlanger",
+  "source": "https://www.waves.com/plugins/metaflanger",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 11121
+ },
+ {
+  "fichier": "constructeur/waves-com-plugins-renaissance-equalizer.md",
+  "titre": "waves.com — renaissance equalizer",
+  "source": "https://www.waves.com/plugins/renaissance-equalizer",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 11487
+ },
+ {
   "fichier": "constructeur/xfer-serum-1-manuel-1-0-1.md",
   "titre": "Xfer Serum 1.0.1 — manuel utilisateur (octobre 2014), texte extrait du PDF",
   "source": "https://s3.amazonaws.com/decembercymatics/Serum_Manual.pdf",
@@ -770,6 +1320,116 @@
   "mots": 4971
  },
  {
+  "fichier": "constructeur/xferrecords-com-forums-general-sfz-file-import-issue.md",
+  "titre": "xferrecords.com — sfz file import issue",
+  "source": "https://xferrecords.com/forums/general/sfz-file-import-issue",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 142
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-manual-serum-2-docs.md",
+  "titre": "Manuel Serum 2 — docs",
+  "source": "https://www.xferrecords.com/manual/serum-2/docs",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 533319
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-products-serum-2.md",
+  "titre": "Xfer — page produit Serum 2",
+  "source": "https://xferrecords.com/products/serum-2",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 637
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-web-manual-serum-2-enabling-pitch-tracking.md",
+  "titre": "Manuel Serum 2 — Enabling pitch tracking",
+  "source": "https://xferrecords.com/web-manual/serum-2/enabling-pitch-tracking",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 538
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-web-manual-serum-2-exploring-serum.md",
+  "titre": "Manuel Serum 2 — Exploring Serum",
+  "source": "https://xferrecords.com/web-manual/serum-2/exploring-serum",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 400
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-web-manual-serum-2-getting-started.md",
+  "titre": "Manuel Serum 2 — Getting started",
+  "source": "https://xferrecords.com/web-manual/serum-2/getting-started",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 273
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-web-manual-serum-2-installing-serum.md",
+  "titre": "Serum 2 Manual — Installing Serum",
+  "source": "https://xferrecords.com/web-manual/serum-2/installing-serum",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; manuel officiel",
+  "recupere_le": "2026-09-24",
+  "mots": 431
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-web-manual-serum-2-resizing-the-ui.md",
+  "titre": "Serum 2 Manual — Resizing the UI",
+  "source": "https://xferrecords.com/web-manual/serum-2/resizing-the-ui",
+  "mode": "texte integral",
+  "skills": "sound-designer-serum, vst-sound-design",
+  "axe": "documentation constructeur ; Serum 2 ; manuel officiel",
+  "recupere_le": "2026-09-24",
+  "mots": 343
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-web-manual-serum-2-using-knobs-and-sliders.md",
+  "titre": "Manuel Serum 2 — Using knobs and sliders",
+  "source": "https://xferrecords.com/web-manual/serum-2/using-knobs-and-sliders",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 712
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-web-manual-serum-2-using-the-serum-keyboard.md",
+  "titre": "Manuel Serum 2 — Using the Serum keyboard",
+  "source": "https://xferrecords.com/web-manual/serum-2/using-the-serum-keyboard",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 351
+ },
+ {
+  "fichier": "constructeur/xferrecords-com-web-manual-serum-2-welcome.md",
+  "titre": "Manuel Serum 2 — Welcome",
+  "source": "https://xferrecords.com/web-manual/serum-2/welcome",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 280
+ },
+ {
   "fichier": "cuivres/abjad-instruments-cuivres-saxophones.md",
   "titre": "Abjad 3.31 instruments.py — classes Instrument, saxophones, FrenchHorn, Trumpet, trombones, Tuba (tessitures et transpositions LilyPond)",
   "source": "https://files.pythonhosted.org/packages/76/9c/369810e498be649ebc531e9f6a78e66d28b45174f1f8f1b4af6bdf11bbf7/abjad-3.31.tar.gz",
@@ -788,6 +1448,16 @@
   "axe": "MIDI réaliste ; humanisation",
   "recupere_le": "2026-09-24",
   "mots": 4415
+ },
+ {
+  "fichier": "cuivres/adsrsounds-com-serum-tutorials-hardstyle-screech-sound-design-with-serum.md",
+  "titre": "ADSR Sounds — hardstyle screech sound design with serum",
+  "source": "https://www.adsrsounds.com/serum-tutorials/hardstyle-screech-sound-design-with-serum/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 4568
  },
  {
   "fichier": "cuivres/amen-sessions-01-house.md",
@@ -930,6 +1600,16 @@
   "mots": 972
  },
  {
+  "fichier": "cuivres/andrewhugill-com-orchestramanual-trumpet-range-html.md",
+  "titre": "Andrew Hugill Orchestra Manual — Trumpet range",
+  "source": "https://andrewhugill.com/OrchestraManual/trumpet_range.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 186
+ },
+ {
   "fichier": "cuivres/arlo-genesis-wavetable-drift-meld.md",
   "titre": "colfitt/arlo-genesis — fiche Wavetable, Drift, Meld (paramètres, usages)",
   "source": "https://raw.githubusercontent.com/colfitt/arlo-genesis/HEAD/arlo/corpus/daw/ableton/devices/wavetable-drift-meld-synths.md",
@@ -938,6 +1618,76 @@
   "axe": "Ableton Live 12 ; instruments ; notes tierces",
   "recupere_le": "2026-09-24",
   "mots": 2058
+ },
+ {
+  "fichier": "cuivres/arxiv-org-abs-2104-12922.md",
+  "titre": "arXiv 2104.12922 (synthèse FM / DX7)",
+  "source": "https://arxiv.org/abs/2104.12922",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 684
+ },
+ {
+  "fichier": "cuivres/arxiv-org-abs-2503-11536.md",
+  "titre": "arXiv 2503.11536 (acoustique des cuivres)",
+  "source": "https://arxiv.org/abs/2503.11536",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 800
+ },
+ {
+  "fichier": "cuivres/asb2m10-github-io-dexed.md",
+  "titre": "Dexed — site du synthé DX7 logiciel",
+  "source": "https://asb2m10.github.io/dexed/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 531
+ },
+ {
+  "fichier": "cuivres/attackmagazine-com-technique-synth-secrets.md",
+  "titre": "Attack Magazine — synth secrets",
+  "source": "https://www.attackmagazine.com/technique/synth-secrets/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 1285
+ },
+ {
+  "fichier": "cuivres/baratatronix-com-blog-brass-synthesis.md",
+  "titre": "Baratatronix — Brass synthesis",
+  "source": "https://www.baratatronix.com/blog/brass-synthesis",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 2625
+ },
+ {
+  "fichier": "cuivres/beatkey-app-how-to-make-uk-garage-music.md",
+  "titre": "beatkey.app — how to make uk garage music",
+  "source": "https://beatkey.app/how-to-make-uk-garage-music",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 3482
+ },
+ {
+  "fichier": "cuivres/beatportal-com-articles-647491-step-by-step-guide-to-creating-an-afro-house-track-keinemus.md",
+  "titre": "Beatportal — 647491 step by step guide to creating an afro house track keinemusik black coffee caiiro alex wann style",
+  "source": "https://www.beatportal.com/articles/647491-step-by-step-guide-to-creating-an-afro-house-track-keinemusik-black-coffee-caiiro-alex-wann-style",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1671
  },
  {
   "fichier": "cuivres/bespoke-afrobeat-style-py.md",
@@ -1030,6 +1780,36 @@
   "mots": 3130
  },
  {
+  "fichier": "cuivres/blog-dubspot-com-xfer-records-releases-serum-2.md",
+  "titre": "Dubspot — Xfer Records releases Serum 2",
+  "source": "https://blog.dubspot.com/xfer-records-releases-serum-2",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2743
+ },
+ {
+  "fichier": "cuivres/bpmcalc-com-genres-garage.md",
+  "titre": "bpmcalc.com — garage",
+  "source": "https://bpmcalc.com/genres/garage/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 461
+ },
+ {
+  "fichier": "cuivres/brass-tonebase-co-blog-complete-guide-to-playing-mutes-on-a-trumpet.md",
+  "titre": "Tonebase — Complete guide to playing mutes on a trumpet",
+  "source": "https://brass.tonebase.co/blog/complete-guide-to-playing-mutes-on-a-trumpet",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 3080
+ },
+ {
   "fichier": "cuivres/chowning-fm-brass-csound.md",
   "titre": "Exemple Csound FM d'après Chowning 1973 (cuivre 1:1, index 0→5, enveloppe trompette)",
   "source": "https://raw.githubusercontent.com/mjladd/devcontainer-csound/HEAD/csound_score_examples/FmChowningA.csd",
@@ -1038,6 +1818,16 @@
   "axe": "synthèse FM ; recette Chowning",
   "recupere_le": "2026-09-24",
   "mots": 1537
+ },
+ {
+  "fichier": "cuivres/collider-com-inception-trailer-musical-cue.md",
+  "titre": "collider.com — inception trailer musical cue",
+  "source": "https://collider.com/inception-trailer-musical-cue/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1758
  },
  {
   "fichier": "cuivres/copper-hollow-midi-programming-techniques.md",
@@ -1050,6 +1840,36 @@
   "mots": 3620
  },
  {
+  "fichier": "cuivres/daily-redbullmusicacademy-com-2012-12-a-guide-to-the-albums-of-fela-kuti.md",
+  "titre": "daily.redbullmusicacademy.com — a guide to the albums of fela kuti",
+  "source": "https://daily.redbullmusicacademy.com/2012/12/a-guide-to-the-albums-of-fela-kuti/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 5312
+ },
+ {
+  "fichier": "cuivres/divinesamples-com-help-user-export-sfz-serum.md",
+  "titre": "Divine Samples — export SFZ vers Serum",
+  "source": "https://www.divinesamples.com/help/user/export/sfz-serum",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 314
+ },
+ {
+  "fichier": "cuivres/djjondent-blogspot-com-2019-10-yamaha-dx7-algorithms-html.md",
+  "titre": "DJ Jondent — Yamaha DX7 algorithms",
+  "source": "https://djjondent.blogspot.com/2019/10/yamaha-dx7-algorithms.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 3654
+ },
+ {
   "fichier": "cuivres/dotbeat-49-ableton-instrument-reference.md",
   "titre": "wgpatrick/dotbeat — résumé du chapitre Live Instrument Reference (Analog, Operator, Wavetable, Drift, Meld, Sampler…)",
   "source": "https://raw.githubusercontent.com/wgpatrick/dotbeat/HEAD/docs/research/49-ableton-instrument-reference.md",
@@ -1058,6 +1878,16 @@
   "axe": "Ableton Live 12 ; instruments ; notes tierces",
   "recupere_le": "2026-09-24",
   "mots": 3989
+ },
+ {
+  "fichier": "cuivres/dsprelated-com-freebooks-sasp-frequency-modulation-fm-synthesis-html.md",
+  "titre": "J. O. Smith — Frequency Modulation (FM) Synthesis",
+  "source": "https://www.dsprelated.com/freebooks/sasp/Frequency_Modulation_FM_Synthesis.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 1169
  },
  {
   "fichier": "cuivres/dx7-brass1-conversion-ms.md",
@@ -1080,6 +1910,16 @@
   "mots": 263
  },
  {
+  "fichier": "cuivres/edmprod-com-serum-2-filters.md",
+  "titre": "EDMProd — Serum 2 filters",
+  "source": "https://www.edmprod.com/serum-2-filters/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 7320
+ },
+ {
   "fichier": "cuivres/edtbl76-james-brown-funk-ensemble.md",
   "titre": "edtbl76/midi_real_book — Ensemble James Brown funk (rôles, cuivres, « on the One »)",
   "source": "https://raw.githubusercontent.com/edtbl76/midi_real_book/main/ensembles/James%20Brown%20funk/ensemble.md",
@@ -1098,6 +1938,126 @@
   "axe": "MIDI réaliste ; orchestration",
   "recupere_le": "2026-09-24",
   "mots": 4096
+ },
+ {
+  "fichier": "cuivres/en-m-wikipedia-org-wiki-jump-van-halen-song.md",
+  "titre": "Wikipédia (mobile) — Jump (Van Halen song)",
+  "source": "https://en.m.wikipedia.org/wiki/Jump_(Van_Halen_song)",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 5913
+ },
+ {
+  "fichier": "cuivres/en-wikipedia-org-wiki-abalele.md",
+  "titre": "Wikipédia (en) — Abalele",
+  "source": "https://en.wikipedia.org/wiki/Abalele",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 622
+ },
+ {
+  "fichier": "cuivres/en-wikipedia-org-wiki-ableton-live.md",
+  "titre": "Wikipédia — Ableton Live",
+  "source": "https://en.wikipedia.org/wiki/Ableton_Live",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 4026
+ },
+ {
+  "fichier": "cuivres/en-wikipedia-org-wiki-braaam.md",
+  "titre": "Wikipédia (en) — BRAAAM",
+  "source": "https://en.wikipedia.org/wiki/BRAAAM",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1518
+ },
+ {
+  "fichier": "cuivres/en-wikipedia-org-wiki-french-house.md",
+  "titre": "Wikipédia (en) — French house",
+  "source": "https://en.wikipedia.org/wiki/French_house",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1920
+ },
+ {
+  "fichier": "cuivres/en-wikipedia-org-wiki-jump-van-halen-song.md",
+  "titre": "Wikipédia — Jump (Van Halen song)",
+  "source": "https://en.wikipedia.org/wiki/Jump_(Van_Halen_song)",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 5912
+ },
+ {
+  "fichier": "cuivres/en-wikipedia-org-wiki-mask-off.md",
+  "titre": "Wikipédia (en) — Mask Off",
+  "source": "https://en.wikipedia.org/wiki/Mask_Off",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 5119
+ },
+ {
+  "fichier": "cuivres/en-wikipedia-org-wiki-stalemate-fela-kuti-album.md",
+  "titre": "Wikipédia — Stalemate (Fela Kuti album)",
+  "source": "https://en.wikipedia.org/wiki/Stalemate_(Fela_Kuti_album)",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 647
+ },
+ {
+  "fichier": "cuivres/en-wikipedia-org-wiki-trumpet.md",
+  "titre": "Wikipédia — Trumpet (version courante)",
+  "source": "https://en.wikipedia.org/wiki/Trumpet",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
+  "recupere_le": "2026-09-24",
+  "mots": 6589
+ },
+ {
+  "fichier": "cuivres/epicstockmedia-com-a-brief-history-of-braaam.md",
+  "titre": "epicstockmedia.com — a brief history of braaam",
+  "source": "https://epicstockmedia.com/a-brief-history-of-braaam/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1201
+ },
+ {
+  "fichier": "cuivres/evanrogersmusic-com-blog-contents-big-band-arranging-articulation.md",
+  "titre": "Evan Rogers — Big band arranging : articulation",
+  "source": "https://www.evanrogersmusic.com/blog-contents/big-band-arranging/articulation",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 5224
+ },
+ {
+  "fichier": "cuivres/evanrogersmusic-com-blog-contents-big-band-arranging-writing-horns-for-pop-songs.md",
+  "titre": "Evan Rogers — Writing horns for pop songs",
+  "source": "https://www.evanrogersmusic.com/blog-contents/big-band-arranging/writing-horns-for-pop-songs",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
+  "recupere_le": "2026-09-24",
+  "mots": 4575
  },
  {
   "fichier": "cuivres/faust-physmodels-brass.md",
@@ -1130,6 +2090,16 @@
   "mots": 1966
  },
  {
+  "fichier": "cuivres/glitchmagic-com-blogs-news-how-to-make-trap-style-brass-sounds-ableton-11-sound-design-tut.md",
+  "titre": "Glitch Magic — how to make trap style brass sounds ableton 11 sound design tutorial",
+  "source": "https://glitchmagic.com/blogs/news/how-to-make-trap-style-brass-sounds-ableton-11-sound-design-tutorial",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 2796
+ },
+ {
   "fichier": "cuivres/hipare-reaper-agent-jazz.md",
   "titre": "Hipare Reaper agent — Jazz production guide (cuivres, dynamique, réverbération)",
   "source": "https://raw.githubusercontent.com/Hipare/Hipare-Reaper-agent/main/knowledge/knowledge/genres/jazz.md",
@@ -1140,6 +2110,16 @@
   "mots": 1297
  },
  {
+  "fichier": "cuivres/howtowritebettersongs-com-how-to-arrange-horn-section.md",
+  "titre": "How To Write Better Songs — How to arrange a horn section",
+  "source": "https://www.howtowritebettersongs.com/how-to-arrange-horn-section/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
+  "recupere_le": "2026-09-24",
+  "mots": 2208
+ },
+ {
   "fichier": "cuivres/hwangtab-brass-arrangement-guide-ko.md",
   "titre": "Studio Nol (hwangtab) — guide complet d’arrangement de cuivres et bois pour pop, jazz, R&B (coréen)",
   "source": "https://raw.githubusercontent.com/hwangtab/studio/main/content/stories/brass-arrangement1.md",
@@ -1148,6 +2128,26 @@
   "axe": "écriture de section ; arrangement",
   "recupere_le": "2026-09-24",
   "mots": 1406
+ },
+ {
+  "fichier": "cuivres/hyperphysics-phy-astr-gsu-edu-hbase-music-orchins-html.md",
+  "titre": "HyperPhysics — Orchestral instruments (formants)",
+  "source": "http://hyperphysics.phy-astr.gsu.edu/hbase/Music/orchins.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 594
+ },
+ {
+  "fichier": "cuivres/incognetsamples-com-tutorials-how-to-make-fisher-losing-it-oz-synth-tech-house-html.md",
+  "titre": "incognetsamples.com — how to make fisher losing it oz synth tech house",
+  "source": "https://incognetsamples.com/tutorials/how-to-make-fisher-losing-it-oz-synth-tech-house.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 782
  },
  {
   "fichier": "cuivres/instatetragrammaton-common-envelope-shapes.md",
@@ -1270,6 +2270,16 @@
   "mots": 3617
  },
  {
+  "fichier": "cuivres/kgumusic-com-blogs-news-the-art-of-muting-effects-and-techniques-for-brass-instruments.md",
+  "titre": "KGU Music — The art of muting: brass mutes",
+  "source": "https://kgumusic.com/blogs/news/the-art-of-muting-effects-and-techniques-for-brass-instruments",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 1427
+ },
+ {
   "fichier": "cuivres/lilypond-glossaire-articulations-cuivres.md",
   "titre": "LilyPond Music Glossary — accent, breath mark, doit, fall, glissando, legato, staccato, tenuto (définitions multilingues) — extrait",
   "source": "https://raw.githubusercontent.com/lilypond/lilypond/master/Documentation/en/music-glossary.tely",
@@ -1380,6 +2390,56 @@
   "mots": 289
  },
  {
+  "fichier": "cuivres/modwheel-net-guides-the-art-of-brass-programming.md",
+  "titre": "Modwheel — The art of brass programming",
+  "source": "https://modwheel.net/guides/the-art-of-brass-programming",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
+  "recupere_le": "2026-09-24",
+  "mots": 1397
+ },
+ {
+  "fichier": "cuivres/monosounds-studio-oshis-samples-xfer-serum-presets-production-tricks-future-bass-magic-tut.md",
+  "titre": "Monosounds — oshis samples xfer serum presets production tricks future bass magic tutorial",
+  "source": "https://monosounds.studio/oshis-samples-xfer-serum-presets-production-tricks-future-bass-magic-tutorial/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1579
+ },
+ {
+  "fichier": "cuivres/monosounds-studio-serum-2-supersaw.md",
+  "titre": "Monosounds — serum 2 supersaw",
+  "source": "https://monosounds.studio/serum-2-supersaw/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1977
+ },
+ {
+  "fichier": "cuivres/monosounds-studio-serum-2-unison-explained.md",
+  "titre": "Monosounds — Serum 2 unison explained",
+  "source": "https://monosounds.studio/serum-2-unison-explained/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1672
+ },
+ {
+  "fichier": "cuivres/moogmusic-com-synthesizers-minimoog-model-d.md",
+  "titre": "Moog — minimoog model d",
+  "source": "https://www.moogmusic.com/synthesizers/minimoog-model-d/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 44
+ },
+ {
   "fichier": "cuivres/musescore-4-instruments-tessitures-cuivres.md",
   "titre": "MuseScore 4.4.4 instruments.xml — tessitures MIDI sonnantes des cuivres et saxophones (extrait tabulé, C3 = 60)",
   "source": "https://raw.githubusercontent.com/musescore/MuseScore/4.4.4/share/instruments/instruments.xml",
@@ -1450,6 +2510,26 @@
   "mots": 698
  },
  {
+  "fichier": "cuivres/musicradar-com-tuition-tech-get-the-sound-of-harold-faltermeyers-axel-f-541573.md",
+  "titre": "MusicRadar — Harold Faltermeyer Axel F sound",
+  "source": "https://www.musicradar.com/tuition/tech/get-the-sound-of-harold-faltermeyers-axel-f-541573",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 1184
+ },
+ {
+  "fichier": "cuivres/musicradar-com-tuition-tech-how-to-make-a-van-halen-jump-style-synth-sound-213604.md",
+  "titre": "MusicRadar — Van Halen Jump style synth sound",
+  "source": "https://www.musicradar.com/tuition/tech/how-to-make-a-van-halen-jump-style-synth-sound-213604",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 869
+ },
+ {
   "fichier": "cuivres/musicxml-4-articulations-sourdines.md",
   "titre": "MusicXML 4.0 (W3C) — définitions des sourdines (mute) et des articulations scoop/plop/doit/falloff/shake — extrait du schéma",
   "source": "https://raw.githubusercontent.com/w3c/musicxml/v4.0/schema/musicxml.xsd",
@@ -1470,6 +2550,66 @@
   "mots": 1994
  },
  {
+  "fichier": "cuivres/myloops-net-designing-a-modern-uplifting-trance-supersaw-lead.md",
+  "titre": "Myloops — designing a modern uplifting trance supersaw lead",
+  "source": "https://www.myloops.net/designing-a-modern-uplifting-trance-supersaw-lead",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 3117
+ },
+ {
+  "fichier": "cuivres/mysticalankar-com-blogs-blog-how-to-create-a-brass-pluck-sound-in-xfer-serum.md",
+  "titre": "Mystic Alankar — how to create a brass pluck sound in xfer serum",
+  "source": "https://mysticalankar.com/blogs/blog/how-to-create-a-brass-pluck-sound-in-xfer-serum",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 616
+ },
+ {
+  "fichier": "cuivres/newretro-net-blogs-main-the-midnight-mixes-synthwave-with-pop-and-saxophone-driven-melodie.md",
+  "titre": "newretro.net — the midnight mixes synthwave with pop and saxophone driven melodies",
+  "source": "https://newretro.net/blogs/main/the-midnight-mixes-synthwave-with-pop-and-saxophone-driven-melodies",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1796
+ },
+ {
+  "fichier": "cuivres/newt-phys-unsw-edu-au-jw-brassacoustics-html.md",
+  "titre": "UNSW — Brass instrument acoustics (Joe Wolfe)",
+  "source": "https://newt.phys.unsw.edu.au/jw/brassacoustics.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 11483
+ },
+ {
+  "fichier": "cuivres/oberheim-com-products-ob-x8.md",
+  "titre": "Oberheim — ob x8",
+  "source": "https://oberheim.com/products/ob-x8/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 7039
+ },
+ {
+  "fichier": "cuivres/offtonic-com-theory-book-3-3-html.md",
+  "titre": "Offtonic Theory — 3.3 (articulations)",
+  "source": "https://offtonic.com/theory/book/3-3.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 3873
+ },
+ {
   "fichier": "cuivres/olympiades-2009-son-cuivre-tuyau.md",
   "titre": "Olympiades de Physique 2009 — Peut-on produire un son cuivré avec un tuyau d'arrosage ? (LAUM, Gilbert & Dalmont)",
   "source": "https://raw.githubusercontent.com/alainjouve/olymphys7/HEAD/public/search/textes/16-eq-17-memoire-Peut-on%20produire%20un%20son%20cuivre%20avec%20un%20tuyau%20d'arrosage%20%20.txt",
@@ -1478,6 +2618,106 @@
   "axe": "acoustique ; brassiness, ondes de choc",
   "recupere_le": "2026-09-24",
   "mots": 4178
+ },
+ {
+  "fichier": "cuivres/pan-african-music-com-en-instrumentalists-of-amapiano.md",
+  "titre": "pan-african-music.com — instrumentalists of amapiano",
+  "source": "https://pan-african-music.com/en/instrumentalists-of-amapiano/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1256
+ },
+ {
+  "fichier": "cuivres/phys-unsw-edu-au-jw-brassacoustics-html.md",
+  "titre": "UNSW — Brass instrument acoustics (miroir)",
+  "source": "https://www.phys.unsw.edu.au/jw/brassacoustics.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 11482
+ },
+ {
+  "fichier": "cuivres/presetpatch-com-articles-van-halen-jump-patch-tutorial.md",
+  "titre": "PresetPatch — Van Halen Jump patch tutorial",
+  "source": "https://www.presetpatch.com/articles/van-halen-jump-patch-tutorial",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 2635
+ },
+ {
+  "fichier": "cuivres/pressbooks-palni-org-brasstechniquesandpedagogy-chapter-brass-acoustics.md",
+  "titre": "Brass Techniques and Pedagogy — chapitre Brass Acoustics",
+  "source": "https://pressbooks.palni.org/brasstechniquesandpedagogy/chapter/brass-acoustics/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 2375
+ },
+ {
+  "fichier": "cuivres/producerstack-com-blogs-the-stack-house-music-stabs-what-they-are-and-how-to-use-them.md",
+  "titre": "ProducerStack — house music stabs what they are and how to use them",
+  "source": "https://producerstack.com/blogs/the-stack/house-music-stabs-what-they-are-and-how-to-use-them",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 2954
+ },
+ {
+  "fichier": "cuivres/productionmusiclive-com-blogs-news-10-supersaw-tips-for-xfer-serum-get-a-big-lush-sound-wi.md",
+  "titre": "Production Music Live — 10 supersaw tips for xfer serum get a big lush sound without layering",
+  "source": "https://www.productionmusiclive.com/blogs/news/10-supersaw-tips-for-xfer-serum-get-a-big-lush-sound-without-layering",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1543
+ },
+ {
+  "fichier": "cuivres/productionmusiclive-com-blogs-news-how-to-make-a-future-bass-synth-in-serum-beginners.md",
+  "titre": "Production Music Live — how to make a future bass synth in serum beginners",
+  "source": "https://www.productionmusiclive.com/blogs/news/how-to-make-a-future-bass-synth-in-serum-beginners",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1662
+ },
+ {
+  "fichier": "cuivres/productionmusiclive-com-blogs-news-producer-notes-keinemusik-more-love-rampa-me-afro-house.md",
+  "titre": "Production Music Live — producer notes keinemusik more love rampa me afro house moderat style ableton",
+  "source": "https://www.productionmusiclive.com/blogs/news/producer-notes-keinemusik-more-love-rampa-me-afro-house-moderat-style-ableton",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 587
+ },
+ {
+  "fichier": "cuivres/professionalcomposers-com-sound-design-how-to-make-trailer-braaam-fx.md",
+  "titre": "Professional Composers — sound design how to make trailer braaam fx",
+  "source": "https://professionalcomposers.com/sound-design-how-to-make-trailer-braaam-fx/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 526
+ },
+ {
+  "fichier": "cuivres/progrography-com-fela-kuti-review-fela-the-africa-70-roforofo-fight-1972.md",
+  "titre": "progrography.com — review fela the africa 70 roforofo fight 1972",
+  "source": "https://progrography.com/fela-kuti/review-fela-the-africa-70-roforofo-fight-1972/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 805
  },
  {
   "fichier": "cuivres/reaper-mcp-mix-engine-shared.md",
@@ -1540,6 +2780,56 @@
   "mots": 8585
  },
  {
+  "fichier": "cuivres/reverbmachine-com-blog-timecop1983-synth-sounds.md",
+  "titre": "Reverb Machine — timecop1983 synth sounds",
+  "source": "https://reverbmachine.com/blog/timecop1983-synth-sounds/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1950
+ },
+ {
+  "fichier": "cuivres/reverbmachine-com-blog-vangelis-blade-runner-synth-sounds.md",
+  "titre": "Reverb Machine — Vangelis Blade Runner synth sounds",
+  "source": "https://reverbmachine.com/blog/vangelis-blade-runner-synth-sounds/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 1653
+ },
+ {
+  "fichier": "cuivres/reverbmachine-com-blog-vangelis-tears-in-rain-blade-runner.md",
+  "titre": "Reverb Machine — Vangelis Tears in Rain",
+  "source": "https://reverbmachine.com/blog/vangelis-tears-in-rain-blade-runner/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 1652
+ },
+ {
+  "fichier": "cuivres/richardpryn-com-braaams.md",
+  "titre": "richardpryn.com — braaams",
+  "source": "https://richardpryn.com/braaams/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1278
+ },
+ {
+  "fichier": "cuivres/righto-com-2021-11-reverse-engineering-yamaha-dx7-html.md",
+  "titre": "Ken Shirriff — Reverse-engineering the Yamaha DX7",
+  "source": "https://www.righto.com/2021/11/reverse-engineering-yamaha-dx7.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 9882
+ },
+ {
   "fichier": "cuivres/rimsky-korsakov-principles-of-orchestration.md",
   "titre": "Rimsky-Korsakov — Principles of Orchestration (Gutenberg #33900, trad. Agate 1922) — texte intégral",
   "source": "https://raw.githubusercontent.com/legobridge/copyshield-llm/main/data/text/PG33900_text.txt",
@@ -1550,6 +2840,26 @@
   "mots": 45065
  },
  {
+  "fichier": "cuivres/roastyourmix-com-mix-horns.md",
+  "titre": "Roast Your Mix — Horns",
+  "source": "https://roastyourmix.com/mix/horns",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
+  "recupere_le": "2026-09-24",
+  "mots": 1005
+ },
+ {
+  "fichier": "cuivres/roland-com-global-products-rc-jupiter-8.md",
+  "titre": "Roland — rc jupiter 8",
+  "source": "https://www.roland.com/global/products/rc_jupiter-8/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 2395
+ },
+ {
   "fichier": "cuivres/salsa-song-structure-breakdowns.md",
   "titre": "JoanComasFdz salsa-music — Salsa song structure breakdowns (sections, mambo, moña, cuivres)",
   "source": "https://raw.githubusercontent.com/JoanComasFdz/salsa-music/main/src/songs-breakdown/salsa-song-structure-breakdowns.md",
@@ -1558,6 +2868,46 @@
   "axe": "salsa ; structure ; cuivres",
   "recupere_le": "2026-09-24",
   "mots": 4656
+ },
+ {
+  "fichier": "cuivres/samplefocus-com-blog-make-afrobeat-fl-studio.md",
+  "titre": "samplefocus.com — make afrobeat fl studio",
+  "source": "https://samplefocus.com/blog/make-afrobeat-fl-studio/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1788
+ },
+ {
+  "fichier": "cuivres/screechhouse-com-hardstyle-lead-tutorial-serum-hardstyle-lead-make-hardstyle-lead-fl-studi.md",
+  "titre": "Screech House — hardstyle lead tutorial serum hardstyle lead make hardstyle lead fl studio",
+  "source": "https://screechhouse.com/hardstyle-lead-tutorial-serum-hardstyle-lead-make-hardstyle-lead-fl-studio/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 891
+ },
+ {
+  "fichier": "cuivres/screechhouse-com-the-ultimate-rawstyle-screech-tutorial-how-to-make-a-hardstyle-screech-in.md",
+  "titre": "Screech House — the ultimate rawstyle screech tutorial how to make a hardstyle screech in fl studio with sylenth1",
+  "source": "https://screechhouse.com/the-ultimate-rawstyle-screech-tutorial-how-to-make-a-hardstyle-screech-in-fl-studio-with-sylenth1/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1217
+ },
+ {
+  "fichier": "cuivres/sequential-com-product-prophet-5.md",
+  "titre": "Sequential — prophet 5",
+  "source": "https://sequential.com/product/prophet-5/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 2356
  },
  {
   "fichier": "cuivres/serum-2-presets-usine-corpus-parametres.md",
@@ -1590,6 +2940,76 @@
   "mots": 622
  },
  {
+  "fichier": "cuivres/soundonsound-com-reviews-native-instruments-session-horns.md",
+  "titre": "Sound On Sound — test NI Session Horns",
+  "source": "https://www.soundonsound.com/reviews/native-instruments-session-horns",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
+  "recupere_le": "2026-09-24",
+  "mots": 3661
+ },
+ {
+  "fichier": "cuivres/soundonsound-com-reviews-ni-session-horns-pro.md",
+  "titre": "Sound On Sound — test NI Session Horns Pro",
+  "source": "https://www.soundonsound.com/reviews/ni-session-horns-pro",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 2753
+ },
+ {
+  "fichier": "cuivres/soundonsound-com-techniques-brass-synthesis-minimoog.md",
+  "titre": "Synth Secrets 26 — Brass Synthesis On A Minimoog (original SOS)",
+  "source": "https://www.soundonsound.com/techniques/brass-synthesis-minimoog",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 4549
+ },
+ {
+  "fichier": "cuivres/soundonsound-com-techniques-roland-sh101-arp-axxe-brass-synthesis.md",
+  "titre": "Synth Secrets 27 — SH-101 / ARP Axxe brass (original SOS)",
+  "source": "https://www.soundonsound.com/techniques/roland-sh101-arp-axxe-brass-synthesis",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 4717
+ },
+ {
+  "fichier": "cuivres/soundonsound-com-techniques-synthesizing-brass-instruments.md",
+  "titre": "Synth Secrets 25 — Synthesizing Brass Instruments (original SOS)",
+  "source": "https://www.soundonsound.com/techniques/synthesizing-brass-instruments",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 4101
+ },
+ {
+  "fichier": "cuivres/soundonsound-com-techniques-synthesizing-wind-instruments.md",
+  "titre": "Synth Secrets 24 — Synthesizing Wind Instruments (original SOS)",
+  "source": "https://www.soundonsound.com/techniques/synthesizing-wind-instruments",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 3993
+ },
+ {
+  "fichier": "cuivres/soundonsound-com-techniques-top-brass-part-3.md",
+  "titre": "Sound On Sound — Top Brass, part 3 (programmer des cuivres)",
+  "source": "https://www.soundonsound.com/techniques/top-brass-part-3",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
+  "recupere_le": "2026-09-24",
+  "mots": 5175
+ },
+ {
   "fichier": "cuivres/srobinson-mdx-synth-daw-ui-vendor-docs-2026.md",
   "titre": "srobinson/mdx — recherche « synth/DAW UI : drag, modulation, racks, graphes » d’après les docs constructeurs (Serum 2, Live)",
   "source": "https://raw.githubusercontent.com/srobinson/mdx/HEAD/research/synth-daw-ui-drag-mod-racks-graphs-vendor-docs-2026.md",
@@ -1610,6 +3030,16 @@
   "mots": 601
  },
  {
+  "fichier": "cuivres/stockmusicmusician-com-blog-how-to-eq-brass.md",
+  "titre": "Stock Music Musician — How to EQ brass",
+  "source": "https://www.stockmusicmusician.com/blog/how-to-eq-brass",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
+  "recupere_le": "2026-09-24",
+  "mots": 2104
+ },
+ {
   "fichier": "cuivres/surge-xt-patches-usine-brass.md",
   "titre": "Surge XT — les 8 patchs d’usine du dossier Brass (Synth Brass 1-3, Brassy, OB-8 Jump, JX-10 Double Brass, Toto Brass, Reso Brassy) : XML complet",
   "source": "https://github.com/surge-synthesizer/surge/tree/main/resources/data/patches_factory/Brass",
@@ -1618,6 +3048,106 @@
   "axe": "synth brass ; patchs d’usine Surge XT",
   "recupere_le": "2026-09-24",
   "mots": 14797
+ },
+ {
+  "fichier": "cuivres/synthctrl-com-blogs-blog-timecop1983-on-the-run-breakdown.md",
+  "titre": "synthctrl.com — timecop1983 on the run breakdown",
+  "source": "https://synthctrl.com/blogs/blog/timecop1983-on-the-run-breakdown",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 759
+ },
+ {
+  "fichier": "cuivres/synthtopia-com-content-2009-06-30-van-halen-jump-demo-oberheim-obx-a.md",
+  "titre": "Synthtopia — Van Halen Jump demo Oberheim OB-Xa",
+  "source": "https://www.synthtopia.com/content/2009/06/30/van-halen-jump-demo-oberheim-obx-a/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 1798
+ },
+ {
+  "fichier": "cuivres/syntorial-com-preset-recipe-kavinsky-nightcall-keys.md",
+  "titre": "Syntorial — kavinsky nightcall keys",
+  "source": "https://www.syntorial.com/preset-recipe/kavinsky-nightcall-keys/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 882
+ },
+ {
+  "fichier": "cuivres/syntorial-com-preset-recipe-van-halen-jump-brass.md",
+  "titre": "Syntorial — preset recipe Van Halen Jump brass",
+  "source": "https://www.syntorial.com/preset-recipe/van-halen-jump-brass/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 874
+ },
+ {
+  "fichier": "cuivres/tailout-de-2026-08-04-how-to-mix-brass-instruments-modern-production.md",
+  "titre": "Tailout — How to mix brass instruments (modern production)",
+  "source": "https://tailout.de/2026/08/04/how-to-mix-brass-instruments-modern-production/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
+  "recupere_le": "2026-09-24",
+  "mots": 950
+ },
+ {
+  "fichier": "cuivres/tamingthesaxophone-com-theory-arranging-composition-brass.md",
+  "titre": "Taming The Saxophone — Composition for brass",
+  "source": "https://tamingthesaxophone.com/theory/arranging/composition-brass",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "écriture de section, MIDI réaliste, mixage des cuivres",
+  "recupere_le": "2026-09-24",
+  "mots": 1882
+ },
+ {
+  "fichier": "cuivres/tapeop-com-reviews-gear-166-fabfilter-pro-q-4-plug-in.md",
+  "titre": "Tape Op — test FabFilter Pro-Q 4",
+  "source": "https://www.tapeop.com/reviews/gear/166/fabfilter-pro-q-4-plug-in",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 1045
+ },
+ {
+  "fichier": "cuivres/themoderntrumpet-com-2020-10-13-flutter-tongue-doodle-tongue-and-growl.md",
+  "titre": "The Modern Trumpet — Flutter tongue, doodle tongue and growl",
+  "source": "https://themoderntrumpet.com/2020/10/13/flutter-tongue-doodle-tongue-and-growl/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 1399
+ },
+ {
+  "fichier": "cuivres/theproducerschool-com-blogs-news-the-ultimate-way-to-make-stabs-for-edm.md",
+  "titre": "The Producer School — the ultimate way to make stabs for edm",
+  "source": "https://theproducerschool.com/blogs/news/the-ultimate-way-to-make-stabs-for-edm",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1213
+ },
+ {
+  "fichier": "cuivres/timbreandorchestration-org-isfee-extreme-orchestration-brass-horn-family.md",
+  "titre": "Timbre and Orchestration — Extreme orchestration : horn family",
+  "source": "https://timbreandorchestration.org/isfee/extreme-orchestration/brass/horn-family",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 5216
  },
  {
   "fichier": "cuivres/tkgally-funk-soul-and-rnb.md",
@@ -1640,6 +3170,36 @@
   "mots": 4730
  },
  {
+  "fichier": "cuivres/tunableapp-com-instruments-trumpet-bb-range.md",
+  "titre": "Tunable — tessiture de la trompette en si bémol",
+  "source": "https://tunableapp.com/instruments/trumpet-bb/range/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 237
+ },
+ {
+  "fichier": "cuivres/ujam-com-tutorials-the-ultimate-guide-to-edm-trap-swells-and-brass-stabs.md",
+  "titre": "UJAM — the ultimate guide to edm trap swells and brass stabs",
+  "source": "https://www.ujam.com/tutorials/the-ultimate-guide-to-edm-trap-swells-and-brass-stabs/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1462
+ },
+ {
+  "fichier": "cuivres/unison-audio-how-to-make-future-bass.md",
+  "titre": "Unison — how to make future bass",
+  "source": "https://unison.audio/how-to-make-future-bass/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 4462
+ },
+ {
   "fichier": "cuivres/vibelang-synthdefs-cuivres.md",
   "titre": "vibelang (trusch) — synthdefs braam, synth_brass, brass_section, trumpet, trombone (DSL audio lisible, oscillateurs/filtres/enveloppes chiffrés)",
   "source": "https://github.com/trusch/vibelang/tree/main/crates/vibelang-std/stdlib",
@@ -1648,6 +3208,36 @@
   "axe": "synth brass ; BRAAM ; recettes de synthèse",
   "recupere_le": "2026-09-24",
   "mots": 1297
+ },
+ {
+  "fichier": "cuivres/vice-com-en-article-a-brief-history-of-that-kickass-flute-sample-on-futures-mask-off.md",
+  "titre": "vice.com — a brief history of that kickass flute sample on futures mask off",
+  "source": "https://www.vice.com/en/article/a-brief-history-of-that-kickass-flute-sample-on-futures-mask-off/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 1179
+ },
+ {
+  "fichier": "cuivres/vintagesoundset-com-post-the-top-80s-synth-brass-presets-iconic-sounds-that-defined-a-deca.md",
+  "titre": "vintagesoundset.com — the top 80s synth brass presets iconic sounds that defined a decade",
+  "source": "https://www.vintagesoundset.com/post/the-top-80s-synth-brass-presets-iconic-sounds-that-defined-a-decade",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "cuivres électroniques modernes",
+  "recupere_le": "2026-09-24",
+  "mots": 45
+ },
+ {
+  "fichier": "cuivres/vintagesynth-com-oberheim-ob-xa.md",
+  "titre": "Vintage Synth Explorer — Oberheim OB-Xa",
+  "source": "https://www.vintagesynth.com/oberheim/ob-xa",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "synth brass vintage et cuivres FM",
+  "recupere_le": "2026-09-24",
+  "mots": 836
  },
  {
   "fichier": "cuivres/vital-preset-017-brass-1.md",
@@ -1900,6 +3490,36 @@
   "mots": 3813
  },
  {
+  "fichier": "cuivres/yamahasynth-com-learn-synth-programming-mannys-modulation-manifesto-solo-brass-voices.md",
+  "titre": "Yamaha Synth — Manny’s Modulation Manifesto : solo brass voices",
+  "source": "https://yamahasynth.com/learn/synth-programming/mannys-modulation-manifesto-solo-brass-voices/",
+  "mode": "texte integral",
+  "skills": "studio-grade-brass-sound-design",
+  "axe": "acoustique des cuivres et synthèse classique",
+  "recupere_le": "2026-09-24",
+  "mots": 2449
+ },
+ {
+  "fichier": "funk-claviers/15questions-net-interview-breakbot-irfane-about-production-technology-and-creativity-page-.md",
+  "titre": "15questions.net — page 1",
+  "source": "https://www.15questions.net/interview/breakbot-irfane-about-production-technology-and-creativity/page-1/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1003
+ },
+ {
+  "fichier": "funk-claviers/15questions-net-interview-purple-disco-machine-shares-his-creative-process-page-1.md",
+  "titre": "15questions.net — page 1",
+  "source": "https://15questions.net/interview/purple-disco-machine-shares-his-creative-process/page-1/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1336
+ },
+ {
   "fichier": "funk-claviers/ableton-midi-remote-devices-py-electric-tension-operator.md",
   "titre": "Ableton Live 12 MIDI Remote Scripts — _Generic/Devices.py, extrait : banques LoungeLizard (Electric), StringStudio (Tension) et Operator",
   "source": "https://raw.githubusercontent.com/gluon/AbletonLive12_MIDIRemoteScripts/main/_Generic/Devices.py",
@@ -1918,6 +3538,26 @@
   "axe": "Ableton Live 12 : Electric, Tension, Operator, Vocoder, packs (documents tiers et miroirs)",
   "recupere_le": "2026-09-24",
   "mots": 562
+ },
+ {
+  "fichier": "funk-claviers/adammonroemusic-com-blog-simulating-a-leslie-speaker-html.md",
+  "titre": "adammonroemusic.com — simulating a leslie speaker",
+  "source": "https://adammonroemusic.com/blog/simulating_a_leslie_speaker.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 2123
+ },
+ {
+  "fichier": "funk-claviers/alijamieson-co-uk-2015-03-03-vocoder-v-talkbox.md",
+  "titre": "alijamieson.co.uk — vocoder v talkbox",
+  "source": "https://alijamieson.co.uk/2015/03/03/vocoder-v-talkbox/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 2279
  },
  {
   "fichier": "funk-claviers/amen-04-electromechanical-keyboards.md",
@@ -2030,6 +3670,106 @@
   "mots": 1279
  },
  {
+  "fichier": "funk-claviers/arpsynth-com-en-experience-sounds-2015-07-hisashi-saitoh.md",
+  "titre": "arpsynth.com — hisashi saitoh",
+  "source": "http://www.arpsynth.com/en/experience/sounds/2015/07/hisashi-saitoh/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 750
+ },
+ {
+  "fichier": "funk-claviers/attackmagazine-com-features-interview-roger-linn-swing-groove-magic-mpc-timing.md",
+  "titre": "attackmagazine.com — roger linn swing groove magic mpc timing",
+  "source": "https://www.attackmagazine.com/features/interview/roger-linn-swing-groove-magic-mpc-timing/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 5698
+ },
+ {
+  "fichier": "funk-claviers/attackmagazine-com-technique-synth-secrets-how-to-remake-flash-light-by-parliament.md",
+  "titre": "attackmagazine.com — how to remake flash light by parliament",
+  "source": "https://www.attackmagazine.com/technique/synth-secrets/how-to-remake-flash-light-by-parliament/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique ; jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 2088
+ },
+ {
+  "fichier": "funk-claviers/attackmagazine-com-technique-tutorials-fm-electric-piano.md",
+  "titre": "attackmagazine.com — fm electric piano",
+  "source": "https://www.attackmagazine.com/technique/tutorials/fm-electric-piano/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 557
+ },
+ {
+  "fichier": "funk-claviers/au-rollingstone-com-music-music-features-kaytranada-new-album-timeless-interview-60895.md",
+  "titre": "au.rollingstone.com — kaytranada new album timeless interview 60895",
+  "source": "https://au.rollingstone.com/music/music-features/kaytranada-new-album-timeless-interview-60895/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 3578
+ },
+ {
+  "fichier": "funk-claviers/b3world-com-hammond-technical-information-02-html.md",
+  "titre": "b3world.com — hammond technical information 02",
+  "source": "https://b3world.com/hammond-technical-information-02.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 1009
+ },
+ {
+  "fichier": "funk-claviers/bentonelectronics-com-service-manual-the-hammond-vibrato.md",
+  "titre": "bentonelectronics.com — service manual the hammond vibrato",
+  "source": "https://bentonelectronics.com/service-manual-the-hammond-vibrato/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 1983
+ },
+ {
+  "fichier": "funk-claviers/billboard-com-music-awards-dmile-silk-sonic-producer-grammys-buzz-interview-9647915.md",
+  "titre": "billboard.com — dmile silk sonic producer grammys buzz interview 9647915",
+  "source": "https://www.billboard.com/music/awards/dmile-silk-sonic-producer-grammys-buzz-interview-9647915/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1532
+ },
+ {
+  "fichier": "funk-claviers/billboard-com-music-music-news-mark-ronson-uptown-funk-essay-6804570.md",
+  "titre": "billboard.com — mark ronson uptown funk essay 6804570",
+  "source": "https://billboard.com/music/music-news/mark-ronson-uptown-funk-essay-6804570",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1140
+ },
+ {
+  "fichier": "funk-claviers/billboard-com-music-music-news-tuxedo-mayer-hawthorne-jake-one-interview-7751600.md",
+  "titre": "billboard.com — tuxedo mayer hawthorne jake one interview 7751600",
+  "source": "https://www.billboard.com/music/music-news/tuxedo-mayer-hawthorne-jake-one-interview-7751600/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1829
+ },
+ {
   "fichier": "funk-claviers/bitwize-mix-presets.md",
   "titre": "bitwize claude-ai-music-skills — mix-engineer/mix-presets.md (presets de mix par genre, dont funk)",
   "source": "https://raw.githubusercontent.com/bitwize-music-studio/claude-ai-music-skills/main/skills/mix-engineer/mix-presets.md",
@@ -2040,6 +3780,36 @@
   "mots": 1869
  },
  {
+  "fichier": "funk-claviers/bjango-com-articles-daftpunkvocaleffects.md",
+  "titre": "bjango.com — daftpunkvocaleffects",
+  "source": "https://bjango.com/articles/daftpunkvocaleffects/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 4548
+ },
+ {
+  "fichier": "funk-claviers/blog-landr-com-sp-1200.md",
+  "titre": "blog.landr.com — sp 1200",
+  "source": "https://blog.landr.com/sp-1200/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1909
+ },
+ {
+  "fichier": "funk-claviers/boostguitarpedals-co-uk-blogs-pedal-knowledge-cory-wongs-guitar-rig.md",
+  "titre": "boostguitarpedals.co.uk — cory wongs guitar rig",
+  "source": "https://www.boostguitarpedals.co.uk/blogs/pedal-knowledge/cory-wongs-guitar-rig",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2101
+ },
+ {
   "fichier": "funk-claviers/cabbage-clavinet-csd.md",
   "titre": "Cabbage — Clavinet.csd (modèle physique de Clavinet en Csound : corde, marteau, micros, filtres)",
   "source": "https://raw.githubusercontent.com/rorywalsh/cabbage/develop/Examples/Instruments/PhysicalModelling/Clavinet.csd",
@@ -2048,6 +3818,66 @@
   "axe": "Clavinet D6, auto-wah Mu-Tron III, envelope filter",
   "recupere_le": "2026-09-24",
   "mots": 3814
+ },
+ {
+  "fichier": "funk-claviers/cbc-ca-lite-story-1-7109609.md",
+  "titre": "cbc.ca — 1.7109609",
+  "source": "https://www.cbc.ca/lite/story/1.7109609",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 993
+ },
+ {
+  "fichier": "funk-claviers/cbc-ca-news-canada-hamilton-moniz-grammy-award-1-4431926.md",
+  "titre": "cbc.ca — moniz grammy award 1.4431926",
+  "source": "https://www.cbc.ca/news/canada/hamilton/moniz-grammy-award-1.4431926",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 726
+ },
+ {
+  "fichier": "funk-claviers/chadkiser-com-2018-10-05-conversations-with-chad-colin-wolfe-talks-making-the-chronic-with.md",
+  "titre": "chadkiser.com — conversations with chad colin wolfe talks making the chronic with dr dre working with 2pac mc breed",
+  "source": "https://chadkiser.com/2018/10/05/conversations-with-chad-colin-wolfe-talks-making-the-chronic-with-dr-dre-working-with-2pac-mc-breed/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 3394
+ },
+ {
+  "fichier": "funk-claviers/chicagoelectricpiano-com-rhodes-fender-rhodes-bark.md",
+  "titre": "chicagoelectricpiano.com — fender rhodes bark",
+  "source": "https://chicagoelectricpiano.com/rhodes/fender-rhodes-bark/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 773
+ },
+ {
+  "fichier": "funk-claviers/chicagoelectricpiano-com-rhodes-professor-goss-visits-the-piano-co.md",
+  "titre": "chicagoelectricpiano.com — professor goss visits the piano co",
+  "source": "https://chicagoelectricpiano.com/rhodes/professor-goss-visits-the-piano-co/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 226
+ },
+ {
+  "fichier": "funk-claviers/clashmusic-com-features-quality-over-opinion-inside-the-mind-of-louis-cole.md",
+  "titre": "clashmusic.com — quality over opinion inside the mind of louis cole",
+  "source": "https://www.clashmusic.com/features/quality-over-opinion-inside-the-mind-of-louis-cole/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2628
  },
  {
   "fichier": "funk-claviers/clyphx-instant-mapping-electric-tension.md",
@@ -2070,6 +3900,26 @@
   "mots": 2801
  },
  {
+  "fichier": "funk-claviers/daily-redbullmusicacademy-com-2012-03-lecture-dam-funk.md",
+  "titre": "daily.redbullmusicacademy.com — lecture dam funk",
+  "source": "https://daily.redbullmusicacademy.com/2012/03/lecture-dam-funk/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 9201
+ },
+ {
+  "fichier": "funk-claviers/daily-redbullmusicacademy-com-2017-01-thundercat-drunk-interview.md",
+  "titre": "daily.redbullmusicacademy.com — thundercat drunk interview",
+  "source": "https://daily.redbullmusicacademy.com/2017/01/thundercat-drunk-interview/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 14221
+ },
+ {
   "fichier": "funk-claviers/daveads-piano-chord-voicing-techniques.md",
   "titre": "daveads — Piano chord voicing techniques in jazz (note de blog)",
   "source": "https://raw.githubusercontent.com/daveads/daveads.github.io/main/content/note/2024-07-15-piano-chord-voicing-techniques-in-jazz.md",
@@ -2078,6 +3928,26 @@
   "axe": "jeu et voicings des claviers funk (jazz/gospel/néo-soul)",
   "recupere_le": "2026-09-24",
   "mots": 689
+ },
+ {
+  "fichier": "funk-claviers/davidkempton-com-hmd3.md",
+  "titre": "davidkempton.com — hmd3",
+  "source": "https://www.davidkempton.com/hmd3/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 1141
+ },
+ {
+  "fichier": "funk-claviers/davidkempton-com-hmd4.md",
+  "titre": "davidkempton.com — hmd4",
+  "source": "https://www.davidkempton.com/hmd4/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 2271
  },
  {
   "fichier": "funk-claviers/dexed-dx7note-cc.md",
@@ -2128,6 +3998,16 @@
   "axe": "DX7 : E.PIANO 1, BASS 1, format sysex, enveloppes et LFO (Dexed), cartouches ROM",
   "recupere_le": "2026-09-24",
   "mots": 1179
+ },
+ {
+  "fichier": "funk-claviers/djmag-com-content-studio-breakbot.md",
+  "titre": "djmag.com — studio breakbot",
+  "source": "https://djmag.com/content/studio-breakbot",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1279
  },
  {
   "fichier": "funk-claviers/dx7-epiano-faust-dsp.md",
@@ -2200,6 +4080,466 @@
   "mots": 4324
  },
  {
+  "fichier": "funk-claviers/edmprod-com-ableton-operator.md",
+  "titre": "edmprod.com — ableton operator",
+  "source": "https://www.edmprod.com/ableton-operator/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 12481
+ },
+ {
+  "fichier": "funk-claviers/ehx-com-blog-ehx-vault-golden-throat-roger-troutman.md",
+  "titre": "ehx.com — ehx vault golden throat roger troutman",
+  "source": "https://www.ehx.com/blog/ehx-vault-golden-throat-roger-troutman/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 764
+ },
+ {
+  "fichier": "funk-claviers/ehx-com-topic-superstition-intro-sound.md",
+  "titre": "ehx.com — superstition intro sound",
+  "source": "https://www.ehx.com/topic/superstition-intro-sound/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 722
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-24k-magic-song.md",
+  "titre": "en.wikipedia.org — 24K Magic (song)",
+  "source": "https://en.wikipedia.org/wiki/24K_Magic_(song)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 14951
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-an-evening-with-silk-sonic.md",
+  "titre": "en.wikipedia.org — An Evening with Silk Sonic",
+  "source": "https://en.wikipedia.org/wiki/An_Evening_with_Silk_Sonic",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 15235
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-boogie-on-reggae-woman.md",
+  "titre": "en.wikipedia.org — Boogie On Reggae Woman",
+  "source": "https://en.wikipedia.org/wiki/Boogie_On_Reggae_Woman",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1672
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-canned-heat-song.md",
+  "titre": "en.wikipedia.org — Canned Heat (song)",
+  "source": "https://en.wikipedia.org/wiki/Canned_Heat_(song)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 3560
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-chameleon-composition.md",
+  "titre": "en.wikipedia.org — Chameleon (composition)",
+  "source": "https://en.wikipedia.org/wiki/Chameleon_(composition)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1003
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-charles-moniz.md",
+  "titre": "en.wikipedia.org — Charles Moniz",
+  "source": "https://en.wikipedia.org/wiki/Charles_Moniz",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1162
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-clavinet.md",
+  "titre": "en.wikipedia.org — Clavinet",
+  "source": "https://en.wikipedia.org/wiki/Clavinet",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 3606
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-dam-funk.md",
+  "titre": "en.wikipedia.org — Dam Funk",
+  "source": "https://en.wikipedia.org/wiki/Dam-Funk",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 665
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-flash-light-song.md",
+  "titre": "en.wikipedia.org — Flash Light (song)",
+  "source": "https://en.wikipedia.org/wiki/Flash_Light_(song)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1713
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-funk.md",
+  "titre": "en.wikipedia.org — Funk",
+  "source": "https://en.wikipedia.org/wiki/Funk",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 14554
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-future-shock-herbie-hancock-album.md",
+  "titre": "en.wikipedia.org — Future Shock (Herbie Hancock album)",
+  "source": "https://en.wikipedia.org/wiki/Future_Shock_(Herbie_Hancock_album)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1849
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-g-funk.md",
+  "titre": "en.wikipedia.org — G funk",
+  "source": "https://en.wikipedia.org/wiki/G-funk",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 4799
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-gap-band-iv.md",
+  "titre": "en.wikipedia.org — Gap Band IV",
+  "source": "https://en.wikipedia.org/wiki/Gap_Band_IV",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 964
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-get-lucky-daft-punk-song.md",
+  "titre": "en.wikipedia.org — Get Lucky (Daft Punk song)",
+  "source": "https://en.wikipedia.org/wiki/Get_Lucky_(Daft_Punk_song)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 15414
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-giorgio-by-moroder.md",
+  "titre": "en.wikipedia.org — Giorgio by Moroder",
+  "source": "https://en.wikipedia.org/wiki/Giorgio_by_Moroder",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2545
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-hammond-organ.md",
+  "titre": "en.wikipedia.org — Hammond organ",
+  "source": "https://en.wikipedia.org/wiki/Hammond_organ",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 11481
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-jack-stratton-musician.md",
+  "titre": "en.wikipedia.org — Jack Stratton (musician)",
+  "source": "https://en.wikipedia.org/wiki/Jack_Stratton_(musician)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2500
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-juicy-fruit-album.md",
+  "titre": "en.wikipedia.org — Juicy Fruit (album)",
+  "source": "https://en.wikipedia.org/wiki/Juicy_Fruit_(album)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 734
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-kiss-prince-song.md",
+  "titre": "en.wikipedia.org — Kiss (Prince song)",
+  "source": "https://en.wikipedia.org/wiki/Kiss_(Prince_song)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 9359
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-leave-the-door-open.md",
+  "titre": "en.wikipedia.org — Leave the Door Open",
+  "source": "https://en.wikipedia.org/wiki/Leave_the_Door_Open",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 19228
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-leslie-speaker.md",
+  "titre": "en.wikipedia.org — Leslie speaker",
+  "source": "https://en.wikipedia.org/wiki/Leslie_speaker",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 5214
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-malibu-album.md",
+  "titre": "en.wikipedia.org — Malibu (album)",
+  "source": "https://en.wikipedia.org/wiki/Malibu_(album)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 4413
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-matt-johnson-keyboardist.md",
+  "titre": "en.wikipedia.org — Matt Johnson (keyboardist)",
+  "source": "https://en.wikipedia.org/wiki/Matt_Johnson_(keyboardist)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1175
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-michael-boddicker.md",
+  "titre": "en.wikipedia.org — Michael Boddicker",
+  "source": "https://en.wikipedia.org/wiki/Michael_Boddicker",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 3353
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-more-bounce-to-the-ounce.md",
+  "titre": "en.wikipedia.org — More Bounce to the Ounce",
+  "source": "https://en.wikipedia.org/wiki/More_Bounce_to_the_Ounce",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1112
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-mr-talkbox.md",
+  "titre": "en.wikipedia.org — Mr. TalkBox",
+  "source": "https://en.wikipedia.org/wiki/Mr._TalkBox",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1002
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-mu-tron-iii.md",
+  "titre": "en.wikipedia.org — Mu Tron III",
+  "source": "https://en.wikipedia.org/wiki/Mu-Tron_III",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 869
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-oberheim-ob-sx.md",
+  "titre": "en.wikipedia.org — Oberheim OB SX",
+  "source": "https://en.wikipedia.org/wiki/Oberheim_OB-SX",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 959
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-outstanding.md",
+  "titre": "en.wikipedia.org — Outstanding",
+  "source": "https://en.wikipedia.org/wiki/Outstanding",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1106
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-regulate-song.md",
+  "titre": "en.wikipedia.org — Regulate (song)",
+  "source": "https://en.wikipedia.org/wiki/Regulate_(song)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 5582
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-rhodes-piano.md",
+  "titre": "en.wikipedia.org — Rhodes piano",
+  "source": "https://en.wikipedia.org/wiki/Rhodes_piano",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 4893
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-roger-troutman.md",
+  "titre": "en.wikipedia.org — Roger Troutman",
+  "source": "https://en.wikipedia.org/wiki/Roger_Troutman",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 3286
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-roland-juno-106.md",
+  "titre": "en.wikipedia.org — Roland Juno 106",
+  "source": "https://en.wikipedia.org/wiki/Roland_Juno-106",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1615
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-smokin-out-the-window.md",
+  "titre": "en.wikipedia.org — Smokin out the Window",
+  "source": "https://en.wikipedia.org/wiki/Smokin_out_the_Window",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 7758
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-so-what-chord.md",
+  "titre": "en.wikipedia.org — So What chord",
+  "source": "https://en.wikipedia.org/wiki/So_What_chord",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 897
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-superstition-song.md",
+  "titre": "en.wikipedia.org — Superstition (song)",
+  "source": "https://en.wikipedia.org/wiki/Superstition_(song)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 5250
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-thriller-song.md",
+  "titre": "en.wikipedia.org — Thriller (song)",
+  "source": "https://en.wikipedia.org/wiki/Thriller_(song)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 10704
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-travelling-without-moving.md",
+  "titre": "en.wikipedia.org — Travelling Without Moving",
+  "source": "https://en.wikipedia.org/wiki/Travelling_Without_Moving",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 8622
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-uptown-funk.md",
+  "titre": "en.wikipedia.org — Uptown Funk",
+  "source": "https://en.wikipedia.org/wiki/Uptown_Funk",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 26251
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-ventura-anderson-paak-album.md",
+  "titre": "en.wikipedia.org — Ventura (Anderson .Paak album)",
+  "source": "https://en.wikipedia.org/wiki/Ventura_(Anderson_.Paak_album)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 3574
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-word-up-album.md",
+  "titre": "en.wikipedia.org — Word Up! (album)",
+  "source": "https://en.wikipedia.org/wiki/Word_Up!_(album)",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1536
+ },
+ {
+  "fichier": "funk-claviers/en-wikipedia-org-wiki-wurlitzer-electronic-piano.md",
+  "titre": "en.wikipedia.org — Wurlitzer electronic piano",
+  "source": "https://en.wikipedia.org/wiki/Wurlitzer_electronic_piano",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 3843
+ },
+ {
+  "fichier": "funk-claviers/ep-forum-com-smf-index-php-topic-516-0.md",
+  "titre": "ep-forum.com — index",
+  "source": "https://ep-forum.com/smf/index.php?topic=516.0",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 3039
+ },
+ {
   "fichier": "funk-claviers/epi-controlmap.md",
   "titre": "Epi (DatanoiseTV) — ControlMap.md (tous les paramètres accessibles par MIDI/CC)",
   "source": "https://raw.githubusercontent.com/DatanoiseTV/epi/main/docs/ControlMap.md",
@@ -2220,6 +4560,36 @@
   "mots": 2716
  },
  {
+  "fichier": "funk-claviers/fenderrhodes-com-history-dyno-html.md",
+  "titre": "fenderrhodes.com — dyno",
+  "source": "http://www.fenderrhodes.com/history/dyno.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 1219
+ },
+ {
+  "fichier": "funk-claviers/fenderrhodes-com-history-effects-html.md",
+  "titre": "fenderrhodes.com — effects",
+  "source": "http://www.fenderrhodes.com/history/effects.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques ; funk moderne ; jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 2035
+ },
+ {
+  "fichier": "funk-claviers/fenderrhodes-com-org-manual-ch6-html.md",
+  "titre": "fenderrhodes.com — ch6",
+  "source": "https://www.fenderrhodes.com/org/manual/ch6.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 2609
+ },
+ {
   "fichier": "funk-claviers/flow-drawbars-java.md",
   "titre": "eclab/flow — Drawbars.java (module orgue : compilation de registrations nommées d'après hammondtoday.com)",
   "source": "https://raw.githubusercontent.com/eclab/flow/master/flow/modules/Drawbars.java",
@@ -2228,6 +4598,156 @@
   "axe": "orgue Hammond : registrations de drawbars, percussion, Leslie (émulations open source)",
   "recupere_le": "2026-09-24",
   "mots": 3449
+ },
+ {
+  "fichier": "funk-claviers/fohonline-com-articles-production-profile-silk-sonic.md",
+  "titre": "fohonline.com — silk sonic",
+  "source": "https://fohonline.com/articles/production-profile/silk-sonic/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2412
+ },
+ {
+  "fichier": "funk-claviers/forum-loopypro-com-discussion-26174-how-to-make-a-thriller-style-bass-patch-on-the-minimoo.md",
+  "titre": "forum.loopypro.com — how to make a thriller style bass patch on the minimoog model d",
+  "source": "https://forum.loopypro.com/discussion/26174/how-to-make-a-thriller-style-bass-patch-on-the-minimoog-model-d",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 348
+ },
+ {
+  "fichier": "funk-claviers/forum-vintagesynth-com-viewtopic-php-t-115235.md",
+  "titre": "forum.vintagesynth.com — viewtopic",
+  "source": "https://forum.vintagesynth.com/viewtopic.php?t=115235",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1673
+ },
+ {
+  "fichier": "funk-claviers/forum-vintagesynth-com-viewtopic-php-t-33273.md",
+  "titre": "forum.vintagesynth.com — viewtopic",
+  "source": "https://forum.vintagesynth.com/viewtopic.php?t=33273",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1597
+ },
+ {
+  "fichier": "funk-claviers/forum-vintagesynth-com-viewtopic-php-t-42724.md",
+  "titre": "forum.vintagesynth.com — viewtopic",
+  "source": "https://forum.vintagesynth.com/viewtopic.php?t=42724",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 702
+ },
+ {
+  "fichier": "funk-claviers/forum-vintagesynth-com-viewtopic-php-t-44457.md",
+  "titre": "forum.vintagesynth.com — viewtopic",
+  "source": "https://forum.vintagesynth.com/viewtopic.php?t=44457",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1622
+ },
+ {
+  "fichier": "funk-claviers/forum-vintagesynth-com-viewtopic-php-t-50725.md",
+  "titre": "forum.vintagesynth.com — viewtopic",
+  "source": "https://forum.vintagesynth.com/viewtopic.php?t=50725",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 687
+ },
+ {
+  "fichier": "funk-claviers/forum-vintagesynth-com-viewtopic-php-t-52850.md",
+  "titre": "forum.vintagesynth.com — viewtopic",
+  "source": "https://forum.vintagesynth.com/viewtopic.php?t=52850",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 900
+ },
+ {
+  "fichier": "funk-claviers/forum-vintagesynth-com-viewtopic-php-t-53164.md",
+  "titre": "forum.vintagesynth.com — viewtopic",
+  "source": "https://forum.vintagesynth.com/viewtopic.php?t=53164",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1810
+ },
+ {
+  "fichier": "funk-claviers/forum-vintagesynth-com-viewtopic-php-t-54393-f-1.md",
+  "titre": "forum.vintagesynth.com — viewtopic",
+  "source": "https://forum.vintagesynth.com/viewtopic.php?t=54393&f=1",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique ; funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1124
+ },
+ {
+  "fichier": "funk-claviers/forum-vintagesynth-com-viewtopic-php-t-56123.md",
+  "titre": "forum.vintagesynth.com — viewtopic",
+  "source": "https://forum.vintagesynth.com/viewtopic.php?t=56123",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1516
+ },
+ {
+  "fichier": "funk-claviers/forum-vintagesynth-com-viewtopic-php-t-63893.md",
+  "titre": "forum.vintagesynth.com — viewtopic",
+  "source": "https://forum.vintagesynth.com/viewtopic.php?t=63893",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1886
+ },
+ {
+  "fichier": "funk-claviers/forum-vintagesynth-com-viewtopic-php-t-80076.md",
+  "titre": "forum.vintagesynth.com — viewtopic",
+  "source": "https://forum.vintagesynth.com/viewtopic.php?t=80076",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 507
+ },
+ {
+  "fichier": "funk-claviers/fundamental-changes-com-funk-guitar-chords-2.md",
+  "titre": "fundamental-changes.com — funk guitar chords 2",
+  "source": "https://www.fundamental-changes.com/funk-guitar-chords-2/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 1208
+ },
+ {
+  "fichier": "funk-claviers/gearnews-com-chromeo.md",
+  "titre": "gearnews.com — chromeo",
+  "source": "https://www.gearnews.com/chromeo/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2268
  },
  {
   "fichier": "funk-claviers/gooey-neo-soul-chord-sets.md",
@@ -2250,6 +4770,16 @@
   "mots": 2505
  },
  {
+  "fichier": "funk-claviers/grammy-com-news-5-essential-productions-by-d-mile-silk-sonic-her.md",
+  "titre": "grammy.com — 5 essential productions by d mile silk sonic her",
+  "source": "https://www.grammy.com/news/5-essential-productions-by-d-mile-silk-sonic-her/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1834
+ },
+ {
   "fichier": "funk-claviers/greybound-muon-mutron.md",
   "titre": "greybound — muon.mdx (baseline d'ingénierie d'un filtre d'enveloppe inspiré du Mu-Tron III)",
   "source": "https://raw.githubusercontent.com/bailleul-dev/greybound/main/knowledge/models/pedals/filter/muon.mdx",
@@ -2258,6 +4788,176 @@
   "axe": "Clavinet D6, auto-wah Mu-Tron III, envelope filter",
   "recupere_le": "2026-09-24",
   "mots": 508
+ },
+ {
+  "fichier": "funk-claviers/guitar-com-features-interviews-tom-misch-geography.md",
+  "titre": "guitar.com — tom misch geography",
+  "source": "https://guitar.com/features/interviews/tom-misch-geography/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2128
+ },
+ {
+  "fichier": "funk-claviers/guitarcloud-org-equipment-oberheim-ob-sx.md",
+  "titre": "guitarcloud.org — oberheim ob sx",
+  "source": "https://guitarcloud.org/equipment/oberheim-ob-sx/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 401
+ },
+ {
+  "fichier": "funk-claviers/guitarcloud-org-equipment-oberheim-ob-xa.md",
+  "titre": "guitarcloud.org — oberheim ob xa",
+  "source": "https://www.guitarcloud.org/equipment/oberheim-ob-xa/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 453
+ },
+ {
+  "fichier": "funk-claviers/guitarcloud-org-faq-what-synth-presets-did-prince-use.md",
+  "titre": "guitarcloud.org — what synth presets did prince use",
+  "source": "https://www.guitarcloud.org/faq/what-synth-presets-did-prince-use/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 392
+ },
+ {
+  "fichier": "funk-claviers/guitarcloud-org-faq-what-when-doves-cry-synth-sound.md",
+  "titre": "guitarcloud.org — what when doves cry synth sound",
+  "source": "https://www.guitarcloud.org/faq/what-when-doves-cry-synth-sound/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 235
+ },
+ {
+  "fichier": "funk-claviers/guitarworld-com-artists-bassists-joe-dart-vulfpeck-dean-town.md",
+  "titre": "guitarworld.com — joe dart vulfpeck dean town",
+  "source": "https://www.guitarworld.com/artists/bassists/joe-dart-vulfpeck-dean-town",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1869
+ },
+ {
+  "fichier": "funk-claviers/guitarworld-com-artists-bassists-thundercat-double-neck-bass-guitar.md",
+  "titre": "guitarworld.com — thundercat double neck bass guitar",
+  "source": "https://www.guitarworld.com/artists/bassists/thundercat-double-neck-bass-guitar",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2068
+ },
+ {
+  "fichier": "funk-claviers/guitarworld-com-artists-guitarists-cory-wong-life-in-gear.md",
+  "titre": "guitarworld.com — cory wong life in gear",
+  "source": "https://www.guitarworld.com/artists/guitarists/cory-wong-life-in-gear",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2903
+ },
+ {
+  "fichier": "funk-claviers/guitarworld-com-features-cory-wong-when-i-play-a-stratocaster-it-draws-out-my-voice-in-an-.md",
+  "titre": "guitarworld.com — cory wong when i play a stratocaster it draws out my voice in an easy and effortless way",
+  "source": "https://www.guitarworld.com/features/cory-wong-when-i-play-a-stratocaster-it-draws-out-my-voice-in-an-easy-and-effortless-way",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 3253
+ },
+ {
+  "fichier": "funk-claviers/guitarworld-com-features-thundercat-ill-try-anything-even-if-i-hear-something-i-dont-like-.md",
+  "titre": "guitarworld.com — thundercat ill try anything even if i hear something i dont like ill go for it theres no wrong way",
+  "source": "https://www.guitarworld.com/features/thundercat-ill-try-anything-even-if-i-hear-something-i-dont-like-ill-go-for-it-theres-no-wrong-way",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 4495
+ },
+ {
+  "fichier": "funk-claviers/guitarworld-com-features-vulfpecks-joe-dart-we-intentionally-keep-things-on-edge-and-in-th.md",
+  "titre": "guitarworld.com — vulfpecks joe dart we intentionally keep things on edge and in the moment",
+  "source": "https://www.guitarworld.com/features/vulfpecks-joe-dart-we-intentionally-keep-things-on-edge-and-in-the-moment",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1927
+ },
+ {
+  "fichier": "funk-claviers/guitarworld-com-gear-guitar-pedals-mu-tron-iii.md",
+  "titre": "guitarworld.com — mu tron iii",
+  "source": "https://www.guitarworld.com/gear/guitar-pedals/mu-tron-iii",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 1685
+ },
+ {
+  "fichier": "funk-claviers/hearandplay-com-main-drop-2-vs-b-voicing-techniques-2-5-1-chord-progressions.md",
+  "titre": "hearandplay.com — drop 2 vs b voicing techniques 2 5 1 chord progressions",
+  "source": "https://hearandplay.com/main/drop-2-vs-b-voicing-techniques-2-5-1-chord-progressions/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 1717
+ },
+ {
+  "fichier": "funk-claviers/herbiehancock-com-2016-09-14-herbie-hancocks-electronic-instrument-glossary.md",
+  "titre": "herbiehancock.com — herbie hancocks electronic instrument glossary",
+  "source": "https://www.herbiehancock.com/2016/09/14/herbie-hancocks-electronic-instrument-glossary/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 3433
+ },
+ {
+  "fichier": "funk-claviers/herbiehancock-com-music-discography-album-sextant.md",
+  "titre": "herbiehancock.com — sextant",
+  "source": "https://www.herbiehancock.com/music/discography/album/sextant/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 2133
+ },
+ {
+  "fichier": "funk-claviers/hiphopmakers-com-best-free-talkbox-vst-emulator-plugins.md",
+  "titre": "hiphopmakers.com — best free talkbox vst emulator plugins",
+  "source": "https://hiphopmakers.com/best-free-talkbox-vst-emulator-plugins",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 3611
+ },
+ {
+  "fichier": "funk-claviers/hypebeast-com-2020-4-knxwledge-1988-album-interview.md",
+  "titre": "hypebeast.com — knxwledge 1988 album interview",
+  "source": "https://hypebeast.com/2020/4/knxwledge-1988-album-interview",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 3290
  },
  {
   "fichier": "funk-claviers/idm-course-analog-research.md",
@@ -2278,6 +4978,16 @@
   "axe": "Clavinet D6, auto-wah Mu-Tron III, envelope filter",
   "recupere_le": "2026-09-24",
   "mots": 1223
+ },
+ {
+  "fichier": "funk-claviers/insheepsclothinghifi-com-5-songs-featuring-prophet-5.md",
+  "titre": "insheepsclothinghifi.com — 5 songs featuring prophet 5",
+  "source": "https://insheepsclothinghifi.com/5-songs-featuring-prophet-5/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1321
  },
  {
   "fichier": "funk-claviers/jazzify-left-hand-voicings.md",
@@ -2310,6 +5020,16 @@
   "mots": 1378
  },
  {
+  "fichier": "funk-claviers/jazzpianodays-com-tension-voicing-a-form-bform.md",
+  "titre": "jazzpianodays.com — tension voicing a form bform",
+  "source": "https://www.jazzpianodays.com/tension-voicing-a-form-bform",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 333
+ },
+ {
   "fichier": "funk-claviers/jefrob-electro-breakbeat-mixing.md",
   "titre": "JefroB Electronic-Music-Genre-Skills — genre-electro-breakbeat/mixing-and-mastering.md (repères de mix electro-funk)",
   "source": "https://raw.githubusercontent.com/JefroB/Electronic-Music-Genre-Skills/master/.agent/skills/genre-electro-breakbeat/references/mixing-and-mastering.md",
@@ -2320,6 +5040,46 @@
   "mots": 1305
  },
  {
+  "fichier": "funk-claviers/jimdunlop-com-mxr-mr-talkbox-signature-talk-box.md",
+  "titre": "jimdunlop.com — mxr mr talkbox signature talk box",
+  "source": "https://www.jimdunlop.com/mxr-mr-talkbox-signature-talk-box/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 882
+ },
+ {
+  "fichier": "funk-claviers/kexp-org-read-2020-4-3-grief-humor-and-power-do-rag-interview-thundercat.md",
+  "titre": "kexp.org — grief humor and power do rag interview thundercat",
+  "source": "https://www.kexp.org/read/2020/4/3/grief-humor-and-power-do-rag-interview-thundercat/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 4014
+ },
+ {
+  "fichier": "funk-claviers/keyboardchronicles-com-2020-10-25-matt-johnson-jamiroquai.md",
+  "titre": "keyboardchronicles.com — matt johnson jamiroquai",
+  "source": "https://keyboardchronicles.com/2020/10/25/matt-johnson-jamiroquai/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 455
+ },
+ {
+  "fichier": "funk-claviers/laweekly-com-songwriter-jeff-bhasker-reveals-the-origin-of-uptown-funk.md",
+  "titre": "laweekly.com — songwriter jeff bhasker reveals the origin of uptown funk",
+  "source": "https://www.laweekly.com/songwriter-jeff-bhasker-reveals-the-origin-of-uptown-funk/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1858
+ },
+ {
   "fichier": "funk-claviers/live12-manual-vocoder-extract.md",
   "titre": "Manuel Ableton Live 12 (miroir ableton-rack-generator) — extrait §28.42 Vocoder et Vocoder Tips (talkbox)",
   "source": "https://raw.githubusercontent.com/GiovanniRaniolo/ableton-rack-generator/main/backend/data/knowledge/MANUAL_EXTRACT.txt",
@@ -2328,6 +5088,16 @@
   "axe": "Ableton Live 12 : Electric, Tension, Operator, Vocoder, packs (documents tiers et miroirs)",
   "recupere_le": "2026-09-24",
   "mots": 1305
+ },
+ {
+  "fichier": "funk-claviers/liveforlivemusic-com-news-vulfpeck-premieres-disco-infused-funk-track-dean-town-ahead-albu.md",
+  "titre": "liveforlivemusic.com — vulfpeck premieres disco infused funk track dean town ahead album release",
+  "source": "https://liveforlivemusic.com/news/vulfpeck-premieres-disco-infused-funk-track-dean-town-ahead-album-release/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 517
  },
  {
   "fichier": "funk-claviers/livepilot-pack-knowledge.md",
@@ -2350,6 +5120,36 @@
   "mots": 7953
  },
  {
+  "fichier": "funk-claviers/masteringthemix-com-blogs-learn-decoding-the-mix-uptown-funk-mark-ronson-ft-bruno-mars.md",
+  "titre": "masteringthemix.com — decoding the mix uptown funk mark ronson ft bruno mars",
+  "source": "https://www.masteringthemix.com/blogs/learn/decoding-the-mix-uptown-funk-mark-ronson-ft-bruno-mars",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1514
+ },
+ {
+  "fichier": "funk-claviers/matrixsynth-com-2024-03-massive-live-modular-synthesizer-w-p-html.md",
+  "titre": "matrixsynth.com — massive live modular synthesizer w p",
+  "source": "https://www.matrixsynth.com/2024/03/massive-live-modular-synthesizer-w-p.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 691
+ },
+ {
+  "fichier": "funk-claviers/memphisdailynews-com-news-2015-jan-23-legendary-memphis-studio-has-no-1-hit-with-uptown-fu.md",
+  "titre": "memphisdailynews.com — legendary memphis studio has no 1 hit with uptown funk",
+  "source": "https://www.memphisdailynews.com/news/2015/jan/23/legendary-memphis-studio-has-no-1-hit-with-uptown-funk/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1133
+ },
+ {
   "fichier": "funk-claviers/midi-genre-corpus-superstition-features.md",
   "titre": "cjnolet/midi_genre_corpus — stevie_wonder-superstition.mid.csv (descripteurs jSymbolic du MIDI)",
   "source": "https://raw.githubusercontent.com/cjnolet/midi_genre_corpus/master/pop/features/stevie_wonder-superstition.mid.csv",
@@ -2358,6 +5158,406 @@
   "axe": "morceaux de référence : Chameleon, Superstition ; ensembles James Brown / P-Funk ; presets de mix funk",
   "recupere_le": "2026-09-24",
   "mots": 109
+ },
+ {
+  "fichier": "funk-claviers/milocostudios-com-studios-angelic-studio-interview-with-toby-smith.md",
+  "titre": "milocostudios.com — interview with toby smith",
+  "source": "https://milocostudios.com/studios/angelic-studio/interview-with-toby-smith/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 3393
+ },
+ {
+  "fichier": "funk-claviers/mixdownmag-com-au-features-gear-rundown-thundercat.md",
+  "titre": "mixdownmag.com.au — gear rundown thundercat",
+  "source": "https://mixdownmag.com.au/features/gear-rundown-thundercat/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1121
+ },
+ {
+  "fichier": "funk-claviers/mixdownmag-com-au-features-gear-rundown-tom-misch.md",
+  "titre": "mixdownmag.com.au — gear rundown tom misch",
+  "source": "https://mixdownmag.com.au/features/gear-rundown-tom-misch/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 897
+ },
+ {
+  "fichier": "funk-claviers/mixdownmag-com-au-features-rig-rundown-princes-purple-rain.md",
+  "titre": "mixdownmag.com.au — rig rundown princes purple rain",
+  "source": "https://mixdownmag.com.au/features/rig-rundown-princes-purple-rain/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 980
+ },
+ {
+  "fichier": "funk-claviers/mixonline-com-recording-classic-tracks-princes-kiss-365014.md",
+  "titre": "mixonline.com — classic tracks princes kiss 365014",
+  "source": "https://www.mixonline.com/recording/classic-tracks-princes-kiss-365014",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1865
+ },
+ {
+  "fichier": "funk-claviers/mixonline-com-recording-cory-henry-something-to-say.md",
+  "titre": "mixonline.com — cory henry something to say",
+  "source": "https://www.mixonline.com/recording/cory-henry-something-to-say",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1563
+ },
+ {
+  "fichier": "funk-claviers/modeaudio-com-magazine-quick-tips-009-sub-bass-layering.md",
+  "titre": "modeaudio.com — quick tips 009 sub bass layering",
+  "source": "https://modeaudio.com/magazine/quick-tips-009-sub-bass-layering",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1232
+ },
+ {
+  "fichier": "funk-claviers/monosounds-studio-serum-2-filters-explained.md",
+  "titre": "monosounds.studio — serum 2 filters explained",
+  "source": "https://monosounds.studio/serum-2-filters-explained/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 2059
+ },
+ {
+  "fichier": "funk-claviers/music-mxdwn-com-2019-01-24-features-mxdwn-interview-patrick-hetherington-of-parcels-on-wor.md",
+  "titre": "music.mxdwn.com — mxdwn interview patrick hetherington of parcels on working with daft punk and milla jovovich and making their first full album",
+  "source": "https://music.mxdwn.com/2019/01/24/features/mxdwn-interview-patrick-hetherington-of-parcels-on-working-with-daft-punk-and-milla-jovovich-and-making-their-first-full-album/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1359
+ },
+ {
+  "fichier": "funk-claviers/musicconnection-com-silk-sonic-using-ssl-mixing-consoles-for-vegas-residency.md",
+  "titre": "musicconnection.com — silk sonic using ssl mixing consoles for vegas residency",
+  "source": "https://www.musicconnection.com/silk-sonic-using-ssl-mixing-consoles-for-vegas-residency/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 707
+ },
+ {
+  "fichier": "funk-claviers/musicproductionnerds-com-how-to-eq-rhodes-piano.md",
+  "titre": "musicproductionnerds.com — how to eq rhodes piano",
+  "source": "https://musicproductionnerds.com/how-to-eq-rhodes-piano",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 1626
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-artists-oh-no-no-no-nobody-knows-what-we-look-like-how-bass-legend-nathan-e.md",
+  "titre": "musicradar.com — oh no no no nobody knows what we look like how bass legend nathan east almost blew daft punks cover then got lucky on one of their biggest hits",
+  "source": "https://www.musicradar.com/artists/oh-no-no-no-nobody-knows-what-we-look-like-how-bass-legend-nathan-east-almost-blew-daft-punks-cover-then-got-lucky-on-one-of-their-biggest-hits",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1715
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-artists-the-groove-was-a-kind-of-blues-groove-and-i-think-i-drank-a-beer-be.md",
+  "titre": "musicradar.com — the groove was a kind of blues groove and i think i drank a beer because i wanted to have a kind of slurring sound in my voice stevie wonder reveals how he recorded the classic moog synth bassline and laidback vocals on boogie on reggae woman",
+  "source": "https://www.musicradar.com/artists/the-groove-was-a-kind-of-blues-groove-and-i-think-i-drank-a-beer-because-i-wanted-to-have-a-kind-of-slurring-sound-in-my-voice-stevie-wonder-reveals-how-he-recorded-the-classic-moog-synth-bassline-and-laidback-vocals-on-boogie-on-reggae-woman",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1242
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-artists-we-wrote-24k-magic-when-uptown-funk-was-no-1-so-if-you-hear-the-sam.md",
+  "titre": "musicradar.com — we wrote 24k magic when uptown funk was no 1 so if you hear the same spirit in that song thats why a decade on we look back at the musical theory and retro gear that shaped bruno mars 2016 classic",
+  "source": "https://www.musicradar.com/artists/we-wrote-24k-magic-when-uptown-funk-was-no-1-so-if-you-hear-the-same-spirit-in-that-song-thats-why-a-decade-on-we-look-back-at-the-musical-theory-and-retro-gear-that-shaped-bruno-mars-2016-classic",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2420
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-news-breakbot-irfane-interview.md",
+  "titre": "musicradar.com — breakbot irfane interview",
+  "source": "https://www.musicradar.com/news/breakbot-irfane-interview",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 3106
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-news-dua-lipa-glastonbury-dont-start-now.md",
+  "titre": "musicradar.com — dua lipa glastonbury dont start now",
+  "source": "https://www.musicradar.com/news/dua-lipa-glastonbury-dont-start-now",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1498
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-news-fkj-interview.md",
+  "titre": "musicradar.com — fkj interview",
+  "source": "https://www.musicradar.com/news/fkj-interview",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 3367
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-news-fkj-tiny-desk-santana.md",
+  "titre": "musicradar.com — fkj tiny desk santana",
+  "source": "https://www.musicradar.com/news/fkj-tiny-desk-santana",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1065
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-news-master-the-minimoog-model-d-create-classic-bass.md",
+  "titre": "musicradar.com — master the minimoog model d create classic bass",
+  "source": "https://www.musicradar.com/news/master-the-minimoog-model-d-create-classic-bass",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 2868
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-news-matt-johnson-jamiroquai-live-keyboard-rig.md",
+  "titre": "musicradar.com — matt johnson jamiroquai live keyboard rig",
+  "source": "https://www.musicradar.com/news/matt-johnson-jamiroquai-live-keyboard-rig",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 752
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-news-princes-go-to-drum-machine-and-synths-a-career-in-music-tech-gear.md",
+  "titre": "musicradar.com — princes go to drum machine and synths a career in music tech gear",
+  "source": "https://www.musicradar.com/news/princes-go-to-drum-machine-and-synths-a-career-in-music-tech-gear",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1661
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-news-tech-bernie-worrell-talks-vintage-synths-elp-parliament-funkadelic-tal.md",
+  "titre": "musicradar.com — bernie worrell talks vintage synths elp parliament funkadelic talking heads and more 576154",
+  "source": "https://www.musicradar.com/news/tech/bernie-worrell-talks-vintage-synths-elp-parliament-funkadelic-talking-heads-and-more-576154",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 2361
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-news-tech-in-pictures-chromeos-synth-stuffed-studio-448278.md",
+  "titre": "musicradar.com — in pictures chromeos synth stuffed studio 448278",
+  "source": "https://www.musicradar.com/news/tech/in-pictures-chromeos-synth-stuffed-studio-448278",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1179
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-news-tech-in-pictures-lifelike-in-his-paris-studio-540003.md",
+  "titre": "musicradar.com — in pictures lifelike in his paris studio 540003",
+  "source": "https://www.musicradar.com/news/tech/in-pictures-lifelike-in-his-paris-studio-540003",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1266
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-news-the-40-greatest-synth-sounds-of-all-time-no-34-herbie-hancock-rockit.md",
+  "titre": "musicradar.com — the 40 greatest synth sounds of all time no 34 herbie hancock rockit",
+  "source": "https://www.musicradar.com/news/the-40-greatest-synth-sounds-of-all-time-no-34-herbie-hancock-rockit",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1035
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-tuition-tech-6-steps-to-creating-a-perfect-layered-bass-sound-639120.md",
+  "titre": "musicradar.com — 6 steps to creating a perfect layered bass sound 639120",
+  "source": "https://www.musicradar.com/tuition/tech/6-steps-to-creating-a-perfect-layered-bass-sound-639120",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1075
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-tuition-tech-how-to-recreate-the-chameleon-bass-sound-on-the-korg-arp-odyss.md",
+  "titre": "musicradar.com — how to recreate the chameleon bass sound on the korg arp odyssey 620055",
+  "source": "https://www.musicradar.com/tuition/tech/how-to-recreate-the-chameleon-bass-sound-on-the-korg-arp-odyssey-620055",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 814
+ },
+ {
+  "fichier": "funk-claviers/musicradar-com-tutorials-music-production-tutorials-i-was-like-what-in-the-world-is-that-i.md",
+  "titre": "musicradar.com — i was like what in the world is that it deeply moved me build your own expressive talkbox with plugins",
+  "source": "https://www.musicradar.com/tutorials/music-production-tutorials/i-was-like-what-in-the-world-is-that-it-deeply-moved-me-build-your-own-expressive-talkbox-with-plugins",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2178
+ },
+ {
+  "fichier": "funk-claviers/musictech-com-features-interviews-chromeo-interview-adult-contemporary.md",
+  "titre": "musictech.com — chromeo interview adult contemporary",
+  "source": "https://musictech.com/features/interviews/chromeo-interview-adult-contemporary/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2581
+ },
+ {
+  "fichier": "funk-claviers/musictech-com-features-interviews-cory-wong-interview-lost-in-the-wonder.md",
+  "titre": "musictech.com — cory wong interview lost in the wonder",
+  "source": "https://musictech.com/features/interviews/cory-wong-interview-lost-in-the-wonder/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 1974
+ },
+ {
+  "fichier": "funk-claviers/musictech-com-features-interviews-jungle-cover-interview-2021-loving-in-stereo-j-lloyd-tom.md",
+  "titre": "musictech.com — jungle cover interview 2021 loving in stereo j lloyd tom mcfarland",
+  "source": "https://musictech.com/features/interviews/jungle-cover-interview-2021-loving-in-stereo-j-lloyd-tom-mcfarland/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2565
+ },
+ {
+  "fichier": "funk-claviers/musictech-com-features-interviews-louis-cole-interview-nothing-metropole-orkest.md",
+  "titre": "musictech.com — louis cole interview nothing metropole orkest",
+  "source": "https://musictech.com/features/interviews/louis-cole-interview-nothing-metropole-orkest/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1563
+ },
+ {
+  "fichier": "funk-claviers/musictech-com-news-music-dua-lipa-producer-dont-start-now-bassline.md",
+  "titre": "musictech.com — dua lipa producer dont start now bassline",
+  "source": "https://musictech.com/news/music/dua-lipa-producer-dont-start-now-bassline/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 655
+ },
+ {
+  "fichier": "funk-claviers/musictech-com-tutorials-weekend-workshop-prince-van-halen-synth-ob-xd.md",
+  "titre": "musictech.com — weekend workshop prince van halen synth ob xd",
+  "source": "https://musictech.com/tutorials/weekend-workshop-prince-van-halen-synth-ob-xd/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1560
+ },
+ {
+  "fichier": "funk-claviers/nme-com-blogs-nme-radar-parcels-live-album-hansa-studio-berlin-interview-2660527.md",
+  "titre": "nme.com — parcels live album hansa studio berlin interview 2660527",
+  "source": "https://www.nme.com/blogs/nme-radar/parcels-live-album-hansa-studio-berlin-interview-2660527",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1154
+ },
+ {
+  "fichier": "funk-claviers/nordkeyboards-com-sounds-piano-library-hohner-clavinet-d6.md",
+  "titre": "nordkeyboards.com — hohner clavinet d6",
+  "source": "https://www.nordkeyboards.com/sounds/piano-library/hohner-clavinet-d6/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 215
+ },
+ {
+  "fichier": "funk-claviers/note-com-soundwitches-n-nc40e3009e51b-hl-en.md",
+  "titre": "note.com — nc40e3009e51b",
+  "source": "https://note.com/soundwitches/n/nc40e3009e51b?hl=en",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 3561
+ },
+ {
+  "fichier": "funk-claviers/notreble-com-buzz-2025-03-29-how-daft-punks-get-lucky-came-together-nathan-east-breaks-it-.md",
+  "titre": "notreble.com — how daft punks get lucky came together nathan east breaks it down",
+  "source": "https://www.notreble.com/buzz/2025/03/29/how-daft-punks-get-lucky-came-together-nathan-east-breaks-it-down/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 894
+ },
+ {
+  "fichier": "funk-claviers/npr-org-2015-04-16-400106347-the-long-labored-process-behind-mark-ronsons-uptown-funk.md",
+  "titre": "npr.org — the long labored process behind mark ronsons uptown funk",
+  "source": "https://www.npr.org/2015/04/16/400106347/the-long-labored-process-behind-mark-ronsons-uptown-funk",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2112
+ },
+ {
+  "fichier": "funk-claviers/npr-org-transcripts-1056156250.md",
+  "titre": "npr.org — transcripts",
+  "source": "https://www.npr.org/transcripts/1056156250",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 4109
  },
  {
   "fichier": "funk-claviers/open-piano-skills-voicings-yaml.md",
@@ -2450,6 +5650,56 @@
   "mots": 12085
  },
  {
+  "fichier": "funk-claviers/pianogroove-com-blues-piano-lessons-hammond-b3-drawbars-presets-controls.md",
+  "titre": "pianogroove.com — hammond b3 drawbars presets controls",
+  "source": "https://www.pianogroove.com/blues-piano-lessons/hammond-b3-drawbars-presets-controls/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 998
+ },
+ {
+  "fichier": "funk-claviers/pianogroove-com-jazz-piano-lessons-herbie-hancock-voicing.md",
+  "titre": "pianogroove.com — herbie hancock voicing",
+  "source": "https://www.pianogroove.com/jazz-piano-lessons/herbie-hancock-voicing/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 2782
+ },
+ {
+  "fichier": "funk-claviers/pianote-com-blog-justin-stanton-snarky-puppy.md",
+  "titre": "pianote.com — justin stanton snarky puppy",
+  "source": "https://www.pianote.com/blog/justin-stanton-snarky-puppy/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2297
+ },
+ {
+  "fichier": "funk-claviers/pianote-com-blog-stevie-wonder-superstition.md",
+  "titre": "pianote.com — stevie wonder superstition",
+  "source": "https://www.pianote.com/blog/stevie-wonder-superstition/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 828
+ },
+ {
+  "fichier": "funk-claviers/pianowithjonny-com-piano-lessons-play-contemporary-gospel-and-rb-piano-in-3-steps.md",
+  "titre": "pianowithjonny.com — play contemporary gospel and rb piano in 3 steps",
+  "source": "https://pianowithjonny.com/piano-lessons/play-contemporary-gospel-and-rb-piano-in-3-steps/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 3269
+ },
+ {
   "fichier": "funk-claviers/podrazka-piano-readme.md",
   "titre": "danielpodrazka/piano — README (synthèse de piano par la physique ; section FM Rhodes)",
   "source": "https://raw.githubusercontent.com/danielpodrazka/piano/main/README.md",
@@ -2458,6 +5708,96 @@
   "axe": "Rhodes : émulations open source (Epi, piano physique de Podrazka)",
   "recupere_le": "2026-09-24",
   "mots": 2170
+ },
+ {
+  "fichier": "funk-claviers/premierguitar-com-news-mxr-mr-talkbox-signature.md",
+  "titre": "premierguitar.com — mxr mr talkbox signature",
+  "source": "https://www.premierguitar.com/news/mxr-mr-talkbox-signature",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 52
+ },
+ {
+  "fichier": "funk-claviers/premierguitar-com-on-bass-layering-the-low-end.md",
+  "titre": "premierguitar.com — on bass layering the low end",
+  "source": "https://www.premierguitar.com/on-bass-layering-the-low-end",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 47
+ },
+ {
+  "fichier": "funk-claviers/premierguitar-com-videos-rig-rundown-cory-wong.md",
+  "titre": "premierguitar.com — cory wong",
+  "source": "https://www.premierguitar.com/videos/rig-rundown/cory-wong",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 41
+ },
+ {
+  "fichier": "funk-claviers/pro-harman-com-news-charles-moniz-and-chris-rabold-bring-jbl-708p-monitors-on-tour-with-br.md",
+  "titre": "pro.harman.com — charles moniz and chris rabold bring jbl 708p monitors on tour with bruno mars for live mixing and backstage recording",
+  "source": "https://pro.harman.com/news/charles-moniz-and-chris-rabold-bring-jbl-708p-monitors-on-tour-with-bruno-mars-for-live-mixing-and-backstage-recording",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 792
+ },
+ {
+  "fichier": "funk-claviers/producerhive-com-music-production-recording-tips-how-to-layer-bass-synths.md",
+  "titre": "producerhive.com — how to layer bass synths",
+  "source": "https://producerhive.com/music-production-recording-tips/how-to-layer-bass-synths/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2000
+ },
+ {
+  "fichier": "funk-claviers/production-expert-com-production-expert-1-5-iconic-organ-sounds-to-power-your-tracks-and-h.md",
+  "titre": "production-expert.com — 5 iconic organ sounds to power your tracks and how to get them",
+  "source": "https://www.production-expert.com/production-expert-1/5-iconic-organ-sounds-to-power-your-tracks-and-how-to-get-them",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 1570
+ },
+ {
+  "fichier": "funk-claviers/prosoundweb-com-signal-to-noise-episode-182-chris-rabold-foh-engineer-bruno-mars-silk-soni.md",
+  "titre": "prosoundweb.com — signal to noise episode 182 chris rabold foh engineer bruno mars silk sonic",
+  "source": "https://www.prosoundweb.com/signal-to-noise-episode-182-chris-rabold-foh-engineer-bruno-mars-silk-sonic/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1000
+ },
+ {
+  "fichier": "funk-claviers/psychedelicbabymag-com-2024-02-matt-johnson-interview-html.md",
+  "titre": "psychedelicbabymag.com — matt johnson interview",
+  "source": "https://www.psychedelicbabymag.com/2024/02/matt-johnson-interview.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2271
+ },
+ {
+  "fichier": "funk-claviers/rapreviews-com-2010-02-warren-g-regulate-g-funk-era.md",
+  "titre": "rapreviews.com — warren g regulate g funk era",
+  "source": "https://www.rapreviews.com/2010/02/warren-g-regulate-g-funk-era/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1696
  },
  {
   "fichier": "funk-claviers/recherche-funk-axe1-claviers-electromecaniques.md",
@@ -2510,6 +5850,36 @@
   "mots": 11099
  },
  {
+  "fichier": "funk-claviers/rekkerd-org-native-instruments-releases-scarbee-vintage-keys.md",
+  "titre": "rekkerd.org — native instruments releases scarbee vintage keys",
+  "source": "https://rekkerd.org/native-instruments-releases-scarbee-vintage-keys/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "documentation constructeur",
+  "recupere_le": "2026-09-24",
+  "mots": 811
+ },
+ {
+  "fichier": "funk-claviers/relix-com-articles-detail-interview-jeff-bhasker-on-lettuce-the-uptown-funk-phenomenon-and.md",
+  "titre": "relix.com — interview jeff bhasker on lettuce the uptown funk phenomenon and more",
+  "source": "https://relix.com/articles/detail/interview_jeff_bhasker_on_lettuce_the_uptown_funk_phenomenon_and_more/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2468
+ },
+ {
+  "fichier": "funk-claviers/relix-com-articles-detail-snarky-puppy-movement-is-our-message.md",
+  "titre": "relix.com — snarky puppy movement is our message",
+  "source": "https://relix.com/articles/detail/snarky-puppy-movement-is-our-message/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2424
+ },
+ {
   "fichier": "funk-claviers/resource2skill-jazz-piano-comping.md",
   "titre": "microsoft/Resource2Skill — Jazz piano syncopated comping & swing phrasing (ii-V-I), overview",
   "source": "https://raw.githubusercontent.com/microsoft/Resource2Skill/main/skills_wiki/reaper/jazz_piano_syncopated_comping_swing_phra_aef223e4/text/overview.md",
@@ -2518,6 +5888,76 @@
   "axe": "jeu et voicings des claviers funk (jazz/gospel/néo-soul)",
   "recupere_le": "2026-09-24",
   "mots": 1466
+ },
+ {
+  "fichier": "funk-claviers/reverbmachine-com-blog-exploring-the-yamaha-dx7-pt2.md",
+  "titre": "reverbmachine.com — exploring the yamaha dx7 pt2",
+  "source": "https://reverbmachine.com/blog/exploring-the-yamaha-dx7-pt2/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 2398
+ },
+ {
+  "fichier": "funk-claviers/reverbmachine-com-blog-exploring-the-yamaha-dx7.md",
+  "titre": "reverbmachine.com — exploring the yamaha dx7",
+  "source": "https://reverbmachine.com/blog/exploring-the-yamaha-dx7/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 2892
+ },
+ {
+  "fichier": "funk-claviers/reverbmachine-com-blog-how-kaytranada-produced-glowed-up.md",
+  "titre": "reverbmachine.com — how kaytranada produced glowed up",
+  "source": "https://reverbmachine.com/blog/how-kaytranada-produced-glowed-up/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1941
+ },
+ {
+  "fichier": "funk-claviers/reverbmachine-com-blog-kaytranada-99-synth-sounds.md",
+  "titre": "reverbmachine.com — kaytranada 99 synth sounds",
+  "source": "https://reverbmachine.com/blog/kaytranada-99-synth-sounds/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne ; jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 1107
+ },
+ {
+  "fichier": "funk-claviers/sageaudio-com-articles-recording-and-engineering-techniques-from-random-access-memories-by.md",
+  "titre": "sageaudio.com — recording and engineering techniques from random access memories by daft punk",
+  "source": "https://www.sageaudio.com/articles/recording-and-engineering-techniques-from-random-access-memories-by-daft-punk",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 692
+ },
+ {
+  "fichier": "funk-claviers/scu-edu-au-news-2016-uptown-funk-grammy-win-for-universitys-audio-production-graduate-php.md",
+  "titre": "scu.edu.au — uptown funk grammy win for universitys audio production graduate",
+  "source": "https://www.scu.edu.au/news/2016/uptown-funk-grammy-win-for-universitys-audio-production-graduate.php",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 592
+ },
+ {
+  "fichier": "funk-claviers/serbanghenea-com-discography-item-24k-magic.md",
+  "titre": "serbanghenea.com — 24k magic",
+  "source": "https://serbanghenea.com/discography-item/24k-magic/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 251
  },
  {
   "fichier": "funk-claviers/setbfree-b-whirl-ttl.md",
@@ -2600,6 +6040,66 @@
   "mots": 1066
  },
  {
+  "fichier": "funk-claviers/songfacts-com-facts-dua-lipa-physical.md",
+  "titre": "songfacts.com — physical",
+  "source": "https://www.songfacts.com/facts/dua-lipa/physical",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1066
+ },
+ {
+  "fichier": "funk-claviers/songfacts-com-facts-jamiroquai-virtual-insanity.md",
+  "titre": "songfacts.com — virtual insanity",
+  "source": "https://www.songfacts.com/facts/jamiroquai/virtual-insanity",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1005
+ },
+ {
+  "fichier": "funk-claviers/songwriteruniverse-com-dmile-songwriter-producer-interview-2022.md",
+  "titre": "songwriteruniverse.com — dmile songwriter producer interview 2022",
+  "source": "https://www.songwriteruniverse.com/dmile-songwriter-producer-interview-2022/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2218
+ },
+ {
+  "fichier": "funk-claviers/sonicscoop-com-chromeo-building-wall-of-synths-sound-at-metrosonic.md",
+  "titre": "sonicscoop.com — chromeo building wall of synths sound at metrosonic",
+  "source": "https://sonicscoop.com/chromeo-building-wall-of-synths-sound-at-metrosonic/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 352
+ },
+ {
+  "fichier": "funk-claviers/sonicscoop-com-icons-mick-guzauski-on-engineering-and-mixing-daft-punks-random-access-memo.md",
+  "titre": "sonicscoop.com — icons mick guzauski on engineering and mixing daft punks random access memories",
+  "source": "https://sonicscoop.com/icons-mick-guzauski-on-engineering-and-mixing-daft-punks-random-access-memories/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 4258
+ },
+ {
+  "fichier": "funk-claviers/sonicstate-com-news-2021-08-04-bruno-mars-24k-magic-production-techniques.md",
+  "titre": "sonicstate.com — bruno mars 24k magic production techniques",
+  "source": "https://sonicstate.com/news/2021/08/04/bruno-mars-24k-magic-production-techniques/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 393
+ },
+ {
   "fichier": "funk-claviers/sos-synth-secrets-40-willickr.md",
   "titre": "Synth Secrets 40 — Synthesizing Pianos (SOS oct. 2002)",
   "source": "https://raw.githubusercontent.com/Pointhairedboss/Willickr/main/SyntheoryGordonReid/40_Synthesizing%20Pianos.md",
@@ -2658,6 +6158,196 @@
   "axe": "Synth Secrets (Gordon Reid, SOS) : pianos, orgue à roues phoniques, effets Hammond — miroir Willickr, texte complet",
   "recupere_le": "2026-09-24",
   "mots": 3850
+ },
+ {
+  "fichier": "funk-claviers/soundgirls-org-the-fender-rhodes.md",
+  "titre": "soundgirls.org — the fender rhodes",
+  "source": "https://soundgirls.org/the-fender-rhodes/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 3786
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-forum-viewtopic-php-t-82409.md",
+  "titre": "soundonsound.com — viewtopic",
+  "source": "https://www.soundonsound.com/forum/viewtopic.php?t=82409",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 108
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-people-matt-johnson-jamiroquai-podcast.md",
+  "titre": "soundonsound.com — matt johnson jamiroquai podcast",
+  "source": "https://www.soundonsound.com/people/matt-johnson-jamiroquai-podcast",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 827
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-people-recording-random-access-memories-daft-punk.md",
+  "titre": "soundonsound.com — recording random access memories daft punk",
+  "source": "https://www.soundonsound.com/people/recording-random-access-memories-daft-punk",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 7572
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-people-talkback-noga-erez-ori-rousso.md",
+  "titre": "soundonsound.com — talkback noga erez ori rousso",
+  "source": "https://www.soundonsound.com/people/talkback-noga-erez-ori-rousso",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2046
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-reviews-goodhertz-plug-ins.md",
+  "titre": "soundonsound.com — goodhertz plug ins",
+  "source": "https://www.soundonsound.com/reviews/goodhertz-plug-ins",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2087
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-reviews-moog-sub-37.md",
+  "titre": "soundonsound.com — moog sub 37",
+  "source": "https://www.soundonsound.com/reviews/moog-sub-37",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 5068
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-sos-nov03-articles-synthsecrets-htm.md",
+  "titre": "soundonsound.com — synthsecrets",
+  "source": "http://www.soundonsound.com/sos/nov03/articles/synthsecrets.htm",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "jeu, voicings, mix",
+  "recupere_le": "2026-09-24",
+  "mots": 4566
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-techniques-classic-tracks-prince-kiss.md",
+  "titre": "soundonsound.com — classic tracks prince kiss",
+  "source": "https://www.soundonsound.com/techniques/classic-tracks-prince-kiss",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 5160
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-techniques-inside-track-doja-cat-ft-nicki-minaj-say-so.md",
+  "titre": "soundonsound.com — inside track doja cat ft nicki minaj say so",
+  "source": "https://www.soundonsound.com/techniques/inside-track-doja-cat-ft-nicki-minaj-say-so",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 5461
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-techniques-inside-track-dua-lipa-dont-start-now.md",
+  "titre": "soundonsound.com — inside track dua lipa dont start now",
+  "source": "https://www.soundonsound.com/techniques/inside-track-dua-lipa-dont-start-now",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 4913
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-techniques-mixing-bruno-mars-live.md",
+  "titre": "soundonsound.com — mixing bruno mars live",
+  "source": "https://www.soundonsound.com/techniques/mixing-bruno-mars-live",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 3002
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-techniques-synthesizing-hammond-organ-effects.md",
+  "titre": "soundonsound.com — synthesizing hammond organ effects",
+  "source": "https://www.soundonsound.com/techniques/synthesizing-hammond-organ-effects",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 3893
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-techniques-synthesizing-pianos.md",
+  "titre": "soundonsound.com — synthesizing pianos",
+  "source": "https://www.soundonsound.com/techniques/synthesizing-pianos",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 4546
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-techniques-synthesizing-rest-hammond-organ-part-1.md",
+  "titre": "soundonsound.com — synthesizing rest hammond organ part 1",
+  "source": "https://www.soundonsound.com/techniques/synthesizing-rest-hammond-organ-part-1",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 3944
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-techniques-synthesizing-rest-hammond-organ-part-2.md",
+  "titre": "soundonsound.com — synthesizing rest hammond organ part 2",
+  "source": "https://www.soundonsound.com/techniques/synthesizing-rest-hammond-organ-part-2",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 4138
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-techniques-synthesizing-tonewheel-organs-part-1.md",
+  "titre": "soundonsound.com — synthesizing tonewheel organs part 1",
+  "source": "https://www.soundonsound.com/techniques/synthesizing-tonewheel-organs-part-1",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 4569
+ },
+ {
+  "fichier": "funk-claviers/soundonsound-com-techniques-synthesizing-tonewheel-organs-part-2.md",
+  "titre": "soundonsound.com — synthesizing tonewheel organs part 2",
+  "source": "https://www.soundonsound.com/techniques/synthesizing-tonewheel-organs-part-2",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 4433
+ },
+ {
+  "fichier": "funk-claviers/splice-com-blog-how-chromeo-built-their-sound.md",
+  "titre": "splice.com — how chromeo built their sound",
+  "source": "https://splice.com/blog/how-chromeo-built-their-sound/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2131
  },
  {
   "fichier": "funk-claviers/stevie-clavinet-readme.md",
@@ -2720,6 +6410,176 @@
   "mots": 774
  },
  {
+  "fichier": "funk-claviers/synthanatomy-com-2023-07-jamiroquai-live-synth-and-keyboard-rig-tour-with-matt-johnson-htm.md",
+  "titre": "synthanatomy.com — jamiroquai live synth and keyboard rig tour with matt johnson",
+  "source": "https://synthanatomy.com/2023/07/jamiroquai-live-synth-and-keyboard-rig-tour-with-matt-johnson.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 886
+ },
+ {
+  "fichier": "funk-claviers/synthctrl-com-blogs-blog-bruno-mars-24k-magic-breakdown.md",
+  "titre": "synthctrl.com — bruno mars 24k magic breakdown",
+  "source": "https://synthctrl.com/blogs/blog/bruno-mars-24k-magic-breakdown",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1191
+ },
+ {
+  "fichier": "funk-claviers/synthctrl-com-blogs-blog-dua-lipa-physical-breakdown.md",
+  "titre": "synthctrl.com — dua lipa physical breakdown",
+  "source": "https://synthctrl.com/blogs/blog/dua-lipa-physical-breakdown",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 890
+ },
+ {
+  "fichier": "funk-claviers/synthhistory-com-post-interview-with-chromeo.md",
+  "titre": "synthhistory.com — interview with chromeo",
+  "source": "https://www.synthhistory.com/post/interview-with-chromeo",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1096
+ },
+ {
+  "fichier": "funk-claviers/synthtopia-com-content-2015-04-21-the-iconic-sounds-of-synthesis-herbie-hancocks-chameleon.md",
+  "titre": "synthtopia.com — the iconic sounds of synthesis herbie hancocks chameleon bassline",
+  "source": "https://www.synthtopia.com/content/2015/04/21/the-iconic-sounds-of-synthesis-herbie-hancocks-chameleon-bassline/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 1161
+ },
+ {
+  "fichier": "funk-claviers/synthtopia-com-content-2016-12-10-recreating-michael-jackson-iconic-thriller-bassline-on-a.md",
+  "titre": "synthtopia.com — recreating michael jackson iconic thriller bassline on a minimoog",
+  "source": "https://www.synthtopia.com/content/2016/12/10/recreating-michael-jackson-iconic-thriller-bassline-on-a-minimoog/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 577
+ },
+ {
+  "fichier": "funk-claviers/synthtopia-com-content-2018-12-10-synth-sounds-of-bruno-mars-finesse-24k-magic-uptown-funk.md",
+  "titre": "synthtopia.com — synth sounds of bruno mars finesse 24k magic uptown funk",
+  "source": "https://www.synthtopia.com/content/2018/12/10/synth-sounds-of-bruno-mars-finesse-24k-magic-uptown-funk/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 577
+ },
+ {
+  "fichier": "funk-claviers/synthtopia-com-content-2022-07-04-new-sounds-for-the-moog-one-by-jamiroquais-matt-johnson.md",
+  "titre": "synthtopia.com — new sounds for the moog one by jamiroquais matt johnson",
+  "source": "https://www.synthtopia.com/content/2022/07/04/new-sounds-for-the-moog-one-by-jamiroquais-matt-johnson/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2182
+ },
+ {
+  "fichier": "funk-claviers/syntorial-com-preset-recipe-dr-dre-nuthin-but-a-g-thang-lead.md",
+  "titre": "syntorial.com — dr dre nuthin but a g thang lead",
+  "source": "https://www.syntorial.com/preset-recipe/dr-dre-nuthin-but-a-g-thang-lead/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 934
+ },
+ {
+  "fichier": "funk-claviers/syntorial-com-preset-recipe-herbie-hancock-chameleon-bass.md",
+  "titre": "syntorial.com — herbie hancock chameleon bass",
+  "source": "https://www.syntorial.com/preset-recipe/herbie-hancock-chameleon-bass/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 868
+ },
+ {
+  "fichier": "funk-claviers/syntorial-com-preset-recipe-herbie-hancock-rockit-lead.md",
+  "titre": "syntorial.com — herbie hancock rockit lead",
+  "source": "https://www.syntorial.com/preset-recipe/herbie-hancock-rockit-lead/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 873
+ },
+ {
+  "fichier": "funk-claviers/tapenotes-co-uk-project-tn44-tom-misch.md",
+  "titre": "tapenotes.co.uk — tn44 tom misch",
+  "source": "https://tapenotes.co.uk/project/tn44-tom-misch",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 204
+ },
+ {
+  "fichier": "funk-claviers/tapeop-com-interviews-156-jon-regen-matt-johnson.md",
+  "titre": "tapeop.com — jon regen matt johnson",
+  "source": "https://tapeop.com/interviews/156/jon-regen-matt-johnson",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 3730
+ },
+ {
+  "fichier": "funk-claviers/thebeliever-net-an-interview-with-jack-stratton.md",
+  "titre": "thebeliever.net — an interview with jack stratton",
+  "source": "https://www.thebeliever.net/an-interview-with-jack-stratton/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 6822
+ },
+ {
+  "fichier": "funk-claviers/thefader-com-2016-10-19-nxworries-anderson-paak-knxwledge-interview.md",
+  "titre": "thefader.com — nxworries anderson paak knxwledge interview",
+  "source": "https://www.thefader.com/2016/10/19/nxworries-anderson-paak-knxwledge-interview",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2064
+ },
+ {
+  "fichier": "funk-claviers/thefader-com-2017-02-24-thundercat-drunk-album-credits-kendrick-lamar-wiz-khalifa.md",
+  "titre": "thefader.com — thundercat drunk album credits kendrick lamar wiz khalifa",
+  "source": "https://www.thefader.com/2017/02/24/thundercat-drunk-album-credits-kendrick-lamar-wiz-khalifa",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1243
+ },
+ {
+  "fichier": "funk-claviers/third-story-com-listen-woodygoss.md",
+  "titre": "third-story.com — woodygoss",
+  "source": "http://www.third-story.com/listen/woodygoss",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 643
+ },
+ {
   "fichier": "funk-claviers/tkgally-findings-groove-lofi-engine.md",
   "titre": "tkgally algorithmic-music — Findings: the groove-lofi engine (Engine 03)",
   "source": "https://raw.githubusercontent.com/tkgally/algorithmic-music/main/wiki/findings-groove-lofi-engine.md",
@@ -2780,6 +6640,26 @@
   "mots": 11698
  },
  {
+  "fichier": "funk-claviers/tropicalfishvintage-com-blog-2019-5-27-how-does-a-wurlitzer-electronic-piano-work.md",
+  "titre": "tropicalfishvintage.com — how does a wurlitzer electronic piano work",
+  "source": "https://www.tropicalfishvintage.com/blog/2019/5/27/how-does-a-wurlitzer-electronic-piano-work",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 626
+ },
+ {
+  "fichier": "funk-claviers/uaudio-com-blogs-ua-artist-interview-mick-guzauski.md",
+  "titre": "uaudio.com — artist interview mick guzauski",
+  "source": "https://www.uaudio.com/blogs/ua/artist-interview-mick-guzauski",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2986
+ },
+ {
   "fichier": "funk-claviers/ummerr-bass-superstition-tab.md",
   "titre": "ummerr/bass — tablature « Superstition » (Stevie Wonder) : tonalité, tempo, syncopes",
   "source": "https://raw.githubusercontent.com/ummerr/bass/main/content/tabs/23-superstition.md",
@@ -2788,6 +6668,86 @@
   "axe": "morceaux de référence : Chameleon, Superstition ; ensembles James Brown / P-Funk ; presets de mix funk",
   "recupere_le": "2026-09-24",
   "mots": 318
+ },
+ {
+  "fichier": "funk-claviers/variety-com-2020-music-news-dr-luke-back-doja-cat-say-so-kesha-1234605151.md",
+  "titre": "variety.com — dr luke back doja cat say so kesha 1234605151",
+  "source": "https://variety.com/2020/music/news/dr-luke-back-doja-cat-say-so-kesha-1234605151/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2516
+ },
+ {
+  "fichier": "funk-claviers/variety-com-2021-music-news-serban-ghenea-hitmaker-month-1235121422.md",
+  "titre": "variety.com — serban ghenea hitmaker month 1235121422",
+  "source": "https://variety.com/2021/music/news/serban-ghenea-hitmaker-month-1235121422/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1558
+ },
+ {
+  "fichier": "funk-claviers/vibe-com-features-editorial-d-mile-yellow-diamonds-interview-1234660076.md",
+  "titre": "vibe.com — d mile yellow diamonds interview 1234660076",
+  "source": "https://www.vibe.com/features/editorial/d-mile-yellow-diamonds-interview-1234660076/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 2241
+ },
+ {
+  "fichier": "funk-claviers/vintagevibe-com-blogs-news-wurlitzer-electric-piano-reeds-case-study.md",
+  "titre": "vintagevibe.com — wurlitzer electric piano reeds case study",
+  "source": "https://www.vintagevibe.com/blogs/news/wurlitzer-electric-piano-reeds-case-study",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 2096
+ },
+ {
+  "fichier": "funk-claviers/vintagevibe-com-pages-matt-johnson.md",
+  "titre": "vintagevibe.com — matt johnson",
+  "source": "https://www.vintagevibe.com/pages/matt-johnson",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 557
+ },
+ {
+  "fichier": "funk-claviers/vulf-co-p-mixing.md",
+  "titre": "vulf.co — mixing",
+  "source": "https://vulf.co/p/mixing",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 349
+ },
+ {
+  "fichier": "funk-claviers/wamplerpedals-com-cory-wong.md",
+  "titre": "wamplerpedals.com — cory wong",
+  "source": "https://www.wamplerpedals.com/cory-wong/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 409
+ },
+ {
+  "fichier": "funk-claviers/weraveyou-com-tech-review-goodhertz-vulf-compressor.md",
+  "titre": "weraveyou.com — review goodhertz vulf compressor",
+  "source": "https://weraveyou.com/tech/review-goodhertz-vulf-compressor/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 845
  },
  {
   "fichier": "funk-claviers/wikipedia-clavichord.md",
@@ -2858,6 +6818,66 @@
   "axe": "histoire, mécanique et usage des claviers (miroirs Wikipédia)",
   "recupere_le": "2026-09-24",
   "mots": 2323
+ },
+ {
+  "fichier": "funk-claviers/wsdg-com-pro-sound-news-behind-the-magic-recording-stevie-wonders-superstition.md",
+  "titre": "wsdg.com — pro sound news behind the magic recording stevie wonders superstition",
+  "source": "https://wsdg.com/pro-sound-news-behind-the-magic-recording-stevie-wonders-superstition/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "synth funk historique",
+  "recupere_le": "2026-09-24",
+  "mots": 2216
+ },
+ {
+  "fichier": "funk-claviers/xlr8r-com-features-chromeo-in-the-studio.md",
+  "titre": "xlr8r.com — chromeo in the studio",
+  "source": "https://xlr8r.com/features/chromeo-in-the-studio/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 849
+ },
+ {
+  "fichier": "funk-claviers/yahoo-com-entertainment-music-articles-decade-look-back-musical-theory-140000474-html.md",
+  "titre": "yahoo.com — decade look back musical theory 140000474",
+  "source": "https://www.yahoo.com/entertainment/music/articles/decade-look-back-musical-theory-140000474.html",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1943
+ },
+ {
+  "fichier": "funk-claviers/yamahablackboxes-com-articles-how-to-program-yamaha-dx7.md",
+  "titre": "yamahablackboxes.com — how to program yamaha dx7",
+  "source": "https://yamahablackboxes.com/articles/how-to-program-yamaha-dx7/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "claviers électromécaniques",
+  "recupere_le": "2026-09-24",
+  "mots": 6033
+ },
+ {
+  "fichier": "funk-claviers/yamahasynth-com-learn-synth-programming-matt-johnson-signature-artist-sounds.md",
+  "titre": "yamahasynth.com — matt johnson signature artist sounds",
+  "source": "https://yamahasynth.com/learn/synth-programming/matt-johnson-signature-artist-sounds/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 395
+ },
+ {
+  "fichier": "funk-claviers/youbeat-it-en-interview-purplediscomachine.md",
+  "titre": "youbeat.it — interview purplediscomachine",
+  "source": "https://www.youbeat.it/en/interview-purplediscomachine/",
+  "mode": "texte integral",
+  "skills": "studio-grade-funk-keys-synth-sound-design",
+  "axe": "funk moderne",
+  "recupere_le": "2026-09-24",
+  "mots": 1050
  },
  {
   "fichier": "funk-claviers/zoia-hammond-readme.md",
