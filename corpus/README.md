@@ -27,16 +27,26 @@ Ce dossier conserve, en Markdown, les documents consultés pour construire les s
   en Markdown**. Le texte suit la page mais peut être incomplet (tableaux, images, encadrés,
   pages très longues). Pour un chiffre décisif, revérifier sur l'URL d'origine.
 
+## Où est ce dossier
+
+`corpus/` vit **dans le dépôt Git** (`maileytsil-gif/tsila`, branche `claude/quirky-allen-vkiuad`),
+à côté de `.claude/`. Sur le Mac, il apparaît dans le clone du dépôt (par exemple `~/tsila/corpus`)
+après `git fetch origin claude/quirky-allen-vkiuad && git checkout claude/quirky-allen-vkiuad`.
+Les commandes ci-dessous se lancent depuis la racine du clone.
+
 ## Utiliser avec Ollama (Qwen ou autre modèle local)
 
 Prérequis : Ollama installé, un modèle tiré (`ollama pull qwen2.5:7b`, ou `qwen2.5:14b`,
 `qwen3`…). Aucune bibliothèque Python à installer.
 
 ```sh
-# 1. Poser une question : les passages les plus pertinents du corpus sont cherchés (BM25),
-#    puis envoyés au modèle avec la consigne de citer les fichiers.
+# 1. Poser une question : les passages les plus pertinents du corpus ET des fiches des skills
+#    (références + recettes chiffrées de .claude/skills/) sont cherchés (BM25), puis envoyés au
+#    modèle avec la consigne de citer les fichiers. Nommer les devices explicitement.
 python3 corpus/scripts/ask_corpus.py "comment obtenir le 'wow' d'un synth brass : enveloppe de filtre plus lente que l'ampli ?"
-python3 corpus/scripts/ask_corpus.py --model qwen2.5:14b --dossier funk-claviers --k 8 "réglages Electric pour un Rhodes Mark I"
+python3 corpus/scripts/ask_corpus.py --model qwen2.5:14b --k 8 "réglages du device Electric d'Ableton pour un Rhodes Mark I avec bark"
+python3 corpus/scripts/ask_corpus.py --dossier studio-grade-funk-keys-synth-sound-design "recette Clavinet avec auto-wah"
+python3 corpus/scripts/ask_corpus.py --sans-skills --dossier funk-claviers "histoire du Dyno-My-Piano"   # corpus seul
 
 # 2. Voir quels passages seraient retenus, sans appeler le modèle
 python3 corpus/scripts/ask_corpus.py --montrer "registrations Hammond funk"
