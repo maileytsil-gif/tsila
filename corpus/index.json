@@ -1,0 +1,632 @@
+[
+ {
+  "fichier": "synth-secrets/synth-secrets-01.md",
+  "titre": "Synth Secrets, partie 1 : What's In A Sound?",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-1.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 2096
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-02.md",
+  "titre": "Synth Secrets, partie 2 : The Physics Of Percussion",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-2.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 2157
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-03.md",
+  "titre": "Synth Secrets, partie 3 : Modifiers & Controllers",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-3.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 2095
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-04.md",
+  "titre": "Synth Secrets, partie 4 : Of Filters & Phase Relationships",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-4.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 2267
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-05.md",
+  "titre": "Synth Secrets, partie 5 : Further With Filters",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-5.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 2387
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-06.md",
+  "titre": "Synth Secrets, partie 6 : Of Responses & Resonance",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-6.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 2442
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-07.md",
+  "titre": "Synth Secrets, partie 7 : Envelopes, Gates & Triggers",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-7.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 2836
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-08.md",
+  "titre": "Synth Secrets, partie 8 : More About Envelopes",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-8.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 2846
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-09.md",
+  "titre": "Synth Secrets, partie 9 : An Introduction To VCAs",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-9.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3098
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-10.md",
+  "titre": "Synth Secrets, partie 10 : Modulation",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-10.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 2274
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-11.md",
+  "titre": "Synth Secrets, partie 11 : Amplitude Modulation",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-11.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3161
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-12.md",
+  "titre": "Synth Secrets, partie 12 : An Introduction To Frequency Modulation",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-12.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3238
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-13.md",
+  "titre": "Synth Secrets, partie 13 : More On Frequency Modulation",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-13.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3982
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-14.md",
+  "titre": "Synth Secrets, partie 14 : An Introduction To Additive Synthesis",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-14.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3368
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-15.md",
+  "titre": "Synth Secrets, partie 15 : An Introduction To ESPS & Vocoders",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-15.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 2917
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-16.md",
+  "titre": "Synth Secrets, partie 16 : From Sample & Hold To Sample-rate Converters (1)",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-16.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3149
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-17.md",
+  "titre": "Synth Secrets, partie 17 : From Sample & Hold To Sample-rate Converters (2)",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-17.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3092
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-18.md",
+  "titre": "Synth Secrets, partie 18 : Priorities & Triggers",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-18.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3483
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-19.md",
+  "titre": "Synth Secrets, partie 19 : Duophony",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-19.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3372
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-20.md",
+  "titre": "Synth Secrets, partie 20 : Introducing Polyphony",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-20.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3348
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-21.md",
+  "titre": "Synth Secrets, partie 21 : From Polyphony To Digital Synths",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-21.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 4034
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-22.md",
+  "titre": "Synth Secrets, partie 22 : From Springs, Plates & Buckets To Physical Modelling",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-22.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 4261
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-23.md",
+  "titre": "Synth Secrets, partie 23 : Formant Synthesis",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-23.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3530
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-24.md",
+  "titre": "Synth Secrets, partie 24 : Synthesizing Wind Instruments",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-24.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3368
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-25.md",
+  "titre": "Synth Secrets, partie 25 : Synthesizing Brass Instruments",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-25.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3229
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-26.md",
+  "titre": "Synth Secrets, partie 26 : Brass Synthesis On A Minimoog",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-26.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 4004
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-27.md",
+  "titre": "Synth Secrets, partie 27 : Roland SH101/ARP Axxe Brass Synthesis",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-27.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 4289
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-28.md",
+  "titre": "Synth Secrets, partie 28 : Synthesizing Plucked Strings",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-28.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3481
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-29.md",
+  "titre": "Synth Secrets, partie 29 : The Theoretical Acoustic Guitar Patch",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-29.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3192
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-30.md",
+  "titre": "Synth Secrets, partie 30 : A Final Attempt To Synthesize Guitars",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-30.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3687
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-31.md",
+  "titre": "Synth Secrets, partie 31 : Synthesizing Percussion",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-31.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3731
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-32.md",
+  "titre": "Synth Secrets, partie 32 : Practical Percussion Synthesis",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-32.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3470
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-33.md",
+  "titre": "Synth Secrets, partie 33 : Synthesizing Drums: The Bass Drum",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-33.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3135
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-34.md",
+  "titre": "Synth Secrets, partie 34 : Practical Bass Drum Synthesis",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-34.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3646
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-35.md",
+  "titre": "Synth Secrets, partie 35 : Synthesizing Drums: The Snare Drum",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-35.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3592
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-36.md",
+  "titre": "Synth Secrets, partie 36 : Practical Snare Drum Synthesis",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-36.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3384
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-37.md",
+  "titre": "Synth Secrets, partie 37 : Analysing Metallic Percussion",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-37.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 2226
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-38.md",
+  "titre": "Synth Secrets, partie 38 : Synthesizing Realistic Cymbals",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-38.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 1848
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-39.md",
+  "titre": "Synth Secrets, partie 39 : Practical Cymbal Synthesis",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-39.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3727
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-40.md",
+  "titre": "Synth Secrets, partie 40 : Synthesizing Bells",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-40.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3107
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-41.md",
+  "titre": "Synth Secrets, partie 41 : Synthesizing Cowbells & Claves",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-41.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3168
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-42.md",
+  "titre": "Synth Secrets, partie 42 : Synthesizing Pianos",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-42.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 4023
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-43.md",
+  "titre": "Synth Secrets, partie 43 : Synthesizing Acoustic Pianos On The Roland JX10",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-43.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3816
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-44.md",
+  "titre": "Synth Secrets, partie 44 : Synthesizing Acoustic Pianos On The Roland JX10",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-44.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 2927
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-45.md",
+  "titre": "Synth Secrets, partie 45 : Synthesizing Acoustic Pianos On The Roland JX10",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-45.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3118
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-46.md",
+  "titre": "Synth Secrets, partie 46 : Synthesizing Strings: String Machines",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-46.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3716
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-47.md",
+  "titre": "Synth Secrets, partie 47 : Synthesizing Strings • PWM & String Sounds",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-47.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 5767
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-48.md",
+  "titre": "Synth Secrets, partie 48 : Synthesizing Bowed Strings: the Violin family",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-48.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3650
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-49.md",
+  "titre": "Synth Secrets, partie 49 : Synth Secrets: Practical Bowed-string Synthesis",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-49.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3159
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-50.md",
+  "titre": "Synth Secrets, partie 50 : Practical Bowed-string Synthesis (continued)",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-50.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3589
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-51.md",
+  "titre": "Synth Secrets, partie 51 : Articulation & Bowed-string Synthesis",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-51.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 3368
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-52.md",
+  "titre": "Synth Secrets, partie 52 : Synthesizing Pan Pipes",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-52.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 432
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-53.md",
+  "titre": "Synth Secrets, partie 53 : Synthesizing Simple Flutes",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-53.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 438
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-54.md",
+  "titre": "Synth Secrets, partie 54 : Practical Flute Synthesis",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-54.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 671
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-55.md",
+  "titre": "Synth Secrets, partie 55 : Synthesizing Tonewheel Organs",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-55.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 581
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-56.md",
+  "titre": "Synth Secrets, partie 56 : Synthesizing Tonewheel Organs: Part2",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-56.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 933
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-57.md",
+  "titre": "Synth Secrets, partie 57 : Synthesizing Hammond Organ Effects: Part1",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-57.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 504
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-58.md",
+  "titre": "Synth Secrets, partie 58 : Synthesizing The Rest Of The Hammond Organ: Part 2",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-58.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 817
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-59.md",
+  "titre": "Synth Secrets, partie 59 : Synthesizing The Rest Of The Hammond Organ: Part 3",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-59.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 697
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-60.md",
+  "titre": "Synth Secrets, partie 60 : From Analogue To Digital Effects",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-60.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 298
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-61.md",
+  "titre": "Synth Secrets, partie 61 : Creative Synthesis With Delays",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-61.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 1028
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-62.md",
+  "titre": "Synth Secrets, partie 62 : More Creative Synthesis with Delays",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-62.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 782
+ },
+ {
+  "fichier": "synth-secrets/synth-secrets-63.md",
+  "titre": "Synth Secrets, partie 63 : The Secret Of The Big Red Button",
+  "source": "https://raw.githubusercontent.com/micjamking/synth-secrets/master/part-63.md",
+  "mode": "texte integral",
+  "skills": "",
+  "axe": "",
+  "recupere_le": "2026-09-24",
+  "mots": 218
+ }
+]
