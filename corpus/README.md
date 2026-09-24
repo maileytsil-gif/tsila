@@ -13,13 +13,15 @@ Ce dossier conserve, en Markdown, les documents consultés pour construire les s
 | `cuivres/` | Pages lues pour le skill cuivres : acoustique, synth brass vintage, cuivres électroniques modernes, écriture de section, mix |
 | `funk-claviers/` | Pages lues pour le skill funk : Rhodes, Wurlitzer, Clavinet, Hammond, synth funk historique, funk moderne, jeu et mix |
 | `synthes-vintage/` | Données d'usine et sources de synthèse partagées par les deux skills : DX7 ROM1A décodée (32 voix), Juno-60/106 d'usine, presets OB-Xd, Chowning/CLM/Csound, Nord Modular Book |
-| `constructeur/` | Pages de manuels : Ableton Live 12, Serum 2, Native Instruments, Waves, FabFilter, iZotope, oeksound |
-| `scripts/` | `ask_corpus.py` (question → passages BM25 → réponse Ollama) et `build_context.py` (assemblage en un fichier ou en Modelfile) |
+| `constructeur/` | Pages de manuels : les 42 chapitres du manuel Live 12 (miroir GitHub), manuel Serum 1 et changelog Serum 2, format SFZ, cartes d'articulations Reaticulate (Session Horns Pro, CineBrass, Spitfire), notes tierces sur FabFilter Pro-Q 4, soothe2, Vulf Compressor, iZotope Imager |
+| `sources-a-telecharger.json`, `sources-a-telecharger-funk.json` | Listes des pages que le conteneur n'a pas pu lire (sites constructeurs, Sound On Sound, Wikipédia, blogs) : 166 URL pour les cuivres et manuels, 368 pour le funk. `scripts/fetch_sources.py` les lit toutes les deux (dédoublonnées) et range chaque page dans son dossier |
+| `scripts/` | `ask_corpus.py` (question → passages BM25 → réponse Ollama), `build_context.py` (assemblage en un fichier ou en Modelfile), `build_index.py` (régénère `INDEX.md` et `index.json`), `fetch_sources.py` (à lancer sur le Mac pour compléter le corpus) |
 | `INDEX.md` | Liste de tous les documents avec source, mode d'obtention et skill(s) qui les citent |
 
-## Deux modes d'obtention, indiqués dans l'en-tête de chaque fichier
+## Trois modes d'obtention, indiqués dans l'en-tête de chaque fichier
 
 - `mode: texte integral` — fichier téléchargé tel quel (miroir GitHub, dépôt public).
+- `mode: synthese` — rapport de recherche rédigé en français par Claude à partir des sources lues (fichiers `recherche-*.md`) ; utile comme point d'entrée, pas comme source primaire.
 - `mode: extraction` — le conteneur de travail ne peut pas télécharger la plupart des sites
   (politique réseau), la page a donc été lue par l'outil de lecture de Claude et **retranscrite
   en Markdown**. Le texte suit la page mais peut être incomplet (tableaux, images, encadrés,
@@ -55,6 +57,21 @@ Adresse d'Ollama : `OLLAMA_HOST` (défaut `http://localhost:11434`). Modèle par
 
 Open WebUI : créer une *Knowledge* et y glisser les fichiers d'un sous-dossier (ou le fichier
 produit par `build_context.py`), puis interroger avec `#nom-de-la-connaissance`.
+
+## Compléter le corpus depuis le Mac
+
+Le conteneur de travail ne lit que GitHub. Les pages constructeur, Sound On Sound, Wikipédia et
+blogs cités par les skills sont donc listées dans les deux fichiers `sources-a-telecharger*.json`
+et se téléchargent depuis une machine sans restriction réseau :
+
+```bash
+pip3 install html2text                                  # facultatif, meilleure conversion HTML → Markdown
+python3 corpus/scripts/fetch_sources.py                 # les deux listes, ne télécharge que ce qui manque
+python3 corpus/scripts/fetch_sources.py --dossier funk-claviers
+python3 corpus/scripts/build_index.py                   # met à jour INDEX.md et index.json
+```
+
+Les échecs (403, 404, délai) sont listés en fin d'exécution ; les PDF sont enregistrés tels quels.
 
 ## Lien avec les skills
 

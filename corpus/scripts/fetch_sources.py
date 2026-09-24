@@ -2,12 +2,13 @@
 """Télécharger sur le Mac les pages que le conteneur cloud n'a pas pu lire, et les ranger dans le corpus.
 
 Le conteneur Claude Code cloud ne peut lire que GitHub ; les manuels (Ableton, Xfer, NI, Waves…),
-Sound On Sound, Wikipédia, les blogs, sont listés dans `sources-a-telecharger.json` avec leur
-dossier cible. Sur le Mac (sans restriction réseau) :
+Sound On Sound, Wikipédia, les blogs, sont listés dans `sources-a-telecharger.json` (cuivres,
+constructeur) et `sources-a-telecharger-funk.json` (funk, constructeur) avec leur dossier cible. Sur le Mac (sans restriction réseau) :
 
   pip3 install html2text        # facultatif : conversion HTML → Markdown de meilleure qualité
   python3 corpus/scripts/fetch_sources.py            # télécharge tout ce qui manque
   python3 corpus/scripts/fetch_sources.py --force    # retélécharge aussi ce qui existe
+  python3 corpus/scripts/fetch_sources.py --liste corpus/sources-a-telecharger-funk.json   # une seule liste
   python3 corpus/scripts/build_index.py              # met à jour INDEX.md
 
 Chaque page devient `<dossier>/<slug>.md` avec un en-tête YAML (titre, source, recupere_le,
@@ -17,7 +18,8 @@ enregistrés tels quels à côté (le texte n'en est pas extrait ici).
 import argparse, html, json, os, re, sys, time, urllib.request, urllib.error
 
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LISTE = os.path.join(RACINE, "sources-a-telecharger.json")
+LISTES = [os.path.join(RACINE, "sources-a-telecharger.json"),
+          os.path.join(RACINE, "sources-a-telecharger-funk.json")]
 UA = "Mozilla/5.0 (Macintosh) corpus-sound-design/1.0 (usage personnel)"
 
 def slug(s):
@@ -42,9 +44,18 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--dossier", default="", help="ne traiter qu'un dossier cible (cuivres, funk-claviers, constructeur)")
+    ap.add_argument("--liste", action="append", default=[], help="fichier JSON à lire (répétable) ; défaut : les deux listes du corpus")
     a = ap.parse_args()
-    with open(LISTE, encoding="utf-8") as f:
-        sources = json.load(f)
+    sources, vus = [], set()
+    for chemin in (a.liste or LISTES):
+        if not os.path.exists(chemin):
+            print("liste absente :", chemin, file=sys.stderr); continue
+        with open(chemin, encoding="utf-8") as f:
+            for s in json.load(f):
+                cle = re.sub(r"https?://(www\.)?", "", s["url"]).rstrip("/")
+                if cle in vus:
+                    continue
+                vus.add(cle); sources.append(s)
     echecs, faits = [], 0
     for s in sources:
         if a.dossier and s["dossier"] != a.dossier:

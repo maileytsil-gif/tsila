@@ -1,0 +1,86 @@
+---
+titre: "Goodhertz Vulf Compressor — fiche catalogue (existential-engineering : texte constructeur, paramètres, specs)"
+source: https://raw.githubusercontent.com/existential-engineering/catalog/main/data/software/goodhertz-vulf-compressor.yaml
+recupere_le: 2026-09-24
+mode: texte integral
+langue: en
+axe: traitement des claviers : soothe2 (résonances), Vulf Compressor, Pro-Q 4, Ozone Imager, Serum 2, revues
+skills: studio-grade-funk-keys-synth-sound-design
+usage: copie personnelle pour recherche locale (Ollama) ; droits des auteurs cités
+---
+
+```yaml
+id: 6lkp2k7YszdOMMND5xuMN
+name: Vulf Compressor
+manufacturer: goodhertz
+primaryCategory: compressor
+categories:
+  - dynamics
+  - plugin
+formats:
+  - au
+  - vst
+  - vst3
+  - aax
+platforms:
+  - mac
+  - windows
+url: https://goodhertz.com/vulf-comp
+prices:
+  - amount: 149
+    currency: USD
+description: A compression plugin based on a radically unique algorithm
+  originally engineered for the Boss SP-303 sampler, delivering distinctive
+  character-driven compression with vintage-inspired qualities. Used on
+  recordings by Dua Lipa, BTS, HAIM, and Rex Orange County.
+details: |-
+  Sometime around the turn of the century, an unknown Japanese DSP engineer engineered a radically weird compression algorithm for the Boss SP-303 Dr. Sample Sampler.
+
+  Years passed, and this “Vinyl Sim” compression languished in obscurity, a dark art known only to practitioners of instrumental beatmaking, producers like J Dilla and Madlib.
+
+  But then Vulfpeck’s Jack Stratton read about the compression algorithm on a forum and enlisted two friends, Devin Kerr and Rob Stenson (co-founders of Goodhertz), to bring that algorithm to life in a digital form.
+
+  But Devin did more than just bring it to life — he expanded the algorithm, fine-tuned the sound, perfected its oddity. And now that compression is the Vulf Compressor.
+
+  Vulf Compressor has 1 page of advanced controls, and a mastering edition of the plugin is available separately as VCME.
+specs: |-
+  - Main controls: Input Gain, Compression Amount, Wow/Flutter Amount, Lo-Fi Amount, Output Gain, Master Mix, Master On/Off
+  - Advanced compression controls: Attack Time Constant, Release Time Constant, Stereo Link
+  - Wow & Flutter section: Mix, Phase, Speed (33.3 / 45 / 78 RPM)
+  - Lo-Fi section: Noise Gain, Crunch, Type (Analog, 1990s Digital, 1980s Digital)
+  - Sidechain: Listen, External sidechain input, Tilt
+  - Additional controls: Digital Ref Level, Reset Meters, HQ Mode, Pre/Post-process Gain
+  - Double-precision floating-point processing with no internal clipping
+  - HQ Mode adds roughly 50ms latency and 2-4x CPU usage
+  - Mono and stereo channel configurations
+  - Smooth automation without artifacts
+  - Mac: 64-bit Audio Unit, VST, VST3 or AAX host, macOS 10.13 or later
+  - Windows: 64-bit VST, VST3 or AAX host, Windows 10 or later
+versions:
+  - name: "3.13"
+videos:
+  - videoId: Pv_DkI1S4vA
+    provider: youtube
+    title: Rex Orange County - 2008
+  - videoId: s2GS8DUDfPM
+    provider: youtube
+    title: HAIM - I've Been Down
+  - videoId: oygrmJFKYZY
+    provider: youtube
+    title: Dua Lipa - Don’t Start Now
+  - videoId: 7C2z4GqqS5E
+    provider: youtube
+    title: BTS - FAKE LOVE
+  - videoId: kruASSL78m8
+    provider: youtube
+    title: "Holy Trinities: Tambourine"
+  - videoId: W8qGxsKNfnk
+    provider: youtube
+    title: A Brief History of Vulf Compressor
+  - videoId: C3pIG643xuM
+    provider: youtube
+    title: “Cars Two” (Trem Ctrl → Vulf Compressor → Faraday Limiter)
+  - videoId: Y6D9WvwMNr8
+    provider: youtube
+    title: Vulf Compressor Demo 001
+```
