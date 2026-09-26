@@ -3,7 +3,7 @@
 ## Role separation
 - **APC64**: Ableton structure/performance — clips, scenes, touch faders, device/macros, automation, step sequencing.
 - **Maschine MK3 / Maschine 3**: drums, sampling, slicing, groove, pattern experimentation, euclidean/probability workflows.
-- **Komplete Kontrol keyboard + plugin**: keyboard playing, NKS browsing/mapping, scales/chords/arps and instrument discovery. Model to confirm: this pack says A49, [native-instruments-control](../../native-instruments-control/SKILL.md) records a declared "Komplete Kontrol S48" (S49 possible, generation unknown). Do not correct either silently; confirm before model-specific instructions [TEST].
+- **Komplete Kontrol keyboard + plugin**: keyboard playing, NKS browsing/mapping, scales/chords/arps and instrument discovery. Model: **Komplete Kontrol A49**, confirmed by the user on 26 Sept 2026 ([native-instruments-control](../../native-instruments-control/SKILL.md) updated). Do not assume S-series features.
 - **Ableton Live 12**: source of truth for arrangement, routing, automation, resampling and final mix.
 - **AI control**: LOM Bridge (`lom.py`) for state, parameters, notes, loading and arrangement automation; Producer Pal (`ppal-*`) for MIDI, clips and native devices; screen control for menus, plug-in windows and NI software ([61](61-ableton-lom-bridge.md)).
 

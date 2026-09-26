@@ -6,7 +6,7 @@ Use these as workflow observations cross-checked with manuals. Re-verify version
 Recurring lesson: establish drums and bass first, then synth depth/FX, then vocal and final bus. Sidechain is both a space-making and rhythmic device.
 
 ## Waves L4 demonstrations
-L4 is owned but not yet probed in this studio's Live Set; L2 is the validated limiter (`01-studio-inventory.md`). Mode names below are from demonstrations, not verified on the installed version `[TEST]`.
+L4 is the studio's primary final limiter (validated by the user); mode names below are from demonstrations, read them once on the installed version before quoting them (`01-studio-inventory.md`).
 Compare limiter modes at matched loudness. Listen to transient preservation, low-end behavior and distortion instead of selecting a mode from genre name alone. Treat adaptive clipping, upward compression and limiting as interacting stages.
 
 ## oeksound soothe3 demonstrations

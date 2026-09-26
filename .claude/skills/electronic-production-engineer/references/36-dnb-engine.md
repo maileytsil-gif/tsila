@@ -6,7 +6,7 @@ DnB is a high-tempo framework, not one sound. Treat the drum/bass relationship a
 ## Numbers, grid and structure
 Evidence tags: `80-evidence-policy.md`. The repo holds DnB-wide data only; nothing liquid-, minimal- or US-specific is measured.
 - **Tempo**: Beatport Drum & Bass Top 100: 174 (58 tracks), 176 (16), 172 (8) [DOC WhatBPM 2023]; theory table 160–180, typical 174, felt 87 in half-time [DOC-2]. Mean Beatport length 3:51 [DOC].
-- **Keys**: manual annotations 82 % minor, G minor 32 %, F minor 21 % (n = 38) [DOC GiantSteps]; Beatport roots F, D, E♭ [DOC WhatBPM, auto-keys]. The theory compilation's "C minor most common" [DOC-2] is not supported by these data.
+- **Keys**: manual annotations 82 % minor, G minor 32 %, F minor 21 % (n = 38) [DOC GiantSteps]; Beatport roots F, D, E♭ [DOC WhatBPM, auto-keys]. The theory sheet's former "C minor most common" was not supported by these data and was corrected on 26 Sept 2026 (`../../theorie-musicale-electronique/references/genres.md`).
 - **Swing**: 50–60 % [DOC-2, Attack]; the studio grid swings the ghost snares only, `swing(0.02, n/16)`, whose unit is undocumented: read the clip back [HEUR; TEST].
 
 Two-step starting grid, 174 BPM (`../../drums-signature/references/patterns.md`, `../../drums-signature/scripts/drum_pattern.py` dnb) [HEUR]:

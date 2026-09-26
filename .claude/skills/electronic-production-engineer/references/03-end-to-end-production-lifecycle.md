@@ -42,7 +42,7 @@ Bypass master loudness and inspect mix integrity: headroom, accidental clipping,
 Exit when: the mix does not depend on the limiter to hide balance or transient problems.
 
 ### G8 — Master
-Use only needed stages. In this studio Waves L2 is the validated final limiter; L4 is owned but not yet probed in Live (`[TEST]`, see `01-studio-inventory.md`); Pro-L 2 is not owned. Keep a premaster file before any master processing. Choose loudness by equal-loudness comparison, not a fixed target.
+Use only needed stages. In this studio Waves L4 is the primary final limiter (validated by the user) and L2 the validated alternative (`01-studio-inventory.md`); Pro-L 2 is not owned. Keep a premaster file before any master processing. Choose loudness by equal-loudness comparison, not a fixed target.
 Exit when: louder is not audibly worse, low-end punch survives, true-peak/export requirements are met on the exported file (`50-mastering-engine.md`, `65-label-ready-qc-export.md`), and the master translates. If reaching the target needs more than 4–5 dB of limiting, go back to the mix.
 
 ### G9 — Delivery QC

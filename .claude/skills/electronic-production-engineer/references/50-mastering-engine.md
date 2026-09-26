@@ -34,13 +34,13 @@ Order [DOC-2]: corrective EQ → glue → tonal EQ → stereo → saturation →
 2. soothe3 or F6: only for remaining moving harshness; never stacked with multiband on the same problem.
 3. Optional glue or colour: bx_glue 2:1 at 1–2 dB, J37, TG Mastering Chain. TG's "Limit" is not a brickwall.
 4. Peak shaving: L4 Clip or a hot J37 input, 1–3 dB on the drop [HEUR]. Never clip the low end; RazorClip is [TEST].
-5. Limiter: Waves L2 (validated; its −1.0 dBFS ceiling is sample-peak only) or L4 True Peak once probed. Aim for 2–4 dB of gain reduction on the drop [COMM].
+5. Limiter: Waves **L4** (primary, validated by the user on 26 Sept 2026; read its exposed parameters and mode names once before any bridge write) or L2 (validated alternative; its −1.0 dBFS ceiling is sample-peak only). Aim for 2–4 dB of gain reduction on the drop [COMM].
 6. Metering: Insight 2 at the end of Main, or WLM Plus as a meter only (Gain 0, no Trim, limiter off). PAZ is not a LUFS/TP meter.
 
 The chain in place is in `../../ableton-live-session/references/mix-chain.md`. A strong mix may need only the limiter.
 
 ## Waves L4 role
-Installed (V17), not probed in Live. Compare modes at equal loudness; the mode names this pack gave earlier are unverified. Gain Match disables Ceiling [DOC manual]: leave it and switch Delta off before export.
+Installed (V17) and validated by the user as the primary final limiter (26 Sept 2026). Its parameter exposure in Live has not been read yet: do that once before any bridge write, and compare modes at equal loudness; the mode names this pack gave earlier are unverified until read on the installed version. Gain Match disables Ceiling [DOC manual]: leave it and switch Delta off before export.
 
 ## Club vs streaming
 - Club/DJ: protect kick/sub impact and mixability; crushed transients can sound smaller on a big system.

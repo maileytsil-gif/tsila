@@ -14,8 +14,8 @@
     },
     {
       "path": "SKILL.md",
-      "sha256": "bfb4b147be223266a63d3e6372c325c8361d30b99291009b141ad978e84a5eb1",
-      "bytes": 14392
+      "sha256": "8fa04e2f9a016ed08829ee3402b305a683e9caeeb23ebba7f905904b8a4396de",
+      "bytes": 14463
     },
     {
       "path": "SOURCES.json",
@@ -129,8 +129,8 @@
     },
     {
       "path": "references/01-studio-inventory.md",
-      "sha256": "d63d903c2408873f5f0eb7c5faf407f49e7e68d3a81b9da40c073daf598c800e",
-      "bytes": 9151
+      "sha256": "152794e95d34c07818c0df54110242748d592cbf5688d40203684f29323e472b",
+      "bytes": 9825
     },
     {
       "path": "references/02-capability-modes.md",
@@ -139,8 +139,8 @@
     },
     {
       "path": "references/03-end-to-end-production-lifecycle.md",
-      "sha256": "891a2831939df063e17816c0824ad0e0e303eb01f6ad55712add710ea0d7c579",
-      "bytes": 5423
+      "sha256": "4f318ea08f38f3a6ac5f8802a79a3464c93bf61fde4828f8315ed543ee57beb5",
+      "bytes": 5424
     },
     {
       "path": "references/10-genre-router.md",
@@ -184,8 +184,8 @@
     },
     {
       "path": "references/36-dnb-engine.md",
-      "sha256": "9b5696009e08c5069ce45e34781cfc3ffa7d91e5c0a5926ff7febc41bcf2ba59",
-      "bytes": 7169
+      "sha256": "f5328735283d544d0df473ed69fb03db92b2d48b214f10ae485624b4d343e7a2",
+      "bytes": 7258
     },
     {
       "path": "references/37-drum-transient-design.md",
@@ -214,13 +214,13 @@
     },
     {
       "path": "references/50-mastering-engine.md",
-      "sha256": "35e87d709aa578f1b70514e92b924324a19ee229c3270773065a976fbb5a8666",
-      "bytes": 4411
+      "sha256": "a35c36f03f3ab5bbb3f219ca860f5dcf7587c31c7fc61fa650637d31a4a02551",
+      "bytes": 4709
     },
     {
       "path": "references/60-ableton-hardware-workflow.md",
-      "sha256": "d5ac5417b12b8da261f8f40d12a133fd6609604869a19e6b138759b210d49f7e",
-      "bytes": 4512
+      "sha256": "813e30d25d625a8d3423bde202b17ad78f8a568600afe744380a8fc09f16c10b",
+      "bytes": 4428
     },
     {
       "path": "references/61-ableton-lom-bridge.md",
@@ -269,8 +269,8 @@
     },
     {
       "path": "references/82-video-study-notes.md",
-      "sha256": "fa5f892053faed15f654f1139657dd62d808c4d21f58ddf6a4a033178aec2484",
-      "bytes": 2551
+      "sha256": "0db2fb1bf4e772a120b9666a7b02f6e4882671c98614097131d13ffa069b5570",
+      "bytes": 2543
     },
     {
       "path": "references/83-advanced-sound-design-video-notes.md",
@@ -294,8 +294,8 @@
     },
     {
       "path": "references/genres/liquid-dnb.md",
-      "sha256": "9b78f99ada340f2e60c787fb5c66d1a50e16acac30dbcf0fe374a6175787bca7",
-      "bytes": 2563
+      "sha256": "02157c66dc2403e2f12a952bd0ef7e3e79f332064943deff440365649e9e2ab6",
+      "bytes": 2626
     },
     {
       "path": "references/genres/melodic-dubstep.md",
