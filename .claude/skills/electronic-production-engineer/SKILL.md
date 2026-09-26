@@ -72,7 +72,7 @@ Do not use one generic EDM recipe. Route to one or more genre DNAs. For hybrids,
 - For heavy bass design, separate stable sub from complex mid/high modulation unless there is a deliberate reason not to.
 
 ## User studio assumptions
-Use the inventory file as the source of truth for what the user owns, but treat a tool as usable only once its installation/version is confirmed and the current Set exposes the device; never infer plug-in parameters from a product name, and prefer Live-native devices or stable, documented Rack macros when an exact third-party mapping is absent. Notably, do **not** assume FabFilter Pro-L 2 is available. Prefer Waves L4/L2 for final limiting in this setup unless the user says otherwise.
+Use the inventory file as the source of truth for what the user owns, but treat a tool as usable only once its installation/version is confirmed and the current Set exposes the device; never infer plug-in parameters from a product name; when an exact third-party mapping is absent, return `needs_mapping` or use a documented Rack macro. Native Ableton **instruments** are allowed, but the user's rule 6 forbids new native **effects** in mix and master chains (tolerated: Utility, Auto Filter already on MIDI tracks, an existing sidechain Compressor, Hybrid Reverb on a return — `../ableton-live-session/SKILL.md`). Notably, do **not** assume FabFilter Pro-L 2 is available. Waves L2 is the validated final limiter; L4 is owned but not yet probed (`[TEST]`). Inventory conflicts still open (keyboard model A49 vs S48/S49, L4, Pro-C 3, RazorClip) are listed in `references/01-studio-inventory.md`: ask rather than guess.
 
 ## Output modes
 Choose the smallest useful mode:
@@ -100,8 +100,11 @@ The Bridge turns natural language into a **semantic plan**, never into direct ar
 - Respect automation state; use realtime remote control (`live.remote~`) only when realtime control is actually intended, never for persistent edits.
 Details: `docs/bridge-safety-and-semantics.md`, `references/61`–`64`, `schemas/semantic-bridge-plan.schema.json`.
 
+## Studio integration (this repository)
+This pack is the English cross-model frame; the studio's French skills are the verified executors. Route execution to them: map of situations → skills in `../ableton-live-session/SKILL.md`; Serum 2 labels and limits in `../sound-designer-serum/references/serum2-cartographie.md` (checked against the 354-page manual); house family numbers, recipes and two masters in `../house-future-rave-bass-house-production/`; low end `../kick-bass-equilibre/`; mix `../ingenieur-mixage/`, `../mixage/`, `../effets-plugins/`; master `../live-mix-mastering/`, `../mastering-outils/`; export `../live-export-wav/`; project memory `../memoire-projet/`. The real bridge is `../../../lom-bridge/lom.py` (command map in `references/61-ableton-lom-bridge.md`). Evidence tags are shared with those skills (`references/80-evidence-policy.md`).
+
 ## Capability and confidence gate
-Before claiming analysis or execution, identify the capability mode from `references/02-capability-modes.md`. No audio means no measured listening claims. Read-only bridge access means no writes. Low-confidence parameter mappings should produce an inspect/plan action rather than an unverified write.
+First check where the session runs: a cloud session cannot reach the user's Mac, so no Live read or write is possible there — say so in one line and hand over to a local session with a project memory file (`references/02-capability-modes.md`). Then identify the capability mode from `references/02-capability-modes.md`. No audio means no measured listening claims. Read-only bridge access means no writes. Low-confidence parameter mappings should produce an inspect/plan action rather than an unverified write.
 
 ## Version/freshness guard
 Treat DAW, plug-in, NKS, controller and API behavior as version-sensitive. If a workflow depends on a version-specific feature and the installed version is not known, label the assumption and verify against current documentation or runtime discovery before execution.

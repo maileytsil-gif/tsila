@@ -3,6 +3,27 @@
 ## General frame
 DnB is a high-tempo framework, not one sound. Treat the drum/bass relationship as the foundation and route the musical layer according to subgenre. Avoid assuming that louder or more complex equals more professional.
 
+## Numbers, grid and structure
+Evidence tags: see `10-genre-router.md`. The repo holds DnB-wide data only; nothing liquid-, minimal- or US-specific is measured.
+- **Tempo**: Beatport Drum & Bass Top 100: 174 (58 tracks), 176 (16), 172 (8) [DOC WhatBPM 2023]; theory table 160–180, typical 174, felt 87 in half-time [DOC-2]. Mean Beatport length 3:51 [DOC].
+- **Keys**: manual annotations 82 % minor, G minor 32 %, F minor 21 % (n = 38) [DOC GiantSteps]; Beatport roots F, D, E♭ [DOC WhatBPM, auto-keys]. The theory compilation's "C minor most common" [DOC-2] is not supported by these data.
+- **Swing**: 50–60 % [DOC-2, Attack]; the studio grid swings the ghost snares only, `swing(0.02, n/16)`, whose unit is undocumented: read the clip back [HEUR; TEST].
+
+Two-step starting grid, 174 BPM (`../../drums-signature/references/patterns.md`, `drum_pattern.py dnb`) [HEUR]:
+```
+            1 e & a 2 e & a 3 e & a 4 e & a
+kick        X . . . . . . . . . X . . . . .   v110–118 (variant: step 8 instead of 11)
+snare       . . . . X . . . . . . . X . . .   v100–110
+ghost snare . . . o . . . . . o . . . . . o   v30–45, swing on these only
+hat 1/8     x . x . x . x . x . x . x . x .   v70–84 (or 16ths at v50 as ghosts)
+open hat    . . . . . . x . . . . . . . . .   v56–64
+```
+Fill every 8 bars: snare on steps 14, 15, 16 rising (v70–96). Layer a sliced break (Amen, Think) high-passed at 200 Hz at ghost level so the programmed kick and sub own the bottom [HEUR]. Amen grid and half-time/double-time notes: `../../theorie-musicale-electronique/references/rythme-avance.md` §5 [DOC-2].
+
+- **Structure**: intro 32 · build 16 · drop 1 64 (two varied halves of 32) · mid 16–32 · breakdown 32 (often drumless) · build 16 · drop 2 64 (harder) · outro 32 [COMM]. 32 bars at 174 ≈ 44 s; the whole form (272–288 bars) ≈ 6:15–6:37 [CALC].
+- **Bass architecture**: one source owns the fundamental — a mono sine sub, unison 1, no detune, low-passed near 120 Hz; reese or growl mids high-passed near 120 Hz above it [DOC-2]. Reese start: 2 saws at ±27–30 cents (±15 = slow and soft), mono/legato, LP 24 dB ≈ 650 Hz, resonance ≈ 14 %, light overdrive [DOC-2]. The beat rate changes with the note, so set the detune on the lowest note [HEUR]. Neuro/growl chain: filter movement → distortion → compression → EQ clean-up, LFO in trigger mode, resample at least twice [DOC-2, low-reliability preset-vendor sources].
+- **Detail**: `../../sound-designer-serum/references/basses.md` §1–3; `../../theorie-musicale-electronique/references/forme-tension.md` §1, §3; `../../theorie-musicale-electronique/references/genres.md` (Drum & bass / jungle); groove method `../../producteur-rythmique/SKILL.md`.
+
 ## Liquid DnB DNA
 Priority: musicality, emotion, clean sub, fluent drums, atmosphere and long-form development.
 - Start from chords, hook, vocal or atmosphere when that is the emotional core.

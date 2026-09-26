@@ -7,6 +7,8 @@ Plan where every important element lives before solving collisions with plugin s
 3. **Depth** — front / middle / back using level, transient definition, HF content, pre-delay, reverb/delay and early reflections.
 4. **Width / motion** — mono, narrow, stereo, widened, or moving over time.
 
+Tags: see `50-mastering-engine.md`. Repo sources (French): `../../house-future-rave-bass-house-production/references/mixage-mastering.md` §3, `../../../../corpus/house-future-rave/musicproductionwiki-tools-stereo-width-ms.md`.
+
 This is a planning system, not a rigid frequency-allocation chart. Never carve fixed EQ holes just because a table says two sources should not overlap. Musical overlap is allowed when masking and translation remain controlled.
 
 ## Core laws
@@ -69,7 +71,7 @@ Before using the DAW pan control on an already-stereo source, decide whether the
 - **narrowing** then panning,
 - **split-stereo panning** of L/R channels,
 - or a creative imbalance.
-Use S1 Rotation or Ableton Split Stereo Pan when the goal is to move the stereo image without unintentionally collapsing it.
+Use Waves S1 rotation (installed, not yet probed) or Live's Split Stereo pan mode (a mixer mode, not a device) when the goal is to move the stereo image without unintentionally collapsing it.
 
 ## Width strategy
 Use three zones conceptually:
@@ -77,7 +79,9 @@ Use three zones conceptually:
 - **Identity**: controlled stereo; keep important mid information.
 - **Decoration/air**: widest permissible zone, usually safest place for motion and ambience.
 
-Ableton Utility can narrow or widen, sum to mono, and Bass Mono can mono low frequencies with an adjustable cutoff. Treat the cutoff as source-dependent, not a universal 120 Hz rule.
+Ableton Utility (a tolerated native) can narrow or widen, sum to mono, and Bass Mono can mono low frequencies with an adjustable cutoff. Treat the cutoff as source-dependent, not a universal 120 Hz rule: repo starting points are 120 Hz in house (bx_glue Mono Maker on the bass bus) and 150 Hz in bass house, and sources go up to 200 Hz [DOC-2].
+
+Width-by-band starting points [COMM]: below 150 Hz mono; 150 Hz–2 kHz 0–60 %; above 2 kHz 60–200 %. House: claps/percs ±20 %, hats/rides/returns ±50–80 %, narrower intros/outros for DJs.
 
 ## Depth strategy
 ### Front
@@ -91,7 +95,7 @@ Lower direct level, more wet/early reflections, softer transient, more HF attenu
 
 ## Motion strategy
 Use motion to create life, not instability.
-- Slow auto-pan: pads, textures, noise, long percussion tails.
+- Slow auto-pan: pads, textures, noise, long percussion tails (mixer pan automation, `../../live-automation/SKILL.md`).
 - Tempo-synced alternating pan: hats, percs, delays.
 - One-shot automation: risers, reverse FX, transitions.
 - Keep critical onset centered while moving sustain when punch must remain stable.
@@ -107,7 +111,7 @@ Do not assume linear phase is always required; use it when channel-specific EQ p
 
 ## Genre tendencies
 ### House / Tech House
-Strong center low end; hats/percs create lateral groove. Keep vocal/hook focus clear. Short rooms and delays can build depth without washing the drop.
+Strong center low end; hats/percs create lateral groove. Keep vocal/hook focus clear. Short rooms and delays can build depth without washing the drop; high-pass returns at 150–200 Hz and duck them under the dry signal [COMM].
 
 ### Minimal / Deep Tech
 Use sparse lateral detail and micro-motion. A few tiny pan/depth moves can carry more interest than broad constant widening.
@@ -116,7 +120,7 @@ Use sparse lateral detail and micro-motion. A few tiny pan/depth moves can carry
 Center kick/rumble foundation; stereo motion lives mainly in upper percussion, synth modulation, noise, reverbs and transition FX. Wide rumble is a special effect, not a default.
 
 ### Bass House / Dubstep
-Separate sub/core from wide mid/high growl layers. Call/response can also alternate lateral position, but preserve a stable impact anchor.
+Separate sub/core (mono below about 150 Hz [COMM]) from wide mid/high growl layers. Call/response can also alternate lateral position, but preserve a stable impact anchor.
 
 ### Liquid DnB
 Center kick/snare/sub; width often comes from breaks/tops, pads, keys, vocal FX and atmospheres. Keep snare impact coherent in mono.
@@ -129,22 +133,25 @@ Center kick/bass; distribute organic percussion with human asymmetry and depth. 
 
 ## Verification protocol
 1. Static mono check: does any essential element disappear or lose unreasonable body?
-2. Correlation/vector check when using widening/phase manipulation.
-3. Low-frequency side audit: solo Side or use M/S analyzer; verify sub stability.
+2. Correlation/vector check when using widening/phase manipulation: +1 = mono-identical, 0 = uncorrelated, negative = cancellation; keep the mix above 0, ideally above +0.5 [COMM]. SPAN shows correlation; Imager does not.
+3. Low-frequency side audit: solo Side or use M/S analyzer; verify sub stability. For kick/sub, measure 30–120 Hz correlation on separate exports with `../../kick-bass-equilibre/scripts/kick_bass_check.py` (see `30-low-end-engine.md`).
 4. Low-volume check: center hierarchy should remain understandable.
 5. Headphone check: no distracting hard-pan fatigue or artificial phase halo.
 6. Speaker check: stereo stage should not collapse unpredictably.
 7. Reference comparison: level-match and compare section-to-section, not whole-song averages.
 
 ## Preferred tools in this studio
-- Ableton Utility: Width, Mid/Side, Mono, Bass Mono, phase, gain.
-- Ableton track pan / Split Stereo Pan.
-- Ableton Auto Pan/Tremolo for movement; preserve attack when needed.
-- FabFilter Pro-Q 4: L/R or M/S frequency-specific placement.
-- FabFilter Pro-C 3: linked/unlinked or Mid/Side dynamics when justified.
-- Waves S1: stereo image width/rotation and stereo-source positioning.
-- Soothe3: dynamic resonance control; use stereo/M/S only when the actual issue is moving/side-specific harshness.
-- Returns: Hybrid Reverb / Valhalla / delays for depth rather than inserting a different large reverb on every track.
+Status and sheets: `01-studio-inventory.md`.
+- Ableton Utility (tolerated): Width, Mid/Side, Mono, Bass Mono, phase, gain.
+- Mixer pan / Split Stereo pan mode; pan automation for movement (Auto Pan-Tremolo is a native effect outside rule 6's tolerated list: ask).
+- bx_glue Mono Maker on the bass bus (exposed).
+- iZotope Ozone Imager 2: global Width exposed (+8 % on master bus 2 in the repo chain); bands window-only.
+- FabFilter Pro-Q 4 (window-only): L/R or M/S frequency-specific placement.
+- FabFilter Pro-C 3 (not yet probed): linked/unlinked or Mid/Side dynamics when justified.
+- Waves S1 (not yet probed): stereo image width/rotation and stereo-source positioning.
+- soothe3: dynamic resonance control; use stereo/M/S only when the actual issue is moving/side-specific harshness.
+- Voxengo SPAN: correlation and spectrum (Avg 4000 ms, block 8192).
+- Returns: Hybrid Reverb on a return (tolerated); Valhalla and H-Delay to probe. Use shared returns for depth rather than a different large reverb on every track.
 
 ## Machine-readable spatial plan
-When a project needs explicit placement, use `schemas/spatial-plan.schema.json`. Do not invent measured frequency values; mark them as intended/estimated until analyzer/audio evidence exists.
+When a project needs explicit placement, use `../schemas/spatial-plan.schema.json`. Do not invent measured frequency values; mark them as intended/estimated until analyzer/audio evidence exists.

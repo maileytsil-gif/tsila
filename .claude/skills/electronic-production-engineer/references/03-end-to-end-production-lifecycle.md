@@ -3,6 +3,9 @@
 ## Goal
 The success condition is not "good advice" or "a loud master". The success condition is a reproducible, technically checked, musically coherent track that can be delivered to a label, distributor, DJ, client or archive in the requested format.
 
+## How this maps to the studio's method
+The user's own eight-step method (`../../ableton-live-session/SKILL.md`: frame → instruments → central 8 bars → arrangement → mix → automation → vocals → export) runs inside these gates: G0–G1 = step 1 (Save As, tempo, key, locators, energy curve before any note), G2 = step 2, G1/G3 = steps 3–4, G5–G6 = steps 5–6, vocals = step 7, G7–G10 = step 8. One step per exchange; the project memory (`../../memoire-projet/SKILL.md`: REPRISE header, dated journal, snapshots) records every gate result, and `../../chef-de-projet/SKILL.md` tracks several tracks at once. For the house family (house, tech house, bass house, future house, future rave, big room) the French skill `../../house-future-rave-bass-house-production/SKILL.md` holds the verified numbers, recipes and two-master targets used at G3–G8.
+
 ## Lifecycle and gates
 Do not skip a gate because the track already sounds exciting. Move forward only when the current gate is good enough for the genre/reference and intended destination.
 
@@ -39,8 +42,8 @@ Bypass master loudness and inspect mix integrity: headroom, accidental clipping,
 Exit when: the mix does not depend on the limiter to hide balance or transient problems.
 
 ### G8 — Master
-Use only needed stages. In this studio prefer Waves L4/L2 for final limiting unless another available limiter is explicitly selected. Choose loudness by equal-loudness comparison, not a fixed target.
-Exit when: louder is not audibly worse, low-end punch survives, true-peak/export requirements are met, and the master translates.
+Use only needed stages. In this studio Waves L2 is the validated final limiter; L4 is owned but not yet probed in Live (`[TEST]`, see `01-studio-inventory.md`); Pro-L 2 is not owned. Keep a premaster file before any master processing. Choose loudness by equal-loudness comparison, not a fixed target.
+Exit when: louder is not audibly worse, low-end punch survives, true-peak/export requirements are met on the exported file (`50-mastering-engine.md`, `65-label-ready-qc-export.md`), and the master translates. If reaching the target needs more than 4–5 dB of limiting, go back to the mix.
 
 ### G9 — Delivery QC
 Read `65-label-ready-qc-export.md`. Render required versions; re-import and audition the actual files. Verify start/end, tails, fades, channel count, metadata/file naming, bit depth/sample rate, sample provenance and requested stems.

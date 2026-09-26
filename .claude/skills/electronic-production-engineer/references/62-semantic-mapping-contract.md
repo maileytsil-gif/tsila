@@ -4,6 +4,8 @@
 AI instructions should target musical meaning, not fragile plug-in indexes. The bridge translates stable semantic names into the actual Live DeviceParameter objects discovered at runtime.
 
 ## Canonical track names
+These names are the template for new projects (same list in `bridge/semantic-vocabulary.json`). They are suggestions, never a reason to rename an existing project.
+
 Performance bank:
 - `T01_KICK`
 - `T02_BASS`
@@ -24,6 +26,9 @@ Utility bank may include:
 - `T15_SIDECHAIN`
 - `T16_PRINT`
 
+## Names in the studio's existing Sets
+The Sets actually worked on here use `AUDIO - <ROLE>` tracks → `BUS - <GROUP>` (e.g. `BUS - BATTERIE`, `BUS - BASSES`, `BUS - HARMONIE`, `BUS - CORDES`) → `BUS MASTER 1` → `2` → `3` → Main, with `REF` straight to Main ([ableton-live-session](../../ableton-live-session/SKILL.md), [mix-chain.md](../../ableton-live-session/references/mix-chain.md)). Resolve against these real names, read from `lom.py state --json`, and keep a per-project alias table (canonical role → real name) in the project memory.
+
 ## Canonical Rack names
 - `RACK_KICK`
 - `RACK_BASS`
@@ -33,6 +38,8 @@ Utility bank may include:
 - `RACK_VOCAL`
 - `RACK_FX`
 - `RACK_LOOP`
+
+Inserting a Rack to host macros is a device insertion (high impact) and the Rack is a native Live device, while the user has asked for no new native effects in mix chains: ask before introducing one [TEST whether macro Racks are acceptable as containers]. Whether a renamed macro's custom name is what the bridge's `params` returns is [TEST].
 
 ## Performance macros 1-8
 - `M01_TONE`
@@ -70,12 +77,16 @@ Map plug-in-specific names into these families when possible:
 - `STEREO_WIDTH`, `MONO_CUTOFF`
 - `OUTPUT_LEVEL`, `OUTPUT_TRIM`
 
+A family is only reachable when the parameter is exposed to Live: Serum 2 synth families need Configure first, and soothe3 or Pro-Q 4 families expose nothing in this studio ([64](64-plugin-profile-strategy.md)). Mixer families map to `lom.py param "<track>" mixer Volume|Pan|"Send A"`.
+
 ## Resolution strategy
 For each semantic target:
 1. prefer a canonical Rack macro with exact name,
-2. else prefer exact user/plugin parameter mappings stored in a verified profile,
-3. else use name normalization/synonyms and score candidates,
+2. else prefer exact user/plugin parameter mappings stored in a verified profile ([64](64-plugin-profile-strategy.md)),
+3. else name normalization/synonyms may only produce candidates for a human to confirm: return `needs_mapping`, never write from a scored guess,
 4. if confidence is low or multiple candidates are plausible, return an inspect/clarify action rather than writing.
 
+Pass the full exact name read from `state --json` / `params`. The bridge matches case-insensitively, exact first, else a unique substring (several matches → `E_AMBIGUOUS`); check that the name it echoes back is the intended one. A digits-only name falls back to an index: never send one.
+
 ## Never infer from position alone
-`parameter[17]` is not a stable semantic identity. Indexes may only be used after the bridge has matched and verified names/ids in the current session.
+`parameter[17]` is not a stable semantic identity. Indexes may only be used after the bridge has matched and verified names/ids in the current session. For plug-ins, the index is the order chosen in Live's Configure panel; "Save as Default Configuration" makes it repeatable for new instances, but Serum 2 has shifted FX parameter indexes after reload (fixed in 2.0.18) and shown wrong macro names after Set load (workaround in 2.0.21) ([serum2-automation-et-migration.md](../../sound-designer-serum/references/serum2-automation-et-migration.md)). Confirm name and display value, or a small approved test move, in each session.

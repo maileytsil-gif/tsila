@@ -1,7 +1,7 @@
 # Reverse / Pre-FX / Suckback Engine
 
 ## Goal
-Use reversed or inward-moving material to *prepare* a transient, note, vocal, drop, fill or section change. Reverse FX should create directional expectation, not constant decoration.
+Use reversed or inward-moving material to *prepare* a transient, note, vocal, drop, fill or section change. Reverse FX should create directional expectation, not constant decoration. Evidence tags as defined in `32-sound-design-engine.md`.
 
 ## Core families
 
@@ -23,12 +23,12 @@ Best for: vocal entries, snare entries, synth stabs, impacts, emotional transiti
 
 Workflow:
 1. Isolate the target word/hit/note.
-2. Render a long wet reverb or delay+reverb tail.
+2. Render a long wet reverb or delay+reverb tail, at least as long as the lead-in you want (one bar = 1875 ms at 128 BPM `[CALC]`).
 3. Print/bounce the tail.
 4. Reverse the printed tail.
 5. Align the end of the reverse exactly to the dry target event.
 6. EQ the reverse so it supports rather than masks the target.
-7. Duck or fade the last 20-100 ms if the target transient loses definition.
+7. Duck or fade the last 20-100 ms if the target transient loses definition `[HEUR]`.
 
 This works especially well with vocals, snares, piano/chords and tonal impacts.
 
@@ -47,11 +47,13 @@ Reverse options:
 - keep sub out of the reverse to preserve headroom;
 - reverse a filtered version and layer under the dry impact.
 
+A forward impact peaks at its start; its reverse peaks at its end, which must land on the boundary `[DOC-2]`.
+
 ### 4. Reverse kick / reverse snare
 Use as a pre-hit accent, not a replacement for the main transient.
 
 Reverse kick:
-- often high-pass the reversed version so the pre-hit does not build excessive sub;
+- often high-pass the reversed version (start near 100–150 Hz `[HEUR]`) so the pre-hit does not build excessive sub;
 - shorten so the energy ramps into the real kick;
 - use pitch automation or a tonal tail if a key-aware transition is desired.
 
@@ -71,7 +73,7 @@ Method A — reverse rendered bass:
 5. End before the main sub/kick arrives.
 
 Method B — granular/spectral reverse:
-- Serum 2 Granular: reverse grain direction and/or reverse scan direction; tempo-lock scan when useful.
+- Serum 2 Granular: right-click DIR › **Reverse Grains** (automatable, flips all grains) and/or SCAN menu › **Reverse** (scan direction); **Lock Scan Rate (to Tempo)** or **Sample Length to BPM** when the gesture must follow the host tempo `[DOC p. 100, 103]`.
 - Freeze/scan a recognizable fragment, then automate toward the target boundary.
 - Keep a separate clean sub out of the reversed granular layer.
 
@@ -83,7 +85,7 @@ For rhythmic reverse-bass:
 - use LFO/envelope movement, distortion and EQ to create the characteristic suction/bounce;
 - preserve kick/sub separation;
 - resample and re-align phase/timing against the kick;
-- treat Serum 2 LFO/pitch/drive movement as sound design, not merely an audio-reverse operation.
+- treat Serum 2 LFO/pitch/drive movement as sound design, not merely an audio-reverse operation: an LFO in MODE **ENVELOPE** (one pass per note) or **RETRIG** drawn as a rising ramp on level/cutoff gives the swell, with the sub on its own Direct-routed layer `[DOC p. 190–191]` `[HEUR]`. The Serum 2 reverse-bass video in `../SOURCES.md` is not in the local corpus `[TEST]`.
 
 Use this only when the genre DNA supports it (hard dance, harder techno hybrids, selected electro/bass contexts).
 
@@ -107,32 +109,45 @@ For robotic vocals, combine with OVox/Vocal Bender/Waves Tune before rendering t
 - reverse a downlifter to create an uplifter or vice versa;
 - automate filter cutoff, pitch and width;
 - add amplitude curvature rather than a linear fade if stronger acceleration is needed;
+- downlifter start: pitch −12 to −24 st over one bar with a closing low-pass; tape stop 200–600 ms `[DOC-2]`;
 - resample through Roar/distortion for a more custom timbre.
 
 ### 9. Reverse granular / spectral FX
-Serum 2 Granular can reverse grain direction and reverse the scan direction. Use this for:
+Serum 2 Granular can reverse grain direction (DIR › Reverse Grains) and the scan direction (SCAN › Reverse); the **Exp Dec Rev** window gives each grain a swelling envelope `[DOC p. 92–93, 100, 103]`. Use this for:
 - granular suck-ins;
 - metallic reverse clouds;
 - vocal-to-texture transitions;
 - bass fragments that morph into a drop.
 
-Maschine Grain Delay also provides reverse grain playback; this is useful for resampled ambient/glitch reverse textures.
+Maschine Grain Delay also provides reverse grain playback (Reverse) `[DOC Maschine manual ch. 13]`; this is useful for resampled ambient/glitch reverse textures.
 
 ### 10. Reverse kit / multi-sample gesture in Maschine
-Maschine can reverse a Sampler sound at playback and can destructively reverse selected regions in the Sample Editor. Use it to:
+Maschine can reverse a Sampler sound at playback (Sampler Reverse) and can destructively reverse selected regions in the Sample Editor's Audio Toolbar; each operation writes a new copy and the original sample file is kept, with undo available `[DOC Maschine manual ch. 8, 15]`. Use it to:
 - reverse multiple drum samples for a custom pre-fill kit;
 - build reversed hats/cymbals/rims;
 - reverse a selected slice rather than the whole recording;
 - resample the result into a single transition gesture.
 
 ## Ableton-native workflow
-Live can reverse a clip or an Arrangement selection and creates a new reversed sample copy. Simpler also has a non-destructive Reverse function. This makes Ableton the preferred editor for precise boundary alignment.
+Live can reverse a clip or an Arrangement selection and creates a new reversed sample copy. Simpler also has a non-destructive Reverse function. This makes Ableton the preferred editor for precise boundary alignment. Details `[DOC Live 12 manual 8.4.2, 8.4.4, 30.11]`:
+- Clip **Reverse** writes a new sample (Samples/Processed/Reverse once the Set is saved); Warp Markers and loop settings flip, but clip envelopes stay fixed in time, so re-check them after reversing. In Arrangement, select a range and use Reverse Clip(s) or R.
+- Simpler's Crop and Reverse work on a copy; Sampler's Reverse is a modulatable control that writes no new file.
+- Session clips get 0–4 ms edge fades from the Clip Fade toggle; in Arrangement, draw the fades.
+- Serum 2 Sample oscillator: right-click › Reverse (non-destructive), SCAN › Reverse (modulatable), Rev Loop, Fade Edges 1–128 ms `[DOC p. 73–80]`.
 
 Recommended chain for a reverse transition:
 source -> print/resample -> reverse -> trim/fades -> EQ -> optional saturation/granular -> automation -> final print
 
 ## Timing library
-Starting points only:
+Starting points only; ms = 60000 / BPM × beats (quarter note = 1 beat) `[CALC]`:
+
+| BPM | 1/4 | 1/2 | 1 bar | 2 bars |
+|---|---|---|---|---|
+| 124 | 484 | 968 | 1935 | 3871 |
+| 128 | 469 | 938 | 1875 | 3750 |
+| 140 | 429 | 857 | 1714 | 3429 |
+| 174 | 345 | 690 | 1379 | 2759 |
+
 - 1/4 note: micro suck-in / pre-snare;
 - 1/2 note: compact Tech House/Minimal transition;
 - 1 bar: common pre-drop reverse cymbal/impact;
@@ -153,8 +168,14 @@ Starting points only:
 ## Label-ready QC
 - The reverse must point *to* a target event; if the destination is unclear, remove it.
 - Align the terminal peak sample-accurately or intentionally leave a short gap.
-- Remove hidden sub from long reverse tails unless low-frequency buildup is deliberate.
+- Remove hidden sub from long reverse tails unless low-frequency buildup is deliberate; the sub stays out of every reversed layer.
 - Check mono and low-volume playback.
 - Make sure the first kick/snare after the reverse still owns the transient.
 - Print complex reverse chains when final timing matters.
 - For every repeated transition, vary source, length, filter or timing to avoid template fatigue.
+- Judge a reverse against its dry target at matched loudness.
+
+## Repo resources
+- Printing and preparing the audio: `../../resampling/SKILL.md`; reverse reverb and resampling background: `../../sound-designer-serum/references/modulation-effets.md` § B4, B6.
+- Transition context and numbers: `../../house-future-rave-bass-house-production/recipes/risers-impacts-downlifters.md`; Serum labels: `../../sound-designer-serum/references/serum2-cartographie.md` § 3.3, 3.5.
+- Local manuals: `../../../../corpus/constructeur/live12-manuel-08-clip-view.md`, `live12-manuel-30-live-instrument-reference.md`, `xferrecords-com-manual-serum-2-docs-07-using-granular-synthesis.md`, `native-instruments-com-fileadmin-ni-media-downloads-manuals-maschine-maschine-3-software-m-17-15-sampling-and-sample-mapping.md` (same folder).
