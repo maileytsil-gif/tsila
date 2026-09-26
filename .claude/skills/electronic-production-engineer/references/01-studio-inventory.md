@@ -68,9 +68,15 @@ No new native effects in mix or master chains (`../../ableton-live-session/SKILL
 ## Waves collection
 The user owns the **complete Waves premium collection** (confirmed 26 Sept 2026): any Waves plug-in may be proposed, but check the installed version and whether it loads in the current Set before parameter-level guidance; rows above give the ones already probed or found on disk.
 
+## VST3 scan of 26 Sept 2026
+Source: `../../../../docs/inventaire/plugins-vst3.txt` (618 lines, `ls` of `/Library/Audio/Plug-Ins/VST3` and the Waves V16/V17 folders on the user's Mac). Installed ≠ probed in Live: parameter exposure still has to be read before any bridge write.
+- **Third-party VST3**: FabFilter Pro-C 3, Pro-Q 4 · oeksound soothe3 · Plugin Alliance bx_glue, bx_enhancer · iZotope Ozone 9/11/12 Elements, Ozone 11 Equalizer, Ozone Imager 2, Neutron 5 Elements, Nectar 4 Elements, Insight 2, Tonal Balance Control 3, RX 11 and RX 12 repair modules, VocalSynth 2, Stutter Edit 2 · Voxengo SPAN · TDR Nova · Xfer Serum 2 · Cableguys ShaperBox 3 · Valhalla VintageVerb · Analog Obsession TheBus, FETish, LAEA, Rare-style MuChild, and **RazorClip** (present; vendor and controls still undocumented) · Native Instruments Battery 4, Kontakt 7/8, Komplete Kontrol, Maschine 3, Massive, Massive X, Reaktor 6, Guitar Rig 7, Replika/Replika XT, Raum, Supercharger/GT, Transient Master, Solid Bus Comp, Driver, and the Mod pack (Bite, Choral, Dirt, Flair, Freak, Phasis) · Sonarworks SoundID Reference · MeldaProduction folder · Vocaloid, Vocodine, Splice.
+- **Waves** (WaveShell VST3 16.x and 17.x; V17 folder): the full premium list, including L1/L2/L3 family, **L4 Ultramaximizer**, WLM Plus, PAZ, F6, C1/C4/C6, API-2500/550/560, SSL E/G channels and SSLComp, CLA-2A/3A/76, dbx-160, J37, Abbey Road Saturator/TG Mastering Chain/Chambers/Plates, H-Delay/H-Reverb, REQ, Q10, Curves AQ/Equator/Resolve, Smack Attack, TransX, InPhase, MaxxBass, RBass, S1, Center, NLS, Kramer HLS/PIE/Tape, Reel ADT, MetaFlanger, OVox, Vocal Bender, Waves Tune Real-Time, Waves Harmony, Torque, Sub Align, StudioVerse, COSMOS, CR8 Sampler.
+- No user-level VST3 folder (`~/Library/Audio/Plug-Ins/VST3` absent). AU components were not listed.
+
 ## Explicit exclusions and absences
 - FabFilter Pro-L 2: not owned (INV: Pro-L and Pro-MB not found in the standard folders). Use L4 (primary, validated by the user) or L2 (validated alternative). Ableton Limiter is excluded from mix and master chains by rule 6.
-- Not on this Mac: LFO Tool, Kickstart, ShaperBox. For their jobs, use sidechain compressors or Utility gain automation (`../../house-future-rave-bass-house-production/recipes/sidechain-et-pump.md`).
+- Not on this Mac: LFO Tool, Kickstart. **ShaperBox 3 is installed** (VST3 scan of 26 Sept 2026, correcting the earlier note) and can do volume/filter shaping as a sidechain alternative once probed. Otherwise, use sidechain compressors or Utility gain automation (`../../house-future-rave-bass-house-production/recipes/sidechain-et-pump.md`).
 - ffmpeg, sox and pyloudnorm were absent at the last check (`../../mastering-outils/references/notes-locales.md`). Read LUFS and TP in Insight 2 or WLM Plus, or install a CLI tool only with the user's consent.
 
 ## Conflicts to resolve with the user, not by guessing
@@ -78,4 +84,4 @@ The user owns the **complete Waves premium collection** (confirmed 26 Sept 2026)
 2. `../SKILL.md` (User studio assumptions) says to prefer Live-native devices when a third-party mapping is absent; rule 6 limits mix and master chains to the tolerated natives.
 3. ~~Primary limiter~~ — resolved 26 Sept 2026: L4 validated by the user as primary; L2 the alternative. Read L4's exposed parameters once before bridge writes.
 4. L2 ceiling: −1.0 dBFS in CHAIN and the notes vs −0.4 in the stale copy `../../effets-plugins/references/chaine-actuelle.md`. Use −1.0, because −0.4 let true peaks above −1 dBTP through.
-5. RazorClip vendor and functions (still open). Pro-C 3: owned (confirmed 26 Sept 2026); its parameter exposure in Live is still to probe.
+5. RazorClip: installed (VST3 scan 26 Sept 2026); vendor and controls still undocumented, read its editor first. Pro-C 3: owned (confirmed 26 Sept 2026); its parameter exposure in Live is still to probe.
