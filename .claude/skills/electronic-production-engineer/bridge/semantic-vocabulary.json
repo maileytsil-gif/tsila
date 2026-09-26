@@ -1,0 +1,118 @@
+{
+  "version": "1.4.0",
+  "tracks": [
+    "T01_KICK",
+    "T02_BASS",
+    "T03_DRUMS",
+    "T04_PERC",
+    "T05_MUSIC",
+    "T06_VOCAL",
+    "T07_FX",
+    "T08_LOOP",
+    "T09_SUB_EXTRA",
+    "T10_SYNTH_2",
+    "T11_VOCAL_FX",
+    "T12_RESAMPLE",
+    "T13_MASCHINE",
+    "T14_REFERENCE",
+    "T15_SIDECHAIN",
+    "T16_PRINT"
+  ],
+  "performance_macros": [
+    "M01_TONE",
+    "M02_PUNCH",
+    "M03_BODY",
+    "M04_DRIVE",
+    "M05_MOVEMENT",
+    "M06_SPACE",
+    "M07_WIDTH",
+    "M08_LEVEL"
+  ],
+  "parameter_families": {
+    "filter": [
+      "FILTER_CUTOFF",
+      "FILTER_RESONANCE",
+      "FILTER_DRIVE"
+    ],
+    "amp_envelope": [
+      "AMP_ATTACK",
+      "AMP_DECAY",
+      "AMP_SUSTAIN",
+      "AMP_RELEASE"
+    ],
+    "oscillator": [
+      "OSC_POSITION",
+      "OSC_BLEND",
+      "DETUNE",
+      "SUB_LEVEL"
+    ],
+    "movement": [
+      "LFO_RATE",
+      "LFO_DEPTH",
+      "MOVEMENT_AMOUNT",
+      "SCAN_POSITION",
+      "GRAIN_SIZE"
+    ],
+    "dynamics": [
+      "TRANSIENT_ATTACK",
+      "TRANSIENT_SUSTAIN",
+      "COMP_THRESHOLD",
+      "COMP_RATIO",
+      "COMP_ATTACK",
+      "COMP_RELEASE",
+      "COMP_MIX"
+    ],
+    "sidechain": [
+      "SIDECHAIN_DEPTH",
+      "SIDECHAIN_RELEASE"
+    ],
+    "color": [
+      "SATURATION_DRIVE",
+      "CLIP_AMOUNT",
+      "SOOTHE_DEPTH",
+      "DYNAMIC_EQ_AMOUNT"
+    ],
+    "sample": [
+      "SAMPLE_START",
+      "SAMPLE_END",
+      "SAMPLE_RATE",
+      "SLICE_INDEX",
+      "REVERSE_STATE",
+      "LOOP_LENGTH"
+    ],
+    "reverse_fx": [
+      "REVERSE_LENGTH",
+      "SUCKBACK_LEVEL",
+      "PRE_FX_TIME",
+      "REVERSE_PITCH"
+    ],
+    "space": [
+      "REVERB_SEND",
+      "DELAY_SEND",
+      "FX_MIX",
+      "FEEDBACK"
+    ],
+    "stereo": [
+      "PAN_POSITION",
+      "STEREO_WIDTH",
+      "STEREO_ROTATION",
+      "BASS_MONO_CUTOFF",
+      "STEREO_MOTION_RATE",
+      "STEREO_MOTION_DEPTH"
+    ],
+    "level": [
+      "OUTPUT_LEVEL",
+      "OUTPUT_TRIM"
+    ],
+    "depth": [
+      "DEPTH_AMOUNT",
+      "REVERB_SEND",
+      "REVERB_PREDELAY",
+      "REVERB_DECAY",
+      "DELAY_SEND",
+      "DELAY_FEEDBACK",
+      "EARLY_REFLECTION_LEVEL",
+      "HF_DISTANCE_FILTER"
+    ]
+  }
+}

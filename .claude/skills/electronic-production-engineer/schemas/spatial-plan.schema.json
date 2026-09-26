@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Spatial Spectrum Stereo Plan",
+  "type": "object",
+  "required": ["schema_version", "mix_intent", "elements", "verification"],
+  "properties": {
+    "schema_version": {"const": "1.4.0"},
+    "mix_intent": {"type": "string"},
+    "genre_dna": {"type": "array", "items": {"type": "string"}, "maxItems": 2},
+    "elements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["element", "spectral_role", "pan", "width", "depth", "mono_policy", "collisions"],
+        "properties": {
+          "element": {"type": "string"},
+          "spectral_role": {
+            "type": "object",
+            "required": ["body", "definition"],
+            "properties": {
+              "body": {"type": "string"},
+              "definition": {"type": "string"},
+              "air_texture": {"type": ["string", "null"]},
+              "measured": {"type": "boolean", "default": false}
+            },
+            "additionalProperties": false
+          },
+          "pan": {
+            "type": "object",
+            "required": ["mode", "position"],
+            "properties": {
+              "mode": {"enum": ["mono_pan", "stereo_pan", "split_stereo", "rotation", "distributed", "moving"]},
+              "position": {"type": "number", "minimum": -100, "maximum": 100},
+              "notes": {"type": ["string", "null"]}
+            },
+            "additionalProperties": false
+          },
+          "width": {
+            "type": "object",
+            "required": ["intent"],
+            "properties": {
+              "intent": {"enum": ["mono", "narrow", "medium", "wide", "moving", "frequency_split"]},
+              "percent_starting_point": {"type": ["number", "null"], "minimum": 0, "maximum": 200},
+              "protected_low_hz": {"type": ["number", "null"], "minimum": 20, "maximum": 1000}
+            },
+            "additionalProperties": false
+          },
+          "depth": {"enum": ["front", "front_middle", "middle", "middle_back", "back"]},
+          "motion": {"type": ["string", "null"]},
+          "mono_policy": {"enum": ["must_be_mono", "center_core", "mono_below_crossover", "mono_compatible_stereo", "creative_phase_requires_check"]},
+          "collisions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["with", "priority", "preferred_solution"],
+              "properties": {
+                "with": {"type": "string"},
+                "priority": {"enum": ["self_wins", "other_wins", "alternate_by_time", "share"]},
+                "preferred_solution": {"enum": ["arrangement", "timing", "envelope", "level", "pan", "width", "eq", "dynamic_eq", "sidechain", "sound_redesign"]}
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "verification": {
+      "type": "array",
+      "items": {"enum": ["mono", "correlation", "low_side_audit", "low_volume", "headphones", "speakers", "reference_level_matched"]},
+      "minItems": 3,
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

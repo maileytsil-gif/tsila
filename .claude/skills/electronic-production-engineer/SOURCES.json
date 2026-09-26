@@ -1,0 +1,341 @@
+{
+  "version": "1.4.0",
+  "generated_from": "SOURCES.md",
+  "entries": [
+    {
+      "section": "Agent/skill compatibility",
+      "title": "OpenAI Agent Skills",
+      "url": "https://developers.openai.com/api/docs/guides/tools-skills"
+    },
+    {
+      "section": "Agent/skill compatibility",
+      "title": "OpenAI Academy Skills",
+      "url": "https://openai.com/academy/skills/"
+    },
+    {
+      "section": "Agent/skill compatibility",
+      "title": "Claude Code Skills",
+      "url": "https://code.claude.com/docs/en/skills"
+    },
+    {
+      "section": "Agent/skill compatibility",
+      "title": "Qwen Code Agent Skills",
+      "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/"
+    },
+    {
+      "section": "Agent/skill compatibility",
+      "title": "Qwen3",
+      "url": "https://qwenlm.github.io/blog/qwen3/"
+    },
+    {
+      "section": "Agent/skill compatibility",
+      "title": "Ollama Modelfile",
+      "url": "https://docs.ollama.com/modelfile"
+    },
+    {
+      "section": "Agent/skill compatibility",
+      "title": "Ollama tool calling",
+      "url": "https://docs.ollama.com/capabilities/tool-calling"
+    },
+    {
+      "section": "Production/mix/master reference families",
+      "title": "Ableton Live manual and Making Music resources",
+      "url": "https://www.ableton.com/en/live-manual/12/"
+    },
+    {
+      "section": "Production/mix/master reference families",
+      "title": "Ableton Live manual and Making Music resources",
+      "url": "https://www.ableton.com/en/blog/"
+    },
+    {
+      "section": "Production/mix/master reference families",
+      "title": "Native Instruments Maschine / Komplete Kontrol manuals",
+      "url": "https://docs.native-instruments.com/"
+    },
+    {
+      "section": "Production/mix/master reference families",
+      "title": "Akai APC64 support/manual",
+      "url": "https://support.akaipro.com/"
+    },
+    {
+      "section": "Production/mix/master reference families",
+      "title": "FabFilter learning/manuals",
+      "url": "https://www.fabfilter.com/learn"
+    },
+    {
+      "section": "Production/mix/master reference families",
+      "title": "FabFilter learning/manuals",
+      "url": "https://www.fabfilter.com/help/"
+    },
+    {
+      "section": "Production/mix/master reference families",
+      "title": "Waves plugins/guides",
+      "url": "https://www.waves.com/plugins"
+    },
+    {
+      "section": "Production/mix/master reference families",
+      "title": "Waves plugins/guides",
+      "url": "https://www.waves.com/learn"
+    },
+    {
+      "section": "Production/mix/master reference families",
+      "title": "oeksound soothe3 manual",
+      "url": "https://oeksound.com/manuals/soothe3/"
+    },
+    {
+      "section": "Production/mix/master reference families",
+      "title": "SAE Institute production/audio curriculum and insights",
+      "url": "https://www.sae.edu/"
+    },
+    {
+      "section": "Ableton Live Object Model / Bridge",
+      "title": "Ableton: Controlling Live using Max for Live",
+      "url": "https://help.ableton.com/hc/en-us/articles/5402681764242-Controlling-Live-using-Max-for-Live"
+    },
+    {
+      "section": "Ableton Live Object Model / Bridge",
+      "title": "Ableton Live 12 release notes (including Live 12.4.3 plug-in editor control via LOM)",
+      "url": "https://www.ableton.com/en/release-notes/live-12/"
+    },
+    {
+      "section": "Ableton Live Object Model / Bridge",
+      "title": "Cycling '74 LOM DeviceParameter",
+      "url": "https://docs.cycling74.com/apiref/lom/deviceparameter/"
+    },
+    {
+      "section": "Ableton Live Object Model / Bridge",
+      "title": "Cycling '74 LOM Device",
+      "url": "https://docs.cycling74.com/apiref/lom/device/"
+    },
+    {
+      "section": "Ableton Live Object Model / Bridge",
+      "title": "Cycling '74 PluginDevice",
+      "url": "https://docs.cycling74.com/apiref/lom/plugindevice/"
+    },
+    {
+      "section": "Ableton Live Object Model / Bridge",
+      "title": "Cycling '74 MixerDevice",
+      "url": "https://docs.cycling74.com/apiref/lom/mixerdevice/"
+    },
+    {
+      "section": "Ableton Live Object Model / Bridge",
+      "title": "Cycling '74 live.remote~",
+      "url": "https://docs.cycling74.com/reference/live.remote~"
+    },
+    {
+      "section": "Ableton Live Object Model / Bridge",
+      "title": "Cycling '74 live.modulate~",
+      "url": "https://docs.cycling74.com/reference/live.modulate~"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Serum 2 manual / oscillator architecture",
+      "url": "https://xferrecords.com/web-manual/serum-2/welcome"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Serum 2 product page (Sample / Granular / Spectral)",
+      "url": "https://xferrecords.com/products/serum-2"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Waves OVox setup/tutorials",
+      "url": "https://www.waves.com/support/how-to-set-up-ovox-vocoder-in-your-daw"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Waves OVox setup/tutorials",
+      "url": "https://www.waves.com/make-any-vocal-sound-like-a-massive-synth-waves-ovox"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Waves Vocal Bender",
+      "url": "https://www.waves.com/plugins/vocal-bender"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Waves Tune Real-Time",
+      "url": "https://www.waves.com/plugins/waves-tune-real-time"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Ableton Live audio effects manual (Beat Repeat, Roar, Vocoder, Hybrid Reverb)",
+      "url": "https://www.ableton.com/en/manual/live-audio-effect-reference/"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Ableton Live instrument manual (Operator/Simpler/Sampler)",
+      "url": "https://www.ableton.com/en/manual/live-instrument-reference/"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Native Instruments Maschine effect reference / Stutter",
+      "url": "https://docs.native-instruments.com/online-guides/maschine-mk3-manual/en/effect-reference"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Producertech Icicle DnB production/sound design",
+      "url": "https://academy.producertech.com/staff-picks/86/drum-bass-production-and-sound-design"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Producertech Fracture DnB in Ableton",
+      "url": "https://academy.producertech.com/staff-picks/41/drum-bass-production-in-ableton-live"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Producertech Fracture DnB with Maschine",
+      "url": "https://academy.producertech.com/software-courses/maschine/34/drum-bass-production-with-maschine"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Producertech Creatures Liquid D&B",
+      "url": "https://academy.producertech.com/Producing-Liquid-D-B-Creatures-Pro-Tips/CR002"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Producertech advanced DnB / colo[r]",
+      "url": "https://academy.producertech.com/software-courses/ableton-live/10/part-1-creating-a-drum-bass-groove"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "UKF Alix Perez/Skeptical collaboration interview",
+      "url": "https://ukf.com/read/skeptical-b2b-alix-perez-words-behind-the-collaborations/"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "UKF DLR production interviews",
+      "url": "https://ukf.com/read/make-my-mind-go-in-depth-with-dlr/"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "UKF Calibre/DRS interview",
+      "url": "https://ukf.com/read/a-rare-audience-with-calibre-drs/"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "UKF US DnB / REAPER profile",
+      "url": "https://ukf.com/read/exploring-the-unique-rise-of-mysterious-us-db-artist-reaper/"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Justin Hawkes US DnB interview",
+      "url": "https://edmidentity.com/2026/06/12/drum-bass-devotions-022-justin-hawkes/"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Kumarion sound-design / DnB interview",
+      "url": "https://edmidentity.com/2026/01/20/bass-fidelity-004-kumarion/"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Random Movement US liquid DnB background",
+      "url": "https://www.randommovement.org/about"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Au5 HyperGrowl (video)",
+      "url": "https://www.youtube.com/watch?v=Stvc9zR3-KA"
+    },
+    {
+      "section": "Advanced sampling, bass, vocals and DnB research (v1.2)",
+      "title": "Au5 HyperGrowl (video)",
+      "url": "https://www.youtube.com/watch?v=QESjhfsbc8M"
+    },
+    {
+      "section": "Reverse / pre-FX / suckback sources",
+      "title": "Ableton Live 12 Manual — Clip View / Reversing Samples",
+      "url": "https://www.ableton.com/en/manual/clip-view/"
+    },
+    {
+      "section": "Reverse / pre-FX / suckback sources",
+      "title": "Ableton Live 12 Manual — Simpler reverse",
+      "url": "https://www.ableton.com/en/manual/live-instrument-reference/"
+    },
+    {
+      "section": "Reverse / pre-FX / suckback sources",
+      "title": "Native Instruments Maschine Software Manual — Sampler Reverse / Sample Editor",
+      "url": "https://docs.native-instruments.com/ni-tech-manuals/maschine-software-manual/en/working-with-plug-ins"
+    },
+    {
+      "section": "Reverse / pre-FX / suckback sources",
+      "title": "Native Instruments Maschine Sampling / Sample Mapping — REVERSE processing",
+      "url": "https://docs.native-instruments.com/ni-tech-manuals/maschine-plus-manual/en/sampling-and-sample-mapping"
+    },
+    {
+      "section": "Reverse / pre-FX / suckback sources",
+      "title": "Native Instruments Maschine Grain Delay — reverse grains",
+      "url": "https://docs.native-instruments.com/online-guides/maschine-mk3-manual/en/effect-reference"
+    },
+    {
+      "section": "Reverse / pre-FX / suckback sources",
+      "title": "Native Instruments video — Reversed Kit",
+      "url": "https://www.youtube.com/watch?v=elARwi2guNc"
+    },
+    {
+      "section": "Reverse / pre-FX / suckback sources",
+      "title": "Native Instruments video — Reverse the Reverb",
+      "url": "https://www.youtube.com/watch?v=AkfLmK4nYf8"
+    },
+    {
+      "section": "Reverse / pre-FX / suckback sources",
+      "title": "Xfer Serum 2 Manual — Granular reverse grains / reverse scan",
+      "url": "https://xferrecords.com/manual/serum-2"
+    },
+    {
+      "section": "Reverse / pre-FX / suckback sources",
+      "title": "Waves video/article — Reverse Vocals in 5 Steps",
+      "url": "https://www.waves.com/reverse-vocals-5-easy-steps-producer-tricks"
+    },
+    {
+      "section": "Reverse / pre-FX / suckback sources",
+      "title": "Krosper video — Reverse Bass in Serum 2",
+      "url": "https://www.youtube.com/watch?v=5sisdQJOPvs"
+    },
+    {
+      "section": "Spatial / stereo / panning sources (v1.4)",
+      "title": "Ableton Live 12 Mixing / Stereo Pan and Split Stereo Pan",
+      "url": "https://www.ableton.com/en/manual/mixing/"
+    },
+    {
+      "section": "Spatial / stereo / panning sources (v1.4)",
+      "title": "Ableton Live 12 Mixing / Stereo Pan and Split Stereo Pan",
+      "url": "https://help.ableton.com/hc/en-us/articles/360000103324-Split-Stereo-Pan-Mode"
+    },
+    {
+      "section": "Spatial / stereo / panning sources (v1.4)",
+      "title": "Ableton Utility (Width, Mid/Side, Mono, Bass Mono)",
+      "url": "https://www.ableton.com/en/manual/live-audio-effect-reference/"
+    },
+    {
+      "section": "Spatial / stereo / panning sources (v1.4)",
+      "title": "Ableton Audio Fact Sheet — constant-power panning",
+      "url": "https://www.ableton.com/en/manual/audio-fact-sheet/"
+    },
+    {
+      "section": "Spatial / stereo / panning sources (v1.4)",
+      "title": "FabFilter Pro-Q 4 stereo / L-R / Mid-Side placement",
+      "url": "https://www.fabfilter.com/help/pro-q/using/stereo"
+    },
+    {
+      "section": "Spatial / stereo / panning sources (v1.4)",
+      "title": "FabFilter Pro-C 3 stereo linking / Mid-Side dynamics",
+      "url": "https://www.fabfilter.com/help/pro-c/using/sidechainsection"
+    },
+    {
+      "section": "Spatial / stereo / panning sources (v1.4)",
+      "title": "Waves S1 Stereo Imager manual",
+      "url": "https://www.waves.com/1lib/pdf/plugins/s1-stereo-imager.pdf"
+    },
+    {
+      "section": "Spatial / stereo / panning sources (v1.4)",
+      "title": "Waves S1 official stereo-imaging video",
+      "url": "https://www.youtube.com/watch?v=ZRT70qx0vqA"
+    },
+    {
+      "section": "Spatial / stereo / panning sources (v1.4)",
+      "title": "Waves width/rotation examples with S1",
+      "url": "https://www.youtube.com/watch?v=0KJg_Z8GPY0"
+    }
+  ]
+}

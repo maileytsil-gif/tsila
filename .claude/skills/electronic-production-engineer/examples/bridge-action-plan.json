@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.4.0",
+  "mode": "plan",
+  "requires_user_approval": false,
+  "actions": [
+    {
+      "target": {
+        "track": "T02_BASS",
+        "rack": "RACK_BASS",
+        "device": "RACK_BASS",
+        "semantic_parameter": "M04_DRIVE",
+        "resolved_path": null,
+        "resolved_id": null
+      },
+      "operation": "delta",
+      "value": null,
+      "normalized": null,
+      "delta_normalized": 0.05,
+      "reason": "Increase mid-bass aggression without increasing true sub level.",
+      "preconditions": [
+        "Resolve exact M04_DRIVE parameter",
+        "Parameter is enabled",
+        "Automation is not silently overridden"
+      ],
+      "verify": [
+        "Read back value",
+        "Gain-match A/B",
+        "Check sub level unchanged",
+        "Check harshness after saturation"
+      ],
+      "rollback": "Restore pre-change value if the bass loses definition or the level-matched result is worse.",
+      "confidence": "MEDIUM",
+      "expected_current_value": null,
+      "allowed_range": {
+        "min": 0.0,
+        "max": 1.0
+      },
+      "automation_policy": "preserve",
+      "destructiveness": "reversible"
+    }
+  ],
+  "capability_mode": "BRIDGE_READONLY"
+}
