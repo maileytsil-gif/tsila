@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.4.0",
+  "live_version": "12.x",
+  "tracks": [
+    {
+      "id": 101,
+      "name": "T02_BASS",
+      "path": "live_set tracks 1",
+      "devices": [
+        {
+          "id": 201,
+          "name": "RACK_BASS",
+          "class_name": "AudioEffectGroupDevice",
+          "class_display_name": "Audio Effect Rack",
+          "path": "live_set tracks 1 devices 0",
+          "parameters": [
+            {
+              "id": 301,
+              "name": "M04_DRIVE",
+              "original_name": "Macro 4",
+              "path": "live_set tracks 1 devices 0 parameters 4",
+              "value": 0.42,
+              "display_value": "42%",
+              "min": 0.0,
+              "max": 1.0,
+              "is_quantized": false,
+              "value_items": [],
+              "is_enabled": true,
+              "automation_state": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

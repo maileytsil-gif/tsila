@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/epe/v1.5/semantic-bridge-plan.schema.json",
+  "title": "Safe semantic Ableton Bridge plan",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "plan_id", "set_identity", "mode", "intent", "operations", "preflight", "approval", "verification", "rollback"],
+  "properties": {
+    "schema_version": {"const": "1.5.0"},
+    "plan_id": {"type": "string", "minLength": 1},
+    "set_identity": {"type": "object", "additionalProperties": false, "required": ["set_id", "observed_at"], "properties": {"set_id": {"type": "string"}, "observed_at": {"type": "string", "format": "date-time"}}},
+    "mode": {"const": "plan_only"},
+    "intent": {"type": "object", "additionalProperties": false, "required": ["request", "goal", "scope", "constraints"], "properties": {"request": {"type": "string"}, "goal": {"type": "string"}, "scope": {"type": "string"}, "constraints": {"type": "array", "items": {"type": "string"}}}},
+    "operations": {"type": "array", "items": {"$ref": "#/$defs/operation"}},
+    "preflight": {"type": "object", "additionalProperties": false, "required": ["target_unique", "current_value_captured", "automation_checked", "savepoint_required", "checks"], "properties": {"target_unique": {"type": "boolean"}, "current_value_captured": {"type": "boolean"}, "automation_checked": {"type": "boolean"}, "savepoint_required": {"type": "boolean"}, "checks": {"type": "array", "items": {"type": "string"}}}},
+    "approval": {"type": "object", "additionalProperties": false, "required": ["required", "status", "plan_digest"], "properties": {"required": {"const": true}, "status": {"const": "not_requested"}, "plan_digest": {"type": "string", "minLength": 1}}},
+    "verification": {"type": "array", "items": {"type": "string"}},
+    "rollback": {"type": "object", "additionalProperties": false, "required": ["strategy", "conditions"], "properties": {"strategy": {"type": "string"}, "conditions": {"type": "array", "items": {"type": "string"}}}}
+  },
+  "$defs": {
+    "operation": {"type": "object", "additionalProperties": false, "required": ["operation_id", "kind", "target", "proposal", "risk", "reversible", "expected_postcondition"], "properties": {
+      "operation_id": {"type": "string"},
+      "kind": {"enum": ["read_only", "set_exposed_parameter", "set_named_macro", "create_clip", "edit_notes", "edit_automation", "insert_device", "replace_preset", "replace_sample", "change_routing", "change_master", "export", "archive", "delete"]},
+      "target": {"type": "object", "additionalProperties": false, "required": ["role", "query", "resolved_id", "mapping_source"], "properties": {"role": {"type": "string"}, "query": {"type": "string"}, "resolved_id": {"type": ["string", "null"]}, "mapping_source": {"enum": ["observed_macro", "verified_parameter_map", "none"]}}},
+      "proposal": {"type": "object", "additionalProperties": false, "required": ["from", "to", "unit", "rationale"], "properties": {"from": {"type": ["number", "string", "null"]}, "to": {"type": ["number", "string", "null"]}, "unit": {"type": "string"}, "rationale": {"type": "string"}}},
+      "risk": {"enum": ["low", "medium", "high", "critical"]},
+      "reversible": {"type": "boolean"},
+      "expected_postcondition": {"type": "string"}
+    }}
+  }
+}

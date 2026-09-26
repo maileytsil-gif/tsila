@@ -1,0 +1,47 @@
+{
+  "profile_version": "1.4.0",
+  "vendor": "Example Vendor",
+  "product": "Example Synth",
+  "device_match": {
+    "class_name": "PluginDevice",
+    "class_display_name_contains": "Example Synth"
+  },
+  "mappings": [
+    {
+      "semantic": "FILTER_CUTOFF",
+      "match_names": [
+        "Cutoff",
+        "Filter Freq"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "semantic": "FILTER_RESONANCE",
+      "match_names": [
+        "Resonance",
+        "Reso"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "semantic": "AMP_ATTACK",
+      "match_names": [
+        "Attack",
+        "Amp Attack"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "semantic": "AMP_RELEASE",
+      "match_names": [
+        "Release",
+        "Amp Release"
+      ],
+      "confidence": 0.95
+    }
+  ],
+  "protected": [
+    "OUTPUT_LEVEL"
+  ],
+  "notes": "Replace this example with a profile validated against a real discovery scan."
+}

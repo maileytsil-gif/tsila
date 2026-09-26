@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "End to End Production Lifecycle",
+  "type": "object",
+  "required": ["schema_version", "target", "gates"],
+  "properties": {
+    "schema_version": {"const": "1.4.0"},
+    "target": {"type": "string"},
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gate", "status", "exit_criteria", "evidence"],
+        "properties": {
+          "gate": {"enum": ["brief_identity", "core_idea", "palette_source_design", "arrangement", "spatial_spectral_plan", "mix_prep", "mix", "pre_master_qc", "master", "delivery_qc", "archive"]},
+          "status": {"enum": ["NOT_STARTED", "IN_PROGRESS", "BLOCKED", "PASS_WITH_NOTES", "PASS"]},
+          "exit_criteria": {"type": "array", "items": {"type": "string"}},
+          "evidence": {"type": "array", "items": {"type": "string"}},
+          "next_actions": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

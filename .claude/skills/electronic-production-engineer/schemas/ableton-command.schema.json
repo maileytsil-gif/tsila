@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ableton Bridge Command",
+  "type": "object",
+  "required": ["schema_version", "capability_mode", "mode", "actions"],
+  "properties": {
+    "schema_version": {"const": "1.4.0"},
+    "capability_mode": {"enum": ["BRIDGE_READONLY", "BRIDGE_WRITE"]},
+    "mode": {"enum": ["inspect", "plan", "write", "performance_remote", "gui_fallback"]},
+    "requires_user_approval": {"type": "boolean"},
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["target", "operation", "confidence", "verify"],
+        "properties": {
+          "target": {
+            "type": "object",
+            "required": ["track"],
+            "properties": {
+              "track": {"type": "string"},
+              "rack": {"type": ["string", "null"]},
+              "device": {"type": ["string", "null"]},
+              "semantic_parameter": {"type": ["string", "null"]},
+              "resolved_path": {"type": ["string", "null"]},
+              "resolved_id": {"type": ["integer", "string", "null"]}
+            },
+            "additionalProperties": false
+          },
+          "operation": {"enum": ["inspect", "set", "delta", "automate", "remote", "release_remote", "enable", "bypass", "select_preset", "open_editor", "close_editor", "route", "re_enable_automation"]},
+          "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]},
+          "expected_current_value": {"type": ["number", "string", "boolean", "null"]},
+          "value": {"type": ["number", "string", "boolean", "null"]},
+          "normalized": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+          "delta_normalized": {"type": ["number", "null"], "minimum": -1, "maximum": 1},
+          "allowed_range": {
+            "type": ["object", "null"],
+            "properties": {"min": {"type": "number"}, "max": {"type": "number"}},
+            "required": ["min", "max"],
+            "additionalProperties": false
+          },
+          "automation_policy": {"enum": ["preserve", "write_automation", "override_then_reenable", "not_applicable"]},
+          "destructiveness": {"enum": ["read_only", "reversible", "commit"]},
+          "reason": {"type": ["string", "null"]},
+          "preconditions": {"type": "array", "items": {"type": "string"}},
+          "verify": {"type": "array", "items": {"type": "string"}},
+          "rollback": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

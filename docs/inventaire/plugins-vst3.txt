@@ -1,0 +1,618 @@
+ls: /Users/r.tsila/Library/Audio/Plug-Ins/VST3: No such file or directory
+/Library/Audio/Plug-Ins/VST3:
+Astra.vst3
+Aurora.vst3
+Battery 4.vst3
+Bite.vst3
+Choral.vst3
+Cramit.vst3
+Dirt.vst3
+Driver.vst3
+FETish.vst3
+FXEQ.vst3
+FabFilter Pro-C 3.vst3
+FabFilter Pro-Q 4.vst3
+FetDrive.vst3
+FetSnap.vst3
+Flair.vst3
+Freak.vst3
+Guitar Rig 7.vst3
+Insight 2.vst3
+Komplete Kontrol.vst3
+Kontakt 7.vst3
+Kontakt 8.vst3
+LAEA.vst3
+LX480 Essentials.vst3
+Maschine 3.vst3
+Massive X.vst3
+Massive.vst3
+MeldaProduction
+MuChild.vst3
+Nectar 4 Elements.vst3
+Neutron 5 Elements.vst3
+Ozone 11 Elements.vst3
+Ozone 11 Equalizer.vst3
+Ozone 12 Elements.vst3
+Ozone 9 Elements.vst3
+Ozone Imager 2.vst3
+Phasis.vst3
+RX 11 De-click.vst3
+RX 11 De-clip.vst3
+RX 11 De-hum.vst3
+RX 11 De-reverb.vst3
+RX 11 Repair Assistant.vst3
+RX 11 Voice De-noise.vst3
+RX 12 De-click.vst3
+RX 12 De-clip.vst3
+RX 12 De-hum.vst3
+RX 12 De-reverb.vst3
+RX 12 Repair Assistant.vst3
+RX 12 Voice De-noise.vst3
+Raum.vst3
+RazorClip.vst3
+Reaktor 6.vst3
+Relay.vst3
+Replika XT.vst3
+Replika.vst3
+SPAN.vst3
+Serum2.vst3
+ShaperBox 3.vst3
+Solid Bus Comp.vst3
+SoundID Reference VST3 Plugin.vst3
+Splice Sounds Listener.vst3
+Splice Sounds.vst3
+SpliceBridge.vst3
+Stutter Edit 2.vst3
+Supercharger GT.vst3
+Supercharger.vst3
+TDR Nova.vst3
+TheBus.vst3
+Tonal Balance Control 3.vst3
+Transient Master.vst3
+Trash.vst3
+VOCALOID VSTi.vst3
+VOCALOIDBridge.vst3
+ValhallaVintageVerb.vst3
+VocalSynth 2.vst3
+Vocodine.vst3
+WaveShell1-VST3 16.0.vst3
+WaveShell1-VST3 16.6.vst3
+WaveShell1-VST3 16.7.vst3
+WaveShell1-VST3 17.1.vst3
+WaveShell1-VST3 17.2.vst3
+WaveShell1-VST3-ARA 16.7.vst3
+WaveShell1-VST3-ARA 16.8.vst3
+WaveShell1-VST3-ARA 17.1.vst3
+bx_enhancer.vst3
+bx_glue.vst3
+soothe3.vst3
+/Applications/Waves/Plug-Ins V16:
+API-2500.bundle
+API-550.bundle
+API-560.bundle
+AR TG Meter Bridge.bundle
+ARPlates.bundle
+Abbey Road Chambers.bundle
+Abbey Road RS124.bundle
+Abbey Road Saturator.bundle
+Abbey Road Studio 3.bundle
+Abbey Road TG Mastering Chain.bundle
+Abbey Road Vinyl.bundle
+Aphex AX.bundle
+AudioTrack.bundle
+B360.bundle
+BB Tubes.bundle
+Bass Fingers.bundle
+Bass Rider.bundle
+Bass Slapper.bundle
+Berzerk Distortion.bundle
+Brauer Motion.bundle
+Butch Vig Vocals.bundle
+C1.bundle
+C360.bundle
+C4.bundle
+C6.bundle
+CLA Bass.bundle
+CLA Drums.bundle
+CLA EchoSphere.bundle
+CLA Effects.bundle
+CLA Epic.bundle
+CLA Guitars.bundle
+CLA MixDown.bundle
+CLA MixHub.bundle
+CLA Nx.bundle
+CLA Unplugged.bundle
+CLA Vocals.bundle
+CLA-2A.bundle
+CLA-3A.bundle
+CLA-76.bundle
+CODEX.bundle
+COSMOS.bundle
+CR8 Sampler.bundle
+Center.bundle
+Clarity Vx DeReverb Pro.bundle
+Clarity Vx DeReverb.bundle
+Clarity Vx Pro.bundle
+Clarity Vx.bundle
+Clarix LB.bundle
+Clavinet.bundle
+Curves AQ.bundle
+Curves Equator.bundle
+Curves Resolve.bundle
+DPR-402.bundle
+DeBreath.bundle
+DeEsser.bundle
+Documents
+Doppler.bundle
+Dorrough Surround 5.0.bundle
+Dorrough Surround 5.1.bundle
+Dorrough.bundle
+Doubler.bundle
+EMO-D5.bundle
+EMO-F2.bundle
+EMO-Q4.bundle
+EddieKramer BA.bundle
+EddieKramer DR.bundle
+EddieKramer FX.bundle
+EddieKramer GT.bundle
+EddieKramer VC.bundle
+Electric Grand 80.bundle
+Electric200.bundle
+Electric88.bundle
+Element2.bundle
+Enigma.bundle
+F6.bundle
+Feedback Hunter.bundle
+Flow Motion.bundle
+GEQ.bundle
+GTR
+GTRAmp.bundle
+GTRSolo
+GTRSoloToolRack.bundle
+GTRStomp.bundle
+GTRToolRack.bundle
+GTRTuner.bundle
+GrandRhapsody.bundle
+Greg Wells MixCentric.bundle
+Greg Wells PianoCentric.bundle
+Greg Wells ToneCentric.bundle
+Greg Wells VoiceCentric.bundle
+H-Comp.bundle
+H-Delay.bundle
+H-EQ.bundle
+H-Reverb.bundle
+IDX Intelligent Dynamics.bundle
+IMPusher.bundle
+IR-1.bundle
+IR-360.bundle
+IR-L.bundle
+IRLive.bundle
+Icon
+Immersive Wrapper.bundle
+InPhase LT.bundle
+InPhase.bundle
+InTrigger Live.bundle
+InTrigger.bundle
+J37.bundle
+JJP-Bass.bundle
+JJP-Cymb-Perc.bundle
+JJP-Drums.bundle
+JJP-Guitars.bundle
+JJP-Strings-Keys.bundle
+JJP-Vocals.bundle
+Kaleidoscopes.bundle
+Key Detector.bundle
+KingsMic.bundle
+KramerHLS.bundle
+KramerPIE.bundle
+KramerTape.bundle
+L1.bundle
+L2.bundle
+L3 Multi.bundle
+L3 Ultra.bundle
+L3-16.bundle
+L3-LL Multi.bundle
+L3-LL Ultra.bundle
+L360.bundle
+L4 Ultramaximizer.bundle
+LFE360.bundle
+Lil Tube.bundle
+LinEQ.bundle
+LinMB.bundle
+LoAir.bundle
+Lofi Space.bundle
+MDMX Distortion.bundle
+MIDI
+MV2.bundle
+MV360.bundle
+Magma StressBox.bundle
+MagmaChannelStrip.bundle
+MagmaSprings.bundle
+MannyM-Delay.bundle
+MannyM-Distortion.bundle
+MannyM-EQ.bundle
+MannyM-Reverb.bundle
+MannyM-ToneShaper.bundle
+MannyM-TripleD.bundle
+Maserati ACG.bundle
+Maserati B72.bundle
+Maserati DRM.bundle
+Maserati GRP.bundle
+Maserati GTi.bundle
+Maserati HMX.bundle
+Maserati VX1.bundle
+MaxxBass.bundle
+MaxxVolume.bundle
+MetaFilter.bundle
+MetaFlanger.bundle
+ModFX
+MondoMod.bundle
+Morphoder.bundle
+MultiMod Rack.bundle
+NLS.bundle
+NS1.bundle
+NX.bundle
+Nx Germano Studios.bundle
+Nx Ocean Way Nashville.bundle
+OKBrighter.bundle
+OKDriver.bundle
+OKFilter.bundle
+OKLouder.bundle
+OKPhatter.bundle
+OKPressure.bundle
+OKPumper.bundle
+OKWetter.bundle
+OVox.bundle
+PAZ.bundle
+PRS Supermodels.bundle
+PS22.bundle
+PlaylistRider.bundle
+Primary Source Expander.bundle
+PuigChild.bundle
+PuigTec.bundle
+Q-Clone.bundle
+Q10.bundle
+R360.bundle
+RBass.bundle
+RChannel.bundle
+RComp.bundle
+RDeEsser.bundle
+REDD17.bundle
+REDD37-51.bundle
+REQ.bundle
+RS56.bundle
+RVerb.bundle
+RVox.bundle
+Reel ADT.bundle
+RenAxx.bundle
+Retro Fi.bundle
+S1.bundle
+S360.bundle
+SSL E-Channel.bundle
+SSL EV2 Channel.bundle
+SSL G-Channel.bundle
+SSLComp.bundle
+SSLEQ.bundle
+Saphira.bundle
+Scheps 73.bundle
+Scheps Omni Channel.bundle
+Scheps Parallel Particles.bundle
+Sibilance.bundle
+SignalGenerator.bundle
+Silk Vocal.bundle
+Smack Attack.bundle
+SoundShifter.bundle
+Space Rider.bundle
+Spherix Immersive Compressor.bundle
+Spherix Immersive Limiter.bundle
+StudioVerse Audio Effects.bundle
+StudioVerse Instruments.bundle
+Sub Align.bundle
+Submarine.bundle
+SuperTap.bundle
+Sync Vx.bundle
+TG12345.bundle
+TRACT.bundle
+Torque.bundle
+TransX.bundle
+TrueVerb.bundle
+UM.bundle
+UltraPitch.bundle
+VComp.bundle
+VEQ3.bundle
+VEQ4.bundle
+VU Meter.bundle
+Vitamin.bundle
+Vocal Bender.bundle
+Vocal Rider.bundle
+Voltage Amps Bass.bundle
+Voltage Amps Guitar.bundle
+W43.bundle
+WLM Plus.bundle
+WLM.bundle
+WNS.bundle
+Waves Gemstones.bundle
+Waves Harmony.bundle
+Waves Stream.bundle
+Waves Tune Real-Time.bundle
+WavesHeadTracker
+WavesLib1_16.0.23.framework
+WavesLib1_16.0.30.framework
+WavesLib1_16.6.53.framework
+WavesLib1_16.7.33.framework
+WavesLib1_16.7.38.framework
+WavesLib1_16.7.48.framework
+WavesLib1_16.7.76.framework
+WavesLib1_16.8.136.framework
+WavesTune LT.bundle
+WavesTune.bundle
+X-Click.bundle
+X-Crackle.bundle
+X-FDBK.bundle
+X-Hum.bundle
+X-Noise.bundle
+Z-Noise.bundle
+dbx-160.bundle
+
+/Applications/Waves/Plug-Ins V17:
+API-2500.bundle
+API-550.bundle
+API-560.bundle
+AR TG Meter Bridge.bundle
+ARPlates.bundle
+Abbey Road Chambers.bundle
+Abbey Road RS124.bundle
+Abbey Road Saturator.bundle
+Abbey Road Studio 3.bundle
+Abbey Road TG Mastering Chain.bundle
+Abbey Road Vinyl.bundle
+Aphex AX.bundle
+Atlas Reverb.bundle
+AudioTrack.bundle
+B360.bundle
+BB Tubes.bundle
+Bass Fingers.bundle
+Bass Rider.bundle
+Bass Slapper.bundle
+Berzerk Distortion.bundle
+Brauer Motion.bundle
+Butch Vig Vocals.bundle
+C1.bundle
+C360.bundle
+C4.bundle
+C6.bundle
+CLA Bass.bundle
+CLA Drums.bundle
+CLA EchoSphere.bundle
+CLA Effects.bundle
+CLA Epic.bundle
+CLA Guitars.bundle
+CLA MixDown.bundle
+CLA MixHub.bundle
+CLA Nx.bundle
+CLA Unplugged.bundle
+CLA Vocals.bundle
+CLA-2A.bundle
+CLA-3A.bundle
+CLA-76.bundle
+CODEX.bundle
+COSMOS.bundle
+CR8 Sampler.bundle
+Center.bundle
+Clarity Vx DeReverb Pro.bundle
+Clarity Vx DeReverb.bundle
+Clarity Vx Pro.bundle
+Clarity Vx.bundle
+Clarix LB.bundle
+Clavinet.bundle
+Curves AQ.bundle
+Curves Equator.bundle
+Curves Resolve.bundle
+DPR-402.bundle
+DeBreath.bundle
+DeEsser.bundle
+Documents
+Doppler.bundle
+Dorrough Surround 5.0.bundle
+Dorrough Surround 5.1.bundle
+Dorrough.bundle
+Doubler.bundle
+EMO-D5.bundle
+EMO-F2.bundle
+EMO-Q4.bundle
+EddieKramer BA.bundle
+EddieKramer DR.bundle
+EddieKramer FX.bundle
+EddieKramer GT.bundle
+EddieKramer VC.bundle
+Electric Grand 80.bundle
+Electric200.bundle
+Electric88.bundle
+Element2.bundle
+Enigma.bundle
+F6.bundle
+Feedback Hunter.bundle
+Flow Motion.bundle
+GEQ.bundle
+GTR
+GTRAmp.bundle
+GTRSolo
+GTRSoloToolRack.bundle
+GTRStomp.bundle
+GTRToolRack.bundle
+GTRTuner.bundle
+GrandRhapsody.bundle
+Greg Wells MixCentric.bundle
+Greg Wells PianoCentric.bundle
+Greg Wells ToneCentric.bundle
+Greg Wells VoiceCentric.bundle
+H-Comp.bundle
+H-Delay.bundle
+H-EQ.bundle
+H-Reverb.bundle
+IDX Intelligent Dynamics.bundle
+IMPusher.bundle
+IR-1.bundle
+IR-360.bundle
+IR-L.bundle
+IRLive.bundle
+Icon
+Immersive Wrapper.bundle
+InPhase LT.bundle
+InPhase.bundle
+InTrigger Live.bundle
+InTrigger.bundle
+J37.bundle
+JJP-Bass.bundle
+JJP-Cymb-Perc.bundle
+JJP-Drums.bundle
+JJP-Guitars.bundle
+JJP-Strings-Keys.bundle
+JJP-Vocals.bundle
+Kaleidoscopes.bundle
+Key Detector.bundle
+KingsMic.bundle
+KramerHLS.bundle
+KramerPIE.bundle
+KramerTape.bundle
+L1.bundle
+L2.bundle
+L3 Multi.bundle
+L3 Ultra.bundle
+L3-16.bundle
+L3-LL Multi.bundle
+L3-LL Ultra.bundle
+L360.bundle
+L4 Ultramaximizer.bundle
+LFE360.bundle
+Lil Tube.bundle
+LinEQ.bundle
+LinMB.bundle
+LoAir.bundle
+Lofi Space.bundle
+MDMX Distortion.bundle
+MIDI
+MV2.bundle
+MV360.bundle
+Magma StressBox.bundle
+MagmaChannelStrip.bundle
+MagmaSprings.bundle
+MannyM-Delay.bundle
+MannyM-Distortion.bundle
+MannyM-EQ.bundle
+MannyM-Reverb.bundle
+MannyM-ToneShaper.bundle
+MannyM-TripleD.bundle
+Maserati ACG.bundle
+Maserati B72.bundle
+Maserati DRM.bundle
+Maserati GRP.bundle
+Maserati GTi.bundle
+Maserati HMX.bundle
+Maserati VX1.bundle
+MaxxBass.bundle
+MaxxVolume.bundle
+MetaFilter.bundle
+MetaFlanger.bundle
+ModFX
+MondoMod.bundle
+Morphoder.bundle
+MultiMod Rack.bundle
+NLS.bundle
+NS1.bundle
+NX.bundle
+Nx Germano Studios.bundle
+Nx Ocean Way Nashville.bundle
+OKBrighter.bundle
+OKDriver.bundle
+OKFilter.bundle
+OKLouder.bundle
+OKPhatter.bundle
+OKPressure.bundle
+OKPumper.bundle
+OKWetter.bundle
+OVox.bundle
+PAZ.bundle
+PRS Supermodels.bundle
+PS22.bundle
+PlaylistRider.bundle
+Primary Source Expander.bundle
+PuigChild.bundle
+PuigTec.bundle
+Q-Clone.bundle
+Q10.bundle
+R360.bundle
+RBass.bundle
+RChannel.bundle
+RComp.bundle
+RDeEsser.bundle
+REDD17.bundle
+REDD37-51.bundle
+REQ.bundle
+RS56.bundle
+RVerb.bundle
+RVox.bundle
+Reel ADT.bundle
+RenAxx.bundle
+Retro Fi.bundle
+S1.bundle
+S360.bundle
+SSL E-Channel.bundle
+SSL EV2 Channel.bundle
+SSL G-Channel.bundle
+SSLComp.bundle
+SSLEQ.bundle
+Saphira.bundle
+Scheps 73.bundle
+Scheps Omni Channel.bundle
+Scheps Parallel Particles.bundle
+Sibilance.bundle
+SignalGenerator.bundle
+Silk Vocal.bundle
+Smack Attack.bundle
+SoundShifter.bundle
+Space Rider.bundle
+Spherix Immersive Compressor.bundle
+Spherix Immersive Limiter.bundle
+StudioVerse Audio Effects.bundle
+StudioVerse Instruments.bundle
+Sub Align.bundle
+Submarine.bundle
+SuperTap.bundle
+Sync Vx.bundle
+TG12345.bundle
+TRACT.bundle
+Torque.bundle
+TransX.bundle
+TrueVerb.bundle
+UM.bundle
+UltraPitch.bundle
+VComp.bundle
+VEQ3.bundle
+VEQ4.bundle
+VU Meter.bundle
+Vitamin.bundle
+Vocal Bender.bundle
+Vocal Rider.bundle
+Voltage Amps Bass.bundle
+Voltage Amps Guitar.bundle
+W43.bundle
+WLM Plus.bundle
+WLM.bundle
+WNS.bundle
+Waves Gemstones.bundle
+Waves Harmony.bundle
+Waves Stream.bundle
+Waves Tune Real-Time.bundle
+WavesHeadTracker
+WavesLib1_17.1.42.framework
+WavesLib1_17.2.90.framework
+WavesTune LT.bundle
+WavesTune.bundle
+X-Click.bundle
+X-Crackle.bundle
+X-FDBK.bundle
+X-Hum.bundle
+X-Noise.bundle
+Z-Noise.bundle
+dbx-160.bundle

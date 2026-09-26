@@ -1,0 +1,119 @@
+---
+titre: "DX7 « BRASS 1 » (ROM1A) — paramètres du patch (conversion YAML, infinite-synthwave)"
+source: https://raw.githubusercontent.com/fxrobin/infinite-synthwave/HEAD/synthwave/patches/library/dx7_BRASS_1.yaml
+recupere_le: 2026-09-24
+mode: texte integral
+langue: en
+axe: synthèse FM ; patch DX7
+skills: studio-grade-brass-sound-design
+usage: copie personnelle pour recherche locale (Ollama) ; droits des auteurs cités
+---
+
+```
+name: BRASS   1
+kind: dx7
+algorithm: 22
+feedback: 7
+volume: 0.574
+polyphony: 8
+glide: 0.0
+operators:
+- ratio: 0.5
+  detune: 7
+  level: 0.98989898989899
+  attack: 0.005
+  decay: 0.15
+  sustain: 0.8
+  release: 0.2
+  eg_type: dx7
+  eg_rate1: 72
+  eg_level1: 99
+  eg_rate2: 76
+  eg_level2: 88
+  eg_rate3: 99
+  eg_level3: 96
+  eg_rate4: 71
+  eg_level4: 0
+- ratio: 0.5
+  detune: 7
+  level: 0.8686868686868687
+  attack: 0.005
+  decay: 0.15
+  sustain: 0.8
+  release: 0.2
+  eg_type: dx7
+  eg_rate1: 62
+  eg_level1: 82
+  eg_rate2: 51
+  eg_level2: 95
+  eg_rate3: 29
+  eg_level3: 96
+  eg_rate4: 71
+  eg_level4: 0
+- ratio: 1.0
+  detune: -2
+  level: 1.0
+  attack: 0.005
+  decay: 0.15
+  sustain: 0.8
+  release: 0.2
+  eg_type: dx7
+  eg_rate1: 77
+  eg_level1: 99
+  eg_rate2: 76
+  eg_level2: 98
+  eg_rate3: 82
+  eg_level3: 98
+  eg_rate4: 71
+  eg_level4: 0
+- ratio: 1.0
+  detune: 0
+  level: 1.0
+  attack: 0.005
+  decay: 0.15
+  sustain: 0.8
+  release: 0.2
+  eg_type: dx7
+  eg_rate1: 77
+  eg_level1: 99
+  eg_rate2: 36
+  eg_level2: 98
+  eg_rate3: 41
+  eg_level3: 98
+  eg_rate4: 71
+  eg_level4: 0
+- ratio: 1.0
+  detune: 1
+  level: 0.98989898989899
+  attack: 0.005
+  decay: 0.15
+  sustain: 0.8
+  release: 0.2
+  eg_type: dx7
+  eg_rate1: 77
+  eg_level1: 99
+  eg_rate2: 36
+  eg_level2: 98
+  eg_rate3: 41
+  eg_level3: 98
+  eg_rate4: 71
+  eg_level4: 0
+- ratio: 1.0
+  detune: 0
+  level: 0.8282828282828283
+  attack: 0.005
+  decay: 0.15
+  sustain: 0.8
+  release: 0.2
+  eg_type: dx7
+  eg_rate1: 49
+  eg_level1: 98
+  eg_rate2: 99
+  eg_level2: 98
+  eg_rate3: 28
+  eg_level3: 91
+  eg_rate4: 68
+  eg_level4: 0
+effects: []
+
+```

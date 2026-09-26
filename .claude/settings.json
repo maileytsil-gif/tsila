@@ -1,0 +1,25 @@
+{
+  "language": "french",
+  "voice": {
+    "enabled": true,
+    "mode": "tap"
+  },
+  "env": {
+    "CLAUDE_VOIX": "Thomas",
+    "CLAUDE_VOIX_DEBIT": "185"
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/lire-reponse.sh\" 2>/dev/null || true",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}
