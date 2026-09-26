@@ -1,20 +1,20 @@
 {
   "name": "electronic-production-engineer",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "files": [
     {
       "path": "CHANGELOG.md",
-      "sha256": "697f8f2e949d17b364f08a313211b7c52ee905476bf7536e5f3302f6ac921257",
-      "bytes": 3707
+      "sha256": "cb84571752749ff8048ece8df711026bbe7e6e8d707d5b0896246b395fb7a2a9",
+      "bytes": 6338
     },
     {
       "path": "README.md",
-      "sha256": "c5e6ce730b00bc44ea2f14e907bc9c5f339e794d74c968a8e736ec75680a906f",
-      "bytes": 2554
+      "sha256": "062ace58690773e6a1745557268cf965472423b741cd286ecf92a5311a0dc154",
+      "bytes": 3068
     },
     {
       "path": "SKILL.md",
-      "sha256": "da6cf3e23899c49f1b5a2ca48fb70aa62bab78bf1095a3d2422774a6396f9624",
+      "sha256": "bfb4b147be223266a63d3e6372c325c8361d30b99291009b141ad978e84a5eb1",
       "bytes": 14392
     },
     {
@@ -29,7 +29,7 @@
     },
     {
       "path": "VERSION",
-      "sha256": "acb57a7135b2d7d6e665f67f056e21353023b93835f54def1ae523bf76f1bfb3",
+      "sha256": "cb1d9a30bc4ab8a397f39b7d786bb82aca0b816077eefc35d7c822017d75f6a5",
       "bytes": 6
     },
     {
@@ -144,8 +144,8 @@
     },
     {
       "path": "references/10-genre-router.md",
-      "sha256": "a24840cbbfb4f6d606711019775cd180801192a6c82680672f67a313eecddfea",
-      "bytes": 3024
+      "sha256": "052e68e37a36a44cd28b8c25b932bf78f46222d3912414cd049b34ecc6446661",
+      "bytes": 2941
     },
     {
       "path": "references/20-arrangement-engine.md",
@@ -164,13 +164,13 @@
     },
     {
       "path": "references/32-sound-design-engine.md",
-      "sha256": "06e18ccc8491eeca9cf22abfc52e6bd4539c3dd16b59b5dfa49bd94c951ef357",
-      "bytes": 8809
+      "sha256": "12ec2c5ef61fde17e57c7bdcb24c4b058aa4b745e4b5f70f1d34af5f19dbb50a",
+      "bytes": 8832
     },
     {
       "path": "references/33-sampling-stutter-engine.md",
-      "sha256": "c070632665005fcfe02653eff1683f16b477897b6cd53ac63b34f051ad736fa0",
-      "bytes": 7518
+      "sha256": "11b0b9cb80ea9b3cb113953125d2c31796cd365ab4ec545e07f15c9b3f075bf7",
+      "bytes": 7673
     },
     {
       "path": "references/34-robotic-bass-vocoder-vocal-engine.md",
@@ -184,8 +184,8 @@
     },
     {
       "path": "references/36-dnb-engine.md",
-      "sha256": "a9c394cbdb5242c070c54538f7b2a5fec64aa278b128697e5a07217218ecd6cf",
-      "bytes": 7140
+      "sha256": "9b5696009e08c5069ce45e34781cfc3ffa7d91e5c0a5926ff7febc41bcf2ba59",
+      "bytes": 7169
     },
     {
       "path": "references/37-drum-transient-design.md",
@@ -194,13 +194,13 @@
     },
     {
       "path": "references/38-fx-atmos-transitions.md",
-      "sha256": "adb9af45749505570edc495f939a86aa5c1c46bb481113e07a50c8539a589dac",
-      "bytes": 5573
+      "sha256": "6138d49c926d4b8db09dc34334fd1f9845c600e9ff7658ad902f130138b7aa6b",
+      "bytes": 5575
     },
     {
       "path": "references/39-reverse-pre-fx-engine.md",
-      "sha256": "bd6d0928cde984905d8ecd2ae2e2746adaa72d68da7ccd2995b06fa9d2148d15",
-      "bytes": 10262
+      "sha256": "e55f3971536f2e658afdfae857b10011fc56b2b794c4cdb1d4e9fdbe27b61d60",
+      "bytes": 10285
     },
     {
       "path": "references/40-mix-engine.md",
@@ -274,58 +274,58 @@
     },
     {
       "path": "references/83-advanced-sound-design-video-notes.md",
-      "sha256": "b03a0b1ba12878c1811b5cfac23be41e47426d51a3f9f7e71d77186c876cf08f",
-      "bytes": 4690
+      "sha256": "36b9674283018457b8de11a0e0f9475a991398d12cf2b7d83b0312a355855fb8",
+      "bytes": 4869
     },
     {
       "path": "references/genres/afro-house.md",
-      "sha256": "6c5b3f8363d9370dfdb1cfe7873a63b98f8673ce258acbcc3bb76454c27bc73d",
-      "bytes": 3055
+      "sha256": "26b119a0583eb667d2d6c5f65eaee4eea4cf6dd9f3b3c56019279de67d8f962a",
+      "bytes": 3093
     },
     {
       "path": "references/genres/bass-house.md",
-      "sha256": "6ff4034a62e2cdb43764a58304d649c7b9205dd234ce023aa29a38490a194a4d",
-      "bytes": 2948
+      "sha256": "19b0150da2d0765838403cae5c15c4cc58a1687852639d040ddf06c4493a2220",
+      "bytes": 2986
     },
     {
       "path": "references/genres/house.md",
-      "sha256": "3d70e9e2514775f0b0eba0c60cd9f7d723b0542fd7145507dbe2dd88625836b7",
-      "bytes": 2973
+      "sha256": "fd75f6bc07287a5711ce0a39792816a673dfa22230f38a36af0adb9a9db6c6e8",
+      "bytes": 3011
     },
     {
       "path": "references/genres/liquid-dnb.md",
-      "sha256": "ad164624bcdfcb2157464ba7e9121ee479cbe535568722925c8fe61dc2c0850d",
-      "bytes": 2525
+      "sha256": "9b78f99ada340f2e60c787fb5c66d1a50e16acac30dbcf0fe374a6175787bca7",
+      "bytes": 2563
     },
     {
       "path": "references/genres/melodic-dubstep.md",
-      "sha256": "84d40f47b0765bbb479583701deaa0c0b5fa2e001b6423bbb70c70e76469ff6f",
-      "bytes": 2704
+      "sha256": "281dff9b847a3a2ef515db6e5277535092d08d9bade22b705c92d9f0fd7d5275",
+      "bytes": 2742
     },
     {
       "path": "references/genres/melodic-house-techno.md",
-      "sha256": "d72a5f8cdfa0d719dc1e820098f8e116254070cfe1b38b0752b8c94c45035646",
-      "bytes": 2572
+      "sha256": "2cffd4c8753351fc3f4877d43683dc36693c0565d82f78e960622d461923b7c4",
+      "bytes": 2606
     },
     {
       "path": "references/genres/minimal-deep-dnb.md",
-      "sha256": "7782f9b89c5d331aa4b69bf18a0344289b46d3cb1fa61e9f84d3652cd8148b55",
-      "bytes": 2178
+      "sha256": "d97bf9d37632078666c8567f5add4d55777b9124a7bb76d6d9036a40462c2191",
+      "bytes": 2216
     },
     {
       "path": "references/genres/minimal-deep-tech.md",
-      "sha256": "b287bde06fbc3b4071ae4e4f27ba24b8f519afcc674c52c56a0cd648439e9fa4",
-      "bytes": 2679
+      "sha256": "3cabf855d2d8203ced082c7b2fb6d92485ad288bd9d1b28cccbdcd8b8012a4a8",
+      "bytes": 2717
     },
     {
       "path": "references/genres/tech-house.md",
-      "sha256": "4a19ade88faabf77d042eb5fc6618c0329b4890cf366a55f7b1ce4f31c68a837",
-      "bytes": 2777
+      "sha256": "11d4080c104256de11c8c0c26008d06f557b819bd38482d97ffae972bf720fbe",
+      "bytes": 2834
     },
     {
       "path": "references/genres/techno.md",
-      "sha256": "0821ff45b71ad8a25cf4ac18b0f61b19c93a9480d732858ff907dbc207754662",
-      "bytes": 2792
+      "sha256": "5059095871312041924570936e9736881c3997198797cbd826625c99df9185fe",
+      "bytes": 2830
     },
     {
       "path": "schemas/ableton-action-plan.schema.json",

@@ -13,7 +13,7 @@ Bridges matter as much as breaks. Maintain hypnosis by changing timbre/density r
 Kick/rumble/sub stability, transient control, controlled saturation, automation and mono compatibility. Keep distortion intentional and inspect the 100-400 Hz region for buildup.
 
 ## Numbers
-Evidence tags: see `../10-genre-router.md`.
+Evidence tags: `../80-evidence-policy.md`; data caveats: `../10-genre-router.md`.
 - **Tempo**: Beatport Techno (Peak Time / Driving): 132, 135, 130, 138, 134; Techno (Raw / Deep / Hypnotic): 140, 138, 136 [DOC WhatBPM 2023]. Charlotte de Witte originals in the repo's Spotify set sit at 134–140, Doppler (Edit) 135 [DOC, Spotify estimate]. Theory table: techno 120–150 (typical 130), Detroit 120–135, industrial 130–145 [DOC-2]. Default **132–135** peak-time, **128–130** Detroit/groovy [HEUR].
 - **Swing**: mostly 50 % (straight), some Detroit ≈ 54 % [COMM]; Attack range 50–60 % [DOC-2]; the studio grid is unswung (≤ 0.01) [HEUR].
 - **Keys/modes**: 82 % minor; C minor 18 %, A♭ minor 15 % [DOC GiantSteps, n = 34]; raw/hypnotic chart roots G, A♭, D [DOC WhatBPM, auto-keys]. Often no chord at all: drone or pedal, one-pitch bass with an occasional 5th/octave jump, movement by filter; stabs as parallel shapes (e.g. Em9 planed) [DOC-2]; minor or Phrygian when pitched [COMM].

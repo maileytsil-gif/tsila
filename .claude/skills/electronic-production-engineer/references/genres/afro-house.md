@@ -19,7 +19,7 @@ Use extended/suspended voicings when appropriate: 7ths, 9ths, sus shapes and ope
 Round kick, stable bass, separation/depth between percussion layers, vocal clarity, controlled but spacious atmosphere, dynamics that still breathe on a club system.
 
 ## Numbers
-Evidence tags: see `../10-genre-router.md`.
+Evidence tags: `../80-evidence-policy.md`; data caveats: `../10-genre-router.md`.
 - **Tempo**: Beatport Afro House Top 100: 122 (23 tracks), 120 (21), 123 (18), 124 (14), 121 (10); Amapiano 113/112 [DOC WhatBPM 2023]. Theory table: afro house 118–125, typical 121 [DOC-2]; community guides 115–125 [COMM]. Default **122** [HEUR].
 - **Timing**: no swing value measured in repo. Offset whole layers by a few ms, repeatably, never random per note; one swing for hats and percussion [DOC-2].
 - **Rhythm cells** (16 steps): son clave 3-2 = 1 4 7 11 13; 4/4 bell pattern = 1 4 7 8 11 13 16; 12/8 bell E(7,12); South African venda E(5,12); 3:2 polyrhythm across percussion [DOC-2]. `theorie.py euclid 7 12` prints them.

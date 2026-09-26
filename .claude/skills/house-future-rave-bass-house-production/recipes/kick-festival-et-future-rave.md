@@ -16,7 +16,7 @@ Drum Rack de samples en couches (voie par défaut, `../../drums-signature/SKILL.
 Big room `[DOC-EXTRAIT Attack]` : 909 sous forte compression et saturation, mêlé à un 808 plus profond, couche de caractère 707 / LinnDrum / DMX, kick long accordé à la tonalité, grave du kick snappy coupé sous 150–250 Hz. Bass house : sub 40–80 Hz avec pitch 200 → 50 Hz en 100 ms + corps 909 80–200 + clic 2–8 kHz à −15 dB, alignés à l'échantillon.
 
 ## Serum 2 (synthèse)
-OSC A sinus, Pitch track off ; ENV 2 → CRS **+24 à +36 st**, decay 20–40 ms ; ENV 1 A 0 · D 250–500 ms ; NOISE one-shot decay 5 ms + FILTER 2 HP 2 kHz pour le clic ; Distortion Tube ; Utility MONO BASS. Sub synthé une octave sous le sample si on superpose (27,5 Hz sous 55 Hz), **phase 0° à chaque trigger** (RAND 0 %).
+OSC A sinus, Pitch track off (attention : un oscillateur Wavetable sans pitch tracking joue MIDI 0, ≈ 8,2 Hz, manuel Serum 2 p. 35 `[DOC]` : remonter avec OCT/SEM jusqu'à la fréquence du kick, ex. ≈ 49 Hz = MIDI 31 → OCT +2, SEM +7 `[CALC]` ; ou garder le pitch tracking et jouer toujours la même note) ; ENV 2 → CRS **+24 à +36 st**, decay 20–40 ms ; ENV 1 A 0 · D 250–500 ms ; NOISE one-shot decay 5 ms + FILTER 2 HP 2 kHz pour le clic ; Distortion Tube ; Utility MONO BASS. Sub synthé une octave sous le sample si on superpose (27,5 Hz sous 55 Hz), **phase 0° à chaque trigger** (RAND 0 %).
 
 ## Accord et alignement
 - Accorder le kick **en dernier, contre la basse** ; 808 natif 49,5 Hz = Sol1 ; descendre à Ré1 coûte −11,8 dB ; rester ≥ Mi1 ; tonique ou quinte, ou hors de la bande de la basse : arbitrage, pas règle (`../../kick-bass-equilibre/SKILL.md`).

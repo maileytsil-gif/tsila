@@ -19,10 +19,10 @@ For hybrids state a weighting, e.g. `70% Afro House groove / 30% Melodic Techno 
 ## Studio skills that execute each genre (French)
 Always: theory `../../theorie-musicale-electronique/SKILL.md`, grids `../../drums-signature/SKILL.md`, groove `../../producteur-rythmique/SKILL.md`, structure `../../arrangement-avance/SKILL.md`, kick/sub `../../kick-bass-equilibre/SKILL.md`.
 - House, Tech House, Bass House, Minimal/Deep Tech (tech-house recipes): `../../house-future-rave-bass-house-production/SKILL.md`.
-- Techno, Melodic House/Techno: `drum_pattern.py techno|melodictechno`; motifs `../../melodie-composition/SKILL.md`; filter arcs `../../live-automation/SKILL.md`.
+- Techno, Melodic House/Techno: `../../drums-signature/scripts/drum_pattern.py` (techno, melodictechno); motifs `../../melodie-composition/SKILL.md`; filter arcs `../../live-automation/SKILL.md`.
 - Afro House: `../../midi-expressif/SKILL.md`; vocals `../../suno-vocals/SKILL.md`.
 - Melodic Dubstep: `../../sound-designer-serum/SKILL.md` (growls), `../../compositeur-arrangeur/SKILL.md`.
-- Liquid, Minimal/Deep DnB: `drum_pattern.py dnb`; reese/sub in `../../sound-designer-serum/references/basses.md`; breaks `../../sampling-composition-avancee/SKILL.md`.
+- Liquid, Minimal/Deep DnB: `../../drums-signature/scripts/drum_pattern.py` (dnb); reese/sub in `../../sound-designer-serum/references/basses.md`; breaks `../../sampling-composition-avancee/SKILL.md`.
 
 ## Evidence tags
-`[DOC]` dataset or document read in full in this repo (WhatBPM Beatport Top 100, GiantSteps manual keys, Harmonix annotations, Spotify tempos; Spotify key/mode is unreliable); `[DOC-2]` repo compilation, primary source not re-read; `[COMM]` community genre-sheet convention, not a measurement; `[HEUR]` practice or decision; `[CALC]` computed; `[TEST]` verify in the Set or by ear. Beatport auto-keys match manual annotation in 29 % of cases: indicative only.
+Defined in `80-evidence-policy.md`. Caveats for genre numbers: WhatBPM Beatport Top 100 (2023), GiantSteps manual keys, Harmonix section annotations and Spotify tempos are `[DOC]`; Spotify key/mode is unreliable, and Beatport auto-keys match manual annotation in only 29 % of cases, so treat them as indicative.

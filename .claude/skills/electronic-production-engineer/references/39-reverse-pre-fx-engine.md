@@ -168,7 +168,7 @@ Starting points only; ms = 60000 / BPM × beats (quarter note = 1 beat) `[CALC]`
 ## Label-ready QC
 - The reverse must point *to* a target event; if the destination is unclear, remove it.
 - Align the terminal peak sample-accurately or intentionally leave a short gap.
-- Remove hidden sub from long reverse tails unless low-frequency buildup is deliberate; the sub stays out of every reversed layer.
+- Remove hidden sub from long reverse tails unless low-frequency buildup is deliberate; keep the track's clean sub layer itself out of reversed material.
 - Check mono and low-volume playback.
 - Make sure the first kick/snare after the reverse still owns the transient.
 - Print complex reverse chains when final timing matters.

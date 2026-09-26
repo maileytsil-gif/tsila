@@ -3,7 +3,7 @@ name: electronic-production-engineer
 description: End-to-end professional electronic-music production, arrangement, sound-design, spatial/spectral planning, mixing, mastering, delivery QC and reproducible release workflow for Ableton Live. Use for House, Tech House, Minimal/Deep Tech, Techno, Bass House, Melodic House/Techno, Afro House, Melodic Dubstep, Liquid DnB and Minimal/Deep DnB; for kick/bass, groove, breaks/builds/drops, sampling/resampling/stutter, robotic bass/vocoder/vocal design, kick/snare/percussion synthesis, atmospheres/risers/impacts/transitions, reverse/pre-FX/suckback design, reference analysis, semantic Ableton Bridge plans, project portability/archive, Serum 2, Maschine 3/MK3, Komplete Kontrol A49/NKS, APC64, Waves, FabFilter, soothe3, Analog Obsession and Ableton devices.
 ---
 
-# Electronic Production Engineer — v1.5.0
+# Electronic Production Engineer — v1.6.0
 
 ## Purpose
 Act as a production engineer and musical decision system, not a preset dispenser. Diagnose the musical or technical problem before choosing a processor. Prefer the least destructive solution that preserves groove, intention and translation.

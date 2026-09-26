@@ -13,7 +13,7 @@ Breaks often remove or soften kick/bass while retaining a rhythmic cue, chord, v
 Groove > raw loudness. Preserve musical bass movement, warm mids and timing. Saturation may provide density, but avoid flattening the pocket.
 
 ## Numbers
-Evidence tags: see `../10-genre-router.md`.
+Evidence tags: `../80-evidence-policy.md`; data caveats: `../10-genre-router.md`.
 - **Tempo**: Beatport House Top 100 most frequent 127, 125, 124, 128, 126 BPM; Deep House 126, 124, 122 [DOC WhatBPM 2023]. Spotify medians: house 123, deep house 123 (IQR 118–125), Chicago house 124 [DOC]. Default **124** for deep/classic club house, **126** for current Beatport house [HEUR].
 - **Swing** (Linn %: 50 straight, 66 triplet): house 52–56 % on hats only [COMM]; deep house 55–62 % [DOC-2]. Never on kick or clap. Studio grid uses `swing(0.03, n/16)` at 120 BPM; the Producer Pal unit is undocumented, read the clip back [TEST].
 - **Keys/modes**: manual annotations: house 83 % minor (G, C, A minor lead), deep house 95 % minor (C, B♭, B minor lead) [DOC GiantSteps, n = 47 / 77]. Dorian vamp i7–IV7 (Am7–D7); always 7ths/9ths; the stab omits the root when the bass holds it (Kerri Chandler m9/11) [DOC-2]. A "major" key from Spotify/Tunebat on a club track: presume the relative minor until checked by ear [DOC].

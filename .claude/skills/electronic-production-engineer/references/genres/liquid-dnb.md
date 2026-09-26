@@ -10,7 +10,7 @@
 - Reference anchors (Calibre, Hybrid Minds, LSB, Monrroe, Random Movement, Justin Hawkes): `../36-dnb-engine.md`; no measured data on them in repo.
 
 ## Numbers
-Evidence tags: see `../10-genre-router.md`. The repo has DnB-wide data, nothing liquid-specific.
+Evidence tags: `../80-evidence-policy.md`; data caveats: `../10-genre-router.md`. The repo has DnB-wide data, nothing liquid-specific.
 - **Tempo**: Beatport Drum & Bass Top 100: 174 (58 tracks), 176 (16), 172 (8) [DOC WhatBPM 2023]; theory table 160–180, typical 174, felt 87 [DOC-2]. Default **174**.
 - **Swing**: DnB range 50–60 % [DOC-2, Attack]; studio grid swings the ghost snares only, `swing(0.02, n/16)`, unit undocumented [HEUR; TEST].
 - **Grid**: two-step, kick steps 1 and 11, snare 5 and 13, ghost snares 4, 10, 16 at v30–45, 8th-note hats; full grid in `../36-dnb-engine.md` [HEUR].

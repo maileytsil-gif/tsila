@@ -8,7 +8,7 @@
 - Second drop should change orchestration, bass response, octave, rhythm or harmony—not only get louder.
 
 ## Numbers
-Evidence tags: see `../10-genre-router.md`. No melodic-dubstep-specific dataset exists in the repo; figures below are dubstep, future-bass or bass-music data.
+Evidence tags: `../80-evidence-policy.md`; data caveats: `../10-genre-router.md`. No melodic-dubstep-specific dataset exists in the repo; figures below are dubstep, future-bass or bass-music data.
 - **Tempo**: written 140, felt 70 half-time [DOC-2]. Beatport Dubstep Top 100: 150 (17 tracks), 145 (17), 140 (16), 144 (8), 146 (6); 140 / Deep Dubstep: 140 (54) [DOC WhatBPM 2023]. Seven Lions "After Dark" 142 [DOC, Spotify estimate]. Theory table: dubstep 132–142, brostep 140–150, future bass 130–175 [DOC-2]. Default **140**, up to 150 for current festival dubstep [HEUR].
 - **Drums**: kick on step 1, snare on step 9 (beat 3), sparse syncopated hats [COMM].
 - **Keys/modes**: manual dubstep sample 91 % minor, F minor 23 % [DOC GiantSteps, n = 22]. Melodic/future-bass harmony: minor for mystery, major for "happy"; extended chords (7, 9, 11, sus, add9) with root and third doubled at the octave; bass on chord roots in whole notes; 4-chord loops at 1 bar per chord; lydian to float [DOC-2]. Heavy sections: minor/Phrygian, ♭2 and tritone in riffs, one chord change per 8–16 bars [DOC-2].

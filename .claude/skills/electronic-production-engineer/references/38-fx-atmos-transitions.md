@@ -24,7 +24,7 @@ Filtered noise + volume curve + widening + optional pitch/frequency motion. Star
 Sine/saw/sample pitched upward 1–3 octaves, preferably related to track key or target interval; ending off the drop chord (e.g. a semitone under the root) keeps tension `[DOC-2]`. Shepard version: 4–6 octave-spaced copies with bell-shaped levels `[DOC-2]`. For a one-shot sweep inside Serum, use an LFO in MODE **ENVELOPE** or an ENV in BPM mode.
 
 ### Resampled riser
-Render a synth/vocal/drum gesture, reverse or stretch it, then automate pitch/filter/reverb. Granular version: SCAN range ±400 %, SCAN 0 → +400 % and LENGTH 300 → 15 ms over 4 bars, so the drone turns into a tonal buzz as grains drop below audio-rate length `[HEUR]`.
+Render a synth/vocal/drum gesture, reverse or stretch it, then automate pitch/filter/reverb. Granular version: SCAN range ±400 %, SCAN 0 → +400 % and LENGTH 300 → 15 ms over 4 bars, so the drone turns into a tonal buzz once grains get shorter than about 50 ms `[HEUR]`.
 
 ### Rhythmic riser
 Accelerating repeats/stutters, percussion density or gated noise can create tension without a continuous sweep (snare roll 1/8 → 1/16 → 1/32) `[DOC-2]`.

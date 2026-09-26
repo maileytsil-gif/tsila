@@ -14,7 +14,7 @@ Serum 2 en une instance (trois oscillateurs, deux filtres, splitter interne) ; o
 | **Growl / caractère** | 500 Hz–2 kHz (HPF 500) ; JefroB 500 Hz–3 kHz | OSC C saws UNISON 3 FINE 17 cents → FILTER 2 1,8 kHz résonant ; WT POS modulée par LFO 10–60 Hz ou stepper 1/16 ; warp Bend 30–50 (nasal) ou FM 15–25 (guttural) | distorsion Diode ou Tube, notch −8 dB à 2,5 kHz Q 4, +3 dB à 600 Hz ; comb ou phaser ; **resample 3–5 passes** | `[DOC-2]`, `[DOC basses.md]` |
 | Air (facultatif) | > 2 kHz | | « une quatrième couche = sept sons qui se battent » | `[DOC-2]` |
 
-Règles : toutes les couches jouent **le même rythme** ; LFO identiques (LFO 1 Mode **Trig**, RATE 1/8 ou 1/4, SMOOTH 20–50, ANCHOR) ; glue 3–6 dB de réduction sur le bus **sans le sub** ; sidechain sur toutes (« tight ducking » 4–8 dB, attaque 1–5 ms, release 100–150 ms, 8:1 à 10:1) ; mono sous 150 Hz.
+Règles : toutes les couches jouent **le même rythme** ; LFO identiques (LFO 1 MODE **RETRIG**, ex-« Trig » de Serum 1, RATE 1/8 ou 1/4, SMOOTH 20–50, **HOST** : le comportement ex-« ANCHOR », manuel p. 192–193) ; glue 3–6 dB de réduction sur le bus **sans le sub** ; sidechain sur toutes (« tight ducking » 4–8 dB, attaque 1–5 ms, release 100–150 ms, 8:1 à 10:1) ; mono sous 150 Hz.
 
 ## Wobble et rythme timbral
 Rate du LFO 1/4, 1/8, 1/8 T (à 126–128, 1/2 est trop lent) ; MATRIX LFO 1 → CUTOFF 40 % + ENV 2 → CUTOFF 60–100 % ; DELAY/RISE du LFO pour un onset en fondu ; **changer le rate toutes les 1–2 mesures, c'est la composition** ; quatre gestes différents par cellule de 2 mesures, le vocabulaire se répète, pas la phrase.
@@ -29,7 +29,7 @@ Splitter L/M/H à 120 Hz / 2 kHz : bas propre (ou tape léger), médium = le gro
 Propre, coupé sous 40 Hz ; couper 80–100 Hz **seulement** s'il se bat avec le sub ; clic 2–6 kHz ; « kick perdu derrière la basse » se règle par sidechain et EQ, pas par le fader (`kick-festival-et-future-rave.md`).
 
 ## Erreurs
-Sub saturé ou stéréo ; growl pleine bande sans coupe-bas à 100 Hz ; LFO sans Trig (chaque note attrape le wobble à une phase différente) ; recettes calées sur 140–150 BPM non retransposées ; percussions qui concurrencent la basse.
+Sub saturé ou stéréo ; growl pleine bande sans coupe-bas à 100 Hz ; LFO sans RETRIG (chaque note attrape le wobble à une phase différente) ; recettes calées sur 140–150 BPM non retransposées ; percussions qui concurrencent la basse.
 
 ## Vérification
 Chaque couche seule, puis les trois ; sub seul en mono ; kick audible ; à 0, 50 et 100 % de la macro « growl » ; `kick_bass_check.py` ; niveau du bus relevé par `lom.py meters` avant et après le glue.

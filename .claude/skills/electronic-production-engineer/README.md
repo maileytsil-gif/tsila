@@ -6,7 +6,7 @@ The skill covers House, Tech House, Minimal/Deep Tech, Techno, Bass House, Melod
 
 Start with `adapters/INSTALL.md`.
 
-Version: 1.5.0 (2026-09-26)
+Version: 1.6.0 (2026-09-26)
 
 
 ## v1.1 Bridge layer
@@ -25,4 +25,7 @@ Turns the skill into an end-to-end release workflow with explicit production gat
 
 ## v1.5 focus
 Merges the v1.5.0 Claude handoff (reconstructed without the v1.4.0 files) onto v1.4.0 at source level: nothing from v1.4.0 was removed. Adds the phase gates and definition of done (`docs/production-workflow.md`), a stricter plan_only Bridge contract with approval tied to the exact plan (`docs/bridge-safety-and-semantics.md`), user setup, control-surface roles and naming/macro conventions (`docs/user-setup-and-control-surfaces.md`), an official manuals/tutorial index (`docs/claude-handoff-and-research-index.md`), the local Qwen/Ollama trust boundary (`adapters/ollama-routing.md`), and three schemas with validated examples (`project-lifecycle`, `spatial-mix-plan`, `semantic-bridge-plan`).
+
+## v1.6 focus
+Grounds the pack in what the studio's repository has verified: exact Serum 2 labels and limits (map checked against the 354-page manual), a real Serum 2 engine reference, tempo/key data per genre (WhatBPM, GiantSteps, Harmonix Set), low-end/sidechain/loudness numbers with evidence tags, a union studio inventory with probe status, the Bridge contract mapped to the real `lom.py` commands, cloud vs local session capability, and links (267, all checked) to the French skills that execute each task.
 

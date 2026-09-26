@@ -13,7 +13,7 @@ The 'drop' is often the same groove perceived anew after deprivation. Breaks can
 Every sound is exposed. Prioritize source choice, envelope and placement. Avoid over-processing; small timing/velocity moves can outperform EQ/compression.
 
 ## Numbers
-Evidence tags: see `../10-genre-router.md`.
+Evidence tags: `../80-evidence-policy.md`; data caveats: `../10-genre-router.md`.
 - **Tempo**: Beatport Minimal / Deep Tech Top 100: 128 (33 tracks), 129 (22), 130 (18), 131 (8), 127 (7) [DOC WhatBPM 2023]. Spotify "minimal-techno" median 125 (IQR 122–127) describes an older, different catalogue [DOC]. Default **128**, 129–130 for the current Beatport sound [HEUR].
 - **Swing**: deep tech / jackin' hats 60–65 % (Attack series) [DOC-2] versus tech house 52–55 % [COMM]: choose by ear, one value for hats and percussion, none on kick or clap. Studio deep/minimal grid `swing(0.03, n/16)`, unit undocumented [TEST].
 - **Keys/modes**: Beatport keys lead with G minor, then A, E, D, F♯ minor [DOC WhatBPM, auto-keys]; manual "minimal" sample 100 % minor, E and A minor 27 % each [DOC GiantSteps, n = 11 only]. Minimal harmony is not a progression: drums, bass, groove and repetition, midrange rather than low end [DOC-2].

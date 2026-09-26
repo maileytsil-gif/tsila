@@ -13,7 +13,7 @@ Drops are conversations, not one loop: phrase A -> gap -> phrase B -> fill -> A2
 Separate SUB / MID BASS / UPPER HARMONICS / ATTACK-NOISE. Control peaks progressively. Preserve sub stability while aggressively shaping upper layers. Harshness after distortion is a candidate for soothe3 or dynamic EQ, not a reason to dull the whole bass.
 
 ## Numbers
-Evidence tags: see `../10-genre-router.md`.
+Evidence tags: `../80-evidence-policy.md`; data caveats: `../10-genre-router.md`.
 - **Tempo**: Beatport Bass House Top 100: 126 (29 tracks), 128 (27), 125 (17), 127 (13) [DOC WhatBPM 2023]. Chicken Soup, IM GONE and dashstar* all ≈ 126 [DOC, Spotify estimate]. Default **128** festival, **126** when the swung/G-house groove matters [HEUR].
 - **Swing**: two schools, 50–53 % (straight festival) vs 55–65 % (Night Bass / UK bassline) [COMM]; ask the sub-style before setting it.
 - **Keys/modes**: most frequent roots E, F♯, F, E♭ [DOC WhatBPM, auto-keys]. Natural minor or Phrygian (♭2 → 1 riffs); the drop is mono-tonal, the riff is the harmony, i–VII at most; riff intervals minor 2nd, minor 3rd, 5th, octave; the pattern repeats over 2 bars and varies by LFO rate, not notes [COMM].

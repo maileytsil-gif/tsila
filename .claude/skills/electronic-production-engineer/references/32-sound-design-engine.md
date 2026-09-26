@@ -29,7 +29,7 @@ Do not force one patch to solve every role.
 | Granular | textures, freezes | ≤ 256 grains; SCAN 0 = frozen, negative = reversed; DENS, LENGTH, 10 windows; CPU-heavy `[DOC p. 85–103]` |
 | Spectral | resynthesis, time/pitch decoupling | Phase Lock, Transients, drawable spectral filter; CPU-heavy `[DOC p. 104–121]` |
 
-Sample, Granular and Spectral share one sample `[DOC p. 69]`. Pitch tracking off (right-click the oscillator label): Sample-type engines play C3 (MIDI 60), Wavetable plays C-2 (MIDI 0, ≈ 8.2 Hz), so retune with OCT/SEM `[DOC p. 35]` `[CALC]`. SUB has six simple shapes (Sine first); NOISE is a sample player with colour noises `[DOC p. 125–132]`.
+Sample, Granular and Spectral share one sample `[DOC p. 69]`. Pitch tracking off (right-click the oscillator label): Sample, Multisample, Granular and Spectral play C3 (MIDI 60), Wavetable plays C-2 (MIDI 0, ≈ 8.2 Hz), so retune with OCT/SEM `[DOC p. 35]` `[CALC]`. SUB has six simple shapes (Sine first); NOISE is a sample player with colour noises `[DOC p. 125–132]`.
 
 ## Warps (§ 4)
 Two slots per oscillator: Sync (WARP Var hard → soft), Alt Warp (Bend +/−, PWM, Asym, Flip, Mirror, Remap 1–4, Quantize, Odd/Even), Filter, Distortion (Tube, Diode 1/2, Linear Fold, Sine Fold…), FM, PD, AM, RM `[DOC p. 50–56]`. Bend +/− and Odd/Even are neutral at 50 %. Labels name the source: on OSC A `FM (B)`, `FM (Sub)`, `FM (Filter 1)`, and `PD (Self)`; the source must be on but may sit at level 0 `[DOC p. 54–56]`. For FM, set the modulator's tuning mode to **Ratio** (right-click OCT or SEM) `[DOC p. 30]`. FM depth scaling is **MUET**; repo starting points: 15–25 % growl, > 40 % screaming `[DOC-2]`.
@@ -71,7 +71,7 @@ Map movement to few macros (filter, WT POS, FM/PD amount, drive, LFO rate/depth,
 Create harmonics first (warp Distortion, Distortion module, Roar, Waves, Analog Obsession), then treat a named harsh resonance only (soothe3/dynamic EQ). The same drive before or after the filter gives two sounds `[HEUR]`; compare at matched loudness.
 
 ## Resampling
-Design → automate → render → chop/reverse/pitch/stretch → reprocess, two or three passes `[DOC-2]`. In Serum: main menu › Rendering › **Resample to** (one bar of a note, imported as a wavetable) and **Render OSC Warp** (256 frames across 0–100 % WARP) `[DOC p. 324]`; drag the wave icon to a Live audio track for a WAV of the last note `[DOC p. 22–23]`; for audio → wavetable try "Constant framesize (PITCH AVERAGE)" first `[DOC p. 294]`. Capture in Live: `../../resampling/SKILL.md`.
+Design → automate → render → chop/reverse/pitch/stretch → reprocess, two or three passes `[DOC-2]`. In Serum: main menu › Rendering › **Resample to** (one bar of a note, imported as a wavetable) and **Render OSC Warp** (256 frames across 0–100 % WARP) `[DOC p. 324]`; drag the wave icon to a Live audio track for a WAV of the last note `[DOC p. 22–23]`; for audio → wavetable try "Constant framesize (PITCH AVERAGE)" first `[DOC p. 293]`. Capture in Live: `../../resampling/SKILL.md`.
 
 ## Komplete Kontrol/NKS
 Use for fast sound discovery and stable macro semantics; use the plugin directly when deep parameter access matters more.
