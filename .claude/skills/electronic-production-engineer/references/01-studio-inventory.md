@@ -9,6 +9,7 @@ Source of truth for what the user owns, reconciled on 2026-09-26 with the reposi
 
 ## Sheet keys (paths relative to this file)
 - FICHES: `../../effets-plugins/references/fiches.md` (per plug-in: exposed, window-only, how to verify).
+- PARAMS: `../../../../docs/inventaire/parametres-exposes.md` (full parameter tables from the 26 Sept 2026 probe: RazorClip, TheBus, ShaperBox 3, Pro-C 3, ValhallaVintageVerb, L4).
 - CHAIN: `../../ableton-live-session/references/mix-chain.md` (values validated on one project, "deep chill minimal house", Sept 2026).
 - WIN: `../../ableton-live-session/references/plugins.md` (window techniques).
 - TASKS: `../../mixage/references/outils.md` (tool per task).
@@ -43,20 +44,20 @@ No new native effects in mix or master chains (`../../ableton-live-session/SKILL
 | Waves Q10, SSLEQ / LinEQ, PuigTec, Curves AQ, Equator, Resolve / API-550, 560 | P / S / D | Q10 and SSLEQ exposed; Curves AQ window only | alternative EQs; do not stack Curves with soothe3 | FICHES, WAVESM, TASKS |
 | Plugin Alliance bx_glue (1.1.0) | P | exposed | bus glue; Mono Maker on the bass bus | FICHES, CHAIN |
 | Waves API-2500 Stereo | P | exposed | parallel density (mix 30–60 %), sidechain | FICHES, CHAIN |
-| FabFilter Pro-C 3 (3.00) | S, owned (confirmed by the user, 26 Sept 2026) | parameter exposure not probed ("to probe", TASKS) | track compression, sidechain | MTOOLS |
+| FabFilter Pro-C 3 (3.00) | P (probed 26 Sept 2026, Live 12.4.6) | **window only** (Device On is the sole exposed parameter, like Pro-Q 4) | track compression, sidechain | FICHES, MTOOLS, PARAMS |
 | Waves SSLComp (SSL G-Master Buss), PuigChild, VComp, LinMB, C4, C6 | S | not probed | character or multiband dynamics | WAVESM |
 | Waves CLA-2A/3A/76, dbx-160, H-Comp, C1 comp-sc, Renaissance Compressor, Smack Attack, Trans-X | D | unknown | compression and transient colour | TASKS |
 | Waves J37 Tape | P | exposed | one colour stage per chain (master bus 1: 888, sat 2, 15 ips) | FICHES, CHAIN |
 | Waves Abbey Road Saturator, KramerTape, Abbey Road TG Mastering Chain | S | not probed | colour; TG "Limit" is not a brickwall | WAVESM |
-| RazorClip (1.0.0) | S, Analog Obsession (seen in Live's browser grouped by maker, AU + VST3, 26 Sept 2026) | unknown | clipper; controls still undocumented: read its editor and manual first | INV |
-| Analog Obsession — installed (Live browser, AU + VST3, 26 Sept 2026): FetDrive, FETish, FetSnap, FXEQ, LAEA, MuChild, RazorClip, TheBus. Named earlier but **not installed**: BUSTERse, KONSOL, PREDD, Rare | S | not probed | analog colour, bus dynamics, clipping | Live browser |
+| RazorClip (1.0.0) | P, Analog Obsession (probed 26 Sept 2026) | exposed: GAIN 0–24 dB, OUTPUT ±24 dB, MIX, MODEL (5 steps shown as 0–4), BYPASS (default 1 = active) | clipper; MODEL names still to read in its editor | FICHES, PARAMS |
+| Analog Obsession — installed (Live browser, AU + VST3, 26 Sept 2026): FetDrive, FETish, FetSnap, FXEQ, LAEA, MuChild, RazorClip, TheBus. Named earlier but **not installed**: BUSTERse, KONSOL, PREDD, Rare | S (TheBus and RazorClip: P) | TheBus exposed: Attack 0.1/10/30 ms, Release 50/400/800 ms, Threshold −40–0 dB, Output ±15 dB, Mix, Sidechain Filter 20–500 Hz, External Sidechain, Bypass (default 1 = active), one unnamed toggle; the others not probed | analog colour, bus dynamics, clipping | FICHES, PARAMS |
 | Waves NLS, Magma-series; bx_enhancer, Trash | D | unknown | colour | TASKS |
 | iZotope Ozone Imager 2 (2.3.0) | P | Width and Stereoize exposed; bands window-only | global width (+8 % on master bus 2) | FICHES, CHAIN |
 | Waves S1, Center / MaxxBass / R-Bass, InPhase, Brauer Motion, Doubler | S / S / D | not probed | stereo rotation and M/S; psychoacoustic bass; phase | WAVESM, TASKS |
 | Waves MetaFlanger, Reel ADT | P | exposed | automated flanger mix on harmony and string buses | FICHES, CHAIN |
-| Hybrid Reverb (native, tolerated on a return; "Dark Hall" on return C) / Valhalla VintageVerb (installed, confirmed by the user 26 Sept 2026; not probed), Abbey Road Plates/Chambers, H-Delay, H-Reverb, CLA EchoSphere, iZotope Aurora | native / D | native exposed / unknown | depth by sends | TASKS |
+| Hybrid Reverb (native, tolerated on a return; "Dark Hall" on return C) / Valhalla VintageVerb (P, probed 26 Sept 2026: 17 parameters exposed incl. Decay 0.2–70 s, ReverbMode 22 modes, ColorMode; **`str_for_value` returns the current value whatever the argument**, so write then read back, see PARAMS), Abbey Road Plates/Chambers, H-Delay, H-Reverb, CLA EchoSphere, iZotope Aurora | native / D | native exposed / unknown | depth by sends | TASKS |
 | Waves L2 Stereo | P | exposed | validated export limiter, end of BUS MASTER 3; ceiling −1.0 dBFS is sample-peak only | FICHES, CHAIN |
-| Waves L4 Ultramaximizer (V17) | validated by the user (26 Sept 2026) | parameter exposure and mode names in Live to read once (`[TEST]`) before any bridge write | **primary final limiter** (true peak); L2 stays the validated alternative; Gain Match disables Ceiling, so leave it before export | WAVESM |
+| Waves L4 Ultramaximizer Stereo (V17) | P, validated by the user (26 Sept 2026) | exposed: Clip and Release (x0.10–x10, log), Threshold and Ceiling (−30–0 dB; −1 dBFS = 0.9667), Stereo Link, Over Sampling (Off/x2/x4/x8/x16), Upward 0–10 dB; True Peak mode and meters not exposed (window) | **primary final limiter** (true peak); L2 stays the validated alternative; Gain Match disables Ceiling, so leave it before export | WAVESM |
 | Waves L1, L3 Multi/Ultra/16/LL | S | not probed | alternatives; never stack limiters by default | WAVESM |
 | iZotope Ozone 12 Elements (12.1.0); Ozone 11 Elements and EQ | S | not probed | assisted mastering; do not assume Standard/Advanced modules | MTOOLS |
 | iZotope Insight 2 (2.6.0) | P | window only | I/S/M/LRA/TP at the end of Main | MTOOLS |
@@ -76,12 +77,12 @@ Source: `../../../../docs/inventaire/plugins-vst3.txt` (618 lines, `ls` of `/Lib
 
 ## Explicit exclusions and absences
 - FabFilter Pro-L 2: not owned (INV: Pro-L and Pro-MB not found in the standard folders). Use L4 (primary, validated by the user) or L2 (validated alternative). Ableton Limiter is excluded from mix and master chains by rule 6.
-- Not on this Mac: LFO Tool, Kickstart. **Cableguys ShaperBox 3 is installed** (VST2, AU and VST3 in Live's browser; scan of 26 Sept 2026, correcting the earlier note) and can do volume/filter shaping as a sidechain alternative once probed. Otherwise, use sidechain compressors or Utility gain automation (`../../house-future-rave-bass-house-production/recipes/sidechain-et-pump.md`).
+- Not on this Mac: LFO Tool, Kickstart. **Cableguys ShaperBox 3 is installed** (VST2, AU and VST3 in Live's browser; scan of 26 Sept 2026, correcting the earlier note) and was probed on 26 Sept 2026: **window only** (Device On is the sole exposed parameter), so its shaping is set by screen control, not by the bridge. Otherwise, use sidechain compressors or Utility gain automation (`../../house-future-rave-bass-house-production/recipes/sidechain-et-pump.md`).
 - ffmpeg, sox and pyloudnorm were absent at the last check (`../../mastering-outils/references/notes-locales.md`). Read LUFS and TP in Insight 2 or WLM Plus, or install a CLI tool only with the user's consent.
 
 ## Conflicts to resolve with the user, not by guessing
 1. ~~Keyboard~~ — resolved 26 Sept 2026: Komplete Kontrol A49.
 2. `../SKILL.md` (User studio assumptions) says to prefer Live-native devices when a third-party mapping is absent; rule 6 limits mix and master chains to the tolerated natives.
-3. ~~Primary limiter~~ — resolved 26 Sept 2026: L4 validated by the user as primary; L2 the alternative. Read L4's exposed parameters once before bridge writes.
+3. ~~Primary limiter~~ — resolved 26 Sept 2026: L4 validated by the user as primary; L2 the alternative. L4's exposed parameters were read the same day (PARAMS).
 4. L2 ceiling: −1.0 dBFS in CHAIN and the notes vs −0.4 in the stale copy `../../effets-plugins/references/chaine-actuelle.md`. Use −1.0, because −0.4 let true peaks above −1 dBTP through.
-5. RazorClip: Analog Obsession, installed (26 Sept 2026); its controls are still undocumented, read its editor first. Pro-C 3: owned (confirmed 26 Sept 2026); its parameter exposure in Live is still to probe.
+5. ~~RazorClip and Pro-C 3 exposure~~ — resolved 26 Sept 2026 (PARAMS): RazorClip exposes 5 parameters (MODEL names still to read in its editor); Pro-C 3 exposes nothing but Device On.
