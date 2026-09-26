@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.5.0",
+  "project_id": "demo-electronic-track",
+  "title": "Untitled electronic track",
+  "phase": "brief",
+  "brief": {
+    "genre": null,
+    "references": [],
+    "context": null,
+    "bpm": null,
+    "key": null,
+    "duration_seconds": null,
+    "vocal": null,
+    "constraints": []
+  },
+  "deliverables": [{"kind": "stereo_master", "spec": {"format": "user_to_confirm"}, "status": "planned"}],
+  "gates": [{"phase": "brief", "status": "in_progress", "evidence": []}],
+  "references": [],
+  "notes": ["Null means not yet known; do not infer."]
+}

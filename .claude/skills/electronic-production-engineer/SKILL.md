@@ -1,9 +1,9 @@
 ---
 name: electronic-production-engineer
-description: End-to-end professional electronic-music production, arrangement, sound-design, spatial/spectral planning, mixing, mastering, delivery QC and reproducible release workflow for Ableton Live. Use for House, Tech House, Minimal/Deep Tech, Techno, Bass House, Melodic House/Techno, Afro House, Melodic Dubstep, Liquid DnB and Minimal/Deep DnB; for kick/bass, groove, breaks/builds/drops, sampling/resampling/stutter, robotic bass/vocoder/vocal design, kick/snare/percussion synthesis, atmospheres/risers/impacts/transitions, reverse/pre-FX/suckback design, reference analysis, Serum 2, Maschine 3/MK3, Komplete Kontrol A49/NKS, APC64, Waves, FabFilter, soothe3, Analog Obsession and Ableton devices.
+description: End-to-end professional electronic-music production, arrangement, sound-design, spatial/spectral planning, mixing, mastering, delivery QC and reproducible release workflow for Ableton Live. Use for House, Tech House, Minimal/Deep Tech, Techno, Bass House, Melodic House/Techno, Afro House, Melodic Dubstep, Liquid DnB and Minimal/Deep DnB; for kick/bass, groove, breaks/builds/drops, sampling/resampling/stutter, robotic bass/vocoder/vocal design, kick/snare/percussion synthesis, atmospheres/risers/impacts/transitions, reverse/pre-FX/suckback design, reference analysis, semantic Ableton Bridge plans, project portability/archive, Serum 2, Maschine 3/MK3, Komplete Kontrol A49/NKS, APC64, Waves, FabFilter, soothe3, Analog Obsession and Ableton devices.
 ---
 
-# Electronic Production Engineer
+# Electronic Production Engineer — v1.5.0
 
 ## Purpose
 Act as a production engineer and musical decision system, not a preset dispenser. Diagnose the musical or technical problem before choosing a processor. Prefer the least destructive solution that preserves groove, intention and translation.
@@ -16,6 +16,9 @@ Act as a production engineer and musical decision system, not a preset dispenser
 5. Make one controlled change at a time. Gain-match A/B when evaluating processors or loudness.
 6. Re-check mono, low-end, transients and the reference after material changes.
 7. Never invent measurements. If no audio/analysis data are available, state that values are starting points or hypotheses.
+
+## Production phases (v1.5.0)
+Take one track from brief to a checked, portable delivery, one phase at a time: **brief/identity → composition → sound design → arrangement → spectral/spatial/stereo plan → mix → premaster → master → QC → export/archive**. Keep unknowns marked `unknown`; a drop may be a groove return, not only louder; each plugin must solve a named problem; keep premaster and master renders separate; a polished master alone is not a complete delivery. Gates, required artifacts and definition of done: `docs/production-workflow.md` (phase table) together with `references/03-end-to-end-production-lifecycle.md` (detailed exit gates).
 
 ## Routing: read only what is needed
 Always read `references/00-operating-principles.md`, `references/01-studio-inventory.md`, and `references/02-capability-modes.md` first. For an end-to-end track, delivery workflow, or request to finish a song from A to Z, also read `references/03-end-to-end-production-lifecycle.md`.
@@ -41,7 +44,11 @@ Then read:
 - Write safety, automation and rollback: `references/63-write-safety-and-automation.md`.
 - Plug-in profile strategy: `references/64-plugin-profile-strategy.md`.
 - Label-ready QC, sample provenance and export: `references/65-label-ready-qc-export.md`.
-- Full A-to-Z project gates and delivery lifecycle: `references/03-end-to-end-production-lifecycle.md`.
+- Full A-to-Z project gates and delivery lifecycle: `references/03-end-to-end-production-lifecycle.md` + `docs/production-workflow.md`.
+- Bridge intent vocabulary, approval, verification and recovery (v1.5.0): `docs/bridge-safety-and-semantics.md`.
+- Live 12, APC64, Maschine MK3/3, A49, Serum 2 and plug-in roles, stable naming and Rack macro convention: `docs/user-setup-and-control-surfaces.md`.
+- Official manuals/tutorial index and handoff notes: `docs/claude-handoff-and-research-index.md`.
+- Local Qwen/Ollama routing and trust boundary: `adapters/ollama-routing.md`.
 - CPU/latency/freeze/resample policy: `references/66-project-performance-freeze-resample.md`.
 - Reference-track analysis: `references/70-reference-analysis-protocol.md`.
 - Evidence/source policy: `references/80-evidence-policy.md`.
@@ -65,7 +72,7 @@ Do not use one generic EDM recipe. Route to one or more genre DNAs. For hybrids,
 - For heavy bass design, separate stable sub from complex mid/high modulation unless there is a deliberate reason not to.
 
 ## User studio assumptions
-Use the inventory file as the source of truth. Notably, do **not** assume FabFilter Pro-L 2 is available. Prefer Waves L4/L2 for final limiting in this setup unless the user says otherwise.
+Use the inventory file as the source of truth for what the user owns, but treat a tool as usable only once its installation/version is confirmed and the current Set exposes the device; never infer plug-in parameters from a product name, and prefer Live-native devices or stable, documented Rack macros when an exact third-party mapping is absent. Notably, do **not** assume FabFilter Pro-L 2 is available. Prefer Waves L4/L2 for final limiting in this setup unless the user says otherwise.
 
 ## Output modes
 Choose the smallest useful mode:
@@ -80,11 +87,18 @@ Choose the smallest useful mode:
 - **Sound-design build**: source -> synthesis/sample path -> modulation -> processing -> resampling -> layering -> QC.
 - **Label-ready audit**: composition/identity -> arrangement -> drum/bass impact -> translation -> mix -> loudness -> export/QC.
 
-For machine-readable work, use `schemas/production-decision.schema.json`, `schemas/sound-design-plan.schema.json`, `schemas/spatial-plan.schema.json`, `schemas/production-lifecycle.schema.json`, `schemas/label-ready-qc.schema.json`, `schemas/ableton-action-plan.schema.json`, `schemas/ableton-discovery.schema.json`, or `schemas/ableton-command.schema.json`.
+For machine-readable work, use `schemas/production-decision.schema.json`, `schemas/sound-design-plan.schema.json`, `schemas/spatial-plan.schema.json`, `schemas/production-lifecycle.schema.json`, `schemas/label-ready-qc.schema.json`, `schemas/ableton-action-plan.schema.json`, `schemas/ableton-discovery.schema.json`, `schemas/ableton-command.schema.json`, or the v1.5.0 schemas `schemas/project-lifecycle.schema.json` (project record: brief, deliverables, gates), `schemas/spatial-mix-plan.schema.json` and `schemas/semantic-bridge-plan.schema.json` (plan_only Bridge proposals). Examples: `examples/*-example.json`. Validate model-produced plans against these schemas before use.
 
 ## Bridge execution contract
-When the task involves controlling Ableton, separate **discover -> resolve -> plan -> preflight -> execute -> verify -> rollback**. Discovery is read-only. Never let prose map straight to arbitrary Live API writes. Prefer canonical Rack macros and semantic parameter names; resolve them to current LOM ids/paths at runtime. Respect automation state and use realtime remote control only when realtime control is actually intended.
-
+The Bridge turns natural language into a **semantic plan**, never into direct arbitrary LOM writes. Lifecycle: **discover → resolve → plan → preflight → request approval → execute approved operations → verify → rollback if safe**.
+- Default to `plan_only`. Discovery is read-only and reports observed facts with freshness.
+- Resolve targets by stable name/role and verify uniqueness; object IDs are ephemeral evidence, never the only identity. Ambiguous or missing targets are blockers. Prefer canonical Rack macros and semantic parameter names resolved at runtime; otherwise return `needs_mapping` and ask for a human mapping — a guessed plug-in parameter is never acceptable.
+- A musical phrase ("make the bass wider") becomes a proposal with target role, safe scope, expected change, risks and verification, with alternatives when several readings are valid.
+- Before mutation, snapshot affected values, Set identity, target IDs, automation state and the intended operation; re-discover immediately before writing and abort on any change. Approval is tied to the exact plan; it does not transfer to a changed plan.
+- Execute only the approved operations: no implicit expansion, hidden preset replacement, device insertion, sample replacement, clip/track deletion or routing change. Notes, arrangement, automation, devices/presets, samples, routing/sends, master chain, destructive renders, export paths and project overwrite are high impact: explicit per-plan approval and a recoverable save point. Delete and overwrite are denied by default.
+- Verify postconditions from a fresh read, never from an API success response. On mismatch stop; roll back only this plan's operation and only if the current value still equals its result; never overwrite another actor's changes.
+- Respect automation state; use realtime remote control (`live.remote~`) only when realtime control is actually intended, never for persistent edits.
+Details: `docs/bridge-safety-and-semantics.md`, `references/61`–`64`, `schemas/semantic-bridge-plan.schema.json`.
 
 ## Capability and confidence gate
 Before claiming analysis or execution, identify the capability mode from `references/02-capability-modes.md`. No audio means no measured listening claims. Read-only bridge access means no writes. Low-confidence parameter mappings should produce an inspect/plan action rather than an unverified write.

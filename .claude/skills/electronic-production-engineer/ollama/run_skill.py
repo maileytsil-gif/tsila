@@ -141,6 +141,15 @@ def select_refs(prompt: str, load_all: bool = False):
             if extra not in chosen:
                 chosen.append(extra)
 
+    # v1.5.0 docs ride along with the references they complement.
+    for trigger, extra in (
+        ("references/61-ableton-lom-bridge.md", "docs/bridge-safety-and-semantics.md"),
+        ("references/03-end-to-end-production-lifecycle.md", "docs/production-workflow.md"),
+        ("references/60-ableton-hardware-workflow.md", "docs/user-setup-and-control-surfaces.md"),
+    ):
+        if trigger in chosen and extra not in chosen:
+            chosen.append(extra)
+
     if "references/41-spatial-spectrum-stereo-engine.md" in chosen and "references/40-mix-engine.md" not in chosen:
         chosen.append("references/40-mix-engine.md")
 

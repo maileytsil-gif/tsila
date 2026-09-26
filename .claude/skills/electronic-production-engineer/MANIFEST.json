@@ -1,21 +1,21 @@
 {
   "name": "electronic-production-engineer",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "files": [
     {
       "path": "CHANGELOG.md",
-      "sha256": "b1102946e6a2e4f9d1d986d3b4d05f804299e16d496c81d33f0cc0c7c166cb97",
-      "bytes": 2404
+      "sha256": "697f8f2e949d17b364f08a313211b7c52ee905476bf7536e5f3302f6ac921257",
+      "bytes": 3707
     },
     {
       "path": "README.md",
-      "sha256": "3cc9ede135c843e4e8ca2f57987f7447d11df93a6063688d13f22915610feb65",
-      "bytes": 1842
+      "sha256": "c5e6ce730b00bc44ea2f14e907bc9c5f339e794d74c968a8e736ec75680a906f",
+      "bytes": 2554
     },
     {
       "path": "SKILL.md",
-      "sha256": "36e075fe9a8ccd52551e59797af36a05f2ab27b7de063250979d58d0bdf23114",
-      "bytes": 9423
+      "sha256": "02850e5da5fb77bd3b6f646a5862dae9ae859ffe3757d26b0b83ca88826e5e76",
+      "bytes": 12884
     },
     {
       "path": "SOURCES.json",
@@ -29,7 +29,7 @@
     },
     {
       "path": "VERSION",
-      "sha256": "78b591400c56b7b67b8cb3b2b8a8e65e9093897f02ce0878e6b5405c68620fa7",
+      "sha256": "acb57a7135b2d7d6e665f67f056e21353023b93835f54def1ae523bf76f1bfb3",
       "bytes": 6
     },
     {
@@ -41,6 +41,11 @@
       "path": "adapters/MODEL-GUIDANCE.md",
       "sha256": "92e98816624ad79483beba893eba6516b1442b893450a01c78165ccd8d7204af",
       "bytes": 1279
+    },
+    {
+      "path": "adapters/ollama-routing.md",
+      "sha256": "2a75f0fea29a3d7ba618008796d654e6a9e7f780614835ae367eadbf40e81fcb",
+      "bytes": 2234
     },
     {
       "path": "bridge/README.md",
@@ -58,6 +63,26 @@
       "bytes": 2154
     },
     {
+      "path": "docs/bridge-safety-and-semantics.md",
+      "sha256": "6574186f4fbc6d31ed5925d7056b30c809271e3615ccc144435f95f32bbec6e1",
+      "bytes": 3452
+    },
+    {
+      "path": "docs/claude-handoff-and-research-index.md",
+      "sha256": "6450933900a166785f25361ba041c4c8013101811e53b36b43687c07ac916645",
+      "bytes": 2961
+    },
+    {
+      "path": "docs/production-workflow.md",
+      "sha256": "d4bb5ed7fa053509667b74bb62feb4e8f2d2362fb38af7ba2b99cad1639567a9",
+      "bytes": 3795
+    },
+    {
+      "path": "docs/user-setup-and-control-surfaces.md",
+      "sha256": "0d4683bfb0a2383b32ee55074bbda35f54751fff31c82e49633eb8b42fa23c9a",
+      "bytes": 2182
+    },
+    {
       "path": "examples/bridge-action-plan.json",
       "sha256": "21c9fe560fcfb6fff466d2f2ca0435548450d089d6b1cfa0920d251aef4c237c",
       "bytes": 1215
@@ -66,6 +91,21 @@
       "path": "examples/bridge-discovery-output.json",
       "sha256": "16b185c3466764cd76c66fe2f819f8e061415701b84ca71d231cbe0bf6db2e65",
       "bytes": 911
+    },
+    {
+      "path": "examples/project-lifecycle-example.json",
+      "sha256": "1bdac1d8c6a934812195c775cb342643f41ab58cc7490472f3e1d71ce80f91f9",
+      "bytes": 575
+    },
+    {
+      "path": "examples/semantic-bridge-plan-example.json",
+      "sha256": "d0f6c3fcb835416acd0d4aa2d595c08f0a4e21bd11c8ae644350b206a512b416",
+      "bytes": 1768
+    },
+    {
+      "path": "examples/spatial-mix-plan-example.json",
+      "sha256": "9ec89e86d33191dc385793e1daf55169c2852b0207e8ed65b57b5d08923b03ce",
+      "bytes": 1768
     },
     {
       "path": "examples/spatial-plan-tech-house.json",
@@ -79,8 +119,8 @@
     },
     {
       "path": "ollama/run_skill.py",
-      "sha256": "1bd83d10ca0322f491ec716ce58fbb6824176a606ac48ce6d71e7a9d35ed27c1",
-      "bytes": 11766
+      "sha256": "f5f04a0b17b5405a67fcb80a870e590ebe2fe436ea5ba4f16d417e42e37a0081",
+      "bytes": 12235
     },
     {
       "path": "references/00-operating-principles.md",
@@ -318,9 +358,24 @@
       "bytes": 1068
     },
     {
+      "path": "schemas/project-lifecycle.schema.json",
+      "sha256": "10d830a00f2116c82e82e47dfb92c2e6f7680819261ab42aa4a4ddf541847c29",
+      "bytes": 2411
+    },
+    {
+      "path": "schemas/semantic-bridge-plan.schema.json",
+      "sha256": "e10cbb895cd1d0b55bf43080d40ae92f2cb33db98fa2eb44c3f75dbf7449af43",
+      "bytes": 3362
+    },
+    {
       "path": "schemas/sound-design-plan.schema.json",
       "sha256": "fab545d1c4691dc241b14314a0eee1eb0abe124c508cc0d687879907706df890",
       "bytes": 1323
+    },
+    {
+      "path": "schemas/spatial-mix-plan.schema.json",
+      "sha256": "35b4633c64120c038cca28c3a2d8ba5378548e63a8eb2f82d484c956c50df020",
+      "bytes": 3083
     },
     {
       "path": "schemas/spatial-plan.schema.json",
@@ -329,13 +384,13 @@
     },
     {
       "path": "scripts/test_router.py",
-      "sha256": "4b41ffb1728f2fc0e4d7bfb6eaa3de6da53202780141a31ec71f3ff01a484687",
-      "bytes": 3318
+      "sha256": "e07c974c4890dd186e492397f579e74a00bdc101230f93e382abfb85e28f86d8",
+      "bytes": 3600
     },
     {
       "path": "scripts/validate_bridge_assets.py",
-      "sha256": "0ec48a8227406f959ca7b2d9b758a01b9c33ed72ab650ff1635af206a3e1170e",
-      "bytes": 1538
+      "sha256": "7417dece6799950033a78a302255e9e976f766e69ce6be41d948af2f3dc4509d",
+      "bytes": 2218
     },
     {
       "path": "scripts/validate_skill.py",

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.0
+- Source-level merge of the v1.5.0 Claude handoff onto v1.4.0 (the handoff had been reconstructed without the v1.4.0 files; every v1.4.0 file is kept).
+- SKILL.md: production phases brief → archive; Bridge contract rewritten as discover → resolve → plan → preflight → approval → execute → verify → rollback, plan_only by default, approval tied to the exact plan, high-impact operations listed, delete/overwrite denied by default, verification from a fresh read; inventory tools usable only once installed version and Set exposure are confirmed.
+- Added `docs/production-workflow.md`, `docs/bridge-safety-and-semantics.md`, `docs/user-setup-and-control-surfaces.md`, `docs/claude-handoff-and-research-index.md`, `adapters/ollama-routing.md`.
+- Added schemas `project-lifecycle` (the handoff's `production-lifecycle`, renamed so the v1.4.0 gate schema of that name is kept), `spatial-mix-plan`, `semantic-bridge-plan`, with `examples/*-example.json`; all validated (Draft 2020-12) by `scripts/validate_bridge_assets.py`.
+- Ollama runner loads the matching v1.5.0 doc with the LOM bridge, A-to-Z lifecycle and hardware references; router tests extended.
+- Not merged: the handoff's `SOURCE_STATUS.md` (obsolete once v1.4.0 was available) and its README (folded into this README).
+
 ## 1.4.0
 - Reframed the success condition around a fully deliverable track from idea to archive, not only production/mix/master advice.
 - Added an end-to-end lifecycle with exit gates for identity, core idea, palette, arrangement, spatial plan, mix prep, mix, pre-master QC, master, delivery QC and archive.

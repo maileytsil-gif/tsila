@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/epe/v1.5/project-lifecycle.schema.json",
+  "title": "Electronic Production Engineer lifecycle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "title", "phase", "brief", "deliverables", "gates"],
+  "properties": {
+    "schema_version": {"const": "1.5.0"},
+    "project_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "phase": {"enum": ["brief", "composition", "sound_design", "arrangement", "spatial_mix_plan", "mix", "premaster", "master", "qc", "export", "archive", "complete"]},
+    "brief": {"$ref": "#/$defs/brief"},
+    "deliverables": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["kind", "spec", "status"], "properties": {"kind": {"type": "string"}, "spec": {"type": "object"}, "status": {"enum": ["planned", "rendered", "verified", "blocked"]}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"}}}},
+    "gates": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["phase", "status"], "properties": {"phase": {"type": "string"}, "status": {"enum": ["not_started", "in_progress", "passed", "blocked", "waived"]}, "evidence": {"type": "array", "items": {"type": "string"}}, "owner": {"type": "string"}}}},
+    "references": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "brief": {
+      "type": "object", "additionalProperties": false,
+      "required": ["genre", "references", "context", "constraints"],
+      "properties": {
+        "genre": {"type": ["string", "null"]},
+        "references": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["artist_track", "focus"], "properties": {"artist_track": {"type": "string"}, "focus": {"type": "array", "items": {"type": "string"}}}}},
+        "context": {"type": ["string", "null"]}, "bpm": {"type": ["number", "null"], "minimum": 30, "maximum": 300}, "key": {"type": ["string", "null"]},
+        "duration_seconds": {"type": ["number", "null"], "exclusiveMinimum": 0}, "vocal": {"type": ["string", "null"]},
+        "constraints": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

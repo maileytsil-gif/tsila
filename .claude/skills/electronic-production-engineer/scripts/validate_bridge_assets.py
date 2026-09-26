@@ -12,6 +12,12 @@ required = [
     ROOT / "schemas" / "spatial-plan.schema.json",
     ROOT / "schemas" / "production-lifecycle.schema.json",
     ROOT / "examples" / "spatial-plan-tech-house.json",
+    ROOT / "schemas" / "project-lifecycle.schema.json",
+    ROOT / "schemas" / "spatial-mix-plan.schema.json",
+    ROOT / "schemas" / "semantic-bridge-plan.schema.json",
+    ROOT / "examples" / "project-lifecycle-example.json",
+    ROOT / "examples" / "spatial-mix-plan-example.json",
+    ROOT / "examples" / "semantic-bridge-plan-example.json",
 ]
 for p in required:
     if not p.exists():
@@ -34,5 +40,9 @@ if jsonschema:
     jsonschema.validate(discovery, discovery_schema)
     jsonschema.validate(action, command_schema)
     jsonschema.validate(spatial, spatial_schema)
+    for name in ("project-lifecycle", "spatial-mix-plan", "semantic-bridge-plan"):
+        schema = json.loads((ROOT / "schemas" / f"{name}.schema.json").read_text())
+        jsonschema.Draft202012Validator.check_schema(schema)
+        jsonschema.validate(json.loads((ROOT / "examples" / f"{name}-example.json").read_text()), schema)
 
 print("bridge assets: OK")

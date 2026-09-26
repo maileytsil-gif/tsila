@@ -6,7 +6,7 @@ The skill covers House, Tech House, Minimal/Deep Tech, Techno, Bass House, Melod
 
 Start with `adapters/INSTALL.md`.
 
-Version: 1.4.0 (2026-09-25)
+Version: 1.5.0 (2026-09-26)
 
 
 ## v1.1 Bridge layer
@@ -22,3 +22,7 @@ Adds reverse/pre-FX/suckback sound design: reverse bass, reverse cymbal/crash, r
 
 ## v1.4 focus
 Turns the skill into an end-to-end release workflow with explicit production gates from brief to reproducible archive. Adds a dedicated spatial/spectral/stereo engine covering element-by-element frequency role, panning, width, depth, motion, M/S, mono/correlation checks, and machine-readable spatial/lifecycle schemas.
+
+## v1.5 focus
+Merges the v1.5.0 Claude handoff (reconstructed without the v1.4.0 files) onto v1.4.0 at source level: nothing from v1.4.0 was removed. Adds the phase gates and definition of done (`docs/production-workflow.md`), a stricter plan_only Bridge contract with approval tied to the exact plan (`docs/bridge-safety-and-semantics.md`), user setup, control-surface roles and naming/macro conventions (`docs/user-setup-and-control-surfaces.md`), an official manuals/tutorial index (`docs/claude-handoff-and-research-index.md`), the local Qwen/Ollama trust boundary (`adapters/ollama-routing.md`), and three schemas with validated examples (`project-lifecycle`, `spatial-mix-plan`, `semantic-bridge-plan`).
+

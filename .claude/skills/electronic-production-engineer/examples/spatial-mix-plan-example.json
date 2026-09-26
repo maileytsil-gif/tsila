@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.5.0",
+  "set_id": "observed-live-set-id",
+  "items": [
+    {
+      "role": "sub",
+      "track_match": {"query": "T02_BASS / sub layer", "resolved_track_id": null},
+      "spectrum": {"function": "stable fundamental and low-end weight", "range_hz": [30, 100], "overlap_risk": "high"},
+      "pan": {"mode": "center", "value": 0, "unit": "normalized"},
+      "width": {"intent": "mono", "value": 0, "frequency_scope": "fundamental and low harmonics"},
+      "depth": {"position": "front", "method": ["direct_level", "transient"]},
+      "mono_policy": "mono_required",
+      "collision_strategy": "Compare timing, phase, envelope and level against kick before EQ; preserve a centered sub foundation.",
+      "motion": null,
+      "confidence": "proposed"
+    },
+    {
+      "role": "mid_bass",
+      "track_match": {"query": "T02_BASS / upper harmonics", "resolved_track_id": null},
+      "spectrum": {"function": "audible bass character above the fundamental", "range_hz": [100, 6000], "overlap_risk": "medium"},
+      "pan": {"mode": "center", "value": 0, "unit": "normalized"},
+      "width": {"intent": "natural", "value": null, "frequency_scope": "upper harmonics only if the Set has a mapped split or layer"},
+      "depth": {"position": "front", "method": ["direct_level", "hf_filter"]},
+      "mono_policy": "mono_checked",
+      "collision_strategy": "Confirm a controllable upper layer or mapped macro; do not widen the whole bass track by guesswork.",
+      "motion": null,
+      "confidence": "proposed"
+    }
+  ],
+  "checks": ["mono_compatibility", "stereo_correlation", "low_end_center", "masking_review", "level_matched_reference"],
+  "notes": ["Illustrative proposal only. Confirm actual track structure and listening goal."]
+}

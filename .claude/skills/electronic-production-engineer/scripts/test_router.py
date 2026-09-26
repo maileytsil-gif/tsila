@@ -25,6 +25,9 @@ cases = [
     ("Positionnement spatial de chaque élément, panning, largeur stereo et profondeur", ["references/41-spatial-spectrum-stereo-engine.md", "references/40-mix-engine.md"], []),
     ("Je veux un morceau livrable de A à Z pour label", ["references/03-end-to-end-production-lifecycle.md", "references/65-label-ready-qc-export.md"], []),
     ("Garde le sub mono et place les hats dans le champ stereo", ["references/41-spatial-spectrum-stereo-engine.md"], []),
+    ("Augmente le drive de la bass via le bridge LOM", ["docs/bridge-safety-and-semantics.md"], []),
+    ("Je veux un morceau livrable de A à Z", ["docs/production-workflow.md"], []),
+    ("Mappe les macros sur l'APC64 et le A49", ["docs/user-setup-and-control-surfaces.md"], []),
 ]
 for prompt, musts, must_nots in cases:
     refs = runner.select_refs(prompt)
