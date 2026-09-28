@@ -19,4 +19,4 @@ jobs:
         run: python3 -W ignore -m unittest tests/test_offline.py tests/test_gateway.py -v
       - name: syntaxe de la suite Live et du client
         working-directory: lom-bridge
-        run: python3 -m py_compile tests/live_suite.py lom.py agent_gateway.py LOMBridge/__init__.py
+        run: python3 -m py_compile tests/live_suite.py tests/fake_live_server.py lom.py agent_gateway.py LOMBridge/__init__.py
