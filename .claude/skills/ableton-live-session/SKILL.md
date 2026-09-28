@@ -53,6 +53,7 @@ Entrer par la ligne qui correspond à la demande, dans l'ordre ; chaque skill di
 | Ce que demande l'utilisateur | Chaîne |
 |---|---|
 | « Où on en est », « on fait quoi maintenant », plusieurs morceaux à la fois, retour après interruption | **chef-de-projet** (`tableau.py`, arbitrage, plan annoncé) → la ligne correspondante ci-dessous |
+| Un morceau entier « de A à Z », un style de producteur documenté (Odd Mob, Guetta Future Rave, RÜFÜS, Illangelo…), une recette Bass House / Afro House | **produire-morceau-electronique-de-a-a-z** (pipeline en 9 passes, `references/` : études de producteurs, recettes Serum 2, mix streaming/club) → la ligne « Nouveau morceau » ci-dessous |
 | Nouveau morceau (style, BPM, tonalité) | ableton-live-session (sauver sous, ping) → memoire-projet → theorie-musicale-electronique (`genres.md`, `forme-tension.md`, `theorie.py gamme`) → arrangement-avance → drums-signature + kick-bass-equilibre → producteur-rythmique → compositeur-arrangeur → midi-expressif → ingenieur-mixage → live-automation → live-export-wav |
 | « On reprend » / fin de session | memoire-projet (`reprise.sh`, en-tête REPRISE, questions sans réponse) → relire l'état réel avant d'agir → memoire-projet (`journal.sh`, REPRISE) |
 | Écrire ou corriger des notes (mélodie, hook, accords, basse, contre-chant) | compositeur-arrangeur → theorie-musicale-electronique (`theorie.py progression|contrepoint`) → melodie-composition → midi-expressif |
