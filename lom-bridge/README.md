@@ -9,6 +9,8 @@ Version : **une seule source**, `LOMBridge/version.py` (lue par le Remote Script
 | `lom.py` | Client Python 3 sans dépendance : CLI, `apply spec.json [--dry]`, serveur HTTP JSON |
 | `automations_el21.json` | Spec d'exemple pour le morceau el21 |
 | `tests/test_offline.py` | 60 tests logiciels sans Live (`python3 -W ignore -m unittest tests/test_offline.py`) |
+| `agent_gateway.py` | Client HTTP pour un agent sans accès UDP (Qwen/Ollama, Codex…) : `inspect` (lecture seule), `preview` (plan), `commit` (écriture refusée si la spec ou le Set a changé) — voir § Client pour agents |
+| `tests/test_gateway.py` | 16 tests du client agent (serveur simulé) |
 | `tests/live_suite.py` | Suite d'essais dans Live sur deux pistes temporaires créées puis supprimées |
 | `legacy/` | Ancien device Max for Live (protocole obsolète, sans automation) — non maintenu |
 
@@ -102,7 +104,18 @@ Spec `apply` (`beatsPerBar` facultatif : sinon la signature de Live ; `accept` d
 
 HTTP : `POST /cmd {"cmd":"/plan","args":[…]}`, `POST /apply {"spec":{…},"dry":true}`, `GET /` = aide. Jeton obligatoire dans l'en-tête `Authorization`, en-tête `Origin` refusé.
 
+### Client pour agents (`agent_gateway.py`)
+Pour un agent qui n'a qu'un terminal sur le Mac et pas de client OSC (Qwen via Ollama, Codex, un second Claude) : le serveur HTTP tourne (`lom.py serve`), l'agent n'utilise que ce client, jamais `/py` ni l'UDP.
+```bash
+python3 agent_gateway.py inspect /ping                       # lecture seule : /ping /state /track /param /params /solve /clips /plan /read /events /jobs /children /get /info /path /snapshots /locators /journal, /transport sans argument, /notes get
+python3 agent_gateway.py inspect /clips "AUDIO - Sub"
+python3 agent_gateway.py preview spec.json                   # POST /apply dry → {sha256 (spec), plan_sha256 (plan relu), log, preview}
+python3 agent_gateway.py commit  spec.json --sha256 <spec> --plan-sha256 <plan>   # replanifie, compare, puis écrit ; refus si la spec OU le plan diffèrent
+```
+Garde-fous du client : boucle locale seulement ; jeton lu dans `connection.json` (`LOM_BRIDGE_CONN` pour un autre chemin), jamais affiché ; `param` explicite exigé dans chaque entrée ; ≤ 32 entrées actives ; plan refusé si une entrée est en erreur ou si la plage n'est pas couverte (`gap`) ; `commit` refusé si le nombre d'entrées, les références de clips, leurs bornes, la cible ou les valeurs résolues (donc `unit: rel` sur une valeur courante qui a bougé) ne sont plus ceux du `preview`. Ce client ne sécurise pas le serveur contre un autre processus local : le jeton et la liste blanche `SAFE_HTTP` restent la protection côté serveur.
+
 ## Ce qui a été vérifié
+- **Client agent** (`tests/test_gateway.py`, 16, sans Live) : boucle locale seule, liste blanche lecture seule (`/transport` avec argument et `/notes set` refusés avant toute requête), jeton Bearer lu dans `connection.json`, erreurs HTTP relayées, spec canonique (mise en forme sans effet sur l'empreinte), `skip`, `param` implicite refusé, plan refusé sur `gap`/erreur/nombre d'entrées, `commit` refusé si la spec ou le plan relu a changé, écriture partielle relayée avec son code.
 - **Tests logiciels** (60, sans Live) : OSC int64 sans perte, références inchangées sur le fil, client qui ignore les lignes d'autres requêtes, jeton exigé et fichier créé à l'init, id sur chaque ligne, refus des ids numériques et des sessions étrangères, interpolation gauche/droite, budget = nombre de points générés, fenêtre nulle, saturation, `accept`, clips bouclés étirés, ancrages exacts, ordre des points d'un saut, nettoyage après erreur de reconstruction, annulation par id (en file et en cours), revalidation quand un clip disparaît, liste blanche HTTP. Depuis 0.5.0 : échec sur le 2ᵉ clip → le 1ᵉʳ est remis (tout ou rien) ; échec avant toute écriture → pas d'annulation ; aucune étape d'annulation ouverte pendant une pause ; relecture exacte et par curseur ; relecture fausse → annulation ; `unverified` ; `/cancel` pendant la relecture → l'écriture reste ; automation surchargée refusée quand il faut échantillonner ; `/clear` en tout ou rien et relu ; `/ping` liste les commandes ; version du client = version du script.
 - **Dans Live 12.4.5** (`tests/live_suite.py`, copie d'el21) — **rejoué pour la dernière fois en 0.4.x** (26/26) : saut au bord d'un clip, 192 points hors fenêtre inchangés, validations `/read` et `/plan`, fusion audio par échantillonnage avec conservation de l'ancienne rampe et du Pan, annulation d'une tâche en cours par id, curseur restauré, revalidation. Sur la copie d'el21 : zones non ciblées d'autres pistes identiques ; sweep du même clip conservé à 0,0011 près (échantillonné) ; Cmd+Z défait tout en une étape ; après sauvegarde et réouverture, valeurs identiques à 0,0000 près.
 - **0.8.0** : `/load` (ajout sans hot-swap vérifié, ambiguïté VST3/AU refusée, remplacement détecté, autre piste modifiée détectée, `replace=`) et `/notes` (get, set fenêtré, add, JSON invalide ou hors limites refusé, désaccord avec Live → étape défaite). 7 tests hors Live ; § 10 de `live_suite.py` à passer dans Live.
