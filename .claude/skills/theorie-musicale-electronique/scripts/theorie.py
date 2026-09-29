@@ -73,6 +73,8 @@ QUALITES = {  # symbole -> intervalles
     '13': [0, 4, 7, 10, 14, 21], 'm13': [0, 3, 7, 10, 14, 21], 'maj13': [0, 4, 7, 11, 14, 21],
     '7b9': [0, 4, 7, 10, 13], '7#9': [0, 4, 7, 10, 15], '7#11': [0, 4, 7, 10, 18], 'maj7#11': [0, 4, 7, 11, 18],
     '7b5': [0, 4, 6, 10], '7#5': [0, 4, 8, 10], 'quartal': [0, 5, 10, 15], 'quintal': [0, 7, 14, 21],
+    '7b9#9': [0, 4, 7, 10, 13, 15], '7b9b13': [0, 4, 7, 10, 13, 20],
+    '7alt': [0, 4, 10, 13, 15, 18, 20],  # 1 3 b7 b9 #9 #11(b5) b13(#5) : quinte juste absente par définition
 }
 # Limites d'intervalle dans le grave (note la plus basse de l'intervalle), MIDI (C3 = 60 Ableton).
 # Valeurs d'orchestration usuelles ; dépendent du timbre (un sinus tolère plus bas qu'une scie).
@@ -110,6 +112,7 @@ def freq(n):
 def parse_accord(sym):
     """'Dbmaj7/F' -> (racine pc, qualité, intervalles, basse pc|None)"""
     basse = None
+    sym = sym.replace('(', '').replace(')', '').replace(',', '')  # A7(b9,#9) = A7b9#9
     if '/' in sym:
         sym, b = sym.split('/', 1); basse = parse_note(b)[0]
     pc, _ = parse_note(sym); i = 1

@@ -73,7 +73,7 @@ Les fichiers sous `references/` sont **dans ce skill**. Charger uniquement les m
 
 | Besoin | Fichiers à lire |
 |---|---|
-| Harmonie, funk/acid jazz, claviers et cuivres | `theorie-styles-et-instruments.md`, `theorie-analyse-harmonie-groove-arrangement.md`, `theorie-exemples-et-verification.md`, `Etude_funk_acid_jazz_cuivres_Serum2.md` |
+| Harmonie, funk/acid jazz, claviers et cuivres | `theorie-styles-et-instruments.md`, `theorie-analyse-harmonie-groove-arrangement.md`, `theorie-exemples-et-verification.md`, `Etude_funk_acid_jazz_cuivres_Serum2.md` ; hook et cellule jouables, microhouse, chill / jazz chill, électro R&B : `../composer-hooks-funk-electro/SKILL.md` |
 | Sampling, Maschine, transitions, vocal chops | `Etude_sampling_Maschine3_Ableton12_Serum2.md` |
 | Sérum Bass House, stabs hors Basic Shapes, Wavetable, spectral Ableton | `bass-house-recettes.md`, `bass-house-stabs-serum2.md`, `bass-house-wavetable.md`, `bass-house-spectral-live.md`, `bass-house-sources-et-videos.md` |
 | Drones, glitch et FX | `Etude_drones_FX_glitch_Serum2_Sampler.md` |
@@ -94,7 +94,7 @@ Ce skill apporte la **méthode de bout en bout et le corpus d'études** ; il n'e
 | Passe | Skills qui agissent |
 |---|---|
 | 1 Recherche et palette | ce skill (`references/`), `theorie-musicale-electronique` |
-| 2 Composition et groove | `compositeur-arrangeur`, `producteur-rythmique`, `melodie-composition`, `midi-expressif`, `drums-signature` |
+| 2 Composition et groove | `compositeur-arrangeur`, `composer-hooks-funk-electro`, `producteur-rythmique`, `melodie-composition`, `midi-expressif`, `drums-signature` |
 | 3 Sound design | `sound-designer-serum`, `vst-sound-design`, `synthese-reference`, `resampling` |
 | 4 Arrangement | `arrangement-avance`, `live-automation` |
 | 5 Édition et resampling | `resampling`, `sampling-composition-avancee`, `native-instruments-control` |
