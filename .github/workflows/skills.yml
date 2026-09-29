@@ -1,0 +1,21 @@
+name: Skills — scripts et grilles hors Live
+on:
+  push:
+    paths: [".claude/skills/**", ".github/workflows/skills.yml"]
+  pull_request:
+    paths: [".claude/skills/**", ".github/workflows/skills.yml"]
+jobs:
+  scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: syntaxe de tous les scripts Python des skills
+        run: python3 -m py_compile $(find .claude/skills -name '*.py')
+      - name: composer-hooks-funk-electro — grilles, lanceur Qwen, installation
+        working-directory: .claude/skills/composer-hooks-funk-electro
+        run: |
+          bash -n scripts/install.sh
+          python3 -m unittest discover -s scripts -p 'test_*.py' -v
+          python3 scripts/grille.py --verifier references/*.md
