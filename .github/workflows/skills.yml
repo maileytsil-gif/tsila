@@ -19,3 +19,6 @@ jobs:
           bash -n scripts/install.sh
           python3 -m unittest discover -s scripts -p 'test_*.py' -v
           python3 scripts/grille.py --verifier references/*.md
+      - name: serum-2-basses-house-future-house — motifs vérifiés
+        working-directory: .claude/skills/serum-2-basses-house-future-house
+        run: python3 ../composer-hooks-funk-electro/scripts/grille.py --verifier references/*.md

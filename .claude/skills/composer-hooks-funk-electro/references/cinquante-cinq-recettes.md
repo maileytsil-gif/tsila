@@ -8,6 +8,8 @@ Pour chaque recette, créer les quatre macros indiquées **dans sa ligne**; elle
 
 ## Basses
 
+Fiches complètes (routage, enveloppes, LFO, macros, motif) des familles sub, pluck, FM, Reese, wub, growl, donk et screech : `../../serum-2-basses-house-future-house/references/families.md`.
+
 1. **Sub rond** — SUB sinusoïde route Direct; E attaque 2–8 ms, release 50–100 ms; note stable sous kick. M1 harmonic léger, M2 glide, M3 decay, M4 saturation parallèle haute.
 2. **FM pluck** — A saw riche, B sinus modulateur ratio 2:1, B non audible, FM légère; E filtre 80–250 ms; riff syncopé. M1 FM, M2 decay, M3 drive, M4 haut médium.
 3. **Growl appel/réponse** — A table riche, B FM modérée, L en enveloppe sur FM et F bandpass; phrase de deux mesures avec réponse différente. M1 vowel, M2 L depth, M3 edge, M4 mid width.
