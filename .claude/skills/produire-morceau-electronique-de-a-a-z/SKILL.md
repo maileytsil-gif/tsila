@@ -75,7 +75,7 @@ Les fichiers sous `references/` sont **dans ce skill**. Charger uniquement les m
 |---|---|
 | Harmonie, funk/acid jazz, claviers et cuivres | `theorie-styles-et-instruments.md`, `theorie-analyse-harmonie-groove-arrangement.md`, `theorie-exemples-et-verification.md`, `Etude_funk_acid_jazz_cuivres_Serum2.md` ; hook et cellule jouables, microhouse, chill / jazz chill, électro R&B : `../composer-hooks-funk-electro/SKILL.md` |
 | Sampling, Maschine, transitions, vocal chops | `Etude_sampling_Maschine3_Ableton12_Serum2.md` |
-| Sérum Bass House, stabs hors Basic Shapes, Wavetable, spectral Ableton | `bass-house-recettes.md`, `bass-house-stabs-serum2.md`, `bass-house-wavetable.md`, `bass-house-spectral-live.md`, `bass-house-sources-et-videos.md` |
+| Sérum Bass House, stabs hors Basic Shapes, Wavetable, spectral Ableton | `bass-house-recettes.md`, `bass-house-stabs-serum2.md`, `bass-house-wavetable.md`, `bass-house-spectral-live.md`, `bass-house-sources-et-videos.md` ; dix familles de basses jouables : `../serum-2-basses-house-future-house/SKILL.md` |
 | Drones, glitch et FX | `Etude_drones_FX_glitch_Serum2_Sampler.md` |
 | Producteurs Bass/Rave/Future, Skrillex et Odd Mob | `Etude_6_producteurs_Bass_House_Rave_Future_Rave_Future_House.md` |
 | Afro House et groupes hybrides | `Etude_Afro_House_4_producteurs_16_titres.md`, `Etude_OddMob_Brooks_Guetta_Solomun_Rufus_20_titres.md` |
