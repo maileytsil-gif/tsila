@@ -2,7 +2,7 @@
 
 | plug-in (version) | exposé à Live | nécessite la fenêtre | vérification |
 |---|---|---|---|
-| FabFilter **Pro-Q 4** (4.1) | rien (Device On) | tout : bandes (double-clic), gain (glisser vertical, 3 dB ≈ 31 px cadre 1568), Q (molette), forme/pente (menus), Make Dynamic/Spectral (clic droit) ; saisie clavier inopérante | survol des boutons FREQ/GAIN/Q → tooltip ; capture de la courbe |
+| FabFilter **Pro-Q 4** (4.1) | rien à neuf (Device On) ; **28 paramètres si l'instance a été configurée** (Frequency/Used/Threshold 1–5, Gain/Q 1,3,4,5, Shape 1, Slope 3) : copier une instance configurée par `duplicate_device` + `song.move_device` (29 sept. 2026) ; Frequency raw = ln(f/10)/ln(3000) | tout : bandes (double-clic), gain (glisser vertical, 3 dB ≈ 31 px cadre 1568), Q (molette), forme/pente (menus), Make Dynamic/Spectral (clic droit) ; saisie clavier inopérante | survol des boutons FREQ/GAIN/Q → tooltip ; capture de la courbe |
 | Waves **REQ 6 Stereo** (17.1) | tout : `BandN Type` ('Hi-Pass','Bell','Hi-Shelf','Hi-RShelv','Low-Pass'), `On/Off`, `Frq` (Hz entiers → automation en `raw`), `Gain`, `Q` (0,26–6,5) | rien | `str_for_value` ; `read` du bridge |
 | Waves **Q10 / SSLEQ** | tout | rien | idem |
 | Waves **API-2500 Stereo** | Thresh, Ratio ('1.5:1'…'10:1'), Attack ('0.03 ms'…'30 ms'), Release ('Var s' + `Release Variable`), Knee, Thrust (Norm/Med/Loud), Type (Old/New), Analog, Mix, Makeup (Auto/Manual), Output | rien | relecture + crêtes actif/contourné |

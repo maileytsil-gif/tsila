@@ -18,3 +18,4 @@ Vérifier vite : charger sur une piste vide et compter `len(d.parameters)` (1 = 
 - **Serum 2** : clics de fond OK (oscillateurs, MONO/LEGATO, navigateur de presets icône en haut à droite → dossier → double-clic) ; glisser de bouton et saisie ne passent pas en arrière-plan.
 - **Tonal Balance Control 3** : pas de reset possible ; remplacer par une instance neuve (charger, puis déplacer en tête avec `ppal-update-device toPath`).
 - Menus Live en français ; les items sans titre dans `app_menu list` existent quand même (ex. Fichier › « Exporter Audio/Vidéo... »).
+- Outil souris CGEvent : scripts/cg.swift (compiler : swiftc -O cg.swift -o cg ; cg click|dbl x y, drag x1 y1 x2 y2, scroll x y dy). Seul moyen fiable de cliquer dans une fenêtre de plug-in ; cliquer d'abord pour donner le focus avant toute molette ; ne jamais taper au clavier par System Events (va à Live).

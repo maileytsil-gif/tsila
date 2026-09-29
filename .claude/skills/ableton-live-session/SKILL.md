@@ -30,6 +30,7 @@ Lance un script Python dans Live avec `scripts/pyl.sh fichier.py` (variables `so
 
 ## Conventions du projet en cours
 Mémoire persistante : `~/.claude/projects/-Volumes-NO-NAME-caude/memory/` (fichier du projet + `lom-bridge.md`). Note-y chaque piège nouveau. Pistes `AUDIO - X` → `BUS - …` → `BUS MASTER 1 → 2 → 3` → Main ; REF → Main. Numérotation Ableton : C3 = 60.
+**Règle (29 sept. 2026)** : tout nouvel instrument reçoit sa piste `AUDIO - <NOM>` juste après lui (Monitor In, instrument → Track In), qui sort vers le bus de sa famille (BATTERIE, BASSES, HARMONIE, FX) ; jamais d'instrument directement sur Main ou sur un bus. Numérotation Ableton : C3 = 60.
 
 ## Nouveau projet — enchaîner tous les skills
 L'utilisateur veut, pour chaque nouveau morceau, la même méthode complète. Ordre à suivre, une étape validée à la fois, plan annoncé d'abord :
