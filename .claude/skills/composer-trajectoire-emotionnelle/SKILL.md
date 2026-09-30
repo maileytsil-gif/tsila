@@ -1,6 +1,6 @@
 ---
 name: composer-trajectoire-emotionnelle
-description: Concevoir et vérifier la trajectoire émotionnelle d'un morceau électronique avec une ambiance générale et une à quatre émotions intentionnelles (dont une dominante). Utiliser pour traduire des émotions désirées en harmonie, mélodie, groove, timbre Serum 2, arrangement, transitions, voix et dynamique, puis tester la perception par écoute, dans les projets Bass House, Future House, R&B chill, DnB/Jungle et VIBRAAXIS/VIBRAVECTOR/VIBRAMOTIVE.
+description: Concevoir et vérifier la trajectoire émotionnelle d'un morceau électronique — une ambiance générale et 1 à 4 émotions (dont une dominante) placées en mesures, traduites en indices musicaux (harmonie, groove, timbre, transitions, dynamique), puis test de perception par l'utilisateur. Utiliser quand l'utilisateur parle d'émotion, d'ambiance, de ressenti ou veut un passage « plus mélancolique », « plus euphorique ».
 ---
 
 # Composer une trajectoire émotionnelle

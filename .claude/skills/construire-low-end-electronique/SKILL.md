@@ -1,6 +1,6 @@
 ---
 name: construire-low-end-electronique
-description: Bibliothèque du grave électronique (kick, sub, basse, 808) pour Ableton Live 12 et Serum 2 — physique (fondamentale et harmoniques, phase, mono, pièce), procédure en huit étapes, recettes de départ par genre (Bass House, Future Rave, Tech House, Minimal, Afro House, 808) et notes sourcées de *The Philosophy of Bass* (FabFilter). Utilise ce skill quand le grave manque de poids, masque le kick, fluctue d'une note à l'autre, disparaît sur petit haut-parleur ou en mono, ou ne passe pas du studio au club, et qu'il faut une recette de genre ou un tableau symptôme → preuve → changement ; rôle, accord, polarité et mesure passent par kick-bass-equilibre, le diagnostic de mix par ingenieur-mixage.
+description: Bibliothèque du grave électronique (kick, sub, basse, 808) — physique, recettes par genre (Bass House, Future Rave, Tech House, Minimal, Afro House), tableau symptôme → preuve → changement. Utiliser quand le grave manque de poids, masque le kick, fluctue d'une note à l'autre, disparaît en mono ou sur petit haut-parleur, ou ne passe pas en club. Rôles kick/sub, accord, polarité et mesure → kick-bass-equilibre.
 ---
 
 # Construire le low end électronique

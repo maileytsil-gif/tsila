@@ -1,6 +1,6 @@
 ---
 name: theorie-musicale-composition
-description: Théorie et écriture hors production électronique — classique, jazz, pop, rock, folk, blues, soul/R&B/gospel, funk joué, hip-hop, musique de film — et pédagogie : cours d'une notion avec exercice corrigé, analyse d'un morceau ou d'un producteur (documenté / écouté / proposé), harmonie à quatre voix, contrepoint, conduite de voix, écriture pour voix et instruments (tessitures, cuivres transpositeurs Si♭/Mi♭, piano, guitare). Utilise ce skill quand l'utilisateur veut apprendre ou pratiquer la théorie (« fais-moi un cours », « donne-moi un exercice »), analyser un titre ou un producteur, ou écrire pour voix et instruments acoustiques. Genres électroniques et calculs (theorie.py) : theorie-musicale-electronique ; écrire les notes dans le Set : compositeur-arrangeur (C3 = 60). Ne pilote pas Live.
+description: Théorie et écriture hors électro (classique, jazz, pop, rock, soul, chanson, film) — cours avec exercice corrigé, harmonie à quatre voix, contrepoint, écriture pour voix et instruments acoustiques. Utiliser quand l'utilisateur dit « fais-moi un cours », « donne-moi un exercice », veut analyser un titre ou un producteur, ou écrire pour instruments. Électro → theorie-musicale-electronique ; ne pilote pas Live.
 ---
 
 # Théorie musicale et composition

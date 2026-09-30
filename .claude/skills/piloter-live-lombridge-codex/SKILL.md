@@ -1,6 +1,6 @@
 ---
 name: piloter-live-lombridge-codex
-description: Procédure pour un agent autre que Claude Code (Qwen Code, Codex, second Claude) qui agit dans Ableton Live 12 par le LOM Bridge 0.8.1 du dépôt via lom-bridge/agent_gateway.py (inspect → preview → commit, écriture refusée si la spec ou le Set ont changé) ; pour Qwen via Ollama sans outil (spec JSON exécutée par l'utilisateur) ; pour le bilan de séance fondé sur des preuves (session_review.py) ; pour proposer — jamais appliquer seul — une amélioration de procédure ou du bridge ; et direction artistique du clip « Après les heures ». Utiliser quand un autre agent doit agir dans Live, quand l'utilisateur demande un bilan de séance ou veut améliorer la procédure du bridge. Claude Code sur le Mac suit ableton-live-session (lom.py).
+description: Procédure pour un agent autre que Claude Code (Qwen Code, Codex, Qwen via Ollama) qui agit dans Live 12 par lom-bridge/agent_gateway.py (inspect → preview → commit), bilan de séance sur preuves (session_review.py), amélioration proposée du bridge, clip « Après les heures ». Utiliser quand un autre agent doit agir dans Live ou que l'utilisateur demande un bilan de séance. Claude Code → ableton-live-session.
 ---
 
 # LOM Bridge : procédure pour un autre agent (Qwen Code, Codex)

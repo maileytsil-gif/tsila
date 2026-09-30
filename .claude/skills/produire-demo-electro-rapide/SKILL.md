@@ -1,6 +1,6 @@
 ---
 name: produire-demo-electro-rapide
-description: Transformer rapidement une idée de Bass House, Future House, électro, R&B chill ou Drum & Bass en démo Ableton Live 12 jouable — brief, référence choisie avec l'utilisateur, ambiance et une à quatre émotions, hooks MIDI, boucle de 8 mesures, Original Mix et Extended Mix, palette Serum 2 (sub et basse médium séparés, signature du kick sous 124 BPM), routage, mix de départ et contrôles. Utiliser pour sortir vite une démo, lancer un morceau VIBRAAXIS, VIBRAVECTOR ou VIBRAMOTIVE, diriger les skills musicaux ou reconstruire une idée Suno en pistes éditables ; pour un morceau entier « de A à Z » ou un style de producteur documenté, produire-morceau-electronique-de-a-a-z prend la main.
+description: Sortir vite une démo Live 12 jouable (Bass House, Future House, électro, R&B, DnB) — référence choisie avec l'utilisateur, 1 à 4 émotions, boucle de 8 mesures, Original Mix et Extended Mix, sub et basse médium séparés, signature du kick sous 124 BPM. Utiliser pour une démo rapide, un morceau VIBRAAXIS, VIBRAVECTOR ou VIBRAMOTIVE ou une idée Suno à rebâtir. « De A à Z » → produire-morceau-electronique-de-a-a-z.
 ---
 
 # Produire une démo électro rapide

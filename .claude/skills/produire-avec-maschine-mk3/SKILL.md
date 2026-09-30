@@ -1,6 +1,6 @@
 ---
 name: produire-avec-maschine-mk3
-description: Concevoir grooves, kits, samples, patterns, scènes et performances sur contrôleur Maschine MK3 et logiciel Maschine 3, puis intégrer MIDI et audio dans Ableton Live 12. Utiliser pour Beatmaking Bass House, Future House, électro/R&B, DnB/Jungle, routage multi-sorties, Perform FX, variations et collaboration avec Serum 2 dans les projets VIBRAAXIS, VIBRAVECTOR ou VIBRAMOTIVE. Utiliser quand l'utilisateur travaille avec Maschine (demande explicite ou son d'une expansion NI) ; sinon producteur-rythmique programme dans Live.
+description: Produire avec le contrôleur Maschine MK3 et le logiciel Maschine 3 — kits, patterns, scenes, sampling et chops, Perform FX, fills, puis transfert MIDI ou audio et multi-sorties vers Ableton Live 12. Utiliser quand l'utilisateur travaille avec Maschine (il la nomme, parle de pads, de Perform FX, de Smart Strip ou d'une expansion NI). Sans Maschine, producteur-rythmique programme dans Live.
 ---
 
 # Produire avec Maschine MK3

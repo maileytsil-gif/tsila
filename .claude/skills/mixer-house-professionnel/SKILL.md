@@ -1,6 +1,6 @@
 ---
 name: mixer-house-professionnel
-description: Bibliothèque de genre du rôle ingenieur-mixage — mixage Bass House, Future Rave, Tech House et Minimal dans Ableton Live 12 avec les plug-ins tiers de l'utilisateur (FabFilter Pro-Q 4 et Pro-C 3, iZotope, Waves, soothe3, SPAN ; Valhalla à prober) : procédure en sept passes, hiérarchie des décisions, priorités et placement spectral et spatial propres à chaque genre, A/B de plusieurs références dans Live à niveau égal, versions streaming et club, sources de cours et de vidéos avec leur statut réel d'examen. Utilise ce skill quand l'utilisateur mixe un morceau d'un de ces quatre genres et qu'il faut les priorités du genre, veut comparer ses références dans Live, préparer une version streaming et une version club, ou cherche les cours et vidéos de mixage de ces genres. Le diagnostic, la méthode et le contrôle qualité restent ceux d'ingenieur-mixage, la procédure d'exécution celle de mixage.
+description: Bibliothèque de genre du rôle ingenieur-mixage — priorités et placement spectral et spatial du mix Bass House, Future Rave, Tech House et Minimal, A/B de références à niveau égal, versions streaming et club, cours et vidéos sourcés. Utiliser quand l'utilisateur mixe un de ces genres, compare ses références dans Live ou prépare une version club. Diagnostic et contrôle qualité → ingenieur-mixage.
 ---
 
 # Mixage professionnel de musique électronique

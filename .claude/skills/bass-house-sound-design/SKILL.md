@@ -1,6 +1,6 @@
 ---
 name: bass-house-sound-design
-description: Bibliothèque Bass House hors basses pour le rôle sound-designer-serum — stabs Serum 2 sans Basic Shapes (organ, vowel « wah », métallique, disco, rave sync), pads, synthés rythmiques, leads et impacts, trois prototypes Wavetable natif (wobble, stab, pad évolutif) et effets spectraux de Live 12 (Spectral Resonator, Spectral Time) employés pour fabriquer puis imprimer un son, avec motif MIDI de départ (C3 = 60). Utilise ce skill quand l'utilisateur demande un stab ou un accord house, un pad, un lead, un impact ou une texture spectrale pour de la Bass House, ou le même patch dans Wavetable. Les basses (sub, Reese, wub, growl, donk…) relèvent de serum-2-basses-house-future-house, le choix du moteur et le tableau de réglages vérifiés de sound-designer-serum, le chargement et les clics de vst-sound-design, un son qui disparaît dans le mix d'ingenieur-mixage.
+description: Bibliothèque Bass House hors basses — stabs Serum 2 (organ, vowel « wah », métallique, disco, rave sync), pads, leads, impacts, prototypes Wavetable natif et effets spectraux imprimés. Utiliser quand l'utilisateur demande un stab, un accord house, un pad, un lead, un impact ou une texture spectrale en Bass House, ou le même patch dans Wavetable. Basses (sub, Reese, wub, growl) → serum-2-basses-house-future-house.
 ---
 
 # Sound design Bass House
