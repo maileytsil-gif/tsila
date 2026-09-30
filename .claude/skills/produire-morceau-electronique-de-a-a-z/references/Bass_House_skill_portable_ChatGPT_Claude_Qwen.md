@@ -22,7 +22,7 @@ Valeurs indicatives à ajuster au tempo, à la hauteur et au mix.
 
 | Famille | Construction | Enveloppe / modulation | Vérification |
 |---|---|---|---|
-| Sub | Sine Operator ou Serum 2, mono | Attaque 2–10 ms si clic, release 50–100 ms (20–30 ms si les notes se suivent), glide si voulu | Somme kick/sub et phase; laisser des silences MIDI |
+| Sub | Sine Operator ou Serum 2, mono | Attaque 2–10 ms si clic, release 60–100 ms, plus courte que l'écart entre deux notes (`kick-bass-equilibre` §2) ; notes enchaînées : legato mono plutôt qu'une release courte, glide si voulu | Somme kick/sub et phase; laisser des silences MIDI |
 | Wobble / growl | Wavetable riche, filtre LP/BP, FM légère et saturation dosée | LFO sync 1/8 ou motif dessiné; moduler table et filtre | Réponse au kick; sub séparé si timbre très variable |
 | Reese | Deux saw désaccordées de ±15 (doux) à ±30 cents (DnB) ; sub sinus séparé | Filtre lent, unison prudent | Contrôler battements et mono du grave |
 | Donk / métallique | Operator FM, carrier et modulateur sine, ratio 2 puis 2,7 | Decay modulateur 30–200 ms; pitch bref en option | Ratio non entier souvent inharmonique; contrôler aigus |
@@ -87,7 +87,7 @@ Il n'existe pas un unique « mode spectral » commun à Wavetable et aux effets 
 |---|---|---|
 | Spectral Resonator | Résonances accordées, harmoniques, decay et modulation | Tonaliser un hit, vocal chop, percussion; générer une réponse métallique ou un pad à partir d'une source courte |
 | Spectral Time | Gel spectral et retard dont les bandes de fréquences peuvent évoluer différemment | Transition figée, queue d'impact, texture glitch, riser et espace mouvant |
-| Spectrum | Mesure des fréquences | Vérifier la hauteur et les zones d'énergie, sans traitement audio |
+| Spectrum | Mesure des fréquences | Vérifier la hauteur et les zones d'énergie, sans traitement audio (dans ce workflow : SPAN, plug-in tiers ; pas de nouveau Spectrum, règle 6) |
 
 ## Spectral Resonator : procédure
 

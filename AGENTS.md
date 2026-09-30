@@ -20,7 +20,7 @@ Ce fichier est lu par Claude Code (importé par `CLAUDE.md`), Qwen Code (`.qwen/
 ## Règles de l'utilisateur pour chaque morceau
 
 - **Référence** : au moins une, choisie **avec** l'utilisateur selon le style (titre, artiste, critères : groove, timbre, structure, mix, énergie). Proposer des candidats si elle manque, faire valider avant de fixer le brief. Ne jamais copier mélodie, paroles ni enregistrement ; pas d'audio de référence dans une sortie sans droits.
-- **Émotions** : une ambiance dominante et **une à quatre émotions au total**, placées en mesures (`composer-trajectoire-emotionnelle`).
+- **Émotions** : une ambiance générale et **une à quatre émotions au total**, dont une dominante, placées en mesures (`composer-trajectoire-emotionnelle`).
 - **Grave** : sub et basse médium dans **deux instruments** séparés (sub mono).
 - **Signature sous 124 BPM** (strictement) : kick Serum 2 doux, clair et chaleureux, dont « Solomun feat. Jamie Foxx – Ocean » n'est que la **référence du kick** ; hats fins, clap net et discret, adaptés au morceau et à sa propre référence. Tester en contexte, adapter si elle contrarie le groove voulu.
 - **Drops** : variation audible de batterie ou de transition avant chaque frontière de huit mesures (fill, retrait de kick, roulement, reverse, impact, silence), en alternant les gestes.
@@ -31,7 +31,7 @@ Ce fichier est lu par Claude Code (importé par `CLAUDE.md`), Qwen Code (`.qwen/
 ## Règles du workflow (toujours)
 
 1. **Une étape par échange** : annoncer le plan complet, exécuter ou faire valider une seule étape ; l'utilisateur corrige dans Live entre deux, donc relire l'état réel avant d'agir.
-2. **Avant toute écriture dans Live** : Set sauvé sous un nouveau nom, `lom.py ping` puis `lom.py state --json`, transport vérifié. Après : relire. Les capacités du bridge, de Producer Pal et des plug-ins se **découvrent** dans la session, jamais supposées.
+2. **Avant toute écriture dans Live** : Set sauvé sous un nouveau nom, état relu — `lom.py ping` puis `lom.py state --json` (Claude), `agent_gateway.py inspect /ping` puis `/state` (autres agents) —, transport vérifié. Après : relire. Les capacités du bridge, de Producer Pal et des plug-ins se **découvrent** dans la session, jamais supposées.
 3. **C3 = 60** (numérotation Ableton) ; le numéro MIDI fait foi.
 4. **Jamais « entendu »** : un agent n'écoute ni le Set, ni un rendu, ni une vidéo. Distinguer réglé et relu, mesuré (export, niveaux relatifs), proposé. Les tests d'écoute reviennent à l'utilisateur. Ne jamais inventer une écoute, un rendu, un preset, un stem, un Set ou une approbation.
 5. **Pas de nouvel effet natif de Live** dans les chaînes de mix (règle 6 d'`ableton-live-session`) ; instruments natifs tolérés ; traitements par plug-ins tiers.
@@ -40,4 +40,4 @@ Ce fichier est lu par Claude Code (importé par `CLAUDE.md`), Qwen Code (`.qwen/
 
 ## Modifier un skill
 
-Dans ce dépôt, jamais dans une copie installée. Puis `python3 outils/verifier_skills.py` (en-têtes, chemins, copies jumelles, lien `.qwen`, carte), commit, et `bash outils/installer.sh --appliquer` sur le Mac. Un skill en double (skill autonome et corpus du skill A à Z) se corrige dans les deux fichiers : le vérificateur refuse deux jumeaux différents.
+Dans ce dépôt, jamais dans une copie installée. Puis `python3 outils/verifier_skills.py` (en-têtes, chemins, copies jumelles, lien `.qwen`, carte), commit **seulement à la demande de l'utilisateur**, et `bash outils/installer.sh --appliquer` sur le Mac. Qwen Code et les autres agents proposent un diff sans l'appliquer. Un skill en double (skill autonome et corpus du skill A à Z) se corrige dans les deux fichiers : le vérificateur refuse deux jumeaux différents.

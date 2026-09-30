@@ -12,7 +12,7 @@ Il n'existe pas un unique « mode spectral » commun à Wavetable et aux effets 
 |---|---|---|
 | Spectral Resonator | Résonances accordées, harmoniques, decay et modulation | Tonaliser un hit, vocal chop, percussion; générer une réponse métallique ou un pad à partir d'une source courte |
 | Spectral Time | Gel spectral et retard dont les bandes de fréquences peuvent évoluer différemment | Transition figée, queue d'impact, texture glitch, riser et espace mouvant |
-| Spectrum | Mesure des fréquences | Vérifier la hauteur et les zones d'énergie, sans traitement audio |
+| Spectrum | Mesure des fréquences | Vérifier la hauteur et les zones d'énergie, sans traitement audio (dans ce workflow : SPAN, plug-in tiers ; pas de nouveau Spectrum, règle 6) |
 
 ## Spectral Resonator : procédure
 

@@ -26,7 +26,7 @@ while [[ $# -gt 0 ]]; do
     --producer-pal-qwen) ppal=1 ;;
     --appliquer) appliquer=1 ;;
     --skill) shift; [[ $# -gt 0 ]] || { echo "--skill attend un nom" >&2; exit 2; }; choix="$choix $1" ;;
-    -h|--help) sed -n '2,15p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
+    -h|--help) sed -n '2,13p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
     *) echo "option inconnue : $1 (--help)" >&2; exit 2 ;;
   esac
   shift
@@ -93,10 +93,24 @@ copier() {  # $1 nom, $2 dossier de skills cible, $3 outil
   done
 }
 
+if [[ $claude -eq 1 && -e "$HOME/.claude/skills" && "$HOME/.claude/skills" -ef "$source_skills" ]]; then
+  echo "Claude Code : ~/.claude/skills est le dossier du dépôt lui-même (lien) : rien à copier"
+  claude=0
+fi
 if [[ $claude -eq 1 ]]; then
   echo "Claude Code → ~/.claude/skills"
   [[ $appliquer -eq 1 ]] && mkdir -p "$HOME/.claude/skills"
   for nom in $choix; do copier "$nom" "$HOME/.claude/skills" claude; done
+fi
+
+# ~/.qwen/skills lui-même en lien : écrire dedans modifierait sa cible (copie Claude ou dépôt). Ne rien y toucher.
+if [[ $qwen -eq 1 && -L "$HOME/.qwen/skills" ]]; then
+  if [[ -e "$HOME/.claude/skills" && "$HOME/.qwen/skills" -ef "$HOME/.claude/skills" ]]; then
+    echo "Qwen Code : ~/.qwen/skills est un lien vers ~/.claude/skills : déjà partagé, rien à faire"
+  else
+    echo "Qwen Code : ~/.qwen/skills est un lien vers $(readlink "$HOME/.qwen/skills") : laissé tel quel (le remplacer à la main par un dossier pour que l'installateur y crée les liens)" >&2
+  fi
+  qwen=0
 fi
 
 if [[ $qwen -eq 1 ]]; then
@@ -105,7 +119,7 @@ if [[ $qwen -eq 1 ]]; then
   for nom in $choix; do
     lien="$HOME/.qwen/skills/$nom"; cible="$HOME/.claude/skills/$nom"
     if [[ -d "$cible" || ( $claude -eq 1 && $appliquer -eq 0 ) ]]; then
-      if [[ -L "$lien" && "$(readlink "$lien")" == "$cible" ]]; then echo "  qwen : $nom déjà relié"; continue; fi
+      if [[ -L "$lien" && -e "$lien" && "$lien" -ef "$cible" ]]; then echo "  qwen : $nom déjà relié"; continue; fi
       if [[ -e "$lien" || -L "$lien" ]]; then
         faire "qwen : $nom existant sauvegardé ($sauvegardes/qwen/$nom)" sauvegarder "$lien" qwen
       fi
@@ -127,9 +141,17 @@ if [[ $ppal -eq 1 ]]; then
       python3 - "$reglages" <<'PY'
 import json, pathlib, sys
 p = pathlib.Path(sys.argv[1])
-data = json.loads(p.read_text()) if p.exists() and p.read_text().strip() else {}
-if not isinstance(data, dict): raise SystemExit(f'{p} : objet JSON attendu')
-data.setdefault('mcpServers', {})['producer-pal'] = {'command': 'npx', 'args': ['-y', 'producer-pal@latest']}
+texte = p.read_text() if p.exists() else ''
+try:
+    data = json.loads(texte) if texte.strip() else {}
+except json.JSONDecodeError as e:
+    raise SystemExit(f'{p} n\'est pas du JSON strict ({e.msg}, ligne {e.lineno} ; commentaires ?) : rien n\'est écrit. '
+                     'Ajouter à la main dans "mcpServers" : "producer-pal": {"command": "npx", "args": ["-y", "producer-pal@latest"]}')
+if not isinstance(data, dict): raise SystemExit(f'{p} : objet JSON attendu, rien n\'est écrit')
+serveurs = data.get('mcpServers') or {}
+if not isinstance(serveurs, dict): raise SystemExit(f'{p} : "mcpServers" doit être un objet, rien n\'est écrit')
+serveurs['producer-pal'] = {'command': 'npx', 'args': ['-y', 'producer-pal@latest']}
+data['mcpServers'] = serveurs
 p.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
 PY
     }

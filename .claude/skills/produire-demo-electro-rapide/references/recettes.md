@@ -53,7 +53,7 @@ Grille d'essai (Original Mix) : intro 16, exposition 16, montée 8, drop 32, bre
 
 ## Électro/R&B chill, 112 BPM, Fa mineur
 
-Essai : Fm9, Dbmaj7, Abmaj9, Eb6/9, chaque accord sur deux mesures. Tester les renversements pour libérer le grave. Sub legato sur changements avec glissés rares; médiums soul syncopés en réponse au chant. Kick discret, caisse claire/clap expressif, hats aérés; ménage de l'espace pour la voix.
+Essai : Fm9, Dbmaj7, Abmaj9, Eb69 (Eb6/9), chaque accord sur deux mesures. Tester les renversements pour libérer le grave. Sub legato sur changements avec glissés rares; médiums soul syncopés en réponse au chant. Kick discret, caisse claire/clap expressif, hats aérés; ménage de l'espace pour la voix.
 
 Grille d'essai : intro 16, couplet 16, refrain 16, pont 8, couplet 16, refrain 16, break 8, dernier refrain 16, outro 8 = 120 mesures, environ 4 min 17 s.
 

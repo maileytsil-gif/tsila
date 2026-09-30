@@ -27,7 +27,7 @@ def review(record):
     if not record.get('listening'):
         suggestions.append({'priority':'high','action':'Record actual listening conditions (headphones/mono/speakers) and observations.'})
     if completed and record.get('user_feedback') == 'approved':
-        suggestions.append({'priority':'normal','action':'Extract one reusable successful procedure into the Codex skill and test it against a second song; avoid changing the Live bridge without a reason.'})
+        suggestions.append({'priority':'normal','action':'Propose to the user one reusable successful procedure as a skill change (diff), applied only with their approval and tested against a second song; never change the Live bridge without a reason.'})
     return {'session_id':record['session_id'],'quality_gate':'evidence_present' if completed else 'incomplete',
             'artist_approved':record.get('user_feedback')=='approved',
             'automatic_code_change':False,'suggestions':suggestions,

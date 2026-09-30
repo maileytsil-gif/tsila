@@ -4,6 +4,7 @@
 """
 import json
 import os
+import shutil
 import pathlib
 import subprocess
 import sys
@@ -79,6 +80,60 @@ class Installer(unittest.TestCase):
         self.assertEqual(data['model'], {'name': 'qwen3-coder-plus'})
         self.assertEqual(data['mcpServers']['producer-pal']['command'], 'npx')
         self.assertIn('déjà déclaré', installer(self.home, '--producer-pal-qwen', '--appliquer').stdout)
+
+    def test_producer_pal_json_commente_refuse_sans_ecrire(self):
+        reglages = self.home / '.qwen' / 'settings.json'
+        texte = '{\n  // réglages de l utilisateur\n  "model": {"name": "qwen3"}\n}\n'
+        reglages.write_text(texte)
+        r = installer(self.home, '--producer-pal-qwen', '--appliquer')
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn('JSON strict', r.stderr)
+        self.assertNotIn('Traceback', r.stderr)
+        self.assertEqual(reglages.read_text(), texte)
+
+    def test_producer_pal_mcpservers_null(self):
+        reglages = self.home / '.qwen' / 'settings.json'
+        reglages.write_text('{"mcpServers": null}')
+        r = installer(self.home, '--producer-pal-qwen', '--appliquer')
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertIn('producer-pal', json.loads(reglages.read_text())['mcpServers'])
+
+    def test_qwen_skills_deja_lien_vers_claude(self):
+        installer(self.home, '--claude', '--skill', 'resampling', '--appliquer')
+        (self.home / '.qwen' / 'skills').symlink_to(self.home / '.claude' / 'skills')
+        r = installer(self.home, '--qwen', '--skill', 'resampling', '--appliquer')
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertIn('déjà partagé', r.stdout)
+        copie = self.home / '.claude' / 'skills' / 'resampling'
+        self.assertTrue(copie.is_dir() and not copie.is_symlink())
+        self.assertEqual((copie / 'SKILL.md').read_bytes(), (SKILLS / 'resampling' / 'SKILL.md').read_bytes())
+        self.assertFalse((self.home / '.skills-sauvegardes').exists())
+
+    def test_qwen_skills_lien_ailleurs_laisse_tel_quel(self):
+        ailleurs = self.home / 'ailleurs'
+        (ailleurs / 'resampling').mkdir(parents=True)
+        (ailleurs / 'resampling' / 'SKILL.md').write_text('à moi')
+        (self.home / '.qwen' / 'skills').symlink_to(ailleurs)
+        r = installer(self.home, '--qwen', '--skill', 'resampling', '--appliquer')
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertIn('laissé tel quel', r.stderr)
+        self.assertEqual((ailleurs / 'resampling' / 'SKILL.md').read_text(), 'à moi')
+
+    def test_claude_skills_lien_vers_le_depot_ne_touche_pas_au_depot(self):
+        # Sur une copie du dépôt : le vrai dépôt n'est jamais exposé à ce cas.
+        depot = self.home / 'depot'
+        shutil.copytree(OUTILS, depot / 'outils', ignore=shutil.ignore_patterns('__pycache__'))
+        shutil.copytree(SKILLS / 'resampling', depot / '.claude' / 'skills' / 'resampling')
+        (self.home / '.claude' / 'skills').symlink_to(depot / '.claude' / 'skills')
+        env = dict(os.environ, HOME=str(self.home))
+        r = subprocess.run(['bash', str(depot / 'outils' / 'installer.sh'), '--claude', '--qwen', '--appliquer'],
+                           env=env, capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertIn('dossier du dépôt lui-même', r.stdout)
+        source = depot / '.claude' / 'skills' / 'resampling'
+        self.assertTrue(source.is_dir() and not source.is_symlink())
+        self.assertFalse((self.home / '.skills-sauvegardes').exists())
+        self.assertEqual((self.home / '.qwen' / 'skills' / 'resampling').resolve(), source.resolve())
 
     def test_skill_inconnu_refuse(self):
         r = installer(self.home, '--skill', 'nexiste-pas')
