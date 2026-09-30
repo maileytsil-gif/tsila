@@ -150,6 +150,86 @@ class Verificateur(unittest.TestCase):
         self.assertTrue(lien.is_symlink())
         self.assertEqual(sorted(p.name for p in lien.iterdir()), sorted(p.name for p in SKILLS.iterdir()))
 
+    def _copie(self):
+        """Copie du dépôt (skills, outils, bridge, fichiers racine, .qwen) : les liens cassés s'injectent là, jamais dans le dépôt."""
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        depot = pathlib.Path(tmp.name) / 'depot'
+        sans_cache = shutil.ignore_patterns('__pycache__')
+        shutil.copytree(SKILLS, depot / '.claude' / 'skills', symlinks=True, ignore=sans_cache)
+        shutil.copytree(OUTILS, depot / 'outils', ignore=sans_cache)
+        shutil.copytree(DEPOT / 'lom-bridge', depot / 'lom-bridge', ignore=sans_cache)
+        for nom in ('AGENTS.md', 'CLAUDE.md', 'QWEN.md', 'README.md'):
+            shutil.copy2(DEPOT / nom, depot / nom)
+        (depot / '.qwen').mkdir()
+        shutil.copy2(DEPOT / '.qwen' / 'settings.json', depot / '.qwen' / 'settings.json')
+        (depot / '.qwen' / 'skills').symlink_to('../.claude/skills')
+        return depot
+
+    def _verifier(self, depot):
+        return subprocess.run([sys.executable, '-B', str(depot / 'outils' / 'verifier_skills.py')],
+                              capture_output=True, text=True)
+
+    def _erreurs(self, sortie, motif):
+        return [l for l in sortie.splitlines() if l.startswith('ERREUR') and motif in l]
+
+    def test_chemin_suivi_d_arguments(self):
+        depot = self._copie()
+        (depot / '.claude' / 'skills' / 'resampling' / 'essai-liens.md').write_text(
+            'Lancer `python3 scripts/absent.py --verifier references/*.md`.\n'
+            'Mesurer : `../kick-bass-equilibre/scripts/absent_check.py kick.wav sub.wav`.\n'
+            'Voir `lire ../skill-absent/SKILL.md` ; valide : `python3 ../kick-bass-equilibre/scripts/kick_bass_check.py kick.wav sub.wav`.\n',
+            encoding='utf-8')
+        r = self._verifier(depot)
+        self.assertEqual(r.returncode, 1, r.stdout)
+        erreurs = self._erreurs(r.stdout, 'essai-liens.md')
+        self.assertEqual(len(erreurs), 3, r.stdout)
+        for n, cible in ((1, 'scripts/absent.py'), (2, '../kick-bass-equilibre/scripts/absent_check.py'),
+                         (3, '../skill-absent/SKILL.md')):
+            self.assertIn(f'essai-liens.md:{n} : chemin introuvable « {cible} »', r.stdout)
+
+    def test_chemin_relatif_au_dossier_des_skills(self):
+        depot = self._copie()
+        (depot / '.claude' / 'skills' / 'resampling' / 'essai-liens.md').write_text(
+            'Moteur : `sound-designer-serum/references/moteurs-synthese.md`.\n'
+            'Absent : `sound-designer-serum/references/absent.md`.\n', encoding='utf-8')
+        r = self._verifier(depot)
+        self.assertEqual(self._erreurs(r.stdout, 'essai-liens.md'),
+                         ['ERREUR .claude/skills/resampling/essai-liens.md:2 : chemin introuvable '
+                          '« sound-designer-serum/references/absent.md »'], r.stdout)
+
+    def test_fichiers_racine_scannes(self):
+        depot = self._copie()
+        readme = depot / 'README.md'
+        texte = readme.read_text(encoding='utf-8').rstrip('\n')
+        n = len(texte.splitlines())
+        readme.write_text(texte + '\n\n- `lom-bridge/absent.py` et `outils/absent.sh`\n'
+                          '- `python3 composer-hooks-funk-electro/scripts/absent.py --verifier`\n'
+                          '- valides ou hors dépôt : `python3 lom-bridge/agent_gateway.py inspect /ping`, `~/.qwen/absent`\n',
+                          encoding='utf-8')
+        r = self._verifier(depot)
+        self.assertEqual(r.returncode, 1, r.stdout)
+        for ligne, cible in ((n + 2, 'lom-bridge/absent.py'), (n + 2, 'outils/absent.sh'),
+                             (n + 3, 'composer-hooks-funk-electro/scripts/absent.py')):
+            self.assertIn(f'README.md:{ligne} : chemin introuvable « {cible} »', r.stdout)
+        self.assertNotIn(f'README.md:{n + 4} :', r.stdout)
+
+    def test_portable_desynchronise(self):
+        depot = self._copie()
+        skills = depot / '.claude' / 'skills'
+        source = 'bass-house-sound-design/references/wavetable.md'
+        lignes = (skills / source).read_text(encoding='utf-8').splitlines(keepends=True)
+        n = next(i for i, l in enumerate(lignes, 1) if l.strip())
+        lignes[n - 1] = lignes[n - 1].rstrip('\n') + ' (corrigé)\n'
+        # Les deux jumeaux corrigés ensemble, la copie portable oubliée.
+        for f in (source, 'produire-morceau-electronique-de-a-a-z/references/bass-house-wavetable.md'):
+            (skills / f).write_text(''.join(lignes), encoding='utf-8')
+        r = self._verifier(depot)
+        self.assertEqual(r.returncode, 1, r.stdout)
+        self.assertNotIn('jumeaux différents', r.stdout)
+        self.assertEqual(len(self._erreurs(r.stdout, 'portable désynchronisé')), 1, r.stdout)
+        self.assertIn(f'portable désynchronisé : .claude/skills/{source} ligne {n} ', r.stdout)
+
 
 if __name__ == '__main__':
     unittest.main()
