@@ -22,14 +22,14 @@ Valeurs indicatives à ajuster au tempo, à la hauteur et au mix.
 
 | Famille | Construction | Enveloppe / modulation | Vérification |
 |---|---|---|---|
-| Sub | Sine Operator ou Serum 2, mono | Attaque 2–10 ms si clic, release court, glide si voulu | Somme kick/sub et phase; laisser des silences MIDI |
+| Sub | Sine Operator ou Serum 2, mono | Attaque 2–10 ms si clic, release 50–100 ms (20–30 ms si les notes se suivent), glide si voulu | Somme kick/sub et phase; laisser des silences MIDI |
 | Wobble / growl | Wavetable riche, filtre LP/BP, FM légère et saturation dosée | LFO sync 1/8 ou motif dessiné; moduler table et filtre | Réponse au kick; sub séparé si timbre très variable |
-| Reese | Deux saw légèrement désaccordées | Filtre lent, unison prudent | Contrôler battements et mono du grave |
+| Reese | Deux saw désaccordées de ±15 (doux) à ±30 cents (DnB) ; sub sinus séparé | Filtre lent, unison prudent | Contrôler battements et mono du grave |
 | Donk / métallique | Operator FM, carrier et modulateur sine, ratio 2 puis 2,7 | Decay modulateur 30–200 ms; pitch bref en option | Ratio non entier souvent inharmonique; contrôler aigus |
 | Stab / pluck | Saw ou square, filtre LP/BP | A 0–10 ms, D 80–300 ms, S bas, R 50–180 ms | Contretemps choisis, espaces de la basse |
 | Pad chaud / sombre | Saw peu désaccordées, LP, éventuellement noise | A 300–1500 ms, R 1–4 s; mouvement lent | Écarter du sub, réduire dans le drop si masquage |
 | Pad rythmique | Pad simple et gate de volume | Motif 1/8 ou 1/16 avec silences | Préserver transitoires kick/basse |
-| Lead | Saw/square ou FM modérée; mono si glide | Portamento initial 30–120 ms, bends; delay sur retour | Hook bref, répété et varié, lisible en mono |
+| Lead | Saw/square ou FM modérée; mono si glide | Portamento initial 30–120 ms, bends; delay interne de Serum 2 ou plug-in tiers sur retour (règle 6 d'`ableton-live-session`) | Hook bref, répété et varié, lisible en mono |
 | Impact | Hit, bruit, queue; sub tonal facultatif | Enveloppes distinctes, reverse d'une queue | Éviter cumul de sub avec kick du drop |
 
 ## Exercice à 126 BPM en Fa mineur
@@ -48,7 +48,7 @@ Sur une mesure de 16 doubles croches, kick sur 1, 5, 9, 13; stab Ab–C–Eb sur
 
 # Wavetable dans Live 12 : applications Bass House
 
-Références vérifiées : [manuel officiel, section 31.13](https://www.ableton.com/en/manual/live-instrument-reference/#wavetable), [pads évolutifs](https://www.ableton.com/fr/blog/pad-it-out-10-ways-make-distinctive-pad-sounds/), [charge CPU](https://help.ableton.com/hc/en-us/articles/360000036930-Managing-CPU-load-when-using-Wavetable).
+Références vérifiées : [manuel officiel, section 30.13](https://www.ableton.com/en/manual/live-instrument-reference/#wavetable), [pads évolutifs](https://www.ableton.com/fr/blog/pad-it-out-10-ways-make-distinctive-pad-sounds/), [charge CPU](https://help.ableton.com/hc/en-us/articles/360000036930-Managing-CPU-load-when-using-Wavetable).
 
 ## Architecture et réglage
 
@@ -60,14 +60,14 @@ Références vérifiées : [manuel officiel, section 31.13](https://www.ableton.
 
 ## Trois prototypes à construire et comparer
 
-1. **Wobble body** : OSC 1 riche → filtre LP/BP → LFO sync sur cutoff, avec modulation de position plus lente ou de moindre amplitude. Note courte sur les trous de la basse; sub séparé au départ. Ajouter saturation après Wavetable et ajuster dans le morceau.
+1. **Wobble body** : OSC 1 riche → filtre LP/BP → LFO sync sur cutoff, avec modulation de position plus lente ou de moindre amplitude. Note courte sur les trous de la basse; sub séparé au départ. Saturation : Drive du filtre de Wavetable ou plug-in tiers (pas de Saturator natif, règle 6 d'`ableton-live-session`), ajustée dans le morceau.
 2. **Stab** : OSC 1 saw → Env 2 court sur cutoff; Amp avec attaque brève et sustain faible. Tester vélocité sur cutoff dans l'onglet MIDI; jouer deux accents différents en contretemps et comparer.
 3. **Pad évolutif** : poly, unison Classic modéré, Amp à attaque/release longs; LFO 1 lent sur position OSC 1 et LFO 2 à autre vitesse sur filtre. Automatiser niveau et filtre par section. L'article Ableton décrit aussi une modulation croisée LFO 1 → vitesse LFO 2 → position de table.
 
 ## Performance et contrôle
 
 - Oscillateur supplémentaire, voix d'unison, longues releases et second filtre multiplient le travail CPU. Dans un accord à trois notes, deux oscillateurs et huit voix d'unison peuvent produire 48 voix. Imprimer le patch en audio une fois stabilisé.
-- Le mode Hi-Quality peut changer subtilement le son; comparer avant le rendu final et ne pas le présenter comme une amélioration automatique.
+- Le mode Hi-Quality (nom à vérifier dans l'interface) peut changer subtilement le son; comparer avant le rendu final et ne pas le présenter comme une amélioration automatique.
 - Vérifier en contexte avec kick, sub et hats. Les fréquences de coupe et niveaux de sidechain restent dépendants du mix, pas de l'instrument.
 
 
@@ -76,6 +76,8 @@ Références vérifiées : [manuel officiel, section 31.13](https://www.ableton.
 # Traitement spectral dans Ableton Live 12 Suite
 
 Sources : [manuel des effets Live 12, Spectral Resonator et Spectral Time](https://www.ableton.com/en/manual/live-audio-effect-reference/), [explication FFT par Ableton](https://www.ableton.com/en/blog/spectral-sound-a-look-at-live-11s-new-spectral-devices/), [guide Spectral Time](https://www.ableton.com/fr/blog/freeze-delay-and-deconstruct-sound-design-with-spectral-time/). Vérifié le 28 septembre 2026.
+
+**Dans ce workflow** : Spectral Resonator et Spectral Time sont des effets natifs ; la règle 6 d'`ableton-live-session` les exclut des chaînes de mix. Les employer seulement sur une piste de sound design dédiée, imprimer le résultat (`resampling`) puis retirer le device ; jamais sur un retour ni dans une chaîne de mix. Les écoutes demandées ci-dessous reviennent à l'utilisateur.
 
 ## Clarifier le vocabulaire
 
@@ -92,14 +94,14 @@ Il n'existe pas un unique « mode spectral » commun à Wavetable et aux effets 
 1. Placer l'effet après une source audio courte et riche (clap, voix, bruit, stab), de préférence en parallèle pour préserver l'attaque originale. Essayer une note de tonalité en mode **Internal**; en mode **MIDI**, choisir une piste MIDI dans External Source et jouer les notes ou accords voulus.
 2. Régler **Decay** selon la place dans le groove; **Harmonics** détermine la brillance et **HF/LF Damp** atténuent les partiels hauts/bas. **Stretch** change l'espacement des harmoniques : explorer avec prudence si l'effet devient dissonant. **Shift** transpose le spectre de l'entrée, pas celui du résonateur.
 3. Tester **None**, **Chorus**, **Wander** et **Granular** dans la section Modulation. Pour un son robotique court, commencer sans modulation ou avec Chorus subtil; pour une texture mouvante, essayer Wander; Granular donne un grain fragmenté.
-4. Sur une piste de retour, régler Dry/Wet à 100 %, filtrer au besoin la sortie traitée et imprimer une sélection audio. En MIDI Poly, MIDI Gate est toujours actif; garder de courtes notes pour des réponses rythmiques.
+4. Sur la piste de sound design dédiée, régler Dry/Wet à 100 %, filtrer au besoin la sortie traitée et imprimer une sélection audio. En MIDI Poly, MIDI Gate est toujours actif; garder de courtes notes pour des réponses rythmiques.
 
 ## Spectral Time : procédure
 
 1. Choisir **Freezer** pour tenir une tranche de son, ou **Delay** pour répéter des composantes. Le gel peut être manuel, déclenché à la détection de transitoires (**Onsets**) ou à intervalles synchronisés (**Sync**).
 2. Sur une voix ou un impact de fin de phrase, activer Freeze juste avant le changement de section; automatiser le volume de retour puis enregistrer la queue. Pour un glitch, utiliser Retrigger Sync et raccourcir l'intervalle.
 3. Dans Delay, **Tilt** retarde différemment graves et aigus, **Spray** disperse les temps de manière aléatoire, **Mask** limite Tilt/Spray à une région grave ou aiguë, **Shift** déplace la fréquence des répétitions. Garder la basse principale hors de la sortie traitée si elle trouble le kick.
-4. **Resolution** élevé améliore la précision mais augmente la latence; réduire en jeu/monitoring si nécessaire. L'ordre Freezer → Delay ou Delay → Freezer se choisit selon l'effet désiré. Sur retour, Dry/Wet global à 100 %.
+4. **Resolution** élevé améliore la précision mais augmente la latence; réduire en jeu/monitoring si nécessaire. L'ordre Freezer → Delay ou Delay → Freezer se choisit selon l'effet désiré. Dry/Wet global à 100 %, puis imprimer et retirer le device.
 
 ## Vérifications
 
@@ -112,7 +114,9 @@ Il n'existe pas un unique « mode spectral » commun à Wavetable et aux effets 
 
 # Stabs House dans Serum 2, sans Basic Shapes
 
-Références Xfer Records : [sélection des tables](https://xferrecords.com/web-manual/serum-2/choosing-oscillator-or-filter-options), [routage des oscillateurs](https://xferrecords.com/web-manual/serum-2/routing-an-oscillator-or-filter), [modes Warp](https://xferrecords.com/manual/serum-2/docs), [modulation des commandes](https://xferrecords.com/web-manual/serum-2/using-knobs-and-sliders). Les catégories **Analog, Digital, S2 Tables, Spectral, Vowel** sont visibles dans le sélecteur. Les noms individuels varient avec bibliothèque/version : spécifier catégorie + caractère et auditionner plusieurs tables. Réglages ci-dessous = points de départ personnels, pas valeurs prescrites par Xfer.
+Références Xfer Records : [sélection des tables](https://xferrecords.com/web-manual/serum-2/choosing-oscillator-or-filter-options), [routage des oscillateurs](https://xferrecords.com/web-manual/serum-2/routing-an-oscillator-or-filter), [manuel Serum 2](https://xferrecords.com/manual/serum-2/docs) (liste des warps relevée dans le dépôt : `sound-designer-serum/references/moteurs-synthese.md`), [modulation des commandes](https://xferrecords.com/web-manual/serum-2/using-knobs-and-sliders). Les catégories **Analog, Digital, S2 Tables, Spectral, Vowel** sont visibles dans le sélecteur. Les noms individuels varient avec bibliothèque/version : spécifier catégorie + caractère et auditionner plusieurs tables. Réglages ci-dessous = points de départ personnels, pas valeurs prescrites par Xfer.
+
+Notes en numérotation Ableton, C3 = 60 (la version d'origine les écrivait en notation scientifique, une octave au-dessus : « Ab3 C4 Eb4 ») ; le numéro MIDI fait foi. Filtres : noms de Serum 2 `Low 12/24`, `Band` (`MG Low` pour la variante ladder). La catégorie « S2 Tables », le nom « Default Shapes » et le preset `- Init -` ne figurent pas dans la doc Serum 2 du dépôt : les relever dans l'interface avant de les prescrire. Effets : ceux de Serum 2 (DISTORTION, CHORUS, DELAY, REVERB internes) ; dans Live, plug-ins tiers seulement (règle 6 d'`ableton-live-session`), Hybrid Reverb toléré sur un retour.
 
 ## Démarrage commun
 
@@ -120,11 +124,11 @@ Partir de `- Init -`. Dans OSC A choisir Wavetable et une table de la catégorie
 
 | Patch | Oscillateurs et filtre | ENV 1 (A/D/S/R) | ENV 2 → cutoff et traitement |
 |---|---|---|---|
-| **Organ chord sec** | OSC A catégorie Analog, choisir table à harmoniques régulières; WT POS à l'oreille, Unison 1–2. FILTER 1 LP 12, cutoff médium. | 3 ms / 180 ms / 0–15 % / 90 ms | ENV 2 : 0 / 120 ms / 0 / 70 ms, plage positive modérée; Saturation douce, petite room sur retour. Chord Fm7 sans F grave : Ab3 C4 Eb4. |
-| **Vowel stab « wah »** | OSC A catégorie Vowel, choisir table dont les positions contrastent; Unison 1. FILTER 1 BP, résonance prudente. | 2 ms / 220 ms / 0 / 80 ms | ENV 2 : 0 / 160 ms / 0 / 60 ms sur WT POS et cutoff, mouvements de sens ou profondeur différents; distorsion légère. Tester Ab3–C4 au contretemps puis écouter en mono. |
-| **Metallic / robot** | OSC A catégorie Digital ou Spectral (table wavetable, pas oscillateur de synthèse Spectral); Unison 1. Tester Warp Sync ou FM à faible profondeur. FILTER 1 BP ou LP 24. | 0–3 ms / 130 ms / 0 / 70 ms | ENV 2 : 0 / 90 ms / 0 / 40 ms sur cutoff et Warp, faible plage. EQ après distorsion si les aigus sifflent; pour un hit vraiment métallique, jouer une seule note puis resampler. |
-| **Warm disco / piano-like** | OSC A catégorie S2 Tables ou Analog, choisir une table douce mais riche; OSC B optionnel, table contrastée à -12 dB environ, routée aussi au filtre. FILTER 1 LP 24. | 4 ms / 280 ms / 10–25 % / 150 ms | ENV 2 : 0 / 190 ms / 0 / 80 ms sur cutoff. Chorus discret puis delay filtré en retour; accord Fm9 sans fondamentale : Ab3 C4 Eb4 G4. |
-| **Rave sync stab** | OSC A catégorie Analog ou Digital, table riche; Warp Sync en montant doucement jusqu'à l'attaque désirée. FILTER 1 LP ou BP selon couleur. | 0–3 ms / 120–200 ms / 0 / 60 ms | ENV 2 courte sur Warp et cutoff; automate la quantité de Warp aux fins de phrases. Une seule triade brève suffit avant le drop. |
+| **Organ chord sec** | OSC A catégorie Analog, choisir table à harmoniques régulières; WT POS à l'oreille, Unison 1–2. FILTER 1 `Low 12`, cutoff médium. | 3 ms / 180 ms / 0–15 % / 90 ms | ENV 2 : 0 / 120 ms / 0 / 70 ms, plage positive modérée; DISTORTION douce interne, petite room sur retour (Hybrid Reverb ou plug-in tiers). Chord Fm7 sans F grave : Ab2 C3 Eb3 (MIDI 56 60 63). |
+| **Vowel stab « wah »** | OSC A catégorie Vowel, choisir table dont les positions contrastent; Unison 1. FILTER 1 `Band`, résonance prudente. | 2 ms / 220 ms / 0 / 80 ms | ENV 2 : 0 / 160 ms / 0 / 60 ms sur WT POS et cutoff, mouvements de sens ou profondeur différents; distorsion légère. Tester Ab2–C3 (MIDI 56–60) au contretemps, puis faire écouter en mono. |
+| **Metallic / robot** | OSC A catégorie Digital ou Spectral (table wavetable, pas oscillateur de synthèse Spectral); Unison 1. Tester le warp `Sync`, ou une FM depuis OSC B ou SUB (source routée `None`) à faible profondeur. FILTER 1 `Band` ou `Low 24`. | 0–3 ms / 130 ms / 0 / 70 ms | ENV 2 : 0 / 90 ms / 0 / 40 ms sur cutoff et Warp, faible plage. EQ après distorsion si les aigus sifflent; pour un hit vraiment métallique, jouer une seule note puis resampler. |
+| **Warm disco / piano-like** | OSC A catégorie S2 Tables ou Analog, choisir une table douce mais riche; OSC B optionnel, table contrastée à -12 dB environ, routée aussi au filtre. FILTER 1 `Low 24`. | 4 ms / 280 ms / 10–25 % / 150 ms | ENV 2 : 0 / 190 ms / 0 / 80 ms sur cutoff. CHORUS discret interne, puis delay filtré (DELAY interne ou plug-in tiers en retour); accord Fm9 sans fondamentale : Ab2 C3 Eb3 G3 (MIDI 56 60 63 67). |
+| **Rave sync stab** | OSC A catégorie Analog ou Digital, table riche; Warp Sync en montant doucement jusqu'à l'attaque désirée. FILTER 1 `Low` ou `Band` selon couleur. | 0–3 ms / 120–200 ms / 0 / 60 ms | ENV 2 courte sur Warp et cutoff; automate la quantité de Warp aux fins de phrases. Une seule triade brève suffit avant le drop. |
 
 ## MIDI et arrangement
 
@@ -157,9 +161,9 @@ Pages et descriptifs consultés le 28 septembre 2026. Le contenu complet des vid
 - [Instruments Live](https://www.ableton.com/en/manual/live-instrument-reference/) : FM, wavetable et sampling.
 - [Effets Live](https://www.ableton.com/en/manual/live-audio-effect-reference/) : notamment Saturator.
 - [Manuel Serum 2, Xfer Records](https://xferrecords.com/web-manual/serum-2/welcome) : oscillateurs, filtres et modulation.
-- [Getting Started With Serum, Xfer](https://support.xferrecords.com/article/50-getting-started-with-serum) : aperçu des fonctions.
+- [Getting Started With Serum, Xfer](https://support.xferrecords.com/article/50-getting-started-with-serum) : article Serum 1 ; ne pas en reprendre les emplacements pour Serum 2.
 - [Serum 2 : sélection et routage](https://xferrecords.com/web-manual/serum-2/choosing-oscillator-or-filter-options) et [routage des oscillateurs](https://xferrecords.com/web-manual/serum-2/routing-an-oscillator-or-filter) : catégories et chemin vers FILTER 1.
-- [Serum 2 : modes Warp](https://xferrecords.com/manual/serum-2/docs) : Sync, FM et autres traitements d'oscillateur.
+- [Manuel Serum 2, index](https://xferrecords.com/manual/serum-2/docs) : page d'accueil du manuel ; liste des warps (Sync, FM…) relevée dans `sound-designer-serum/references/moteurs-synthese.md`.
 
 ## Vidéos repérées
 

@@ -13,7 +13,7 @@ Deux configurations cohérentes, pas un mélange :
 Le choix dépend du genre, de la longueur du kick et de la note du sub ; il se prend **avant** de mixer et se note dans la signature (skill `drums-signature`).
 
 ## 2. Accord, longueur, timing
-- Accorder le kick : fondamental à la tonique ou à la quinte (F1 = 43,7 Hz → kick à 87 ou 65 Hz) ; un kick désaccordé bat contre le sub. Kick synthé : macro Pitch / transposition de note ; sample : Simpler transpose (vérifier avec `analyze_synth.py --mono-note`).
+- Accorder le kick : fondamental à la tonique ou à la quinte (tonique F0 en numérotation Ableton, MIDI 29, 43,7 Hz → kick à 87 ou 65 Hz) ; un kick désaccordé bat contre le sub. Kick synthé : macro Pitch / transposition de note ; sample : Simpler transpose (vérifier avec `analyze_synth.py --mono-note`).
 - Longueur : décroissance du kick plus courte que l'espace entre kick et note de basse suivante ; sub avec release ≥ 60 ms (pas de clic) mais < intervalle des notes.
 - Timing : décaler la note de sub de −5 à −10 ms (ou le kick) quand la somme s'annule ; polarité inversée sur l'un des deux si la corrélation est négative (Utility « Phase Invert » natif, ou dans le synthé).
 
@@ -24,3 +24,5 @@ Le choix dépend du genre, de la longueur du kick et de la note du sub ; il se p
 
 ## 4. Sidechain et bus
 Compresseur sur SUB/BASS, source = piste kick (MIDI : Post FX ; piste AUDIO bouncée : Pre FX, convention d'el21), ratio 4:1, attaque 0,1–1 ms, release 80–120 ms de départ (une double-croche = 60000 / BPM / 4 ms : 125 ms à 120, 119 ms à 126) puis la valeur validée du projet, seuil pour 4–8 dB sur le sub tenu ; bus BASSES : Mono Maker < 120 Hz, glue lente (skills `mixage`, `effets-plugins`). Pompage audible → release plus courte ou sidechain filtré (le kick au-dessus de 60 Hz seulement).
+
+Au-delà de ce réglage (physique du grave, 808, recettes par genre, traduction téléphone → club, sources FabFilter) : `../construire-low-end-electronique/SKILL.md`.

@@ -1,9 +1,9 @@
 name: Skills — scripts et grilles hors Live
 on:
   push:
-    paths: [".claude/skills/**", ".github/workflows/skills.yml"]
+    paths: [".claude/skills/**", ".qwen/**", "outils/**", "AGENTS.md", "CLAUDE.md", "QWEN.md", ".github/workflows/skills.yml"]
   pull_request:
-    paths: [".claude/skills/**", ".github/workflows/skills.yml"]
+    paths: [".claude/skills/**", ".qwen/**", "outils/**", "AGENTS.md", "CLAUDE.md", "QWEN.md", ".github/workflows/skills.yml"]
 jobs:
   scripts:
     runs-on: ubuntu-latest
@@ -11,6 +11,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
+      - name: skills — en-têtes, chemins, copies jumelles, lien .qwen, carte
+        run: python3 outils/verifier_skills.py
+      - name: installateur Claude / Qwen et vérificateur (HOME temporaire)
+        run: |
+          bash -n outils/installer.sh
+          python3 -m unittest discover -s outils -p 'test_*.py' -v
       - name: syntaxe de tous les scripts Python des skills
         run: python3 -m py_compile $(find .claude/skills -name '*.py')
       - name: composer-hooks-funk-electro — grilles, lanceur Qwen, installation

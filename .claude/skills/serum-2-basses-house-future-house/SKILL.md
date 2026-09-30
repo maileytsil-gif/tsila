@@ -34,6 +34,7 @@ Un tableau de choix, puis pour chaque basse une fiche jouable : rôle, paramètr
 - Fondements documentés, sources chiffrées et contradictions : `../sound-designer-serum/references/basses.md` (sub, Reese, growl, 808, division du grave) et `patches-genres.md` (patchs chiffrés bass/future house, OTT).
 - Recettes Bass House du corpus : `../produire-morceau-electronique-de-a-a-z/references/bass-house-recettes.md`, `bass-house-stabs-serum2.md`, `bass-house-wavetable.md`.
 - Gestes de basse liés au phrasé et 55 recettes courtes : `../composer-hooks-funk-electro/references/sound-design.md`, `cinquante-cinq-recettes.md`.
+- Stabs, pads, leads et impacts qui dialoguent avec la basse : `../bass-house-sound-design/SKILL.md`. Grave dans le mix (poids, mono, traduction club) : `../construire-low-end-electronique/SKILL.md`.
 
 ## Installation hors dépôt
 

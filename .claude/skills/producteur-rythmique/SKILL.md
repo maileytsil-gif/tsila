@@ -41,7 +41,7 @@ Kick → snare/clap → hats → percussions → basse rythmique, dans cet ordre
 
 ### 6. Programmer
 - **Live** : `../drums-signature/scripts/drum_pattern.py <genre>` produit un pattern de départ pour `ppal-create-clip` ; kit depuis le registre avec `kit_builder.py` ; Drum Rack et Simpler réglés par `ppal-update-device` et relus.
-- **Maschine** : uniquement quand l'utilisateur le demande ou que le son est dans une expansion NI ; il n'existe aucune API : tout passe par le contrôle d'écran au premier plan (`request_full_control`), aucun geste en arrière-plan, capture après chaque geste, et l'utilisateur fait ce qui n'est pas atteignable (`../native-instruments-control/SKILL.md`).
+- **Maschine** : uniquement quand l'utilisateur le demande ou que le son est dans une expansion NI ; il n'existe aucune API : tout passe par le contrôle d'écran au premier plan (`request_full_control`), aucun geste en arrière-plan, capture après chaque geste, et l'utilisateur fait ce qui n'est pas atteignable (`../native-instruments-control/SKILL.md`). Méthode de production sur MK3 (trois Patterns comparés, Scenes, fills uniques, Perform FX et multi-sorties vers Live) : `../produire-avec-maschine-mk3/SKILL.md`.
 
 ### 7. Livrer la grille
 Donner le pattern lisible avant ou avec l'écriture, une ligne par élément, 16 cases par mesure de 4/4 (`x` frappe, `o` ghost, `X` accent, `.` rien) :

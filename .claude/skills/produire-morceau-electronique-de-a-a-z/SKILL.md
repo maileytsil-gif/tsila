@@ -89,17 +89,19 @@ Les études d'artistes contiennent des analyses documentaires et des questions d
 
 ## Place dans les skills existants
 
-Ce skill apporte la **méthode de bout en bout et le corpus d'études** ; il n'exécute rien dans Live lui-même. Chaque passe s'appuie sur les skills déjà installés (`../ableton-live-session/SKILL.md`, carte « situation → skills ») :
+Ce skill apporte la **méthode de bout en bout et le corpus d'études** ; il n'exécute rien dans Live lui-même. Une démo rapide (brief, référence choisie, une à quatre émotions, Original Mix et Extended Mix) se fait d'abord avec `../produire-demo-electro-rapide/SKILL.md` ; ce skill prend le relais une fois la démo validée. Chaque passe s'appuie sur les skills déjà installés (`../ableton-live-session/SKILL.md`, carte « situation → skills ») :
 
 | Passe | Skills qui agissent |
 |---|---|
-| 1 Recherche et palette | ce skill (`references/`), `theorie-musicale-electronique` |
-| 2 Composition et groove | `compositeur-arrangeur`, `composer-hooks-funk-electro`, `producteur-rythmique`, `melodie-composition`, `midi-expressif`, `drums-signature` |
-| 3 Sound design | `sound-designer-serum`, `vst-sound-design`, `synthese-reference`, `resampling` |
+| 1 Recherche et palette | ce skill (`references/`), `theorie-musicale-electronique`, `theorie-musicale-composition`, `composer-trajectoire-emotionnelle` |
+| 2 Composition et groove | `compositeur-arrangeur`, `composer-hooks-funk-electro`, `producteur-rythmique`, `melodie-composition`, `midi-expressif`, `drums-signature`, `produire-avec-maschine-mk3` |
+| 3 Sound design | `sound-designer-serum`, `vst-sound-design`, `serum-2-basses-house-future-house`, `bass-house-sound-design`, `synthese-reference`, `resampling` |
 | 4 Arrangement | `arrangement-avance`, `live-automation` |
 | 5 Édition et resampling | `resampling`, `sampling-composition-avancee`, `native-instruments-control` |
-| 6–8 Mix, référence, master | `ingenieur-mixage`, `mixage`, `effets-plugins`, `kick-bass-equilibre`, `live-mix-mastering`, `mastering-outils`, `live-export-wav` |
-| 9 Bilan | `memoire-projet`, `chef-de-projet`, `scripts/session_review.py` |
+| 6–8 Mix, référence, master | `ingenieur-mixage`, `mixage`, `effets-plugins`, `kick-bass-equilibre`, `construire-low-end-electronique`, `mixer-house-professionnel`, `live-mix-mastering`, `mastering-outils`, `live-export-wav` |
+| 9 Bilan | `memoire-projet`, `chef-de-projet`, `scripts/session_review.py`, `piloter-live-lombridge-codex` (bilan d'une séance pilotée par un autre agent) |
+
+Les références `bass-house-*.md`, `mixage-*.md` et `theorie-*.md` sont les mêmes fichiers que ceux des skills autonomes `bass-house-sound-design`, `mixer-house-professionnel` et `theorie-musicale-composition` (copies gardées pour que ce skill reste utilisable seul) : une correction se reporte dans les deux, `python3 outils/verifier_skills.py` refuse deux copies différentes.
 
 Toute action dans Live respecte la discipline d'`ableton-live-session` (Set sauvé sous un autre nom, `lom.py ping` / `state --json` avant, relecture après, une étape par échange). Pour un agent qui ne dispose que d'un terminal et du serveur HTTP du bridge (Qwen/Ollama, Codex…), le client `lom-bridge/agent_gateway.py` (`inspect` → `preview` → `commit`, voir `lom-bridge/README.md`) impose la même séquence lecture → plan → écriture relue.
 
@@ -107,4 +109,4 @@ Toute action dans Live respecte la discipline d'`ableton-live-session` (Set sauv
 
 ## Pour Qwen/Ollama ou un autre agent
 
-Le dossier se copie entier ; donner `SKILL.md` en instruction de projet et les références au même chemin relatif. Les références YouTube citées ne sont pas incluses. Les études d'artistes sont documentaires : ne pas les citer comme si tous les titres avaient été analysés acoustiquement.
+Qwen Code lancé dans le dépôt lit ce skill par `.qwen/skills` (mêmes fichiers que Claude Code) et agit dans Live par `lom-bridge/agent_gateway.py` seulement (`../piloter-live-lombridge-codex/SKILL.md`, `QWEN.md` à la racine du dépôt). Pour Ollama sans agent, le dossier se copie entier ; donner `SKILL.md` en instruction de projet et les références au même chemin relatif. Les références YouTube citées ne sont pas incluses. Les études d'artistes sont documentaires : ne pas les citer comme si tous les titres avaient été analysés acoustiquement.

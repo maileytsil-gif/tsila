@@ -8,6 +8,7 @@ description: Utiliser Maschine et Komplete Kontrol de Native Instruments, en log
 - Maschine 3.6 et Komplete Kontrol 3.5 n'ont **aucune API** : uniquement contrôle d'écran au premier plan (`request_full_control`), capture après chaque geste, rien en arrière-plan ; l'utilisateur fait ce qui n'est pas atteignable. Ne pas inventer de coordonnées : les relever sur capture.
 - Dans Live, Maschine, Komplete Kontrol et **Battery 4** (VST3 présent) se chargent par le navigateur du LOM Bridge avec la règle anti hot-swap de `../ableton-live-session/SKILL.md` ; vérifier `len(d.parameters)` après chargement (1 = fenêtre seulement) ; techniques de fenêtre dans `../ableton-live-session/references/plugins.md`. Les sons Battery utilisés par la batterie sont référencés dans `../drums-signature/references/sons.md`.
 - Règles de session (transport, sauvegarde par menu, une étape par échange) : `../ableton-live-session/SKILL.md`.
+- Produire un morceau sur Maschine MK3 (groove joué, Patterns, Scenes, sampling, choix Perform FX / sortie séparée, transfert vers Live) : `../produire-avec-maschine-mk3/SKILL.md`. Ce skill-ci reste la référence pour identifier la cible, agir à l'écran et diagnostiquer.
 
 # Maschine et Komplete Kontrol
 

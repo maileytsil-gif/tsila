@@ -81,24 +81,24 @@ Limite connue de l'annulation automatique après relecture par curseur (audio) :
 ```bash
 python3 lom.py ping
 python3 lom.py param "AUDIO - Sub" mixer Volume
-python3 lom.py plan  "AUDIO - Sub" o:493090:4 --unit disp --accept fades 5|1 -5 8|4.5 -5 9|1 0
-python3 lom.py shape "AUDIO - Sub" o:493090:4 --unit disp --accept fades 5|1 -5 8|4.5 -5 9|1 0
-python3 lom.py read  "AUDIO - Sub" o:493090:4 5|1 9|1 --res 1
+python3 lom.py plan  "AUDIO - Sub" o:493090:4 --unit disp --accept fades "5|1" -5 "8|4.5" -5 "9|1" 0
+python3 lom.py shape "AUDIO - Sub" o:493090:4 --unit disp --accept fades "5|1" -5 "8|4.5" -5 "9|1" 0
+python3 lom.py read  "AUDIO - Sub" o:493090:4 "5|1" "9|1" --res 1
 python3 lom.py apply automations_el21.json --dry      # plan serveur pour chaque entrée, rien n'est écrit
 python3 lom.py apply automations_el21.json
 python3 lom.py jobs ; python3 lom.py cancel <id>
 python3 lom.py state --json                            # carte du Set en JSON
-python3 lom.py transport ; python3 lom.py transport play 17|1 ; python3 lom.py transport stop
-python3 lom.py meters 17|1 5 "AUDIO - Kick" "AUDIO - Sub"   # crêtes pendant 5 s à partir de 17|1, transport restauré
+python3 lom.py transport ; python3 lom.py transport play "17|1" ; python3 lom.py transport stop
+python3 lom.py meters "17|1" 5 "AUDIO - Kick" "AUDIO - Sub"   # crêtes pendant 5 s à partir de 17|1, transport restauré
 python3 lom.py setparam "BUS - HARMONIE" "REQ 6 Stereo" "Band1 Frq" 0.2565 raw
 python3 lom.py snapshot "AUDIO - Sub" ; python3 lom.py restore s1
-python3 lom.py locator 65|1 "Drop 2" ; python3 lom.py locators
+python3 lom.py locator "65|1" "Drop 2" ; python3 lom.py locators
 python3 lom.py load "PAD" "Pro-Q 4"                    # ajoute en fin de chaîne, sans hot-swap ; `load "PAD" "Serum 2" replace=Wavetable` remplace en place
-python3 lom.py notes get "PAD" 17|1                    # notes du clip qui couvre 17|1 ; `notes set "PAD" 17|1 '[[60,0,1,100],[64,1,1,90]]' 0 4` remplace la fenêtre 0–4 du clip
+python3 lom.py notes get "PAD" "17|1"                    # notes du clip qui couvre 17|1 ; `notes set "PAD" "17|1" '[[60,0,1,100],[64,1,1,90]]' 0 4` remplace la fenêtre 0–4 du clip
 python3 lom.py wait                                    # attend la fin des tâches en cours (ou `wait <id>`), après un timeout client par exemple
 python3 lom.py journal 5                               # les 5 dernières écritures journalisées
 python3 lom.py policy accept=expressions               # accepté d'office par ce client pour plan/shape/clear/apply (policy.json) ; `policy accept=` efface
-python3 lom.py shape … --bpb 3 5|1 -5 9|1 0            # signature 3/4 ; sans --bpb, la signature est lue dans Live dès qu'un temps « mesure|temps » est donné
+python3 lom.py shape … --bpb 3 "5|1" -5 "9|1" 0            # signature 3/4 ; sans --bpb, la signature est lue dans Live dès qu'un temps « mesure|temps » est donné
 python3 lom.py serve --port 7480                       # HTTP JSON ; Authorization: Bearer <token> ; /py /set /call /reload bloqués sauf --unsafe
 ```
 Spec `apply` (`beatsPerBar` facultatif : sinon la signature de Live ; `accept` de chaque entrée complété par `policy.json`) : `{"beatsPerBar":4,"automations":[{"track":"AUDIO - Sub","device":"mixer","param":"Volume","unit":"rel|disp|raw","res":8,"curve":"lin","hold":false,"accept":["fades"],"points":[["5|1",-5],["9|1",0]],"note":"…","skip":false}]}`. `rel` = offsets par rapport à la valeur courante affichée. `--dry` appelle `/plan` avec les mêmes arguments que l'écriture.
