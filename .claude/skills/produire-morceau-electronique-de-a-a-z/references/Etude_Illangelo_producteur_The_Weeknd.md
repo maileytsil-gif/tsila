@@ -39,13 +39,15 @@ Il n'est pas possible d'attribuer les notes exactes, BPM, accords, longueurs de 
 | Montée, 4 mesures | B♭m9 → C7(b9) | B♭ D♭ F A♭ C → C E G B♭ D♭ | E naturel sur C7 crée l'appel vers F mineur |
 | Refrain, 8 mesures | Fm → D♭ → A♭ → E♭ | Fondamentales F D♭ A♭ E♭ | Progression plus lisible; déplacer les arpèges plutôt que changer tous les accords |
 
-Les quatre accords du refrain constituent un exemple original de langage pop mineur : **ce n'est pas une transcription de The Weeknd**. Sous B♭m9, D♭ est la tierce; sous C7(b9), D♭ est la ♭9 et E la tierce. Le mouvement E→F signale la résolution. Pour les claviers, essayer des voicings sans fondamentale : Fm9 = A♭3–E♭4–G4–C5; D♭maj9 = F3–C4–E♭4–A♭4; B♭m9 = D♭4–A♭4–C5–F5; C7(b9) = E4–B♭4–D♭5–G5. Les notes supérieures sont plus hautes dans les deux derniers voicings : vérifier la tessiture vocale et ramener les accords une octave si la voix est masquée.
+Notation d'octave des notes qui suivent : numérotation Ableton, C3 = MIDI 60 (le numéro MIDI fait foi ; la version d'origine écrivait en notation scientifique, une octave au-dessus).
+
+Les quatre accords du refrain constituent un exemple original de langage pop mineur : **ce n'est pas une transcription de The Weeknd**. Sous B♭m9, D♭ est la tierce; sous C7(b9), D♭ est la ♭9 et E la tierce. Le mouvement E→F signale la résolution. Pour les claviers, essayer des voicings sans fondamentale : Fm9 = A♭2–E♭3–G3–C4; D♭maj9 = F2–C3–E♭3–A♭3; B♭m9 = D♭3–A♭3–C4–F4; C7(b9) = E3–B♭3–D♭4–G4. Les notes supérieures sont plus hautes dans les deux derniers voicings : vérifier la tessiture vocale et ramener les accords une octave si la voix est masquée.
 
 ### Basse et groove : deux versions d'une même idée
 
-**Version lente, 88 BPM, 4/4, 16 pas de doubles croches :** kick sur 1 et 11, snare sur 5 et 13, basses F1 (pas 1, 2 pas), C2 (pas 8, 1 pas), F1 (pas 11, 2 pas), E1 (pas 16, 1 pas d'approche vers F). Le E1 est très bas selon la diffusion; monter l'approche en E2 ou la supprimer si elle devient inaudible. Ajouter hats légers sur 3, 7, 10, 15; préférer une interprétation à vélocités distinctes plutôt qu'un roulement permanent.
+**Version lente, 88 BPM, 4/4, 16 pas de doubles croches :** kick sur 1 et 11, snare sur 5 et 13, basses F0 (MIDI 29, pas 1, 2 pas), C1 (MIDI 36, pas 8, 1 pas), F0 (pas 11, 2 pas), E0 (MIDI 28, pas 16, 1 pas d'approche vers F). Le E0 est très bas selon la diffusion; monter l'approche en E1 (40) ou la supprimer si elle devient inaudible. Ajouter hats légers sur 3, 7, 10, 15; préférer une interprétation à vélocités distinctes plutôt qu'un roulement permanent.
 
-**Version dance pop, 118 BPM :** kick sur 1, 5, 9, 13; basse F1 sur 3 et 7, C2 sur 11, F1 sur 15, toutes courtes; snare/clap sur 5 et 13. Le kick et la basse se relaient davantage. Sur une mesure D♭, déplacer les hauteurs vers D♭2 et A♭2 en vérifiant les octaves. Ce sont **deux exercices originaux**, pas les grooves de « The Hills » ou « Blinding Lights ».
+**Version dance pop, 118 BPM :** kick sur 1, 5, 9, 13; basse F0 (29) sur 3 et 7, C1 (36) sur 11, F0 sur 15, toutes courtes; snare/clap sur 5 et 13. Le kick et la basse se relaient davantage. Sur une mesure D♭, déplacer les hauteurs vers D♭1 (37) et A♭1 (44) en vérifiant les octaves. Ce sont **deux exercices originaux**, pas les grooves de « The Hills » ou « Blinding Lights ».
 
 ## 4. Design sonore et espace par couches
 

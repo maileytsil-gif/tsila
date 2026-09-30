@@ -34,13 +34,13 @@ Berklee étudie les doubles croches, les cellules déplacées du funk et le trav
 
 ### Construire un solo qui raconte quelque chose
 
-1. Fixer un motif de deux ou trois notes (par exemple F4–A4–C5 au-dessus de Dm9).
-2. Répéter le motif avec une seule modification : déplacement rythmique, note voisine E4, réponse une octave plus bas.
+1. Fixer un motif de deux ou trois notes (par exemple F3–A3–C4, soit MIDI 65–69–72, au-dessus de Dm9).
+2. Répéter le motif avec une seule modification : déplacement rythmique, note voisine E3 (64), réponse une octave plus bas.
 3. Laisser une respiration de demi-mesure ; faire répondre guitare et sax alternativement.
 4. Passer aux arpèges et approches chromatiques seulement quand l’harmonie change ; finir sur une note cible claire.
 5. Enregistrer plusieurs prises MIDI ou audio jouées à la main et choisir les intentions, pas une vélocité identique à chaque note.
 
-George Benson dit avoir développé des octaves inspirées de Wes Montgomery en ajoutant une note entre les octaves, et avoir appris à chanter en jouant. Il décrit la ligne chantée comme plus conversationnelle et mélodique [7]. **Exercice original :** jouer F4–A4–C5–A4 sur guitare, chanter la même cellule, ensuite remplacer le second A4 par G4 et laisser un silence ; une variante en octaves F3/F4 puis G3/G4 suffit pour faire entendre le principe sans reproduire un solo connu. Réserver les traits rapides à une réponse, éviter de couvrir la ligne principale.
+George Benson dit avoir développé des octaves inspirées de Wes Montgomery en ajoutant une note entre les octaves, et avoir appris à chanter en jouant. Il décrit la ligne chantée comme plus conversationnelle et mélodique [7]. **Exercice original :** jouer F3–A3–C4–A3 (MIDI 65–69–72–69) sur guitare, chanter la même cellule, ensuite remplacer le second A3 par G3 (67) et laisser un silence ; une variante en octaves F2/F3 (53/65) puis G2/G3 (55/67) suffit pour faire entendre le principe sans reproduire un solo connu. Réserver les traits rapides à une réponse, éviter de couvrir la ligne principale.
 
 ## 4. Instruments : production vintage et traduction électronique
 
@@ -97,18 +97,18 @@ Pour un trio, placer d’abord une ligne de trompette claire dans l’aigu, une 
 
 | Accord | Trombone | Sax ténor | Trompette | Ce que portent les trois voix |
 |---|---|---|---|---|
-| Dm9 | F3 (53) | A3 (57) | C4 (60) | tierce, quinte, septième |
-| G13 | F3 (53) | B3 (59) | E4 (64) | septième, tierce, treizième |
-| Cmaj9 | E3 (52) | B3 (59) | D4 (62) | tierce, septième, neuvième |
-| A7alt | G3 (55) | C#4 (61) | F4 (65) | septième, tierce, treizième bémol |
+| Dm9 | F2 (53) | A2 (57) | C3 (60) | tierce, quinte, septième |
+| G13 | F2 (53) | B2 (59) | E3 (64) | septième, tierce, treizième |
+| Cmaj9 | E2 (52) | B2 (59) | D3 (62) | tierce, septième, neuvième |
+| A7alt | G2 (55) | C#3 (61) | F3 (65) | septième, tierce, treizième bémol |
 
-Sur G13, l’écart F3–B3 forme un triton tendu voulu ; vérifier à l’écoute et ne pas l’imposer à chaque attaque. Sur la suite entière, conserver les notes communes et bouger les autres par petits intervalles quand cela sert la ligne. Faire alterner accords courts à trois voix, réponses à l’unisson, puis une mesure sans cuivres. Les stabs utiles suivent des motifs de 1 à 3 attaques par mesure et laissent des respirations ; les placer sur les syncopes en écoutant la grosse caisse plutôt qu’en remplissant mécaniquement les temps.
+Sur G13, l’écart F2–B2 forme un triton tendu voulu ; vérifier à l’écoute et ne pas l’imposer à chaque attaque. Sur la suite entière, conserver les notes communes et bouger les autres par petits intervalles quand cela sert la ligne. Faire alterner accords courts à trois voix, réponses à l’unisson, puis une mesure sans cuivres. Les stabs utiles suivent des motifs de 1 à 3 attaques par mesure et laissent des respirations ; les placer sur les syncopes en écoutant la grosse caisse plutôt qu’en remplissant mécaniquement les temps.
 
-**Transposition :** le tableau est en sons réels pour piano roll Ableton. Pour une partition instrumentale, trompette en Si♭ : écrire un ton au-dessus du son réel ; sax ténor en Si♭ : écrire une neuvième majeure au-dessus ; sax alto en Mi♭ : écrire une sixte majeure au-dessus ; trombone : son réel. Vérifier l’octave et la tessiture au moment de confier les parties à des musiciens. Le C4 du tableau désigne MIDI 60 ; l’étiquette d’octave affichée par Live peut varier selon les réglages.
+**Transposition :** le tableau est en sons réels pour piano roll Ableton. Pour une partition instrumentale, trompette en Si♭ : écrire un ton au-dessus du son réel ; sax ténor en Si♭ : écrire une neuvième majeure au-dessus ; sax alto en Mi♭ : écrire une sixte majeure au-dessus ; trombone : son réel. Vérifier l’octave et la tessiture au moment de confier les parties à des musiciens. Les noms de notes suivent la numérotation Ableton, C3 = MIDI 60 (le numéro MIDI fait foi ; la version d’origine écrivait en notation scientifique, une octave au-dessus).
 
 ## 7. Claviers, guitare et place dans le mix
 
-**Rhodes.** Ableton Electric modélise notamment des caractéristiques de piano électrique à tines ; une prise multisample authentique reste une autre option [15,17]. Commencer avec un son doux et peu compressé : vélocités 55–95, quelques accents 105 ; tremolo lent autour de 3–5 Hz très subtil, saturation légère et reverb courte. La dureté de l’attaque doit faire apparaître le « bark » plutôt que dépendre d’un égaliseur permanent [15]. Main gauche : laisser la basse porter les fondamentales ; main droite : F3–C4–E4 pour Dm9, F3–B3–E4 pour G13, E3–B3–D4 pour Cmaj9. Les octaves réelles sont ajustables.
+**Rhodes.** Ableton Electric modélise notamment des caractéristiques de piano électrique à tines ; une prise multisample authentique reste une autre option [15,17]. Commencer avec un son doux et peu compressé : vélocités 55–95, quelques accents 105 ; tremolo lent autour de 3–5 Hz très subtil, saturation légère et reverb courte. La dureté de l’attaque doit faire apparaître le « bark » plutôt que dépendre d’un égaliseur permanent [15]. Main gauche : laisser la basse porter les fondamentales ; main droite : F2–C3–E3 pour Dm9, F2–B2–E3 pour G13, E2–B2–D3 pour Cmaj9. Les octaves réelles sont ajustables.
 
 **Clavinet et orgue.** Clavinet pour figures aiguës coupées et attaques répétées ; orgue pour réponse tenue et tension en fond. Si la guitare joue les doubles croches, confier aux claviers des accords espacés ou une nappe ; si le clavier tient le rythme, simplifier la guitare. C’est un choix d’orchestration proposé, pas un inventaire obligatoire des instruments d’un style.
 
@@ -122,12 +122,12 @@ Sur G13, l’écart F3–B3 forme un triton tendu voulu ; vérifier à l’écou
 
 | Mesures | Batterie / basse | Clavier / guitare | Cuivres / mélodie | Évolution |
 |---|---|---|---|---|
-| 1–4 intro | Kick léger sur 1 et 3&, charley en croches ; basse absente sur 1–2, entre sur 3 | Rhodes accords courts sur 2& et 4& ; guitare coupée une mesure sur deux | Trompette seule : C5 sur 4& mesure 4 | Faire entendre la tonalité avant le riff |
-| 5–8 thème A | Kick sur 1, 2&, 3&, 4a selon la mesure ; snare 2 et 4 ; basse D2–A2–C3–D3 sur mesures Dm9, G1–D2–F2–G2 sur G13 | Guitare attaque étouffée sur 1a, 2&, 3a ; Rhodes sur 1&, 3& | Trio en accord court sur 1& et 3a mesure 5, silence mesure 6, réponse de trompette mesure 7 | Répéter la cellule en changeant une seule note |
-| 9–12 thème B | Garder kick/snare ; basse descend vers C2 puis A1 si la tessiture le permet | Rhodes plus présent, guitare passe à une réponse lead | Sax prend le motif, trombone répond en fin de mesure | Ouvrir progressivement les registres |
+| 1–4 intro | Kick léger sur 1 et 3&, charley en croches ; basse absente sur 1–2, entre sur 3 | Rhodes accords courts sur 2& et 4& ; guitare coupée une mesure sur deux | Trompette seule : C4 sur 4& mesure 4 | Faire entendre la tonalité avant le riff |
+| 5–8 thème A | Kick sur 1, 2&, 3&, 4a selon la mesure ; snare 2 et 4 ; basse D1–A1–C2–D2 (MIDI 38–45–48–50) sur mesures Dm9, G0–D1–F1–G1 (MIDI 31–38–41–43) sur G13 | Guitare attaque étouffée sur 1a, 2&, 3a ; Rhodes sur 1&, 3& | Trio en accord court sur 1& et 3a mesure 5, silence mesure 6, réponse de trompette mesure 7 | Répéter la cellule en changeant une seule note |
+| 9–12 thème B | Garder kick/snare ; basse descend vers C1 (36) puis A0 (33) si la tessiture le permet | Rhodes plus présent, guitare passe à une réponse lead | Sax prend le motif, trombone répond en fin de mesure | Ouvrir progressivement les registres |
 | 13–16 transition | Couper kick une demi-mesure en 15 ; reprise pleine en 16 | Accord de Rhodes prolongé en 15, guitare en octave en 16 | Unisson très bref en 16 puis silence avant reprise | Créer une relance audible |
 
-**Cellule MIDI originale d’une mesure sur Dm9**, à déplacer si elle gêne la caisse claire : trompette C4 à 1& (durée 1/8), E4 à 2a (1/16), F4 à 3& (1/8) ; sax A3 sur ces trois attaques ; trombone F3 sur les attaques 1& et 3& seulement. Vélocités proposées respectivement 88 / 72 / 98 ; avancer ou retarder à l’oreille certaines attaques de quelques millisecondes **sans décaler toute la section au hasard**. Sur G13, tester trompette E4–F4–E4, sax B3 et trombone F3. Chaque phrase doit laisser une mesure où une autre famille instrumentale répond.
+**Cellule MIDI originale d’une mesure sur Dm9**, à déplacer si elle gêne la caisse claire : trompette C3 à 1& (durée 1/8), E3 à 2a (1/16), F3 à 3& (1/8) ; sax A2 sur ces trois attaques ; trombone F2 sur les attaques 1& et 3& seulement. Vélocités proposées respectivement 88 / 72 / 98 ; avancer ou retarder à l’oreille certaines attaques de quelques millisecondes **sans décaler toute la section au hasard**. Sur G13, tester trompette E3–F3–E3, sax B2 et trombone F2. Chaque phrase doit laisser une mesure où une autre famille instrumentale répond.
 
 **Développer en morceau entier (96 mesures proposées, soit environ 3 min 42 à 104 BPM)** : 8 intro + 16 couplet instrumental + 16 thème A + 8 break + 16 thème B/solo + 16 retour thème + 8 interlude + 8 outro = 96. Pour l’acid jazz, ajouter une version du riff découpée en sampler sur le break ; pour une approche funk live, conserver la section jouée et varier les fins de phrases. Les choix exacts de structure et de tempo sont des propositions créatives.
 
@@ -159,7 +159,7 @@ Sur G13, l’écart F3–B3 forme un triton tendu voulu ; vérifier à l’écou
 
 ## 11. Étude complémentaire : harmonie, basse, cuivres et claviers en interaction
 
-*Ajout du 28 septembre 2026. Les exemples de notes et de rythmes suivants sont des compositions pédagogiques originales en sons réels (concert pitch), et non des transcriptions attribuées à un groupe. Notation d'octave proposée : C4 = MIDI 60; selon l'instrument virtuel, l'étiquette d'octave peut varier. Vérifier la hauteur à l'oreille.*
+*Ajout du 28 septembre 2026. Les exemples de notes et de rythmes suivants sont des compositions pédagogiques originales en sons réels (concert pitch), et non des transcriptions attribuées à un groupe. Notation d'octave : numérotation Ableton, C3 = MIDI 60 (le numéro MIDI fait foi ; la version d'origine écrivait en notation scientifique, une octave au-dessus); selon l'instrument virtuel, l'étiquette d'octave peut varier. Vérifier la hauteur à l'oreille.*
 
 ### 11.1 Deux logiques harmoniques et leur articulation
 
@@ -175,7 +175,7 @@ Sur G13, l’écart F3–B3 forme un triton tendu voulu ; vérifier à l’écou
 | Dm9 → E♭13 → Dm9 → A7alt | Glissement chromatique E♭ puis retour D | D→E♭→D→A; basse peut tenir les fondamentales | Couleur plus tendue et urbaine |
 | Dm9 → B♭maj9 → Gm9 → A7(b9) | Dm9; B♭ D F A C; G B♭ D F A; A C# E G B♭ | Descente harmonique D→B♭→G→A | Refrain soul/jazz avec tension de retour |
 
-**Voicings précis pour une piste Rhodes dont la basse est ailleurs :** Dm9 = main droite F3–C4–E4–A4; G13 = F3–B3–E4–A4 (A est la 9e de G); Cmaj9 = E3–B3–D4–G4; A7(b9) = G3–C#4–E4–B♭4. Ces voicings contiennent parfois une 9e/13e additionnelle et omettent la fondamentale : nommer l'accord selon la **basse jouée**. Si le registre est trop chargé, retirer A4 ou G4 et jouer seulement tierce, septième et une tension. Vérifier la conduite des voix à l'oreille, surtout B♭4→A4 et C#4→D4.
+**Voicings précis pour une piste Rhodes dont la basse est ailleurs :** Dm9 = main droite F2–C3–E3–A3; G13 = F2–B2–E3–A3 (A est la 9e de G); Cmaj9 = E2–B2–D3–G3; A7(b9) = G2–C#3–E3–B♭3. Ces voicings contiennent parfois une 9e/13e additionnelle et omettent la fondamentale : nommer l'accord selon la **basse jouée**. Si le registre est trop chargé, retirer A3 ou G3 et jouer seulement tierce, septième et une tension. Vérifier la conduite des voix à l'oreille, surtout B♭3→A3 et C#3→D3.
 
 **Rythme d'accord :** sur une grille de 16 doubles croches, essayer Rhodes aux pas 4, 7 et 12, avec durées respectives 1, 2 et 1 pas; éviter le pas 1 lorsqu'une basse forte pose l'accord. Dans une version acid jazz plus détendue, tenir le premier voicing 1/2 mesure puis faire seulement une réponse courte à la fin. Une progression harmonique rapide et des accords très syncopés ensemble peuvent brouiller la lecture : simplifier l'un des deux.
 
@@ -189,18 +189,18 @@ La basse funk assure simultanément **ancrage** et **élan**. La fondamentale su
 
 | Pas | Position | Note | Durée suggérée | Rôle / articulation |
 |---:|---|---|---|---|
-| 1 | 1 | D2 (MIDI 38) | 2 pas | Ancrage franc avec ou après le kick |
-| 4 | a de 1 | A2 (45) | 1 pas | Quinte courte, relance |
-| 6 | e de 2 | C3 (48) | 1 pas | 7e en syncope |
+| 1 | 1 | D1 (MIDI 38) | 2 pas | Ancrage franc avec ou après le kick |
+| 4 | a de 1 | A1 (45) | 1 pas | Quinte courte, relance |
+| 6 | e de 2 | C2 (48) | 1 pas | 7e en syncope |
 | 7 | & de 2 | note morte | 1 pas | Attaque étouffée, sans hauteur définie |
-| 9 | 3 | F2 (41) | 2 pas | Tierce mineure, changer la couleur |
-| 12 | a de 3 | A2 (45) | 1 pas | Quinte rebond |
-| 14 | e de 4 | C3 (48) | 1 pas | Appel vers la mesure suivante |
-| 16 | a de 4 | C#3 (49) | 1 pas | Approche chromatique vers D au pas 1 |
+| 9 | 3 | F1 (41) | 2 pas | Tierce mineure, changer la couleur |
+| 12 | a de 3 | A1 (45) | 1 pas | Quinte rebond |
+| 14 | e de 4 | C2 (48) | 1 pas | Appel vers la mesure suivante |
+| 16 | a de 4 | A♭0 (32) | 1 pas | Approche chromatique de G0 (31), basse de G13 à la mesure 2 |
 
 Cette mesure est **un exercice**, pas une formule universelle. Les ghost notes d'une vraie basse sont des attaques de corde étouffée; sur un plugin, utiliser une articulation dédiée ou un très court échantillon étouffé plutôt que de prétendre qu'une note MIDI très basse imite automatiquement une ghost note.
 
-**Variante à 120 BPM, acid jazz/house en Dm9 :** kick 4/4, D2 au pas 1 (1 pas), A2 au pas 4 (1 pas), C3 au pas 7 (1 pas), D2 au pas 9 (2 pas), E2 au pas 12 (1 pas), A2 au pas 15 (1 pas). Laisser les pas 5 et 13 au clap/snare; sur les quatre mesures, remplacer seulement la dernière note par une approche de l'accord suivant. Sur G13, reprendre l'ossature rythmique avec G1, D2, F2, G1, B1, D2; contrôler l'octave et la tessiture de la banque. Dans la house, raccourcir les notes aux côtés du kick/sidechain à l'oreille : ne pas appliquer aveuglément le même pattern qu'un batteur vivant.
+**Variante à 120 BPM, acid jazz/house en Dm9 :** kick 4/4, D1 (38) au pas 1 (1 pas), A1 (45) au pas 4 (1 pas), C2 au pas 7 (1 pas), D1 au pas 9 (2 pas), E1 (40) au pas 12 (1 pas), A1 au pas 15 (1 pas). Laisser les pas 5 et 13 au clap/snare; sur les quatre mesures, remplacer seulement la dernière note par une approche de l'accord suivant. Sur G13, reprendre l'ossature rythmique avec G0 (31), D1, F1 (41), G0, B0 (35), D1; contrôler l'octave et la tessiture de la banque. Dans la house, raccourcir les notes aux côtés du kick/sidechain à l'oreille : ne pas appliquer aveuglément le même pattern qu'un batteur vivant.
 
 **Façon de jouer :** doigts = attaque ronde, compression naturelle et petits glissés; médiator = attaque nette, pertinent selon esthétique; slap = accent percussif ciblé, pas obligation permanente; note morte = pulsation non tonale; slide vers la tierce/septième = expression; octave = déplacement d'énergie. Sur 4 mesures, varier la dernière croche ou double croche, conserver le même ancrage pour que le public reconnaisse le groove. Pour un jeu crédible dans Kontakt/Maschine, alterner vélocités, durées, articulations et déclenchements légèrement décalés; ne pas « humaniser » le kick et la basse indépendamment au hasard.
 
@@ -210,11 +210,11 @@ La section pratique **trompette + sax ténor + trombone** permet trois niveaux :
 
 **Trois comportements différents :**
 
-1. **Stab d'accompagnement :** accord très court (souvent 1/16 à 1/8), attaques communes mais releases légèrement différents. Éviter de jouer exactement sur chaque accord du Rhodes. En Dm9 : trombone D3, ténor C4, trompette F4 ou E4; variante plus ouverte D3–A3–F4. Ajuster selon l'instrument, car un empilement trop serré dans le bas devient opaque.
-2. **Riff mélodique :** trois notes qui se répètent avec un léger changement, p. ex. F4–A4–C5 à unisson/octaves selon le registre, puis réponse E4–F4. Ne pas harmoniser systématiquement toutes les notes rapides; harmoniser l'attaque et la fin suffit parfois.
+1. **Stab d'accompagnement :** accord très court (souvent 1/16 à 1/8), attaques communes mais releases légèrement différents. Éviter de jouer exactement sur chaque accord du Rhodes. En Dm9 : trombone D2, ténor C3, trompette F3 ou E3; variante plus ouverte D2–A2–F3. Ajuster selon l'instrument, car un empilement trop serré dans le bas devient opaque.
+2. **Riff mélodique :** trois notes qui se répètent avec un léger changement, p. ex. F3–A3–C4 à unisson/octaves selon le registre, puis réponse E3–F3. Ne pas harmoniser systématiquement toutes les notes rapides; harmoniser l'attaque et la fin suffit parfois.
 3. **Fill de break :** ligne montante de 1 ou 2 mesures, puis **silence avant le retour du groove**. Les cuivres peuvent finir plus tôt que la batterie et laisser le pickup de basse annoncer le temps 1.
 
-**Exemple original de réponse sur deux mesures de Dm9, grille 16 pas :** basse pose D au pas 1; Rhodes attaque aux pas 4 et 12; cuivres frappent **ensemble pas 7** (F4–A4–C5, staccato 1 pas) puis **pas 15** (E4–G4–B4, très bref, couleur dorienne à tester). La mesure 2 échange le stab du pas 15 contre un unisson A4–C5 sur les pas 14–15, puis se tait au pas 16 pour laisser entrer la mesure 3. Si cette proposition couvre la voix, placer le second stab une octave plus bas ou le supprimer.
+**Exemple original de réponse sur deux mesures de Dm9, grille 16 pas :** basse pose D au pas 1; Rhodes attaque aux pas 4 et 12; cuivres frappent **ensemble pas 7** (F3–A3–C4, staccato 1 pas) puis **pas 15** (E3–G3–B3, très bref, couleur dorienne à tester). La mesure 2 échange le stab du pas 15 contre un unisson A3–C4 sur les pas 14–15, puis se tait au pas 16 pour laisser entrer la mesure 3. Si cette proposition couvre la voix, placer le second stab une octave plus bas ou le supprimer.
 
 **Break de huit mesures :** mesures 1–2, un seul appel de sax sur une queue de Rhodes; 3–4, retour de deux stabs plus doux; 5–6, montée des trompettes en réponses courtes; 7, ensemble serré en croches; 8, fill d'une demi-mesure, arrêt au plus tard sur le dernier demi-temps, silence puis retour kick+basse. Une autre forme valable garde les cuivres silencieux sur 7–8 et les fait exploser au drop. Pour une esthétique vintage, enregistrer des prises distinctes plutôt que de copier-coller la même attaque MIDI sur trois pistes; pour une esthétique électronique, un chop/filtre de section imprimée peut être assumé comme effet. L'enseignement Berklee d'arrangement traite ces choix de registre, voicings et fonds ([Arranging for Horns](https://online.berklee.edu/store/product?category_id=4&product_id=49830074&usca_p=t)).
 

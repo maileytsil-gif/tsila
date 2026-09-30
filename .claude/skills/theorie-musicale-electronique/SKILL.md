@@ -5,7 +5,7 @@ description: Théorie musicale avancée appliquée à la production électroniqu
 
 # Théorie musicale pour la production électronique
 
-Ce skill est le **savoir** ; il ne touche pas au Set. Écrire dans Live relève des rôles `../compositeur-arrangeur/SKILL.md` (notes, forme) et `../producteur-rythmique/SKILL.md` (groove), qui appliquent les règles communes (capacités vérifiées, session préservée, une étape par échange, jamais « entendu » sans mesure). Les samples ont leur théorie propre dans `../sampling-composition-avancee/`.
+Ce skill est le **savoir** ; il ne touche pas au Set. Écrire dans Live relève des rôles `../compositeur-arrangeur/SKILL.md` (notes, forme) et `../producteur-rythmique/SKILL.md` (groove), qui appliquent les règles communes (capacités vérifiées, session préservée, une étape par échange, jamais « entendu » sans mesure). Les samples ont leur théorie propre dans `../sampling-composition-avancee/`. Hors électro (classique, jazz, pop, rock, chanson, film) et pour un cours avec exercices corrigés : `../theorie-musicale-composition/SKILL.md`, dont les références sont aussi dans le corpus du skill A à Z.
 
 ## Références (charger seulement ce qui sert)
 
