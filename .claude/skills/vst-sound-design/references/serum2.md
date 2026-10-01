@@ -6,3 +6,4 @@
 - Ce qui a marché en arrière-plan : toggles (SUB, OSC, MONO, LEGATO), onglets, navigateur, double-clic de preset. Ce qui n'a pas marché : saisie de valeur, glisser de bouton → demander à l'utilisateur ou passer en plein écran (`request_full_control`, `computer_batch` avec zoom pour lire).
 - Sub Serum validé : osc SUB sinus seul, OSC A off, MONO+LEGATO, release à régler par l'utilisateur (90 ms) ; niveau ≈ −4 dB avant fader avec Utility 0 dB.
 - Un preset chargé « suit la hauteur » : clips KICK en C1 → macro Pitch ou transposition des clips (F0/F1) si on veut l'accorder au morceau.
+- **Carte complète du plug-in** (chaque page, chaque paramètre, plages, listes de menus, dossiers, ce que Live expose) : `../../sound-designer-serum/references/serum2-cartographie.md`.

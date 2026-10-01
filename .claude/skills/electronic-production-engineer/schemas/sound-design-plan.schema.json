@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Electronic Sound Design Plan",
+  "type": "object",
+  "required": ["schema_version", "capability_mode", "intent", "layers", "verification"],
+  "properties": {
+    "schema_version": {"const": "1.4.0"},
+    "capability_mode": {"enum": ["ADVICE_ONLY", "AUDIO_ANALYSIS", "BRIDGE_READONLY", "BRIDGE_WRITE"]},
+    "intent": {"type": "string"},
+    "genre": {"type": ["string", "null"]},
+    "reference_role": {"type": ["string", "null"]},
+    "layers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "role", "source", "processing"],
+        "properties": {
+          "name": {"type": "string"},
+          "role": {"type": "string"},
+          "source": {"type": "string"},
+          "processing": {"type": "array", "items": {"type": "string"}},
+          "protected_range": {"type": ["string", "null"]},
+          "resample": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "modulation": {"type": "array", "items": {"type": "string"}},
+    "alternatives": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]},
+    "verification": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

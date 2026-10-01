@@ -104,7 +104,7 @@ La formulation officielle est « similarité maximale », **pas identité**. Le 
 
 ## 3. Le réglage Quality `[OFF]`
 
-**Draft = 1×, High = 2×, Ultra = 4×** de suréchantillonnage. **Il est stocké dans le preset sauf si on le verrouille** ; verrouillé, Serum ignore le réglage du preset.
+**Draft = 1×, High = 2×, Ultra = 4×** de suréchantillonnage. **Il est stocké dans le preset sauf si on le verrouille** ; verrouillé, Serum ignore le réglage du preset. La préférence **Use Ultra quality when rendering** fait rendre les exports hors ligne en Ultra, quel que soit le réglage de lecture (manuel p. 315, 319).
 
 Ce n'est pas qu'une affaire de CPU : plusieurs correctifs de la 2.0.21 montrent que **le son des warps FM, AM, PD et RM différait selon le Quality**.
 
@@ -114,7 +114,7 @@ Le lissage s'applique aussi aux changements par la souris. Serum « supporte l'*
 
 ## 5. Les fichiers externes `[OFF]`
 
-Samples, multisamples, wavetables et réponses impulsionnelles peuvent être **embarqués ou référencés**. Le manuel prévoit un cas « missing audio files ». **Un preset non embarqué n'est pas portable.**
+Samples, multisamples, wavetables, bruits et réponses impulsionnelles peuvent être **embarqués ou référencés** (« Embed in Preset » ; **impossible pour le contenu d'usine**, manuel p. 22, 130). Le manuel prévoit un cas « missing audio files ». **Un preset non embarqué n'est pas portable.**
 
 Correctifs associés : 2.0.20 « données de multisamples d'usine embarquées **supprimées lors de la sauvegarde** » ; 2.0.21 « **usage RAM excessif** au chargement de presets contenant des multisamples ».
 
@@ -150,7 +150,7 @@ La 2.1.5 ajoute une préférence **« restore locks when host sets state »**, c
 1. **Pas de VST2.** Serum 2 est VST3, Audio Unit et AAX seulement. Tout ce qui dépendait du VST2 tombe, y compris certains contournements Ableton.
 2. **Compatibilité à sens unique** `[OFF]`. Les presets Serum 1 s'ouvrent dans Serum 2 ; **l'inverse est impossible**. Les deux plug-ins s'installent côte à côte et sont **deux plug-ins distincts** : les anciens projets ne sont pas convertis, volontairement, « pour que vous puissiez mettre à jour vos morceaux manuellement ». **Serum 1 est déclaré end-of-life.**
 3. **Le switch HOST des LFO a changé de sémantique** `[OFF]`. « Contrairement à Serum 1, le switch HOST a maintenant un effet **quand BPM est désactivé**. » Un LFO vraiment libre exige HOST désactivé. **Mêmes réglages visuels, comportement différent.**
-4. **Le verrouillage par paramètre a été supprimé** `[OFF, changelog]`. La 2.0.21 retire l'option de verrouiller individuellement les paramètres FX, la 2.0.22 celle des oscillateurs (sauf coarse, pan et level), enveloppes, mixer, portamento et matrice. Le verrouillage est passé d'un grain fin à un grain groupé.
+4. **Le verrouillage par paramètre a été supprimé** `[OFF, changelog]`. La 2.0.21 retire l'option de verrouiller individuellement les paramètres FX, la 2.0.22 celle des oscillateurs (sauf coarse, pan et level), enveloppes, mixer, portamento et matrice. Le manuel 1.0.3 (2.0.18) décrit encore **Lock Parameter** sur presque tout contrôle (p. 26) : c'est l'état d'avant ces versions. Le verrouillage est passé d'un grain fin à un grain groupé.
 5. **Un warp spectral a été renommé** `[OFF]`. En 2.0.19, « Pitch Shift » est devenu **« Pitch Blend »**, et un nouveau « Pitch Shift » amélioré a pris le nom. **Un patch qui dit « Pitch Shift » ne désigne pas la même chose avant et après.**
 6. **Un boost de niveau a été retiré** `[OFF]`. La 2.0.23 « corrige le volume master par défaut des FX de Serum 2 pour retirer un **boost de 1,37 dB** ». Le même patch ne sort pas au même niveau avant et après.
 7. **Les FX sont paraphoniques** `[OFF, p. 159]`, voir la fiche dédiée aux effets.
@@ -161,7 +161,7 @@ La 2.1.5 ajoute une préférence **« restore locks when host sets state »**, c
 - **AUX SOURCE** : une source secondaire qui module la profondeur d'une modulation, avec **courbes éditables sur la source et sur l'aux source**, et inversion possible. Une macro peut servir d'aux source et être elle-même modulée.
 - **Les macros sont aussi destinations**, donc chaînables.
 - LFO : modes chaos **Lorenz** et **Rossler**, mode **Path** (vectoriel sur grille XY), rate **jusqu'à 1000 Hz**, suivi du swing, phase modulable.
-- Enveloppes : option **BPM** et **Invert Legato** (déclenchement forcé à chaque note-on même en legato).
+- Enveloppes : option **BPM** et **Legato Inverted** (libellé du menu, manuel p. 185) (déclenchement forcé à chaque note-on même en legato).
 - **Mixer** en page dédiée : en Serum 1 le routage était implicite, il devient explicite et adressable.
 - **Granular** jusqu'à **256 grains**. **Spectral** avec import d'images PNG comme source `[MAG]`.
 - **Multisample** avec chargement de fichiers **SFZ**.

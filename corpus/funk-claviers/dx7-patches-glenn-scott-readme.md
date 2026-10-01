@@ -1,0 +1,238 @@
+---
+titre: "dx7-patches (itsjoesullivan) — readme : collection de patches DX7 de Glenn Scott en JSON"
+source: https://raw.githubusercontent.com/itsjoesullivan/dx7-patches/master/readme.md
+recupere_le: 2026-09-24
+mode: texte integral
+langue: en
+axe: DX7 : E.PIANO 1, BASS 1, format sysex, enveloppes et LFO (Dexed), cartouches ROM
+skills: studio-grade-funk-keys-synth-sound-design
+usage: copie personnelle pour recherche locale (Ollama) ; droits des auteurs cités
+---
+
+## dx7-patches
+
+JSON representation of a collection of Yamaha DX7 patches compiled by Glenn Scott
+
+For the original readme: ftp://ftp.ucsd.edu/midi/patches/DX7/README.1ST
+
+## History
+
+These files have been around for a while. They're currently hosted on a [ucsd website](ftp://ftp.ucsd.edu/midi/patches/DX7/). However, I retrieved them from [Dave Benson's website](https://homepages.abdn.ac.uk/mth192/pages/html/dx7.html#patches). [Ted Felix's dx7 utility](http://tedfelix.com/yamaha-dx7/index.html) then helped convert the sysex information into something I could read, which I then parsed with a file included in a different branch of this repository.
+
+## Organization
+
+The original files came in banks of 32 patches each. Each top-level directory here represents one bank, containing the bank's 32 patches as json files.
+
+## Usage
+
+`npm install --save dx7-patches`
+
+```javascript
+var ePianoPatch = require('dx7-patches/rhodes1/epiano-1');
+var FictionalDX7 = require('fictional-dx7');
+
+var synth = new FictionalDX7();
+synth.fictionalSetPathMethod(ePianoPatch);
+
+midi.connect(synth); // fictional?
+```
+
+## Walkthrough
+
+There's a wealth of patches here. You can search the repo:
+
+- [255 'piano' patches](https://github.com/itsjoesullivan/dx7-patches/search?l=json&q=piano&utf8=%E2%9C%93)
+- [36 'rhodes' patches](https://github.com/itsjoesullivan/dx7-patches/search?utf8=%E2%9C%93&q=rhodes&type=Code)
+- [242 'bass' patches](https://github.com/itsjoesullivan/dx7-patches/search?utf8=%E2%9C%93&q=rhodes&type=Code)
+- [34 'trumpet' patches](https://github.com/itsjoesullivan/dx7-patches/search?utf8=%E2%9C%93&q=trumpet&type=Code)
+
+## Format
+
+I imagine the formatting, as well as the available patches, will change over time. Format changes will result in a version bump. But below is an example patch:
+
+```json
+{
+  "name": "E.PIANO 1 ",
+  "algorithm": 5,
+  "feedback": 6,
+  "lfo": {
+    "wave": "sine",
+    "speed": 15,
+    "delay": 33,
+    "pitchModDepth": 0,
+    "amDepth": "0",
+    "sync": "off",
+    "pitchModSensitivity": 2
+  },
+  "oscillatorKeySync": "Off",
+  "pitchEG": {
+    "rate1": 94,
+    "rate2": 67,
+    "rate3": 95,
+    "rate4": 60,
+    "level1": 50,
+    "level2": 50,
+    "level3": 50,
+    "level4": 50
+  },
+  "transpose": "C3",
+  "operators": [
+    {
+      "amSensitivity": 0,
+      "oscillatorMode": "ratio",
+      "frequency": 1,
+      "detune": 3,
+      "eg": {
+        "rate1": 96,
+        "rate2": 25,
+        "rate3": 25,
+        "rate4": 67,
+        "level1": 99,
+        "level2": 75,
+        "level3": 0,
+        "level4": 0
+      },
+      "keyboardLevelScaling": {
+        "breakpoint": "A-1",
+        "leftCurve": "-LIN",
+        "rightCurve": "-LIN",
+        "leftDepth": 0,
+        "rightDepth": 0
+      },
+      "keyboardRateScaling": 3,
+      "outputLevel": 99,
+      "keyVelocitySensitivity": 2
+    },
+    {
+      "amSensitivity": 0,
+      "oscillatorMode": "ratio",
+      "frequency": 14,
+      "detune": 0,
+      "eg": {
+        "rate1": 95,
+        "rate2": 50,
+        "rate3": 35,
+        "rate4": 78,
+        "level1": 99,
+        "level2": 75,
+        "level3": 0,
+        "level4": 0
+      },
+      "keyboardLevelScaling": {
+        "breakpoint": "A-1",
+        "leftCurve": "-LIN",
+        "rightCurve": "-LIN",
+        "leftDepth": 0,
+        "rightDepth": 0
+      },
+      "keyboardRateScaling": 3,
+      "outputLevel": 58,
+      "keyVelocitySensitivity": 7
+    },
+    {
+      "amSensitivity": 0,
+      "oscillatorMode": "ratio",
+      "frequency": 1,
+      "detune": 0,
+      "eg": {
+        "rate1": 95,
+        "rate2": 20,
+        "rate3": 20,
+        "rate4": 50,
+        "level1": 99,
+        "level2": 95,
+        "level3": 0,
+        "level4": 0
+      },
+      "keyboardLevelScaling": {
+        "breakpoint": "A-1",
+        "leftCurve": "-LIN",
+        "rightCurve": "-LIN",
+        "leftDepth": 0,
+        "rightDepth": 0
+      },
+      "keyboardRateScaling": 3,
+      "outputLevel": 99,
+      "keyVelocitySensitivity": 2
+    },
+    {
+      "amSensitivity": 0,
+      "oscillatorMode": "ratio",
+      "frequency": 1,
+      "detune": 0,
+      "eg": {
+        "rate1": 95,
+        "rate2": 29,
+        "rate3": 20,
+        "rate4": 50,
+        "level1": 99,
+        "level2": 95,
+        "level3": 0,
+        "level4": 0
+      },
+      "keyboardLevelScaling": {
+        "breakpoint": "A-1",
+        "leftCurve": "-LIN",
+        "rightCurve": "-LIN",
+        "leftDepth": 0,
+        "rightDepth": 0
+      },
+      "keyboardRateScaling": 3,
+      "outputLevel": 89,
+      "keyVelocitySensitivity": 6
+    },
+    {
+      "amSensitivity": 0,
+      "oscillatorMode": "ratio",
+      "frequency": 1,
+      "detune": -7,
+      "eg": {
+        "rate1": 95,
+        "rate2": 20,
+        "rate3": 20,
+        "rate4": 50,
+        "level1": 99,
+        "level2": 95,
+        "level3": 0,
+        "level4": 0
+      },
+      "keyboardLevelScaling": {
+        "breakpoint": "A-1",
+        "leftCurve": "-LIN",
+        "rightCurve": "-LIN",
+        "leftDepth": 0,
+        "rightDepth": 0
+      },
+      "keyboardRateScaling": 3,
+      "outputLevel": 99,
+      "keyVelocitySensitivity": 0
+    },
+    {
+      "amSensitivity": 0,
+      "oscillatorMode": "ratio",
+      "frequency": 1,
+      "detune": 7,
+      "eg": {
+        "rate1": 95,
+        "rate2": 29,
+        "rate3": 20,
+        "rate4": 50,
+        "level1": 99,
+        "level2": 95,
+        "level3": 0,
+        "level4": 0
+      },
+      "keyboardLevelScaling": {
+        "breakpoint": "D3",
+        "leftCurve": "-LIN",
+        "rightCurve": "-LIN",
+        "leftDepth": 0,
+        "rightDepth": 19
+      },
+      "keyboardRateScaling": 3,
+      "outputLevel": 79,
+      "keyVelocitySensitivity": 6
+    }
+  ]
+}
+```

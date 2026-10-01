@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Label Ready QC",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "checks"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.4.0"
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "PASS_WITH_NOTES",
+        "FAIL",
+        "NOT_ENOUGH_DATA"
+      ]
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "area",
+          "status",
+          "evidence"
+        ],
+        "properties": {
+          "area": {
+            "enum": [
+              "identity",
+              "arrangement",
+              "low_end",
+              "transients",
+              "mix",
+              "spatial_spectrum",
+              "stereo_mono",
+              "master",
+              "export",
+              "sample_provenance",
+              "archive"
+            ]
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "WARN",
+              "FAIL",
+              "UNKNOWN"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "action": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

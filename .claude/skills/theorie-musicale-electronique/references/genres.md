@@ -22,7 +22,7 @@ Mineur quasi universel, arpèges rapides, un hook répété, breakdown sans batt
 
 ## Drum & bass / jungle
 
-Mineur (do mineur le plus courant ; ré, la, fa pour le liquid). **Liquid** : maj7, m9, emprunts — Am9–Cmaj7–Em7–Am9–Cmaj7sus4/F–E ; Am9 et Cmaj7 = mêmes notes, seule la basse change ; sub propre qui suit les accords. **Neurofunk** : la Reese saturée **est** l'harmonie ; notes hors gamme (7e majeure en mineur, b2), m7b5 ; une note ou deux par 8 mesures. **Jungle** : harmonie héritée des samples (reggae, soul), sub sinus sur la tonique.
+Mineur : 82 % des titres annotés à la main ; tonalités les plus fréquentes **sol mineur (32 %) et fa mineur (21 %)** (GiantSteps, 38 titres drum & bass Beatport annotés à la main, `../../../../corpus/house-future-rave/giantsteps-key-dataset-beatport-604-tonalites-par-sous-genre.md`). Top 100 Beatport drum & bass de juillet 2023 : 174 BPM pour 58 titres sur 100, toniques les plus courantes fa, ré, mi♭ (tonalités annotées automatiquement par Beatport, qui ne concordent avec l'annotation manuelle que dans 29 % des cas ; `../../../../corpus/house-future-rave/whatbpm-beatport-top100-bpm-tonalites-par-genre.md`). L'ancienne mention « do mineur le plus courant » n'est pas confirmée par ces données (corrigée le 26 sept. 2026) ; « ré, la, fa pour le liquid » reste une convention non vérifiée. **Liquid** : maj7, m9, emprunts — Am9–Cmaj7–Em7–Am9–Cmaj7sus4/F–E ; Am9 et Cmaj7 = mêmes notes, seule la basse change ; sub propre qui suit les accords. **Neurofunk** : la Reese saturée **est** l'harmonie ; notes hors gamme (7e majeure en mineur, b2), m7b5 ; une note ou deux par 8 mesures. **Jungle** : harmonie héritée des samples (reggae, soul), sub sinus sur la tonique.
 
 ## Dubstep / brostep / riddim
 

@@ -1,0 +1,136 @@
+---
+titre: "Reaticulate — carte d’articulations Cinesamples CineBrass Pro"
+source: https://raw.githubusercontent.com/jtackaberry/reaticulate/master/userbanks/Cinesamples/Cinesamples-CineBrass_Pro.reabank
+recupere_le: 2026-09-24
+mode: texte integral
+langue: en
+axe: articulations ; keyswitches ; banques de cuivres
+skills: studio-grade-brass-sound-design
+usage: copie personnelle pour recherche locale (Ollama) ; droits des auteurs cités
+---
+
+Fichier .reabank (Reaticulate, REAPER) : liste des articulations d’une banque et des messages (keyswitch / program change / CC) qui les déclenchent.
+
+```
+//----------------------------------------------------------------------------
+// Source: DoubleGrit - https://github.com/jtackaberry/reaticulate/issues/108
+//
+// Covers all patches with a default keyswitch option, plus a few others that
+// need configuring manually.
+//----------------------------------------------------------------------------
+
+
+//! g="Cinesamples/Cinebrass Pro" n="CBP Trumpet Solo Art."
+//! m="Set Patch to Keyswitch Velocity Dynamics Map"
+//! id=215acea8-254e-41b3-ab92-1cb2cbecf8c5
+Bank * * 01 Trumpet Solo Articulations
+//! c=legato i=legato o=note:29
+20 legato
+//! c=short i=note-eighth o=note:24
+40 short 1/8
+//! c=short i=note-quarter o=note:26
+41 short 1/4
+//! c=short i=note-half o=note:28
+42 short 1/2
+
+//! g="Cinesamples/Cinebrass Pro" n="CBP Trumpets Ensemble Muted Art."
+//! m="Set Patch to Keyswitch Velocity Dynamics Map"
+//! id=b344a672-40b0-4620-b162-525bcac5eb77
+Bank * * 03 Trumpets Ensemble Muted Articulations
+//! c=legato i=legato o=note:29
+20 legato
+//! c=short i=note-eighth o=note:24
+40 short 1/8
+//! c=short i=note-quarter o=note:26
+41 short 1/4
+//! c=short i=note-half o=note:28
+42 short 1/2
+
+//! g="Cinesamples/Cinebrass Pro" n="CBP Trumpets Ensemble Harmon Mute Art."
+//! m="Set Patch to Custom: Sustain Latch F0, Short 1/4 Latch C0"
+//! id=56e82b1f-a7e9-41a5-bc30-32d6460e31b0
+Bank * * 04 Trumpets Ensemble Harmon Mute Articulations
+//! c=long i=note-whole o=note:29
+1 sustain
+//! c=short i=note-quarter o=note:24
+40 short 1/4
+
+//! g="Cinesamples/Cinebrass Pro" n="CBP Horn Solo Art."
+//! m="Set Patch to Keyswitch Velocity Dynamics Map"
+//! id=07eb5e13-13a5-454c-b2fe-627c9807cbaa
+Bank * * 05 Horn Solo Articulations
+//! c=legato i=legato o=note:29
+20 legato
+//! c=short i=note-eighth o=note:24
+40 short 1/8
+//! c=short i=note-quarter o=note:26
+41 short 1/4
+//! c=short i=note-half o=note:28
+42 short 1/2
+
+//! g="Cinesamples/Cinebrass Pro" n="CBP Horns Ensemble Stopped and Fluttered"
+//! m="Set Patch to Custom: Legato Latch F2, Short 1/8 Latch C2"
+//! id=c5a0dca0-5bdf-4d93-8b92-aea8f01d6288
+Bank * * Horns Ensemble Stopped and Fluttered
+//! c=long i=note-whole o=note:5
+1 sustain
+//! c=short i=note-eighth o=note:0
+40 short 1/8
+
+//! g="Cinesamples/Cinebrass Pro" n="CBP Trombone Solo Art."
+//! m="Set Patch to Keyswitch Velocity Dynamics Map"
+//! id=4a340e3e-a9fb-4688-8d4b-b514d0c39c28
+Bank * * 14 Trombone Solo Articulations
+//! c=legato i=legato o=note:29
+20 legato
+//! c=short i=note-eighth o=note:24
+40 short 1/8
+//! c=short i=note-quarter o=note:26
+41 short 1/4
+//! c=short i=note-half o=note:28
+42 short 1/2
+
+//! g="Cinesamples/Cinebrass Pro" n="CBP Trombones Ensemble Muted Art."
+//! m="Set Patch to Keyswitch Velocity Dynamics Map"
+//! id=cd43058a-a2b9-4e27-a31c-d01c63d5add4
+Bank * * 16 Trombones Ensemble Muted Articulations
+//! c=legato i=legato o=note:29
+20 legato
+//! c=short i=note-eighth o=note:24
+40 short 1/8
+//! c=short i=note-quarter o=note:26
+41 short 1/4
+//! c=short i=note-half o=note:28
+42 short 1/2
+
+//! g="Cinesamples/Cinebrass Pro" n="CBP Tuba Solo Art."
+//! m="Set Patch to Keyswitch Velocity Dynamics Map"
+//! id=18095409-3413-4ba7-bc47-e2ee5256163c
+Bank * * Tuba Solo Articulations
+//! c=legato i=legato o=note:29
+20 legato
+//! c=short i=note-eighth o=note:24
+40 short 1/8
+//! c=short i=note-quarter o=note:26
+41 short 1/4
+//! c=short i=note-half o=note:28
+42 short 1/2
+
+//! g="Cinesamples/Cinebrass Pro" n="CBP Monster Low Brass Art."
+//! m="Set Patch to Custom: Sustain Latch F4, Short 1/8 Latch C4"
+//! id=61e0f02c-f077-4b39-9587-1a5f2a9263e5
+Bank * * Monster Low Brass Articulations
+//! c=long i=note-whole o=note:77
+1 sustain
+//! c=short i=note-eighth o=note:72
+40 short 1/8
+
+//! g="Cinesamples/Cinebrass Pro" n="CBP Horns Ensemble fff Sustains and Shorts"
+//! m="Set Patch to Custom: Legato Latch F0, Short 1/8 Latch C0"
+//! id=982400db-53a3-4e69-8759-682ed1527880
+Bank * * Horns Ensemble fff Sustains and Shorts
+//! c=long i=note-whole o=note:5
+1 sustain
+//! c=short i=note-eighth o=note:0
+40 short 1/8
+```

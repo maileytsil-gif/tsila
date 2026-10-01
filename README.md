@@ -6,8 +6,8 @@ Workflow de production musicale (Ableton Live 12, Serum 2, Maschine MK3) piloté
 
 | Chemin | Rôle |
 |---|---|
-| `.claude/skills/` | les 39 skills du workflow, **source unique** |
-| `.claude/settings.json` | réglage de projet de Claude Code : `skillListingBudgetFraction` 0,03, soit 3 % du contexte pour la liste des skills (1 % par défaut), pour que les 39 descriptions y restent |
+| `.claude/skills/` | les 44 skills du workflow, **source unique** |
+| `.claude/settings.json` | réglage de projet de Claude Code : `skillListingBudgetFraction` 0,03, soit 3 % du contexte pour la liste des skills (1 % par défaut), pour que les 44 descriptions y restent |
 | `.qwen/skills` | lien vers `../.claude/skills` : Qwen Code lit exactement les mêmes fichiers |
 | `.qwen/settings.json` | `context.fileName` : Qwen Code charge `AGENTS.md` et `QWEN.md` |
 | `AGENTS.md` | règles communes à tous les agents : par où entrer, règles de chaque morceau, règles du workflow |

@@ -14,6 +14,7 @@ Ce fichier est lu par Claude Code (importé par `CLAUDE.md`), Qwen Code (`.qwen/
 |---|---|
 | Tout ce qui touche Live (Set, piste, clip, plug-in, niveau, sauvegarde) | `ableton-live-session` : discipline, puis carte « situation → skills » |
 | Nouvelle démo ou nouveau morceau VIBRA (brief, référence, émotions, Original / Extended Mix) | `produire-demo-electro-rapide`, après l'ouverture de séance d'`ableton-live-session` et de `memoire-projet` ; `produire-morceau-electronique-de-a-a-z` prend le relais une fois la démo validée |
+| Suno : prompt, génération à corriger, Studio, stems ou MIDI à reprendre dans Live | `maitriser-suno` ; voix seules sur un instru existant : `suno-vocals` |
 | « Où on en est », plusieurs morceaux, reprise après une pause | `chef-de-projet` |
 | Question de théorie sans écriture dans Live | `theorie-musicale-electronique` (électro) ou `theorie-musicale-composition` (tous styles, cours) |
 

@@ -18,5 +18,11 @@
 | Xfer **Serum 2** (2.1.5) | rien (+ ce que l'utilisateur configure) | tout ; toggles/onglets/navigateur OK en arrière-plan, glisser et saisie non | capture ; niveau via `levels.sh` |
 | Natifs Live (EQ Eight, Glue, Compressor, Utility, Auto Filter, Saturator) | tout (Producer Pal, valeurs affichées ; EQ Eight fréquence en raw 0–1 côté bridge) | rien | `ppal-read-device` |
 
-Ajouter une ligne à chaque nouveau plug-in probé (`probe_params.py`).
-| Waves **L4 / L3 / WLM Plus** (V17, installés) | non relevés : prober `len(d.parameters)` puis `str_for_value` avant tout usage ; L4 a un mode True Peak, WLM Plus mesure LUFS/TP en insert (mesure seule si en bout de Main) | à relever | à relever |
+Ajouter une ligne à chaque nouveau plug-in probé (`probe_params.py`). Relevé complet du 26 septembre 2026 (RazorClip, TheBus, ShaperBox 3, Pro-C 3, ValhallaVintageVerb, L4) : `docs/inventaire/parametres-exposes.md` du dépôt tsila.
+| Analog Obsession **RazorClip** | GAIN (0–24 dB), OUTPUT (±24 dB), MIX, MODEL (5 crans « 0 »–« 4 »), BYPASS (défaut 1 = actif) | rien pour les paramètres ; MODEL à identifier dans la fenêtre | relecture ; détail `docs/inventaire/parametres-exposes.md` |
+| Analog Obsession **TheBus** | Attack (3 crans 0,1/10/30 ms), Release (50/400/800 ms), Threshold (−40–0 dB), Output (±15 dB), Mix, Sidechain Filter (20–500 Hz), External Sidechain, Bypass (défaut 1 = actif), « Paramètre #7 » sans nom | rôle de « Paramètre #7 » et routage sidechain à confirmer | relecture + crêtes |
+| Cableguys **ShaperBox 3** | rien (Device On) | tout | capture |
+| FabFilter **Pro-C 3** | rien (Device On), comme Pro-Q 4 | tout | capture |
+| Valhalla **ValhallaVintageVerb** | tout : Mix, PreDelay (0–500 ms), Decay (0,2–70 s, log), Size, Attack, BassMult, BassXover, HighShelf, HighFreq, diffusion, ModRate/Depth, HighCut, LowCut, ColorMode (seventies/eighties/now), ReverbMode (22 modes, cran 1/24) | rien | **`str_for_value(v)` ignore `v`** (renvoie la valeur courante) : `solve`/`set_enum` inopérants, écrire `p.value` puis relire ; fréquences et Decay en `raw` |
+| Waves **L4 Ultramaximizer Stereo** (V17) | Clip et Release (x0.10–x10, log), Threshold et Ceiling (−30–0 dB, −1 dBFS = 0,9667), Stereo Link, Over Sampling (Off/x2/x4/x8/x16), Upward (0–10 dB) | mode True Peak et mètres non exposés | Insight 2 après (true peak) |
+| Waves **L3 / WLM Plus** (V17, installés) | non relevés : prober `len(d.parameters)` puis `str_for_value` avant tout usage ; WLM Plus mesure LUFS/TP en insert (mesure seule si en bout de Main) | à relever | à relever |

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.5.0",
+  "plan_id": "plan-example-001",
+  "set_identity": {"set_id": "observed-live-set-id", "observed_at": "2026-09-26T12:00:00Z"},
+  "mode": "plan_only",
+  "intent": {"request": "Rendre la basse plus large sans élargir le sub", "goal": "increase perceived width of upper bass harmonics", "scope": "upper harmonics only; preserve low-end center", "constraints": ["Do not change master", "Do not insert or replace devices"]},
+  "operations": [{
+    "operation_id": "op-1",
+    "kind": "set_named_macro",
+    "target": {"role": "mid_bass", "query": "T02_BASS / WIDTH macro mapped to upper-bass layer", "resolved_id": null, "mapping_source": "none"},
+    "proposal": {"from": null, "to": null, "unit": "unknown", "rationale": "No current Set discovery or verified macro mapping is available; do not guess a target value."},
+    "risk": "medium",
+    "reversible": true,
+    "expected_postcondition": "Width changes only on the upper-bass layer; mono sub remains unchanged."
+  }],
+  "preflight": {"target_unique": false, "current_value_captured": false, "automation_checked": false, "savepoint_required": true, "checks": ["Discover track and rack structure", "Confirm unique mapped WIDTH macro", "Confirm macro excludes sub", "Check current automation and value"]},
+  "approval": {"required": true, "status": "not_requested", "plan_digest": "pending-after-canonicalization"},
+  "verification": ["Re-read macro value", "Measure/listen for unchanged low-end center", "Check mono and stereo correlation"],
+  "rollback": {"strategy": "Restore captured macro value only if the current value still equals this plan's post-write value.", "conditions": ["Savepoint exists", "No intervening user edit", "Fresh read confirms expected post-write state"]}
+}

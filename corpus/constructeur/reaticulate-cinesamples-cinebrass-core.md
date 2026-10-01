@@ -1,0 +1,91 @@
+---
+titre: "Reaticulate — carte d’articulations Cinesamples CineBrass Core"
+source: https://raw.githubusercontent.com/jtackaberry/reaticulate/master/userbanks/Cinesamples/Cinesamples-CineBrass_Core.reabank
+recupere_le: 2026-09-24
+mode: texte integral
+langue: en
+axe: articulations ; keyswitches ; banques de cuivres
+skills: studio-grade-brass-sound-design
+usage: copie personnelle pour recherche locale (Ollama) ; droits des auteurs cités
+---
+
+Fichier .reabank (Reaticulate, REAPER) : liste des articulations d’une banque et des messages (keyswitch / program change / CC) qui les déclenchent.
+
+```
+//----------------------------------------------------------------------------
+// Source: DoubleGrit - https://github.com/jtackaberry/reaticulate/issues/108
+//
+// Covers all patches with a default keyswitch option, plus a few others that
+// need configuring manually.
+//----------------------------------------------------------------------------
+
+//! g="Cinesamples/Cinebrass Core" n="CBC Trumpets Ensemble Art."
+//! m="Set Patch to Keyswitch Velocity Dynamics Map"
+//! id=795c2059-b05b-40b9-ac88-c0545671e3c5
+Bank * * 01 Trumpets Ensemble Articulations
+//! c=legato i=legato o=note:29
+20 legato
+//! c=short i=note-eighth o=note:24
+40 short 1/8
+//! c=short i=note-quarter o=note:26
+41 short 1/4
+//! c=short i=note-half o=note:28
+42 short 1/2
+
+//! g="Cinesamples/Cinebrass Core" n="CBC Two Horns Ensemble Art."
+//! m="Set Patch to Custom: Legato Latch F0, Short 1/8 Latch C0"
+//! id=aa47eb41-e802-49c4-b50a-544a01703721
+Bank * * 04 Two Horns Ensemble Articulations
+//! c=legato i=legato o=note:29
+20 legato
+//! c=short i=note-eighth o=note:24
+40 short 1/8
+
+//! g="Cinesamples/Cinebrass Core" n="CBC Trombone Ensemble Art."
+//! m="Set Patch to Keyswitch Velocity Dynamics Map"
+//! id=9ba04b8d-2cac-49eb-bca7-caaf346de310
+Bank * * 09 Trombone Ensemble Articulations
+//! c=long i=note-whole o=note:29
+1 sustain
+//! c=short i=note-eighth o=note:24
+40 short 1/8
+//! c=short i=note-quarter o=note:26
+41 short 1/4
+//! c=short i=note-half o=note:28
+42 short 1/2
+
+//! g="Cinesamples/Cinebrass Core" n="CBC Six Horns Ensemble Art."
+//! m="Set Patch to Keyswitch Velocity Dynamics Map"
+//! id=0397fc30-4c4a-4988-a179-d4f44cd64e38
+Bank * * 06 Six Horns Ensemble Articulations
+//! c=legato i=legato o=note:29
+20 legato
+//! c=short i=note-eighth o=note:24
+40 short 1/8
+//! c=short i=note-quarter o=note:26
+41 short 1/4
+//! c=short i=note-half o=note:28
+42 short 1/2
+
+//! g="Cinesamples/Cinebrass Core" n="CBC Tuba + Bass Ensemble Art."
+//! m="Set Patch to Keyswitch Velocity Dynamics Map, then set Sus=F4, 1/8=C4, 1/4=D4, 1/2=E4"
+//! id=dcd19ba0-86be-4175-a47b-4e1a5158bfb1
+Bank * * 10 Bass + Tuba Ensemble Articulations
+//! c=long i=note-whole o=note:77
+1 sustain
+//! c=short i=note-eighth o=note:72
+40 short 1/8
+//! c=short i=note-quarter o=note:74
+41 short 1/4
+//! c=short i=note-half o=note:76
+42 short 1/2
+
+//! g="Cinesamples/Cinebrass Core" n="CBC Cimbasso + Bass Trombone Art."
+//! m="Set Patch to Custom: Sustain Latch F4, Short 1/8 Latch C4"
+//! id=6f96f592-bbd6-4dc8-abc9-9ad836a39bad
+Bank * * 11 Cimbasso + Bass Trombone Articulations
+//! c=long i=note-whole o=note:77
+1 sustain
+//! c=short i=note-eighth o=note:72
+40 short 1/8
+```

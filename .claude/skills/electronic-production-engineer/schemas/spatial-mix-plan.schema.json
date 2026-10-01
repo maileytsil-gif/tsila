@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/epe/v1.5/spatial-mix-plan.schema.json",
+  "title": "Spatial and spectral mix plan",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "set_id", "items", "checks"],
+  "properties": {
+    "schema_version": {"const": "1.5.0"},
+    "set_id": {"type": "string", "minLength": 1},
+    "items": {"type": "array", "items": {"$ref": "#/$defs/item"}},
+    "checks": {"type": "array", "items": {"enum": ["mono_compatibility", "stereo_correlation", "low_end_center", "masking_review", "depth_translation", "level_matched_reference"]}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "item": {
+      "type": "object", "additionalProperties": false,
+      "required": ["role", "track_match", "spectrum", "pan", "width", "depth", "mono_policy", "collision_strategy", "confidence"],
+      "properties": {
+        "role": {"enum": ["kick", "sub", "mid_bass", "snare", "clap", "hat", "ride", "shaker", "percussion", "lead", "chords", "pad", "vocal", "atmosphere", "impact", "riser", "reverb", "delay", "other"]},
+        "track_match": {"type": "object", "additionalProperties": false, "required": ["query", "resolved_track_id"], "properties": {"query": {"type": "string"}, "resolved_track_id": {"type": ["string", "null"]}}},
+        "spectrum": {"type": "object", "additionalProperties": false, "required": ["function", "range_hz", "overlap_risk"], "properties": {"function": {"type": "string"}, "range_hz": {"type": ["array", "null"], "prefixItems": [{"type": "number", "minimum": 20}, {"type": "number", "maximum": 20000}], "minItems": 2, "maxItems": 2}, "overlap_risk": {"enum": ["low", "medium", "high", "unknown"]}}},
+        "pan": {"type": "object", "additionalProperties": false, "required": ["mode", "value", "unit"], "properties": {"mode": {"enum": ["center", "pan_mono", "stereo_rotation", "split_stereo", "unknown"]}, "value": {"type": ["number", "null"], "minimum": -1, "maximum": 1}, "unit": {"enum": ["normalized", "degrees", "none"]}}},
+        "width": {"type": "object", "additionalProperties": false, "required": ["intent", "value", "frequency_scope"], "properties": {"intent": {"enum": ["mono", "narrow", "natural", "wide", "moving", "unknown"]}, "value": {"type": ["number", "null"]}, "frequency_scope": {"type": "string"}}},
+        "depth": {"type": "object", "additionalProperties": false, "required": ["position", "method"], "properties": {"position": {"enum": ["front", "middle", "back", "moving", "unknown"]}, "method": {"type": "array", "items": {"enum": ["direct_level", "transient", "pre_delay", "early_reflections", "hf_filter", "send_level", "decay", "dry_wet", "automation", "other"]}}}},
+        "mono_policy": {"enum": ["mono_required", "low_frequency_mono", "mono_checked", "stereo_ok", "unknown"]},
+        "collision_strategy": {"type": "string"},
+        "motion": {"type": ["string", "null"]},
+        "confidence": {"enum": ["observed", "inferred", "proposed", "unknown"]}
+      }
+    }
+  }
+}

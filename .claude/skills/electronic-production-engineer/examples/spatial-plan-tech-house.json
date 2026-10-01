@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.4.0",
+  "mix_intent": "Tech House drop: stable club low end, focused hook, lateral percussion groove",
+  "genre_dna": [
+    "Tech House"
+  ],
+  "elements": [
+    {
+      "element": "Kick",
+      "spectral_role": {
+        "body": "sub/low weight",
+        "definition": "attack/presence",
+        "air_texture": null,
+        "measured": false
+      },
+      "pan": {
+        "mode": "mono_pan",
+        "position": 0,
+        "notes": "center anchor"
+      },
+      "width": {
+        "intent": "mono",
+        "percent_starting_point": 0,
+        "protected_low_hz": null
+      },
+      "depth": "front",
+      "motion": null,
+      "mono_policy": "must_be_mono",
+      "collisions": [
+        {
+          "with": "Bass",
+          "priority": "alternate_by_time",
+          "preferred_solution": "sidechain"
+        }
+      ]
+    },
+    {
+      "element": "Bass",
+      "spectral_role": {
+        "body": "sub and low body",
+        "definition": "mid-bass harmonics",
+        "air_texture": null,
+        "measured": false
+      },
+      "pan": {
+        "mode": "mono_pan",
+        "position": 0,
+        "notes": "center core; stereo only on upper layer if used"
+      },
+      "width": {
+        "intent": "frequency_split",
+        "percent_starting_point": null,
+        "protected_low_hz": 120
+      },
+      "depth": "front_middle",
+      "motion": "upper harmonics may move subtly",
+      "mono_policy": "mono_below_crossover",
+      "collisions": [
+        {
+          "with": "Kick",
+          "priority": "alternate_by_time",
+          "preferred_solution": "timing"
+        }
+      ]
+    },
+    {
+      "element": "Closed Hats",
+      "spectral_role": {
+        "body": "upper-mid transient",
+        "definition": "high-frequency groove",
+        "air_texture": "air",
+        "measured": false
+      },
+      "pan": {
+        "mode": "distributed",
+        "position": -20,
+        "notes": "alternate supporting hat/percussion to opposite side"
+      },
+      "width": {
+        "intent": "medium",
+        "percent_starting_point": 75,
+        "protected_low_hz": null
+      },
+      "depth": "front_middle",
+      "motion": "small alternating movement acceptable",
+      "mono_policy": "mono_compatible_stereo",
+      "collisions": []
+    },
+    {
+      "element": "Lead/Vocal Hook",
+      "spectral_role": {
+        "body": "midrange identity",
+        "definition": "presence/intelligibility",
+        "air_texture": "controlled air",
+        "measured": false
+      },
+      "pan": {
+        "mode": "mono_pan",
+        "position": 0,
+        "notes": "center focus with stereo FX around core"
+      },
+      "width": {
+        "intent": "narrow",
+        "percent_starting_point": 45,
+        "protected_low_hz": null
+      },
+      "depth": "front",
+      "motion": null,
+      "mono_policy": "center_core",
+      "collisions": [
+        {
+          "with": "Chords/Stabs",
+          "priority": "self_wins",
+          "preferred_solution": "arrangement"
+        }
+      ]
+    },
+    {
+      "element": "FX/Atmosphere",
+      "spectral_role": {
+        "body": "filtered low-mid if needed",
+        "definition": "texture",
+        "air_texture": "wide air/noise",
+        "measured": false
+      },
+      "pan": {
+        "mode": "moving",
+        "position": 25,
+        "notes": "transition-dependent"
+      },
+      "width": {
+        "intent": "wide",
+        "percent_starting_point": 130,
+        "protected_low_hz": 180
+      },
+      "depth": "back",
+      "motion": "slow pan or one-shot transition automation",
+      "mono_policy": "creative_phase_requires_check",
+      "collisions": []
+    }
+  ],
+  "verification": [
+    "mono",
+    "correlation",
+    "low_side_audit",
+    "low_volume",
+    "headphones",
+    "reference_level_matched"
+  ]
+}

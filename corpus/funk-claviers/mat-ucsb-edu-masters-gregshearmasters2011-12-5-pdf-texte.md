@@ -1,0 +1,1194 @@
+---
+titre: "mat ucsb edu masters gregshearmasters2011 12 5 pdf (texte du PDF, 51 pages)"
+source: funk-claviers/mat-ucsb-edu-masters-gregshearmasters2011-12-5-pdf.pdf
+recupere_le: 2026-09-24
+mode: texte integral (PDF → texte)
+langue: en
+axe: documentation constructeur
+skills: 
+usage: copie personnelle pour recherche locale (Ollama) ; droits des auteurs cités
+---
+
+
+
+<!-- page 1 -->
+
+UNIVERSITY OF CALIFORNIA
+SANTA BARBARA
+The Electromagnetically Sustained Rhodes Piano
+by
+Gregory Shear
+A thesis submitted in partial satisfaction of the
+requirements for the degree of
+Master of Science
+in
+Media Arts & Technology
+Committee in charge:
+Professor Curtis Roads, Chair
+Doctor Matthew Wright
+Professor Clarence Barlow
+Professor Ben Mazin
+December 2011
+
+<!-- page 2 -->
+
+The Thesis of Gregory Shear is approved:
+Doctor Matthew Wright
+Professor Clarence Barlow
+Professor Ben Mazin
+Professor Curtis Roads, Chair
+Date
+
+<!-- page 3 -->
+
+The Electromagnetically Sustained Rhodes Piano
+Copyright 2011
+by
+Gregory Shear
+iii
+
+<!-- page 4 -->
+
+Abstract
+The Electromagnetically Sustained Rhodes Piano
+by
+Gregory Shear
+The Electromagnetically Sustained Rhodes Piano is an augmentation of the orig-
+inal instrument with additional control over the amplitude envelope of individual
+notes. This includes slow attacks and inﬁnite sustain while preserving the familiar
+spectral qualities of this classic electromechanical piano. These additional param-
+eters are controlled with aftertouch on the existing keyboard, extending standard
+piano technique. We explain the physics behind the design of the original instru-
+ment and several methods that were investigated for driving oscillations in the
+mechanical tone generator, for controlling the amplitude of these oscillations, and
+for removing the strong driving signal that is picked up by the sensor from the
+audio output.
+iv
+
+<!-- page 5 -->
+
+Contents
+List of Figures
+vii
+List of Tables
+viii
+1
+Introduction
+1
+2
+Details of the Rhodes Piano
+3
+2.1
+The Tine and Tonebar . . . . . . . . . . . . . . . . . . . . . . . . .
+4
+2.1.1
+Mechanics . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4
+2.1.2
+Spectral Character . . . . . . . . . . . . . . . . . . . . . . .
+5
+2.2
+The Pickup
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+2.2.1
+Harmonic Distortion . . . . . . . . . . . . . . . . . . . . . .
+6
+2.2.2
+Voicing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8
+2.2.3
+Electrical Circuit . . . . . . . . . . . . . . . . . . . . . . . .
+9
+2.3
+Summery
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+10
+3
+Prior Art
+11
+3.1
+The EBow . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+3.2
+The Electromagnetically-Prepared Piano . . . . . . . . . . . . . . .
+12
+3.3
+Magnetic Resonator Piano . . . . . . . . . . . . . . . . . . . . . . .
+13
+3.4
+Computerized Experiments with a Tuning Fork
+. . . . . . . . . . .
+13
+4
+Implementation
+15
+4.1
+Mounting the Electromagnet . . . . . . . . . . . . . . . . . . . . . .
+16
+4.1.1
+Model of Tonebar with Additional Point Mass . . . . . . . .
+17
+4.1.2
+Q Value and Frequency Variation . . . . . . . . . . . . . . .
+18
+4.1.3
+Custom Tonebar Details . . . . . . . . . . . . . . . . . . . .
+19
+4.2
+Excitation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+19
+4.2.1
+Excitation Signal Source . . . . . . . . . . . . . . . . . . . .
+19
+4.2.2
+Phase Relationship Theory . . . . . . . . . . . . . . . . . . .
+23
+4.2.3
+Excitation Circuit . . . . . . . . . . . . . . . . . . . . . . . .
+24
+4.3
+Aftertouch Control . . . . . . . . . . . . . . . . . . . . . . . . . . .
+25
+4.3.1
+Force Sensitive Resistor
+. . . . . . . . . . . . . . . . . . . .
+25
+v
+
+<!-- page 6 -->
+
+4.3.2
+FET Variable Attenuator
+. . . . . . . . . . . . . . . . . . .
+25
+4.3.3
+Phototransistor FET Control
+. . . . . . . . . . . . . . . . .
+26
+4.4
+Audio Output . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+27
+5
+Results and Evaluation
+28
+5.1
+Q Comparison and Frequency Variation . . . . . . . . . . . . . . . .
+28
+5.2
+Phase Theory Veriﬁcation
+. . . . . . . . . . . . . . . . . . . . . . .
+29
+5.3
+Timbre Comparison . . . . . . . . . . . . . . . . . . . . . . . . . . .
+29
+5.4
+Excitation Signal Interference . . . . . . . . . . . . . . . . . . . . .
+30
+5.5
+Example Amplitude Envelopes . . . . . . . . . . . . . . . . . . . . .
+31
+6
+Future Work
+32
+6.1
+Eﬀective Frequency Range . . . . . . . . . . . . . . . . . . . . . . .
+32
+6.2
+Adaptive Gain . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+33
+6.3
+Percussive Attack and Active Damping . . . . . . . . . . . . . . . .
+33
+6.4
+Kit Production
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+34
+Bibliography
+35
+A Tonebar Model
+37
+B Mechanical-electrical signal path
+40
+vi
+
+<!-- page 7 -->
+
+List of Figures
+2.1
+Tone generator assembly. . . . . . . . . . . . . . . . . . . . . . . . .
+3
+2.2
+Spectrogram of acoustic signal generated by vibrating tine. . . . . .
+6
+2.3
+Harmonic distortion of pickup signal compared with vibrating tine
+acoustic signal.
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+2.4
+Example voltage signals generated by the pickup at various separa-
+tions between tine and pickup axes. Fundamental at 196 Hz. . . . .
+8
+2.5
+Harmonic distortion at various separations between tine and pickup
+axes. Fundamental at 196 Hz. . . . . . . . . . . . . . . . . . . . . .
+9
+2.6
+Example octave of series/parallel conﬁguration of pickups.
+. . . . .
+10
+4.1
+Electromagnet coil on steel bolt. . . . . . . . . . . . . . . . . . . . .
+16
+4.2
+Simple model of tonebar with attached actuator. . . . . . . . . . . .
+17
+4.3
+Custom tonebar with attached electromagnet and piezo sensor. . . .
+19
+4.4
+Electromagnet coils mounted above and below tonebars.
+. . . . . .
+20
+4.5
+Excitation signal path block diagram. . . . . . . . . . . . . . . . . .
+24
+4.6
+Cascaded FET variable attenuators. . . . . . . . . . . . . . . . . . .
+25
+4.7
+Partial diagram of alternating pickup array circuit.
+. . . . . . . . .
+27
+5.1
+Normalized spectra comparing passively decaying and and actively
+sustained steady state oscillations. . . . . . . . . . . . . . . . . . . .
+30
+5.2
+Example amplitude envelopes. . . . . . . . . . . . . . . . . . . . . .
+31
+A.1 Simple model of tonebar with attached actuator. . . . . . . . . . . .
+37
+A.2 Separate cantilever beam and point mass models. . . . . . . . . . .
+38
+A.3 Eﬀective masses at length Lt of cantilever beam and actuator mass.
+38
+A.4 Aggregate eﬀective mass on massless beam of length Lt. . . . . . . .
+38
+B.1 Complete excitation circuit diagram for one note. . . . . . . . . . .
+42
+vii
+
+<!-- page 8 -->
+
+List of Tables
+2.1
+Example Q values for various notes in a 1974 Mark 1, 88-key Rhodes
+Piano. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+4.1
+Variable key and example values for Equation 4.1. . . . . . . . . . .
+18
+5.1
+Q values for midrange notes, modiﬁed tine/tonebar systems in bold.
+28
+viii
+
+<!-- page 9 -->
+
+Acknowledgments
+ix
+
+<!-- page 10 -->
+
+Chapter 1
+Introduction
+Harold Rhodes ﬁrst conceived of what would later be known as the Rhodes
+Piano in 1942 while serving in the United States Army Air Corps during World
+War II. Originally an acoustic instrument and assembled from surplus B-17 parts,
+the piano was designed for wounded soldiers to play from their hospital beds. After
+the war Harold Rhodes founded The Rhodes Piano Corporation and introduced an
+improved model of his piano at the ﬁrst National Association of Music Merchants
+(NAMM) show in 1946. Thirteen years later Fender manufactured and sold the
+ﬁrst Rhodes Piano in 1959 [1].
+The Rhodes Piano sound has been familiar throughout mainstream music his-
+tory and continues to be a staple of contemporary pop and electronica. Electronic
+artists in particular desire modern control aﬀordances common to analog or com-
+puter based synthesizers, but extended control over the amplitude envelope of a
+Rhodes Piano was previously only achievable in the recording studio with non-
+1
+
+<!-- page 11 -->
+
+linear editing techniques. The Rhodes Piano is an electromechanical instrument
+that, like an electric guitar, requires ampliﬁcation. Compression and variable gain
+stages preceding the ampliﬁer oﬀer limited real-time control over the amplitude
+envelope, but the audio signal originates from a passive vibrating mechanism inside
+the piano that experiences exponential decay after the initial percussive excitation.
+Swelling eﬀects and inﬁnite sustain remain out of reach for the Rhodes Piano in a
+live performance setting.
+We present a novel system that oﬀers greater control over the amplitude of this
+vibrating mechanism, including inﬁnite sustain, and controlled by aftertouch on the
+original keyboard interface. Active electronics and custom hardware are retroﬁtted
+into the instrument extending its aﬀordances while preserving the original function-
+ality and characteristic timbre. Cost and ease of installation are also considered
+in hopes of producing a kit for users with minimal electronics experience to mod-
+ify their own pianos. Rhodes enthusiasts may be wary of permanent alterations
+to their vintage instruments - these modiﬁcations are non-destructive and may be
+undone.
+This research was ﬁrst presented at the New Interfaces for Musical Expression
+conference in Oslo, Norway, 2011 [2].
+2
+
+<!-- page 12 -->
+
+Chapter 2
+Details of the Rhodes Piano
+Figure 2.1: Tone generator assembly.
+The Rhodes Piano [3] is an electromechanical instrument that generates an
+audio signal from a vibrating thin steel rod ﬁxed at one end. This cantilever beam
+is called the tine and is shown in Figure 2.1.
+In each piano there is one tine
+per note with fundamental vibrating frequencies ranging from 41 Hz to 2.6 kHz
+on the 73-key model, and 27 Hz to 4.2 kHz on the 88-key model. Each tine is
+sensed by a dedicated passive magnetic pickup: Vibration in the tine disturbs the
+magnetic ﬁeld through a coil of wire and generates an electrical signal (details of
+3
+
+<!-- page 13 -->
+
+this interaction can be found in Appendix B). The average (assuming all passive
+electrical components) of the signals from each pickup is present at the output jack
+of the instrument for ampliﬁcation. Similar to an acoustic piano, the tine is struck
+from below by a hammer and damped by a felt pad. The particular instrument
+used in this project is an 88-key, Mark I stage piano from 1974.
+2.1
+The Tine and Tonebar
+2.1.1
+Mechanics
+Each tine is paired with another cantilever beam, the tonebar - despite dissimilar
+physical dimensions their natural vibrating frequencies are matched and together
+they behave as an asymmetrical tuning fork [3]. The tine and tonebar are gross
+tuned by length while ﬁne tuning for the pair is achieved with the tuning spring
+which adds mass at an adjustable position near the free end of the tine as shown in
+Figure 2.1. The tines range in length from 18 mm to 157 mm in the 88-key piano
+and are cylindrical with a diameter of 1.5 mm (except for slight widening at the
+base for strength).
+The fundamental vibrating frequency of a cantilever beam can be calculated by
+its physical dimensions and material properties [4]:
+f = 1.426πK
+8L2
+s
+E
+ρ
+(2.1)
+where
+K =
+h
+√
+12
+for a rectangular cross section of height h
+(2.2)
+4
+
+<!-- page 14 -->
+
+Table 2.1: Example Q values for various notes in a 1974 Mark 1, 88-key Rhodes Piano.
+Note
+f0 (Hz)
+Q
+E♭2
+77.8
+949
+E♭3
+155.6
+731
+E♭4
+311.1
+1520
+E♭5
+622.3
+2175
+E♭6
+1244.5
+1761
+or
+K = r
+2
+for a circular cross section of radius r
+(2.3)
+The tuning fork behaves as a resonant ﬁlter and closely matched vibrating frequen-
+cies of each leg result in a higher Q value and slower dissipation of energy in the
+system:
+Q = 2πf0τ
+2
+(2.4)
+Where τ is the time it takes for the signal to reach 37% of its original amplitude
+while vibrating at fundamental frequency f0 [5]. See Table 2.1 for example Q values
+of notes in the original piano. This long sustain was a selling point of the instrument
+and later models showed further improvements, particularly in the high frequency
+range.
+2.1.2
+Spectral Character
+A piano string, which is ﬁxed at both ends, vibrates with overtones at near
+integer multiples of the fundamental. In contrast, the tine is a cantilever beam
+and vibrates with decidedly inharmonic overtones at non-integer multiples of the
+fundamental [4]. Energy at these higher frequencies dissipates quickly, but although
+the inharmonic overtones are short lived, they give the Rhodes Piano a somewhat
+5
+
+<!-- page 15 -->
+
+bell-like timbre during the attack of each note. Beyond the initial attack, the tine
+settles in to simple harmonic motion with most of its vibrational energy at the
+fundamental frequency as shown in Figure 2.2.
+Figure 2.2: Spectrogram of acoustic signal generated by vibrating tine.
+2.2
+The Pickup
+2.2.1
+Harmonic Distortion
+The pickup is a coil with N turns of wire wrapped around a permanent magnetic
+core. As the ferrous tine swings through the magnetic ﬁeld surrounding the pickup,
+it disturbs the magnetic ﬂux Φ through the coil, generating an electromotive force
+E in the coil.
+V = E = −N d
+dtΦ
+(Faraday’s law)
+(2.5)
+6
+
+<!-- page 16 -->
+
+Assuming inﬁnite resistance between the coil terminals with no current ﬂowing, the
+voltage over the coil is equal to the electromotive force.
+The magnetic ﬁeld produced by the core is non-uniform and scales the value
+d
+dtΦ depending on the location of the tine within the ﬁeld. This has the eﬀect of
+modulating the voltage signal and introducing strong harmonic distortion which is
+clearly visible when comparing the spectra of the acoustic signal with the pickup
+signal during the decaying steady state tine oscillations. Figure 2.3 shows static
+spectra of the pickup signal compared to the acoustic signal of the vibrating tine
+where the fundamental peak in each series is set to 0 dB.
+Figure 2.3: Harmonic distortion of pickup signal compared with vibrating tine acoustic signal.
+7
+
+<!-- page 17 -->
+
+2.2.2
+Voicing
+The harmonic distortion mentioned above is dependent on the vertical align-
+ment of the tine and pickup: As the equilibrium point of the free end of the tine
+approaches the pickup axis, the fundamental and all odd partials are attenuated,
+leaving the second partial as the dominant frequency in the series. This vertical
+adjustment of the tine (in the direction of oscillation) is known as voicing and the
+eﬀect is consistent with the ﬁndings in [6] where a modeled guitar string oscillates
+perpendicularly to the axis of its pickup (motion similar to that of our vibrating
+tine with respect to the pickup). The waveforms and frequency spectra produced
+by diﬀerent tine alignments shown in Figure 2.4 and Figure 2.5 illustrate the eﬀect
+of voicing adjustment.
+Figure 2.4: Example voltage signals generated by the pickup at various separations between tine
+and pickup axes. Fundamental at 196 Hz.
+8
+
+<!-- page 18 -->
+
+Figure 2.5: Harmonic distortion at various separations between tine and pickup axes. Fundamen-
+tal at 196 Hz.
+2.2.3
+Electrical Circuit
+Over the range of the keyboard the array of pickups is divided into parallel
+groups of three, and these groups are connected in series. Figure 2.6 shows a partial
+circuit diagram. The alternating polarity of each group reduces electromagnetic
+interference in the output audio signal [3].
+9
+
+<!-- page 19 -->
+
+Figure 2.6: Example octave of series/parallel conﬁguration of pickups.
+2.3
+Summery
+This understanding of the mechanics and electronics theory behind the Rhodes
+Piano allows us to begin planning our modiﬁcations in hopes of minimizing un-
+wanted side eﬀects.
+10
+
+<!-- page 20 -->
+
+Chapter 3
+Prior Art
+There are relatively few instruments and devices that take on a similar challenge
+to ours - actively sustaining vibrations in a string or tuning fork for musical appli-
+cations. The following examples all share a similar component: The electromagnet.
+Beside this they oﬀer a range of ideas and techniques for us to choose from or ﬁnd
+necessary alternatives to.
+3.1
+The EBow
+The EBow is a handheld electronic device that sustains vibrations in ferro-
+magnetic guitar strings through positive feedback [7]. The guitarist controls the
+device by moving it toward or away from the strings. The EBow uses one coil (the
+pickup) to generate a signal that drives a second coil (the electromagnet) which in
+turn exerts a time-varying magnetic force on the string supporting its oscillation.
+Permanent magnetic cores in each coil temporarily magnetize the ferromagnetic
+11
+
+<!-- page 21 -->
+
+string greatly increasing eﬃciency of the actuator and allowing for both attractive
+and repulsive forces between the actuator and string. Without this magnetization,
+the actuator would exert only an attractive force on the string, eﬀectively rectifying
+the actuator signal.
+This project began with simple experiments where we held an EBow near the
+tines of a Rhodes Piano. This successfully initiated and sustained oscillations prov-
+ing the tines could be excited with an electromagnetic actuator compact enough to
+ﬁt in the limited space inside the piano.
+3.2
+The Electromagnetically-Prepared Piano
+The Electromagnetically-Prepared Piano (EMPP) [8] is an acoustic grand piano
+with electromagnetic actuators placed above certain strings. Each actuator is driven
+with an arbitrary audio signal (the creators suggest pure sine waves, orchestral
+samples, noise, etc.) through a standard audio ampliﬁer. This signal is transmitted
+to the strings via the magnetic force exerted by the electromagnet, and the strings
+in turn transmit the signal to the piano soundboard. Control is achieved through
+software such as Cycling 74s Max/MSP [9] leaving the original key/hammer action
+unaltered.
+This diﬀers from our system in that our excitation signal is generated by the
+vibrating mechanism itself thus completing a feedback loop, and we control the
+system through sensors retroﬁtted to the existing keyboard interface.
+12
+
+<!-- page 22 -->
+
+3.3
+Magnetic Resonator Piano
+Our project is modeled after Andrew McPhersons Magnetic Resonator Piano
+(MRP) - a grand piano with extended timbral and amplitude envelope control
+through continuous position sensing of individual keys [10]. Excitation signals for
+individual notes originate at a single piezo-electric sensor placed on the soundboard.
+This signal is distributed to a series of tuned bandpass ﬁlters that then drive electro-
+magnetic actuators positioned above the strings, similar to the Electromagnetically-
+Prepared Piano. An adjustable delay compensates for the propagation time through
+the soundboard and the resulting phase diﬀerence between the velocity of the string
+and the force exerted by the electromagnet. Continuous sensing is achieved with a
+modiﬁed Moog Piano Bar [11] and a complex scheme of this control data maps key
+position to amplitude and spectral parameters for each note.
+3.4
+Computerized Experiments with a Tuning Fork
+Kraftmakher describes an apparatus for demonstrating free and forced oscilla-
+tions in the classroom where an actuator coil initiates and sustains oscillations in
+a standard tuning fork [?]. He ﬁrst drives the actuator coil with a synthesized sine
+wave at frequencies at and near to the natural vibrating frequency of the tuning
+fork. Stronger physical vibrations are produced as the synthesized sine frequency
+approaches the natural frequency of the tuning fork, and amplitude beating is ob-
+served as the synthesized signal deviates from the natural frequency.
+13
+
+<!-- page 23 -->
+
+Kraftmakher also creates a mechanical-electrical feedback loop driving the actu-
+ator coil with an ampliﬁed microphone signal from the vibrating tuning fork. With
+the exception of the sensing method, this system is most similar to our current
+design despite having such unrelated motivations.
+14
+
+<!-- page 24 -->
+
+Chapter 4
+Implementation
+Given the assortment of instruments and devices described in Chapter 3, the
+use of electromagnetic actuators is not only obvious, but remains the only feasible
+way of electronically initiating and sustaining oscillations in ferromagnetic strings
+or tuning forks.
+As described in Sections 2.1 and 2.2, the characteristic sound
+of the Rhodes Piano depends both on the inharmonic overtones of the vibrating
+tine and the strong harmonic distortion added by the magnetic pickup.
+These
+three indispensable components, the tine, the pickup, and the electromagnet, are
+at odds with each other: Compared to piano or guitar strings, the tines in a Rhodes
+Piano are very short, forcing close proximity between electromagnet and pickup.
+Interference is inevitable in this arrangement and must be compensated for.
+Mounting the electromagnets is easy in an acoustic grand piano where the lid
+may be propped open or removed entirely, exposing the strings with ample space
+above for hardware. The tonebars in a Rhodes Piano, however, block access to the
+15
+
+<!-- page 25 -->
+
+tines from above, and the standard hammer action occupies the space below. The
+only place for additional components is between the tonebar and the tine - far away
+from a solid anchor point to mount a suspension arm and very close to sensitive
+moving parts. Furthermore, the electromagnets are too wide to ﬁt next to each
+other without lengthwise staggering that would vary their ability to move the tine.
+4.1
+Mounting the Electromagnet
+The electromagnet, seen in Figure 4.1, is a coil of approximately 450 turns of
+30 AWG copper wire wound around a plastic sewing machine bobbin.
+A steel
+bolt serves as the core and the coil has a DC resistance of 8 ohms.
+Attaching
+Figure 4.1: Electromagnet coil on steel bolt.
+the electromagnet directly to a custom tonebar minimizes the mounting hardware
+necessary to suspend the electromagnet above the tine and maintains the critical
+separation between the electromagnet and tine during voicing adjustments. The
+16
+
+<!-- page 26 -->
+
+additional mass of the electromagnet lowers the fundamental vibrating frequency
+of the tonebar and must be compensated for by shortening the tonebar length.
+4.1.1
+Model of Tonebar with Additional Point Mass
+In order to calculate the length of the new tonebar with the additional elec-
+tromagnet mass me we suggest a simple model of an ideal cantilever beam (with
+mass) of length Lt and a point mass attached at distance Le from the base, shown
+in Figure 4.2 [12]. This model leads us to Equation 4.1 with Lt in terms of known
+dimensions and material properties. See Table 4.1 for a variable key and example
+values and Appendix A for the derivation.
+Figure 4.2: Simple model of tonebar with attached actuator.
+L4
+t =
+3EK
+(2πf0)2 −meLe
+0.346whρ
+(4.1)
+17
+
+<!-- page 27 -->
+
+Table 4.1: Variable key and example values for Equation 4.1.
+Tonebar Length
+Lt
+0.0821 m
+Tonebar Width
+w
+0.0111 m
+Tonebar Height
+h
+0.0034 m
+Young’s Modulus
+E
+69 × 109 Pa
+Density
+ρ
+2700 kg/m3
+Electromagnet Mass
+me
+0.030 kg
+Electromagnet Position
+Le
+0.0268 m
+Fundamental Frequency
+f0
+293.7 Hz (D4)
+4.1.2
+Q Value and Theoretical Frequency Variation
+The fundamental vibrating frequency varies between damped and undamped
+oscillations where the frequency ratio depends on the damping coeﬃcient ζ:
+fdamped
+fundamped
+=
+p
+1 −ζ2
+(4.2)
+where
+ζ = 1
+2Q
+(4.3)
+Human hearing has the highest frequency resolution in the 1 kHz to 3 kHz range
+where the just noticeable diﬀerence (JND) is about 0.5%1 for a sine tone [13][14].
+To stay within this 0.5% tolerance of human perception of frequency, the damping
+coeﬃcient of the modiﬁed tine and tonebar system must be no greater than 0.10.
+By Equation 4.3, this corresponds to a minimum Q value of 5. Q values of original
+tine/tonebars are above 1000 in this range. Perceptible frequency shift will not
+likely be an issue with the modiﬁed system.
+1Approximately 8.6346 cents.
+18
+
+<!-- page 28 -->
+
+4.1.3
+Custom Tonebar Details
+The new tonebar is machined out of a piece of 6061 aluminum and is pictured
+in Figure 4.3 with attached electromagnet. The coil may also be mounted on top
+with the core extending through the tonebar to carry the magnetic ﬁeld down to
+the tine. Alternating coils above and below the tonebars allows the electromagnets
+to be placed directly next to each other as shown in Figure 4.4.
+Figure 4.3: Custom tonebar with attached electromagnet and piezo sensor.
+4.2
+Excitation
+4.2.1
+Excitation Signal Source
+While the similarity between all of the prior art examples discussed in Chapter 3
+was the use of an electromagnet to drive oscillation in the vibrating mechanism,
+the way they are all diﬀerent from each other is the source of the excitation signal.
+The EBow uses a magnetic pickup, the Electromagnetically-Prepared Piano ex-
+19
+
+<!-- page 29 -->
+
+Figure 4.4: Electromagnet coils mounted above and below tonebars.
+cites its strings with arbitrary prerecorded or synthesized waveforms, the Magnetic
+Resonator Piano senses vibrations with a piezo-electric sensor, and the classroom
+tuning fork apparatus uses a microphone. We investigated the ﬁrst three of these
+possibilities and the advantages and disadvantages of each method are explained in
+detail below.
+Synthesized Sine Wave
+Driving the actuator with a pure sine wave at the tine’s fundamental frequency
+eﬀectively initiates and sustains oscillations in the tine. In fact, this has been a
+necessary procedure for testing diﬀerent parts of the system.
+As expected, the
+electromagnetic excitation signal is sensed by the pickup and dominates the audio
+signal but is easily subtracted with a relatively simple circuit that compensates
+for phase shift and amplitude scaling at the particular operating frequency. Still,
+20
+
+<!-- page 30 -->
+
+even a small diﬀerence between the synthesized frequency and the natural vibrating
+frequency of the tine produces perceptible amplitude beating while the tine settles
+into its steady state oscillations, consistent with the ﬁndings in [?]. Furthermore,
+we found no obvious way to inexpensively synthesize enough excitation signals in
+separate channels to make this scalable up from one note.
+Pickup Signal
+Sensing vibrations in the tine to generate the excitation signal solves the prob-
+lem of slightly detuned frequencies and the resulting amplitude beating. Driving
+the electromagnet with the audio signal also excites the tine from rest with ampli-
+ﬁed system noise. The high electrical gain needed in the circuit produces unruly
+electromagnetic feedback between the electromagnet and pickup - removing the
+excitation signal is necessary in this case not only for preserving the timbre of the
+instrument but also for controlling the feedback loop. Given the richness of this
+excitation signal, a simple circuit will not compensate for the frequency dependent
+phase shift introduced by the pickup as it did for a pure sine tone.
+A second matched pickup placed near the ﬁxed end of the tine also senses the
+electromagnetic ﬁeld and, with the same frequency response, produces the same
+signal as the ﬁrst pickup but without the tine component. The tine component may
+then be isolated by diﬀerential cancellation of the two pickup signals. Please note
+that the distortion described in Section 2.2.1 is an eﬀect of the tine moving through
+the non-uniform magnetic ﬁeld produced by the pickup and no such modulation is
+21
+
+<!-- page 31 -->
+
+imposed on the excitation signal emitted by the electromagnet and sensed by the
+pickup.
+While this method works well for a single note [2], there are several drawbacks.
+Voicing adjustments change the amount of the fundamental frequency present in
+the excitation signal and therefore the amount of electrical gain necessary to drive
+oscillations in the tine. The requirement of a second matched pickup greatly in-
+creases cost and diﬃculty of retroﬁtting the system into the original piano. Finally,
+the subtraction signal produced by the second pickup has the appropriate ampli-
+tude when this pickup is the same distance from the electromagnet as the ﬁrst
+pickup - adjacent electromagnets will not share this one-to-one relationship and
+the subtraction signal will not fully remove this additional interference.
+Piezo Sensor Signal
+A piezo-electric sensor mounted to the end of the tonebar (shown in Figure 4.3)
+produces a nearly perfect sine wave as the tine and tonebar vibrate together at
+the same frequency. These sensors are small, light, easily mounted to the tonebar,
+unaﬀected by voicing adjustments and immune to the electromagnetic ﬁeld. At
+about $1 US each, they are by far the cheapest source for the excitation signal.
+22
+
+<!-- page 32 -->
+
+4.2.2
+Phase Relationship Theory
+The vibrating tine is a damped harmonic oscillator that experiences a restoring
+force −kx and a damping force −cv:
+Fnet = −kx −cv
+(4.4)
+To sustain oscillations at a constant amplitude, a magnetic force must be exerted
+on the tine equal and opposite to the damping force so that the net force is equal
+to that experienced by an ideal, undamped oscillator:
+Fnet = −kx −cv + cv = −kx
+(4.5)
+Fmag = cv
+(4.6)
+Equation 4.6 shows that the magnetic force must be proportional to and in phase
+with the velocity of the tine. The piezo sensor, however, behaves as an accelerometer
+and produces a voltage signal proportional to and in phase with the acceleration of
+the tine. Steady state oscillations of the tine are predominantly sinusoidal and the
+resulting phase relationship between velocity and acceleration is 90◦- a diﬀerence
+that must be compensated for somewhere in the signal path from the source to
+the exerted force on the tine. The only phase shift introduced along this electrical-
+mechanical signal path is in the electronic circuit (detailed explanation found in
+Appendix B) where we can add an adjustable delay to make this compensation.
+23
+
+<!-- page 33 -->
+
+Figure 4.5: Excitation signal path block diagram.
+4.2.3
+Excitation Circuit
+Figure 4.5 shows a block diagram of the excitation signal path, beginning at
+the piezo sensor. The lowpass ﬁlter cutoﬀfrequency is set at XX Hz and stabilizes
+the feedback loop without attenuating the fundamental excitation frequency. The
+attenuator is controlled by a voltage from an optical key position sensor as described
+in Section 4.3.3. The AC ampliﬁer provides gain and blocks a DC bias introduced
+by the attenuator. The constant amplitude phase shifter adjusts the overall delay
+of circuit and allows the phase relationship between piezo sensor voltage and the
+force exerted on the tine to be set to the desired 90◦as described in Section 4.2.2.
+A detailed circuit diagram can found in Appendix B.
+24
+
+<!-- page 34 -->
+
+4.3
+Aftertouch Control
+4.3.1
+Force Sensitive Resistor
+Force Sensitive Resistors (FSRs) beneath the keys in the existing Rhodes Piano
+keyboard is the simplest way to achieve aftertouch control for individual notes. At
+the bottom of the range of motion, the key comes in contact with and applies pres-
+sure to an FSR on the key bed where more pressure resulted in less resistance. Our
+ﬁrst attempt put this variable resistance in the excitation signal path, introducing
+high frequency noise into the excitation signal that was not easily cancelled from
+the audio signal.
+4.3.2
+FET Variable Attenuator
+Figure 4.6: Cascaded FET variable attenuators.
+A ﬁeld eﬀect transistor behaves like a voltage controlled variable resistor for
+small voltage signals [15]. Our second attempt at variable gain used the FSR to
+provide a control voltage for two cascaded FET variable resistors connected to
+ground (see Figure 4.6).
+These eﬀectively turn the electromagnet oﬀwhen no
+25
+
+<!-- page 35 -->
+
+pressure is applied to the FSR and a lowpass ﬁlter on the control voltage prevents
+clicks and crackling from abrupt amplitude changes.
+This circuit works well but the FSR components are very expensive - at approx-
+imately $6 US each they are one of the most expensive parts in the entire system.
+With one FSR necessary for every note on the keyboard, this is a prohibitive cost.
+4.3.3
+Phototransistor FET Control
+The QRD1114 Reﬂective Object Sensor is a small component containing an
+LED and a phototransistor where the output voltage varies as light reﬂects oﬀa
+nearby object and is received by the phototransistor [16]. This part and a dual
+op-amp for signal conditioning provide a suﬃcient control voltage for the previous
+FET variable attenuator circuit, but cost under $2 US - much less expensive than
+the FSR.
+The phototransistor provides continuous sensing of key position throughout its
+entire range of motion. At the bottom of this range, the key/hammer action ﬂexes
+and the key moves closer to the phototransistor by a few more millimeters, depend-
+ing on how much force is exerted on the they key. The Moog Piano Bar uses similar
+optical sensors and the Magnetic Resonator Piano relies on the same movement of
+the piano key to achieve aftertouch tremolo eﬀects [10]. This movement results in
+a voltage change of up to 0.5 V which, with a DC oﬀset and inverting gain, can be
+mapped to a control voltage of −6 V to 0 V for the FET.
+Aftertouch produces a small movement compared to the entire range of motion
+26
+
+<!-- page 36 -->
+
+of the key, all of which is sensed by our current system. Although we ignore the
+control signal outside of this small aftertouch range, Chapter 6 oﬀers ideas for future
+modiﬁcations that will utilize the full control signal.
+4.4
+Audio Output
+Similar to the original conﬁguration, the pickups are wired in an alternating
+polarity pattern to reduce electromagnetic interference in the audio output signal.
+We reverse the polarity on every other pickup, instead of parallel groups of three,
+and buﬀer all of the signals before summing for improved signal to noise ratio. A
+partial circuit diagram is shown in Figure 4.7.
+Figure 4.7: Partial diagram of alternating polarity pickup array circuit.
+27
+
+<!-- page 37 -->
+
+Chapter 5
+Results and Evaluation
+Here we present a few objective measurements that illustrate our successes and
+suggest a direction for future eﬀorts.
+5.1
+Q Comparison and Frequency Variation
+Table 5.1: Q values for midrange notes, modiﬁed tine/tonebar systems in bold.
+Note
+f0 (Hz)
+Q
+B3
+246.9
+1101
+C4
+261.6
+1238
+D♭4
+277.1
+1040
+D4
+293.7
+1156
+E♭4
+311.1
+1520
+Table 5.1 contains Q values for original and modiﬁed tine/tonebar systems in
+the midrange of the piano - our modiﬁcations have had no appreciable eﬀect on the
+inherent decay properties in this range.
+Our lowest Q value of 1040 for D♭4 would result in a frequency shift of less
+28
+
+<!-- page 38 -->
+
+than 0.000012% between inherently damped and actively sustained oscillations - a
+frequency diﬀerence completely imperceptible by humans.
+5.2
+Phase Theory Veriﬁcation
+As described in Section 4.2.2, we desire a magnetic force proportional to the
+velocity of the tine and 90◦out of phase with the piezo sensor (accelerometer) signal.
+The only delay in the mechanical-electrical signal path (detailed in Appendix B)
+is introduced in the circuit and can be measured. An oscilloscope easily compares
+the input voltage and output current (measured by the voltage over a 1Ωresistor
+between the electromagnet and ground - see Appendix B). Indeed, adjusting the
+phase shifter to achieve a 90◦phase diﬀerence between input and output signals
+results in the highest amplitude oscillations during active sustain.
+5.3
+Timbre Comparison
+The frequency spectrum of the actively sustained tine signal is similar to that
+of the passively vibrating tine signal (see Figure 5.1). The fundamental frequency
+is less prominent compared to the upper harmonics during the actively sustained
+note. This may be a result of interference of the excitation signal described below
+in Section 5.4.
+29
+
+<!-- page 39 -->
+
+Figure 5.1: Normalized spectra comparing passively decaying and and actively sustained steady
+state oscillations.
+5.4
+Excitation Signal Interference
+We tested the cancellation method by holding the tine motionless and then
+driving the electromagnet with a synthesized sine wave. With the same polarity,
+each pickup in the array would add the excitation signal to the audio output. Our
+alternating pickup array produces a signal approximately equal to that of only
+the pickup nearest to the electromagnet. Destructive interference is removing a
+signiﬁcant portion of the unwanted excitation signal from the audio output.
+This residual excitation signal in the audio output is approximately 180◦out
+of phase with the signal produced by the vibrating tine. This explains the relative
+attenuation of the fundamental peak in the active sustain frequency spectrum seen
+in Figure 5.1.
+30
+
+<!-- page 40 -->
+
+5.5
+Example Amplitude Envelopes
+Figure 5.2: Example amplitude envelopes.
+Figure 5.2 shows example amplitude envelopes produced by the instrument:
+(a) is a standard hammer attack with natural, unsustained decay; (b) also decays
+naturally, but reaches peak amplitude only by electromagnetic actuation; (c) is
+a standard hammer attack followed by tremolo and shortened decay by the felt
+damper.
+31
+
+<!-- page 41 -->
+
+Chapter 6
+Future Work
+6.1
+Eﬀective Frequency Range
+The current system works well in the middle octave of the piano, but the ex-
+treme high and low end will present new challenges. As described in Section 2.1,
+the highest frequency tines are as short as 18 mm and the attached tonebars are
+correspondingly short and we do not yet know if our method of mounting the elec-
+tromagnet directly to the tonebar will be possible in this range. We are also unsure
+if the excitation signal will cancel as nicely given the tight proximity between elec-
+tromagnet and pickup at this end of the piano.
+At the low end, the long tines reach a much greater maximum deﬂection from
+equilibrium when vibrating at full amplitude, so much so that the original tonebars
+were reshaped to provide clearance. Furthermore, on the 88 key piano, the lowest
+seven tines have no tonebars at all. We don’t fully understand the vibration me-
+32
+
+<!-- page 42 -->
+
+chanics involved at this end of the piano - more research will be necessary before
+we determine what modiﬁcations are feasible on these notes.
+6.2
+Adaptive Gain
+One disadvantage to electrical-mechanical feedback is the variation in ampli-
+tude of the excitation signal. At high amplitude tine oscillations, the piezo sensor
+produces a correspondingly high amplitude voltage signal and relatively low gain is
+needed to amplify this signal and sustain oscillations. When exciting the tine from
+rest, on the other hand, very high gain is needed to amplify system noise to initiate
+oscillations. This high level of gain causes the excitation signal generated at full
+amplitude tine oscillations to clip, introducing high frequency distortion that can
+be heard in the audio output. If the performer is aware of this possibility, she may
+ease oﬀon aftertouch pressure as amplitude increases, but adaptive gain limiting
+will prevent this undesirable aﬀect all together.
+6.3
+Percussive Attack and Active Damping
+We have done a some basic experiments where the electromagnet polarity is
+reversed and as expected oscillations decayed much faster than the passively vi-
+brating (and inherently damped) tine. The electromagnet will switch modes when
+the key returns to its upper position - the continuous phototransistor based sensing
+system described in Section 4.3.3 already provides the control signal necessary for
+33
+
+<!-- page 43 -->
+
+this implementation. We also speculate higher gain and minimal delay in the signal
+path will improve this damping method and eventually replace the felt dampers.
+With a more powerful ampliﬁer, we hope to excite the tine with a square pulse
+for a percussive attack and achieve the traditional sound of the Rhodes Piano
+without the mechanical key/hammer action. The high frequencies associated with
+a square pulse may not cancel from the audio signal with the current system - some
+amount of bandlimiting may be necessary, though it is possible that an audible
+click during the attack of a percussive note would be desirable. A control signal
+corresponding to key velocity could be obtained by diﬀerentiating the key position
+voltage already produced by the phototransistor. The velocity would have to reach
+a certain threshold to trigger the pulse, and then variation in the velocity above
+this threshold would control the amplitude of the pulse.
+Percussive attack and active damping with the electromagnet will also allow the
+instrument to be played with an external controller. We envision a future Rhodes
+sound module with no keyboard that would respond to MIDI or OSC data.
+6.4
+Kit Production
+In the immediate future we hope to begin printing circuit boards and exper-
+imenting with diﬀerent Rhodes Pianos from various production years to see how
+well the current system integrates to the range of models. We will also be reﬁning
+the circuit and removing unnecessary components to reduce cost and simplify the
+build process.
+34
+
+<!-- page 44 -->
+
+Bibliography
+[1] Rhodes Music Corporation.
+History.
+http://www.rhodespiano.com/
+history.htm, 2011.
+[2] G. Shear and M. Wright. The electromagnetically sustained Rhodes piano. In
+NIME Proceedings, Oslo, Norway, 2011.
+[3] Rhodes Keyboard Instruments USA. Rhodes Service Manual, 1979.
+[4] T. D. Rossing and N. H. Fletcher. Principles of vibration and sound. Springer,
+2nd edition, 2004.
+[5] W. M. Siebert. Circuits, Signals, and Systems. MIT Press, 1986.
+[6] N.G. Horton and T.R. Moore. Modeling the magnetic pickup of an electric
+guitar. American Journal of Physics, 77:144, 2009.
+[7] G Heet. String instrument vibration and sustainer, 1978. U.S. Pat. 4,075,921.
+[8] E. Berdahl, S. Backer, and J. Smith. If I had a hammer: Design and theory
+of an electromagnetically-prepared piano. In ICMC Proceedings, Barcelona,
+Spain, 2005.
+35
+
+<!-- page 45 -->
+
+[9] D. Zicarelli. An extensible real-time signal processing environment for Max.
+In ICMC Proceedings, Ann Arbor, Michigan, USA, 1998.
+[10] A. McPherson and Y. Kim. Augmenting the acoustic piano with electromag-
+netic string actuation and continuous key position sensing. In NIME Proceed-
+ings, Sydney, Australia, 2010.
+[11] PianoBar. Products of interest. Computer Music Journal, 29(1):104–113, 2005.
+[12] T. Irvine.
+Bending frequencies of beams, rods, and pipes.
+http://www.
+vibrationdata.com/tutorials2/beam.pdf, 2011. Revision P.
+[13] J. Benesty, M. M. Sondhi, and Y. Huang, editors. Springer Handbook of Speech
+Processing. Springer, 2007.
+[14] G. Loy. Musimathics, volume 1. MIT Press, 2006.
+[15] P. Horowitz and W. Hill. The Art of Electronics. Cambridge University Press,
+2nd edition, 1989.
+[16] Qrd1114 reﬂective object sensor datasheet. http://www.fairchildsemi.com/
+ds/QR/QRD1114.pdf.
+36
+
+<!-- page 46 -->
+
+Appendix A
+Tonebar Model
+Here we explain the simple model of an ideal cantilever beam (with mass) of
+length Lt and a point mass me attached at distance Le from the base, shown in
+Figure A.1. The point mass can be considered separately as a mass at the end of
+Figure A.1: Simple model of tonebar with attached actuator.
+a massless beam of length Le, shown in Figure A.2. These objects have the same
+fundamental vibrating frequencies as eﬀective point masses at the end of massless
+beams, both of length Lt, shown in Figure A.3, where the eﬀective mass is less
+than the mass of the original object and are shown for the cantilever beam and the
+37
+
+<!-- page 47 -->
+
+Figure A.2: Separate cantilever beam and point mass models.
+electromagnet mass by Equations A.1 and A.2, respectively.
+mt′ = 0.346Ltwhρ
+(A.1)
+me′ = me(Le
+Lt
+)3
+(A.2)
+Finally, both of these masses can be added together (Figure A.4) and related to
+Figure A.3: Eﬀective masses at length Lt of cantilever beam and actuator mass.
+the fundamental vibrating frequency:
+Figure A.4: Aggregate eﬀective mass on massless beam of length Lt.
+f0 = 1
+2π
+s
+3EK
+(mt′ + me′)L3
+t
+(A.3)
+38
+
+<!-- page 48 -->
+
+Substituting Equations A.1 and A.2 into Equation A.3 allows us to solve for Lt in
+terms of the known physical dimensions and quantities of the tonebar and electro-
+magnet:
+L4
+t =
+3EK
+(2πf0)2 −meLe
+0.346whρ
+(A.4)
+39
+
+<!-- page 49 -->
+
+Appendix B
+Mechanical-electrical signal path
+A piezo-electric sensor is attached to and accelerates with the end of the tonebar,
+thus experiencing a force and a resulting pressure P over the area A in contact with
+the tonebar and perpendicular to the direction of motion:
+F = ma
+(B.1)
+P = F
+A
+(B.2)
+This pressure deforms the piezo-electric material generating a proportional voltage
+which is presented at the input buﬀer of the electrical circuit (shown in Figure B.1).
+The purpose of this circuit is to drive an alternating current through the elec-
+tromagnet thus producing a magnetic ﬁeld. Several of the circuit components in-
+troduce a frequency dependent delay - this delay can be measured at the excitation
+signal frequency and adjusted with the constant amplitude phase shifter. We will
+address this variable phase shift after examining the remainder of the electrical-
+mechanical signal path.
+40
+
+<!-- page 50 -->
+
+The magnetic ﬁeld B along the axis of an electromagnet with an air core and
+at a distance z:
+B(z) = µ0
+4π
+NIr2
+2(z2 + r2)
+3
+2
+(Biot-Savart law)
+(B.3)
+Our electromagnet has a steel core and the magnetic ﬁeld must pass through
+an air gap before reaching the tine. Regardless, none of these factors introduce a
+delay.
+The magnetic force on the tine is equal to the gradient of the magnetic ﬁeld B
+in the direction of the tine’s magnetic moment mB:
+Fmag = ∇(mB · B)
+(B.4)
+The above equations show the only delay between the sensed acceleration of the
+tonebar and the exerted magnetic force on the tine is introduced by the electrical
+circuit and may be adjusted.
+41
+
+<!-- page 51 -->
+
+Figure B.1: Complete excitation circuit diagram for one note.
+42

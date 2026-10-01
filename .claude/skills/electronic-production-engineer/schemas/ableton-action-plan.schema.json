@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ableton Semantic Action Plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "capability_mode",
+    "actions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.4.0"
+    },
+    "capability_mode": {
+      "enum": [
+        "BRIDGE_READONLY",
+        "BRIDGE_WRITE"
+      ]
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "track",
+          "semantic_target",
+          "operation"
+        ],
+        "properties": {
+          "track": {
+            "type": "string"
+          },
+          "device": {
+            "type": "string"
+          },
+          "semantic_target": {
+            "type": "string"
+          },
+          "operation": {
+            "enum": [
+              "set",
+              "increase",
+              "decrease",
+              "automate",
+              "bypass",
+              "enable",
+              "route",
+              "inspect"
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "string",
+              "null"
+            ]
+          },
+          "range": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "verify": {
+            "type": "string"
+          },
+          "confidence": {
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          },
+          "expected_current_value": {
+            "type": [
+              "number",
+              "string",
+              "boolean",
+              "null"
+            ]
+          },
+          "automation_policy": {
+            "enum": [
+              "preserve",
+              "write_automation",
+              "override_then_reenable",
+              "not_applicable"
+            ]
+          },
+          "rollback": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

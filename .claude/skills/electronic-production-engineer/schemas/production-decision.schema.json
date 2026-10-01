@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Electronic Production Decision",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "capability_mode",
+    "intent",
+    "observations",
+    "diagnosis",
+    "actions",
+    "verification"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.4.0"
+    },
+    "capability_mode": {
+      "enum": [
+        "ADVICE_ONLY",
+        "AUDIO_ANALYSIS",
+        "BRIDGE_READONLY",
+        "BRIDGE_WRITE"
+      ]
+    },
+    "intent": {
+      "type": "object",
+      "properties": {
+        "genre": {
+          "type": "string"
+        },
+        "section": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "status",
+          "text"
+        ],
+        "properties": {
+          "status": {
+            "enum": [
+              "MEASURED",
+              "OBSERVED",
+              "INFERRED",
+              "STARTING_POINT"
+            ]
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "diagnosis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "priority",
+          "target",
+          "change",
+          "reason"
+        ],
+        "properties": {
+          "priority": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "target": {
+            "type": "string"
+          },
+          "change": {
+            "type": "string"
+          },
+          "tool": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "confidence": {
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          },
+          "alternative": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "verification": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

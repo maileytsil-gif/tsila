@@ -1,0 +1,670 @@
+---
+titre: "Reaticulate — carte d’articulations Spitfire BBC Symphony Orchestra"
+source: https://raw.githubusercontent.com/jtackaberry/reaticulate/master/userbanks/Spitfire/Spitfire-BBC_Symphonic_Orchestra.reabank
+recupere_le: 2026-09-24
+mode: texte integral
+langue: en
+axe: articulations ; keyswitches ; banques de cuivres
+skills: studio-grade-brass-sound-design
+usage: copie personnelle pour recherche locale (Ollama) ; droits des auteurs cités
+---
+
+Fichier .reabank (Reaticulate, REAPER) : liste des articulations d’une banque et des messages (keyswitch / program change / CC) qui les déclenchent.
+
+```
+//----------------------------------------------------------------------------
+// Source: Stephan Roemer - https://github.com/jtackaberry/reaticulate/issues/85
+//
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Strings" n="BBC Violins 1 Leader"
+//! id=1d63d7d1-0707-4202-8ab3-feb8342aed6b
+Bank * * BBC Violins 1 Leader
+
+//! c=legato i=legato o=note:0
+20 legato
+//! c=long i=note-whole o=note:1
+1 long
+//! c=long-light i=con-sord o=note:2
+7 long cs
+//! c=long-light i=flautando o=note:3
+8 long flautando
+//! c=short i=spiccato o=note:4
+42 spiccato
+//! c=short i=staccato o=note:5
+40 staccato
+//! c=short-light i=pizz o=note:6
+56 pizzicato
+//! c=short-light i=col-legno o=note:7
+58 col legno
+//! c=long-dark i=tremolo o=note:8
+11 tremolo
+//! c=long i=trill-maj2 o=note:9
+71 trill M2
+//! c=long i=trill-min2 o=note:10
+70 trill m2
+//! c=long-light i=sul-tasto o=note:11
+17 long sul tasto
+//! c=long-light i=harmonics o=note:12
+10 long harmonics
+//! c=short-light i=staccato-harmonics o=note:13
+61 short harmonics
+//! c=short-dark i=pizz-bartok o=note:14
+57 bartok pizz
+//! c=long i=marcato o=note:15
+9 marcato
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Strings" n="BBC Violins 1"
+//! id=006c2fff-ebcc-4ed8-a824-891a065ceebf
+Bank * * BBC Violins 1
+
+//! c=legato i=legato o=note:0
+20 legato
+//! c=long i=note-whole o=note:1
+1 long
+//! c=long-light i=con-sord o=note:2
+7 long cs
+//! c=long-light i=flautando o=note:3
+8 long flautando
+//! c=short i=spiccato o=note:4
+42 spiccato
+//! c=short i=staccato o=note:5
+40 staccato
+//! c=short-light i=pizz o=note:6
+56 pizzicato
+//! c=short-light i=col-legno o=note:7
+58 col legno
+//! c=long-dark i=tremolo o=note:8
+11 tremolo
+//! c=long i=trill-maj2 o=note:9
+71 trill M2
+//! c=long i=trill-min2 o=note:10
+70 trill m2
+//! c=long-light i=sul-tasto o=note:11
+17 long sul tasto
+//! c=long-light i=harmonics o=note:12
+10 long harmonics
+//! c=short-light i=staccato-harmonics o=note:13
+61 short harmonics
+//! c=short-dark i=pizz-bartok o=note:14
+57 bartok pizz
+//! c=long i=marcato o=note:15
+9 long marcato attack
+//! c=long-dark i=tremolo-sul-pont o=note:16
+13 tremolo sul pont
+//! c=long-light i=tremolo-con-sord o=note:17
+12 tremolo cs
+//! c=long-dark i=sul-pont o=note:18
+18 long sul pont
+//! c=short-light i=staccato-con-sord o=note:19
+47 spiccato cs
+
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Strings" n="BBC Violins 2 Leader"
+//! clone="Spitfire/BBC Symphonic Orchestra/Strings/BBC Violins 1 Leader"
+//! id=3d676ccd-db8e-4fb4-a8f8-8877398a27b1
+Bank * * BBC Violins 2 Leader
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Strings" n="BBC Violins 2"
+//! clone="Spitfire/BBC Symphonic Orchestra/Strings/BBC Violins 1"
+//! id=34a515bd-4a05-4069-9dc8-98f5619aa095
+Bank * * BBC Violins 2
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Strings" n="BBC Violas Leader"
+//! clone="Spitfire/BBC Symphonic Orchestra/Strings/BBC Violins 1 Leader"
+//! id=02662135-90dd-49a8-93b5-ef6d00a01ed2
+Bank * * BBC Violas Leader
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Strings" n="BBC Violas"
+//! clone="Spitfire/BBC Symphonic Orchestra/Strings/BBC Violins 1"
+//! id=03ce0e77-f3c9-4ea0-9be7-df679c78d4e7
+Bank * * BBC Violas
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Strings" n="BBC Celli Leader"
+//! clone="Spitfire/BBC Symphonic Orchestra/Strings/BBC Violins 1 Leader"
+//! id=24c66f9c-1ccd-41e2-a47d-a247988568be
+Bank * * BBC Celli Leader
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Strings" n="BBC Celli"
+//! clone="Spitfire/BBC Symphonic Orchestra/Strings/BBC Violins 1"
+//! id=d87fb237-1ce9-48f0-928a-51f2e69adf3b
+Bank * * BBC Celli
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Strings" n="BBC Basses Leader"
+//! clone="Spitfire/BBC Symphonic Orchestra/Strings/BBC Violins 1 Leader"
+//! id=4e9722d3-df91-4803-9af9-3f5dcea0d20b
+Bank * * BBC Basses Leader
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Strings" n="BBC Basses"
+//! clone="Spitfire/BBC Symphonic Orchestra/Strings/BBC Violins 1"
+//! id=0c356eae-b9ac-455b-9635-9f73fb7dad44
+Bank * * BBC Basses
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Brass" n="BBC Horn"
+//! id=7a31cd79-73f6-487a-9e1f-8c859ede6e8a
+Bank * * BBC - Horn
+
+//! c=legato i=legato o=note:0
+20 legato (extended)
+//! c=long i=note-whole o=note:1
+1 long
+//! c=short i=spiccato o=note:2
+41 staccatissimo
+//! c=short i=marcato-quarter o=note:3
+52 marcato
+//! c=long-dark i=cuivre o=note:4
+9 long cuivre
+//! c=short i=staccato-sfz o=note:5
+54 long sfz
+//! c=long-dark i=tremolo o=note:6
+11 flutter
+//! c=long i=multitongued o=note:7
+75 multitongued
+//! c=long i=trill-maj2 o=note:8
+71 trill M2
+//! c=long i=trill-min2 o=note:9
+70 trill m2
+//! c=long i=note-whole o=note:10
+81 long (muted)
+//! c=short i=spiccato o=note:11
+82 staccatissimo (muted)
+//! c=short i=marcato-quarter o=note:12
+83 marcato(muted)
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Brass" n="BBC Horns a4"
+//! id=a4c87f4e-bdc6-45ec-8d11-833d542a776a
+Bank * * BBC - Horns a4
+
+//! c=legato i=legato o=note:0
+20 legato (extended)
+//! c=long i=note-whole o=note:1
+1 long
+//! c=short i=spiccato o=note:2
+41 staccatissimo
+//! c=short i=marcato-quarter o=note:3
+52 marcato
+//! c=long-dark i=cuivre o=note:4
+9 long cuivre
+//! c=short i=staccato-sfz o=note:5
+54 long sfz
+//! c=long-dark i=tremolo o=note:6
+11 flutter
+//! c=long i=multitongued o=note:7
+75 multitongued
+//! c=long i=trill-maj2 o=note:8
+71 trill M2
+//! c=long i=trill-min2 o=note:9
+70 trill m2
+//! c=long i=note-whole o=note:10
+81 long (muted)
+//! c=short i=spiccato o=note:11
+82 staccatissimo (muted)
+//! c=short i=marcato-quarter o=note:12
+83 marcato(muted)
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Brass" n="BBC Trumpet"
+//! clone="Spitfire/BBC Symphonic Orchestra/Brass/BBC Horn"
+//! id=ed050c9f-1c53-485d-a76e-ca9352215245
+Bank * * BBC - Trumpet
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Brass" n="BBC Trumpets a3"
+//! clone="Spitfire/BBC Symphonic Orchestra/Brass/BBC Horns a4"
+//! id=d3ea9af1-34b7-48ef-9ae8-b8e2b437b6e7
+Bank * * BBC - Trumpets a3
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Brass" n="BBC Tenor Trombone"
+//! id=8b18b435-d017-4c02-b767-6d1ae2a758a8
+Bank * * BBC - Tenor Trombone
+
+//! c=legato i=legato o=note:0
+20 legato (extended)
+//! c=long i=note-whole o=note:1
+1 long
+//! c=short i=spiccato o=note:2
+41 staccatissimo
+//! c=short i=marcato-quarter o=note:3
+52 marcato
+//! c=long-dark i=cuivre o=note:4
+9 long cuivre
+//! c=short i=staccato-sfz o=note:5
+54 long sfz
+//! c=long-dark i=tremolo o=note:6
+11 flutter
+//! c=long i=multitongued o=note:7
+75 multitongued
+//! c=long i=note-whole o=note:8
+81 long (muted)
+//! c=short i=spiccato o=note:9
+82 staccatissimo (muted)
+//! c=short i=marcato-quarter o=note:10
+83 marcato(muted)
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Brass" n="BBC Tenor Trombones a3"
+//! clone="Spitfire/BBC Symphonic Orchestra/Brass/BBC Tenor Trombone"
+//! id=708d1f7e-a433-4606-90e7-aa93b0e5d744
+Bank * * BBC - Tenor Trombones a3
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Brass" n="BBC Bass Trombones a2"
+//! clone="Spitfire/BBC Symphonic Orchestra/Brass/BBC Tenor Trombone"
+//! id=485c895c-b244-46f9-83a3-89a63be7504d
+Bank * * BBC - Bass Trombones a2
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Brass" n="BBC Tuba"
+//! id=433cf2ee-7463-4f4a-a87c-eb1430d1978e
+Bank * * BBC - Tuba
+
+//! c=legato i=legato o=note:0
+20 legato (extended)
+//! c=long i=note-whole o=note:1
+1 long
+//! c=short i=spiccato o=note:2
+41 staccatissimo
+//! c=short i=marcato-quarter o=note:3
+52 marcato
+//! c=long-dark i=cuivre o=note:4
+9 long cuivre
+//! c=short i=staccato-sfz o=note:5
+54 long sfz
+//! c=long-dark i=tremolo o=note:6
+11 flutter
+//! c=long i=multitongued o=note:7
+75 multitongued
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Brass" n="BBC Contrabass Tuba"
+//! id=865d2c70-77fc-49ca-be2b-0d07ffa1c17d
+Bank * * BBC - Contrabass Tuba
+
+//! c=legato i=legato o=note:0
+20 legato
+//! c=long i=note-whole o=note:1
+1 long
+//! c=short i=spiccato o=note:2
+41 staccatissimo
+//! c=short i=marcato-quarter o=note:3
+52 marcato
+//! c=long-dark i=cuivre o=note:4
+9 long cuivre
+//! c=short i=staccato-sfz o=note:5
+54 long sfz
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Brass" n="BBC Contrabass Trombone"
+//! clone="Spitfire/BBC Symphonic Orchestra/Brass/BBC Contrabass Tuba"
+//! id=cf75e634-a93d-471a-9d17-8b50397463d6
+Bank * * BBC - Contrabass Trombone
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Brass" n="BBC Cimbasso"
+//! id=ecda3930-7268-408c-a50a-1be213cd4383
+Bank * * BBC - Cimbasso
+
+//! c=long i=note-whole o=note:0
+1 long
+//! c=short i=spiccato o=note:1
+41 staccatissimo
+//! c=short i=marcato-quarter o=note:2
+52 marcato
+//! c=long-dark i=cuivre o=note:3
+9 long cuivre
+//! c=short i=staccato-sfz o=note:4
+54 long sfz
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Flute"
+//! id=c0b3b1d1-bca2-48c0-ae02-0b6ad53d78d9
+Bank * * BBC - Flute
+
+//! c=legato i=legato o=note:0
+20 legato
+//! c=long i=note-whole o=note:1
+1 long
+//! c=long i=trill-maj2 o=note:2
+71 trill M2
+//! c=long i=trill-min2 o=note:3
+70 trill m2
+//! c=short i=spiccato o=note:4
+41 staccatissimo
+//! c=short i=tenuto-eighth o=note:5
+50 tenuto
+//! c=short i=marcato-quarter o=note:6
+52 marcato
+//! c=long-dark i=tremolo o=note:7
+11 flutter
+//! c=long i=multitongued o=note:8
+75 multitongued
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Flutes a3"
+//! clone="Spitfire/BBC Symphonic Orchestra/Woodwinds/BBC Flute"
+//! id=8775b162-89f0-49c4-a8da-bb3d42b2eb2e
+Bank * * BBC - Flutes a3
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Piccolo Flute"
+//! id=09b54ed9-1235-4d6c-af99-d0178df22896
+Bank * * BBC - Flute
+
+//! c=legato i=legato o=note:0
+20 legato
+//! c=long i=note-whole o=note:1
+1 long
+//! c=long i=trill-maj2 o=note:2
+71 trill M2
+//! c=long i=trill-min2 o=note:3
+70 trill m2
+//! c=short i=spiccato o=note:4
+41 staccatissimo
+//! c=short i=tenuto-eighth o=note:5
+50 tenuto
+//! c=short i=marcato-quarter o=note:6
+52 marcato
+//! c=long-dark i=tremolo o=note:7
+11 flutter
+//! c=long i=multitongued o=note:8
+75 multitongued
+//! c=short-dark i=rip o=note:9
+100 rips
+//! c=short-dark i=fall o=note:10
+101 falls
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Oboe"
+//! id=fceed6e0-417e-4a4c-90a1-90fc88bd27d3
+Bank * * BBC - Oboe
+
+//! c=legato i=legato o=note:0
+20 legato
+//! c=long i=note-whole o=note:1
+1 long
+//! c=long i=trill-maj2 o=note:2
+71 trill M2
+//! c=long i=trill-min2 o=note:3
+70 trill m2
+//! c=short i=spiccato o=note:4
+41 staccatissimo
+//! c=short i=tenuto-eighth o=note:5
+50 tenuto
+//! c=short i=marcato-quarter o=note:6
+52 marcato
+//! c=long i=multitongued o=note:7
+75 multitongued
+
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Oboes a3"
+//! clone="Spitfire/BBC Symphonic Orchestra/Woodwinds/BBC Oboe"
+//! id=f24329cc-d197-4f6f-9287-cca027b8a4be
+Bank * * BBC - Oboes a3
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Clarinet"
+//! clone="Spitfire/BBC Symphonic Orchestra/Woodwinds/BBC Flute"
+//! id=c8851746-c2d9-4dcc-8fb3-4f6a0e32042c
+Bank * * BBC - Clarinet
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Bassoon"
+//! id=5261bbe4-ae35-4a75-8b23-4f09479df1a0
+Bank * * BBC - Bassoon
+
+//! c=legato i=legato o=note:0
+20 legato
+//! c=long i=note-whole o=note:1
+1 long
+//! c=long i=trill-maj2 o=note:2
+71 trill M2
+//! c=long i=trill-min2 o=note:3
+70 trill m2
+//! c=short i=spiccato o=note:4
+41 staccatissimo
+//! c=short i=tenuto-eighth o=note:5
+50 tenuto
+//! c=short i=marcato-quarter o=note:6
+52 marcato
+//! c=long-dark i=tremolo o=note:7
+11 flutter
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Bassoon a3"
+//! clone="Spitfire/BBC Symphonic Orchestra/Woodwinds/BBC Bassoon"
+//! id=4c9048f5-8568-4ab6-b4bb-db4d2a0fe624
+Bank * * BBC - Bassoon a3
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Contrabass Clarinet"
+//! id=2c627355-2b44-4f61-988f-d50048259c78
+Bank * * BBC - Contrabass Clarinet
+
+//! c=legato i=legato o=note:0
+20 legato
+//! c=long i=note-whole o=note:1
+1 long
+//! c=long i=trill-maj2 o=note:2
+71 trill M2
+//! c=long i=trill-min2 o=note:3
+70 trill m2
+//! c=short i=spiccato o=note:4
+41 staccatissimo
+//! c=short i=marcato-quarter o=note:5
+52 marcato
+//! c=long-dark i=tremolo o=note:6
+11 flutter
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Contrabassoon"
+//! clone="Spitfire/BBC Symphonic Orchestra/Woodwinds/BBC Contrabass Clarinet"
+//! id=8a89615b-aefb-43a9-aeee-e2b25b18bc95
+Bank * * BBC - Contrabassoon
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Bass Clarinet"
+//! clone="Spitfire/BBC Symphonic Orchestra/Woodwinds/BBC Contrabass Clarinet"
+//! id=76999483-de38-498a-852d-99f6fef81473
+Bank * * BBC - Bass Clarinet
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Cor Anglais"
+//! clone="Spitfire/BBC Symphonic Orchestra/Woodwinds/BBC Contrabass Clarinet"
+//! id=64eda366-6b38-4e1d-acbe-c0e43682f847
+Bank * * BBC - Cor Anglais
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Woodwinds" n="BBC Bass Flute"
+//! id=b4fbd871-e802-40e8-99e0-6f66bbc0e0fb
+Bank * * BBC - Bass Flute
+
+
+//! c=long i=note-whole o=note:1
+1 long
+//! c=long i=trill-maj2 o=note:2
+71 trill M2
+//! c=long i=trill-min2 o=note:3
+70 trill m2
+//! c=short i=spiccato o=note:4
+41 staccatissimo
+//! c=short i=tenuto-eighth o=note:5
+50 tenuto
+//! c=short i=marcato-quarter o=note:6
+52 marcato
+//! c=long-dark i=tremolo o=note:7
+11 flutter
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Percussion" n="BBC Untuned Percussion"
+//! id=21c5ad89-76e4-4435-90f0-21b05bb62d96
+Bank * * BBC - Untuned Percussion
+
+
+//! c=short i=staccato o=note:0
+112 Anvil
+//! c=short i=staccato o=note:1
+113 Bass Drum 1
+//! c=short i=staccato o=note:2
+114 Bass Drum 2
+//! c=short i=staccato o=note:3
+115 Cymbals
+//! c=short i=staccato o=note:4
+116 Military Drum
+//! c=short i=staccato o=note:5
+117 Piatti
+//! c=short i=staccato o=note:6
+118 Snare 1
+//! c=short i=staccato o=note:7
+119 Snare 2
+//! c=short i=staccato o=note:8
+120 Tam Tam
+//! c=short i=staccato o=note:9
+121 Tambrourine
+//! c=short i=staccato o=note:10
+122 Tenor Drum
+//! c=short i=staccato o=note:11
+123 Toys
+//! c=short i=staccato o=note:12
+124 Triangle
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Percussion" n="BBC Timpani"
+//! id=291e1eb1-c5b8-41fe-903b-f8d2fb200bca
+Bank * * BBC - Timpani
+
+//! c=short i=staccato o=note:0
+100 hits
+//! c=long i=note-whole o=note:1
+101 rolls
+//! c=short i=staccato o=note:2
+102 hits soft
+//! c=long i=note-whole o=note:3
+103 rolls soft
+//! c=short i=staccato o=note:4
+104 hits hotrods
+//! c=long i=note-whole o=note:5
+105 long rolls hotrods
+//! c=short i=staccato o=note:6
+106 hits damped
+//! c=short i=staccato o=note:7
+107 hits super damped
+//! c=short i=staccato o=note:8
+108 hotrods hits damped
+//! c=short i=staccato o=note:9
+109 hits damped soft
+
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Percussion" n="BBC Harp"
+//! id=3f5723a0-75d1-436b-9681-330389dfb94e
+Bank * * BBC - Harp
+
+//! c=long i=note-whole o=note:0
+1 sustained
+//! c=short i=staccato o=note:1
+101 damped
+//! c=short i=staccato o=note:2
+102 damped medium
+//! c=long i=note-whole o=note:3
+103 bisbigliando trem
+//! c=fx i=fx o=note:4
+104 gliss fx
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Percussion" n="BBC Marimba"
+//! id=4a6b84ef-c3bf-4d3d-8aea-669e295edb8d
+Bank * * BBC - Marimba
+
+//! c=short i=staccato o=note:0
+100 hits
+//! c=long i=note-whole o=note:1
+101 rolls
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Percussion" n="BBC Celesta"
+//! id=4005b383-b16c-4382-9085-67258b2012dc
+Bank * * BBC - Celesta
+
+//! c=long i=note-whole o=note:0
+1 sustained
+//! c=short i=staccato o=note:1
+101 damped
+//! c=short i=staccato o=note:2
+102 damped medium
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Percussion" n="BBC Xylophone"
+//! id=18c6962e-f4f5-4074-98e9-de4d01530d03
+Bank * * BBC - Xylophone
+
+//! c=short i=staccato o=note:0
+100 hits
+//! c=long i=note-whole o=note:1
+101 rolls
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Percussion" n="BBC Glockenspiel"
+//! clone="Spitfire/BBC Symphonic Orchestra/Percussion/BBC Xylophone"
+//! id=3b253c13-90e4-4754-8875-9dd7ea93897d
+Bank * * BBC - Glockenspiel
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Percussion" n="BBC Tubular Bells"
+//! id=fafedddb-a8af-4a3e-b2eb-1ef571b1296f
+Bank * * BBC - Tubular Bells
+
+//! c=short i=staccato o=note:0
+100 hits
+//! c=long i=note-whole o=note:1
+101 rolls
+//! c=short i=staccato o=note:2
+106 hits damped
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Percussion" n="BBC Vibraphone"
+//! id=4afc7f4d-2e21-45e8-9a87-8864ca8b8586
+Bank * * BBC - Vibraphone
+
+//! c=short i=staccato o=note:0
+100 hits
+
+//----------------------------------------------------------------------------
+//! g="Spitfire/BBC Symphonic Orchestra/Percussion" n="BBC Crotales"
+//! id=59f637ed-57d1-4d4a-9e10-27d20085fc8e
+Bank * * BBC - Crotales
+
+//! c=short i=staccato o=note:0
+100 hits
+//! c=short i=spiccato-brushed o=note:1
+48 hits bowed
+```

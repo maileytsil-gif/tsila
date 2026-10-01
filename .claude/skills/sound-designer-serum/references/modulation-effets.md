@@ -16,9 +16,11 @@ Nomenclature de base : **vibrato** = LFO → pitch ; **tremolo** = LFO → ampli
 
 ### Modes de déclenchement (Serum) `[D]`
 
-- **Off** : LFO libre, calé sur l'horloge du projet. Idéal pads, aucun rapport avec l'attaque.
-- **Trig** : redémarre la forme à chaque note.
-- **Env** : parcourt la forme **une seule fois** — le LFO devient une **enveloppe multi-segments dessinée à la main**.
+Libellés Serum 2 (manuel p. 191) entre parenthèses les noms de Serum 1 :
+
+- **FREE** (Off) : LFO libre, calé sur l'horloge du projet. Idéal pads, aucun rapport avec l'attaque.
+- **RETRIG** (Trig) : redémarre la forme à chaque note.
+- **ENVELOPE** (Env) : parcourt la forme **une seule fois** — le LFO devient une **enveloppe multi-segments dessinée à la main**.
 
 Serum 2 ajoute **Chaos LFO** (attracteurs de Lorenz et Rössler, dérive non répétitive) et **Path** (tracé 2D avec sorties X et Y séparées, donc deux destinations animées par un seul geste). Les taux montent **jusqu'à 1 kHz**, ce qui permet de s'en servir comme source FM ou AM.
 
@@ -115,7 +117,7 @@ Source : https://www.attackmagazine.com/technique/tutorials/10-common-modulation
 
 ### Documenté
 
-Serum 2 : **quatre macros**, chacune agrégeant plusieurs destinations **à des profondeurs différentes**.
+Serum 2 : **huit macros** (MACRO 1–8, manuel p. 206 ; Serum 1 en avait quatre), chacune agrégeant plusieurs destinations **à des profondeurs différentes**.
 
 Critère de choix des paramètres : privilégier ce qui donne **la plus grande amplitude sonore**. Le dry/wet d'une reverb s'entend beaucoup plus qu'un traitement d'entrée ; la fréquence de coupure d'un passe-bas est décrite comme « une machine à morpher le son ».
 

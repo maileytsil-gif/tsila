@@ -118,7 +118,7 @@ Xfer : une bonne wavetable peut ne comporter que quelques frames, les autres son
 
 Serum 2 : jusqu'à **16 voix**, mais « cela peut donner un son plus *cloudy* ; **le nombre magique classique pour l'unison est 7** ». Le gain est compensé automatiquement.
 
-- **MODE** : Linear (dense et puissant, idéal supersaw), Exp (espacement croissant), Inv (voix graves plus désaccordées, effets de phasing), Random (organique ou chaotique).
+- **MODE** : Linear (très contrôlé et lisse, texture épaisse et cohérente), **Super** (dense et puissant, surtout pour les supersaws), Exp (espacement croissant), Inv (voix graves plus désaccordées, effets de phasing), Random (organique ou chaotique) — manuel p. 46 (et p. 64, 81, 94, 111 pour les autres moteurs).
 - **STACK** : Off / 12 (1-3x) octaves / 12+7 (1-3x) quintes + octaves / Center-12 / Center-24.
 - **BLEND** : offset de niveau des voix d'unison par rapport aux voix centrales, **défaut 75 %**, ne s'applique qu'au-delà de 2 voix.
 - **WIDTH**, **RANGE**, **WT POS** (étalement par voix), **WARP 1 / 2** (étalement du warp par voix).
@@ -127,7 +127,7 @@ Ableton Wavetable, six modes : *Classic*, *Shimmer*, *Noise* (idem Shimmer mais 
 
 ### Warp modes de Serum 2 — liste documentée `[D]`
 
-**Sync** — synchronise sur un oscillateur interne ; harmonieux quand les deux sont dans un rapport en nombres entiers.
+**Sync** — synchronise sur un oscillateur interne ; harmonieux quand les deux sont dans un rapport en nombres entiers. Fader **WARP Var** sous le menu : du sync dur au sync doux (manuel p. 50).
 
 **Alt Warp** — `Bend +` / `Bend −` / `Bend +/−` (**50 % = neutre**), `PWM`, `Asym ±`, `Flip`, `Mirror` (qualité octaviée, toujours audible), `Remap 1–4` (remapping dessinable ; Remap 4 « quand on veut quelque chose de méchant »), `Quantize` (réduction de résolution **sur la forme d'onde**, donc **l'aliasing suit parfaitement la hauteur**, contrairement à un Redux), `Odd/Even` (**50 % = signal d'origine, 0 % = impaires seules, 100 % = paires seules**, ce qui crée un effet d'octave puisque la fondamentale disparaît).
 
@@ -161,11 +161,11 @@ Le mode **Hi-Quality** est **désactivé par défaut depuis Live 11.1** sur les 
 
 SOS : un grain dure « généralement entre un centième et un dixième de seconde » (10–100 ms). Chaque grain est fondu en entrée et sortie par une enveloppe, le *smoothing*, sans quoi on n'entend que des clics. Propriété fondatrice : **vitesse, hauteur et formants s'ajustent indépendamment**.
 
-Serum 2 (p. 98–103) :
+Serum 2 (fenêtres p. 91–93, SCAN p. 99–100, DENS et LENGTH p. 101–102, randomisation p. 102–103) :
 - **SCAN** = vitesse de la tête de lecture. Élevé → départs de grains étalés, **moins de recouvrement** ; bas → son étiré, drone. **Négatif = lecture inversée, 0 = tête figée.** Range ±200 % (défaut) / ±400 % / ±800 %.
-- **DENS** = cadence, en **Free (Hz)**, **BPM Sync**, ou **Grains** (taux calculé pour qu'un nombre constant de grains joue en permanence). `Jump Start` déclenche plusieurs grains à l'attaque ; **désactivé, l'attaque est plus douce**.
-- **LENGTH** = durée d'un grain, en Free / BPM Sync / Percent. Grains courts = nets et rythmiques, longs = tenues lisses.
-- **Fenêtres** : `Hann` (fondu symétrique lisse, texture cohésive), `Welch` (parabolique). Réglables par `AMOUNT`, `SKEW`, `SHAPE`.
+- **DENS** = cadence, en **Free (Hz)**, **BPM Sync**, ou **Grains** (taux calculé pour qu'un nombre constant de grains joue en permanence), options **Triplet** / **Dotted** en BPM Sync ; **Max Grains** plafonne les grains simultanés (voix d'unison comprises). `Jump Start` déclenche plusieurs grains à l'attaque ; **désactivé, l'attaque est plus douce**.
+- **LENGTH** = durée d'un grain, en Free / BPM Sync / Percent (**Percent indisponible quand DENS = Grains**). Grains courts = nets et rythmiques, longs = tenues lisses.
+- **Fenêtres** (SHAPE, 10 formes) : `Hann` (fondu symétrique lisse, texture cohésive), `Welch` (parabolique), `Gaussian`, `Blackman-Harris`, `Sinc`, `Tukey`, `Triangle`, `Trapezoid`, `ExpDec` (percussif), `Exp Dec Rev` (swell). Réglables par `AMOUNT`, `SKEW`, `SHAPE`.
 - Randomisation par grain : `OFFSET`, `DIR` (avec *Reverse Grains*), `PITCH`, `RAND` sur length / pan / level.
 - Avertissement explicite : **« Granular synthesis can be CPU intensive ».**
 
@@ -183,11 +183,11 @@ Le granulaire a une **hauteur floue**, donc il est inutilisable pour une ligne m
 
 ### Points de départ `[I]`
 
-**Nappe de fond** — source : un bounce de son propre pad. LENGTH 120 ms, DENS en mode Grains à 8–12 grains simultanés, SCAN 0,05 (quasi figé), fenêtre Hann, PITCH rand ±6 cents, RAND (PAN) 60 %, `Jump Start` **désactivé**. Puis LP 12 dB à 4 kHz et reverb longue.
+**Nappe de fond** — source : un bounce de son propre pad. LENGTH 120 ms, DENS en mode Grains à 8–12 grains simultanés, SCAN ≈ 5 % (quasi figé), fenêtre Hann, PITCH rand ±6 cents, RAND (PAN) 60 %, `Jump Start` **désactivé**. Puis LP 12 dB à 4 kHz et reverb longue.
 
 **Texture rythmique** — LENGTH en BPM Sync 1/32, DENS en BPM Sync 1/16, SCAN ±150 %, DIR rand 30 % avec *Reverse Grains* modulé par un LFO carré 1 mesure, `SKEW` fort. `Jump Start` activé.
 
-**Riser organique** — SCAN automatisé de 0 à +400 % sur 4 mesures, LENGTH automatisé de 300 ms à 15 ms en parallèle : le son passe d'un drone à un bourdonnement tonal à mesure que la longueur de grain descend sous le seuil audio.
+**Riser organique** — Range de SCAN réglé sur ±400 % (clic droit ; défaut ±200 %), SCAN automatisé de 0 à +400 % sur 4 mesures, LENGTH automatisé de 300 ms à 15 ms en parallèle : le son passe d'un drone à un bourdonnement tonal à mesure que la longueur de grain descend sous le seuil audio.
 
 ---
 

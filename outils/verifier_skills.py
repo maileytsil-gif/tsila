@@ -11,8 +11,8 @@ Vérifie, sans rien modifier :
    `references/…`, `scripts/…`), cible d'un lien Markdown, et, dans tout segment entre accents graves (commande
    avec arguments comprise : `python3 ../autre-skill/scripts/x.py a.wav`), chaque jeton qui ressemble à un fichier
    du dépôt (`[../][skill/](scripts|references|assets)/….py|sh|md|json|png`, `../skill/SKILL.md` ; jetons avec
-   `*`, `<` ou `…` ignorés) : le fichier ou le dossier existe depuis le dossier du fichier, la racine du skill
-   ou `.claude/skills/` ;
+   `*`, `<` ou `…` ignorés) : le fichier ou le dossier existe depuis le dossier du fichier, la racine du skill,
+   `.claude/skills/` ou la racine du dépôt (commandes lancées depuis le dépôt : `corpus/scripts/…`) ;
    les fichiers racine `AGENTS.md`, `CLAUDE.md`, `QWEN.md` et `README.md` aussi, avec en plus les jetons
    `lom-bridge/…`, `outils/…`, `.claude/skills/…`, `.qwen/…`, résolus depuis la racine du dépôt,
    `.claude/skills/`, `lom-bridge/` ou un skill nommé entre accents graves sur la même ligne ;
@@ -123,7 +123,7 @@ def chemins_cites(ligne, racine=False):
 
 
 def verifier_chemins(erreurs):
-    fichiers = [(f, [f.parent, SKILLS / f.relative_to(SKILLS).parts[0], SKILLS], False)
+    fichiers = [(f, [f.parent, SKILLS / f.relative_to(SKILLS).parts[0], SKILLS, RACINE], False)
                 for f in sorted(SKILLS.rglob('*.md'))]
     fichiers += [(RACINE / nom, [RACINE, SKILLS, BRIDGE], True)
                  for nom in FICHIERS_RACINE if (RACINE / nom).is_file()]

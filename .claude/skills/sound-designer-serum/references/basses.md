@@ -176,7 +176,7 @@ Osc 1 sinus, Osc 2 même table montée vers la carrée, accordé **−12 demi-to
 
 ### Patch bass house documenté (EDMProd)
 
-Base **sinus + FM**, modulateur « monté de 2 octaves et 7 demi-tons » (donc une quinte, rapport 3:1). **LFO en mode enveloppe sur le cutoff**. Puis OTT, EQ, distorsion, sidechain.
+Base **sinus + FM**, modulateur « monté de 2 octaves et 7 demi-tons » (deux octaves et une quinte : rapport **6:1** `[CALC]` ; une octave et une quinte donneraient 3:1). **LFO en mode enveloppe sur le cutoff**. Puis OTT, EQ, distorsion, sidechain.
 
 Sur le kick : choisir un kick « punchy, mais moins que pour du tech house, un kick qui peut s'écarter du chemin de la basse, c'est-à-dire pas trop de grave ». `[I]` Énoncé côté kick, c'est l'arbitrage de la section 6 : **en bass house, la basse tient le fondamental, pas le kick.**
 

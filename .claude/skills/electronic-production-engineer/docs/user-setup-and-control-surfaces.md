@@ -1,0 +1,24 @@
+# User setup and control surfaces
+
+## Ableton Live 12 Suite
+
+Live is the canonical arrangement, mix, render, and archive environment. Use its Live API/LOM only through a constrained Bridge with capability discovery. Save a recovery copy before approved structural changes. Use Collect All and Save when preparing a portable project; Live normally keeps references to source files, so an uncollected Set can break when media moves.
+
+Observed on the studio Mac (12 Sept 2026): macOS 26.6, Live 12.4.5 Suite (Max 9.1.5, menus in French), Serum 2 2.1.5 (VST3 used, AU also installed), Producer Pal 2.2.0, User Library on an external drive. Control routes, one role each ([ableton-live-session](../../ableton-live-session/SKILL.md)): the **LOM Bridge** (`lom.py`; Remote Script `LOMBridge` 0.8.1 selected as a Control Surface with MIDI input/output None; [lom-bridge/README.md](../../../../lom-bridge/README.md)) for state, parameters, snapshots, notes, anti hot-swap loading, automation and journal; **Producer Pal** (`ppal-*`) for MIDI, clips, native devices, routing, locators (no automation, no save); **screen control** for menus (save, export), plug-in windows and NI software. Stage mapping: [references/61](../references/61-ableton-lom-bridge.md).
+
+## Hardware roles
+
+- **APC64:** Live clips/scenes, performance, and mapped macros. Keep stable track labels and a clear scene/section map. The APC64's onboard sequencing is an idea source; verify its state and explicitly commit/export patterns into the Set. Nothing in this repository has observed the APC64 yet (control-surface script, mappings, sequencer state are [TEST]); no tool here reads its onboard sequencer, so verify committed clips with `lom.py notes get` / `ppal-read-clip`.
+- **Maschine MK3 / Maschine 3:** sampling, slicing, groove, patterns, performance FX, and resampling. Keep exported stems/samples and the editable source when practical. Maschine 3.6 has no API: foreground screen control only, a screenshot after each gesture, the user performs pad/encoder gestures ([native-instruments-control](../../native-instruments-control/SKILL.md)).
+- **Komplete Kontrol keyboard:** playable composition, browsing, and mapped instrument controls. Record instrument/preset identity and dependencies. Komplete Kontrol 3.5 is screen-only too. The model is recorded as A49 in this pack and as a declared "S48" (S49 possible) in native-instruments-control: confirm before giving model-specific instructions [TEST].
+- Maschine, Komplete Kontrol and Battery 4 plug-ins load in Live with `lom.py load` (anti hot-swap); what they expose to Live is unprobed [TEST: `lom.py params <deviceRef>`]. The bridge cannot sense hardware movement: ask before writing while the user plays.
+
+## Instruments and processing
+
+- **Serum 2:** synth role, oscillator/mode choices, modulation intent, and render dependencies belong in sound-design notes. Do not assume generic parameter names match the current plugin build. Unconfigured, it exposes only `Device On` to Live; most edits go through its window by screen control ([serum2.md](../../vst-sound-design/references/serum2.md)); Configure and "Save as Default Configuration" are the route to scripted control ([references/64](../references/64-plugin-profile-strategy.md)). Record the exact Serum version: it does not load data saved by a newer version.
+- **Waves / FabFilter / soothe3 / Analog Obsession:** products may be installed in different versions and formats. Use only devices discovered in the current Set. Prefer semantically named rack macros for repeatable control; require an explicit mapping table before direct parameter writes. Measured exposure (REQ 6, API-2500, L2, J37, bx_glue exposed; Pro-Q 4, F6, soothe3, SPAN window-only): [effets-plugins/references/fiches.md](../../effets-plugins/references/fiches.md).
+- **Live devices:** the user has asked for no new native Ableton effects in mix chains. Tolerated: native instruments and Auto Filter already on MIDI tracks, Utility (mono, trim, phase), an existing sidechain Compressor, Hybrid Reverb on a return; new mix processing is a third-party plug-in. Native instruments remain available for sound design; keep the sound design and signal flow documented.
+
+## Stable naming convention (suggestion)
+
+Canonical names for a new template are listed once in [references/62](../references/62-semantic-mapping-contract.md) and `bridge/semantic-vocabulary.json`: tracks `T01_KICK` … `T08_LOOP`, Rack macros `M01_TONE` … `M08_LEVEL` (technical macros `M09`–`M16`). Names are suggestions, not a reason to rename an existing project automatically; the studio's Sets use `AUDIO - <ROLE>` → `BUS - <GROUP>` → `BUS MASTER 1/2/3` → Main. Macro meaning must be documented per rack and range-limited; a shared label alone does not prove identical behavior. Adding a Rack is a device insertion that needs approval.

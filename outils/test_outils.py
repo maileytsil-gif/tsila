@@ -198,6 +198,18 @@ class Verificateur(unittest.TestCase):
                          ['ERREUR .claude/skills/resampling/essai-liens.md:2 : chemin introuvable '
                           '« sound-designer-serum/references/absent.md »'], r.stdout)
 
+    def test_chemin_relatif_a_la_racine_du_depot(self):
+        depot = self._copie()
+        (depot / 'corpus' / 'scripts').mkdir(parents=True)
+        (depot / 'corpus' / 'scripts' / 'present.py').write_text('', encoding='utf-8')
+        (depot / '.claude' / 'skills' / 'resampling' / 'essai-liens.md').write_text(
+            'Sur le Mac : `python3 corpus/scripts/present.py --dossier x`.\n'
+            'Absent : `python3 corpus/scripts/absent.py`.\n', encoding='utf-8')
+        r = self._verifier(depot)
+        self.assertEqual(self._erreurs(r.stdout, 'essai-liens.md'),
+                         ['ERREUR .claude/skills/resampling/essai-liens.md:2 : chemin introuvable '
+                          '« corpus/scripts/absent.py »'], r.stdout)
+
     def test_fichiers_racine_scannes(self):
         depot = self._copie()
         readme = depot / 'README.md'

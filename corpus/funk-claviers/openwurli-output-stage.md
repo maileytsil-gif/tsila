@@ -1,0 +1,759 @@
+---
+titre: "OpenWurli — Output stage (ampli, haut-parleurs, saturation)"
+source: https://raw.githubusercontent.com/hal0zer0/openwurli/main/docs/research/output-stage.md
+recupere_le: 2026-09-24
+mode: texte integral
+langue: en
+axe: Wurlitzer 200A ; modèle physique openwurli (anches, marteaux, micro, préampli, vibrato)
+skills: studio-grade-funk-keys-synth-sound-design
+usage: copie personnelle pour recherche locale (Ollama) ; droits des auteurs cités
+---
+
+# Wurlitzer 200A Output Stage: Power Amplifier, Tremolo, and Speaker/Cabinet
+
+> **See also:** [Preamp Circuit](preamp-circuit.md) (tremolo feedback integration, Section 7), [Signal Chain Architecture](signal-chain-architecture.md) (overall signal flow)
+
+---
+
+## Table of Contents
+
+1. [Signal Flow Overview](#1-signal-flow-overview)
+2. [Tremolo (Vibrato) Circuit](#2-tremolo-vibrato-circuit)
+3. [Volume Control](#3-volume-control)
+4. [Power Amplifier](#4-power-amplifier)
+5. [Speaker and Cabinet](#5-speaker-and-cabinet)
+6. [Auxiliary and Headphone Outputs](#6-auxiliary-and-headphone-outputs)
+7. [Modeling Recommendations](#7-modeling-recommendations)
+8. [Sources](#8-sources)
+
+---
+
+## 1. Signal Flow Overview
+
+### Signal Path
+
+```
+Reed Pickup
+  -> Preamp (TR-1, TR-2 on reed bar PCB)
+     [LDR tremolo is in the preamp FEEDBACK LOOP, not post-preamp]
+  -> R-11 "REED BAR VOLUME" 25K trimmer (203717-1, wiper strapped)
+  -> Main Volume Pot (10K audio taper, 203643-001)
+  -> C-8 coupling cap
+  -> Power Amplifier (TR-7 through TR-13, on main amp board)
+     -> Differential input (TR-7/TR-8)
+     -> VAS/pre-driver (TR-14, drawn "PRE DRIVER", part 203719)
+     -> Bias control (TR-9, Vbe multiplier)
+     -> Complementary drivers (TR-10 NPN, TR-12 PNP)
+     -> Quasi-complementary output (TR-13 NPN / TIP35C, TR-11 PNP / TIP36C)
+  -> Speaker (two 16-ohm 4"x8" oval drivers in parallel = 8 ohm load)
+  -> Headphone jack (switching, parallel with speaker, 8-ohm load resistor)
+```
+
+### Tremolo Position and Feedback Topology
+
+The Wurlitzer 200A service manual explicitly states:
+
+> "The reed bar signal is modulated by inserting the vibrato voltage into the feedback loop of the high impedance preamp. A divider is formed by the feedback resistor R-10, and the light dependent resistor of LG-1. The L.D.R., in conjunction with the light emitting diode in the same package, creates a variable leg in the feedback divider and makes possible amplitude modulation of the reed bar voltage."
+
+R-10 (56K) feeds back from the preamp output to a feedback junction (fb_junct). Ce1 (4.7 MFD coupling cap) AC-couples fb_junct to TR-1's **emitter**. This is **series-series (emitter) NEGATIVE feedback**. Re1 (33K) provides the separate DC path from emitter to ground. The LDR (LG-1) shunts fb_junct to ground through the **50K VIBRATO pot wired as a 3-terminal divider** (top terminal = fb_junct, bottom terminal = ground, wiper → the LDR branch), with an 18K resistor bridging top→wiper; the LDR sits directly on the wiper branch (cable pin 5 → LG-1 pin 4, LDR pin 3 → ground). R-18 (680 Ω) is **not** in the LDR leg — it is in the LED drive path (+15V → R-18 → LG-1 pin 2 LED → pin 1 → R-17; verified 2026-09-13 by hop-vs-junction instrumented read — the earlier "R18 in series with the LDR" reading misread two line hops as junctions). Front-panel depth = wiper position. When the LDR resistance changes, it diverts feedback current away from the emitter, modulating the preamp's closed-loop gain. (The old "fb_junct → 50K pot → 18K → LG-1 series chain" reading was corrected 2026-07-19 to this loaded divider — see §2.3.)
+
+**Implications for modeling:**
+- Tremolo modulates preamp GAIN via emitter feedback, which means the distortion character changes with the tremolo cycle
+- At the high-gain phase of the tremolo (LDR resistance low / LED on, feedback junction shunted to ground, feedback can't reach emitter), the preamp runs at higher gain and distorts more
+- At the low-gain phase (LDR resistance high / LED off, full feedback reaches emitter via Ce1), the preamp has lower gain and operates more linearly
+- This is more complex than simple amplitude modulation and produces subtle timbral variation during the tremolo cycle
+
+---
+
+## 2. Tremolo (Vibrato) Circuit
+
+### 2.1 Oscillator
+
+The oscillator is a **twin-T (parallel-T) oscillator**. The twin-T network forms a notch filter in the negative feedback path of TR-3. At the notch frequency, feedback is minimized and loop gain peaks, satisfying the Barkhausen criterion.
+
+**Topology:**
+- TR-3 and TR-4 share a **common collector node** (Node G)
+- R17 (4.7K) from Vcc to Node G: sole collector load for both transistors
+- R15 (680K) from base3 to **ground** (pull-down bias, NOT pull-up to Vcc)
+- R16 (10K) from emit3/.68V junction to ground (emitter current path)
+- TR-3 emitter connects **directly** to TR-4 base (shared .68V junction)
+- TR-4 emitter grounded; collector shares Node G with TR-3
+
+**Twin-T network (non-standard ratios):**
+- Highpass T: C17 (.12uF) → node_hp → C16 (.12uF), with R12 (27K) shunt to GND
+- Lowpass T: R14 (680K) → node_lp → R13 (680K), with C18 (.12uF) shunt to GND
+- R_shunt/R_series = 27K/680K = 0.040 (standard = 0.5)
+- C_shunt/C_series = 0.12/0.12 = 1.0 (standard = 2.0)
+- This produces a shallow notch (~-23.5 dB) rather than a deep null
+
+**Oscillation frequency:** ~5.6 Hz (SPICE). Service manual: ~6 Hz. Measured instruments: 5.3-7 Hz.
+
+**DC operating points:**
+
+| Node | Schematic | SPICE | Match |
+|------|-----------|-------|-------|
+| TR-3 base | 1.25V | 1.249V | Excellent |
+| TR-3 emitter / TR-4 base | 0.68V | 0.668V | Excellent |
+| Shared collector (Node G) | 5.9V | 4.95V | See note |
+
+Note: as of the 2026-09-13 revision the subcircuit models the drawn LED path (R-18 → LED → R-17 trimmer), so the collector point now includes the ~1.5V LED drop; testbench reads 5.02V DC / 5.70 Hz / 11.88 Vpp at R-17 = 4.7K, 14.5V rail.
+
+**Output swing:** 11.8 Vpp (target ~11.5 Vpp). Near rail-to-rail.
+
+**Waveform:** The real twin-T oscillator produces a mildly distorted sinusoid (estimated THD 3-10%). The OpenWurli implementation now uses a melange-generated Twin-T circuit oscillator as the default, which models the real waveform shape including the mild distortion. The behavioral sine LFO is still available behind `--features legacy-tremolo`.
+
+**LED drive path (corrected 2026-09-13):** Vcc → R-18 (680 Ω) → LG-1 pin 2 (LED anode) → pin 1 (cathode) → R-17 (4.7K VIBRATO ADJUST trimmer, wiper-strapped) → Node G. The LED current follows the oscillator swing scaled by the trimmer position (~0.4–2.3 mA over the cycle at full R-17; up to ~18 mA peak at R-17 = 0) — the old "fixed ~0.84 mA" figure came from the pre-revision reading with R-18 misplaced in the LDR leg. Front-panel depth lives in the shunt divider (§2.3); R-17 is a second, service-side depth control.
+
+**SPICE netlist:** `spice/subcircuits/tremolo_osc.cir` (validated in `spice/testbench/tb_tremolo_osc.cir`)
+
+### 2.2 LDR/Optocoupler (LG-1)
+
+- Component designation: LG-1, Wurlitzer part #142312 (LED/LDR opto-isolator). Modern replacement: VTL5C3.
+- Package: LED + CdS LDR in lightproof enclosure ("lightproof black box")
+- Original part: manufacturer-specific, now commonly replaced with VTL5C3
+- Replacement with VTL5C3 confirmed to work well by repair community
+- NSL-32 also used as replacement, though VTL5C3 considered more consistent
+
+**CdS LDR Characteristics (from vactrol datasheets):**
+
+| Parameter | VTL5C3 | VTL5C4 | NSL-32SR2 |
+|-----------|--------|--------|-----------|
+| Rise time (on) | 2.5 ms | 6 ms | 5 ms |
+| Fall time (off) | 18-35 ms | 180-1500 ms | 50 ms |
+| Typical R_on | ~50 ohm | ~50 ohm | ~40 ohm |
+| R_off (dark) | 1.3M-10M | 1.3M-10M | Several megohms |
+
+CdS devices exhibit strongly asymmetric time constants (fast on, slow off). This produces the characteristic "choppy" tremolo quality of the 200A.
+
+**CdS nonlinearity:** Resistance follows a power law. The OpenWurli implementation uses the datasheet-typical **gamma = 0.9** (VTL5C-class) over a weakly-driven cell range of **~9 kΩ bright ↔ ~1 MΩ dark** — the weak LED drive keeps the cell in the kΩ regime and never reaches its datasheet ~50 Ω floor. The code uses a log-space interpolation model: `log_r = log_max + (log_min - log_max) * drive^gamma` (see `tremolo.rs`), rather than the simpler `R = R_dark * illumination^(-gamma)` formula. (Earlier docs cited gamma = 1.1 with an 18,320 Ω bright floor; that floor was really the 18 kΩ divider network folded into a fake cell minimum — now modeled explicitly as the shunt divider, §2.3.)
+
+> **⚠ LED-drive correction (2026-09-13, instrumented-read-verified):** the LED current is NOT a fixed ~0.84 mA. The LED path is +15V → R-18 (680 Ω) → LED → **R-17 (4.7K, VARIABLE — a wiper-strapped depth trimmer**, arrowhead on the archive scan; the Tropical Fish redraw lost it) → the TR-3 collector node (5.9 V mark). LED current therefore follows the oscillator swing and the trimmer setting. The cell-range and drive figures in this section were derived under the fixed-current assumption and are being re-derived on the corrected deck (2026-09 revision record).
+
+### 2.3 Feedback Divider Operation
+
+R-10 (56K) feeds from the preamp output to a feedback junction (fb_junct). Ce1 (4.7 MFD) AC-couples fb_junct to TR-1's emitter -- series-series negative feedback. The LDR (LG-1) shunts fb_junct to ground through the **50K VIBRATO pot wired as a 3-terminal divider** (top = fb_junct, bottom = ground, wiper → LDR branch); an 18K resistor bridges top→wiper and the LDR sits **directly** on the wiper branch (R-18 is in the LED path, not here — see the 2026-09-13 correction below). The shunt impedance seen by fb_junct is:
+
+```
+Z = (R_upper ∥ 18 kΩ) + (R_lower ∥ R_ldr)
+    R_upper = 50 kΩ·(1 − depth),  R_lower = 50 kΩ·depth
+```
+
+> **⚠ Topology correction (2026-09-13, verified by instrumented read on both scan surfaces):** the earlier reading placed R-18 (680 Ω) in series with the LDR; the drawing shows cable pin 5 running directly to LG-1 pin 4 (two line HOPS en route, not junctions), with R-18 in the LED drive path instead. All quantitative partition figures below (no-vib ≈ 13 kΩ, bright/dark ≈ 8 kΩ ↔ 48 kΩ, ~7 dB AM ceiling) were computed WITH the spurious 680 Ω in the LDR leg and are being re-derived on the corrected deck (2026-09 revision record). The shipped calibration (depth ladder 0/1.3/2.5/3.8/7.3 dB) remains the current release behavior until that re-derivation lands.
+
+- When LDR resistance is LOW (LED on/bright): the LDR branch pulls the shunt impedance down → feedback cannot reach emitter → emitter AC-grounded via Ce1 → **HIGHER** preamp gain
+- When LDR resistance is HIGH (LED off/dim): the LDR branch goes high-Z, but the **50K/18K divider still loads fb_junct** → partial feedback reaches emitter via Ce1 → emitter degeneration → **LOWER** preamp gain
+- Front-panel depth is the **50K VIBRATO pot wired as a divider** (wiper position). In addition, R-17 (4.7K) is a **wiper-strapped depth TRIMMER in the LED path** (instrumented-read-verified 2026-09-13) — LED current is not fixed; it follows the oscillator swing scaled by the trimmer. The front panel and the trimmer are two separate depth controls, matching the service-position "trimpot + front panel pot" description in §2.4.
+- Pot part number: 201812 on the Tropical Fish print; unreadable on the archive scan (the earlier "203697" reading is unconfirmed).
+
+Because the pot **always loads fb_junct** (at depth = 0 the wiper grounds the LDR branch and fb_junct still sees 50K ∥ 18K ≈ 13 kΩ), the shunt never reaches the ~1 MΩ raw cell resistance. This bounds the tremolo AM swing (~7 dB peak-to-peak at full depth) — the same order of magnitude as the community "6 dB gain boost" measurement. **Provenance caveat on that 6 dB (traced 2026-09-14):** it is a single hand-played scope measurement (1.8 → 4.0 Vpp ≈ 6.9 dB) taken on a unit whose original vactrol was later found degraded and replaced (after which "the vibrato is no longer as strong"), with the tremolo-gain trimmer at MINIMUM. The same threads establish that the tremolo-on gain boost is a **unit-adjustable service parameter** (the depth trimmer — consistent with R-17's VIBRATO ADJUST role) — so no single dB figure is a design constant. Treat 6 dB as one point from one aged unit, not a spec.
+
+**Gain modulation depth (corrected 2026-07-19):**
+
+Keep two things separate:
+
+1. **Gain as a function of the shunt R seen by fb_junct** (SPICE lookup, *still valid*): ~34 dB at 500 Ω, 19.6 dB at 5 kΩ, 15.3 dB at 10 kΩ, 12.1 dB at 19 kΩ, 8.8 dB at 50 kΩ, 6.0 dB at 1 MΩ (full sweep in preamp-circuit.md §7.3).
+2. **The shunt R the divider actually presents** (*this is what changed*): the loaded 50K/18K divider caps the range. No-vibrato point ≈ **13 kΩ (~14 dB)**; full-depth swing ≈ **8 kΩ bright ↔ 48 kΩ dark**, giving **~7 dB peak-to-peak AM**. The circuit **never reaches 1 MΩ**, so the old "6.0 dB no-tremolo baseline" does not occur — it was an artifact of a simplified model that assumed the shunt goes dark to 1 MΩ.
+
+- Measured AM vs depth: **0 / 1.3 / 2.5 / 3.8 / 7.3 dB** at depth 0 / 0.25 / 0.50 / 0.75 / 1.0 — monotonic and well-spread; clean off at depth 0. Rust DSP 7.33 dB matches an independent ngspice arbiter's 7.31 dB at full depth.
+- Bandwidth decreases with gain: GBW is NOT constant (scales with gain) — captured by the DK MNA solver.
+- Excessive depth causes rail clipping in the power amp (distortion at high vibrato settings is a known issue).
+
+### 2.4 Tremolo Character: 200 vs 200A
+
+| Feature | Model 200 | Model 200A |
+|---------|-----------|------------|
+| Mechanism | Bias-shifting (reactance modulation) | LDR optocoupler in feedback loop |
+| Location | Preamp transistor bias injection | Preamp feedback network |
+| Character | Smoother, more gradual | Choppier, more intense |
+| Timbral modulation | YES (bias changes distortion) | YES (gain changes distortion operating point) |
+| Phase modulation | Subtle component | None (pure gain/AM) |
+| Depth control | Fixed or limited | Trimpot + front panel pot |
+| Adjustability | Limited | More range via trimpot |
+| Heritage | Unique to 200 | Return to 140B technique (updated) |
+
+**Key insight:** Both the 200 and 200A tremolo circuits modulate the timbral content, not just volume. The 200A does this through gain modulation (changing the preamp's operating point on its transfer curve), while the 200 does it through bias-point modulation (shifting the transistor's DC operating point). The common simplification that the 200A is "pure AM" is not quite correct -- it is gain-modulated AM, which subtly changes harmonic content through the tremolo cycle.
+
+---
+
+## 3. Volume Control
+
+> **⚠ Corrected 2026-09-13 (verified by instrumented schematic read):** earlier revisions of this section described a 3K pot and a "model as real attenuator" decision. Both were wrong: the 3K volume control (part 201814) is a **Model 200** part (drawing 201904-S-1-E-1), and the attenuator decision was superseded by the 2026-04-26 drive/volume decoupling. This section now records both the real circuit and the shipped architecture.
+
+### 3.1 The real 200A volume chain
+
+| Parameter | Value |
+|-----------|-------|
+| Reed-bar trimmer | R-11 "REED BAR VOLUME" 25K (203717-1, wiper strapped) |
+| Main volume pot | 10K (203643-001), bottom terminal to ground |
+| Taper | Audio; exact taper code unknown (see note below) |
+| Position in signal chain | Preamp output → R-11 → main pot → wiper → C-8 (4.7 µF) → TR-7 base |
+| Preamp output level | 2-7 mV AC (Brad Avenson measurement) |
+
+The wiper drives the power amp input through C-8, so the power-amp input impedance loads the wiper; with the 25K trimmer ahead of the 10K pot, the source impedance at mid-travel is several kΩ — if this is ever modeled as a real attenuator, solve it loaded, not as an ideal gain block.
+
+**Taper note (analog-reference review, 2026-09-13):** a standard carbon audio-taper pot is not x². Bourns' standard 15% curve is a two-slope line reaching ~15% output at half rotation (−16.5 dB at center, vs −12 dB for x² and −6 dB for linear); a 25% part would match x² at center but still miss the two-slope shape. The actual taper code of the 200A's pot is undocumented; measuring a real pot (wiper-to-ground resistance at marked rotations) is the only way to pin it.
+
+### 3.2 Shipped architecture (2026-09-23: the drawn network, loaded)
+
+**The plugin models the pot where the drawing puts it.** User volume is the pot position; `tables::volume_pot_gain` solves the network above as drawn — preamp open-circuit output → R-9 (6.8K, source resistance) → R-11 (series, wiper-strapped) → 10K pot → wiper loaded by the power amp's R-27 (15K; TR-7's base is bootstrapped by the loop; C-8's corner is ~2 Hz so the solve is resistive), plus C-9 (1 nF at TR-7's base) against the wiper's Thévenin resistance as a volume-dependent treble pole (`tables::volume_pot_pole_hz`, ≈35 kHz at full pot, the classic pot-loading treble shift) — and the result multiplies the preamp output into the amp per base-rate sample (`engine.rs`, guarded by `test_user_volume_follows_pot_law`). The output stage carries no user gain: the amp's rail is full scale (`POST_SPEAKER_GAIN_DB` = 0).
+
+Two inputs are **assumptions pending bench measurement** (bench list items 11–12): R-11's factory setting and the pot taper (standard "15 % at center" two-slope audio taper). R-11 is exposed as the **Reed Bar Trim** parameter (0–25 kΩ) because it is per-unit variation on the real population — every 200A left the factory at a different setting; its default, **17.2K**, is transferred from the manufacturer's factory calibration of the preceding Model 200 board (independent review, 2026-09-23): that board's R-48 is the same element — a 0–25K wiper-strapped reed-bar level trim ahead of the volume pot (drawing 201904-S-1-E-1, pixel-traced), and the service manual calibrates it end-to-end, "60 mV in at 1 kHz, adjust R-48 for 4.75 V at the output into 8 Ω with the volume control on maximum" (79×). Reproducing that sensitivity on the A model (generator at the reed-bar end of R-1, vibrato off, pot at max) gives R-11 ≈ 17.2K. The correspondence is functional, not topological — the 200's amp (≈21×, single-supply) and preamp differ — and nothing printed says the A kept the same sensitivity target, so this is an inference, better grounded than mid-travel and outranked by the bench reading when it arrives. With R-11 at its 17.2K default a worst-phase ff chord reaches ~51 % of the amp's clip knee at full pot; with R-11 at zero it clips. Reference gains from the open-circuit preamp output: vol 0.80 (the plugin default) → −16.9 dB, vol 1.0 → −14.0 dB. Measured at the defaults (speaker off): a single ff C4 peaks ≈ −18.8 dBFS, a six-note ff chord −11.6, a velocity-100 chord −21.5; at full volume −8.6 / −19 for the chords.
+
+**History.** From 2026-04-26 to 2026-09-23 circuit drive was PINNED at 0.25 and user volume was a linear post-speaker multiplier ("drive/volume decoupling"), chosen so that vol = 1.0 could never clip the amp and the default level was DAW-friendly. That was a level-convenience departure from the drawing, and the maintainer ruled it out on 2026-09-23 after the external circuit review flagged it (A6): the instrument's amp is driven by the pot and clips when the pot says so. The SPICE drive-sweep finding that motivated it (THD cliff: clean below ~295 mV input, 18.6 % at 500 mV) still describes the amp; it is now simply reachable.
+
+---
+
+## 4. Power Amplifier
+
+### 4.1 Topology Overview
+
+The 200A power amplifier is a **quasi-complementary Class AB push-pull** design. The service manual states:
+
+> "The audio output amplifier is of a quasi complementary design. The driver transistors provide the necessary phase inversion for the output transistors. The collector current of the driver transistor becomes the base current of the output transistor. The output transistors which are operated as emitter followers, provide additional current gain."
+
+**Rated power:** 20 watts (service manual specification). Wikipedia's "30 watt" claim for the model 200 may refer to peak power or an earlier revision; the 200A service manual consistently specifies 20W.
+
+### 4.2 Circuit Stages
+
+#### Input Stage: Differential Amplifier (TR-7, TR-8)
+
+- TR-7 and TR-8 form a long-tailed pair (differential amplifier)
+- Both: 2N5087 (PNP), or 2N3702 in earlier production (Wurlitzer part 142128-1)
+- Must be matched for proper operation
+- Signal input coupled to TR-7 base via C-8 (coupling capacitor)
+- TR-8 receives negative feedback from output via R-31
+- Common emitters provide differential operation
+
+> "The signal input is coupled to TR-7 (one-half of the differential amplifier stage) via C-8. The other half of this stage, TR-8, monitors the final output level via R-31."
+
+The negative feedback through R-31 serves three purposes (from service manual):
+1. Increases frequency response (extends bandwidth)
+2. Lowers distortion (linearizes the amplifier)
+3. Minimizes DC offset voltage at the output
+
+#### Pre-Driver / VAS Stage (TR-14)
+
+- TR-14 (drawn "PRE DRIVER", part 203719) receives the differential signal from TR-7's collector
+- Acts as voltage amplifier stage (VAS)
+- Provides the voltage swing needed to drive the output stage
+
+#### Bias Control: Vbe Multiplier (TR-9)
+
+- TR-9: MPSA06 (NPN), or MPSA14 in later production (serial #102905+)
+- Functions as a constant-current source / variable voltage reference
+- Generates approximately 1.3V across its terminals (two diode drops)
+- This voltage biases the driver/output transistors into Class AB operation
+- R-34 and R-35 set the bias point
+
+From service manual:
+> "The bias control circuit, TR-9, is a constant current source; its base emitter diode junction is used as a reference voltage. If too much current passes through resistor R-35 and exceeds the threshold of the base emitter junction of TR-9 (.7V), the transistor will turn on more, reducing the excessive current through R-35, establishing the stable bias current."
+
+**Bias current target:** 10 mA quiescent. Sourced (2026-09-23) to the service manual's 200A amplifier description, printed pp. 65–66: "R-38 [sic — the scan is JBIG2 and the drawing's select note names R-58] should be tailored for approximately 10 MA output bias or 4.7 millivolts across R-37 or R-38 with the speaker disconnected." The drawing's own note is "SELECT R58 FOR 1–10 MILLIVOLTS ACROSS R37 OR R38" (2.1–21 mA), so 10 mA sits inside the drawn band. Note for the opt-in circuit solver: with the generic MPSA06/MPSA56 driver cards the deck idles near class B (≈0.7 mA on one half, 2026-09-23), and since R-58 ∥ R-34 can only lower the multiplier spread it cannot be selected up to this target — a sourced card for the real driver parts (house numbers 203718/203719, no industry cross-reference in any held document) is the outstanding fix.
+
+#### Driver Stage (TR-10, TR-12)
+
+- TR-10: MPSA06 (NPN driver) -- drives NPN output transistor
+- TR-12: MPSA56 (PNP driver) -- drives PNP output transistor
+- The driver transistors provide phase inversion for the quasi-complementary output
+
+#### Output Stage (TR-11/TIP36C, TR-13/TIP35C)
+
+| Transistor | Type | Function | Package | Ratings |
+|-----------|------|----------|---------|---------|
+| TR-11 | TIP36C (PNP) | PNP output | TO-247 | 100V, 25A, 125W |
+| TR-13 | TIP35C (NPN) | NPN output | TO-247 | 100V, 25A, 125W |
+
+**NOTE on transistor designation (settled 2026-09-22, blind drawing read):** the VAS/pre-driver is **TR-14** (drawn "PRE DRIVER", part 203719); **TR-11 is the TIP36C PNP output**. Earlier revisions of this document called the VAS "TR-11" — that was a designator conflation, not a schematic-revision difference.
+
+**Emitter degeneration resistors:**
+- R-37: 0.47 ohm (NPN side)
+- R-38: 0.47 ohm (PNP side)
+- Purpose: Current sensing for bias stability; prevent thermal runaway
+- Measurement point for bias current: voltage across these resistors should be approximately 5 mV each at idle
+
+### 4.3 Supply Voltages
+
+| Rail | Service Manual Spec | Measured (typical) |
+|------|--------------------|--------------------|
+| V+ | +22V (nominal) | +24 to +24.5V |
+| V- | -22V (nominal) | -24 to -24.5V |
+| Preamp supply | +14.5V regulated (manual text, p.64) | schematic marks "+15V" — sources disagree; 14.5V resolves the TR-2 IC/IE mark imbalance (see preamp-circuit.md banner) |
+
+**NOTE:** The actual rail voltages are typically 10% higher than the nominal specification (24.5V vs 22V). This is normal for unregulated supplies at light load.
+
+#### 4.3.1 Supply Topology and Rail Sag Model
+
+The ±22 V power-amp rails come from a full-wave center-tapped rectifier feeding 2 × 2200 µF filter caps. Schematic source: #203720-S-3, components extracted Apr 2026 (maintainer research notes).
+
+| Refdes | Value | Role |
+|---|---|---|
+| D2-D5 | Wurlitzer #142350 (1N4004 substitute) | Bridge rectifier diodes |
+| C28 / C29 | 2200 µF | Filter cap per rail |
+| F-1 / F-2 | 1.5 A inline fuses | Rail to power-amp input |
+| T-1 (#203715) | secondary CT, ~17.8-0-17.8 VAC RMS *(estimated)* | Power transformer |
+
+**Rail sag mechanism.** Under load, the rails sag from idle (~±24.5 V) toward the nominal ±22 V spec. This compresses chord-ff peaks against the rails *more than* light single notes — a natural compression mechanism that an ideal-rail model misses.
+
+**SPICE model.** `spice/subcircuits/power_supply.cir` provides a `wurli_rail_supply` subckt parameterized as `VSEC_RMS=17.8 RSEC=0.5 FREQ=60`. Validated standalone via `spice/testbench/tb_power_supply.cir`:
+
+| Test condition | Result | Target | Source |
+|---|---|---|---|
+| Light load (10 kΩ/rail, 2.4 mA draw) | vp = 24.39 V | 24.5 V | service manual idle |
+| Class-AB rated load (31 Ω/rail, 0.71 A — equivalent to 20 W into 8 Ω) | vp = 21.997 V | 22.0 V | service manual rated |
+| 120 Hz ripple at rated | 1.97 Vpp | — | (informational) |
+
+**Calibration unknown.** No real 200A hardware was used to verify these numbers — both endpoints of the load line come from the service manual. RSEC = 0.5 Ω is back-solved from the documented sag spec, sitting at the low end of the period-typical 0.5-1.5 Ω range for a 25-30 VA secondary. If a real-instrument measurement of rail voltage under load ever becomes available, RSEC is the one-line tuning knob in `power_supply.cir`. VSEC_RMS is anchored to the documented light-load measurement and shouldn't need adjustment.
+
+**Status.** SPICE-validated only. The melange-generated power-amp solver (`gen_power_amp.rs`) currently still uses ideal ±22 V rails. Promoting rail sag into the production signal chain is a separate task — see PR-2 plan: behavioral rail dynamics in `power_amp.rs` adapter pushed via `.runtime V` into the melange circuit.
+
+### 4.4 Bootstrap Capacitor (C-12)
+
+> "Capacitor C-12 performs two functions: 1) it acts as a bypass to decouple any power supply ripple from the driver stages, and 2) it is connected as a 'bootstrap' capacitor to provide the drive necessary to pull TR-10 and TR-11 into saturation. The stored voltage of the capacitor (with reference to the output) provides a higher voltage than the normal collector-supply voltage to drive TR-10 and TR-11."
+
+The bootstrap capacitor is standard practice in quasi-complementary designs. It allows the upper driver transistor to swing the output close to the positive rail by effectively providing a floating supply above the output voltage.
+
+### 4.5 Complete Power Amp Component Summary
+
+#### Transistors
+
+| Ref | Type | Function |
+|-----|------|----------|
+| TR-7 | 2N5087 (PNP) | Differential input (signal) |
+| TR-8 | 2N5087 (PNP) | Differential input (feedback) |
+| TR-9 | MPSA06 or MPSA14 | Vbe multiplier (bias) |
+| TR-10 | MPSA06 (NPN) | NPN driver |
+| TR-12 | MPSA56 (PNP) | PNP driver |
+| TR-11 | TIP36C (PNP) | PNP output, 125W |
+| TR-13 | TIP35C (NPN) | NPN output, 125W |
+| TR-14 | 203719 (NPN) | VAS / pre-driver ("PRE DRIVER") |
+
+TR-7 = TR-8 = Wurlitzer part #142128
+
+#### Key Resistors
+
+| Ref | Value | Function |
+|-----|-------|----------|
+| R-30 | 220 Ω | Feedback ground-side resistor (with R-31 forms voltage divider) |
+| R-31 | 15K | Output-to-input negative feedback |
+| R-32 | 1.8K | Bootstrapped VAS (TR-14) collector load, with R-33 and C-12 (see §4.4) |
+| R-33 | 1.8K | Bootstrapped VAS collector load (upper half) |
+| R-34 | 160 ohm | Bias network (confirmed by GroupDIY measurement of 150-160 ohm) |
+| R-35 | 220 ohm | Bias network |
+| R-36 | 270 ohm | Base-emitter TR-11 |
+| R-37 | 0.47 ohm | NPN output emitter degeneration |
+| R-38 | 0.47 ohm | PNP output emitter degeneration |
+| R-58 | Optional 1K (across R-34) | Bias reduction modification |
+
+#### Key Capacitors
+
+| Ref | Value | Function |
+|-----|-------|----------|
+| C-8 | 4.7 MFD | Input coupling to TR-7 |
+| C-11 | 100 PF | Pre-driver feedback cap |
+| C-12 | 100 MFD | Bootstrap / ripple bypass |
+
+### 4.6 Power Output and Clipping Analysis
+
+**Rated output:** 20 watts into 8 ohms (service manual)
+
+**Theoretical maximum:**
+With +/-22V rails (nominal), accounting for transistor saturation voltage drops of approximately 2-3V per side:
+- Effective peak swing: approximately +/-19V to +/-20V
+- P_max = V_peak^2 / (2 * R_load) = (19)^2 / (2 * 8) = 361/16 = ~22.5W RMS
+- With measured +/-24.5V rails: P_max = (21.5)^2 / 16 = ~29W
+- This is consistent with 20W rated / 30W peak specifications
+
+**Clipping behavior:**
+- At moderate levels (mf single notes): power amp is clean, preamp dominates tonal character
+- At ff polyphonic (multiple notes, high velocity): output can approach rail clipping
+- The preamp output (pre volume pot) measured at 1.8-4V peak-to-peak
+- Through the 3K volume pot at moderate settings, signal to power amp is in millivolt range
+- At full volume with ff polyphonic playing: power amp may clip against rails
+- Clipping is symmetric (equal positive and negative excursion to rails)
+- Produces primarily odd harmonics when clipping occurs
+
+**Crossover distortion (common aging issue):**
+- The Class AB bias (10 mA) is set by the Vbe multiplier (TR-9)
+- With component aging, bias drifts toward zero, increasing the dead zone
+- Crossover distortion produces odd harmonics, especially audible at low signal levels
+- This is a well-documented repair issue in the Wurlitzer community
+- Repair involves adjusting R-34/R-35 (Vbe multiplier network) to restore 5 mV across R-37/R-38
+
+### 4.7 Does the Power Amplifier Contribute to Tone?
+
+**Answer: Generally NO for well-maintained instruments at normal levels, but YES in several edge cases.**
+
+| Condition | Power Amp Contribution | Character |
+|-----------|----------------------|-----------|
+| mf single notes | Negligible | Clean amplification |
+| ff single notes | Minimal | Slight compression near rails |
+| ff polyphonic (chords) | Moderate | Rail clipping adds compression, slight odd harmonics |
+| Aged bias (crossover) | Significant | Odd-harmonic "grittiness" at all levels |
+| Full volume + ff chords | Significant | Hard clipping, dense saturation |
+
+**For modeling purposes:** The power amplifier is modeled as a closed-loop negative feedback amplifier. The R-31/R-30 feedback network (loop gain ≈ 275) linearizes the output at normal signal levels. Distortion becomes significant only near the ±22V supply rails. The power amp is NOT a major tonal contributor — the Wurlitzer's characteristic bark comes primarily from the pickup's 1/(1-y) nonlinearity, with the preamp's asymmetric soft-clipping adding further coloring at high dynamics.
+
+**Gain staging (current, measured 2026-09-23 with the engine's `power_amp_drive_headroom_probe`, Reed Bar Trim at its 17.2K default):** the power amp is driven through the drawn volume network (§3). At the default pot position (0.80) single ff notes put 37–70 mV peak into the amp, 11–22 % of its 319 mV clip knee, and a worst-phase ff chord 117 mV (37 %); at full volume 51–98 mV (16–31 %) and 164 mV (51 %). (The earlier "1–3 % of headroom at 3 mV RMS" figures described the pre-2026-04 vol² chain and were ≈20 dB stale; the 2026-04 → 2026-09 pinned drive of 0.25 sat at 20–41 % / 61 %.) The Avenson "2–7 mV at the volume pot" field figure is a single unverified rig and does not say which side of the pot it was taken on. There is no post-speaker gain any more: the output mapping is `FULL_SCALE_VOLTS` = the amp's 22 V rail = 0 dBFS (§7.2; history of the retired `POST_SPEAKER_GAIN_DB`: 14.5 → 22.0 → 17.5 → 16.8 → 15.5 → 4.5 → 0). DAW-level adjustment belongs downstream (Vurli), by the scope split.
+
+---
+
+## 5. Speaker and Cabinet
+
+### 5.1 Speaker Specifications
+
+| Parameter | Value |
+|-----------|-------|
+| Driver count | 2 (stereo placement, mono signal) |
+| Driver size | 4" x 8" oval (schematic shows 4x6, but all vendors and repair sources confirm 4x8 in production units) |
+| Individual impedance | 16 ohm each |
+| Wiring | Parallel |
+| Combined impedance | 8 ohm (16 || 16) |
+| Magnet type (200) | Alnico |
+| Magnet type (200A) | Ceramic (most units) |
+| Mounting (200) | Welded to amplifier rail |
+| Mounting (200A) | Screwed to ABS plastic lid |
+
+**200A speaker evolution:**
+1. Very early 200A production: alnico speakers (brief transition period)
+2. Brief period: square ceramic magnet speakers
+3. Most common (majority of production): round ceramic magnet speakers
+
+**Tonal difference between magnet types:**
+- Alnico: smoother treble response, natural compression at volume, warmer character
+- Ceramic: brighter, more articulate, more headroom before compression
+
+### 5.2 Cabinet/Enclosure
+
+- The 200A's speakers are mounted to the ABS plastic lid (the flip-up top)
+- The lid serves as the speaker baffle
+- Speakers face the player (forward-facing) when lid is in playing position
+- The lid is NOT a sealed enclosure -- it is essentially an open-backed baffle
+- The plastic material resonates and colors the sound (thin ABS plastic)
+
+**Acoustic characteristics:**
+
+The 200A "cabinet" is more accurately described as an **open baffle** formed by the plastic lid. This means:
+- No bass reinforcement from cabinet resonance (unlike sealed or ported designs)
+- Bass rolloff follows the baffle step response: approximately 6 dB/octave below the baffle step frequency
+- For a 4x8" driver in a ~24" wide baffle, the baffle step frequency is approximately 100-150 Hz
+- Low-frequency rolloff is primarily set by the speaker's own resonant frequency and the open baffle cancellation
+- High-frequency rolloff is set by cone breakup and the ceramic magnet driver characteristics
+
+### 5.3 Frequency Response Analysis
+
+No direct measurements of the 200A speaker+cabinet system are publicly available. The following is derived from physical analysis:
+
+#### Low Frequency Rolloff
+
+Multiple factors contribute to the bass rolloff:
+1. **Speaker free-air resonance (Fs):** For a small 4x8" oval driver, Fs is typically 100-150 Hz. Below Fs, the cone's mechanical compliance dominates and output falls at ~12 dB/oct.
+2. **Open baffle dipole cancellation:** Below the baffle step frequency (~100-150 Hz for the ~24" ABS lid), front and rear waves partially cancel. This adds an additional ~6 dB/oct rolloff.
+3. **Combined effect:** Approximately **18 dB/octave** rolloff below ~80 Hz (speaker resonance 12 dB/oct + open baffle dipole 6 dB/oct)
+
+**Original design (not implemented) proposed three cascaded HPF sections:**
+- **HPF1** at 150 Hz, Q=0.75: Models cone resonance and mechanical rolloff (Fs). The slightly underdamped Q produces the mild resonant bump near the rolloff frequency. 150 Hz is typical for a small 4x8" oval ceramic-magnet driver.
+- **HPF2** at 100 Hz, Q=0.707: Models the open-baffle front/rear wave cancellation (dipole effect). Butterworth Q for a smooth transition with no resonant peak.
+- **HPF3** at 70 Hz, Q=0.5: Models the radiation impedance rolloff. Below ka=1 (~1090 Hz for a ~5cm effective piston radius), acoustic radiation resistance falls as f². The overdamped Q captures the gradual onset of this regime.
+
+The three cascaded HPFs provide ~30 dB/oct combined rolloff below 70 Hz, matching the physics of a small open-baffle speaker. Note: the preamp's tremolo pump (5.63 Hz harmonics spanning 28-200+ Hz) is eliminated at source via shadow preamp subtraction (a second DK solver instance runs with zero input, producing pure pump; subtracting it from the main output cancels all pump at every frequency). The speaker HPFs are purely physics-motivated — they model the real speakers' inability to reproduce deep bass, not pump suppression.
+
+#### High Frequency Rolloff
+
+1. **Cone breakup:** Small ceramic-magnet paper-cone drivers typically break up above 5-8 kHz
+2. **Voice coil inductance:** Creates a natural LPF, typically around 8-12 kHz for this size driver
+3. **General specifications for similar 4x8" oval drivers:** Frequency response typically quoted as 120 Hz - 10 kHz
+
+**Previous model used LPF at 8 kHz, Butterworth (Q=0.707).** This is reasonable. A 4x8" ceramic driver would have significant rolloff above 8-10 kHz. The Butterworth (maximally flat) response is appropriate for a natural cone driver rolloff.
+
+#### Speaker Resonance Effects
+
+The HPF1 near 150 Hz naturally creates a resonant bump that can boost harmonics in the 120-250 Hz range. For bass notes (A1 = 55 Hz fundamental), the H2 at 110 Hz sits just below this resonance. This partially explains why real 200A recordings show stronger H2 in the bass register than the preamp alone would produce.
+
+### 5.4 Current Speaker Model
+
+The current implementation (`speaker.rs`) uses a generalized Hammerstein-like architecture: static polynomial waveshaper -> tanh excursion limiter -> thermal voice coil compression -> linear filters (HPF + LPF).
+
+**Linear filters:**
+
+```
+HPF: 2nd-order highpass at 30 Hz, Q = 0.75   (subsonic protection only — see note)
+LPF: 2nd-order lowpass at 5500 Hz, Q = 0.707 (Butterworth, cone breakup + voice coil inductance; lowered from 7500 Hz per OBM A/B comparison)
+```
+
+> **Note (2026-07):** The HPF is now **subsonic-only (30 Hz)**, down from 95 Hz.
+> The 95 Hz corner was the small 4×8" speaker's own bass roll-off — cabinet
+> coloration, which per the openwurli/Vurli scope split belongs downstream in
+> Vurli, not in the raw-physics circuit model. It was stripping the A1/C2
+> fundamental (55/65 Hz), leaving the low end thin and never "growling." The
+> circuit's genuine bass roll-off (power-amp output coupling caps) is modeled
+> upstream; this filter now only removes DC/subsonic rumble, preserving the full
+> musical bass the circuit produces. (An earlier design specified three cascaded
+> HPFs at 150/100/70 Hz for cone resonance / dipole cancellation / radiation
+> impedance — all cabinet effects, also Vurli's domain.)
+
+**Nonlinear features:**
+- **Normalized Hammerstein polynomial waveshaper:** `y = (x + a2*x^2 + a3*x^3) / (1 + a2 + a3)` where a2 = 0.2 (BL force factor asymmetry, generates even harmonics) and a3 = 0.6 (Kms suspension hardening, generates odd harmonics). Coefficients scale with the Speaker Character parameter. The normalization by `(1 + a2 + a3)` ensures `y(1) = 1`, preserving peak positive level. The even-order term (a2) introduces asymmetry, so `y(-1) != -1`.
+- **Cone excursion limiting (Xmax):** `tanh()` soft saturation after the polynomial, modeling the physical excursion limits of the spider and surround. At normal levels (|x| < 0.5): < 8% compression. At ff chords (|x| > 1.0): graceful saturation.
+- **Thermal voice coil compression:** Slow envelope follower (tau = 5.0 s) reduces gain under sustained loud signal, modeling the increase in voice coil DC resistance as the coil heats up.
+
+**Speaker Character parameter:** Blends from bypass (0.0: flat, linear passthrough) to authentic (1.0: full nonlinearity + HPF + LPF). Filter cutoffs interpolate logarithmically between bypass positions (HPF: 20 Hz, LPF: 20 kHz) and authentic positions.
+
+#### 5.4.1 Original Three-HPF Design (Not Implemented)
+
+The following design was proposed to separately model each physical mechanism but was simplified to the single-HPF approach above:
+
+```
+HPF1: 2nd-order highpass at 150 Hz, Q = 0.75  (cone resonance Fs)
+HPF2: 2nd-order highpass at 100 Hz, Q = 0.707 (open-baffle dipole cancellation)
+HPF3: 2nd-order highpass at 70 Hz,  Q = 0.5   (radiation impedance rolloff)
+```
+
+This cascade produced ~30 dB/oct rolloff below 70 Hz, which proved too aggressive for the 200A's bass character. The combined effect removed too much fundamental energy from bass notes (C2-C3), making the low end thin.
+
+---
+
+## 6. Auxiliary and Headphone Outputs
+
+### 6.1 Auxiliary Output
+
+- The 200A has a dedicated auxiliary amplifier circuit (TR-15 and TR-16)
+- Two direct-coupled transistors with feedback
+- Taps the signal BEFORE the power amplifier (from the preamp output)
+- Provides line-level output suitable for external amplifiers or recording
+- Has its own gain control potentiometer
+- Late production (serial #102905+) used MPSA14 transistor for TR-16
+
+> "On models that require a signal to drive an auxiliary amplifier, a two transistor direct-coupled stage with feedback consisting of TR-15 and TR-16 is provided."
+
+**Key implication:** The aux output does NOT include the power amplifier's characteristics. It represents the preamp output (with tremolo modulation) at line level. Many studio recordings of the 200A use this output, meaning the "classic Wurlitzer sound" on records often excludes the power amp and speaker coloration entirely.
+
+### 6.2 Headphone Output
+
+- Switching mono jack -- physically disconnects speakers when headphones are inserted
+- Signal tapped from the power amp output (parallel with speaker connection)
+- Contains an 8-ohm load resistor that substitutes for the speaker impedance when speakers are disconnected
+- Delivers speaker-level signal (fully amplified)
+- Low impedance output
+- May contain more noise/distortion than aux output since it includes the full power amp chain
+
+---
+
+## 7. Modeling Recommendations
+
+### 7.1 Tremolo Model
+
+**Status: IMPLEMENTED.** Tremolo operates inside the preamp feedback loop. The `Tremolo` module (`tremolo.rs`) computes a per-sample LDR path resistance, which is passed to the DkPreamp via `set_ldr_resistance()`. The DkPreamp's 12-node MNA circuit solver (melange-generated) then modulates the feedback loop gain accordingly, producing the correct timbral variation (gain + distortion character change) through the tremolo cycle.
+
+**Implementation details:**
+
+```
+// Oscillator (tremolo.rs) — default: melange Twin-T circuit oscillator
+rate = ~5.6 Hz (fixed by Twin-T RC network; no rate parameter)
+waveform: real oscillator circuit output, half-wave rectified for LED drive.
+// LED drive follows the oscillator swing through +15 V -> R-18 (680) -> LED ->
+// R-17 (4.7K trimmer) -> collector node: ≈0.37–2.28 mA (tremolo.rs LED_I_FULL_MA).
+// Front-panel depth does NOT scale it — depth lives in the shunt divider below.
+// --features legacy-tremolo: behavioral sine LFO at 5.63 Hz (phase.sin())
+
+// CdS LDR time constants (VTL5C-class, datasheet-typical)
+attack_tau  = 2.5 ms  (fast on)
+release_tau = 35 ms   (slow off)
+
+// CdS LDR resistance model (log-space interpolation)
+log_r = log(R_max) + (log(R_min) - log(R_max)) * drive^gamma
+R_min = 9 000 ohm (bright), R_max = 1 000 000 ohm (dark), gamma = 0.9
+// Weakly-driven cell: the ≤2.3 mA LED keeps it in the kΩ regime and
+// never reaches the datasheet ~50 Ω min. (An earlier model fudged R_min = 18,320 Ω
+// to fake a 19 kΩ shunt endpoint — that was really the 18 kΩ + R18 divider folded
+// into the cell floor; the divider is now modeled explicitly below.)
+
+// Shunt impedance seen by fb_junct → DkPreamp::set_ldr_resistance().
+// The 50 kΩ VIBRATO pot is a 3-terminal divider (top = fb_junct, bottom = GND,
+// wiper → LDR branch); 18 kΩ bridges top→wiper. (R-18 is in the LED drive
+// path, NOT the LDR leg — 2026-09 correction, see §2.3):
+//   Z = (R_upper ∥ 18 kΩ) + (R_lower ∥ R_ldr)
+//   R_upper = 50 kΩ·(1 − depth),  R_lower = 50 kΩ·depth
+// depth = 1.0 → wiper at fb end (max depth); depth = 0 → LDR branch grounded
+// (vibrato off; fb_junct still sees 50 kΩ ∥ 18 kΩ ≈ 13 kΩ).
+```
+
+**Depth control (corrected 2026-07-19, per schematic #203720-S-3):** The 50 kΩ
+VIBRATO pot is **not** in the LED drive path — it is a **3-terminal divider in the
+fb_junct→LDR shunt leg** (see the `Z = …` formula above). Depth is the wiper
+position: depth = 1.0 puts the wiper at the fb end (max shunt swing), depth = 0
+grounds the LDR branch (vibrato off, fb_junct sees a fixed 50 kΩ ∥ 18 kΩ ≈ 13 kΩ).
+The LED current follows the oscillator (≈0.37–2.28 mA through R-18/LED/R-17) — depth does **not** scale it.
+
+Two earlier models were wrong here and are both superseded: (a) a pre-Apr-2026
+version mixed `18 kΩ + 50 kΩ × (1 − depth)` into a simple series shunt, and (b) the
+melange-era version scaled the LED drive with depth (`led_drive = oscillator *
+depth`), which made depth 0.25–0.75 nearly inert. The real mechanism is the shunt
+divider, and the depth→AM curve is now monotonic (0 / 1.3 / 2.5 / 3.8 / 7.3 dB at
+depth 0 / .25 / .5 / .75 / 1.0).
+
+**Output AM depth at depth=1.0:** **~7.3 dB peak-to-peak** at the preamp output
+(Rust DSP 7.33 dB vs an independent ngspice arbiter's 7.31 dB), regression-guarded by
+`dk_preamp::melange_gate_tests::test_tremolo_am_depth_at_full_depth`. The full-depth
+divider swings the shunt ~8 kΩ bright ↔ ~48 kΩ dark. POST_SPEAKER_GAIN was dropped
+22.0 → 17.5 dB at the time to keep the vol = 1.0 engine peak ≤ 1.0 given the higher
+(accurate) preamp gain; it now sits at +4.5 dB after the v0.7.0 level rebalance.
+
+### 7.2 Power Amplifier Model
+
+**Status: two models. SHIPPING = the behavioral closed-loop NR model** (feature
+`legacy-power-amp`, in the default set) with the drawn R-30/C-10 feedback shelf
+(−3 dB at 33 Hz; added 2026-09-22). The melange-generated 7-BJT circuit solver
+(`gen_power_amp.rs`, adapter in `power_amp.rs`) is the higher-fidelity path, opt-in
+via `--no-default-features` on CPU grounds. Both are covered by `power_amp::tests`.
+
+**Topology (from `spice/melange/wurli-power-amp.cir`):**
+
+- PNP differential pair (Q7/Q8, 2N5087) with 10 kΩ tail to the **+15 V regulated** rail (a static ideal source in the deck standing in for IC-1; corrected 2026-09-23 from Vp after a pixel-walked drawing read — tail 2.18 → 1.43 mA, output offset −63 → +6 mV). R-28 is the only power-amp part on that rail.
+- NPN VAS/pre-driver (Q14, MPSA06) with bootstrapped collector load (R32/R33 + C12)
+- Vbe multiplier bias network (Q9, MPSA06) driving ±0.6 V between drv_bot and vas_out
+- Top Sziklai output pair: Q10 (MPSA06 NPN driver) + Q11 (TIP36C PNP output)
+- Bottom Sziklai output pair: Q12 (MPSA56 PNP driver) + Q13 (TIP35C NPN output)
+- 0.47 Ω emitter resistors into an 8 Ω speaker load
+- R31/R30/C10 global negative feedback from `out` to the diff pair
+
+All 7 BJTs use full Gummel-Poon models (IS, BF, VAF, IKF, ISE, NE, BR, VAR, IKR,
+ISC, NC, RB, RE, RC, CJE, VJE, MJE, CJC, VJC, MJC, TF). No `.linearize` hints; the
+solver handles every device exactly.
+
+**Solver configuration:**
+
+| Item | Value |
+|------|-------|
+| Generated by melange | pin `47b2702` (openwurli workspace), `--output-clamp 30` |
+| Solver | Nodal (auto-routed because of Class AB push-pull topology) |
+| Nonlinear dim M | 16 |
+| Node count N | 20 |
+| Integration | Backward Euler (auto-selected, ρ = 1.0041) |
+| Max NR iterations / sample | 200 (auto-tuned from M=16, high-ρ stiff system) |
+
+`--output-clamp 30` tells melange's post-DC-block limiter to pass through up to
+±30 V so the natural ±22 V rail swing isn't hard-clipped at the default ±10 V
+"Signal Level Contract" ceiling. See melange `docs/aidocs/SIGNAL_LEVELS.md`.
+
+**Derived behavior (what the generated solver reproduces without tuning):**
+
+- Closed-loop gain `1 + R31/R30` = `1 + 15 k/220` = **69×** (37 dB) at 1 kHz,
+  within 1 dB of both ngspice on the same netlist and the real 200A service manual
+- Rail swing: ±20–22 V symmetric, bounded by the supply rails minus Sziklai Vce_sat
+  drops; matches ngspice transient at 500 mV input
+- Crossover distortion: inherits directly from the Vbe multiplier's bias current
+  (~10 mA through the output pair); H3 suppressed > 30 dB by the feedback loop
+- Bootstrap C12 (100 µF boot→out) lets `boot` track output above Vp during positive
+  swings so the VAS can drive the top Sziklai rail-to-rail; the DC op sits boot at
+  +11.47 V (voltage divider midpoint between Vp and vas_out)
+
+The adapter divides the raw output by `HEADROOM = 22 V` to produce ±1.0-ish output
+for the downstream speaker model.
+
+**Legacy behavioral model (kept under `--features legacy-power-amp`):** Closed-loop
+NR solver y = f(A_ol × (input − β × y)) where f() is a Gaussian-dead-zone crossover
+followed by `rail × tanh(v / rail)`. Constants: `OPEN_LOOP_GAIN` 19 000,
+`FEEDBACK_BETA` 0.01445, `CROSSOVER_VT` 0.013, `QUIESCENT_GAIN` 0.1, 8 NR iterations.
+Used only for quick A/B against the circuit solver; produces physically plausible
+output at typical levels but is an approximation and does not capture the
+level-dependent device nonlinearities that emerge from full GP.
+
+**A/B against the legacy behavioral model** (Marvin Gaye "Grapevine" MIDI,
+full plugin chain at `volume=0.50, speaker=0.0`):
+- Sample-rate correlation: 0.954
+- Peak: identical (both hit 0 dBFS — downstream clip at speaker/PSG)
+- Overall RMS delta: melange −0.39 dB (physics-correct drift from the closed-loop
+  NR approximation, accepted as-is)
+- Max 100 ms window RMS delta: 1.66 dB
+
+### 7.3 Speaker Model
+
+**Status: IMPLEMENTED** in `speaker.rs`. See Section 5.4 for full details.
+
+Variable speaker emulation with bypass-to-authentic range. The plugin exposes a "Speaker Character" knob that blends from bypass (flat, linear passthrough) to authentic (full Hammerstein nonlinearity + HPF + LPF).
+
+At "authentic" position (character = 1.0):
+- HPF: 30 Hz, Q=0.75 (subsonic protection only; the 95 Hz cabinet roll-off moved to Vurli, 2026-07)
+- LPF: 5500 Hz, Q=0.707 (Butterworth, lowered from 7500 Hz)
+- Hammerstein polynomial: (x + 0.2x² + 0.6x³) / 1.8, normalized
+- tanh Xmax soft stop
+- Thermal voice coil compression (tau = 5.0s)
+
+At "bypass" position (character = 0.0): flat linear passthrough (HPF 20 Hz, LPF 20 kHz, no nonlinearity). Intermediate positions interpolate logarithmically.
+
+Possible refinements:
+- Add mild midrange presence peak (1-3 kHz) from speaker's natural response
+- Measured impulse response from a real 200A would improve accuracy, but none is publicly available
+
+### 7.4 Signal Chain Order
+
+**Signal chain:**
+
+```
+Per-voice processing (oscillator, pickup)
+  -> Sum to mono
+  -> [Tremolo modulates emitter feedback via LDR shunt at fb_junct]
+  -> Preamp (with tremolo-modulated gain via R-10/Ce1 emitter feedback)
+  -> Volume control (3K pot)
+  -> Power amplifier (closed-loop negative feedback, tanh soft-clip at ±22V)
+  -> Speaker model (HPF + LPF)
+  -> Output
+```
+
+---
+
+## 8. Sources
+
+### Primary Sources (Service Manual)
+
+- Wurlitzer 200/200A Service Manual (PDF available from multiple hosts):
+  - https://static1.squarespace.com/static/581b462f5016e14ae76bd275/t/5ebb550ed544905f3db1d03a/1589335321798/wurlitzer-200-200a-service-manual.pdf
+  - https://archive.org/details/wurlitzer-200-and-200-a-service-manual
+  - https://www.manualslib.com/manual/1002608/Wurlitzer-200.html
+- Wurlitzer 200A Series Schematic: https://www.bustedgear.com/images/schematics/Wurlitzer_200A_series_schematics.pdf
+- Wurlitzer 200 Series Schematic: https://www.bustedgear.com/images/schematics/Wurlitzer_200_series_schematics.pdf
+
+### Transistor Specifications
+
+- Wurlitzer 200A Transistor Specs: https://www.bustedgear.com/res_Wurlitzer_200A_transistors.html
+- TIP35C Datasheet: https://www.st.com/resource/en/datasheet/tip35c.pdf
+- TIP36C Datasheet: https://www.onsemi.com/pdf/datasheet/tip35a-d.pdf
+
+### Repair and Circuit Analysis
+
+- GroupDIY: Troubleshooting Wurlitzer 200A bias and crossover distortion: https://groupdiy.com/threads/troubleshooting-wurlitzer-200a-amp-board-for-bias-and-crossover-notch-distortion.62917/
+- GroupDIY: Wurlitzer 200A preamp discussion: https://groupdiy.com/threads/wurlitzer-200a-preamp.44606/
+- GroupDIY: Wurlitzer 200 general discussion: https://groupdiy.com/threads/one-more-wurlitzer-200-question.13555/
+- illdigger: Wurlitzer 200A repair and low noise mod: https://illdigger.wordpress.com/2016/07/03/wurlitzer-200a-piano-repair-and-low-noise-mod/
+- EP-Forum: Wurlitzer speaker impedance: https://ep-forum.com/smf/index.php?topic=8182.0
+- EP-Forum: Wurlitzer 200A vibrato hum and distortion: https://ep-forum.com/smf/index.php?topic=10483.0
+- EP-Forum: Wurlitzer 200 amp output: https://ep-forum.com/smf/index.php?topic=7813.0
+- EP-Service.nl: Troubleshooting guide: https://ep-service.nl/upload/files/wurlitzer_200_series_troubleshooting.pdf
+
+### Wurlitzer Comparison and Overview
+
+- Tropical Fish: 200 vs 200A differences: https://www.tropicalfishvintage.com/blog/2019/5/27/what-is-the-difference-between-a-wurlitzer-200-and-a-wurlitzer-200a
+- Tropical Fish: 200 Series overview: https://www.tropicalfishvintage.com/200series-wurlitzers
+- Tropical Fish: Headphone vs aux output: https://www.tropicalfishvintage.com/blog/2020/5/25/what-is-the-difference-between-a-wurlitzers-headphone-output-and-aux-output
+- Tropical Fish: Component replacement guide: https://www.tropicalfishvintage.com/blog/2019/7/3/what-components-should-i-replace-in-my-vintage-amp-and-why
+- Chicago Electric Piano: 200 vs 200A: https://chicagoelectricpiano.com/wurlitzer/wurlitzer-200-vs-200a/
+
+### Tremolo and LDR References
+
+- Strymon: Amplifier Tremolo Technology White Paper: https://www.strymon.net/amplifier-tremolo-technology-white-paper/
+- Aiken Amps: Designing Phase Shift Oscillators for Tremolo: https://www.aikenamps.com/index.php/designing-phase-shift-oscillators-for-tremolo-circuits
+- VTL5C3/VTL5C4 Vactrol datasheets: https://www.qsl.net/wa1ion/vactrol/vactrol.pdf
+- NSL-32 datasheet: https://www.digikey.com/en/products/detail/advanced-photonix/NSL-32/5039800
+
+### Parts and Replacement
+
+- Vintage Vibe: Wurlitzer 200A LDR (W140): https://www.vintagevibe.com/products/wurlitzer-200a-ldr
+- Vintage Vibe: Volume pot: https://www.vintagevibe.com/products/wurlitzer-volume-pot
+- Vintage Vibe: Speakers: https://www.vintagevibe.com/products/vintage-vibe-wurlitzer-speakers-200-series
+- RetroLinear: 200A amplifier: https://retrolinear.com/wurlitzer-ep-200a-amplifier.html
+- Custom Vintage Keyboards: 200A speakers: https://www.cvkeyboards.com/products/wurlitzer-200a-electric-piano-speaker
+
+### Amplifier Design References
+
+- Quasi-Complementary Push-Pull Amplifier theory: https://www.eeeguide.com/quasi-complementary-push-pull-amplifier/
+- Class AB Amplifier Biasing: https://www.electronics-tutorials.ws/amplifier/class-ab-amplifier.html

@@ -1,0 +1,122 @@
+---
+titre: "DX7 « BRASS 1 » — conversion des enveloppes en secondes (symcrash_python_AP)"
+source: https://raw.githubusercontent.com/Ethycs/symcrash_python_AP/HEAD/presets/instruments/dx7_brass_1_v0.yaml
+recupere_le: 2026-09-24
+mode: texte integral
+langue: en
+axe: synthèse FM ; patch DX7, conversion tierce
+skills: studio-grade-brass-sound-design
+usage: copie personnelle pour recherche locale (Ollama) ; droits des auteurs cités
+---
+
+```
+# BRASS   1 - imported from DX7 SysEx
+# ===================================
+#
+# Source: rom1a.syx, voice 1/32
+# DX7 algorithm 22 (engine carriers: Op1, Op3, Op4, Op5), feedback 7
+# Imported by tools/import_dx7_sysex.py (WS1b). Lossy points
+# for this voice are listed in the import report (--report).
+# Carrier levels normalized x0.130 to the ~0.5 headroom limit.
+# Conformance: Expressive (full articulation)
+
+instrument_ir_v0:
+  meta:
+    id: "dx7-brass-1-v0"
+    name: "BRASS   1"
+    version: 2
+    author: "dx7-import"
+    seed: 0x2A2BDFDC
+
+  audio:
+    sample_rate: 48000
+    block_size: 64
+
+  graph:
+    fm6:
+      type: FM6
+      output: amp1
+      algorithm: 22
+      feedback: 7
+      mod_index: 2.0  # DX7 PM depth: +/-2pi at full level (legacy engine default is 1.0 = +/-pi)
+      operators:
+        - ratio: 0.503     # Op1 carrier
+          level: 0.1196
+        - ratio: 0.503     # Op2 modulator
+          level: 0.075
+        - ratio: 0.9983    # Op3 carrier
+          level: 0.1303
+        - ratio: 1.0       # Op4 carrier
+          level: 0.1303
+        - ratio: 1.0009    # Op5 carrier
+          level: 0.1196
+        - ratio: 1.0       # Op6 modulator (feedback)
+          level: 0.2113
+    amp1:
+      type: Amp
+      attack: 18.6
+      decay: 1.0
+      sustain: 0.9173
+      release: 146.3
+      velocity_sens: 0.286
+
+  envelopes:
+    carrier_env:
+      attack: 31.0
+      decay: 8.4
+      sustain: 0.7718
+      release: 144.0
+      targets: [FM_OP1]
+    mod_env:
+      attack: 106.1
+      decay: 274.8
+      sustain: 1.0
+      release: 144.0
+      targets: [FM_OP2]
+    carrier_env2:
+      attack: 18.6
+      decay: 53.1
+      sustain: 0.9173
+      release: 146.3
+      velocity_sens: 0.286
+      targets: [FM_OP4, FM_OP5]
+    mod_env2:
+      attack: 424.6
+      decay: 1040.3
+      sustain: 0.5464
+      release: 197.4
+      velocity_sens: 0.286
+      key_scale_rate: 0.571
+      targets: [FM_OP6]
+
+  modulators:
+    vibrato:
+      waveform: "sine"
+      rate: 6.13
+      depth: 0.051
+      delay: 0.0
+      sync: "free"
+      targets:
+        - pitch: 0.004739
+
+  behavior:
+    idle:
+      emphasis: {}
+      trees: {A: harmonic, B: harmonic, blend: 0.0}
+    attack:
+      emphasis: {}
+      trees: {A: harmonic, B: harmonic, blend: 0.0}
+    stable:
+      emphasis: {}
+      trees: {A: harmonic, B: harmonic, blend: 0.0}
+    recovery:
+      emphasis: {}
+      trees: {A: harmonic, B: harmonic, blend: 0.0}
+
+  compile:
+    material:
+      blend: 0.0
+      target: 0.0
+      ramp: 1
+
+```
