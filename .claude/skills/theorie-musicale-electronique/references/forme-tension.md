@@ -43,6 +43,7 @@
 
 ## 3. Schémas par genre (mesures)
 
+- Nommage : ici « original mix » = version club avec intro DJ, « radio edit » = version courte. Pour les morceaux VIBRA de l'utilisateur, l'usage est inverse : Original Mix = version d'écoute, Extended Mix = version DJ (`../../produire-demo-electro-rapide/SKILL.md`).
 - **House / techno, original mix ≈ 7 min** : intro DJ 16–32 · break 16–32 · drop 16–32 · drop varié 16–32 · break 16–32 · drop 16–32 · outro 16–32. Radio edit ≈ 4 min sans intro/outro DJ.
 - **EDM 128** : intro 16 · groove build 16 · break 8 · build 8 · drop 32 · breakdown 16 · drop final 32 · outro 16.
 - **Trance uplifting, 7–8 min** : intro 32–64 · groove 32 · break 16–32 · breakdown principal 64–96 (lead, accords) · build 16–32 (riser, roll, deux temps de silence) · drop 32–64 · pont 16–32 · second drop 32 · outro 32–64. Un à deux sommets.

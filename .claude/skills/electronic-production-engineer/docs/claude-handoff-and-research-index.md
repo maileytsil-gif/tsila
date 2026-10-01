@@ -29,5 +29,5 @@ This archive indexes primary publisher sources and official video/tutorial pages
 
 ## Media supplied by the user
 
-No source media or video files were available in the supplied workspace. If Claude needs offline access, add user-owned files under `references/media/`, plus a manifest recording filename, source URL, rights/permission basis, and checksum. Keep third-party stream/download restrictions intact; a link index is portable and avoids redistributing content.
+No source media or video files were available in the supplied workspace. If Claude needs offline access, add user-owned files in a new references/media/ folder, plus a manifest recording filename, source URL, rights/permission basis, and checksum. Keep third-party stream/download restrictions intact; a link index is portable and avoids redistributing content.
 

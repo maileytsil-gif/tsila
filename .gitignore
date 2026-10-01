@@ -14,6 +14,10 @@ __pycache__/
 .venv/
 venv/
 
+# Consignes locales des agents (propres à une machine, hors dépôt)
+CLAUDE.local.md
+.qwen/QWEN.local.md
+
 # graphify
 graphify-out/
 

@@ -9,6 +9,9 @@ Version : **une seule source**, `LOMBridge/version.py` (lue par le Remote Script
 | `lom.py` | Client Python 3 sans dépendance : CLI, `apply spec.json [--dry]`, serveur HTTP JSON |
 | `automations_el21.json` | Spec d'exemple pour le morceau el21 |
 | `tests/test_offline.py` | 60 tests logiciels sans Live (`python3 -W ignore -m unittest tests/test_offline.py`) |
+| `agent_gateway.py` | Client HTTP pour un agent sans accès UDP (Qwen/Ollama, Codex…) : `inspect` (lecture seule), `preview` (plan), `commit` (écriture refusée si la spec ou le Set a changé) — voir § Client pour agents |
+| `tests/test_gateway.py` | 16 tests du client agent (serveur simulé) |
+| `tests/fake_live_server.py` | Faux Live sur UDP réel (vrai Remote Script, faux objets de `test_offline.py`) pour tester `lom.py serve` et `agent_gateway.py` de bout en bout hors Ableton |
 | `tests/live_suite.py` | Suite d'essais dans Live sur deux pistes temporaires créées puis supprimées |
 | `legacy/` | Ancien device Max for Live (protocole obsolète, sans automation) — non maintenu |
 
@@ -78,31 +81,44 @@ Limite connue de l'annulation automatique après relecture par curseur (audio) :
 ```bash
 python3 lom.py ping
 python3 lom.py param "AUDIO - Sub" mixer Volume
-python3 lom.py plan  "AUDIO - Sub" o:493090:4 --unit disp --accept fades 5|1 -5 8|4.5 -5 9|1 0
-python3 lom.py shape "AUDIO - Sub" o:493090:4 --unit disp --accept fades 5|1 -5 8|4.5 -5 9|1 0
-python3 lom.py read  "AUDIO - Sub" o:493090:4 5|1 9|1 --res 1
+python3 lom.py plan  "AUDIO - Sub" o:493090:4 --unit disp --accept fades "5|1" -5 "8|4.5" -5 "9|1" 0
+python3 lom.py shape "AUDIO - Sub" o:493090:4 --unit disp --accept fades "5|1" -5 "8|4.5" -5 "9|1" 0
+python3 lom.py read  "AUDIO - Sub" o:493090:4 "5|1" "9|1" --res 1
 python3 lom.py apply automations_el21.json --dry      # plan serveur pour chaque entrée, rien n'est écrit
 python3 lom.py apply automations_el21.json
 python3 lom.py jobs ; python3 lom.py cancel <id>
 python3 lom.py state --json                            # carte du Set en JSON
-python3 lom.py transport ; python3 lom.py transport play 17|1 ; python3 lom.py transport stop
-python3 lom.py meters 17|1 5 "AUDIO - Kick" "AUDIO - Sub"   # crêtes pendant 5 s à partir de 17|1, transport restauré
+python3 lom.py transport ; python3 lom.py transport play "17|1" ; python3 lom.py transport stop
+python3 lom.py meters "17|1" 5 "AUDIO - Kick" "AUDIO - Sub"   # crêtes pendant 5 s à partir de 17|1, transport restauré
 python3 lom.py setparam "BUS - HARMONIE" "REQ 6 Stereo" "Band1 Frq" 0.2565 raw
 python3 lom.py snapshot "AUDIO - Sub" ; python3 lom.py restore s1
-python3 lom.py locator 65|1 "Drop 2" ; python3 lom.py locators
+python3 lom.py locator "65|1" "Drop 2" ; python3 lom.py locators
 python3 lom.py load "PAD" "Pro-Q 4"                    # ajoute en fin de chaîne, sans hot-swap ; `load "PAD" "Serum 2" replace=Wavetable` remplace en place
-python3 lom.py notes get "PAD" 17|1                    # notes du clip qui couvre 17|1 ; `notes set "PAD" 17|1 '[[60,0,1,100],[64,1,1,90]]' 0 4` remplace la fenêtre 0–4 du clip
+python3 lom.py notes get "PAD" "17|1"                    # notes du clip qui couvre 17|1 ; `notes set "PAD" "17|1" '[[60,0,1,100],[64,1,1,90]]' 0 4` remplace la fenêtre 0–4 du clip
 python3 lom.py wait                                    # attend la fin des tâches en cours (ou `wait <id>`), après un timeout client par exemple
 python3 lom.py journal 5                               # les 5 dernières écritures journalisées
 python3 lom.py policy accept=expressions               # accepté d'office par ce client pour plan/shape/clear/apply (policy.json) ; `policy accept=` efface
-python3 lom.py shape … --bpb 3 5|1 -5 9|1 0            # signature 3/4 ; sans --bpb, la signature est lue dans Live dès qu'un temps « mesure|temps » est donné
+python3 lom.py shape … --bpb 3 "5|1" -5 "9|1" 0            # signature 3/4 ; sans --bpb, la signature est lue dans Live dès qu'un temps « mesure|temps » est donné
 python3 lom.py serve --port 7480                       # HTTP JSON ; Authorization: Bearer <token> ; /py /set /call /reload bloqués sauf --unsafe
 ```
 Spec `apply` (`beatsPerBar` facultatif : sinon la signature de Live ; `accept` de chaque entrée complété par `policy.json`) : `{"beatsPerBar":4,"automations":[{"track":"AUDIO - Sub","device":"mixer","param":"Volume","unit":"rel|disp|raw","res":8,"curve":"lin","hold":false,"accept":["fades"],"points":[["5|1",-5],["9|1",0]],"note":"…","skip":false}]}`. `rel` = offsets par rapport à la valeur courante affichée. `--dry` appelle `/plan` avec les mêmes arguments que l'écriture.
 
 HTTP : `POST /cmd {"cmd":"/plan","args":[…]}`, `POST /apply {"spec":{…},"dry":true}`, `GET /` = aide. Jeton obligatoire dans l'en-tête `Authorization`, en-tête `Origin` refusé.
 
+### Client pour agents (`agent_gateway.py`)
+Pour un agent qui n'a qu'un terminal sur le Mac et pas de client OSC (Qwen via Ollama, Codex, un second Claude) : le serveur HTTP tourne (`lom.py serve`), l'agent n'utilise que ce client, jamais `/py` ni l'UDP.
+```bash
+python3 agent_gateway.py inspect /ping                       # lecture seule : /ping /state /track /param /params /solve /clips /plan /read /events /jobs /children /get /info /path /snapshots /locators /journal, /transport sans argument, /notes get
+python3 agent_gateway.py inspect /clips "AUDIO - Sub"
+python3 agent_gateway.py preview spec.json                   # POST /apply dry → {sha256 (spec), plan_sha256 (plan relu), log, preview}
+python3 agent_gateway.py commit  spec.json --sha256 <spec> --plan-sha256 <plan>   # replanifie, compare, puis écrit ; refus si la spec OU le plan diffèrent
+```
+Répétition hors Live de toute la chaîne : `python3 tests/fake_live_server.py` (terminal 1, écrit `connection.json` au chemin habituel), `python3 lom.py serve` (terminal 2), puis les commandes ci-dessus (terminal 3). Set simulé : `AUDIO - Sub` (clip audio 5|1–9|1, enveloppe cachée → échantillonnage) et `3-MIDI` (clips A 5|1–9|1, B 9|1–13|1).
+Garde-fous du client : boucle locale seulement ; jeton lu dans `connection.json` (`LOM_BRIDGE_CONN` pour un autre chemin), jamais affiché ; `param` explicite exigé dans chaque entrée ; ≤ 32 entrées actives ; plan refusé si une entrée est en erreur ou si la plage n'est pas couverte (`gap`) ; `commit` refusé si le nombre d'entrées, les références de clips, leurs bornes, la cible ou les valeurs résolues (donc `unit: rel` sur une valeur courante qui a bougé) ne sont plus ceux du `preview`. Ce client ne sécurise pas le serveur contre un autre processus local : le jeton et la liste blanche `SAFE_HTTP` restent la protection côté serveur.
+
 ## Ce qui a été vérifié
+- **Chaîne complète hors Live** (28 sept. 2026, `tests/fake_live_server.py` + vrai `lom.py serve` + `agent_gateway.py`) : `inspect /ping`, `/clips`, `/param`, `/transport` sans argument acceptés ; `/setparam`, `/transport stop`, `/py`, `/notes set` refusés avant toute requête ; mauvais jeton → 401 relayé ; `preview` sur une plage qui dépasse le clip → refus `gap 16` ; `commit` avec empreinte de plan falsifiée → refus, journal sans écriture ; piste MIDI (enveloppe exposée) : `preview` → `commit` → `relecture: exact, 6 points, écart max 0`, `/events` relit 0 / −6 / 0 dB ; piste audio (enveloppe cachée, paramètre qui suit le curseur) : `commit` → `relecture: sampled, 3 points, écart max 0`, `lom.py read` relit −3 dB de 5|1 à 8|3 puis 0 dB à 9|1 ; rejouer le même `commit` sans nouveau `preview` → refus « plan différent » (la valeur courante a bougé, `unit: rel`). Sur un paramètre audio qui ne suit **pas** l'automation au curseur, le bridge écrit puis annule lui-même (`E_ROLLED_BACK`, écart 0,05) et le client relaie le code : comportement attendu, rien n'est modifié. **Non vérifié dans Live** : à rejouer sur une copie de Set.
+- **Client agent** (`tests/test_gateway.py`, 16, sans Live) : boucle locale seule, liste blanche lecture seule (`/transport` avec argument et `/notes set` refusés avant toute requête), jeton Bearer lu dans `connection.json`, erreurs HTTP relayées, spec canonique (mise en forme sans effet sur l'empreinte), `skip`, `param` implicite refusé, plan refusé sur `gap`/erreur/nombre d'entrées, `commit` refusé si la spec ou le plan relu a changé, écriture partielle relayée avec son code.
 - **Tests logiciels** (60, sans Live) : OSC int64 sans perte, références inchangées sur le fil, client qui ignore les lignes d'autres requêtes, jeton exigé et fichier créé à l'init, id sur chaque ligne, refus des ids numériques et des sessions étrangères, interpolation gauche/droite, budget = nombre de points générés, fenêtre nulle, saturation, `accept`, clips bouclés étirés, ancrages exacts, ordre des points d'un saut, nettoyage après erreur de reconstruction, annulation par id (en file et en cours), revalidation quand un clip disparaît, liste blanche HTTP. Depuis 0.5.0 : échec sur le 2ᵉ clip → le 1ᵉʳ est remis (tout ou rien) ; échec avant toute écriture → pas d'annulation ; aucune étape d'annulation ouverte pendant une pause ; relecture exacte et par curseur ; relecture fausse → annulation ; `unverified` ; `/cancel` pendant la relecture → l'écriture reste ; automation surchargée refusée quand il faut échantillonner ; `/clear` en tout ou rien et relu ; `/ping` liste les commandes ; version du client = version du script.
 - **Dans Live 12.4.5** (`tests/live_suite.py`, copie d'el21) — **rejoué pour la dernière fois en 0.4.x** (26/26) : saut au bord d'un clip, 192 points hors fenêtre inchangés, validations `/read` et `/plan`, fusion audio par échantillonnage avec conservation de l'ancienne rampe et du Pan, annulation d'une tâche en cours par id, curseur restauré, revalidation. Sur la copie d'el21 : zones non ciblées d'autres pistes identiques ; sweep du même clip conservé à 0,0011 près (échantillonné) ; Cmd+Z défait tout en une étape ; après sauvegarde et réouverture, valeurs identiques à 0,0000 près.
 - **0.8.0** : `/load` (ajout sans hot-swap vérifié, ambiguïté VST3/AU refusée, remplacement détecté, autre piste modifiée détectée, `replace=`) et `/notes` (get, set fenêtré, add, JSON invalide ou hors limites refusé, désaccord avec Live → étape défaite). 7 tests hors Live ; § 10 de `live_suite.py` à passer dans Live.

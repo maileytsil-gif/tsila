@@ -27,4 +27,4 @@ The runner expects Ollama at `http://localhost:11434` unless `OLLAMA_HOST` is se
 
 
 ## Bridge-focused use
-For code agents, ask the model to read `bridge/README.md`, then the four `references/61-64` files before editing any existing Ableton bridge. Machine-generated discovery snapshots should validate against `schemas/ableton-discovery.schema.json`; write plans should validate against `schemas/ableton-command.schema.json`.
+For code agents, ask the model to read `bridge/README.md`, then the four files `references/61-ableton-lom-bridge.md`, `references/62-semantic-mapping-contract.md`, `references/63-write-safety-and-automation.md` and `references/64-plugin-profile-strategy.md` before editing any existing Ableton bridge. Machine-generated discovery snapshots should validate against `schemas/ableton-discovery.schema.json`; write plans should validate against `schemas/ableton-command.schema.json`.

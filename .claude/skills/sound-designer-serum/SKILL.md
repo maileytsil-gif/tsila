@@ -72,6 +72,8 @@ Documentation constituée par recherche web le 18 septembre 2026. Chaque affirma
 | `modulation-effets.md` | LFO, enveloppes et leurs limites, matrice, macros, distorsion, filtres et formants, chorus/flanger/phaser, reverb comme matière, ordre des effets, resampling |
 | `ressources.md` | Où apprendre : Synth Secrets (gratuit, 63 articles), manuels officiels, Reverb Machine, Syntorial, livres |
 
+Stabs, pads, leads, synthés rythmiques et impacts Bass House, patch Wavetable, effets spectraux de Live : `../bass-house-sound-design/SKILL.md`. Basses Bass House / Future House : dix fiches jouables (sub, pluck, hollow FM, organ, saw percussive, Reese, wub, growl, donk, screech) avec macros, motifs MIDI vérifiés et passage au BPM dans `../serum-2-basses-house-future-house/SKILL.md`. Recettes de départ par genre (funk, house et variantes, microhouse, chill, électro R&B) : 55 recettes Serum 2 à quatre macros, deux kicks 808 entièrement spécifiés et gestes de basse liés au phrasé dans `../composer-hooks-funk-electro/references/` (`cinquante-cinq-recettes.md`, `kick-808-detail.md`, `palette-production.md`, `sound-design.md`) — esquisses à développer avec le tableau du § 7, jamais des presets vérifiés.
+
 **Deux points à retenir avant toute recette trouvée en ligne** : le manuel officiel de Serum 2 existe (354 pages, xferrecords.com) et prime sur les blogs ; et les recettes de growl publiées sont calées sur 140–150 BPM, donc leurs valeurs de LFO sont à retransposer.
 
 ## Passer la main

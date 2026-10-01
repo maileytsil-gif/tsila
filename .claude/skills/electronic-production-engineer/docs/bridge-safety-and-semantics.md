@@ -1,6 +1,6 @@
 # Ableton Bridge: semantic plans and safe execution
 
-This document is the single source for approval, save points, one step per exchange, verification and rollback conditions. [`references/61`](../references/61-ableton-lom-bridge.md)–[`64`](../references/64-plugin-profile-strategy.md) point here; where an older rule there differed, the stricter one below applies. Real commands for each stage: [`references/61`](../references/61-ableton-lom-bridge.md), section "Implementation in this studio".
+This document is the single source for approval, save points, one step per exchange, verification and rollback conditions. [reference 61](../references/61-ableton-lom-bridge.md)–[64](../references/64-plugin-profile-strategy.md) point here; where an older rule there differed, the stricter one below applies. Real commands for each stage: [reference 61](../references/61-ableton-lom-bridge.md), section "Implementation in this studio".
 
 ## Intent vocabulary
 
@@ -33,7 +33,7 @@ In this studio:
 - **One step per exchange:** announce the whole plan, then execute one approved group, verify, report and stop. The user often edits the Set between exchanges: every exchange starts with a fresh read (`lom.py ping`, `lom.py state --json`, `lom.py transport`).
 - **Set identity:** bridge `session` from `ping`, plus the `state --json` fingerprint (track names, device lists, tempo, locators) and the Set name in the Live window title [TEST]. A different session or fingerprint means re-discover.
 - **Save before and after:** "Sauver Set Live sous…" under a new name before the first change to a project; Fichier › Sauver Set Live (screen control; neither the bridge nor Producer Pal can save) before each high-impact group and after each validated step. A greyed-out item means nothing to save. Live keeps a dated copy in the project's `Backup/` folder at each save.
-- **Never** use `accept=unverified`. `override`, `song.re_enable_automation()` and each `accept` entry (`fades`, `expressions`, `warp`, `clamp`) need explicit approval; a `lom.py policy` entry is a standing approval ([`references/63`](../references/63-write-safety-and-automation.md)). Never run `lom.py serve --unsafe`.
+- **Never** use `accept=unverified`. `override`, `song.re_enable_automation()` and each `accept` entry (`fades`, `expressions`, `warp`, `clamp`) need explicit approval; a `lom.py policy` entry is a standing approval ([reference 63](../references/63-write-safety-and-automation.md)). Never run `lom.py serve --unsafe`.
 
 ## Verification and recovery
 
@@ -51,5 +51,5 @@ Roll back only the operation that this plan applied and only if the current valu
 - Do not widen sub or kick fundamentals by default.
 - Do not insert a device simply because its brand is mentioned.
 - Do not flatten/freeze/delete, replace samples, change routing, or write automation without an approved plan.
-- Do not claim a parameter is automatable or writable until discovery confirms it for the current Live/API version and device (an unconfigured plug-in with over 64 parameters exposes `Device On` only, [`references/64`](../references/64-plugin-profile-strategy.md)).
-- Do not treat an LLM-generated plan as trusted code or pass arbitrary code/paths through a Bridge tool: no `lom.py py`, `set` or `call` for writes, except the approved `song.re_enable_automation()` ([`references/63`](../references/63-write-safety-and-automation.md)).
+- Do not claim a parameter is automatable or writable until discovery confirms it for the current Live/API version and device (an unconfigured plug-in with over 64 parameters exposes `Device On` only, [reference 64](../references/64-plugin-profile-strategy.md)).
+- Do not treat an LLM-generated plan as trusted code or pass arbitrary code/paths through a Bridge tool: no `lom.py py`, `set` or `call` for writes, except the approved `song.re_enable_automation()` ([reference 63](../references/63-write-safety-and-automation.md)).

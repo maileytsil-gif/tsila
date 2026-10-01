@@ -14,8 +14,8 @@
     },
     {
       "path": "SKILL.md",
-      "sha256": "8fa04e2f9a016ed08829ee3402b305a683e9caeeb23ebba7f905904b8a4396de",
-      "bytes": 14463
+      "sha256": "a6f9a4e50483660d7c29607fcbdb79f19acf04ea45694d901190b455a7b6a442",
+      "bytes": 14524
     },
     {
       "path": "SOURCES.json",
@@ -34,8 +34,8 @@
     },
     {
       "path": "adapters/INSTALL.md",
-      "sha256": "e5da56748fea3a8d60f3f33c66cf912665c547507933789fde9886098c7ce028",
-      "bytes": 1779
+      "sha256": "0cfc496a9655191b64ed90ec16e22f2f2489bd2a65b1c00a98cb64179bd3146c",
+      "bytes": 1939
     },
     {
       "path": "adapters/MODEL-GUIDANCE.md",
@@ -64,13 +64,13 @@
     },
     {
       "path": "docs/bridge-safety-and-semantics.md",
-      "sha256": "01b7f9cdac828b1d6d3e5422b3734df0acdc2dbd99a7502c9b08aa01cbd4562e",
-      "bytes": 7383
+      "sha256": "c21525598c0c79837df3b157b0b091529a8fa90fb76ce136dfa6c95703fcb9ac",
+      "bytes": 7366
     },
     {
       "path": "docs/claude-handoff-and-research-index.md",
-      "sha256": "6450933900a166785f25361ba041c4c8013101811e53b36b43687c07ac916645",
-      "bytes": 2961
+      "sha256": "f08fad2b65584767874ef66dd8d0eca8e6e44b1178516e6190c636717d73b9e2",
+      "bytes": 2969
     },
     {
       "path": "docs/production-workflow.md",

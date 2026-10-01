@@ -1,5 +1,6 @@
 {
   "language": "french",
+  "skillListingBudgetFraction": 0.03,
   "voice": {
     "enabled": true,
     "mode": "tap"
