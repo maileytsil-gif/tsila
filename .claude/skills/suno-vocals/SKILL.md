@@ -1,9 +1,11 @@
 ---
 name: suno-vocals
-description: Écrire un prompt Suno (style + paroles balisées) pour des voix à poser sur un morceau existant dans Ableton — voix africaines/malgaches homme et femme, appel-réponse, paroles fournies par l'utilisateur ou à écrire — puis intégrer les fichiers générés dans Live (piste et bus VOIX, calage par section, transposition si le refrain module). Utilise ce skill dès que l'utilisateur mentionne Suno, un prompt vocal, des paroles, une voix homme/femme, des chœurs, ou veut « une voix sur le morceau ».
+description: Écrire un prompt Suno (style + paroles balisées) pour des voix à poser sur un morceau existant dans Ableton — voix africaines/malgaches homme et femme, appel-réponse, paroles fournies par l'utilisateur ou à écrire — puis intégrer les fichiers générés dans Live (piste et bus VOIX, calage par section, transposition si le refrain module). Utilise ce skill dès que l'utilisateur mentionne Suno, un prompt vocal, des paroles, une voix homme/femme, des chœurs, ou veut « une voix sur le morceau ». Cadre général de Suno (modèles, curseurs, Cover, Studio, stems, MIDI, droits) → maitriser-suno.
 ---
 
 # Prompt Suno pour voix sur un instru existant
+
+Cadre commun dans `../maitriser-suno/SKILL.md` : l'agent rédige et mesure, l'utilisateur génère et écoute ; aucun titre du commerce en upload ; modèle et plan vérifiés sur le compte.
 
 ## Deux champs, mode Custom
 - **Style of Music** (court, priorités d'abord) : genre + BPM + tonalité, timbre de chaque voix (*deep velvety male, airy soulful female, Malagasy/West African*), *call and response, sparse phrasing, long held notes, humming, intimate close-mic, natural pitch, no autotune*, et les interdits (*no EDM build-ups, no big choir, no fast rap*). Si le refrain module : *chorus modulates up a fourth*.
