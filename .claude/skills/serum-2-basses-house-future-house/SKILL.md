@@ -23,7 +23,7 @@ Ce skill dit **quelle basse construire et comment la programmer** ; le choix du 
 4. **Sub** : un oscillateur `Direct` contourne filtres et FX internes, mais une modulation globale de pitch ou les effets après Serum peuvent l'altérer. Pour une mid bass très modulée (unison, pitch mobile, formants, FX larges), séparer la piste sub et la couche mid, puis vérifier leur somme en mono.
 5. **BPM** : une LFO synchronisée garde sa division ; une enveloppe en ms qui doit garder la même proportion métrique est multipliée par BPM initial / BPM final ; attaque, glide et release expressifs restent en temps absolu. Reprogrammer notes et ducking sur les vrais coups de kick, en particulier de House vers DnB. Changer de BPM ne change pas la hauteur (`references/tempo-mix.md`).
 6. **Contrôle** : mesurable par Claude (relecture des paramètres, niveaux relatifs `lom.py meters`, export et `kick_bass_check.py`) ; à l'écoute par l'utilisateur, solo puis avec kick/sub puis dans le drop, notes extrêmes, deux bornes de chaque macro, mono, pics de formant, faible volume, A/B à volume comparable.
-7. **Vidéos** : statut exact de chaque source (visionnée, transcription étudiée, description consultée, inaccessible) dans `references/sources.md`. En session cloud, YouTube est bloqué par la politique réseau ; en local, Claude in Chrome permet transcription et captures aux minutages (valeurs visibles lues, son jamais entendu) ; sinon, demander la transcription à l'utilisateur. Signaler les fonctions propres à Serum 2 quand la source montre Serum 1.
+7. **Vidéos** : statut exact de chaque source (visionnée, transcription étudiée, description consultée, inaccessible) dans `references/sources.md` ; 229 tutoriels Bass House, Dubstep et DnB encore non visionnés, classés en quinze familles avec identifiant (`F08-03`…), dans `references/tutoriels-a-consulter.md`. En session cloud, YouTube est bloqué par la politique réseau ; en local, Claude in Chrome permet transcription et captures aux minutages (valeurs visibles lues, son jamais entendu) ; sinon, demander la transcription à l'utilisateur. Signaler les fonctions propres à Serum 2 quand la source montre Serum 1.
 
 ## Réponse attendue
 
@@ -32,6 +32,7 @@ Un tableau de choix, puis pour chaque basse une fiche jouable : rôle, paramètr
 ## Voir aussi
 
 - Fondements documentés, sources chiffrées et contradictions : `../sound-designer-serum/references/basses.md` (sub, Reese, growl, 808, division du grave) et `patches-genres.md` (patchs chiffrés bass/future house, OTT).
+- Physique et perception du grave, avec ce qui a été lu, calculé ou déduit : `references/documentation-basses.md` (FM et rapports d'octave, formants des voyelles, battements d'unison par note, repliement, peigne kick/sub, courbes d'égale sonie).
 - Recettes Bass House du corpus : `../produire-morceau-electronique-de-a-a-z/references/bass-house-recettes.md`, `bass-house-stabs-serum2.md`, `bass-house-wavetable.md`.
 - Gestes de basse liés au phrasé et 55 recettes courtes : `../composer-hooks-funk-electro/references/sound-design.md`, `cinquante-cinq-recettes.md`.
 - Stabs, pads, leads et impacts qui dialoguent avec la basse : `../bass-house-sound-design/SKILL.md`. Grave dans le mix (poids, mono, traduction club) : `../construire-low-end-electronique/SKILL.md`.

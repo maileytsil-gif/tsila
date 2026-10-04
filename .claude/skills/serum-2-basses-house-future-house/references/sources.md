@@ -2,6 +2,8 @@
 
 Les valeurs de patches sont des points de départ originaux. Plusieurs ateliers montrent Serum 1 : traduire les gestes dans Serum 2 et vérifier les noms de contrôle.
 
+Ce tableau ne liste que les sources réellement examinées ou tentées. Les 229 tutoriels trouvés par recherche le 04/10/2026, non visionnés, sont dans `tutoriels-a-consulter.md` ; une source étudiée passe de ce registre à ce tableau avec son nouveau statut et ses minutages.
+
 | Source | Statut | Utilité |
 | --- | --- | --- |
 | [Xfer Serum 2 routage](https://xferrecords.com/web-manual/serum-2/routing-an-oscillator-or-filter), [modes de hauteur](https://xferrecords.com/web-manual/serum-2/setting-the-octave-or-semitone-mode), [What's New](https://static.xferrecords.com/Serum%202%20What's%20New.pdf) | documentation texte consultée | Direct/None, nouveaux modes, formants, LFO |
