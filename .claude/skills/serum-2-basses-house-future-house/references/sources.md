@@ -2,7 +2,7 @@
 
 Les valeurs de patches sont des points de départ originaux. Plusieurs ateliers montrent Serum 1 : traduire les gestes dans Serum 2 et vérifier les noms de contrôle.
 
-Ce tableau ne liste que les sources réellement examinées ou tentées. Les 230 tutoriels trouvés par recherche le 04/10/2026 sont dans `tutoriels-a-consulter.md`, avec leur statut ; les 27 pages lues, 4 résumés d'agrégateur et 3 transcriptions étudiés le 05/10/2026 sont détaillés dans `etudes-pages-house.md`, `etudes-pages-dubstep-dnb.md` et `etudes-videos.md`. Une source étudiée plus tard (vidéo regardée par l'utilisateur, transcription collée) entre dans ce tableau avec son statut et ses minutages.
+Ce tableau ne liste que les sources réellement examinées ou tentées. Les 230 tutoriels trouvés par recherche le 04/10/2026 sont dans `tutoriels-a-consulter.md`, avec leur statut ; les 27 pages lues, 4 résumés d'agrégateur et 3 transcriptions étudiés le 05/10/2026 sont détaillés dans `etudes-pages-house.md`, `etudes-pages-dubstep-dnb.md`, `etudes-captures.md` (68 captures d'écran lues sur 11 pages) et `etudes-videos.md`. Une source étudiée plus tard (vidéo regardée par l'utilisateur, transcription collée) entre dans ce tableau avec son statut et ses minutages.
 
 | Source | Statut | Utilité |
 | --- | --- | --- |
