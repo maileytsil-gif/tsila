@@ -77,6 +77,8 @@ Les fiches DM du corpus, les kicks génériques au rendu rond, donnent de quoi l
 4. **En conflit avec le sub** : raccourcir le decay, accorder le kick et le sub ensemble, mesurer leur corrélation sur des exports séparés (`../../kick-bass-equilibre/SKILL.md`).
 5. **Faux** : vérifier la note jouée à l'accordeur. Une chute de hauteur longue fait paraître la note plus haute (F01-02 du skill de basses, `../../serum-2-basses-house-future-house/references/etudes-pages-house.md`).
 
+Vingt variantes de ce kick, avec le diagnostic relié à des recettes : `kicks/kicks-signature-sous-124.md`.
+
 Quand l'utilisateur valide un kick à l'écoute, l'inscrire au registre `signature.md` (chemin du preset, réglages, accord, morceau, date).
 
 ## Par style
