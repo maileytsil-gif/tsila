@@ -447,7 +447,7 @@ Conventions de ce relevé :
 - **Conseils de jeu ou de mix** : chevaucher les notes MIDI et activer legato et portamento ; Kickstart pour adoucir l'attaque.
 - **Limites** :
   - Aucune valeur de portamento ni de patch.
-  - **Contradiction avec le registre** : le registre pointe vers la vidéo `uOFNjMxiwkU` (titre « I Cracked That Mau P Bass — Just A Little Bit More »), alors que cette page intègre `KUzOJprH6nc` avec un autre titre. C'est peut-être une autre vidéo du même auteur : à vérifier avant de reporter dans `sources.md`.
+  - **Contradiction avec le registre** : le registre pointe vers la vidéo `uOFNjMxiwkU` (titre « I Cracked That Mau P Bass — Just A Little Bit More »), alors que cette page intègre `KUzOJprH6nc` avec un autre titre. Établi le 05/10 : deux vidéos distinctes sur le même morceau ; `uOFNjMxiwkU` est de Zen World / EvoSounds (Serum 2, auteur vu dans Claude in Chrome), étudiée dans `etudes-videos.md`, et celle-ci, de Sam Smyers, reste non visionnée.
 - **Utilité pour une recette** : confirme le geste « chevauchement + legato + portamento » (même mécanisme que F01-02) pour une basse tech house groovy à 128-129 BPM.
 
 ### F03-01 How To Make a Future House Bass Patch in Serum — Academy.fm (Dan Larsson selon le registre)
