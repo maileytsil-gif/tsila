@@ -2,7 +2,7 @@
 
 Les valeurs de patches sont des points de départ originaux. Plusieurs ateliers montrent Serum 1 : traduire les gestes dans Serum 2 et vérifier les noms de contrôle.
 
-Ce tableau ne liste que les sources réellement examinées ou tentées. Les 229 tutoriels trouvés par recherche le 04/10/2026, non visionnés, sont dans `tutoriels-a-consulter.md` ; une source étudiée passe de ce registre à ce tableau avec son nouveau statut et ses minutages.
+Ce tableau ne liste que les sources réellement examinées ou tentées. Les 230 tutoriels trouvés par recherche le 04/10/2026 sont dans `tutoriels-a-consulter.md`, avec leur statut ; les 27 pages lues, 4 résumés d'agrégateur et 3 transcriptions étudiés le 05/10/2026 sont détaillés dans `etudes-pages-house.md`, `etudes-pages-dubstep-dnb.md` et `etudes-videos.md`. Une source étudiée plus tard (vidéo regardée par l'utilisateur, transcription collée) entre dans ce tableau avec son statut et ses minutages.
 
 | Source | Statut | Utilité |
 | --- | --- | --- |
@@ -28,7 +28,7 @@ Ce tableau ne liste que les sources réellement examinées ou tentées. Les 229 
 
 ## Accéder aux vidéos selon l'environnement
 
-- **Session cloud (claude.ai/code)** : le 29/09/2026, la politique réseau de l'environnement refusait YouTube (`www.youtube.com`, `youtu.be`, `i.ytimg.com`), Vimeo et les sites des tutoriels (`antidoteaudio.com`, `xferrecords.com`, `productionmusiclive.com`…), y compris par la lecture web de Claude. La recherche web ne rend que titres et liens. Aucun statut de ce tableau n'a pu être relevé dans cette session. Pour en lever une partie, l'utilisateur ajoute les domaines voulus aux domaines autorisés de l'environnement (menu de l'environnement cloud, Edit, accès réseau).
+- **Session cloud (claude.ai/code)** : le 29/09/2026, la politique réseau de l'environnement refusait YouTube (`www.youtube.com`, `youtu.be`, `i.ytimg.com`), Vimeo et les sites des tutoriels (`antidoteaudio.com`, `xferrecords.com`, `productionmusiclive.com`…), y compris par la lecture web de Claude. La recherche web ne rend que titres et liens. Aucun statut de ce tableau n'a pu être relevé dans cette session. Pour en lever une partie, l'utilisateur ajoute les domaines voulus aux domaines autorisés de l'environnement (menu de l'environnement cloud, Edit, accès réseau). Le 05/10/2026, après ajout des domaines (accès réseau Custom), les pages de tutoriels se lisaient et `yt-dlp` récupérait sous-titres et métadonnées de YouTube (sans la vidéo) ; au bout de trois vidéos, YouTube a exigé « Sign in to confirm you're not a bot », et une reprise lente un quart d'heure plus tard a échoué de même. Ne pas contourner ce contrôle (ni faux client, ni cookies du compte) : passer par le Mac ou par une transcription collée. Le téléchargement d'images de la vidéo était refusé de la même façon.
 - **Session locale sur le Mac** : avec Claude in Chrome (skill `anthropic-skills:chrome-browser`), ouvrir la vidéo dans le Chrome de l'utilisateur, afficher la transcription de YouTube, puis faire des captures d'écran aux minutages utiles pour **lire** les valeurs visibles dans Serum. Statut obtenu : « transcription étudiée + images vues aux minutages X, Y » ; l'audio reste inaudible pour Claude, donc jamais « écoutée ».
 - **Partout** : l'utilisateur colle la transcription (procédure ci-dessous).
 
