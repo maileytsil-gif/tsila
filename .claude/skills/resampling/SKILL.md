@@ -52,6 +52,6 @@ Rétablir les solos, mutes, armements et réglages temporaires, sauf ceux néces
 
 ## Documentation de référence
 
-Tutoriels étudiés (transcriptions lues, rien d'écouté) sur le resampling dans les instruments : `../sampling-composition-avancee/references/sampler-synthese.md` et `../sampling-composition-avancee/references/simpler-synthese.md` (Live), `../produire-avec-maschine-mk3/references/sampling-maschine-synthese.md` (Maschine) et `../sound-designer-serum/references/sampling-serum-synthese.md` (Serum 2, dont Resample to).
+Tutoriels étudiés (transcriptions lues, rien d'écouté) sur le resampling dans les instruments : `../sampling-composition-avancee/references/sampler-synthese.md` et `../sampling-composition-avancee/references/simpler-synthese.md` (Live), `../produire-avec-maschine-mk3/references/sampling-maschine-synthese.md` (Maschine) et `../sound-designer-serum/references/sampling-serum-synthese.md` (Serum 2, dont Resample to) ; reverse reverb et pads de voix imprimés : `../sampling-composition-avancee/references/vocal-chops-synthese.md`.
 
 Pour confirmer les points de capture ou un comportement dépendant de la version, consulter le [manuel Ableton : Routing and I/O](https://www.ableton.com/en/manual/routing-and-i-o/), notamment Resampling et Internal Routings. Pour les alternatives de rendu disponibles dans la version installée, consulter [Committing Audio in Live](https://help.ableton.com/hc/en-us/articles/22998838817820-Committing-Audio-in-Live). Ne pas supposer qu'une commande de bounce existe sur toutes les versions de Live 12.
