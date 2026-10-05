@@ -16,3 +16,7 @@
 
 ## Bibliothèques repérées sur le Mac
 Core Library `Samples/One Shots/Drums/{Kick,Clap,Rim,Hihat,Shaker,Conga,…}` ; packs sur le disque Seagate (« Drum Booth » multi-samples acoustiques, « Skitter and Step », « Drive and Glow ») ; presets Serum utilisateur (TKNVLT Techno Kick Collection, F Brooks kicks, « Kick Future House Tsila », Kick Renders) ; Battery 4.
+
+## Kicks conçus dans Serum
+
+Structure commune, valeurs dites par les tutoriels et fiche du kick signature sous 124 BPM : `kicks-serum-synthese.md` ; fiches des 46 vidéos étudiées, par style : `kicks-serum-tutoriels.md`.
