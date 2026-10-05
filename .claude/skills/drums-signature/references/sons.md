@@ -21,4 +21,4 @@ Core Library `Samples/One Shots/Drums/{Kick,Clap,Rim,Hihat,Shaker,Conga,…}` ; 
 
 Structure commune, valeurs dites par les tutoriels et fiche du kick signature sous 124 BPM : `kicks-serum-synthese.md` ; fiches des 46 vidéos étudiées, par style : `kicks-serum-tutoriels.md`.
 
-Recettes de kicks Serum 2, vingt par fichier, dans `kicks/` : `kicks/kicks-signature-sous-124.md` pour la signature sous 124 BPM, le deep, le minimal et l'électro chill (avec les règles communes du lot de kicks et le diagnostic) ; les autres styles suivront dans le même dossier.
+Recettes de kicks Serum 2, vingt par fichier, dans `kicks/` : `kicks/kicks-signature-sous-124.md` pour la signature sous 124 BPM, le deep, le minimal et l'électro chill (avec les règles communes du lot de kicks et le diagnostic) ; `kicks/kicks-house-bass-house.md` pour la house, la bass house et la tech house ; les autres styles suivront dans le même dossier.
