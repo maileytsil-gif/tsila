@@ -3,7 +3,7 @@
 ## Palette « deep chill minimal house » (validée 14 sept. 2026, 120 BPM, fa mineur)
 | famille | son | source | réglages | chaîne |
 |---|---|---|---|---|
-| Kick | Serum 2 « DR - Kick Minimal » (2 sinus, decay 294 ms) | preset factory | note C1 (suit la hauteur), ≈ −3 dB avant fader | EQ HP 28 / LP 9 k → Saturator |
+| Kick | Serum 2 « DR - Kick Minimal » modifié le 5 oct. 2026 (2 sinus, decay 294 ms) | preset factory modifié, à sauver comme preset utilisateur | note C1 (suit la hauteur), ≈ −3 dB avant fader ; RAND 0, PHASE 90° ; ENV 2 → CRS +24 demi-tons, decay 40 ms, concave ; ENV 1 attaque minimale, hold 70 ms ; clic NOISE Attacks › Kick n° 11, one-shot, LEVEL 20 | EQ HP 28 / LP 9 k → Saturator |
 | Clap / Rim | Clap 808 Light Quick (−5 dB) · Rim 808 (−2 dB, pan 7R) | Core Library one-shots | pads C1/D1 | REQ 6 HP 180, creux 650 |
 | Hats | Hihat Closed Kaninchen (+2) · Hihat Open RKTD (+2, 6L) | Core Library | F#1/A#1, swing 16e 0,03 | Auto Filter (automatisé), REQ 6 HP 400 |
 | Percs | Cabasa Short Mid (11L) · Conga Acoustified Low (13R) · Conga Soft (6L) | Core Library | C1/D1/E1 | REQ 6 HP 200 |
@@ -15,3 +15,6 @@ Bus batterie : bx_glue 4:1 (3 ms, auto, −13, +1,5, SC HP 60) → API-2500 para
 2. Changer au plus deux pièces (ex. hats plus brillants, un perc de plus) — trouvées avec `findSimilar` sur le son remplacé.
 3. Accorder le kick/sub à la nouvelle tonalité ; garder les niveaux relatifs (kick −3, clap −6, hats −12, percs −14).
 4. Noter dans `historique` ce qui a changé et pourquoi ; une pièce nouvelle validée à l'écoute rejoint la palette.
+
+## Historique
+- **5 oct. 2026** — kick jugé mou par l'utilisateur : attaque refaite (chute de hauteur, phase, hold) et clic NOISE n° 11 à 20, gardé parce que le kick ne tenait pas à faible volume sans lui ; validé à l'écoute. Reste l'étape 4 : le kick avec le sub (sidechain, longueur du decay de 294 ms face à la croche de 250 ms à 120 BPM), puis la mesure `kick_bass_check.py` sur des exports séparés. Démarche : KS01 et le diagnostic de `kicks/kicks-signature-sous-124.md`.
