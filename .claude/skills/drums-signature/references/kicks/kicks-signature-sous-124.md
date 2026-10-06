@@ -32,6 +32,7 @@ Elles valent pour tous les fichiers de `references/kicks/`.
    - PHASE 0 : départ sans clic [SOURCE AF-05] ;
    - 90°, au pic de l'onde : un petit clic [SOURCE AF-01, AF-03, DM-05] ;
    - ≈ 122, « à personnaliser » [SOURCE DM-04].
+   - Les captures d'AF-01 (MERAKKI, 1:23) et de HC-06 (PML, 3:40) montrent PHASE 180° et RAND 100 % à cet instant ; le « 90° » d'AF-01 ci-dessus n'y est pas confirmé (`../kicks-serum-synthese.md`, section des captures) : à relire dans la vidéo.
 4. **Accord et octave.** La fondamentale entendue est la note jouée, décalée par l'OCT de l'oscillateur. Les tutoriels mettent l'oscillateur à OCT −2 et jouent deux octaves plus haut [SOURCE DM-01, DM-02, DM-04]. Les recettes donnent la **fondamentale visée** : avec OCT −2, jouer la note deux octaves plus haut (C3 pour un kick en C1).
    - **Quand le sub tient le fondamental** (deep, minimal, tech house) : corps du kick **au-dessus** du sub, entre 60 et 100 Hz, accordé sur la tonique ou la quinte, une octave au-dessus du sub (`../../../kick-bass-equilibre/SKILL.md` § 1-2).
    - En fa mineur, avec un sub en F0 (43,7 Hz) : kick en C1 (65,4 Hz, la quinte) ou en F1 (87,3 Hz, la tonique) [CALCUL, `theorie.py sub F`].
