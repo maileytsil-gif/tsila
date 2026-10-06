@@ -32,7 +32,7 @@ Vérifier équilibre, transitoires, grave, mono, transitions et fins. Désactive
 Produire un prémaster sans normalisation et sans écrêtage involontaire, avec une marge suffisante pour la chaîne suivante. Une crête exactement à −6 dBFS n'est pas une condition obligatoire. Préserver fréquence d'échantillonnage et résolution pertinentes ; un fichier de travail flottant peut convenir si le flux le supporte. Vérifier que la référence n'est pas incluse.
 
 ## 4. Mastering
-Lire [references/mastering-mesures.md](references/mastering-mesures.md). Partir du prémaster vérifié ou du mix stéréo fourni. Régler équilibre global, dynamique et sonie selon la destination et l'intention, avec un nombre de traitements justifié. Ne pas remplacer le mixage par une limitation intensive.
+Lire [references/mastering-mesures.md](references/mastering-mesures.md). Pour comparer avec des pratiques d'ingénieurs et de producteurs (chaîne, clipper avant limiteur, marge de prémaster, stem mastering), lire `../mastering-outils/references/mix-master-pro-synthese.md` : ses écarts avec ce skill sont dans son tableau des contradictions. Partir du prémaster vérifié ou du mix stéréo fourni. Régler équilibre global, dynamique et sonie selon la destination et l'intention, avec un nombre de traitements justifié. Ne pas remplacer le mixage par une limitation intensive.
 
 Vérifier si le mastering se fait dans le Set, un Set distinct ou sur fichier ; éviter de faire repasser un master traité dans la même chaîne. Comparer avant/après à niveau comparable. En cas de pompage, distorsion, perte de punch ou grave instable, corriger l'étage responsable plutôt qu'ajouter un limiteur supplémentaire par défaut.
 

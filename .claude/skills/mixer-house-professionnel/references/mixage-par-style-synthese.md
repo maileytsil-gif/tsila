@@ -5,7 +5,7 @@ L'étude a été faite dans Claude in Chrome sur le Mac. Les transcriptions ont 
 Les identifiants sont ceux de `tutoriels-mixage-par-style.md`. Les préfixes BH, HC, TE, RA, FB, DM et AF désignent d'autres vidéos dans le corpus des kicks (`../../drums-signature/references/kicks-serum-tutoriels.md`) : ne pas les confondre.
 [SOURCE XX-nn] = dit dans la vidéo (transcription ou description). (interp.) = mon interprétation ou celle de l'étude. [ASR ?] = transcription automatique douteuse.
 DAW filmés : Ableton Live dans 33 vidéos, FL Studio dans 16 (17 avec AF-06, probable), Studio One, Logic Pro et Reaper une fois chacun, DAW non dit dans 7. Une seule vidéo en français (TE-03).
-Les niveaux en dB sont ceux que disent les vidéos (fader, crête ou meter, souvent sans unité claire) : des points de départ, pas des normes. Cadre du projet : `../SKILL.md`, `genres-et-espace.md`, `diagnostic-et-recettes.md`, `../../ingenieur-mixage/SKILL.md`.
+Les niveaux en dB sont ceux que disent les vidéos (fader, crête ou meter, souvent sans unité claire) : des points de départ, pas des normes. Cadre du projet : `../SKILL.md`, `genres-et-espace.md`, `diagnostic-et-recettes.md`, `../../ingenieur-mixage/SKILL.md`. Pour le mastering, le grave, les références et le pré-master, voir aussi `../../mastering-outils/references/mix-master-pro-synthese.md` (47 autres tutoriels).
 
 ## Ce que dit le corpus avant tout
 
