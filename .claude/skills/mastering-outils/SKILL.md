@@ -40,3 +40,5 @@ Lire [references/mesures-et-livraison.md](references/mesures-et-livraison.md). C
 Fournir le master et son nom/version, format, fréquence, résolution, durée, LUFS intégrés, true peak et éventuellement LRA. Nommer l'analyseur et indiquer les valeurs non mesurées. Résumer les traitements utiles et la vérification auditive réalisée ou encore nécessaire. Ne pas inventer de mesure ou affirmer « prêt à publier » à partir du seul plafond affiché.
 
 Notes propres à ce Mac (liens vers les autres skills, FFmpeg absent, chaîne en place) : `references/notes-locales.md`.
+
+Points de vue de 47 tutoriels de mixage et de mastering « pro » (chaîne de mastering, loudness et limiteur, équilibre tonal, mixdowns, grave, références et écoute, pré-master et stem mastering, outils), avec leurs écarts par rapport aux règles de ce skill (plafond, mono, sonie, marge de prémaster, natifs de Live) : `references/mix-master-pro-synthese.md`, d'après `references/tutoriels-mix-master-pro.md` (transcriptions lues, rien d'écouté). Ce sont des points de départ : les règles de ce skill priment.

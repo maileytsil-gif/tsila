@@ -16,3 +16,9 @@
 
 ## Bibliothèques repérées sur le Mac
 Core Library `Samples/One Shots/Drums/{Kick,Clap,Rim,Hihat,Shaker,Conga,…}` ; packs sur le disque Seagate (« Drum Booth » multi-samples acoustiques, « Skitter and Step », « Drive and Glow ») ; presets Serum utilisateur (TKNVLT Techno Kick Collection, F Brooks kicks, « Kick Future House Tsila », Kick Renders) ; Battery 4.
+
+## Kicks conçus dans Serum
+
+Structure commune, valeurs dites par les tutoriels et fiche du kick signature sous 124 BPM : `kicks-serum-synthese.md` ; fiches des 46 vidéos étudiées, par style : `kicks-serum-tutoriels.md`.
+
+Recettes de kicks Serum 2, vingt par fichier, dans `kicks/` : `kicks/kicks-signature-sous-124.md` pour la signature sous 124 BPM, le deep, le minimal et l'électro chill (avec les règles communes du lot de kicks et le diagnostic) ; `kicks/kicks-house-bass-house.md` pour la house, la bass house et la tech house ; `kicks/kicks-techno-rave.md` pour la techno, le rumble, l'industriel, la hard techno et la rave ; `kicks/kicks-big-room-future.md` pour la big room, la future house, la future rave et la future bass. Afro et organic house : les cinq fiches AF du corpus sont dans KS07, KS09, KS16, KS17 (`kicks/kicks-signature-sous-124.md`) et KH14 (`kicks/kicks-house-bass-house.md`). DnB et dubstep : `kicks/kicks-dnb-dubstep.md` (le corpus de tutoriels n'en a aucun ; recettes tirées des autres documents du dépôt).

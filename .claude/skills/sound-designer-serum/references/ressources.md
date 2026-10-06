@@ -20,7 +20,7 @@ https://www.soundonsound.com/series/synth-secrets-sound-sound
 
 Autres parties utiles : 1 *What's In A Sound?*, 12–14 sur l'AM et la FM, 25 *Formant Synthesis*, plus les articles hors série sur le granulaire, les percussions et les risers.
 
-**Miroir GitHub** en Markdown, lisible hors ligne et greppable : https://github.com/micjamking/synth-secrets — réserve : la numérotation des parties diffère de l'index officiel.
+**Miroir GitHub** en Markdown, lisible hors ligne et greppable : https://github.com/micjamking/synth-secrets — réserve : la numérotation des parties diffère de l'index officiel. Faits chiffrés tirés de ce miroir pour les basses (FM, formants, battements, repliement, peigne, ISO 226) : `../../serum-2-basses-house-future-house/references/documentation-basses.md`.
 
 ### Documentation constructeur
 

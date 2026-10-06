@@ -1,7 +1,7 @@
 {
   "signature": "deep chill minimal house — palette validée le 14 sept. 2026 (morceau « deep chill minimal house », 120 BPM, fa mineur)",
   "familles": {
-    "KIT Kick": {"type": "serum", "preset": "Factory/Drum/DR - Kick Minimal", "note_midi": "C1 (suit la hauteur ; transposer en F si besoin)", "chaine": "EQ HP 28 Hz / LP 9 kHz -> Saturator Warmth", "niveau_pre_fader_db": -3},
+    "KIT Kick": {"type": "serum", "preset": "Factory/Drum/DR - Kick Minimal, modifié le 5 oct. 2026 (à sauver comme preset utilisateur ; nom et chemin à compléter)", "note_midi": "C1 (suit la hauteur ; transposer en F si besoin)", "reglages": "2 sinus, RAND 0, PHASE 90° ; ENV 2 -> CRS des deux sinus, unipolaire, +24 demi-tons, decay 40 ms, sustain 0, courbe concave ; ENV 1 attaque au minimum, hold 70 ms, decay 294 ms ; clic NOISE Attacks > Kick n° 11, one-shot, LEVEL 20 ; pas de saturation dans Serum", "chaine": "EQ HP 28 Hz / LP 9 kHz -> Saturator Warmth", "niveau_pre_fader_db": -3, "a_verifier": "mesure kick/sub sur exports séparés non faite (sautée par l'utilisateur le 5 oct. 2026) ; sub en notes tenues, kick en C1 sur sub en F0 (quinte) ; à écouter en mono : attaque au-dessus du sub, grave net entre deux kicks, pompage du sidechain (4:1, 0,1 ms, 110 ms)"},
     "KIT Clap-Rim": {"type": "drum-rack", "pads": [
       {"pad": "pC1", "nom": "Clap 808 Light Quick", "sample": "/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Core Library/Samples/One Shots/Drums/Clap/Clap 808 Light Quick.aif", "gainDb": -5, "pan": 0},
       {"pad": "pD1", "nom": "Rim 808", "sample": "/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Core Library/Samples/One Shots/Drums/Rim/Rim 808.aif", "gainDb": -2, "pan": 0.07}],
@@ -18,5 +18,6 @@
     "SUB": {"type": "serum", "preset": "osc SUB sinus, mono+legato, release 90 ms", "note": "F0 = tonique", "chaine": "Utility mono -> EQ 24-130 Hz -> sidechain kick (4:1, 0.1 ms, 110 ms)"}
   },
   "bus": "AUDIO - X -> BUS - BATTERIE : bx_glue 4:1 3 ms auto -13 +1.5 SC HP 60 -> API-2500 // 30 % -> REQ 6",
-  "historique": [{"date": "2026-09-14", "morceau": "deep chill minimal house", "note": "première palette ; kick Serum choisi après un Drum Rack sample"}]
+  "historique": [{"date": "2026-09-14", "morceau": "deep chill minimal house", "note": "première palette ; kick Serum choisi après un Drum Rack sample"},
+    {"date": "2026-10-05", "morceau": "signature sous 124 BPM", "note": "kick jugé mou : attaque refaite (chute de hauteur +24 demi-tons en 40 ms, PHASE 90°, attaque minimale, hold 70 ms) et clic NOISE n° 11 à 20, gardé parce que le kick ne tenait pas à faible volume sans lui ; validé à l'écoute par l'utilisateur ; recettes KS01 et diagnostic de references/kicks/kicks-signature-sous-124.md"}]
 }

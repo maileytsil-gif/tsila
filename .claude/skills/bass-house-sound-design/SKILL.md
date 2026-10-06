@@ -18,7 +18,7 @@ Lire [recettes.md](references/recettes.md) pour les familles sonores. Pour des s
 
 ## Dans ce workflow
 
-- Méthode, choix du moteur et tableau section / paramètre / valeur / comment réglé / vérifié : `../sound-designer-serum/SKILL.md` ; doc Serum 2 : `../sound-designer-serum/references/moteurs-synthese.md` et `serum2-fx-clip-arp.md` ; Wavetable : `../sound-designer-serum/references/ableton-instruments.md`.
+- Méthode, choix du moteur et tableau section / paramètre / valeur / comment réglé / vérifié : `../sound-designer-serum/SKILL.md` ; doc Serum 2 : `../sound-designer-serum/references/moteurs-synthese.md` et `serum2-fx-clip-arp.md` ; Wavetable : `../sound-designer-serum/references/ableton-instruments.md`. Leads, hooks, stabs d'accords et pads faits dans Serum, d'après 90 tutoriels (house d'abord) : `../sound-designer-serum/references/synths-serum-synthese.md`.
 - Basses : `../serum-2-basses-house-future-house/SKILL.md`. Chargement sans hot-swap et clics dans Serum 2 : `../vst-sound-design/SKILL.md`.
 - Notes et motif : `../compositeur-arrangeur/SKILL.md`, grille vérifiée par `../composer-hooks-funk-electro/scripts/grille.py`.
 - Kick/sub : `../kick-bass-equilibre/SKILL.md` ; impression audio : `../resampling/SKILL.md` ; effets tiers : `../effets-plugins/SKILL.md` ; mémoire : `../memoire-projet/SKILL.md`.

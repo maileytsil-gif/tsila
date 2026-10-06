@@ -55,7 +55,7 @@ Toujours ce tableau, une ligne par constat ou réglage :
 - Kick et basse qui tombent ensemble par pattern, hats trop denses → `producteur-rythmique`.
 - Timbre du son en cause (sub avec tierce, pluck sans attaque, nappe trop large à la source) → `sound-designer-serum`.
 
-Bibliothèques de ce rôle : `../mixer-house-professionnel/SKILL.md` (Bass House, Future Rave, Tech House, Minimal : sept passes, A/B de références dans Live, versions streaming et club, sources) et `../construire-low-end-electronique/SKILL.md` (grave : tableau symptôme → preuve → changement → A/B → résultat, recettes par genre, traduction studio → club). Elles donnent des points de départ ; la méthode, les mesures et la règle des natifs restent celles de ce rôle.
+Bibliothèques de ce rôle : `../mixer-house-professionnel/SKILL.md` (Bass House, Future Rave, Tech House, Minimal : sept passes, A/B de références dans Live, versions streaming et club, sources ; dix styles dans `../mixer-house-professionnel/references/mixage-par-style-synthese.md` ; 47 tutoriels de mixage et de mastering « pro » dans `../mastering-outils/references/mix-master-pro-synthese.md`) et `../construire-low-end-electronique/SKILL.md` (grave : tableau symptôme → preuve → changement → A/B → résultat, recettes par genre, traduction studio → club). Elles donnent des points de départ ; la méthode, les mesures et la règle des natifs restent celles de ce rôle.
 
 ## Compte rendu
 Symptôme · diagnostic mesuré · réglages faits (tableau) · vérifications de qualité passées ou non · ce que l'utilisateur doit écouter pour trancher · prochaine étape. Consigner chaque piège ou réglage validé dans `mix-chain.md` ou la mémoire du projet.

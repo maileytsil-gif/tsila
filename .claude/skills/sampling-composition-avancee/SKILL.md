@@ -11,6 +11,8 @@ Traiter les samples comme des objets musicaux qui portent simultanément des hau
 
 Pour intervenir dans Ableton, lire `../ableton-live-session/SKILL.md` et relire le Set. Pour capturer ou imprimer de l'audio, utiliser `../resampling/SKILL.md`. Lire `../melodie-composition/SKILL.md` si des voix MIDI complémentaires sont nécessaires ; `../arrangement-avance/SKILL.md` pour construire l'arrangement ; `../vst-sound-design/SKILL.md` pour charger ou transformer un instrument échantillonné. Respecter les outils et instruments disponibles. Ne pas modifier un Set si la demande porte seulement sur une analyse ou une proposition.
 
+Pour le geste dans l'instrument (découpe, zones, boucles, modes, round robin, vocal chops, stutter) : `references/sampler-synthese.md` (Sampler de Live, d'après `references/tutoriels-sampler.md`, SA-01 à SA-30) et `references/simpler-synthese.md` (Simpler, Slice to MIDI, d'après `references/tutoriels-simpler.md`, SI-01 à SI-30). Vocal chops par usage (montée, tension, surprise, rythme, ambiance et reverse) : `references/vocal-chops-synthese.md`, d'après `references/tutoriels-vocal-chops.md` (65 tutoriels). Sampling dans Maschine : `../produire-avec-maschine-mk3/references/sampling-maschine-synthese.md` ; dans Serum 2 : `../sound-designer-serum/references/sampling-serum-synthese.md`. Valeurs dites dans des tutoriels, jamais entendues : à régler puis relire dans la session.
+
 Les demandes de ce skill autorisent la composition demandée, pas un remplacement global du mix. Conserver les sources et travailler sur des copies. Appliquer le workflow de session par étapes, sauf demande contraire explicite.
 
 ## 1. Cartographier le matériau
