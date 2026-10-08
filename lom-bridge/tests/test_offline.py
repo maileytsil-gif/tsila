@@ -429,7 +429,12 @@ class TestPlanAndRebuild(unittest.TestCase):
     def test_override_refused_when_sampling_needed(self):
         vol, vref = self._audio_following(); vol.automation_state = 2
         p = self.plan("1-tone", vref, "raw", 8, "lin", 0, "fades", 18.0, 0.5, 20.0, 0.5)
-        self.assertTrue(any("surchargée" in e for e in p["errors"]))
+        # 0.8.3 : l'état 2 seul ne prouve rien (Live le pose aussi quand le curseur est hors des clips) : au plan, avertissement
+        # « indécidable » ; /plan tranche ensuite en tâche par sondage du curseur — ici la valeur manuelle reste constante → surcharge avérée
+        self.assertEqual(p["errors"], []); self.assertTrue(any("indécidable" in w for w in p["warnings"]))
+        rows = []; gen = self.b.cmd_plan(lambda *x: rows.append(x), ["1-tone", vref, "raw", 8, "lin", 0, "fades", 18.0, 0.5, 20.0, 0.5])
+        if gen is not None: list(gen)
+        self.assertTrue(any(x[0] == "error" and "surchargée" in str(x[1]) for x in rows), rows)
         # enveloppe exposée : pas d'échantillonnage, l'état 2 n'empêche rien
         self.vol.automation_state = 2; self.track.arrangement_clips[0].automation_envelopes = [FakeEnvelope(self.vol, [(0.0, 0.0), (16.0, 1.0)])]
         p = self.plan("3-MIDI", self.vref, "raw", 8, "lin", 0, "expressions", 18.0, 0.5, 20.0, 0.5); self.assertEqual(p["errors"], [])
@@ -566,6 +571,7 @@ class TestTypedCommands(unittest.TestCase):
         self.assertEqual(ec("x ; ANNULATION AUTOMATIQUE IMPOSSIBLE (y) : faire Cmd+Z"), "E_ROLLBACK_FAILED"); self.assertEqual(ec("/read: annulée"), "E_CANCELLED")
         self.assertEqual(ec("automation de V surchargée (…)"), "E_AUTOMATION_OVERRIDDEN"); self.assertEqual(ec("Cutoff est automatisé (état 1)"), "E_AUTOMATED")
         self.assertEqual(ec("référence d'une autre session"), "E_REF"); self.assertEqual(ec("n'importe quoi"), "E_ERROR")
+        self.assertEqual(ec("fin d'étape d'annulation impossible (x) ; état du Set incertain : vérifier"), "E_UNCERTAIN")
     def test_err_line_carries_code_and_client_reads_it(self):
         rows = []; self.b._sock.sent = []
         self.b._dispatch(("127.0.0.1", 1), "/setparam", ["3-MIDI", "mixer", "Volume", 2.0, "raw"], "e1")
@@ -660,6 +666,25 @@ class TestTypedCommands(unittest.TestCase):
         for bad in ("pas du json", "[[200, 0, 1, 100]]", "[[60, 0, 0, 100]]", "[{\"pitch\": 60}]"):
             with self.assertRaises(ValueError): self.call("notes", "set", "3-MIDI", 20.0, bad)
         with self.assertRaises(ValueError): self.call("notes", "get", "1-tone", 16.0)   # piste audio sans clip → aucun clip
+    def test_notes_add_failure_after_partial_write_rolls_back(self):
+        c = self._clip_with_notes()
+        original = self.b._note_rows(c.notes)
+        def partial(specs):
+            c.notes.append(specs[0])
+            raise RuntimeError("écriture partielle")
+        c.add_new_notes = partial
+        with self.assertRaisesRegex(ValueError, "annulée automatiquement"):
+            self.call("notes", "add", "3-MIDI", 20.0, json.dumps([[72, 12.0, 0.25, 100]]))
+        self.assertEqual(self.b._note_rows(c.notes), original)
+        self.assertEqual(len(self.song.undo_calls), 1)
+
+    def test_commit_end_undo_failure_reports_uncertain_state(self):
+        def fail(): raise RuntimeError("end failed")
+        self.song.end_undo_step = fail
+        with self.assertRaisesRegex(ValueError, "état du Set incertain"):
+            self.b._commit(self.song, lambda touched: touched.append("test"))
+        self.assertEqual(self.song.undo_calls, [])
+
     def test_notes_set_rolls_back_when_live_disagrees(self):
         c = self._clip_with_notes(); orig = c.add_new_notes
         c.add_new_notes = lambda specs: orig(tuple(specs)[:1])   # Live n'a gardé qu'une note

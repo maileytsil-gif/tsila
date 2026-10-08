@@ -5,7 +5,7 @@ Ce fichier est lu par Claude Code (importé par `CLAUDE.md`), Qwen Code (`.qwen/
 ## Le dépôt
 
 - `.claude/skills/` : les **cinq skills** du workflow, **source unique** — `producteur-live` (séance, mémoire, projet, morceau entier, Suno ; porte d'entrée et carte), `compositeur-arrangeur`, `producteur-rythmique`, `sound-designer-serum`, `ingenieur-mixage`. Chacun contient ses **modules** (`<skill>/modules/<module>/GUIDE.md`) : les 44 anciens skills, déplacés entiers le 8 oct. 2026 (correspondance et conventions : `docs/regroupement-skills.md`). `.qwen/skills` est un lien vers ce dossier : Claude Code et Qwen Code lisent les mêmes fichiers. Ne jamais créer une seconde copie à tenir à jour à la main.
-- `lom-bridge/` : LOM Bridge 0.8.1 (Remote Script, `lom.py`, `agent_gateway.py`, tests hors Live). Sur le Mac : `$LOM_BRIDGE_DIR` (défaut `/Volumes/NO NAME/caude/lom-bridge`).
+- `lom-bridge/` : LOM Bridge 0.8.3 (Remote Script, `lom.py`, `agent_gateway.py`, tests hors Live). Sur le Mac : `$LOM_BRIDGE_DIR` (défaut `/Volumes/NO NAME/caude/lom-bridge`).
 - `outils/installer.sh` : installe ou met à jour les skills dans `~/.claude/skills` et `~/.qwen/skills` (simulation par défaut ; `--retirer-absents` écarte les anciens skills installés). `outils/verifier_skills.py` : contrôle des skills et de leurs modules, lancé aussi par l'intégration continue.
 
 ## Par où entrer

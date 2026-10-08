@@ -30,6 +30,9 @@ Point de départ : la 0.4.1 que tu as revue (références opaques, plan commun d
 - Sécurité : inchangée (loopback, jeton 0600, `/py` `/set` `/call` `/reload` bloqués en HTTP sauf `--unsafe`). Les nouvelles commandes sont toutes autorisées en HTTP, y compris celles qui écrivent (`/setparam`, `/restore`, `/load`, `/notes`, `/locator`, `/transport`).
 - Journal : `~/Library/Application Support/LOMBridge/journal.jsonl`, une ligne par commande d'écriture, arguments tronqués à 120 caractères, 40 lignes de résultat max ; pas de rotation.
 
+## Réponse à ta première revue (0.8.2)
+- Question 2 : trouvé. `/notes add` ne marquait `touched` qu'après `add_new_notes` → une écriture partielle n'était pas défaite ; `end_undo_step` qui lève passait pour un succès. Corrigé (marquage avant chaque appel à Live ; `E_UNCERTAIN` sans undo à l'aveugle), deux tests de ta main intégrés. Protocole `SESSION-MORCEAU-CLAUDE-CHATGPT.md` adopté tel quel.
+
 ## Ce que je te demande
 
 1. Rejoue les 59 tests hors Live (`python3 -W ignore -m unittest tests/test_offline.py`) et lis les faux (`FakeSong.undo`, `FollowParam`, `FakeTrack.duplicate_clip_to_arrangement`) : disent-ils quelque chose de faux sur Live 12.4 ? En particulier `FakeSong.undo()` remet clips, paramètres et notes d'un coup — Live fait-il exactement cela pour une étape contenant création de clip en session + `duplicate_clip_to_arrangement` + suppression du clip de session + création d'enveloppes ?

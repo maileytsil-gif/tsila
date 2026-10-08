@@ -70,6 +70,9 @@ def osc_unpack(buf):
 def parse_disp(s):
     s = str(s)
     if "inf" in s.lower(): return -float("inf") if "-" in s else float("inf")
+    if re.fullmatch(r"\s*C\s*", s): return 0.0   # pan centré
+    mp = re.fullmatch(r"\s*(\d+(?:[.,]\d+)?)\s*([LR])\s*", s)   # pan « 50L » … « 50R » (0.8.3)
+    if mp: return float(mp.group(1).replace(",", ".")) * (-1.0 if mp.group(2) == "L" else 1.0)
     m = re.search(r"(-?\d+(?:[.,]\d+)?)\s*([a-zA-Zµ%]*)", s)
     if not m: return float("nan")
     v = float(m.group(1).replace(",", "."))
@@ -136,7 +139,7 @@ _ident = lambda x: x
 
 # Codes d'erreur stables (premier argument de /err après l'id), déduits du message ; l'ordre compte (premier motif trouvé).
 ERROR_CODES = (
-    ("ANNULATION AUTOMATIQUE IMPOSSIBLE", "E_ROLLBACK_FAILED"), ("annulée automatiquement", "E_ROLLED_BACK"),
+    ("état du Set incertain", "E_UNCERTAIN"), ("ANNULATION AUTOMATIQUE IMPOSSIBLE", "E_ROLLBACK_FAILED"), ("annulée automatiquement", "E_ROLLED_BACK"),
     ("jeton", "E_AUTH"), ("commande inconnue", "E_UNKNOWN_CMD"), ("usage:", "E_USAGE"), ("file de tâches pleine", "E_QUEUE_FULL"),
     ("annulée", "E_CANCELLED"), ("lecture en cours", "E_TRANSPORT_PLAYING"), ("transport démarré", "E_TRANSPORT_PLAYING"),
     ("lecture arrêtée", "E_TRANSPORT_STOPPED"), ("curseur déplacé", "E_CURSOR_MOVED"), ("replanifier", "E_STALE"),
@@ -356,11 +359,15 @@ class LOMBridge(ControlSurface):
     def _commit(self, song, write):
         """Exécute write(touched) dans UNE étape d'annulation, sans pause. `touched` reçoit le nom de chaque clip effectivement
         remplacé. Sur erreur : rien de remplacé → l'erreur remonte telle quelle ; sinon l'étape est défaite (song.undo)."""
-        touched, failure = [], None
+        touched, failure, result = [], None, None
         song.begin_undo_step()
         try: result = write(touched)
         except Exception as e: failure = e
-        finally: song.end_undo_step()
+        finally:
+            try: song.end_undo_step()
+            except Exception as e:
+                # la pile d'annulation est dans un état inconnu : ne surtout pas appeler undo à l'aveugle ni prétendre à l'atomicité
+                raise ValueError("fin d'étape d'annulation impossible (%s) ; état du Set incertain : vérifier dans Live avant toute autre écriture" % e) from e
         if failure is None: return result
         if not touched: raise ValueError("%s ; rien n'est modifié" % failure) from failure
         try: song.undo()
@@ -589,6 +596,7 @@ class LOMBridge(ControlSurface):
         E = Live.Envelope.EnvelopeEvent
         song = self.song()
         old_start, old_end = float(clip.start_time), float(clip.end_time)
+        clip_name = str(clip.name)   # lu AVANT le remplacement : après duplicate_clip_to_arrangement, `clip` est un handle mort (0.8.3)
         slot, scene_idx = self._free_slot(track)
         n = None
         try:
@@ -649,7 +657,7 @@ class LOMBridge(ControlSurface):
                 e2 = n.create_automation_envelope(p)
                 for t_rel, v in sorted(pts, key=lambda x: x[0]): e2.create_event(E(float(t_rel), float(v)))
             new_clip = track.duplicate_clip_to_arrangement(n, old_start)
-            if touched is not None: touched.append(str(clip.name))
+            if touched is not None: touched.append(clip_name)
         except Exception:
             try:
                 if n is not None: slot.delete_clip()
@@ -665,7 +673,7 @@ class LOMBridge(ControlSurface):
         except Exception: pass
         ns, ne = float(new_clip.start_time), float(new_clip.end_time)
         if abs(ns - old_start) > 1e-6 or abs(ne - old_end) > 1e-6:
-            raise RebuildMismatch("%s : clip reconstruit %.3f-%.3f au lieu de %.3f-%.3f" % (clip.name, ns, ne, old_start, old_end))
+            raise RebuildMismatch("%s : clip reconstruit %.3f-%.3f au lieu de %.3f-%.3f" % (clip_name, ns, ne, old_start, old_end))
         return new_clip
 
     def _old_points(self, clip, p, win_abs, out):
@@ -682,7 +690,9 @@ class LOMBridge(ControlSurface):
             if lo_abs > s + 1e-9: before.append((lo, float(ev.value_at_time(lo - 1e-6))))
             if hi_abs < e - 1e-9: after.insert(0, (hi, float(ev.value_at_time(hi + 1e-6))))
         elif int(getattr(p, "automation_state", 0)) != 0:
-            if int(getattr(p, "automation_state", 0)) == 2: raise ValueError(self._override_msg(p))
+            chk = {}
+            for _ in self._override_probe(getattr(clip, "canonical_parent", None), p, chk): yield
+            if chk.get("overridden"): raise ValueError(self._override_msg(p))
             if lo_abs > s + 1e-9:
                 got = {}
                 for _ in self._sample([p], s, lo_abs, SAMPLE_STEP, got): yield
@@ -694,6 +704,53 @@ class LOMBridge(ControlSurface):
         out["before"] = before; out["after"] = after
 
     # ---------- plan (commun à /plan et /shape) ----------
+    def _override_check(self, track, p):
+        """Surcharge réelle ? Synchrone, au curseur courant. Live signale automation_state == 2 aussi quand le curseur est
+        sorti de tout clip automatisé de la piste, et ce « 2 » reste collé même en revenant dedans, alors que la valeur suit
+        toujours l'automation (relevé 23 sept. 2026, 0.8.3). On tranche donc en comparant p.value à l'enveloppe du clip sous
+        le curseur : False = suit l'automation, True = ne la suit pas (vraie surcharge), None = indécidable ici (curseur hors
+        d'un clip qui expose l'enveloppe)."""
+        if int(getattr(p, "automation_state", 0)) != 2: return False
+        cur = float(self.song().current_song_time)
+        for c, s, e in self._arr_clips(track):
+            if not (s <= cur < e): continue
+            ev = self._env_of(c, p)
+            if ev is None: return None
+            expect = float(ev.value_at_time(self._rel(c, cur))); got = float(p.value)
+            rng = max(1e-9, float(p.max) - float(p.min))
+            return abs(got - expect) > 0.01 * rng
+        return None
+
+    def _override_probe(self, track, p, out):
+        """Générateur, version décisive de _override_check : si indécidable, pose le curseur dans un clip qui expose
+        l'enveloppe, attend un tick (la valeur suit le curseur de façon asynchrone), compare, restaure le curseur puis
+        attend encore un tick (la lecture du curseur est asynchrone aussi). Sans enveloppe lisible (clips audio) : sonde
+        p.value en trois positions de chaque clip ; des valeurs différentes prouvent que l'automation est suivie ; toutes
+        égales → on reste prudent (True). out["overridden"] : True / False."""
+        r = self._override_check(track, p)
+        song = self.song()
+        if r is not None or song.is_playing: out["overridden"] = True if r is None else r; return
+        clips = self._arr_clips(track)
+        saved = float(song.current_song_time)
+        try:
+            done = False
+            for c, s, e in clips:
+                if self._env_of(c, p) is None: continue
+                song.current_song_time = s + min(0.25, (e - s) / 2.0); yield
+                r = self._override_check(track, p)
+                out["overridden"] = True if r is None else r; done = True; break
+            if not done:
+                seen = []
+                for c, s, e in clips[:3]:
+                    for t in (s + 0.01, (s + e) / 2.0, max(s + 0.01, e - 0.05)):
+                        song.current_song_time = t; yield
+                        seen.append(float(p.value))
+                out["overridden"] = not (seen and max(seen) - min(seen) > 1e-6)
+        finally:
+            try: song.current_song_time = saved
+            except Exception: pass
+        yield   # le curseur restauré doit se propager (lecture asynchrone) avant toute autre lecture
+
     def _override_msg(self, p):
         return ("automation de %s surchargée (valeur modifiée à la main, état 2) : l'échantillonnage lirait la valeur manuelle et "
                 "non l'automation ; réactiver l'automation dans Live (ou song.re_enable_automation()) puis replanifier" % p.name)
@@ -757,7 +814,10 @@ class LOMBridge(ControlSurface):
             exposes = self._env_of(c, p) is not None
             samp = 0.0
             if not exposes and state != 0:
-                if state == 2: fatal.append(self._override_msg(p))
+                if state == 2:
+                    chk = self._override_check(track, p)
+                    if chk: fatal.append(self._override_msg(p))
+                    elif chk is None: plan["warnings"].append("%s : automation_state 2 mais curseur hors d'un clip exposant l'enveloppe : surcharge indécidable au plan, tranchée à l'exécution" % p.name)
                 samp = ((max(0.0, lo - s) + max(0.0, e - hi)) / SAMPLE_STEP + 2) * TICK_SECONDS
             # relecture de contrôle : le clip MIDI reconstruit expose son enveloppe (exact, immédiat) ; l'audio jamais (5 points par curseur)
             verify = 0.0 if "unverified" in accept else (5 * TICK_SECONDS if c.is_audio_clip else 0.0)
@@ -781,8 +841,24 @@ class LOMBridge(ControlSurface):
         for e in plan["errors"]: reply("error", e)
 
     def cmd_plan(self, reply, a):
-        plan = self._build_plan(a); self._plan_rows(reply, plan)
-        reply("ok" if not plan["errors"] else "invalid", len(plan["clips"]), plan["n_points"], plan.get("gap", 0), plan["sampling_seconds"])
+        plan = self._build_plan(a)
+        undecided = [w for w in plan["warnings"] if "indécidable" in w]
+        if plan["errors"] or not undecided:
+            self._plan_rows(reply, plan)
+            reply("ok" if not plan["errors"] else "invalid", len(plan["clips"]), plan["n_points"], plan.get("gap", 0), plan["sampling_seconds"])
+            return None
+        track = self._obj(plan["track"]["ref"]); p = self._obj(plan["param"]["ref"])
+        def job():
+            chk = {}
+            for _ in self._override_probe(track, p, chk): yield
+            plan["warnings"] = [w for w in plan["warnings"] if "indécidable" not in w]
+            if chk.get("overridden"):
+                plan["errors"].append(self._override_msg(p))
+                for c in plan["clips"]:
+                    if c.get("sampling"): c["problems"].append(self._override_msg(p))
+            self._plan_rows(reply, plan)
+            reply("ok" if not plan["errors"] else "invalid", len(plan["clips"]), plan["n_points"], plan.get("gap", 0), plan["sampling_seconds"])
+        return job()
 
     def cmd_shape(self, reply, a):
         plan = self._build_plan(a)
@@ -894,7 +970,9 @@ class LOMBridge(ControlSurface):
         if not (0 < res <= 64): raise ValueError("res doit être dans ]0, 64]")
         if (tB - tA) * res + 1 > MAX_READ_POINTS: raise ValueError("trop de points (> %d)" % MAX_READ_POINTS)
         def job():
-            if int(getattr(p, "automation_state", 0)) == 2: reply("warn", "automation de %s surchargée (état 2) : les valeurs lues sont la valeur manuelle, pas l'automation" % p.name)
+            chk = {}
+            for _ in self._override_probe(t, p, chk): yield
+            if chk.get("overridden"): reply("warn", "automation de %s surchargée (état 2) : les valeurs lues sont la valeur manuelle, pas l'automation" % p.name)
             got = {}
             for _ in self._sample([p], tA, tB, 1.0 / res, got): yield
             for tt, v in got.get(0, []): reply(tt, v, str(p.str_for_value(v)))
@@ -919,7 +997,7 @@ class LOMBridge(ControlSurface):
         problems = []
         for c, s, e in targets:
             f, n = self._check_clip(c, accept); problems += f + n
-            if state == 2 and self._env_of(c, p) is None: problems.append(self._override_msg(p))
+            if state == 2 and self._env_of(c, p) is None and self._override_check(t, p): problems.append(self._override_msg(p))
         if problems: raise ValueError("refus : " + " ; ".join(problems))
         entries = [{"ref": self._ref(c), "name": str(c.name), "start": s, "end": e} for c, s, e in targets]
         def job():
@@ -945,9 +1023,9 @@ class LOMBridge(ControlSurface):
 
     # ---------- commandes typées (remplacent les /py courants) ----------
     def _track_kind(self, t):
-        song = self.song()
-        if t is song.master_track: return "master"
-        if t in list(song.return_tracks): return "return"
+        song = self.song(); ptr = lambda x: getattr(x, "_live_ptr", id(x))   # `is` / `in` échouent : wrappers LOM distincts (0.8.3)
+        if ptr(t) == ptr(song.master_track): return "master"
+        if ptr(t) in [ptr(x) for x in song.return_tracks]: return "return"
         if getattr(t, "is_foldable", False): return "group"
         return "midi" if getattr(t, "has_midi_input", False) else "audio"
 
@@ -978,8 +1056,15 @@ class LOMBridge(ControlSurface):
                     song.loop_start = st; song.loop_length = ln
                 else: raise ValueError("usage: /transport loop on|off | loop <début> <longueur>")
             else: raise ValueError("opération inconnue : " + op)
-        reply("transport", int(song.is_playing), float(song.current_song_time), float(song.tempo), "%d/%d" % (int(song.signature_numerator), int(song.signature_denominator)),
-              int(bool(song.loop)), float(song.loop_start), float(song.loop_length))
+        def status():
+            reply("transport", int(song.is_playing), float(song.current_song_time), float(song.tempo), "%d/%d" % (int(song.signature_numerator), int(song.signature_denominator)),
+                  int(bool(song.loop)), float(song.loop_start), float(song.loop_length))
+        moved = bool(a) and (str(a[0]).lower() == "pos" or (str(a[0]).lower() == "play" and len(a) > 1))
+        if not moved: status(); return None
+        def job():
+            yield   # current_song_time se lit de façon asynchrone : un tick avant de rendre la position (0.8.3)
+            status()
+        return job()
 
     def cmd_meters(self, reply, a):
         """/meters <t_départ> <secondes> [piste …] : lit les vu-mètres pendant la lecture (crête par piste + master), tâche asynchrone.
@@ -990,12 +1075,20 @@ class LOMBridge(ControlSurface):
         if t0 < 0 or not (0 < secs <= 30): raise ValueError("t_départ >= 0 et secondes dans ]0, 30]")
         song = self.song()
         tracks = [self._find_track(x) for x in a[2:]] or list(song.tracks)
-        targets = tracks + ([song.master_track] if song.master_track not in tracks else [])
+        ptr = lambda x: getattr(x, "_live_ptr", id(x))
+        targets = tracks + ([song.master_track] if ptr(song.master_track) not in [ptr(x) for x in tracks] else [])
         def job():
             was_playing = bool(song.is_playing); saved = float(song.current_song_time)
             peaks = dict((i, 0.0) for i in range(len(targets))); ticks = max(1, int(round(secs / TICK_SECONDS))); n = 0; start = saved
             try:
-                if not was_playing: song.current_song_time = t0; song.start_playing(); start = t0
+                if not was_playing:
+                    # poser le curseur PUIS attendre un tick avant de lancer : dans le même appel, start_playing() repart de
+                    # l'ancienne position (relevé 23 sept. 2026, les deux mesures lisaient le même passage) (0.8.3)
+                    # start_playing() ignore le curseur posé à l'arrêt (repart du marqueur d'insertion) : lancer D'ABORD, puis sauter
+                    song.start_playing(); yield
+                    song.current_song_time = t0; start = t0; yield
+                    if abs(float(song.current_song_time) - t0) > 2.0: raise ValueError("lecture repartie ailleurs (%g) : abandon" % float(song.current_song_time))
+                    for _ in range(max(1, int(round(1.0 / TICK_SECONDS)))): yield   # balistique des vu-mètres : ~1 s pour oublier le passage d'avant le saut
                 for _ in range(ticks):
                     yield
                     if self._cancel_requested(): break
@@ -1047,7 +1140,7 @@ class LOMBridge(ControlSurface):
         else: devs = [self._obj(what) if what.startswith("o:") else self._find_named(list(t.devices), what, "device")]
         params = []
         for d in devs:
-            if d is t.mixer_device: params += [d.volume, d.panning] + list(d.sends)
+            if not hasattr(d, "parameters"): params += [d.volume, d.panning] + list(d.sends)   # MixerDevice (0.8.3 : `is` échouait, wrappers LOM distincts)
             else: params += list(d.parameters)
         store = self._snap_store(); self._snap_n += 1; sid = "s%d" % self._snap_n
         store[sid] = {"track": str(t.name), "what": what or "all", "values": [(p, float(p.value)) for p in params]}
@@ -1067,6 +1160,7 @@ class LOMBridge(ControlSurface):
         for p, v in s["values"]:
             try: float(p.value)
             except Exception: gone.append(str(getattr(p, "name", "?"))); continue
+            if abs(float(p.value) - v) < 1e-9: continue   # inchangé : ne sera pas écrit, donc pas bloquant (0.8.3)
             if int(getattr(p, "automation_state", 0)) != 0 and not override: blocked.append(str(p.name))
         if gone: raise ValueError("paramètres disparus (device supprimé ?) : " + ", ".join(gone))
         if blocked: raise ValueError("automatisés (ajouter override pour surcharger) : " + ", ".join(blocked))
@@ -1090,20 +1184,31 @@ class LOMBridge(ControlSurface):
         for c in sorted(self.song().cue_points, key=lambda c: float(c.time)): reply(self._ref(c), float(c.time), str(c.name))
 
     def cmd_locator(self, reply, a):
-        """/locator <t> <nom> : pose (ou renomme) un repère à t ; le curseur est déplacé puis restauré (transport arrêté)."""
+        """/locator <t> <nom> : pose (ou renomme) un repère à t ; le curseur est déplacé puis restauré (transport arrêté).
+        Tâche : le curseur se déplace de façon asynchrone, poser le repère dans le même appel le mettait à l'ancienne position (0.8.3)."""
         if len(a) < 2: raise ValueError("usage: /locator <t> <nom>")
         t, name = float(a[0]), str(a[1]); song = self.song()
         if t < 0: raise ValueError("temps négatif")
+        def finish(found):
+            c = found[0]; c.name = name
+            reply("locator", self._ref(c), float(c.time), str(c.name), "renamed" if len(a) > 2 else "ok")
         found = [c for c in song.cue_points if abs(float(c.time) - t) < 1e-6]
-        if not found:
-            if song.is_playing: raise ValueError("lecture en cours : arrêter le transport (le curseur est déplacé pour poser le repère)")
+        if found: finish(found); return None
+        if song.is_playing: raise ValueError("lecture en cours : arrêter le transport (le curseur est déplacé pour poser le repère)")
+        def job():
             saved = float(song.current_song_time)
-            try: song.current_song_time = t; song.set_or_delete_cue()
-            finally: song.current_song_time = saved
-            found = [c for c in song.cue_points if abs(float(c.time) - t) < 1e-6]
-            if not found: raise ValueError("repère non créé à t=%g" % t)
-        c = found[0]; c.name = name
-        reply("locator", self._ref(c), float(c.time), str(c.name), "renamed" if len(a) > 2 else "ok")
+            try:
+                song.current_song_time = t; yield
+                if abs(float(song.current_song_time) - t) > 1e-3: raise ValueError("curseur non posé à t=%g (lu %g)" % (t, float(song.current_song_time)))
+                song.set_or_delete_cue(); yield
+                found = [c for c in song.cue_points if abs(float(c.time) - t) < 1e-6]
+                if not found: raise ValueError("repère non créé à t=%g" % t)
+            finally:
+                try: song.current_song_time = saved
+                except Exception: pass
+            yield
+            finish(found)
+        return job()
 
     def cmd_state(self, reply, a):
         """/state → une ligne `state <json>` : transport, pistes (type, mute/solo, volume, pan, devices, clips, paramètres automatisés), repères."""
@@ -1120,7 +1225,10 @@ class LOMBridge(ControlSurface):
                 if int(getattr(p, "automation_state", 0)) != 0: automated += 1
             try: n_clips = len(list(t.arrangement_clips))
             except Exception: n_clips = 0
-            tracks.append({"ref": self._ref(t), "name": str(t.name), "kind": kind, "mute": int(bool(getattr(t, "mute", 0))), "solo": int(bool(getattr(t, "solo", 0))),
+            def flag(name):
+                try: return int(bool(getattr(t, name)))
+                except Exception: return 0   # la piste Main lève « has no mute property » (0.8.3)
+            tracks.append({"ref": self._ref(t), "name": str(t.name), "kind": kind, "mute": flag("mute"), "solo": flag("solo"),
                            "volume": str(mix.volume.str_for_value(mix.volume.value)), "pan": str(mix.panning.str_for_value(mix.panning.value)),
                            "sends": [str(s.str_for_value(s.value)) for s in mix.sends], "devices": devs, "arrangement_clips": n_clips, "automated_params": automated})
         st = {"version": VERSION, "session": self._session(), "tempo": float(song.tempo), "signature": "%d/%d" % (int(song.signature_numerator), int(song.signature_denominator)),
@@ -1172,7 +1280,13 @@ class LOMBridge(ControlSurface):
         else: idx = 0
         app.browser.load_item(item)
         after = list(t.devices)
-        touched_elsewhere = [str(x.name) for x in all_tracks if x is not t and len(list(x.devices)) != counts[getattr(x, "_live_ptr", id(x))]]
+        if replace is not None and len(after) == n0 + 1:
+            # Live 12 insère APRÈS le device sélectionné (pas de hot-swap hors mode Hot-Swap) : on retire alors l'ancien (0.8.3)
+            ptr = lambda x: getattr(x, "_live_ptr", id(x))
+            if any(ptr(x) != ptr(y) for x, y in zip(before, after[:n0])): raise ValueError("non appliqué comme prévu : chaîne réordonnée après chargement — vérifier et Cmd+Z")
+            t.delete_device(idx); after = list(t.devices)
+        tid = getattr(t, "_live_ptr", id(t))   # `is` échoue : wrappers LOM distincts (0.8.3)
+        touched_elsewhere = [str(x.name) for x in all_tracks if getattr(x, "_live_ptr", id(x)) != tid and len(list(x.devices)) != counts[getattr(x, "_live_ptr", id(x))]]
         if touched_elsewhere: raise ValueError("non appliqué comme prévu : une autre piste a changé (%s) — vérifier et Cmd+Z" % ", ".join(touched_elsewhere))
         expected = n0 if replace is not None else n0 + 1
         if len(after) != expected: raise ValueError("non appliqué comme prévu : %d device(s) après chargement, %d attendu(s) — vérifier et Cmd+Z" % (len(after), expected))
@@ -1229,11 +1343,14 @@ class LOMBridge(ControlSurface):
         kept = [r for r in old_rows if op == "add" or (win and not (win[0] <= r[1] < win[1]))]
         expected = sorted(kept + [(p, round(st, 6), round(du, 6), v, int(m)) for p, st, du, v, m in new], key=lambda x: (x[1], x[0]))
         def write(touched):
+            # `touched` est marqué AVANT chaque appel à Live : une écriture partielle (remove ou add qui lève à mi-chemin) est ainsi défaite
             if op == "set":
+                touched.append(str(clip.name))
                 if win: clip.remove_notes_extended(0, 128, win[0], win[1] - win[0])
                 else: clip.remove_notes_extended(0, 128, 0.0, 1e6)
-                touched.append(str(clip.name))
-            if new: clip.add_new_notes(tuple(N(pitch=p, start_time=st, duration=du, velocity=v, mute=m) for p, st, du, v, m in new)); touched.append(str(clip.name))
+            if new:
+                if not touched: touched.append(str(clip.name))
+                clip.add_new_notes(tuple(N(pitch=p, start_time=st, duration=du, velocity=v, mute=m) for p, st, du, v, m in new))
         self._commit(song, write)
         got = self._note_rows(clip.get_all_notes_extended())
         if got != expected:

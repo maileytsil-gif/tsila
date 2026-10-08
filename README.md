@@ -13,7 +13,7 @@ Workflow de production musicale (Ableton Live 12, Serum 2, Maschine MK3) piloté
 | `AGENTS.md` | règles communes à tous les agents : par où entrer, règles de chaque morceau, règles du workflow |
 | `CLAUDE.md` | lu par Claude Code : importe `AGENTS.md` et ajoute ce qui est propre à Claude |
 | `QWEN.md` | lu par Qwen Code avec `AGENTS.md` : différences avec Claude Code, consignes, installation |
-| `lom-bridge/` | LOM Bridge 0.8.1 : Remote Script de Live, `lom.py`, `agent_gateway.py`, tests hors Live ; installation dans `lom-bridge/README.md` |
+| `lom-bridge/` | LOM Bridge 0.8.3 : Remote Script de Live, `lom.py`, `agent_gateway.py`, tests hors Live ; installation dans `lom-bridge/README.md` |
 | `outils/` | `installer.sh` (installation des skills), `verifier_skills.py` (contrôle), `test_outils.py` (leurs tests), `regrouper_skills.py` (regroupement 44 → 5 du 8 oct. 2026, gardé pour la correspondance et les règles de réécriture) |
 | `.github/workflows/` | `skills.yml` et `tests.yml` : les contrôles ci-dessous, lancés à chaque push et pull request |
 

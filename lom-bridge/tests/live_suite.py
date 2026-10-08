@@ -18,7 +18,9 @@ def py(code):
 def read(track, ref, tA, tB, res=1):
     r = b.send("/read", track, ref, tA, tB, res)
     if not r["ok"]: raise RuntimeError(r["errors"])
-    return [(x[0], round(float(x[1]), 4)) for x in r["rows"]]
+    for x in r["rows"]:
+        if x[0] == "warn": print("     warn:", x[1])
+    return [(x[0], round(float(x[1]), 4)) for x in r["rows"] if x[0] != "warn"]
 def shape(track, ref, pts, unit="raw", res=8, curve="lin", hold=0, accept=("expressions",)):
     return b.send("/shape", *lom.shape_args(track, ref, unit, res, curve, hold, list(accept), pts))
 
@@ -94,7 +96,7 @@ r = b.send("/plan", *lom.shape_args("LOM TEST", vol, "raw", 8, "lin", 0, ["expre
 # (la revalidation se fait au démarrage de la tâche : on supprime le clip juste après l'envoi, avant le tick suivant)
 sock_cmd = threading.Thread(target=lambda: py("t=[x for x in song.tracks if x.name=='LOM TEST'][0]; c=[c for c in t.arrangement_clips if c.start_time==32.0][0]; t.delete_clip(c); result='deleted'"))
 sock_cmd.start(); r = shape("LOM TEST", vol, [(40, 0.2), (44, 0.4)]); sock_cmd.join()
-check("revalidation : clip disparu -> refus ou succès cohérent", (not r["ok"] and "disparu" in str(r["errors"])) or r["ok"], r)
+check("revalidation : clip disparu -> refus ou succès cohérent", (not r["ok"] and ("disparu" in str(r["errors"]) or "aucun clip" in str(r["errors"]))) or r["ok"], r)   # le /py concurrent peut passer avant le plan
 # 8. commandes typées (0.6.0)
 r = m.send("/transport"); check("transport : état", r["ok"] and r["rows"][0][0] == "transport" and r["rows"][0][1] == 0, r)
 r = m.send("/transport", "pos", 20.0); check("transport pos 20", r["ok"] and abs(float(r["rows"][0][2]) - 20.0) < 1e-6, r)
@@ -108,7 +110,8 @@ m.send("/setparam", "LOM TEST", "mixer", "Pan", -40.0); r = m.send("/restore", s
 check("restore remet le pan à 25", r["ok"] and "25" in str(pan_disp), (r, pan_disp))
 r = m.send("/locator", 24.0, "LOM TEST REPÈRE"); check("locator posé à 24", r["ok"] and abs(float(r["rows"][0][2]) - 24.0) < 1e-6, r)
 r = m.send("/locator", 24.0, "LOM TEST REPÈRE 2"); check("locator renommé sans suppression", r["ok"] and r["rows"][0][3] == "LOM TEST REPÈRE 2", r)
-py("c=[c for c in song.cue_points if abs(c.time-24.0)<1e-6][0]; song.current_song_time=24.0; song.set_or_delete_cue(); song.current_song_time=20.0; result='cue removed'")
+py("song.current_song_time=24.0; result='ok'"); time.sleep(0.3)   # le curseur se propage de façon asynchrone : poser puis retirer le repère en appels séparés
+py("song.set_or_delete_cue(); result='ok'"); time.sleep(0.3); py("song.current_song_time=20.0; result='ok'"); time.sleep(0.3)
 r = m.send("/state"); st = json.loads(r["rows"][0][1]); check("state : pistes de test présentes", any(t["name"] == "LOM TEST" for t in st["tracks"]) and st["tracks"][-1]["kind"] == "master", r["errors"])
 # 9. codes d'erreur et journal (0.7.0)
 r = m.send("/track", "PISTE QUI N EXISTE PAS"); check("code d'erreur stable sur piste introuvable", not r["ok"] and r["codes"] == ["E_NOT_FOUND"], (r["codes"], r["errors"]))
@@ -124,7 +127,7 @@ r = m.send("/notes", "set", "LOM TEST", 16.0, json.dumps([[62, 1.0, 0.5, 110]]),
 r = m.send("/notes", "get", "LOM TEST", 16.0); check("notes get : 60@0, 62@1, 67@2", r["ok"] and [(x[1], x[2]) for x in r["rows"][1:]] == [(60, 0.0), (62, 1.0), (67, 2.0)], r["rows"])
 # 11. commandes de lecture et /clear (couverture P4 : chaque commande a au moins un contrôle ici)
 r = m.send("/clips", "LOM TEST"); check("clips : 1 ou 2 clips d'arrangement listés", r["ok"] and 1 <= len(r["rows"]) <= 2 and str(r["rows"][0][0]).startswith("o:"), r)
-r = m.send("/params", py("t=[x for x in song.tracks if x.name=='LOM TEST AUDIO'][0]; result=ref(t.devices[0])") if n_dev + 1 else vol, "Gain")
+r = m.send("/params", py("t=[x for x in song.tracks if x.name=='LOM TEST AUDIO'][0]; result=ref(t.devices[0])") if n_dev + 1 else vol, "Mono")   # Utility de Live 12 : pas de paramètre « Gain » (Device On, Left/Right Inv, Channel Mode, Stereo Width, Mono, Bass Mono, Bass Freq…)
 check("params <deviceRef> [filtre] : au moins un paramètre", r["ok"] and len(r["rows"]) >= 1, r)
 r = m.send("/solve", vol, -6.0); check("solve −6 dB : valeur brute dans ]0, 1[ et affichage ≈ −6", r["ok"] and 0 < float(r["rows"][0][0]) < 1 and "-6" in str(r["rows"][0][1]), r)
 r = m.send("/events", "LOM TEST", vol, 16.0, 48.0); check("events : enveloppes exposées du clip MIDI créé dans cette session", r["ok"] and len(r["rows"]) >= 2, r)
