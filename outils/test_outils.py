@@ -88,8 +88,10 @@ class Installer(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stderr)
         self.assertFalse(ancien.exists())
         self.assertFalse((self.home / '.qwen' / 'skills' / 'resampling').is_symlink())
-        self.assertEqual(len(list((self.home / '.skills-sauvegardes').glob('*/claude/resampling/SKILL.md'))), 1)
-        self.assertEqual(len(list((self.home / '.skills-sauvegardes').glob('*/qwen/resampling'))), 1)
+        sauvegarde = next((self.home / '.skills-sauvegardes').iterdir())
+        self.assertTrue((sauvegarde / 'claude' / 'resampling' / 'SKILL.md').is_file())
+        # Le lien Qwen est déplacé tel quel ; sa cible ayant bougé, il pend : Path.glob l'ignore sous Python 3.11.
+        self.assertTrue((sauvegarde / 'qwen' / 'resampling').is_symlink())
         self.assertTrue((self.home / '.claude' / 'skills' / PETIT / 'SKILL.md').is_file())
         self.assertTrue((self.home / '.qwen' / 'skills' / PETIT).is_symlink())
 
