@@ -12,13 +12,13 @@ recettes de .claude/skills/, qui contiennent les réglages chiffrés pour Live e
 découpés en passages, classés par BM25 sur la question (accents et casse ignorés), et les k
 meilleurs passages sont donnés au modèle avec la consigne de répondre en français en citant les
 fichiers sources. `--sans-skills` limite la recherche au corpus seul ; `--dossier` accepte un
-sous-dossier du corpus ou le nom d'un skill. Aucune bibliothèque externe : urllib vers
+sous-dossier du corpus ou le nom d'un skill ou d'un module (.claude/skills/*/modules/<nom>). Aucune bibliothèque externe : urllib vers
 http://localhost:11434 (variable OLLAMA_HOST pour changer l'adresse).
 
 Conseil : nommer explicitement les devices (« le device Electric d'Ableton », « Serum 2 »),
 sinon un petit modèle lit « Electric » comme « électrique ».
 """
-import argparse, json, math, os, re, sys, unicodedata, urllib.request
+import argparse, glob, json, math, os, re, sys, unicodedata, urllib.request
 
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEPOT = os.path.dirname(RACINE)
@@ -47,15 +47,26 @@ def lire_fichiers(dossier, base=None):
                 except OSError:
                     pass
 
+def dossier_skill(nom):
+    """Dossier d'un skill (.claude/skills/<nom>) ou d'un module (.claude/skills/*/modules/<nom>), sinon None."""
+    d = os.path.join(SKILLS, nom)
+    if os.path.isdir(d):
+        return d
+    for m in sorted(glob.glob(os.path.join(SKILLS, "*", "modules", nom))):
+        if os.path.isdir(m):
+            return m
+    return None
+
+
 def racines(dossier, sans_skills):
     """Liste (dossier, base d'affichage) à indexer selon --dossier et --sans-skills."""
-    if dossier and os.path.isdir(os.path.join(SKILLS, dossier)):
-        return [(os.path.join(SKILLS, dossier), DEPOT)]
+    if dossier and dossier_skill(dossier):
+        return [(dossier_skill(dossier), DEPOT)]
     r = [(os.path.join(RACINE, dossier) if dossier else RACINE, RACINE)]
     if not sans_skills:
         for nom in SKILLS_INDEXES:
-            d = os.path.join(SKILLS, nom)
-            if os.path.isdir(d):
+            d = dossier_skill(nom)
+            if d:
                 r.append((d, DEPOT))
     return r
 
@@ -124,7 +135,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("question")
     ap.add_argument("--model", default=os.environ.get("CORPUS_MODEL", "qwen2.5:7b"))
-    ap.add_argument("--dossier", default="", help="sous-dossier du corpus (cuivres, funk-claviers, synth-secrets, constructeur) ou nom d'un skill (studio-grade-funk-keys-synth-sound-design…)")
+    ap.add_argument("--dossier", default="", help="sous-dossier du corpus (cuivres, funk-claviers, synth-secrets, constructeur) ou nom d'un skill ou d'un module (studio-grade-funk-keys-synth-sound-design…)")
     ap.add_argument("--sans-skills", action="store_true", help="ne pas indexer les fiches des skills, corpus seul")
     ap.add_argument("--k", type=int, default=6, help="nombre de passages retenus")
     ap.add_argument("--contexte-seul", action="store_true", help="imprimer le prompt sans appeler Ollama")

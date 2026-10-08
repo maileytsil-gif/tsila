@@ -1,90 +1,75 @@
-# Regroupement des 44 skills en 5 — plan
+# Les cinq skills et leurs modules
 
-État : **plan soumis le 8 oct. 2026, rien n'est encore déplacé.** Une fois validé, ce fichier devient la description de la structure des skills (modules, conventions, comment en ajouter un).
+État : **regroupement exécuté le 8 oct. 2026** (plan validé le même jour). Ce fichier décrit la structure qui en résulte, la correspondance des 44 anciens skills et les conventions à respecter pour modifier ou ajouter un module. Le script qui a fait le déplacement, `outils/regrouper_skills.py`, reste dans le dépôt pour documenter la table de correspondance et les règles de réécriture des renvois.
 
-Base : `main` après la fusion de [#13](https://github.com/maileytsil-gif/tsila/pull/13). Mesures du dépôt : 44 skills, 437 fichiers, 9,2 Mo, 340 Ko de `SKILL.md` cumulés, 43 scripts, 1 153 renvois `../autre-skill/` entre skills, 17 paires de copies jumelles.
+## 1. Pourquoi cinq et pas 44, ni un seul
 
-## 1. Pourquoi cinq et pas un
+- La description d'un skill (≤ 1 024 caractères) est ce que l'agent lit pour choisir : 44 listes de mots déclencheurs se concurrençaient sur une même demande ; une seule n'aurait pas pu les contenir. Cinq descriptions, une par métier, listent les mots déclencheurs de tous leurs modules.
+- Les 340 Ko de `SKILL.md` cumulés ne tenaient pas dans un seul fichier chargé à chaque appel ; cinq routeurs de 15 à 22 Ko, oui.
+- Les quatre rôles existants (`compositeur-arrangeur`, `producteur-rythmique`, `sound-designer-serum`, `ingenieur-mixage`) étaient déjà des têtes de chapitre ; le cinquième, `producteur-live`, regroupe ce qui pilote la séance et le morceau entier et porte la carte d'entrée.
 
-- La description d'un skill (≤ 1 024 caractères) est ce que l'agent lit pour choisir : 44 listes de mots déclencheurs ne tiennent pas dans une seule. Cinq descriptions, une par métier, restent lisibles.
-- Les 340 Ko de `SKILL.md` ne tiennent pas dans un seul fichier chargé à chaque appel ; cinq routeurs de 15 à 22 Ko, oui.
-- Les quatre rôles existants (`compositeur-arrangeur`, `producteur-rythmique`, `sound-designer-serum`, `ingenieur-mixage`) sont déjà des têtes de chapitre : chacun orchestre des skills spécialisés et dit quand passer la main. Le cinquième regroupe ce qui pilote la séance et le morceau entier.
+## 2. Correspondance
 
-## 2. Les cinq skills et leurs modules
+Chaque ancien skill est devenu un **module**, déplacé entier (`git mv`, historique conservé). Le skill de base de chaque groupe a fourni le `SKILL.md` du skill regroupé (`ableton-live-session` est devenu `producteur-live`).
 
-Chaque ancien skill devient un **module** du nouveau, déplacé entier (`git mv`, historique conservé). Le rôle actuel fournit le `SKILL.md` du skill regroupé.
+| Skill | Modules (anciens skills) |
+|---|---|
+| **producteur-live** (ex `ableton-live-session` : discipline de séance, bridge, écran, carte) | memoire-projet, memoire-persistante, chef-de-projet, piloter-live-lombridge-codex, produire-demo-electro-rapide, produire-morceau-electronique-de-a-a-z, maitriser-suno, suno-vocals, house-future-rave-bass-house-production, electronic-production-engineer, live-automation |
+| **compositeur-arrangeur** (notes, harmonie, forme) | melodie-composition, composer-hooks-funk-electro, arrangement-avance, midi-expressif, composer-trajectoire-emotionnelle, theorie-musicale-electronique, theorie-musicale-composition, partition-recherche, partition-telechargement, sampling-composition-avancee |
+| **producteur-rythmique** (batterie, groove, grave) | drums-signature, kick-bass-equilibre, construire-low-end-electronique, native-instruments-control, produire-avec-maschine-mk3 |
+| **sound-designer-serum** (timbres, Serum 2, VST, capture) | vst-sound-design, serum-2-basses-house-future-house, bass-house-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design, synthese-reference, resampling |
+| **ingenieur-mixage** (mix, mastering, export) | mixage, effets-plugins, mixer-house-professionnel, live-mix-mastering, mastering-outils, live-export-wav |
 
-| Skill regroupé | Modules (anciens skills) | Fichiers | Taille |
-|---|---|---|---|
-| **compositeur-arrangeur** (notes, harmonie, forme) | compositeur-arrangeur (rôle), melodie-composition, composer-hooks-funk-electro, arrangement-avance, midi-expressif, composer-trajectoire-emotionnelle, theorie-musicale-electronique, theorie-musicale-composition, partition-recherche, partition-telechargement, sampling-composition-avancee | 62 | 0,84 Mo |
-| **producteur-rythmique** (batterie, groove, grave) | producteur-rythmique (rôle), drums-signature, kick-bass-equilibre, construire-low-end-electronique, native-instruments-control, produire-avec-maschine-mk3 | 32 | 0,66 Mo |
-| **sound-designer-serum** (timbres, Serum 2, VST, capture) | sound-designer-serum (rôle), vst-sound-design, serum-2-basses-house-future-house, bass-house-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design, synthese-reference, resampling | 138 | 2,4 Mo |
-| **ingenieur-mixage** (mix, mastering, export) | ingenieur-mixage (rôle), mixage, effets-plugins, mixer-house-professionnel, live-mix-mastering, mastering-outils, live-export-wav | 31 | 0,69 Mo |
-| **producteur-live** (séance, mémoire, projet, morceau entier, Suno) | ableton-live-session (discipline, bridge, carte d'entrée), memoire-projet, memoire-persistante, chef-de-projet, piloter-live-lombridge-codex, produire-demo-electro-rapide, produire-morceau-electronique-de-a-a-z, maitriser-suno, suno-vocals, house-future-rave-bass-house-production, electronic-production-engineer, live-automation | 174 | 4,8 Mo (1,4 sans le storyboard PNG) |
+Placements qui méritent une raison : `midi-expressif` agit sur les notes (compositeur) bien que le rythme l'appelle ; `kick-bass-equilibre` est orchestré par le rôle rythmique et le mix y renvoie ; `sampling-composition-avancee` compose à partir de samples (compositeur), la capture `resampling` reste en sound design ; `live-automation` est une opération du bridge, donc `producteur-live` ; `house-future-rave-bass-house-production` et `electronic-production-engineer` sont des pipelines entiers, donc `producteur-live`.
 
-Placements qui méritent une raison :
-
-- `midi-expressif` est appelé par les deux premiers rôles ; il agit sur les notes (vélocités, durées, articulations), donc **compositeur-arrangeur**.
-- `kick-bass-equilibre` (72 renvois entrants) est utilisé par le mix aussi ; le rôle `producteur-rythmique` l'orchestre déjà et la carte l'enchaîne avec `construire-low-end-electronique`, donc **producteur-rythmique**.
-- `sampling-composition-avancee` compose à partir de samples (harmonie, conduite des voix) → **compositeur-arrangeur** ; la capture (`resampling`) reste en **sound design**, comme le rôle le prévoit.
-- `live-automation` est une opération du bridge appelée par l'arrangement comme par le mix ; aucun rôle ne la revendique → **producteur-live**, à côté d'`ableton-live-session`.
-- `house-future-rave-bass-house-production` et `electronic-production-engineer` sont des pipelines entiers (sound design + arrangement + mix + masters) → **producteur-live**, avec le skill A à Z. EPE reste tel quel (anglais, versionné, lanceur Ollama).
-
-## 3. Structure d'un skill regroupé
+## 3. Structure et conventions
 
 ```text
 sound-designer-serum/
-  SKILL.md                      ← routeur : rôle (méthode actuelle, règles communes, passer la main)
-                                   + carte « situation → module » + une ligne par module
+  SKILL.md                      ← en-tête YAML, méthode du rôle, « passer la main », tableau « Modules de ce skill »
+  references/…                  ← fiches du rôle (seuls sound-designer-serum et producteur-live en ont)
   modules/
     vst-sound-design/
-      GUIDE.md                  ← ancien SKILL.md : en-tête YAML retiré, titre H1 gardé,
-      references/…               ligne « Module du skill `sound-designer-serum` » ajoutée
-      scripts/…
+      GUIDE.md                  ← ancien SKILL.md : titre H1, puis « > Module du skill `…`. <ancienne description> »
+      references/… scripts/…
     serum-2-basses-house-future-house/
     …
 ```
 
-Conventions :
+- **Jamais de `SKILL.md` sous `modules/`** : il serait chargé comme un skill de plus. L'entrée d'un module s'appelle `GUIDE.md` et commence par un titre H1. Quatorze anciens skills commençaient sans titre : ils en ont reçu un (table `TITRES` du script).
+- Un module garde ses `references/`, `scripts/`, `recipes/`, `assets/` ; ses chemins internes n'ont pas changé.
+- **Renvois**, lus par convention depuis la racine du module (le vérificateur accepte aussi le dossier du fichier, la racine du skill, `.claude/skills/` et la racine du dépôt) : `../<module>/…` entre modules d'un même skill ; `../../../<skill>/modules/<module>/…` vers un module d'un autre skill ; `../../SKILL.md` et `../../references/…` vers le skill parent ; `../../../<skill>/SKILL.md` vers un autre skill ; `../../../../../corpus/…` vers la racine du dépôt depuis la racine d'un module (`.claude/skills/` compte pour deux niveaux).
+- Les cinq descriptions (≤ 1 024 caractères, contrôlées) listent les mots déclencheurs de tous leurs modules. Chaque `SKILL.md` se termine par le tableau « Modules de ce skill » (module, quand l'ouvrir, entrée). `producteur-live/SKILL.md` porte en plus « Où sont les modules » et la carte « situation → skill › module ».
+- Les 17 paires de copies jumelles et le fichier portable Bass House ont été supprimés : le module `produire-morceau-electronique-de-a-a-z` renvoie aux modules `bass-house-sound-design`, `mixer-house-professionnel`, `theorie-musicale-composition` et `piloter-live-lombridge-codex` (dont `session_review.py`). Le storyboard du clip « Après les heures » (3,4 Mo) est dans `docs/projets/`.
 
-- **Aucun `SKILL.md` sous `modules/`** (un chargeur qui lirait les sous-dossiers y verrait des skills). L'entrée d'un module s'appelle `GUIDE.md`.
-- Un module garde ses `references/`, `scripts/`, `recipes/`, `assets/` tels quels ; ses chemins internes ne changent pas.
-- Renvois réécrits par script : même skill, `../x/SKILL.md` → `../x/GUIDE.md` (les modules sont voisins dans `modules/`, le reste du chemin tient) ; autre skill, `../x/…` → `../../../<skill>/modules/x/…`. Le vérificateur refuse tout renvoi cassé.
-- Le `SKILL.md` du rôle devient celui du skill : sa méthode et son « passer la main » restent, la liste de ses bibliothèques devient la carte des modules. Pour `producteur-live`, le `SKILL.md` part d'`ableton-live-session` (19 Ko), dont la carte « situation → skills » est réécrite en « situation → skill › module » sans s'allonger.
-- Les cinq descriptions sont réécrites en listes de mots déclencheurs couvrant tous les modules, ≤ 1 024 caractères (contrôlé par le vérificateur).
+## 4. Ajouter ou modifier un module
 
-## 4. Ce qui change hors des skills
+1. Modifier dans ce dépôt, jamais dans une copie installée.
+2. Nouveau module : un dossier dans `modules/`, son `GUIDE.md` (H1 puis ligne « Module du skill … »), une ligne dans le tableau « Modules de ce skill » du `SKILL.md`, une ligne ou une mention dans la carte de `producteur-live`. Mots déclencheurs importants : les ajouter à la description du skill, sans dépasser 1 024 caractères.
+3. `python3 outils/verifier_skills.py` (en-têtes, modules, chemins, lien `.qwen`, carte) et, si un script a changé, les tests listés dans `README.md`.
+4. Commit à la demande de l'utilisateur ; sur le Mac, `bash outils/installer.sh --appliquer`.
+
+## 5. Ce qui a changé hors des skills
 
 | Fichier | Changement |
 |---|---|
-| `outils/verifier_skills.py` | résolution des chemins depuis la racine du module en plus de celle du skill ; jetons `modules/<x>/…`, `../<x>/GUIDE.md`, `../../../<skill>/modules/<x>/…` ; carte = `producteur-live` ; règle 6 : chaque module est cité dans le `SKILL.md` de son skill et dans la carte, plus de nombre annoncé dans la description ; règle nouvelle : pas de `SKILL.md` sous `modules/`, chaque `GUIDE.md` commence par un H1 ; copies jumelles et fichier portable selon la décision 2 ; noms de modules reconnus dans les fichiers racine |
-| `outils/installer.sh` | données de l'utilisateur : `producteur-rythmique/modules/drums-signature/references/signature.md` et `scripts/signature.json` ; **option `--retirer-absents`** : tout dossier de `~/.claude/skills` et tout lien de `~/.qwen/skills` dont le nom n'est pas un skill du dépôt est déplacé dans `~/.skills-sauvegardes/<date>/` (jamais supprimé), simulation par défaut. Sans cela, les 44 anciens skills installés resteraient chargés à côté des 5 nouveaux |
-| `outils/test_outils.py` | noms de skills (`resampling` → `sound-designer-serum`…), test du registre de signature, test de `--retirer-absents`, tests des jumeaux selon la décision 2 |
-| `.github/workflows/skills.yml` | `working-directory` des grilles : `…/compositeur-arrangeur/modules/composer-hooks-funk-electro` et `…/sound-designer-serum/modules/serum-2-basses-house-future-house` |
-| `README.md`, `AGENTS.md`, `CLAUDE.md`, `QWEN.md` | tableaux « par où entrer », compteur 44, liste des skills du pack, section « copies jumelles », « modifier un skill » |
-| `corpus/INDEX.md`, `corpus/index.json`, `docs/claude-code-avec-ollama.md` | noms de skills → `skill › module` |
-| `.claude/settings.json` | `skillListingBudgetFraction` 0,03 devient inutile (cinq descriptions ≈ 5 Ko) ; laissé ou retiré, sans effet |
-| Scripts qui citent `SKILL.md` ou un autre skill | `composer-hooks-funk-electro/scripts/install.sh` (installe ce seul skill pour Claude, Codex et Qwen-Ollama : à faire installer `compositeur-arrangeur` entier ou à retirer au profit d'`outils/installer.sh`), `qwen-musique.py`, `electronic-production-engineer/ollama/run_skill.py`, `scripts/validate_skill.py`, `MANIFEST.json` (listent `SKILL.md` → `GUIDE.md`), `melodie-composition/scripts/check_scale.py` |
+| `outils/verifier_skills.py` | résolution depuis la racine du module ; jetons `modules/<x>/…`, `../<x>/GUIDE.md`, `../../SKILL.md` ; carte = `producteur-live`, plus de nombre annoncé ; règles « GUIDE.md avec H1 », « pas de SKILL.md sous modules/ », « module cité dans son SKILL.md et dans la carte » ; copies jumelles et portable retirés ; noms de modules reconnus dans les fichiers racine |
+| `outils/installer.sh` | données de l'utilisateur sous `producteur-rythmique/modules/drums-signature/` ; option `--retirer-absents` (déplace dans `~/.skills-sauvegardes/` tout skill installé absent du dépôt, sans rien supprimer) |
+| `outils/test_outils.py` | tests sur `ingenieur-mixage`, registre de signature, `--retirer-absents`, `SKILL.md` sous `modules/` refusé, module absent ou non cité |
+| `.github/workflows/skills.yml` | chemins des modules pour les grilles et les tests de `composer-hooks-funk-electro` ; `py_compile` d'`outils/` |
+| `README.md`, `AGENTS.md`, `CLAUDE.md`, `QWEN.md`, `docs/claude-code-avec-ollama.md` | cinq skills, modules, `--retirer-absents`, conventions |
+| `corpus/scripts/ask_corpus.py` | `--dossier` accepte un nom de module (`.claude/skills/*/modules/<nom>`) |
+| `composer-hooks-funk-electro/scripts/install.sh`, `qwen-musique.py` | installent le skill `compositeur-arrangeur` entier ; le lanceur lit `GUIDE.md` |
+| `electronic-production-engineer` | `ollama/run_skill.py`, `scripts/validate_skill.py`, `MANIFEST.json` (recalculé par `outils/regrouper_skills.py --manifest`), adaptateurs : `GUIDE.md` |
+| `.gitignore` | `__pycache__/` |
 
-Sur le Mac, hors dépôt : la mémoire de projet (`projet-*.md`) cite les anciens noms ; rien à changer, ils restent les noms des modules.
+Script : `outils/regrouper_skills.py` a déplacé 44 dossiers, supprimé 18 fichiers (copies jumelles, portable), déplacé le storyboard, converti 39 `SKILL.md` en `GUIDE.md` et réécrit environ 1 200 renvois (981 `../x/`, 115 `x/references/…`, 11 `.claude/skills/x`, 99 chemins vers la racine du dépôt). Rejoué (`--renvois`), il ne change plus rien. Il ne peut pas être relancé sur ce dépôt (les 44 anciens dossiers n'existent plus) ; il documente.
 
-## 5. Ce que tu gagnes et ce que tu perds
+## 6. Sur le Mac, après la fusion
 
-- **Gagné** : cinq points d'entrée au lieu de 44 ; une description par métier ; plus de concurrence entre skills sur une même demande ; un seul endroit par métier pour les règles communes.
-- **Perdu** : les commandes `/chef-de-projet`, `/maitriser-suno`, `/memoire-projet`… Il reste `/producteur-live` suivi de la demande (« fais le point », « prompt Suno », « on reprend ») ou une demande naturelle ; le routeur fait le reste.
-- **Non testable ici** : le déclenchement automatique. Il se vérifie sur le Mac après installation (trois demandes témoins : « la basse du drop », « où on en est », « c'est boueux »). `AGENTS.md` « Par où entrer » reste la carte de secours.
+```bash
+bash outils/installer.sh --retirer-absents            # simulation : cinq skills à copier, 44 anciens à écarter
+bash outils/installer.sh --retirer-absents --appliquer
+```
 
-## 6. Décisions à prendre avant d'exécuter
-
-1. **Nom du cinquième skill** : `producteur-live` (recommandé) ; sinon `production-live`, `producteur-electronique`, ou garder `ableton-live-session`.
-2. **Copies jumelles (17 paires) et fichier portable** : les supprimer et les remplacer par des renvois (recommandé : plus de doublons à tenir à jour, vérificateur allégé ; un usage « A à Z seul » sous Ollama copie les cinq skills) ; ou les garder, chemins mis à jour.
-3. **Storyboard du clip « Après les heures »** (`piloter-live-lombridge-codex/assets/…png`, 3,4 Mo) : le déplacer dans `docs/projets/` (recommandé : c'est une donnée de projet, pas une méthode ; `producteur-live` pèse alors 1,4 Mo au lieu de 4,8) ; ou le laisser.
-
-## 7. Déroulé d'exécution (une PR, étape par étape)
-
-1. `outils/regrouper_skills.py` (gardé dans le dépôt) : table de correspondance, `git mv` de chaque skill vers `<skill>/modules/<ancien>/`, `SKILL.md` → `GUIDE.md`, réécriture des renvois, création des cinq `SKILL.md`.
-2. Outils : vérificateur, installateur, tests, CI.
-3. Textes : `README.md`, `AGENTS.md`, `CLAUDE.md`, `QWEN.md`, corpus, docs ; ce fichier devient la doc de structure.
-4. Contrôles : `verifier_skills.py`, `test_outils.py`, `py_compile` de tous les scripts, tests et grilles de `composer-hooks-funk-electro`, grilles de `serum-2-basses-house-future-house` ; tests du bridge inchangés.
-5. Relecture des cinq descriptions et des cinq routeurs.
-6. PR en brouillon. Après fusion, sur le Mac : `bash outils/installer.sh --retirer-absents` (simulation), puis `--appliquer`, relancer Claude Code et Qwen Code, trois demandes témoins.
+Relancer Claude Code et Qwen Code, puis trois demandes témoins pour contrôler le déclenchement, qui ne se teste pas en session cloud : « la basse du drop » (sound-designer-serum), « où on en est » (producteur-live › chef-de-projet), « c'est boueux » (ingenieur-mixage). Les commandes `/chef-de-projet`, `/maitriser-suno`… n'existent plus : `/producteur-live` suivi de la demande, ou une demande naturelle qui nomme le module. La mémoire de projet sur le Mac cite les anciens noms : rien à changer, ce sont les noms des modules.

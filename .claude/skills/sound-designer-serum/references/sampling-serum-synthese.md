@@ -101,7 +101,7 @@ SE-28 dit « Do4 » pour 261,63 Hz. Dans la numérotation du projet (C3 = 60), c
 - Pad grave : transposer de plusieurs octaves, sans time-stretch [SOURCE SE-12].
 - Grains rythmiques : Density et Length en BPM sync [SOURCE SE-13].
 - Riser : crash inversée, octaves en bas, scan très bas, LFO1 → pitch 48 st sur 2 mesures [SOURCE SE-14].
-- Finir pile sur la mesure : rendre en audio, couper, fade in [SOURCE SE-14]. Voir `../../resampling/SKILL.md`.
+- Finir pile sur la mesure : rendre en audio, couper, fade in [SOURCE SE-14]. Voir `../modules/resampling/GUIDE.md`.
 - Lire d'abord : SE-13, SE-11, SE-14.
 
 **Voix**
@@ -118,7 +118,7 @@ SE-28 dit « Do4 » pour 261,63 Hz. Dans la numérotation du projet (C3 = 60), c
 - Piège : router l'osc spectral vers le filtre, sinon le filtre n'agit pas [SOURCE SE-21]. Un stab de kick marche moins bien [SOURCE SE-20].
 - Voie wavetable : one-shot importé, LFO sur la position, nettoyage, unison car l'import est mono [SOURCE SE-22, SE-24].
 - Resynthèse réaliste : fondamentale coupée au filtre spectral, remplacée par un sinus ; position en mode Manual [SOURCE SE-18].
-- Lire d'abord : SE-21, SE-18. Sub et mid : `../../serum-2-basses-house-future-house/SKILL.md` ; moteurs : `moteurs-synthese.md`.
+- Lire d'abord : SE-21, SE-18. Sub et mid : `../modules/serum-2-basses-house-future-house/GUIDE.md` ; moteurs : `moteurs-synthese.md`.
 
 **Multisample**
 - Geste : en-tête de l'osc › Multisample, instrument d'usine ou SFZ ; SF2 à convertir [SOURCE SE-23].

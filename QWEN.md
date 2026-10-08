@@ -1,6 +1,6 @@
 # Qwen Code dans ce dépôt
 
-Les règles communes sont dans `AGENTS.md`, chargé avec ce fichier (`.qwen/settings.json` → `context.fileName`). Les skills sont ceux de Claude Code : `.qwen/skills` est un lien vers `.claude/skills`. `/skills` les liste ; `/nom-du-skill` en lance un ; une demande naturelle suffit aussi. Vérifier par `/memory` que `AGENTS.md` et `QWEN.md` sont chargés.
+Les règles communes sont dans `AGENTS.md`, chargé avec ce fichier (`.qwen/settings.json` → `context.fileName`). Les skills sont ceux de Claude Code : `.qwen/skills` est un lien vers `.claude/skills` ; cinq skills, chacun avec ses modules (`<skill>/modules/<module>/GUIDE.md`, les anciens skills). `/skills` les liste ; `/nom-du-skill` en lance un ; une demande naturelle suffit aussi, un module se nomme dans la demande. Vérifier par `/memory` que `AGENTS.md` et `QWEN.md` sont chargés.
 
 ## Ce qui change par rapport à Claude Code
 
@@ -12,11 +12,11 @@ Les règles communes sont dans `AGENTS.md`, chargé avec ce fichier (`.qwen/sett
 | Charger un plug-in, régler un VST (Serum 2, Pro-Q 4…) | `lom.py load` (anti hot-swap), `setparam`, fenêtre du plug-in | rien : proposer, l'utilisateur ou Claude le fait. Jamais `lom.py`, `curl`, l'UDP ni `/py` |
 | Menus de Live (Sauver Set Live sous…, export), fenêtre de Serum ou d'un plug-in | contrôle d'écran | aucun : demander le geste à l'utilisateur, attendre sa confirmation, puis relire l'état |
 | Vidéos, tutoriels | Claude in Chrome (transcription, captures) | aucun accès : demander la transcription ; statut « transcription fournie par l'utilisateur » |
-| Mémoire du morceau | `memoire-projet` (`reprise.sh`, `journal.sh`) | les **mêmes** scripts et fichiers (`MEM_DIR`), pour que Claude et Qwen reprennent le même historique ; la mémoire automatique de Qwen ne remplace pas `projet-<nom>.md` |
+| Mémoire du morceau | module `memoire-projet` de `producteur-live` (`reprise.sh`, `journal.sh`) | les **mêmes** scripts et fichiers (`MEM_DIR`), pour que Claude et Qwen reprennent le même historique ; la mémoire automatique de Qwen ne remplace pas `projet-<nom>.md` |
 | Calculs hors Live | `theorie.py`, `grille.py`, `kick_bass_check.py`, `analyze_wav.py`, `session_review.py` | identiques (`python3`) |
 | Scripts qui tournent dans Live par `pyl.sh` (`snapshot_clips.py`, `arrangement_map.py`, `check_scale.py`, `mix_snapshot.py`…) | `pyl.sh` (passe par `/py`) | interdits (`/py`) : les demander à Claude ou à l'utilisateur, ou lire l'état par `agent_gateway.py inspect /state`, `/clips`, `/notes get` |
 
-Procédure complète, codes d'erreur et limites : skill `piloter-live-lombridge-codex` et sa référence `compatibilite-claude-qwen.md`.
+Procédure complète, codes d'erreur et limites : module `piloter-live-lombridge-codex` de `producteur-live` et sa référence `compatibilite-claude-qwen.md`.
 
 ## Consignes
 
@@ -33,6 +33,7 @@ Depuis le dépôt, sur le Mac :
 ```bash
 bash outils/installer.sh --qwen                    # simulation : ce qui serait relié dans ~/.qwen/skills
 bash outils/installer.sh --claude --qwen --appliquer
+bash outils/installer.sh --retirer-absents --appliquer     # écarte les anciens skills installés (sauvegardés, jamais supprimés)
 bash outils/installer.sh --producer-pal-qwen --appliquer   # déclare le serveur MCP Producer Pal dans ~/.qwen/settings.json
 ```
 
@@ -40,4 +41,4 @@ bash outils/installer.sh --producer-pal-qwen --appliquer   # déclare le serveur
 
 ## Qwen via Ollama seul (sans Qwen Code)
 
-Aucun outil : il rédige grilles, specs JSON et réglages ; l'utilisateur exécute et colle le résultat ; chaque réponse dit « non exécuté par moi ». Pour les hooks et timbres de genre : `qwen-musique` (installé par `composer-hooks-funk-electro/scripts/install.sh --qwen`), qui envoie le skill avec une fenêtre de contexte explicite.
+Aucun outil : il rédige grilles, specs JSON et réglages ; l'utilisateur exécute et colle le résultat ; chaque réponse dit « non exécuté par moi ». Pour les hooks et timbres de genre : `qwen-musique` (installé par `compositeur-arrangeur/modules/composer-hooks-funk-electro/scripts/install.sh --qwen`), qui envoie le module avec une fenêtre de contexte explicite.

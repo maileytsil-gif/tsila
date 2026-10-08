@@ -66,6 +66,23 @@ A_SUPPRIMER = [
     f'{AZ}/references/Bass_House_skill_portable_ChatGPT_Claude_Qwen.md',
 ]
 STORYBOARD = 'piloter-live-lombridge-codex/assets/storyboard-manga-weekend.png'
+# Titres des modules dont le SKILL.md commençait sans H1 (par les règles communes ou un H2).
+TITRES = {
+    'arrangement-avance': 'Arrangement avancé',
+    'melodie-composition': 'Mélodie et composition',
+    'midi-expressif': 'MIDI expressif',
+    'partition-recherche': 'Recherche de partition',
+    'partition-telechargement': 'Téléchargement de partition',
+    'effets-plugins': 'Effets et plug-ins',
+    'live-export-wav': 'Export WAV depuis Live',
+    'live-mix-mastering': 'Mixage et mastering dans Live',
+    'mixage': 'Procédure de mixage',
+    'live-automation': 'Automation d’arrangement dans Live',
+    'drums-signature': 'Batterie : grilles et signature',
+    'kick-bass-equilibre': 'Équilibre kick / sub / basse',
+    'native-instruments-control': 'Maschine et Komplete Kontrol',
+    'vst-sound-design': 'Pilotage des synthés (VST et natifs)',
+}
 EXTENSIONS = {'.md', '.py', '.sh', '.json', '.yml', '.yaml', '.txt', '.csv'}
 NOMS_SANS_EXT = {'Modelfile'}
 FICHIERS_DEPOT = ['README.md', 'AGENTS.md', 'CLAUDE.md', 'QWEN.md', 'docs/claude-code-avec-ollama.md',
@@ -79,6 +96,10 @@ MOTIF_RELATIF = re.compile(r'(?<![\w./-])((?:\.\./)+)(' + NOMS + r')/(SKILL\.md)
 MOTIF_SKILLS = re.compile(r'(?<![\w./-])(' + NOMS + r')/(references|scripts|assets|recipes|SKILL\.md)')
 # `.claude/skills/x` ou `.qwen/skills/x`.
 MOTIF_INSTALLE = re.compile(r'((?:\.claude|\.qwen)/skills/)(' + NOMS + r')(?![\w-])')
+# `../../../../corpus/…` : chemin vers la racine du dépôt, dont la profondeur change sous modules/.
+MOTIF_DEPOT = re.compile(r'(?<![\w./-])((?:\.\./)+)(corpus|lom-bridge|docs|outils)/')
+# `../SKILL.md` : le SKILL.md du skill lui-même, devenu GUIDE.md quand le fichier est dans un module.
+MOTIF_PROPRE = re.compile(r'(?<![\w./-])((?:\.\./)+)SKILL\.md')
 
 
 def git(*args):
@@ -106,12 +127,16 @@ def contexte(fichier):
 
 
 def reecrire(texte, racine=None, dossier=None, profondeur=None):
-    compte = [0, 0, 0]
+    compte = [0, 0, 0, 0]
+
+    module = racine is not None and '/modules/' in racine + '/'
 
     def relatif(m):
         dots, x, skill = m.group(1), m.group(2), m.group(3)
         n = dots.count('../')
-        origine = dossier if n == profondeur + 1 else racine
+        # Relatif au dossier du fichier (ancienne arborescence : profondeur + 1 ; nouvelle, sous modules/ :
+        # profondeur + 3), sinon par convention à la racine du skill ou du module.
+        origine = dossier if n == profondeur + 1 or (module and n == profondeur + 3) else racine
         rel = posixpath.relpath(nouvelle_racine(x), origine)
         prefixe = '' if rel == '.' else rel + '/'
         compte[0] += 1
@@ -126,7 +151,26 @@ def reecrire(texte, racine=None, dossier=None, profondeur=None):
         compte[2] += 1
         return m.group(1) + nouvelle_racine(m.group(2))
 
+    def depot(m):  # `../../../../corpus/` depuis l'ancien skill/references/ : .claude/skills/ compte pour deux niveaux
+        n = m.group(1).count('../')
+        local = posixpath.normpath(posixpath.join(dossier, m.group(1) + m.group(2)))
+        if not local.startswith('..') and (SKILLS / local).is_dir():
+            return m.group(0)  # dossier du skill lui-même (electronic-production-engineer/docs/), pas celui du dépôt
+        # Relatif au dossier du fichier : profondeur + 3 dans l'ancienne arborescence (.claude/skills/ = deux niveaux),
+        # 2 + niveaux du dossier dans la nouvelle ; sinon par convention à la racine du skill ou du module.
+        origine = dossier if n in (profondeur + 3, 2 + len(dossier.split('/'))) else racine
+        compte[3] += 1
+        return '../' * (2 + len(origine.split('/'))) + m.group(2) + '/'
+
+    def propre(m):  # `../SKILL.md` depuis references/ d'un module : vise la racine du module, donc GUIDE.md
+        n = m.group(1).count('../')
+        if module and n == profondeur:
+            return m.group(1) + 'GUIDE.md'
+        return m.group(0)
+
     if racine is not None:
+        texte = MOTIF_DEPOT.sub(depot, texte)
+        texte = MOTIF_PROPRE.sub(propre, texte)
         texte = MOTIF_RELATIF.sub(relatif, texte)
     texte = MOTIF_SKILLS.sub(skills, texte)
     texte = MOTIF_INSTALLE.sub(installe, texte)
@@ -149,9 +193,13 @@ def guide(fichier, groupe):
         if cle == 'description' and sep:
             description = val.strip()
     corps = texte[m.end():]
-    if not corps.startswith('# '):
-        sys.exit(f'{fichier} : le corps ne commence pas par un titre H1')
-    titre, _, reste = corps.partition('\n')
+    if corps.startswith('# '):
+        titre, _, reste = corps.partition('\n')
+    else:  # corps qui commence par les règles communes ou un H2 : titre tiré de la table
+        module = fichier.parent.name
+        if module not in TITRES:
+            sys.exit(f'{fichier} : pas de titre H1 et aucun titre dans TITRES')
+        titre, reste = f'# {TITRES[module]}', '\n' + corps
     nouveau = f'{titre}\n\n> Module du skill `{groupe}`. {description}\n{reste}'
     cible = fichier.with_name('GUIDE.md')
     git('mv', str(fichier.relative_to(RACINE)), str(cible.relative_to(RACINE)))
@@ -171,7 +219,8 @@ def manifest_epe():
     f.write_text(json.dumps(m, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
 
-def main():
+def deplacer():
+    """Étapes 1 à 3 : suppressions, storyboard, `git mv`. Exige un dépôt propre et les 44 anciens skills."""
     if subprocess.run(['git', 'status', '--porcelain'], cwd=RACINE, capture_output=True, text=True).stdout.strip():
         sys.exit('dépôt non propre : commiter ou remiser avant de lancer le regroupement')
     anciens = sorted(p.name for p in SKILLS.iterdir() if p.is_dir())
@@ -179,29 +228,44 @@ def main():
         sys.exit(f'skills du dépôt ≠ table : manquants {sorted(set(OU) - set(anciens))}, en trop {sorted(set(anciens) - set(OU))}')
     for d in SKILLS.rglob('__pycache__'):
         subprocess.run(['rm', '-rf', str(d)], check=True)
-
-    # 1. copies jumelles et portable
     for rel in A_SUPPRIMER:
         git('rm', '-q', f'.claude/skills/{rel}')
-    # 2. storyboard
     (RACINE / 'docs' / 'projets').mkdir(exist_ok=True)
     git('mv', f'.claude/skills/{STORYBOARD}', f'docs/projets/{posixpath.basename(STORYBOARD)}')
-    # 3. déplacements
     deplaces = 0
     for groupe, (base, modules) in GROUPES.items():
         if base != groupe:
             git('mv', f'.claude/skills/{base}', f'.claude/skills/{groupe}')
             deplaces += 1
-        (SKILLS / groupe / 'modules').mkdir()
+        (SKILLS / groupe / 'modules').mkdir(exist_ok=True)
         for module in modules:
             git('mv', f'.claude/skills/{module}', f'.claude/skills/{groupe}/modules/{module}')
             deplaces += 1
+    return deplaces
+
+
+def main():
+    # --reprendre : les déplacements (étapes 1 à 3) sont déjà faits, reprendre à l'étape 4.
+    # --renvois : seulement l'étape 5, rejouable (les réécritures sont idempotentes).
+    # --manifest : seulement l'étape 6 (après une correction à la main dans electronic-production-engineer).
+    options = set(sys.argv[1:])
+    if options & {'--reprendre', '--renvois', '--manifest'}:
+        if sorted(p.name for p in SKILLS.iterdir() if p.is_dir()) != sorted(GROUPES):
+            sys.exit('les cinq skills regroupés ne sont pas (tous) en place')
+        deplaces = 0
+    else:
+        deplaces = deplacer()
+    if '--manifest' in options:
+        manifest_epe()
+        print('MANIFEST.json d’electronic-production-engineer recalculé')
+        return
     # 4. GUIDE.md
-    for groupe, (base, modules) in GROUPES.items():
-        for module in modules:
-            guide(SKILLS / groupe / 'modules' / module / 'SKILL.md', groupe)
+    if '--renvois' not in options:
+        for groupe, (base, modules) in GROUPES.items():
+            for module in modules:
+                guide(SKILLS / groupe / 'modules' / module / 'SKILL.md', groupe)
     # 5. renvois
-    total = [0, 0, 0]
+    total = [0, 0, 0, 0]
     touches = 0
     for f in sorted(SKILLS.rglob('*')):
         if not est_texte(f):
@@ -225,7 +289,8 @@ def main():
     # 6. MANIFEST
     manifest_epe()
     print(f'{deplaces} dossiers déplacés, {len(A_SUPPRIMER)} fichiers supprimés, {touches} fichiers réécrits : '
-          f'{total[0]} renvois ../x/, {total[1]} renvois x/references, {total[2]} chemins .claude/skills/x')
+          f'{total[0]} renvois ../x/, {total[1]} renvois x/references, {total[2]} chemins .claude/skills/x, '
+          f'{total[3]} chemins vers la racine du dépôt')
 
 
 if __name__ == '__main__':

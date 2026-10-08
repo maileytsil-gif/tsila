@@ -12,7 +12,7 @@ Deuxième fichier du lot de synthés. Rédigé le 05/10/2026. Sources :
 Les dix règles communes au lot sont dans `leads.md` : pas de sub dans le patch, Init Preset, noms de Serum 2, macros `Tone`, `Motion`, `Dirt`, `Space`, plug-ins tiers après Serum, un seul élément large, C3 = 60, droits, sortie à −6 dBFS, contrôle par l'utilisateur. Ce qui s'ajoute pour les plucks :
 
 1. **Le filtre tombe plus vite que le volume** [FICHE]. Ce qui fait un pluck, c'est que les harmoniques disparaissent avant le son. Decay de l'enveloppe du filtre ≈ 60-70 % de celui d'ENV 1. Un decay d'ampli court sur un filtre fixe donne un son coupé, pas un pluck.
-2. **High Pass entre 120 et 200 Hz** en fin de chaîne. Deux recettes jouent dans le médium grave (PK15, PK16, « plucks-basses ») : elles gardent le High Pass vers 120 Hz, et le grave vient d'un sub sur sa piste (`../../../serum-2-basses-house-future-house/references/recettes/dnb-f01-sub.md`).
+2. **High Pass entre 120 et 200 Hz** en fin de chaîne. Deux recettes jouent dans le médium grave (PK15, PK16, « plucks-basses ») : elles gardent le High Pass vers 120 Hz, et le grave vient d'un sub sur sa piste (`../../modules/serum-2-basses-house-future-house/references/recettes/dnb-f01-sub.md`).
 3. **L'attaque se fabrique** par l'un de trois gestes, chaque fiche dit lequel :
    - une enveloppe très courte (≈ 20 ms) vers **Main Tuning** ;
    - un bruit d'attaque en **one-shot** (NOISE) ;
@@ -349,7 +349,7 @@ Les dix règles communes au lot sont dans `leads.md` : pas de sub dans le patch,
 
 ## Motifs de départ (grilles vérifiées)
 
-Numérotation de Live (C3 = 60). Mélodies écrites ici. Vérification, depuis le dossier du skill : `python3 ../composer-hooks-funk-electro/scripts/grille.py --verifier references/synths/plucks.md`. Notation Producer Pal : `--fichier references/synths/plucks.md --titre <titre> --format ppal`.
+Numérotation de Live (C3 = 60). Mélodies écrites ici. Vérification, depuis le dossier du skill : `python3 ../compositeur-arrangeur/modules/composer-hooks-funk-electro/scripts/grille.py --verifier references/synths/plucks.md`. Notation Producer Pal : `--fichier references/synths/plucks.md --titre <titre> --format ppal`.
 
 ```grille
 titre: Deep house 122 — bambou (PK01, PK10)
@@ -376,5 +376,5 @@ pluck: C5[1:2] A4[1&:2] E4[2:2] F4[2&:2] G4[3:2] A4[3&:2] C5[4:2] E5[4&:2] | B4[
 
 - Retrouver dans Serum 2 : « BD Sine », « Kick Attack » (numéro), « Bottle Blow », « Harmonic Morph », « Glass Glits 5 » [ASR], « AC Hum 1 », « Basic MG » et « Basic CGV » [ASR], « Saw Rounded », « Square Saw » [ASR], « JP106 High Pass » [ASR], « Guitar Mute 2 ». Vérifier le mode Ratio de l'oscillateur pour PK11.
 - Lire à l'écran la forme du LFO « knock » de PK01 et la valeur du rate de PK04.
-- Écouter chaque recette (règle 10 de `leads.md`), garder deux ou trois plucks par morceau et consigner le preset retenu dans la mémoire du projet (`../../../memoire-projet/SKILL.md`).
+- Écouter chaque recette (règle 10 de `leads.md`), garder deux ou trois plucks par morceau et consigner le preset retenu dans la mémoire du projet (`../../../producteur-live/modules/memoire-projet/GUIDE.md`).
 - Fichiers suivants du lot : hooks, accords, pads, drones.

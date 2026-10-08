@@ -4,7 +4,7 @@ Quatrième fichier du lot de synthés : stabs, keys et murs d'accords. Rédigé 
 - l'étude des quinze tutoriels d'accords, CH-01 à CH-15, de `../tutoriels-synths-serum.md`, sa section « Écartés » (une vidéo de UK garage citée avec ses valeurs) et la synthèse `../synths-serum-synthese.md` (section Accords) ;
 - la cartographie de Serum 2 (`../serum2-cartographie.md`).
 
-**Toutes les vidéos sources sont en Serum 1** : aucun tutoriel d'accords en Serum 2 n'avait de réglages commentés. Les noms sont traduits selon la règle 3 de `leads.md`. Le choix des accords relève de `../../../theorie-musicale-electronique/SKILL.md` et du rôle `compositeur-arrangeur` ; ce fichier donne le timbre et dit quand le patch impose déjà un intervalle.
+**Toutes les vidéos sources sont en Serum 1** : aucun tutoriel d'accords en Serum 2 n'avait de réglages commentés. Les noms sont traduits selon la règle 3 de `leads.md`. Le choix des accords relève de `../../../compositeur-arrangeur/modules/theorie-musicale-electronique/GUIDE.md` et du rôle `compositeur-arrangeur` ; ce fichier donne le timbre et dit quand le patch impose déjà un intervalle.
 
 **Rien de ce fichier n'a été entendu** (règle 4 d'`AGENTS.md`). Étiquettes : **[SOURCE CH-nn]**, **[CALCUL]**, **[DÉDUCTION]**, **[ORIGINAL]**, comme dans `leads.md`.
 
@@ -103,7 +103,7 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les a
   - VOICING **MONO**.
   - Éditeur de tables (additif) : harmonique « 2/3 » montée à **≈ 30**, copiée vers OSC B ; essai de l'harmonique 3 à ≈ 15.
 - **ENV 1** : ATK **5 ms**, HOLD **≈ 50 ms**, DEC **1 s**, SUS 0 [SOURCE CH-04] ; DEC raccourci ou allongé (2 s) ensuite, plus du REL.
-- **Les tirettes** [DÉDUCTION] : A sur la note et B deux octaves au-dessus correspondent à deux tirettes d'orgue à deux octaves d'écart (8′ et 2′ si A joue le 8′) ; l'harmonique 3 ajoutée dans la table est la quinte de l'octave (2 ⅔′). Comparer avec les registrations de `../../../studio-grade-funk-keys-synth-sound-design/SKILL.md`.
+- **Les tirettes** [DÉDUCTION] : A sur la note et B deux octaves au-dessus correspondent à deux tirettes d'orgue à deux octaves d'écart (8′ et 2′ si A joue le 8′) ; l'harmonique 3 ajoutée dans la table est la quinte de l'octave (2 ⅔′). Comparer avec les registrations de `../../modules/studio-grade-funk-keys-synth-sound-design/GUIDE.md`.
 - **MONO** : un orgue en mono ne joue pas d'accord ; ici le stab joue des notes seules, l'harmonie vient des tirettes. Pour des accords, passer en POLY 8.
 - **FX** [SOURCE CH-04] : Hyper/Dimension, MIX d'Hyper monté (plus « carré », garage) → Distortion MIX **≈ 25** → Compressor → Chorus → Reverb DECAY **≈ 3 s** (ou 2 s), LO CUT monté.
 - **Macros** : `Tone` CUTOFF ± 30 % autour du réglage · `Motion` niveau de l'harmonique 3 (WT POS entre deux frames préparées) 0 → 100 % · `Dirt` MIX de la Distortion 0 → 50 · `Space` MIX de la Reverb 5 → 30 %.
@@ -185,7 +185,7 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les a
 - **Test** : une glissade de plus de 3 demi-tons sur un accord entier sonne comme une bande qui ralentit ; doser `Motion`.
 
 ### AC10 Keys afro en FM
-- **Le corpus n'a aucun tutoriel d'accords afro house** (section « Manque »). Recette **[ORIGINAL]** ; pour un vrai piano électrique, voir `../../../studio-grade-funk-keys-synth-sound-design/SKILL.md`.
+- **Le corpus n'a aucun tutoriel d'accords afro house** (section « Manque »). Recette **[ORIGINAL]** ; pour un vrai piano électrique, voir `../../modules/studio-grade-funk-keys-synth-sound-design/GUIDE.md`.
 - **Patch** :
   - OSC A : sinus. OSC B : sinus, OCT +1, **LEVEL 0**, modulateur.
   - OSC A, WARP 1 **FM (B)** à 0 ; ENV 2 → FM (B) 35 % : 0 / 0 / 250 ms / 10 % / 300 ms. L'attaque est brillante, le corps doux.
@@ -198,7 +198,7 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les a
 - **Test** : sans source vidéo ; à comparer à AC02 et AC08 à niveau égal.
 
 ### AC11 Stab feutré sous 124
-- **Recette [ORIGINAL]** pour la règle « Signature sous 124 BPM » d'`AGENTS.md` : un accord doux à côté du kick de la signature (`../../../drums-signature/references/signature.md`).
+- **Recette [ORIGINAL]** pour la règle « Signature sous 124 BPM » d'`AGENTS.md` : un accord doux à côté du kick de la signature (`../../../producteur-rythmique/modules/drums-signature/references/signature.md`).
 - **Patch** :
   - OSC A : scie, UNISON 3, DETUNE 0,05, RAND 100. OSC B : sinus, LEVEL 50 %.
   - FILTER 1 **MG Low 24** sur A, CUTOFF 18 %, RES 5 %.
@@ -226,7 +226,7 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les a
 - **Valeurs de départ** [ORIGINAL] : Delay FEEDBACK 45 %, MIX 35 % ; Reverb Hall, DECAY 4 s, MIX 30 % ; Equalizer en High Pass à 140 Hz.
 - **Delay** [CALCUL] : à 174 BPM, 1/8 = 172,4 ms.
 - **Voicing** [SOURCE CH-10] : do mineur 7 ; après quatre mesures, le même accord avec l'octave de la fondamentale en plus ; à la dernière mesure, si bémol avec son octave, en gardant le do comme note de mélodie. [CALCUL] Si bémol avec do au-dessus = Bb add9.
-- **Hors de Serum** [SOURCE CH-10] : couche de piano à queue avec beaucoup de reverb ; keys resamplées à −12 demi-tons, inversées, en fin de mesure. Ici : `../../../resampling/SKILL.md` pour la prise et l'inversion.
+- **Hors de Serum** [SOURCE CH-10] : couche de piano à queue avec beaucoup de reverb ; keys resamplées à −12 demi-tons, inversées, en fin de mesure. Ici : `../../modules/resampling/GUIDE.md` pour la prise et l'inversion.
 - **Macros** : `Tone` LEVEL d'OSC B 20 → 70 % · `Motion` DEC d'ENV 1 80 → 300 ms · `Dirt` Distortion Sine Shaper 0 → 25 · `Space` FEEDBACK du Delay 20 → 60 %.
 - **Jeu** : voir la grille DnB liquide ; MIDI 60 à 79.
 - **Test** : le filtre du delay à 1,7 kHz assombrit les répétitions ; vérifier qu'elles ne brouillent pas le break.
@@ -322,7 +322,7 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les a
 
 ## Motifs de départ (grilles vérifiées)
 
-Numérotation de Live (C3 = 60). Progressions et rythmes écrits ici. Vérification, depuis le dossier du skill : `python3 ../composer-hooks-funk-electro/scripts/grille.py --verifier references/synths/accords.md`. Notation Producer Pal : `--fichier references/synths/accords.md --titre <titre> --format ppal`.
+Numérotation de Live (C3 = 60). Progressions et rythmes écrits ici. Vérification, depuis le dossier du skill : `python3 ../compositeur-arrangeur/modules/composer-hooks-funk-electro/scripts/grille.py --verifier references/synths/accords.md`. Notation Producer Pal : `--fichier references/synths/accords.md --titre <titre> --format ppal`.
 
 ```grille
 titre: House 122 — stab mineur dans une note (AC01)
@@ -361,5 +361,5 @@ bas: E4[1:16] | C#4[1:16]
 
 - Retrouver dans Serum 2 : « FM_Freak », « Basic MG », les tables Juno, le bruit d'orgue [ASR « Argan nose »], les dernières frames de « Monster 1 ». Lire le sens de la glissade d'AC07 et la cible du second LFO d'AC12.
 - Vérifier la licence du pack Sunset avant de rapprocher AC20 du preset « Power Saw ».
-- Écouter chaque recette (règle 10 de `leads.md`) avec la basse du morceau ; garder un ou deux sons d'accords par morceau et consigner le preset retenu dans la mémoire du projet (`../../../memoire-projet/SKILL.md`).
+- Écouter chaque recette (règle 10 de `leads.md`) avec la basse du morceau ; garder un ou deux sons d'accords par morceau et consigner le preset retenu dans la mémoire du projet (`../../../producteur-live/modules/memoire-projet/GUIDE.md`).
 - Fichiers suivants du lot : pads, drones.

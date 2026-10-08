@@ -11,20 +11,21 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - name: skills — en-têtes, chemins, copies jumelles, lien .qwen, carte
+      - name: skills — en-têtes, modules, chemins, lien .qwen, carte
         run: python3 outils/verifier_skills.py
       - name: installateur Claude / Qwen et vérificateur (HOME temporaire)
         run: |
           bash -n outils/installer.sh
+          python3 -m py_compile outils/*.py
           python3 -m unittest discover -s outils -p 'test_*.py' -v
       - name: syntaxe de tous les scripts Python des skills
         run: python3 -m py_compile $(find .claude/skills -name '*.py')
       - name: composer-hooks-funk-electro — grilles, lanceur Qwen, installation
-        working-directory: .claude/skills/composer-hooks-funk-electro
+        working-directory: .claude/skills/compositeur-arrangeur/modules/composer-hooks-funk-electro
         run: |
           bash -n scripts/install.sh
           python3 -m unittest discover -s scripts -p 'test_*.py' -v
           python3 scripts/grille.py --verifier references/*.md
       - name: serum-2-basses-house-future-house — motifs vérifiés
-        working-directory: .claude/skills/serum-2-basses-house-future-house
-        run: python3 ../composer-hooks-funk-electro/scripts/grille.py --verifier references/*.md
+        working-directory: .claude/skills/sound-designer-serum/modules/serum-2-basses-house-future-house
+        run: python3 ../../../compositeur-arrangeur/modules/composer-hooks-funk-electro/scripts/grille.py --verifier references/*.md

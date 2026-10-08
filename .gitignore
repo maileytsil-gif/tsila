@@ -26,3 +26,6 @@ graphify-out/
 .env.*
 *.pem
 *.key
+
+# Caches Python des scripts (tests, vérificateur)
+__pycache__/
