@@ -1,6 +1,6 @@
 ---
 name: produire-morceau-electronique-de-a-a-z
-description: Produire un morceau original complet de la première idée au projet Ableton Live 12 — pipeline en neuf passes avec porte de sortie (recherche, composition, sound design, arrangement, édition, mix, référence, master, bilan) et **corpus d'études** : Bass House / Future House / Future Rave (6 producteurs, recettes Serum 2 hors Basic Shapes, Wavetable, spectral), Afro House (4 producteurs), Odd Mob / Brooks / Guetta / Solomun / RÜFÜS, Illangelo, funk / acid jazz / cuivres, sampling Maschine 3, drones / glitch, soothe3 / Curves / Pro-Q 4 / Pro-C 3, mixage et mastering streaming/club. Utilise ce skill quand l'utilisateur veut un morceau entier « de A à Z », demande un style de producteur précis (« à la Odd Mob », « comme Guetta Future Rave », « genre RÜFÜS »), une recette Bass House, ou une étude documentée d'un genre ; pour agir dans Live il passe la main aux rôles et skills existants (ableton-live-session, compositeur-arrangeur, producteur-rythmique, sound-designer-serum, ingenieur-mixage).
+description: Produire un morceau original complet de la première idée au projet Ableton Live 12 — cadrage unique avec mode de départ (voix Suno, instrumental + hook vocal, sans voix, voix fournie), menus à quatre variantes numérotées, neuf passes avec porte de sortie (recherche, composition, sound design, arrangement, édition, mix, référence, master, bilan), une surprise et une texture par morceau, et **corpus d'études** : Bass House / Future House / Future Rave (6 producteurs, Serum 2, Wavetable, spectral), Afro House, Odd Mob / Brooks / Guetta / Solomun / RÜFÜS / Illangelo, funk / acid jazz / cuivres, sampling Maschine 3, drones / glitch, soothe3 / Curves / Pro-Q 4 / Pro-C 3, mix et mastering streaming/club. Utilise ce skill pour un morceau entier « de A à Z », un style de producteur précis (« à la Odd Mob », « genre RÜFÜS »), une recette Bass House ou une étude de genre ; pour agir dans Live il passe la main à ableton-live-session et aux quatre rôles de production.
 ---
 
 # Producteur de morceau électronique de A à Z
@@ -17,6 +17,14 @@ Le « A à Z » implique des **sorties vérifiables** : brief et intention, fich
 2. Vérifier accès aux outils : lister le projet et les assets, capacités réelles du bridge/Remote Script, état Live et type d'accès audio. Si session absente, créer localement une maquette MIDI + audio **seulement avec les outils disponibles**, ou livrer une session reconstructible note par note et énoncer le niveau réel du livrable. Préserver projet original et créer une copie de travail; toute opération Live est relue après modification.
 3. Choisir **une** direction principale et éventuellement un pont stylistique : exemples Afro House avec profondeur RÜFÜS, Bass House avec syncopes funk, Future Rave avec narration vocale. Consigner ce qui distingue le morceau des références.
 
+## Cadrage, menus de choix et autonomie
+
+- **Un seul cadrage avant la première note** : `references/brief-de-demarrage.md`. Extraire ce qui est déjà connu (message, démo validée par `produire-demo-electro-rapide`, `projet-<nom>.md`, `AGENTS.md`), poser le reste en un message compact. Première décision : le **mode de départ**, soit voix d'abord avec Suno, instrumental avec hook vocal, instrumental sans voix, ou voix / sample déjà disponible (`references/vocal-workflows.md`).
+- **Menus à quatre variantes** : à chaque passe où une décision artistique est ouverte, quatre options numérotées, une raison entre parenthèses chacune, une seule « recommandé », plus « autre : … » et « choisis pour moi » (`references/choix-par-etape.md`). Le plan complet annoncé est la liste des passes ; seul le menu de la passe courante est montré, une passe par échange.
+- **Autonomie progressive** : après trois morceaux complets réalisés ensemble (lus dans la mémoire de projet, jamais supposés), choisir soi-même aux décisions récurrentes, annoncer le numéro et la raison, laisser corriger ; garder le menu pour toute nouveauté ou décision majeure.
+- **Musicalité d'abord** : juger la fonction musicale avant l'outil ou la mesure. Si une technique apporte un bénéfice supérieur dans le contexte (stabilité du grave, traduction club, lisibilité, cahier des charges), le dire, expliquer le compromis et recommander une solution cohérente. Aucune valeur de réglage n'est une règle universelle.
+- **Les règles d'`AGENTS.md` ne sont pas des options de menu** : sub et basse médium dans deux instruments, Original Mix et Extended Mix, référence choisie avec l'utilisateur, une à quatre émotions, signature du kick sous 124 BPM, variation de batterie avant chaque frontière de huit mesures d'un drop.
+
 ## Pipeline en neuf passes avec porte de sortie
 
 ### 1. Recherche musicale et palette
@@ -29,17 +37,23 @@ Lire les références d'artistes pertinentes seulement (index ci-dessous). Disti
 
 Fixer signature, centre tonal et mouvement harmonique, puis motif de 1–4 mesures. Écrire accords avec notes constitutives, voicings et rythme ; basse avec notes, attaques, durées et silences ; hook avec contour et réponses. Si la basse tient une pédale sous des accords mobiles, vérifier réellement les tensions. Programmer batterie et variations de vélocité avant de quantifier le swing ; pads Maschine 3 utiles pour prise humaine. Pour une demande jouable, préciser numéro MIDI, positions temporelles et durée plutôt que prose vague.
 
-**Gate** : boucle de 8–16 mesures identifiable **sans** riser ni limiteur, kick/basse lisibles et hook chantable ou reconnaissable.
+**Hook** : ne pas choisir les notes « parce qu'elles sont dans la gamme ». Écrire d'abord le rythme en syllabes, dessiner le contour (départ, sommet, note d'arrivée, silences), poser les notes d'accord sur les appuis, donner à chaque tension sa résolution, faire une question puis une réponse, tester le hook nu (sans effets ni accompagnement), orchestrer ensuite : `references/phrase-memorabilite-et-tension.md`. **Grave** : dire qui tient le plus bas (kick et queue, sub qui suit la basse, sub en pédale, sub qui répond) et ce que joue le sub, avant d'écrire sub et basse médium, toujours dans deux instruments.
+
+**Gate** : boucle de 8–16 mesures identifiable **sans** riser ni limiteur, kick/basse lisibles et hook chantable ou reconnaissable. Sans écoute possible, annoncer que la chantabilité reste à valider à l'oreille de l'utilisateur.
 
 ### 3. Sound design et provenance
 
 Sélectionner source, enveloppe, modulation, saturation, traitement spatial puis resampling. Serum 2 : favoriser wavetables choisies ou importées, échantillons personnels, granular/spectral quand ils servent le rôle ; ne **pas privilégier Basic Shapes ni les formes d'onde par défaut** pour pads, stabs, drones et leads demandés. Une onde simple reste légitime pour un sub pur si le besoin l'exige. Sauver preset, source, MIDI et version imprimée. Sampler : distinguer microboucle de lecture et synthèse granulaire réelle. Riser : séparer hauteur vraie, ouverture du filtre et densité ; glitch : rendre l'édition rythmique contrôlable.
 
-**Gate** : chaque son fonctionne en contexte, première attaque et queue adaptées à la section, pas de clic involontaire ; source et droits notés.
+**Texture** : prévoir au moins une texture subtile par morceau, atmosphérique (air, matière, drone léger, souffle, détail granulaire) ou rythmique (percussion traitée, vocal chop rythmique, fragment samplé), sauf demande volontairement sèche. Elle complète un espace musical identifié, ne masque pas le hook, le groove ni la voix, et se vérifie seule, en mix complet, à faible volume et en mono ; si elle agresse, n'apporte rien ou dénature le morceau, la transformer, la déplacer ou la retirer. Méthode, effets natifs de Live (règle 6 d'`ableton-live-session`) et liens : `references/textures-ambiances-rythmiques.md`.
+
+**Gate** : chaque son, textures comprises, garde une fonction claire et n'ajoute ni clic involontaire ni queue incontrôlée ; première attaque et queue adaptées à la section ; source et droits notés.
 
 ### 4. Arrangement complet
 
-Poser locators intro, exposition, break, pré-drop, drop, variation, second passage et outro selon **la chanson voulue**. Dessiner par tranches de 4/8/16 mesures sans imposer un nombre fixe. Pour chaque piste noter entrée, sortie, fonction et automation. Garder au moins un repère du thème dans le break ; préparer le retour par changement de densité, harmonie, silence ou rythme plutôt que riser systématique. Distinguer version streaming (narration concise si adaptée) et extended club (intro/outro mixables).
+Poser locators intro, exposition, break, pré-drop, drop, variation, second passage et outro selon **la chanson voulue**. Dessiner par tranches de 4/8/16 mesures sans imposer un nombre fixe. Pour chaque piste noter entrée, sortie, fonction et automation. Garder au moins un repère du thème dans le break ; préparer le retour par changement de densité, harmonie, silence ou rythme plutôt que riser systématique. Écrire chaque break comme une courbe de tension (ce qui part, ce qui reste, ce qui reste en suspens, la respiration, ce que le drop paie ou transforme) : une accumulation de risers n'est pas une dramaturgie (`references/phrase-memorabilite-et-tension.md`). Distinguer version streaming (narration concise si adaptée) et extended club (intro/outro mixables) ; Original Mix et Extended Mix sortent toujours du même noyau.
+
+**Une seule surprise par morceau**, une seule fois, si elle sert la tension et la résolution : faux départ avant le drop, mini-break ou silence à l'endroit attendu, drop retardé d'un temps ou d'une mesure, impact décalé, retrait soudain de kick ou de sub, réponse inattendue du hook. Choisir le moment le plus fort, installer l'attente reconnaissable, donner la résolution ; ne pas répéter ce procédé ailleurs. Si elle casse le phrasé ou affaiblit le drop, la supprimer. Elle ne remplace pas la variation de batterie ou de transition avant chaque frontière de huit mesures d'un drop, et une texture rythmique récurrente n'en est pas une.
 
 **Gate** : écouter d'une traite ; chaque section change l'information, pas uniquement son volume ; le premier temps du drop est dégagé des queues d'effets.
 
@@ -73,6 +87,9 @@ Les fichiers sous `references/` sont **dans ce skill**. Charger uniquement les m
 
 | Besoin | Fichiers à lire |
 |---|---|
+| Cadrage de départ, mode de départ vocal ou instrumental, menus à quatre variantes | `brief-de-demarrage.md`, `vocal-workflows.md`, `choix-par-etape.md` |
+| Hook chantable, tension, construction d'un break | `phrase-memorabilite-et-tension.md` ; notes et grilles : `../compositeur-arrangeur/SKILL.md`, `../melodie-composition/SKILL.md` |
+| Texture subtile, atmosphérique ou rythmique | `textures-ambiances-rythmiques.md`, `Etude_drones_FX_glitch_Serum2_Sampler.md` |
 | Harmonie, funk/acid jazz, claviers et cuivres | `theorie-styles-et-instruments.md`, `theorie-analyse-harmonie-groove-arrangement.md`, `theorie-exemples-et-verification.md`, `Etude_funk_acid_jazz_cuivres_Serum2.md` ; hook et cellule jouables, microhouse, chill / jazz chill, électro R&B : `../composer-hooks-funk-electro/SKILL.md` |
 | Sampling, Maschine, transitions, vocal chops | `Etude_sampling_Maschine3_Ableton12_Serum2.md` |
 | Sérum Bass House, stabs hors Basic Shapes, Wavetable, spectral Ableton | `bass-house-recettes.md`, `bass-house-stabs-serum2.md`, `bass-house-wavetable.md`, `bass-house-spectral-live.md`, `bass-house-sources-et-videos.md` ; dix familles de basses jouables : `../serum-2-basses-house-future-house/SKILL.md` |
@@ -93,6 +110,7 @@ Ce skill apporte la **méthode de bout en bout et le corpus d'études** ; il n'e
 
 | Passe | Skills qui agissent |
 |---|---|
+| 0 Cadrage et mode de départ | ce skill (`references/brief-de-demarrage.md`, `vocal-workflows.md`), `produire-demo-electro-rapide` (démo déjà cadrée), `maitriser-suno`, `suno-vocals`, `memoire-projet` |
 | 1 Recherche et palette | ce skill (`references/`), `theorie-musicale-electronique`, `theorie-musicale-composition`, `composer-trajectoire-emotionnelle` |
 | 2 Composition et groove | `compositeur-arrangeur`, `composer-hooks-funk-electro`, `producteur-rythmique`, `melodie-composition`, `midi-expressif`, `drums-signature`, `produire-avec-maschine-mk3` |
 | 3 Sound design | `sound-designer-serum`, `vst-sound-design`, `serum-2-basses-house-future-house`, `bass-house-sound-design`, `synthese-reference`, `resampling` |
