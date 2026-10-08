@@ -2,7 +2,7 @@
 
 Synthèse du corpus `kicks-serum-tutoriels.md`, rédigée le 05/10/2026. Ce corpus compte 85 fiches pour 46 vidéos différentes, en 8 styles, étudiées dans Claude in Chrome sur le Mac, son coupé. Les identifiants (BH-01, HC-08, DM-02…) renvoient aux fiches du corpus.
 
-**Rien de ce fichier n'a été entendu** (règle 4 d'`AGENTS.md`). Les valeurs viennent des transcriptions : ce qui est **dit**, parfois mal transcrit (marqué [ASR ?] dans le corpus). Les captures d'écran de **12 vidéos sur 46** sont faites (`kicks-serum-captures.md`, 06/10/2026) ; pour les 34 autres, chaque fiche du corpus finit par la liste des minutages « À vérifier à l'écran ».
+**Rien de ce fichier n'a été entendu** (règle 4 d'`AGENTS.md`). Les valeurs viennent des transcriptions : ce qui est **dit**, parfois mal transcrit (marqué [ASR ?] dans le corpus). Les captures d'écran de **39 vidéos sur 46** sont faites (`kicks-serum-captures.md`, 06/10/2026), mais seules **12** sont comparées au corpus (section « Ce que les captures ont confirmé ») ; pour les 7 sans capture (fiches TE-02, TE-03, TE-05, TE-07, TE-11, TE-15, RA-15), chaque fiche du corpus finit par la liste des minutages « À vérifier à l'écran ».
 
 Presque toutes les vidéos montrent Serum 1 : traduire les gestes dans Serum 2 et vérifier les noms de contrôle. Les fiches en Serum 2 : BH-07, HC-05, HC-06, HC-09, TE-01, TE-04 à TE-08, TE-14, RA-03 à RA-05, RA-07 à RA-09, RA-11, AF-01 à AF-03, AF-05.
 
@@ -83,7 +83,7 @@ Quand l'utilisateur valide un kick à l'écoute, l'inscrire au registre `signatu
 
 ## Ce que les captures ont confirmé
 
-Source : `kicks-serum-captures.md`, 12 vidéos lues sur l'image : PML (HC-06), MERAKKI (HC-05, AF-01), DNB Academy (AF-03), Ghosthack (AF-04), Octocap (HC-09, AF-05), W. A. Production (BH-01), Strob (BH-02), MHA (BH-03), Wildcrow (BH-04), Loïc (BH-05), DONKONG (BH-06) et TURNCLOAK (BH-07). **Aucune vidéo DM n'est capturée** : la fiche du kick signature ci-dessus (DM-01 à DM-05) reste donc sur des valeurs dites, non lues à l'écran. Les valeurs sont celles affichées au minutage indiqué : un réglage peut changer plus tard dans la vidéo.
+Source : `kicks-serum-captures.md`, 12 des 39 vidéos lues sur l'image (les 27 autres, ajoutées le 06/10/2026, ne sont pas encore comparées) : PML (HC-06), MERAKKI (HC-05, AF-01), DNB Academy (AF-03), Ghosthack (AF-04), Octocap (HC-09, AF-05), W. A. Production (BH-01), Strob (BH-02), MHA (BH-03), Wildcrow (BH-04), Loïc (BH-05), DONKONG (BH-06) et TURNCLOAK (BH-07). **Les captures DM-01 à DM-05 existent** (fichier étendu du 06/10/2026) mais ne sont **pas encore comparées** à la fiche du kick signature ci-dessus, qui reste donc, à ce stade, sur des valeurs dites. Les valeurs sont celles affichées au minutage indiqué : un réglage peut changer plus tard dans la vidéo.
 
 **Confirmé**
 
@@ -110,7 +110,7 @@ Source : `kicks-serum-captures.md`, 12 vidéos lues sur l'image : PML (HC-06), M
 - **Chaîne TURNCLOAK** (BH-07, Serum 2) : Equalizer (210 Hz, Q 60) → Distortion Tube → **Compressor Single** (seuil −32,9 dB, 4:1, attaque 90,1, release 9,7, gain 0) → Distortion. Une chaîne de deux distorsions autour d'un compresseur : à n'essayer qu'avec le sub séparé.
 - **Hors Serum** : DONKONG ajoute ShaperBox 3 (présent dans l'inventaire) ; Octocap, EQ Eight et ShaperBox pour visualiser ; Strob, Pro-C 2 (non vérifié sur le Mac) ; Ableton Freeze. Dans les chaînes de mix du projet, les natifs se remplacent par des plug-ins tiers (règle 6 d'`ableton-live-session`).
 
-**Encore non lu à l'écran** : les 34 autres vidéos du corpus, dont toutes les fiches DM (DM-01 à DM-06) et la plupart des fiches TE et RA.
+**Capturées mais pas encore comparées** : 27 vidéos, dont les fiches DM-01 à DM-05 et DM-07. **Sans capture** : 7 fiches techno et rave (TE-02, TE-03, TE-05, TE-07, TE-11, TE-15, RA-15).
 
 ## Par style
 
@@ -127,7 +127,7 @@ Source : `kicks-serum-captures.md`, 12 vidéos lues sur l'image : PML (HC-06), M
 
 ## Limites
 
-- Les captures d'écran ne couvrent que **12 des 46 vidéos** (`kicks-serum-captures.md`) et aucune fiche DM : pour les autres, les valeurs non dites restent inconnues. La liste « À vérifier à l'écran » de chaque fiche donne les minutages.
-- Les fiches sans transcription (HC-11 = DM-07, TE-15, RA-15) n'apportent aucune valeur.
+- Les captures d'écran couvrent **39 des 46 vidéos** (`kicks-serum-captures.md`), mais l'analyse ci-dessus n'en compare que 12 ; les 27 autres, dont les fiches DM, restent à confronter aux fiches. Pour les 7 sans capture (fiches techno et rave), les valeurs non dites restent inconnues ; la liste « À vérifier à l'écran » de chaque fiche donne les minutages.
+- Les fiches sans transcription (HC-11 = DM-07, TE-15, RA-15) n'apportent aucune valeur dite ; HC-11 = DM-07 a désormais des captures (Sancus, `Ls1e9Br5tPY`), TE-15 et RA-15 n'en ont pas.
 - Les traitements hors Serum cités par les vidéos sont souvent natifs de Live (Glue Compressor, Saturator, OTT d'Ableton, Drum Buss). Dans les chaînes de mix du projet, ils se remplacent par des plug-ins tiers (règle 6 d'`ableton-live-session`).
 - Les styles où le corpus est générique (BH, DM, AF, FB) demandent une vraie référence choisie avec l'utilisateur, puis une comparaison à niveau égal.
