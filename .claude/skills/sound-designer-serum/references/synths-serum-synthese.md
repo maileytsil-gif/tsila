@@ -235,15 +235,15 @@ Les noms de contrôle ont été comparés à `serum2-cartographie.md` (§ 3.1, �
 
 ## Où ces sons rejoignent le projet
 
-- **Stabs, pads et leads Bass House** : `../../bass-house-sound-design/SKILL.md`. Fiches proches : LE-03, LE-04, HO-03, CH-01, CH-04, CH-05.
-- **Basses** : `../../serum-2-basses-house-future-house/SKILL.md`. Débordent sur la basse : PL-11, PL-14 (plucks-basses), HO-12 (riff jump up), DR-06 (drone de basse). Règle du projet : sub et basse médium dans deux instruments, sub mono. LE-03 duplique le patch pour la couche sub : (interp.) la mettre dans un instrument à part.
-- **Hooks** : `../../composer-hooks-funk-electro/SKILL.md` pour la cellule et les notes. Ce corpus donne le timbre : HO-, CH-05, CH-06.
-- **Cuivres** : le « horn » de Fisher (HO-01, HO-02) et la table DX Brass 2 (LE-12) → `../../studio-grade-brass-sound-design/SKILL.md`.
-- **Orgue et keys** : orgue M1 (CH-04), keys (CH-08, CH-10) → `../../studio-grade-funk-keys-synth-sound-design/SKILL.md`.
-- **Imprimer** : DR-10, DR-11, DR-14 et CH-10 rendent le son puis le retravaillent. Capture dans Live : `../../resampling/SKILL.md`. Sampling dans Serum : `sampling-serum-synthese.md`.
+- **Stabs, pads et leads Bass House** : `../modules/bass-house-sound-design/GUIDE.md`. Fiches proches : LE-03, LE-04, HO-03, CH-01, CH-04, CH-05.
+- **Basses** : `../modules/serum-2-basses-house-future-house/GUIDE.md`. Débordent sur la basse : PL-11, PL-14 (plucks-basses), HO-12 (riff jump up), DR-06 (drone de basse). Règle du projet : sub et basse médium dans deux instruments, sub mono. LE-03 duplique le patch pour la couche sub : (interp.) la mettre dans un instrument à part.
+- **Hooks** : `../../compositeur-arrangeur/modules/composer-hooks-funk-electro/GUIDE.md` pour la cellule et les notes. Ce corpus donne le timbre : HO-, CH-05, CH-06.
+- **Cuivres** : le « horn » de Fisher (HO-01, HO-02) et la table DX Brass 2 (LE-12) → `../modules/studio-grade-brass-sound-design/GUIDE.md`.
+- **Orgue et keys** : orgue M1 (CH-04), keys (CH-08, CH-10) → `../modules/studio-grade-funk-keys-synth-sound-design/GUIDE.md`.
+- **Imprimer** : DR-10, DR-11, DR-14 et CH-10 rendent le son puis le retravaillent. Capture dans Live : `../modules/resampling/GUIDE.md`. Sampling dans Serum : `sampling-serum-synthese.md`.
 - **Drops** (interp.) : la variation exigée avant chaque frontière de huit mesures peut passer par une macro automatisée : cutoff avant le drop (DR-05), rate d'un LFO pluck (PL-03), feedback du delay (DR-06).
-- **Émotions** (interp.) : drones et pads servent intros et breaks ; leviers dans `../../composer-trajectoire-emotionnelle/SKILL.md`.
-- **Exécution dans Live** : `../../vst-sound-design/SKILL.md` (chargement sans hot-swap, réglage par clics).
+- **Émotions** (interp.) : drones et pads servent intros et breaks ; leviers dans `../../compositeur-arrangeur/modules/composer-trajectoire-emotionnelle/GUIDE.md`.
+- **Exécution dans Live** : `../modules/vst-sound-design/GUIDE.md` (chargement sans hot-swap, réglage par clics).
 
 ## Limites
 
@@ -251,7 +251,7 @@ Les noms de contrôle ont été comparés à `serum2-cartographie.md` (§ 3.1, �
 - **Transcription automatique** partout, sauf CH-02 et HO-14 (manuelles) et CH-15 (d'apparence manuelle). LE-08 est très bruitée ; HO-15 et PL-04 sont médiocres. Noms de tables douteux : « Basic MDC / CGV / CJW / MCB » (LE-11, LE-13, PL-15, DR-05, PA-05), « HyPA » (LE-08), « JNO » (LE-14), « at plates » (DR-07), « Solid Phase 1 » (PA-13).
 - **Serum 1 à traduire** (68 fiches) : Master Tune → Main Tuning ; FM from B → FM (B) ; LFO Trig / Env / Off → RETRIG / ENVELOPE / FREE ; Chaos de la page Global → types de LFO ; étalement de WT de l'onglet Global → réglages d'unison ; noise utilisé comme sampler → moteur Sample ; 4 macros → 8 ; un filtre → deux. Voir `serum2-cartographie.md` § 13.
 - **Effets natifs de Live filmés** : Saturator (LE-03, CH-02, HO-13), Reverb et Delay en envoi (CH-02), EQ Eight (HO-01, HO-02, CH-02, CH-11, PA-09), Auto Filter et delay (HO-01), Utility (HO-02, HO-04, PL-13, CH-13, CH-15), Pedal (HO-02), Overdrive et Erosion (HO-10, CH-09), Reverb et OTT en groupe (HO-13), Chorus-Ensemble en alternative (HO-13), Hybrid Reverb (CH-13), Spectral Blur et EQ mid/side (CH-15), Auto Pan (PA-08, PA-12), Delay (PA-11), EQ et compresseur (PA-15), Audio Effect Rack (PL-09). Effets MIDI : Chord et Scale (PL-04, PA-13), Arpeggiator (DR-05).
-- **Règle du projet** (règle 6 de `../../ableton-live-session/SKILL.md`) : pas de nouvel effet natif de Live dans les chaînes de mix ; passer par des plug-ins tiers (`../../effets-plugins/references/fiches.md`). Les effets internes de Serum restent permis. Tolérés : instruments natifs, Utility, Compressor en sidechain déjà en place, Auto Filter déjà posé sur une piste MIDI, Hybrid Reverb sur un retour. Chord, Scale et Arpeggiator sont des effets MIDI, pas des traitements de mix (interp., à confirmer avec l'utilisateur).
+- **Règle du projet** (règle 6 de `../../producteur-live/SKILL.md`) : pas de nouvel effet natif de Live dans les chaînes de mix ; passer par des plug-ins tiers (`../../ingenieur-mixage/modules/effets-plugins/references/fiches.md`). Les effets internes de Serum restent permis. Tolérés : instruments natifs, Utility, Compressor en sidechain déjà en place, Auto Filter déjà posé sur une piste MIDI, Hybrid Reverb sur un retour. Chord, Scale et Arpeggiator sont des effets MIDI, pas des traitements de mix (interp., à confirmer avec l'utilisateur).
 - **Plug-ins tiers filmés**, présence sur le Mac non vérifiée : Kickstart 2, Sausage Fattener, Neutron 3, Pro-Q 3, iZotope Trash, Decimort 2, RBass, Camel Crusher, Pro-L, Ozone Imager, soothe, ShaperBox, RC-20, Kilohearts, Valhalla VintageVerb, Pro-R, K-Clip.
 - **Droits.** Beaucoup de fiches recréent des titres publiés (LE-08, LE-14, HO-01, HO-02, HO-04, HO-08, HO-09, HO-10, HO-11, PL-07…) et donnent parfois leur MIDI (HO-06, CH-02). Ne reprendre que le timbre, jamais la mélodie ni les paroles (règle « Référence » d'AGENTS.md). Les presets de packs, gratuits ou payants (CH-15 « Power Saw » du pack Sunset, PL-05, HO-01, PA-08), ne s'utilisent qu'avec une licence vérifiée. Samples de DR-09, PA-10, PA-14 : packs tiers, droits à vérifier.
 - **Notes.** C3 = 60 dans Live ; le numéro MIDI fait foi. PL-14 joue « C0–C1 », soit MIDI 24 à 36 si la vidéo suit la même convention (interp.). DR-14 sample en « C4 » sans dire sa convention. DR-08 : « C3 = lecture normale », cohérent avec la cartographie (osc Sample sans pitch tracking = note 60, § 3.1).

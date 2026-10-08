@@ -4,7 +4,7 @@ Troisième fichier du lot de synthés : le son qui porte le riff du drop ou le t
 - l'étude des quinze tutoriels de hooks, HO-01 à HO-15, de `../tutoriels-synths-serum.md`, et sa synthèse `../synths-serum-synthese.md` (section Hook) ;
 - la cartographie de Serum 2 (`../serum2-cartographie.md`) et `../serum2-fx-clip-arp.md`.
 
-Ce fichier donne le **timbre**. La cellule et les notes du hook s'écrivent avec `../../../composer-hooks-funk-electro/SKILL.md` ; les cuivres de type « horn » se comparent à `../../../studio-grade-brass-sound-design/SKILL.md`.
+Ce fichier donne le **timbre**. La cellule et les notes du hook s'écrivent avec `../../../compositeur-arrangeur/modules/composer-hooks-funk-electro/GUIDE.md` ; les cuivres de type « horn » se comparent à `../../modules/studio-grade-brass-sound-design/GUIDE.md`.
 
 **Rien de ce fichier n'a été entendu** (règle 4 d'`AGENTS.md`). Étiquettes : **[SOURCE HO-nn]**, **[CALCUL]**, **[DÉDUCTION]**, **[ORIGINAL]**, comme dans `leads.md`.
 
@@ -230,7 +230,7 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les h
 - **Test** : unison 14 sur un patch mono coûte peu de voix ; avec 50 % de reverb, vérifier que le hook ne noie pas la caisse claire quand la batterie entre.
 
 ### HK13 Riff jump-up
-- **Registre médium-grave** : le « lead » jump-up est le riff du drop (HO-12). Il touche à la basse ; voir aussi `../../../serum-2-basses-house-future-house/references/recettes/dnb-f06-jump-up.md`. Le grave vient d'un sub sur sa piste.
+- **Registre médium-grave** : le « lead » jump-up est le riff du drop (HO-12). Il touche à la basse ; voir aussi `../../modules/serum-2-basses-house-future-house/references/recettes/dnb-f06-jump-up.md`. Le grave vient d'un sub sur sa piste.
 - **Patch** [SOURCE HO-12] :
   - Tempo 175. OSC A : Basic Shapes, **OCT −2**, RAND désactivé, WT POS **2** ; WARP 1 **Sync ≈ 8** ; LEVEL au maximum.
   - LFO en RETRIG dessiné (cible : LEVEL ou WT POS, interprétation de l'étude).
@@ -319,7 +319,7 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les h
 - **Test** : la vidéo est la seule source ; un LFO aussi lent peut sonner statique sur une phrase courte.
 
 ### HK20 Hook doux à deux voix — signature sous 124
-- **Recette [ORIGINAL]**, pour la règle « Signature sous 124 BPM » d'`AGENTS.md` : un hook qui reste doux à côté du kick de la signature (`../../../drums-signature/references/signature.md`).
+- **Recette [ORIGINAL]**, pour la règle « Signature sous 124 BPM » d'`AGENTS.md` : un hook qui reste doux à côté du kick de la signature (`../../../producteur-rythmique/modules/drums-signature/references/signature.md`).
 - **Patch** :
   - OSC A : Basic Shapes, sinus, RAND 0.
   - OSC B : Basic Shapes, triangle, SEM **+4** (tierce majeure ; **+3** pour une tierce mineure), LEVEL 45 %.
@@ -336,7 +336,7 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les h
 
 ## Motifs de départ (grilles vérifiées)
 
-Numérotation de Live (C3 = 60). Cellules écrites ici, aucune n'est reprise d'un titre. Vérification, depuis le dossier du skill : `python3 ../composer-hooks-funk-electro/scripts/grille.py --verifier references/synths/hooks.md`. Notation Producer Pal : `--fichier references/synths/hooks.md --titre <titre> --format ppal`.
+Numérotation de Live (C3 = 60). Cellules écrites ici, aucune n'est reprise d'un titre. Vérification, depuis le dossier du skill : `python3 ../compositeur-arrangeur/modules/composer-hooks-funk-electro/scripts/grille.py --verifier references/synths/hooks.md`. Notation Producer Pal : `--fichier references/synths/hooks.md --titre <titre> --format ppal`.
 
 ```grille
 titre: Tech house 126 — horn (HK01, HK02)
@@ -363,5 +363,5 @@ hook: E4[1:2] A4[1&:2] B4[2:2] C#5[2&:4] B4[3a:2] A4[4&:2] | E4[1:2] G#4[1&:2] B
 
 - Retrouver dans Serum 2 : « BS Subies » [ASR], « BS Filthy », « BS2 Filthy », les tables Juno, « MB Saw », « MS Saw » et « Distorted Sub DKS » [ASR], « Alpha NZ », « AC Hum ». Lire la forme du LFO « double aileron » de HK01 et la cible du second LFO de HK11.
 - Lire l'unité du Sync de HK19 et le temps du delay de HK06.
-- Écouter chaque recette (règle 10 de `leads.md`) dans le contexte du drop, avec le sidechain ; garder un ou deux hooks par morceau et consigner le preset retenu dans la mémoire du projet (`../../../memoire-projet/SKILL.md`).
+- Écouter chaque recette (règle 10 de `leads.md`) dans le contexte du drop, avec le sidechain ; garder un ou deux hooks par morceau et consigner le preset retenu dans la mémoire du projet (`../../../producteur-live/modules/memoire-projet/GUIDE.md`).
 - Fichiers suivants du lot : accords, pads, drones.

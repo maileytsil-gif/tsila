@@ -19,7 +19,7 @@ Premier fichier du lot de synthés (leads, plucks, hooks, accords, pads, drones)
    - 120-200 Hz pour un pluck ou des accords ;
    - 100-150 Hz pour un pad ou un drone.
 
-   Plusieurs tutoriels gardent un SUB ou un oscillateur à −3 octaves dans le patch (LE-03, LE-12, LE-13). Les recettes l'éteignent ou le changent en simple modulateur à LEVEL 0. Si la partie a besoin d'un grave, il vient d'une recette de `../../../serum-2-basses-house-future-house/references/recettes/house-f01-sub.md`, `dnb-f01-sub.md` ou `dubstep-f01-sub.md`, sur une piste à part.
+   Plusieurs tutoriels gardent un SUB ou un oscillateur à −3 octaves dans le patch (LE-03, LE-12, LE-13). Les recettes l'éteignent ou le changent en simple modulateur à LEVEL 0. Si la partie a besoin d'un grave, il vient d'une recette de `../../modules/serum-2-basses-house-future-house/references/recettes/house-f01-sub.md`, `dnb-f01-sub.md` ou `dubstep-f01-sub.md`, sur une piste à part.
 2. **Départ** : menu principal › Init Preset. Dans l'Init, seul OSC A est actif ; il va dans FILTER 1, qui est éteint et en MG Low 6 (cartographie, § 5 et § 6). Enveloppes notées ATK / HOLD / DEC / SUS / REL.
 3. **Noms de Serum 2** pour les tutoriels faits en Serum 1 (cartographie, § 13) :
    - Master Tune devient **Main Tuning** (destination Global) ;
@@ -33,7 +33,7 @@ Premier fichier du lot de synthés (leads, plucks, hooks, accords, pads, drones)
    - `Space` : MIX de la reverb et du delay internes.
 
    MACRO 5 à 8 restent libres pour un geste propre à la recette (glide, saut d'octave). Vérifier le « + » sur chaque destination avant d'assigner (cartographie, § 7.3). Une macro automatisée peut porter la variation exigée avant chaque frontière de huit mesures (règle « Drops » d'`AGENTS.md`).
-5. **Effets.** Les modules internes de Serum restent permis. Après Serum, seulement des plug-ins tiers (règle 6 de `../../../ableton-live-session/SKILL.md`). Dans l'installation, d'après `../../../effets-plugins/references/fiches.md` :
+5. **Effets.** Les modules internes de Serum restent permis. Après Serum, seulement des plug-ins tiers (règle 6 de `../../../producteur-live/SKILL.md`). Dans l'installation, d'après `../../../ingenieur-mixage/modules/effets-plugins/references/fiches.md` :
    - ValhallaVintageVerb pour une reverb externe, de préférence sur un retour ;
    - J37 Tape ou RazorClip pour une saturation ou un écrêtage ;
    - Pro-Q 4 pour l'égalisation ;
@@ -271,7 +271,7 @@ Premier fichier du lot de synthés (leads, plucks, hooks, accords, pads, drones)
 - **Vibrato** [CALCUL] : à 124 BPM, une croche dure 242 ms et une noire 484 ms. Avec 200 ms de DELAY et 150 ms de RISE, le vibrato commence à peine sur une croche et ne se déploie que sur une noire ou plus, comme chez un chanteur [FICHE].
 - **Macros** : `Tone` CUTOFF 25 → 60 % · `Motion` vibrato 0 → ±20 cents · `Dirt` DRIVE 0 → 45 · `Space` MIX du Delay 0 → 25 % · MACRO 5 `Glide` PORTA 0 → 150 ms.
 - **Jeu** : MIDI 67 à 84, phrases chantées, intervalles conjoints, glissades sur les notes liées.
-- **Test** : avec le kick de la signature (`../../../drums-signature/references/signature.md`), le lead doit rester doux ; s'il durcit, baisser la Tape Sat. avant le CUTOFF.
+- **Test** : avec le kick de la signature (`../../../producteur-rythmique/modules/drums-signature/references/signature.md`), le lead doit rester doux ; s'il durcit, baisser la Tape Sat. avant le CUTOFF.
 
 ### LD13 Supersaw dancefloor DnB
 - **Patch** [SOURCE LE-10, lead 1] :
@@ -416,7 +416,7 @@ Premier fichier du lot de synthés (leads, plucks, hooks, accords, pads, drones)
 
 ## Motifs de départ (grilles vérifiées)
 
-Numérotation de Live (C3 = 60). Les mélodies sont écrites ici, aucune n'est reprise d'un titre. Vérification, depuis le dossier du skill : `python3 ../composer-hooks-funk-electro/scripts/grille.py --verifier references/synths/leads.md`. La notation Producer Pal s'obtient avec `--fichier references/synths/leads.md --titre <titre> --format ppal`, et `--transposer N` donne la tonalité du Set.
+Numérotation de Live (C3 = 60). Les mélodies sont écrites ici, aucune n'est reprise d'un titre. Vérification, depuis le dossier du skill : `python3 ../compositeur-arrangeur/modules/composer-hooks-funk-electro/scripts/grille.py --verifier references/synths/leads.md`. La notation Producer Pal s'obtient avec `--fichier references/synths/leads.md --titre <titre> --format ppal`, et `--transposer N` donne la tonalité du Set.
 
 ```grille
 titre: Afro house 122 — lead en doubles croches (LD03)
@@ -443,5 +443,5 @@ lead: G4[1:4] F4[2:2] Eb4[2&:2] C4[3:4] D4[4:2] Eb4[4&:2] | C5[1:4] Bb4[2:2] Ab4
 
 - Retrouver dans Serum 2 les tables et bruits dits dans les vidéos : « PWM Mini », « J106 HP », « I Can Has Kick », « Monster 1 » et « Monster 3 », « Kick Attack 29 », « Distorted Bass Dropper », « Saw Drift 303 », « Hyper Digital Saw », « Arp White », « DX Brass 2 », « Acid ». Les noms marqués [ASR] sont à identifier à l'écran.
 - Lire l'unité du warp Sync et la valeur de FM « new FM function » de LE-12 avant de fixer les macros.
-- Écouter chaque recette selon la règle 10, garder deux ou trois leads par morceau et consigner le preset retenu dans la mémoire du projet (`../../../memoire-projet/SKILL.md`).
+- Écouter chaque recette selon la règle 10, garder deux ou trois leads par morceau et consigner le preset retenu dans la mémoire du projet (`../../../producteur-live/modules/memoire-projet/GUIDE.md`).
 - Fichiers suivants du lot : plucks, hooks, accords, pads, drones.

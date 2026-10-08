@@ -13,12 +13,12 @@ Sixième et dernier fichier du lot de synthés : drones, textures évolutives, a
 
 Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les drones :
 
-1. **High Pass à 80-120 Hz.** Un drone d'atmosphère ne descend pas dans le grave : le sub et la basse médium sont dans leurs instruments (règle « Grave » d'`AGENTS.md`). Plusieurs tutoriels coupent beaucoup moins bas (DR-01 laisse LO CUT à 0, DR-02 coupe à 35 Hz) : ici, Equalizer en High Pass à **100 Hz** par défaut, 80 Hz pour les drones sombres de DnB (DN09, DN12), 120 Hz pour les textures de bruit. Deux recettes (DN06, DN15) jouent dans le grave par nature : elles tiennent le médium grave (≥ 80 Hz) et laissent le sub à une recette de `../../../serum-2-basses-house-future-house/references/recettes/`.
+1. **High Pass à 80-120 Hz.** Un drone d'atmosphère ne descend pas dans le grave : le sub et la basse médium sont dans leurs instruments (règle « Grave » d'`AGENTS.md`). Plusieurs tutoriels coupent beaucoup moins bas (DR-01 laisse LO CUT à 0, DR-02 coupe à 35 Hz) : ici, Equalizer en High Pass à **100 Hz** par défaut, 80 Hz pour les drones sombres de DnB (DN09, DN12), 120 Hz pour les textures de bruit. Deux recettes (DN06, DN15) jouent dans le grave par nature : elles tiennent le médium grave (≥ 80 Hz) et laissent le sub à une recette de `../../modules/serum-2-basses-house-future-house/references/recettes/`.
 2. **Trois échelles de temps** [FICHE] : un mouvement rapide (grain, quelques Hz), un lent (respiration, 1 à 4 mesures), un très lent (8 à 32 mesures, ou une enveloppe de 12 à 19 s). Une recette en a deux ou trois ; chacune dit lesquelles.
 3. **Tempos de référence** [CALCUL] : à 122 BPM, une mesure dure 1,97 s, 4 mesures 7,87 s, 8 mesures 15,7 s ; à 124 BPM, 1,94 s, 7,74 s, 15,5 s ; à 140 BPM, 1,71 s, 6,86 s, 13,7 s, et 32 mesures 54,9 s ; à 174 BPM, 1,38 s, 5,52 s, 11,0 s, et 32 mesures 44,1 s.
 4. **La reverb est souvent le son** : en insert à MIX élevé, elle appartient au patch et sera resamplée avec lui ; sur un retour à 10-30 %, elle appartient au mix [FICHE]. Chaque fiche dit lequel. ValhallaVintageVerb (inventaire) pour une reverb externe, sur un retour.
 5. **Largeur et mono** : les drones sont larges ; pour garder le grave propre, **Splitter M/S** avec un Equalizer en High Pass sur la voie SIDE (DR-04, DR-08), ou Ozone Imager 2 en dessous de 180 Hz [SOURCE PA-02 pour la valeur]. Vérifier en mono.
-6. **Resampling** : plusieurs drones sont imprimés puis rechargés dans un moteur Sample, Granular ou Spectral (DR-10, DR-11, DR-14). Capture dans Live : `../../../resampling/SKILL.md` ; dans Serum, l'icône d'onde à gauche du logo exporte la dernière note jouée (cartographie § 2.3).
+6. **Resampling** : plusieurs drones sont imprimés puis rechargés dans un moteur Sample, Granular ou Spectral (DR-10, DR-11, DR-14). Capture dans Live : `../../modules/resampling/GUIDE.md` ; dans Serum, l'icône d'onde à gauche du logo exporte la dernière note jouée (cartographie § 2.3).
 7. **Droits** : les tutoriels utilisent des samples de packs tiers (DR-08, DR-09, DR-10, DR-14) ; n'utiliser qu'un sample dont la licence est vérifiée, ou un son d'usine de Serum, ou ta propre prise (règle 8 de `leads.md`).
 8. **Transition avant une frontière de huit mesures** : le cutoff automatisé en montée est le geste le plus simple (DR-05, DR-06) ; chaque fiche indique la macro à utiliser (règle « Drops » d'`AGENTS.md`).
 9. **Notes** : C3 = 60 dans Live ; le numéro MIDI fait foi. MIDI 41 = F1 (87,3 Hz), MIDI 53 = F2 (174,6 Hz), MIDI 65 = F3 (349,2 Hz) [CALCUL].
@@ -165,7 +165,7 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les d
 - **Transition** [SOURCE DR-06] : la macro `Tone` automatisée pour les montées ; FEEDBACK et MIX du Delay montés pour la transition.
 - **Macros** : `Tone` = MACRO « Filter », 10 → 80 % · `Motion` profondeur du LFO 6 → 55 % · `Dirt` MIX de la Diode 1 0 → 60 % · `Space` niveau de BUS 1 0 → 100 %.
 - **Jeu** : une note tenue sous un pad aérien, intro et breakdown, MIDI 52 à 64.
-- **Test** : avec un sub joué en même temps sur sa piste, vérifier en mono que la phase du drone ne l'annule pas (`../../../kick-bass-equilibre/SKILL.md`).
+- **Test** : avec un sub joué en même temps sur sa piste, vérifier en mono que la phase du drone ne l'annule pas (`../../../producteur-rythmique/modules/kick-bass-equilibre/GUIDE.md`).
 
 ### DN07 Drone à évolution imprévisible
 - **Méthode** [SOURCE DR-07, Serum 2, peu de valeurs chiffrées] : on met une table en mouvement, puis le filtre, et chaque mouvement est perturbé par un second LFO aléatoire.
@@ -256,7 +256,7 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les d
   3. La note F jouée = la **hauteur d'origine** du sample (« C = −5 demi-tons » : MIDI 60 transpose de −5).
   4. Filtre (retire les aigus) ; **filtre spectral** bas et haut ; UNISON, Distortion, Reverb, Compressor, Delay, Equalizer.
   5. Note tenue aussi longtemps que voulu ; S&H → FIN à nouveau.
-- **Idée bonus** [SOURCE DR-11] : poser une **reese en dessous** (`../../../serum-2-basses-house-future-house/references/recettes/dnb-f02-reese.md`) ; n'importe quelle source (samples de pads) convient.
+- **Idée bonus** [SOURCE DR-11] : poser une **reese en dessous** (`../../modules/serum-2-basses-house-future-house/references/recettes/dnb-f02-reese.md`) ; n'importe quelle source (samples de pads) convient.
 - **Voicing de Fm7** [CALCUL] : F, Ab, C, Eb = MIDI 53, 56, 60, 63 ; la tonique F à 174,6 Hz reste au-dessus du High Pass de 100 Hz.
 - **Valeurs de départ** [ORIGINAL] : UNISON 5, DETUNE 0,1 ; LFO S&H à 6 Hz, SMOOTH 100, ±8 cents ; NOISE → FM (B) 15 %.
 - **ENV 1** : 1 s / 0 / 4 s / −3 dB / 3 s [ORIGINAL].
@@ -373,7 +373,7 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les d
 - **Test** : le bruit rose de Serum 2 est stéréo à 100 ; vérifier le mono.
 
 ### DN19 Fond doux sous 124
-- **Recette [ORIGINAL]** pour la règle « Signature sous 124 BPM » d'`AGENTS.md` : un fond qui laisse le kick doux et clair de la signature (`../../../drums-signature/references/signature.md`).
+- **Recette [ORIGINAL]** pour la règle « Signature sous 124 BPM » d'`AGENTS.md` : un fond qui laisse le kick doux et clair de la signature (`../../../producteur-rythmique/modules/drums-signature/references/signature.md`).
 - **Patch** :
   - OSC A : sinus, RAND 0. OSC B : triangle, SEM +7, LEVEL 40 %. NOISE rose, LEVEL 4 %, hors du filtre.
   - FILTER 1 MG Low 12 sur A et B, CUTOFF 35 %. ENV 1 2 s / 0 / 4 s / −6 dB / 3 s.
@@ -398,7 +398,7 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les d
 
 ## Motifs de départ (grilles vérifiées)
 
-Numérotation de Live (C3 = 60). Notes tenues, une voix par ligne ; les voicings sont écrits ici. Vérification, depuis le dossier du skill : `python3 ../composer-hooks-funk-electro/scripts/grille.py --verifier references/synths/drones.md`. Notation Producer Pal : `--fichier references/synths/drones.md --titre <titre> --format ppal`.
+Numérotation de Live (C3 = 60). Notes tenues, une voix par ligne ; les voicings sont écrits ici. Vérification, depuis le dossier du skill : `python3 ../compositeur-arrangeur/modules/composer-hooks-funk-electro/scripts/grille.py --verifier references/synths/drones.md`. Notation Producer Pal : `--fichier references/synths/drones.md --titre <titre> --format ppal`.
 
 ```grille
 titre: Melodic techno 124 — une note tenue (DN04, DN05)
@@ -429,5 +429,5 @@ tonique: F2[1:16] | F2[1:16]
 
 - Retrouver dans Serum 2 : « Soar Electricity » [ASR], « Dist Sub » [ASR], « Cream » [ASR], « Glass Lid 5 » [ASR], « Analog_BD_Sin », « 4088 » [ASR], « Mellow but Unstable » [ASR], « Basic CJW » [ASR], « ARP White » [ASR], « Juno Chorus », « at plates » [ASR], « Bottle Blow », « Vocal Hum », « Rain 100 High » (déjà cité dans `pads.md`), « Alpha NZ » ; le préréglage « MB OTT » [ASR] ; l'IR « Long » de Convolve ; les types **Geiger**, **Pink** et **Brown** du NOISE.
 - Lire à l'écran : le mode aléatoire de l'ARP de Serum (DN05), le sens de la reverb « 70-80 » (DN15), la cible de ENV 2 (DN15), le sens de l'accord de sinus (DN10).
-- Écouter chaque recette (règle 10 de `leads.md`) avec la basse et le sub du morceau, en mono ; garder un ou deux drones par morceau et consigner le preset retenu dans la mémoire du projet (`../../../memoire-projet/SKILL.md`).
+- Écouter chaque recette (règle 10 de `leads.md`) avec la basse et le sub du morceau, en mono ; garder un ou deux drones par morceau et consigner le preset retenu dans la mémoire du projet (`../../../producteur-live/modules/memoire-projet/GUIDE.md`).
 - Le lot de synthés est complet : 100 recettes en cinq fichiers (leads, plucks, hooks, accords, pads) plus celui-ci, soit 120.

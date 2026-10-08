@@ -1,37 +1,40 @@
 #!/usr/bin/env bash
 # Installe les skills du dépôt pour Claude Code (~/.claude/skills) et Qwen Code (~/.qwen/skills), sur le Mac.
-# Usage : bash outils/installer.sh [--claude] [--qwen] [--producer-pal-qwen] [--skill NOM]... [--appliquer]
+# Usage : bash outils/installer.sh [--claude] [--qwen] [--producer-pal-qwen] [--retirer-absents] [--skill NOM]... [--appliquer]
 #   Sans --appliquer : SIMULATION, rien n'est écrit ; la liste de ce qui changerait est affichée.
 #   Sans --claude ni --qwen : chaque outil dont le dossier existe (~/.claude, ~/.qwen).
-#   --claude            copie chaque skill dans ~/.claude/skills/<nom>
+#   --claude            copie chaque skill, avec ses modules, dans ~/.claude/skills/<nom>
 #   --qwen              ~/.qwen/skills/<nom> devient un lien vers la copie Claude (une seule copie à tenir à jour) ;
 #                       sans copie Claude, le skill est copié dans ~/.qwen/skills/<nom>
 #   --producer-pal-qwen ajoute le serveur MCP Producer Pal à ~/.qwen/settings.json (npx producer-pal@latest), s'il n'y est pas
+#   --retirer-absents   déplace dans ~/.skills-sauvegardes/ tout skill installé (dossier ou lien) qui n'existe plus dans le
+#                       dépôt — par exemple les 44 anciens skills après le regroupement en 5 ; rien n'est supprimé
 #   --skill NOM         limiter à ce skill (répétable)
 # Une version installée différente est déplacée dans ~/.skills-sauvegardes/<date>/<outil>/, HORS des dossiers de skills
 # (une copie laissée à côté serait chargée comme un second skill du même nom). Les données de l'utilisateur rangées
-# dans les skills (registre de signature de drums-signature) sont conservées si elles ont changé depuis l'installation.
+# dans les skills (registre de signature du module drums-signature) sont conservées si elles ont changé depuis l'installation.
 set -euo pipefail
 depot="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 source_skills="$depot/.claude/skills"
 [[ -d "$source_skills" ]] || { echo "dossier introuvable : $source_skills" >&2; exit 1; }
 # Fichiers que l'utilisateur fait évoluer dans sa copie installée : jamais écrasés.
-DONNEES="drums-signature/references/signature.md drums-signature/scripts/signature.json"
+DONNEES="producteur-rythmique/modules/drums-signature/references/signature.md producteur-rythmique/modules/drums-signature/scripts/signature.json"
 
-claude=0; qwen=0; ppal=0; appliquer=0; choix=""
+claude=0; qwen=0; ppal=0; retirer=0; appliquer=0; choix=""
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --claude) claude=1 ;;
     --qwen) qwen=1 ;;
     --producer-pal-qwen) ppal=1 ;;
+    --retirer-absents) retirer=1 ;;
     --appliquer) appliquer=1 ;;
     --skill) shift; [[ $# -gt 0 ]] || { echo "--skill attend un nom" >&2; exit 2; }; choix="$choix $1" ;;
-    -h|--help) sed -n '2,13p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
+    -h|--help) sed -n '2,15p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
     *) echo "option inconnue : $1 (--help)" >&2; exit 2 ;;
   esac
   shift
 done
-if [[ $claude -eq 0 && $qwen -eq 0 && $ppal -eq 0 ]]; then
+if [[ $claude -eq 0 && $qwen -eq 0 && ( $ppal -eq 0 || $retirer -eq 1 ) ]]; then  # --producer-pal-qwen seul n'installe rien
   [[ -d "$HOME/.claude" ]] && claude=1
   [[ -d "$HOME/.qwen" ]] && qwen=1
   if [[ $claude -eq 0 && $qwen -eq 0 ]]; then
@@ -93,6 +96,17 @@ copier() {  # $1 nom, $2 dossier de skills cible, $3 outil
   done
 }
 
+retirer_absents() {  # $1 outil, $2 dossier de skills installés : ce qui n'est plus un skill du dépôt part en sauvegarde
+  [[ -d "$2" ]] || return 0
+  local e nom
+  for e in "$2"/* "$2"/.[!.]*; do
+    [[ -e "$e" || -L "$e" ]] || continue
+    nom="$(basename "$e")"
+    [[ -f "$source_skills/$nom/SKILL.md" ]] && continue
+    faire "$1 : $nom n'est plus dans le dépôt → $sauvegardes/$1/$nom" sauvegarder "$e" "$1"
+  done
+}
+
 if [[ $claude -eq 1 && -e "$HOME/.claude/skills" && "$HOME/.claude/skills" -ef "$source_skills" ]]; then
   echo "Claude Code : ~/.claude/skills est le dossier du dépôt lui-même (lien) : rien à copier"
   claude=0
@@ -101,6 +115,7 @@ if [[ $claude -eq 1 ]]; then
   echo "Claude Code → ~/.claude/skills"
   [[ $appliquer -eq 1 ]] && mkdir -p "$HOME/.claude/skills"
   for nom in $choix; do copier "$nom" "$HOME/.claude/skills" claude; done
+  if [[ $retirer -eq 1 ]]; then retirer_absents claude "$HOME/.claude/skills"; fi
 fi
 
 # ~/.qwen/skills lui-même en lien : écrire dedans modifierait sa cible (copie Claude ou dépôt). Ne rien y toucher.
@@ -128,6 +143,7 @@ if [[ $qwen -eq 1 ]]; then
       copier "$nom" "$HOME/.qwen/skills" qwen
     fi
   done
+  if [[ $retirer -eq 1 ]]; then retirer_absents qwen "$HOME/.qwen/skills"; fi
 fi
 
 if [[ $ppal -eq 1 ]]; then

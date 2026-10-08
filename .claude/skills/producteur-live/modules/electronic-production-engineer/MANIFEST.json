@@ -1,0 +1,401 @@
+{
+  "name": "electronic-production-engineer",
+  "version": "1.6.0",
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "cb84571752749ff8048ece8df711026bbe7e6e8d707d5b0896246b395fb7a2a9",
+      "bytes": 6338
+    },
+    {
+      "path": "README.md",
+      "sha256": "062ace58690773e6a1745557268cf965472423b741cd286ecf92a5311a0dc154",
+      "bytes": 3068
+    },
+    {
+      "path": "GUIDE.md",
+      "sha256": "f084fa7253096f6c8b1f0dfa6c98b13baae5b74b1623ed22bd804a2e093a0123",
+      "bytes": 14675
+    },
+    {
+      "path": "SOURCES.json",
+      "sha256": "f825524ecfc20e34336f1c7b9acd247a22b3d5aa99a3b0a321e8b050cbcbf648",
+      "bytes": 13763
+    },
+    {
+      "path": "SOURCES.md",
+      "sha256": "a9801a26a3cf3c7f47d40a0aa97bcb93380cf9baa0b161a10e472c9eaf93fdc3",
+      "bytes": 7030
+    },
+    {
+      "path": "VERSION",
+      "sha256": "cb1d9a30bc4ab8a397f39b7d786bb82aca0b816077eefc35d7c822017d75f6a5",
+      "bytes": 6
+    },
+    {
+      "path": "adapters/INSTALL.md",
+      "sha256": "260cecd699a6a40241fcae2d7abf1e134cb3f6a07798cb6b8b0ef11b512c60c6",
+      "bytes": 2106
+    },
+    {
+      "path": "adapters/MODEL-GUIDANCE.md",
+      "sha256": "c343b01ba99e7d1b53a426ae3a22cb3df7dca21cff40577b839f658dcdcebc3a",
+      "bytes": 1303
+    },
+    {
+      "path": "adapters/ollama-routing.md",
+      "sha256": "001a58465ecb173fd2ef3c1f6a817437c961d59f2913291cfddb7f4259e7bcda",
+      "bytes": 2234
+    },
+    {
+      "path": "bridge/README.md",
+      "sha256": "cda2b17bcf2d200828ef2c9c242e5c23af4ad7db62efa435c43b1f9583598958",
+      "bytes": 2724
+    },
+    {
+      "path": "bridge/profile-example.json",
+      "sha256": "8dd51be1b003be5444a6457406e11fcf1fdaf6c6e7e282db92036815e00d947d",
+      "bytes": 927
+    },
+    {
+      "path": "bridge/semantic-vocabulary.json",
+      "sha256": "8f3b065e1e17a8ec0932e203d1ffbf025b44aef8ba99b7a60b8487220603808f",
+      "bytes": 2154
+    },
+    {
+      "path": "docs/bridge-safety-and-semantics.md",
+      "sha256": "c21525598c0c79837df3b157b0b091529a8fa90fb76ce136dfa6c95703fcb9ac",
+      "bytes": 7366
+    },
+    {
+      "path": "docs/claude-handoff-and-research-index.md",
+      "sha256": "5ca9969b65a1a4dad6507d15582e1ca6c7c6c1f11b788eea8dfc5353ec73f5fd",
+      "bytes": 2969
+    },
+    {
+      "path": "docs/production-workflow.md",
+      "sha256": "15209db210105cdc077ba147337742bdd9703b593c1455732ad3919016e7b291",
+      "bytes": 4173
+    },
+    {
+      "path": "docs/user-setup-and-control-surfaces.md",
+      "sha256": "91b0b5933df64964967f6df9dcb923434c3b2119ce03dca94b133db4f801b3fc",
+      "bytes": 4974
+    },
+    {
+      "path": "examples/bridge-action-plan.json",
+      "sha256": "21c9fe560fcfb6fff466d2f2ca0435548450d089d6b1cfa0920d251aef4c237c",
+      "bytes": 1215
+    },
+    {
+      "path": "examples/bridge-discovery-output.json",
+      "sha256": "16b185c3466764cd76c66fe2f819f8e061415701b84ca71d231cbe0bf6db2e65",
+      "bytes": 911
+    },
+    {
+      "path": "examples/project-lifecycle-example.json",
+      "sha256": "1bdac1d8c6a934812195c775cb342643f41ab58cc7490472f3e1d71ce80f91f9",
+      "bytes": 575
+    },
+    {
+      "path": "examples/semantic-bridge-plan-example.json",
+      "sha256": "d0f6c3fcb835416acd0d4aa2d595c08f0a4e21bd11c8ae644350b206a512b416",
+      "bytes": 1768
+    },
+    {
+      "path": "examples/spatial-mix-plan-example.json",
+      "sha256": "9ec89e86d33191dc385793e1daf55169c2852b0207e8ed65b57b5d08923b03ce",
+      "bytes": 1768
+    },
+    {
+      "path": "examples/spatial-plan-tech-house.json",
+      "sha256": "24a84dc0a7eebab185b5074a1099fac31038eba7a45241427582c43b51ba4eda",
+      "bytes": 3806
+    },
+    {
+      "path": "ollama/Modelfile",
+      "sha256": "f126b6546b1ecaaaf2b942562f3fa348b92c83f6d1b248b49784a5c77ee138fd",
+      "bytes": 641
+    },
+    {
+      "path": "ollama/run_skill.py",
+      "sha256": "061ec100c845f2b09350f23c489f0d90da957ef16e808278a40ee62c8e8c2e35",
+      "bytes": 12302
+    },
+    {
+      "path": "references/00-operating-principles.md",
+      "sha256": "b02f075b117a68af56b4179742495bea9a4cec39e537ed627b562f0590f92e0d",
+      "bytes": 1523
+    },
+    {
+      "path": "references/01-studio-inventory.md",
+      "sha256": "e110f0930607d4cb62a76016c257a9c35ecbccf9e1b3b0511be59eefcacbcf39",
+      "bytes": 13276
+    },
+    {
+      "path": "references/02-capability-modes.md",
+      "sha256": "23d3c127a94bafbcbb0207d689db30da8f608b658d70c0c5773b1e091e8733fb",
+      "bytes": 4152
+    },
+    {
+      "path": "references/03-end-to-end-production-lifecycle.md",
+      "sha256": "6389f2f23812ec578c7d58e48470395cc664cb673a7610f6fc4b1dcb43c6fc23",
+      "bytes": 5406
+    },
+    {
+      "path": "references/10-genre-router.md",
+      "sha256": "ce65de0d2079beb32ca5447ccc1590da23e7d4b3d735c7bd62583dcad9d40d75",
+      "bytes": 3246
+    },
+    {
+      "path": "references/20-arrangement-engine.md",
+      "sha256": "a7f5e5d4c5440e4794a44e7ea2ea6145dc0303ea843cff84b5b9fd29f8c27eea",
+      "bytes": 4092
+    },
+    {
+      "path": "references/30-low-end-engine.md",
+      "sha256": "5d7d2983b70d028a24622c2b0989636b5438248b152293cd97942c5de2258d03",
+      "bytes": 3654
+    },
+    {
+      "path": "references/31-groove-drums-engine.md",
+      "sha256": "bf75db427edd2364f32fe23e6a1c40db3614ab4e7491fc9667241ee5e2f4cfb1",
+      "bytes": 2497
+    },
+    {
+      "path": "references/32-sound-design-engine.md",
+      "sha256": "4b851a844d72c6917879cb85a0497f3cda7e25f100d5f0946a8ed2639f2ad20b",
+      "bytes": 8873
+    },
+    {
+      "path": "references/33-sampling-stutter-engine.md",
+      "sha256": "a2b0fd0c36851850383343df404244838e4e2c1d8d064fc066b09b7199ed53f8",
+      "bytes": 7746
+    },
+    {
+      "path": "references/34-robotic-bass-vocoder-vocal-engine.md",
+      "sha256": "6cfd720fb63a4c235e8ae58c7aad1719eea6d6fcece65c3f432554894f003a8f",
+      "bytes": 7775
+    },
+    {
+      "path": "references/35-dubstep-bass-engine.md",
+      "sha256": "09cf430d942216e28ff800428674714a04589af6c3e6042e73b5ab785ccb02e6",
+      "bytes": 5476
+    },
+    {
+      "path": "references/36-dnb-engine.md",
+      "sha256": "695831fda9671a2e0be8e382c188f70e3eadf544b5e7c3a3b93693d992341697",
+      "bytes": 7460
+    },
+    {
+      "path": "references/37-drum-transient-design.md",
+      "sha256": "67cb808cacd3c48a5838d7df3f35f1c63c9d8c8aa3674b866d786d8742dab84b",
+      "bytes": 4859
+    },
+    {
+      "path": "references/38-fx-atmos-transitions.md",
+      "sha256": "616f0d80e976a957437d4668e25b859ebcf61400c66efb04f8df6e21a96d1813",
+      "bytes": 5581
+    },
+    {
+      "path": "references/39-reverse-pre-fx-engine.md",
+      "sha256": "d6af7430f868474019f78b3a0695bb3d0db626985c27ffaf798de49c02d10ecc",
+      "bytes": 10326
+    },
+    {
+      "path": "references/40-mix-engine.md",
+      "sha256": "ab75465287e0a5930473f67517fb09fda241c84e71723cb19b02a84ffaea55e0",
+      "bytes": 4174
+    },
+    {
+      "path": "references/41-spatial-spectrum-stereo-engine.md",
+      "sha256": "b39b62db57213cc4438925b374e78c089a7969503aec130f8fd8511c4dc98e86",
+      "bytes": 11688
+    },
+    {
+      "path": "references/50-mastering-engine.md",
+      "sha256": "455353b823c592e303180c06fac73de25eaff633af4ce585a3b5d8fb9c6036d3",
+      "bytes": 4753
+    },
+    {
+      "path": "references/60-ableton-hardware-workflow.md",
+      "sha256": "2e4403d2a89410fa8ba75d261cb2623c6fb44944076bcc67f1ad70997aa0938e",
+      "bytes": 4460
+    },
+    {
+      "path": "references/61-ableton-lom-bridge.md",
+      "sha256": "4e313731869e0e7c2e24eba33e3f2c347c5ebfa55f895d45402824424fe3b2d0",
+      "bytes": 8588
+    },
+    {
+      "path": "references/62-semantic-mapping-contract.md",
+      "sha256": "7a034df73667afabbfed8259a4a9fae8007df7b79972c5bc87a54cd50a836cf2",
+      "bytes": 4458
+    },
+    {
+      "path": "references/63-write-safety-and-automation.md",
+      "sha256": "00471cc98b073bef85d9153a40c810e21e48d533663cb2456fe7d5e1001ebe9c",
+      "bytes": 6090
+    },
+    {
+      "path": "references/64-plugin-profile-strategy.md",
+      "sha256": "7f6c35c86fd72a6bdcab5fd311c6f6f6a0179ba3c6059e8aa22fbdd056ec880e",
+      "bytes": 4653
+    },
+    {
+      "path": "references/65-label-ready-qc-export.md",
+      "sha256": "a0e2680f47f7dcbf9245d9bff48f777f6aba4150d2f017f6097d726dd490146c",
+      "bytes": 6125
+    },
+    {
+      "path": "references/66-project-performance-freeze-resample.md",
+      "sha256": "6009bbdf83d369831e58e33ef040e65580e8a6961e862f2d621b85c510d2b582",
+      "bytes": 3400
+    },
+    {
+      "path": "references/70-reference-analysis-protocol.md",
+      "sha256": "34272cac4c425de1d1f94e0bf28569da11789a43c7173a08a06b19b6099fceff",
+      "bytes": 2333
+    },
+    {
+      "path": "references/80-evidence-policy.md",
+      "sha256": "2301321ccf35aca3250127b24d7b6fc042c3c269db297bacfbc9f86991258d9b",
+      "bytes": 2408
+    },
+    {
+      "path": "references/81-sae-learning-framework.md",
+      "sha256": "fe52be4268642a91d9ff12b0eef208604042e0f01a08acedd53e5fc103722a5d",
+      "bytes": 1384
+    },
+    {
+      "path": "references/82-video-study-notes.md",
+      "sha256": "ebc7bf9b7b473244978c8641fc16c4ad7e4839c1a98e69eef4dd432021994507",
+      "bytes": 2575
+    },
+    {
+      "path": "references/83-advanced-sound-design-video-notes.md",
+      "sha256": "d6717716496d2940ec1d4adaa2b5e66b4747a2968bca81fe10c64ee59c9d5b82",
+      "bytes": 4893
+    },
+    {
+      "path": "references/genres/afro-house.md",
+      "sha256": "63cbbbb44989afbaf5652a5e2fd2139b8afb13df33d9356151ee8a98d224e6ed",
+      "bytes": 3171
+    },
+    {
+      "path": "references/genres/bass-house.md",
+      "sha256": "19b0150da2d0765838403cae5c15c4cc58a1687852639d040ddf06c4493a2220",
+      "bytes": 2986
+    },
+    {
+      "path": "references/genres/house.md",
+      "sha256": "f3a2068a49383ab4caa7261389a3a89ab9d41493a992fa730b60cd63ca7ceb5d",
+      "bytes": 3082
+    },
+    {
+      "path": "references/genres/liquid-dnb.md",
+      "sha256": "d94accc17881f766cff13a9cb0740e14ab79eebaa97a415d554d6606119076c5",
+      "bytes": 2704
+    },
+    {
+      "path": "references/genres/melodic-dubstep.md",
+      "sha256": "f2ec4d5fc00a1e743284ba6533e175bae33787d1305022b59cd1c37ae2553969",
+      "bytes": 2790
+    },
+    {
+      "path": "references/genres/melodic-house-techno.md",
+      "sha256": "6ae3a6abaf940ad66daebe0fce8fbaa572581b0b99b967e5b2425d61eed8a6ba",
+      "bytes": 2749
+    },
+    {
+      "path": "references/genres/minimal-deep-dnb.md",
+      "sha256": "9006d05388b6110e7a41f8a0fa2f74ebfb7e9b04e1c3aa368fc463e7951aa225",
+      "bytes": 2293
+    },
+    {
+      "path": "references/genres/minimal-deep-tech.md",
+      "sha256": "76ce3640af064f5f81f02888481e5a2631d221d592c596fc54a9574d71e416ba",
+      "bytes": 2758
+    },
+    {
+      "path": "references/genres/tech-house.md",
+      "sha256": "11d4080c104256de11c8c0c26008d06f557b819bd38482d97ffae972bf720fbe",
+      "bytes": 2834
+    },
+    {
+      "path": "references/genres/techno.md",
+      "sha256": "f353a114d0f0f84c30eb702bd8ede37398f1922d2ea98b244857d3f67e0180d1",
+      "bytes": 2907
+    },
+    {
+      "path": "schemas/ableton-action-plan.schema.json",
+      "sha256": "ec89082926ede0153b0af32a064c5e0b3d4747e283f2f94e6acba6615ac3f475",
+      "bytes": 2074
+    },
+    {
+      "path": "schemas/ableton-command.schema.json",
+      "sha256": "2f0472057a4788621fe6a5fd841dcdcbc47bc4c05f6e7d7ec145a61e84bd3cb4",
+      "bytes": 2550
+    },
+    {
+      "path": "schemas/ableton-discovery.schema.json",
+      "sha256": "5479234300725c30f8a21b29546be7babccd703fd01fe87ebfca007e911b86b1",
+      "bytes": 4279
+    },
+    {
+      "path": "schemas/label-ready-qc.schema.json",
+      "sha256": "719b20147bbd8b95b19a4277c93c4193b2c7d86d9a09d5c90976ca6d24235b75",
+      "bytes": 1396
+    },
+    {
+      "path": "schemas/production-decision.schema.json",
+      "sha256": "f092611f05c17b7b4ff3b0e6a402d0af8b7c7eae952ed4926a8a3e1acefa03b3",
+      "bytes": 2269
+    },
+    {
+      "path": "schemas/production-lifecycle.schema.json",
+      "sha256": "88c05bb7bf38622099507a6ef9cb9ee47ba8e6875a3c1f727aa63a0b4720d505",
+      "bytes": 1068
+    },
+    {
+      "path": "schemas/project-lifecycle.schema.json",
+      "sha256": "10d830a00f2116c82e82e47dfb92c2e6f7680819261ab42aa4a4ddf541847c29",
+      "bytes": 2411
+    },
+    {
+      "path": "schemas/semantic-bridge-plan.schema.json",
+      "sha256": "e10cbb895cd1d0b55bf43080d40ae92f2cb33db98fa2eb44c3f75dbf7449af43",
+      "bytes": 3362
+    },
+    {
+      "path": "schemas/sound-design-plan.schema.json",
+      "sha256": "fab545d1c4691dc241b14314a0eee1eb0abe124c508cc0d687879907706df890",
+      "bytes": 1323
+    },
+    {
+      "path": "schemas/spatial-mix-plan.schema.json",
+      "sha256": "35b4633c64120c038cca28c3a2d8ba5378548e63a8eb2f82d484c956c50df020",
+      "bytes": 3083
+    },
+    {
+      "path": "schemas/spatial-plan.schema.json",
+      "sha256": "80f5276bd2876295ae2accda0d2898a22a9faefaedf09b07380f6a87d4e3c6ce",
+      "bytes": 3195
+    },
+    {
+      "path": "scripts/test_router.py",
+      "sha256": "e07c974c4890dd186e492397f579e74a00bdc101230f93e382abfb85e28f86d8",
+      "bytes": 3600
+    },
+    {
+      "path": "scripts/validate_bridge_assets.py",
+      "sha256": "7417dece6799950033a78a302255e9e976f766e69ce6be41d948af2f3dc4509d",
+      "bytes": 2218
+    },
+    {
+      "path": "scripts/validate_skill.py",
+      "sha256": "814a8bb834412550bbdcc11febfa297985c3fbbcd2c8856a7a8ab50b99f712cf",
+      "bytes": 2002
+    }
+  ]
+}

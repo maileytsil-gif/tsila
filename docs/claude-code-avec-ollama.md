@@ -14,12 +14,12 @@ projet. Seul le cerveau change. Sources : documentation Ollama (`docs/api/anthro
 
 | Brique | Nature | Avec Qwen sous Claude Code |
 |---|---|---|
-| Skills (`~/.claude/skills/*/SKILL.md`, références, recettes) | Fichiers Markdown, standard ouvert *Agent Skills* | **Identiques**, chargés par Claude Code comme aujourd'hui |
+| Skills (`~/.claude/skills/*/SKILL.md`, leurs modules `*/modules/*/GUIDE.md`, références, recettes) | Fichiers Markdown, standard ouvert *Agent Skills* | **Identiques**, chargés par Claude Code comme aujourd'hui |
 | Scripts des skills (`lom.py`, `helpers.py`, `levels.sh`, `theorie.py`, `drum_pattern.py`, `analyze_wav.py`…) | Python/shell lancés par l'outil Bash | **Identiques** |
 | LOM Bridge (`lom-bridge/LOMBridge` Remote Script + `lom.py`) | Script Python dans Live + client CLI, OSC/UDP 7421, aucune dépendance à Claude | **Identique** ; ses commandes typées se relisent elles-mêmes, ce qui compense un modèle plus faible |
 | Producer Pal (`ppal-*`) | Serveur MCP dans un device Max for Live, déclaré dans Claude Code (`claude mcp list`) | **Identique** : le MCP est branché sur Claude Code, pas sur le modèle. Producer Pal documente d'ailleurs « local models via Ollama or LM Studio » |
 | Corpus (`corpus/`, `ask_corpus.py`) | Fichiers + script BM25 → Ollama | Déjà local ; et Claude Code sur Qwen peut le lire directement (outils Read/Grep) |
-| Contrôle d'écran (`app_screenshot`, `app_click`, `app_batch`, `computer_batch`, `request_full_control`) | Outils fournis par l'**application de bureau** Claude, pas par le CLI | **Ne se transfère pas.** Remplacement : `screencapture -x` + un modèle à vision (`qwen3-vl`) pour lire, `cliclick` (`brew install cliclick`) pour cliquer, appelés par Bash. Les coordonnées de `vst-sound-design/references/serum2.md` (capture 1190 × 759 de la fenêtre Serum) restent valables si la capture est faite sur la fenêtre, pas sur l'écran entier |
+| Contrôle d'écran (`app_screenshot`, `app_click`, `app_batch`, `computer_batch`, `request_full_control`) | Outils fournis par l'**application de bureau** Claude, pas par le CLI | **Ne se transfère pas.** Remplacement : `screencapture -x` + un modèle à vision (`qwen3-vl`) pour lire, `cliclick` (`brew install cliclick`) pour cliquer, appelés par Bash. Les coordonnées de `sound-designer-serum/modules/vst-sound-design/references/serum2.md` (capture 1190 × 759 de la fenêtre Serum) restent valables si la capture est faite sur la fenêtre, pas sur l'écran entier |
 | Recherche web, WebFetch | Outils Claude Code | Passent par la recherche web d'Ollama si configurée, sinon absents |
 
 ## 2. Mise en route sur le Mac
@@ -56,7 +56,7 @@ déclarés (Producer Pal) et les skills de `~/.claude/skills` sont vus comme d'h
   refus si un paramètre est automatisé, `snapshot`/`restore`), Producer Pal ne protège pas
   (`browser.load_item` remplace le device sélectionné). Commencer par des tâches courtes et
   vérifiables : `lom.py state`, `lom.py meters`, écrire des notes dans un clip, régler un paramètre.
-- **Contexte** : `ableton-live-session/SKILL.md` + une référence + le JSON de `state` remplissent vite
+- **Contexte** : `producteur-live/SKILL.md` + une référence + le JSON de `state` remplissent vite
   32k. D'où 64k minimum, et un skill à la fois.
 - **Outils** : Ollama supporte messages, système, multi-tours, outils, résultats d'outils, vision,
   thinking ; pas `tool_choice`. Qwen3-Coder est entraîné pour l'appel d'outils ; les Qwen généralistes

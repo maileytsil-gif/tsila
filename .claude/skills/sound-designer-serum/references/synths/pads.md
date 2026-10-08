@@ -356,14 +356,14 @@ Les dix règles communes au lot sont dans `leads.md`. Ce qui s'ajoute pour les p
   - FILTER 1 MG Low 12, CUTOFF 35 %.
   - ENV 1 : 5 ms / 0 / 300 ms / 0 / 200 ms : un pluck court qui nourrit la reverb.
 - **FX** : Equalizer en High Pass à 250 Hz (avant la reverb, pour ne pas la remplir de grave [FICHE]) → Reverb **Hall**, SIZE 90, DECAY long, **MIX 100 %** → Equalizer (Low Pass à 6 kHz) → Compressor Single 3:1, pour tenir la queue.
-- **Resampling** : imprimer le pad (`../../../resampling/SKILL.md`), puis le traiter en audio : inversion, étirement, découpe sur la grille. L'insert à 100 % est fait pour être resamplé [FICHE].
+- **Resampling** : imprimer le pad (`../../modules/resampling/GUIDE.md`), puis le traiter en audio : inversion, étirement, découpe sur la grille. L'insert à 100 % est fait pour être resamplé [FICHE].
 - **Macros** : `Tone` Low Pass 2 → 12 kHz · `Motion` DECAY de la Hall · `Dirt` Distortion Soft Clip avant la Hall 0 → 30 · `Space` SIZE de la Hall 40 → 100.
 - **Jeu** : notes ou accords courts, espacés ; la queue fait le pad.
 - **Test** : aucune source vidéo ; c'est un procédé, à juger sur la prise imprimée.
 
 ## Motifs de départ (grilles vérifiées)
 
-Numérotation de Live (C3 = 60). Voicings écrits ici ; la basse tient la fondamentale. Vérification, depuis le dossier du skill : `python3 ../composer-hooks-funk-electro/scripts/grille.py --verifier references/synths/pads.md`. Notation Producer Pal : `--fichier references/synths/pads.md --titre <titre> --format ppal`.
+Numérotation de Live (C3 = 60). Voicings écrits ici ; la basse tient la fondamentale. Vérification, depuis le dossier du skill : `python3 ../compositeur-arrangeur/modules/composer-hooks-funk-electro/scripts/grille.py --verifier references/synths/pads.md`. Notation Producer Pal : `--fichier references/synths/pads.md --titre <titre> --format ppal`.
 
 ```grille
 titre: Deep house 122 — pad chiffré (PD01)
@@ -396,5 +396,5 @@ bas: A3[1:16] | C4[1:16] | E4[1:16] | G4[1:16]
 
 - Retrouver dans Serum 2 : « BD Sine », « Basic MCB », « J106 High Pass », « Basic Weird −1 », « Inharm 5 », « Serum Analog Mother », « Analog Saw Rounded », « MB Saw », « Chords », « Solid Phase 1 », « M saw », « long Grease », « Attack Kick 13 » (beaucoup marqués [ASR]) ; la réponse « Weird › Moon reflection » de Convolve ; le bruit « Rain 100 High ».
 - Lire l'affichage du Bend +/− de PD01 et le désaccord en cents de PD11.
-- Écouter chaque recette (règle 10 de `leads.md`) avec le lead et les accords du morceau, en mono pour le pad le plus large ; consigner le preset retenu dans la mémoire du projet (`../../../memoire-projet/SKILL.md`).
+- Écouter chaque recette (règle 10 de `leads.md`) avec le lead et les accords du morceau, en mono pour le pad le plus large ; consigner le preset retenu dans la mémoire du projet (`../../../producteur-live/modules/memoire-projet/GUIDE.md`).
 - Dernier fichier du lot : drones.
