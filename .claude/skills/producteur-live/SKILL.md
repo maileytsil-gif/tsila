@@ -22,6 +22,8 @@ Ce skill ouvre et tient la séance : discipline d'écriture dans Live, mémoire 
 | suno-vocals | voix à poser sur un instrumental existant (prompt, paroles, bus VOIX, calage par section) | `modules/suno-vocals/GUIDE.md` |
 | live-automation | automation d'arrangement par le bridge : filtre, sweep, fondu, envoi, largeur, entre deux mesures | `modules/live-automation/GUIDE.md` |
 | piloter-live-lombridge-codex | un autre agent (Qwen Code, Codex, Qwen via Ollama) agit dans Live par `agent_gateway.py`, bilan de séance sur preuves | `modules/piloter-live-lombridge-codex/GUIDE.md` (`session_review.py`) |
+| composer-producer-director | brief de style marqué (Bass / Future / Tech House, Afro, Latin, Caribbean, Detroit, Jazz / Chill) : choisir la branche du graphe, produire les contrats JSON (ProductionBrief, GrooveSpec, HarmonySpec…), compiler un AbletonClipPlan ; 3 morceaux d'exemple, études de producteurs *(pack v18, matière musicale)* | `modules/composer-producer-director/GUIDE.md` (`core/compiler/compile_project.py`, `producer-intelligence/`) |
+| bass-house-ableton-bridge | traduire un plan compilé en lot d'actions (`BridgeActionBatch`) validé par schéma ; **ne pilote pas Live** : l'exécution reste à ce skill, une étape à la fois, relue *(pack v18, matière musicale)* | `modules/bass-house-ableton-bridge/GUIDE.md` |
 
 ## Trois outils, un rôle chacun
 - **Producer Pal** (`ppal-*`) : lecture/écriture MIDI, clips, pistes, devices natifs, routage, marqueurs. Pas d'automation, pas de sauvegarde, rien dans un VST.
@@ -69,11 +71,11 @@ Quand la demande est un métier entier plutôt qu'une opération, passer par la 
 
 | Skill | Modules (`<skill>/modules/<module>/GUIDE.md`) |
 |---|---|
-| **compositeur-arrangeur** | melodie-composition, composer-hooks-funk-electro, arrangement-avance, midi-expressif, composer-trajectoire-emotionnelle, theorie-musicale-electronique, theorie-musicale-composition, partition-recherche, partition-telechargement, sampling-composition-avancee |
-| **producteur-rythmique** | drums-signature, kick-bass-equilibre, construire-low-end-electronique, native-instruments-control, produire-avec-maschine-mk3 |
-| **sound-designer-serum** | vst-sound-design, serum-2-basses-house-future-house, bass-house-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design, synthese-reference, resampling |
-| **ingenieur-mixage** | mixage, effets-plugins, mixer-house-professionnel, live-mix-mastering, mastering-outils, live-export-wav |
-| **producteur-live** (ce skill) | memoire-projet, memoire-persistante, chef-de-projet, piloter-live-lombridge-codex, produire-demo-electro-rapide, produire-morceau-electronique-de-a-a-z, maitriser-suno, suno-vocals, house-future-rave-bass-house-production, electronic-production-engineer, live-automation |
+| **compositeur-arrangeur** | melodie-composition, composer-hooks-funk-electro, arrangement-avance, midi-expressif, composer-trajectoire-emotionnelle, theorie-musicale-electronique, theorie-musicale-composition, partition-recherche, partition-telechargement, sampling-composition-avancee ; pack v18 : bass-house-composition, modern-pop-electronic-music-theory, modern-jazz-chillout-theory, afro-caribbean-latin-detroit-theory |
+| **producteur-rythmique** | drums-signature, kick-bass-equilibre, construire-low-end-electronique, native-instruments-control, produire-avec-maschine-mk3 ; pack v18 : studio-grade-kick-low-end-sound-design, studio-grade-drums-electronic-percussion |
+| **sound-designer-serum** | vst-sound-design, serum-2-basses-house-future-house, bass-house-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design, synthese-reference, resampling ; pack v18 : bass-house-serum2-sound-design, studio-grade-bass-sound-design, studio-grade-sample-vocal-break-design, studio-grade-transition-fx-director |
+| **ingenieur-mixage** | mixage, effets-plugins, mixer-house-professionnel, live-mix-mastering, mastering-outils, live-export-wav ; pack v18 : bass-house-mixing-mastering |
+| **producteur-live** (ce skill) | memoire-projet, memoire-persistante, chef-de-projet, piloter-live-lombridge-codex, produire-demo-electro-rapide, produire-morceau-electronique-de-a-a-z, maitriser-suno, suno-vocals, house-future-rave-bass-house-production, electronic-production-engineer, live-automation ; pack v18 : composer-producer-director, bass-house-ableton-bridge |
 
 ## Carte « situation → skill › module » (vérifiée en simulation le 15 sept. 2026 ; regroupement du 8 oct. 2026)
 
@@ -110,5 +112,11 @@ Entrer par la ligne qui correspond à la demande, dans l'ordre ; chaque module d
 | Maschine / Komplete Kontrol (réglage, preset, diagnostic) | native-instruments-control (écran au premier plan, aucune API) |
 | Produire sur Maschine MK3 : groove joué aux pads, Patterns, Scenes, sampling, Perform FX, multi-sorties vers Live | **produire-avec-maschine-mk3** (chemin audio décidé avant les effets) → native-instruments-control (gestes à l'écran) → producteur-rythmique → resampling pour imprimer |
 | Citer une œuvre existante | partition-recherche → partition-telechargement → melodie-composition |
+| Brief de style marqué (Bass / Future / Tech House, Afro, Latin, Caribbean, Detroit, Jazz / Chill) à transformer en plan vérifiable | **composer-producer-director** (pack v18 : branche du graphe, contrats JSON, AbletonClipPlan) → bass-house-ableton-bridge (lot d'actions, plan seulement) → la ligne « Nouveau morceau » pour l'exécution, une étape à la fois |
+| Théorie d'un genre précis : clave, montuno, Afro / Latin / Detroit ; voicings jazz, neo-soul, chill ; topline et forme pop ; composition Bass House | compositeur-arrangeur → **afro-caribbean-latin-detroit-theory** / **modern-jazz-chillout-theory** / **modern-pop-electronic-music-theory** / **bass-house-composition** (pack v18) → theorie-musicale-electronique pour le calcul (`theorie.py`) |
+| Concevoir un kick de zéro, un sub tail, un rumble ; percussions hors kick (claps, hats, perc FM, glitch) | producteur-rythmique → **studio-grade-kick-low-end-sound-design** / **studio-grade-drums-electronic-percussion** (pack v18, conception) → vst-sound-design (exécution) → kick-bass-equilibre (mesure, décision) ; signature : drums-signature |
+| Familles et sous-types Bass House (stab, pad, nappe, drone, riser, impact, keys) ; basse électronique typée (rolling, reese, donk, acid) | sound-designer-serum → **bass-house-serum2-sound-design** / **studio-grade-bass-sound-design** (pack v18) → bass-house-sound-design ou serum-2-basses-house-future-house (recettes maison) → vst-sound-design |
+| Riser, impact, sweep, tape-stop, throw, pre-drop fill ; vocal chop, slicing, break FX | **studio-grade-transition-fx-director** / **studio-grade-sample-vocal-break-design** (pack v18 ; plug-ins à vérifier dans `docs/integration-pack-v18.md`) → arrangement-avance (où) → live-automation ou resampling (exécution) |
+| Cibles de genre pour un mix Bass House | ingenieur-mixage (diagnostic) → **bass-house-mixing-mastering** (pack v18, priorités) → mixage → effets-plugins |
 
 Pièges relevés en simulation, à ne pas refaire : la numérotation des mesures de la mémoire peut être périmée (relire les repères avant d'écrire) ; `check_scale.py`, `clip_summary.py`, `expression_report.py`, `snapshot_clips.py` n'existent que dans Live (hors Live, calculer avec `theorie.py`) ; les scripts à paramètres en tête se copient dans le scratchpad avant édition ; les chiffres de `levels.sh` sont relatifs ; aucun outil local ne mesure LUFS ni true peak.

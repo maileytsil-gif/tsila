@@ -70,5 +70,6 @@ Symptôme · diagnostic mesuré · réglages faits (tableau) · vérifications d
 | live-mix-mastering | mixage puis mastering d'un morceau dans Live, ou mastering d'un fichier stéréo fourni : prémaster, sonie, stéréo, exports finaux | `modules/live-mix-mastering/GUIDE.md` |
 | mastering-outils | choisir et régler un limiteur, un mesureur ou un traitement stéréo précis (L4, L2, WLM Plus, F6, TG, Ozone, Pro-Q, Pro-C, Insight, SPAN, TDR Nova), LUFS, true peak | `modules/mastering-outils/GUIDE.md` |
 | live-export-wav | export, bounce, rendu, WAV ou MP3, « sors-moi le morceau », niveau réel du master ; vérification du fichier | `modules/live-export-wav/GUIDE.md` (`analyze_wav.py`) |
+| bass-house-mixing-mastering | cibles et priorités de genre pour un mix Bass House (kick / sub, ducking, mono, bus, loudness, traduction) ; le diagnostic reste à ce rôle *(pack v18, matière musicale)* | `modules/bass-house-mixing-mastering/GUIDE.md` |
 
 La relation kick / sub / basse (`kick-bass-equilibre`) et le grave (`construire-low-end-electronique`) sont des modules de `../producteur-rythmique/SKILL.md` ; l'automation d'arrangement (`live-automation`) un module de `../producteur-live/SKILL.md`.

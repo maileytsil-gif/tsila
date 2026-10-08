@@ -1,0 +1,9 @@
+{
+  "version": "v11",
+  "status": "ok",
+  "total_files": 251,
+  "midi_files": 18,
+  "json_files": 5,
+  "style_libraries": 6,
+  "notes": "MIDI/JSON parsed successfully; templates are original HEUR seeds."
+}

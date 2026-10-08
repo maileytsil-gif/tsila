@@ -1,0 +1,67 @@
+{
+  "schema_version": "18.0",
+  "key": "F#",
+  "mode": "Aeolian",
+  "track_name": "CHORD_STAB",
+  "events": [
+    {
+      "bar": 1,
+      "beat": 0,
+      "duration_beats": 2,
+      "symbol": "F#m9",
+      "midi_notes": [
+        54,
+        57,
+        61,
+        64,
+        68
+      ],
+      "velocity": 78
+    },
+    {
+      "bar": 1,
+      "beat": 2,
+      "duration_beats": 2,
+      "symbol": "Dmaj9/F#",
+      "midi_notes": [
+        54,
+        57,
+        61,
+        64,
+        66
+      ],
+      "velocity": 78
+    },
+    {
+      "bar": 2,
+      "beat": 0,
+      "duration_beats": 2,
+      "symbol": "Eadd9",
+      "midi_notes": [
+        52,
+        56,
+        59,
+        66
+      ],
+      "velocity": 78
+    },
+    {
+      "bar": 2,
+      "beat": 2,
+      "duration_beats": 2,
+      "symbol": "F#m9",
+      "midi_notes": [
+        54,
+        57,
+        61,
+        64,
+        68
+      ],
+      "velocity": 78
+    }
+  ],
+  "evidence": {
+    "level": "HEUR",
+    "source_ids": []
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "status": "HEUR",
+  "definition": "generic original motif seeds; scale degree 1 = tonic",
+  "cells": [
+    {
+      "id": "M01",
+      "degrees": [
+        3,
+        5,
+        6,
+        5
+      ],
+      "rhythm_beats": [
+        0,
+        0.5,
+        1.5,
+        3
+      ],
+      "lengths": [
+        0.5,
+        0.5,
+        1,
+        0.5
+      ],
+      "use": "pop ascending-return motif"
+    },
+    {
+      "id": "M02",
+      "degrees": [
+        1,
+        3,
+        5,
+        3
+      ],
+      "rhythm_beats": [
+        0.5,
+        1,
+        2,
+        3.5
+      ],
+      "lengths": [
+        0.25,
+        0.25,
+        0.75,
+        0.25
+      ],
+      "use": "syncopated chord-tone motif"
+    },
+    {
+      "id": "M03",
+      "degrees": [
+        5,
+        1,
+        3,
+        2
+      ],
+      "rhythm_beats": [
+        0.5,
+        1.25,
+        2,
+        3
+      ],
+      "lengths": [
+        0.25,
+        0.25,
+        0.75,
+        0.25
+      ],
+      "use": "future-house leap-and-resolve"
+    },
+    {
+      "id": "M04",
+      "degrees": [
+        1,
+        1,
+        3,
+        1
+      ],
+      "rhythm_beats": [
+        0.75,
+        1.25,
+        2.75,
+        3.25
+      ],
+      "lengths": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "use": "bass-house one-note-plus-color response"
+    },
+    {
+      "id": "M05",
+      "degrees": [
+        1,
+        3,
+        2
+      ],
+      "rhythm_beats": [
+        1,
+        1.75,
+        3
+      ],
+      "lengths": [
+        0.2,
+        0.2,
+        0.3
+      ],
+      "use": "minimal-space motif"
+    },
+    {
+      "id": "M06",
+      "degrees": [
+        1,
+        3,
+        5,
+        4
+      ],
+      "rhythm_beats": [
+        0.5,
+        1,
+        1.5,
+        2.75
+      ],
+      "lengths": [
+        0.2,
+        0.2,
+        0.5,
+        0.25
+      ],
+      "use": "electro angular motif"
+    },
+    {
+      "id": "M07",
+      "degrees": [
+        3,
+        3,
+        5,
+        6
+      ],
+      "rhythm_beats": [
+        0,
+        1,
+        2.5,
+        3
+      ],
+      "lengths": [
+        0.75,
+        0.5,
+        0.25,
+        0.75
+      ],
+      "use": "long-short contrast"
+    },
+    {
+      "id": "M08",
+      "degrees": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "rhythm_beats": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2
+      ],
+      "lengths": [
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        1.5
+      ],
+      "use": "descending payoff"
+    },
+    {
+      "id": "M09",
+      "degrees": [
+        1,
+        5,
+        6,
+        3
+      ],
+      "rhythm_beats": [
+        0.5,
+        1.5,
+        2.5,
+        3.5
+      ],
+      "lengths": [
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "use": "offbeat four-note seed"
+    },
+    {
+      "id": "M10",
+      "degrees": [
+        3,
+        2,
+        1,
+        5
+      ],
+      "rhythm_beats": [
+        0,
+        0.75,
+        1.5,
+        3
+      ],
+      "lengths": [
+        0.4,
+        0.4,
+        0.75,
+        0.5
+      ],
+      "use": "question-answer contour"
+    },
+    {
+      "id": "M11",
+      "degrees": [
+        1,
+        2,
+        3,
+        5,
+        3
+      ],
+      "rhythm_beats": [
+        0,
+        0.5,
+        1,
+        2,
+        3.25
+      ],
+      "lengths": [
+        0.4,
+        0.4,
+        0.75,
+        0.75,
+        0.4
+      ],
+      "use": "pre-chorus climb"
+    },
+    {
+      "id": "M12",
+      "degrees": [
+        5,
+        5,
+        6,
+        5,
+        3
+      ],
+      "rhythm_beats": [
+        0,
+        0.75,
+        1.5,
+        2.25,
+        3
+      ],
+      "lengths": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1
+      ],
+      "use": "repeated-note hook with release"
+    }
+  ]
+}

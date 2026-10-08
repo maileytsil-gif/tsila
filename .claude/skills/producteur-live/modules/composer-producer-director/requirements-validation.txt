@@ -1,0 +1,10 @@
+# Dépendances de core/validation/validate_v18.py et core/compiler/export_plan_to_midi.py.
+# Versions vérifiées le 19 septembre 2026 : 66/66 checks passés.
+#
+#   python3 -m venv .venv
+#   .venv/bin/pip install -r .claude/skills/requirements-validation.txt
+#   cd .claude/skills && ../../.venv/bin/python core/validation/validate_v18.py
+#
+# Rien d'autre dans le pack n'a de dépendance Python tierce.
+jsonschema==4.26.0
+mido==1.3.3

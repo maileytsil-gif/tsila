@@ -1,0 +1,103 @@
+{
+  "version": "v17",
+  "note": "Canonical/theory-derived cells are marked DOC. Electronic combinations are HEUR and original exercises.",
+  "patterns": [
+    {
+      "id": "son_clave_3_2",
+      "status": "DOC",
+      "grid": "2 bars, 16ths",
+      "bar1_steps": [
+        0,
+        6,
+        12
+      ],
+      "bar2_steps": [
+        4,
+        8
+      ]
+    },
+    {
+      "id": "son_clave_2_3",
+      "status": "DOC",
+      "grid": "2 bars, 16ths",
+      "bar1_steps": [
+        4,
+        8
+      ],
+      "bar2_steps": [
+        0,
+        6,
+        12
+      ]
+    },
+    {
+      "id": "tresillo",
+      "status": "DOC/ANALYSIS",
+      "grid": "1 bar, 16ths",
+      "steps": [
+        0,
+        6,
+        12
+      ],
+      "grouping": "3+3+2 eighth-note units"
+    },
+    {
+      "id": "afro_house_interlock_exercise",
+      "status": "HEUR",
+      "grid": "1 bar, 16ths",
+      "kick": [
+        0,
+        4,
+        8,
+        12
+      ],
+      "mid_a": [
+        3,
+        7,
+        11,
+        15
+      ],
+      "mid_b": [
+        2,
+        9,
+        14
+      ],
+      "high": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14
+      ]
+    },
+    {
+      "id": "reggae_offbeat_exercise",
+      "status": "HEUR",
+      "grid": "1 bar, 8ths",
+      "chords": [
+        1,
+        3,
+        5,
+        7
+      ]
+    },
+    {
+      "id": "detroit_syncopation_exercise",
+      "status": "HEUR",
+      "grid": "1 bar, 16ths",
+      "chords": [
+        3,
+        10
+      ],
+      "bass": [
+        0,
+        7,
+        11,
+        14
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "18.0",
+  "key": "C",
+  "mode": "Dorian",
+  "track_name": "MONTUNO_STAB",
+  "events": [
+    {
+      "bar": 1,
+      "beat": 0.5,
+      "duration_beats": 0.4,
+      "symbol": "Cm9",
+      "midi_notes": [
+        60,
+        63,
+        67,
+        70,
+        74
+      ],
+      "velocity": 78
+    },
+    {
+      "bar": 1,
+      "beat": 1.75,
+      "duration_beats": 0.35,
+      "symbol": "F13(no5)",
+      "midi_notes": [
+        65,
+        69,
+        75,
+        79
+      ],
+      "velocity": 78
+    },
+    {
+      "bar": 1,
+      "beat": 2.75,
+      "duration_beats": 0.4,
+      "symbol": "Cm9",
+      "midi_notes": [
+        60,
+        63,
+        67,
+        70,
+        74
+      ],
+      "velocity": 78
+    },
+    {
+      "bar": 2,
+      "beat": 0.5,
+      "duration_beats": 0.4,
+      "symbol": "Bb6/9",
+      "midi_notes": [
+        58,
+        62,
+        65,
+        67,
+        72
+      ],
+      "velocity": 78
+    },
+    {
+      "bar": 2,
+      "beat": 2,
+      "duration_beats": 0.4,
+      "symbol": "Cm9",
+      "midi_notes": [
+        60,
+        63,
+        67,
+        70,
+        74
+      ],
+      "velocity": 78
+    }
+  ],
+  "evidence": {
+    "level": "HEUR",
+    "source_ids": [
+      "BERKLEE_LATIN_PIANO_001"
+    ]
+  }
+}

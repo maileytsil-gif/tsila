@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cultural-style-lock.schema.json",
+  "title": "CulturalStyleLock v18",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "primary_axis",
+    "secondary_axis",
+    "foundation",
+    "borrowed_principle",
+    "electronic_translation",
+    "hybridization_status",
+    "authenticity_claim",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "18.0"
+    },
+    "primary_axis": {
+      "type": "string"
+    },
+    "secondary_axis": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "foundation": {
+      "type": "string"
+    },
+    "borrowed_principle": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "electronic_translation": {
+      "type": "string"
+    },
+    "hybridization_status": {
+      "enum": [
+        "OK",
+        "CAUTION",
+        "UNMAPPED",
+        "NONE"
+      ]
+    },
+    "authenticity_claim": {
+      "const": false
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "source_ids"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "DOC",
+            "ATTRIB",
+            "ANALYSIS",
+            "HEUR",
+            "TEST"
+          ]
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

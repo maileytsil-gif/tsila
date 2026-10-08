@@ -1,0 +1,16 @@
+{
+  "schema_version": "18.0",
+  "authenticity_claim": false,
+  "primary_axis": "DETROIT_TECHNO",
+  "secondary_axis": null,
+  "foundation": "Detroit techno / soulful techno continuum",
+  "borrowed_principle": null,
+  "electronic_translation": "machine grid + syncopated bass/stab + soulful harmonic color + micro-mutation",
+  "hybridization_status": "NONE",
+  "evidence": {
+    "level": "HEUR",
+    "source_ids": [
+      "DETROIT_HIST_001"
+    ]
+  }
+}

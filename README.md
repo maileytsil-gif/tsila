@@ -33,13 +33,15 @@ qwen        # Qwen Code : lit AGENTS.md et QWEN.md, et les mêmes skills par le 
 
 Les cinq skills et leurs modules :
 
+Les modules marqués « pack v18 » (intégrés le 8 oct. 2026) fournissent la matière musicale ; les modules maison décident et exécutent (`docs/integration-pack-v18.md`).
+
 | Skill | Rôle | Modules |
 |---|---|---|
-| `producteur-live` | séance Live (discipline, bridge, écran), mémoire, projet, morceau entier, Suno, autre agent ; porte d'entrée et carte | memoire-projet, memoire-persistante, chef-de-projet, produire-demo-electro-rapide, produire-morceau-electronique-de-a-a-z, house-future-rave-bass-house-production, electronic-production-engineer, maitriser-suno, suno-vocals, live-automation, piloter-live-lombridge-codex |
-| `compositeur-arrangeur` | notes, harmonie, forme, théorie, émotion | melodie-composition, composer-hooks-funk-electro, arrangement-avance, midi-expressif, composer-trajectoire-emotionnelle, theorie-musicale-electronique, theorie-musicale-composition, partition-recherche, partition-telechargement, sampling-composition-avancee |
-| `producteur-rythmique` | batterie, groove, grave, Maschine | drums-signature, kick-bass-equilibre, construire-low-end-electronique, native-instruments-control, produire-avec-maschine-mk3 |
-| `sound-designer-serum` | timbres, Serum 2, VST, capture | vst-sound-design, serum-2-basses-house-future-house, bass-house-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design, synthese-reference, resampling |
-| `ingenieur-mixage` | mix, mastering, export | mixage, effets-plugins, mixer-house-professionnel, live-mix-mastering, mastering-outils, live-export-wav |
+| `producteur-live` | séance Live (discipline, bridge, écran), mémoire, projet, morceau entier, Suno, autre agent ; porte d'entrée et carte | memoire-projet, memoire-persistante, chef-de-projet, produire-demo-electro-rapide, produire-morceau-electronique-de-a-a-z, house-future-rave-bass-house-production, electronic-production-engineer, maitriser-suno, suno-vocals, live-automation, piloter-live-lombridge-codex ; pack v18 : composer-producer-director, bass-house-ableton-bridge |
+| `compositeur-arrangeur` | notes, harmonie, forme, théorie, émotion | melodie-composition, composer-hooks-funk-electro, arrangement-avance, midi-expressif, composer-trajectoire-emotionnelle, theorie-musicale-electronique, theorie-musicale-composition, partition-recherche, partition-telechargement, sampling-composition-avancee ; pack v18 : bass-house-composition, modern-pop-electronic-music-theory, modern-jazz-chillout-theory, afro-caribbean-latin-detroit-theory |
+| `producteur-rythmique` | batterie, groove, grave, Maschine | drums-signature, kick-bass-equilibre, construire-low-end-electronique, native-instruments-control, produire-avec-maschine-mk3 ; pack v18 : studio-grade-kick-low-end-sound-design, studio-grade-drums-electronic-percussion |
+| `sound-designer-serum` | timbres, Serum 2, VST, capture | vst-sound-design, serum-2-basses-house-future-house, bass-house-sound-design, studio-grade-brass-sound-design, studio-grade-funk-keys-synth-sound-design, synthese-reference, resampling ; pack v18 : bass-house-serum2-sound-design, studio-grade-bass-sound-design, studio-grade-sample-vocal-break-design, studio-grade-transition-fx-director |
+| `ingenieur-mixage` | mix, mastering, export | mixage, effets-plugins, mixer-house-professionnel, live-mix-mastering, mastering-outils, live-export-wav ; pack v18 : bass-house-mixing-mastering |
 
 Premières demandes possibles :
 

@@ -1,0 +1,17 @@
+{
+  "schema_version": "18.0",
+  "authenticity_claim": false,
+  "primary_axis": "AFRO_CUBAN",
+  "secondary_axis": null,
+  "foundation": "Afro-Cuban-informed rhythmic organization in a house adaptation",
+  "borrowed_principle": null,
+  "electronic_translation": "son-clave orientation + electronic kick + role-based percussion + montuno-inspired stab",
+  "hybridization_status": "NONE",
+  "evidence": {
+    "level": "HEUR",
+    "source_ids": [
+      "BERKLEE_CLAVE_001",
+      "BERKLEE_LATIN_PIANO_001"
+    ]
+  }
+}

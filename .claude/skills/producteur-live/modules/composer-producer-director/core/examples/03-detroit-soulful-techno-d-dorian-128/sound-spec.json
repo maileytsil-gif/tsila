@@ -1,0 +1,60 @@
+{
+  "schema_version": "18.0",
+  "elements": [
+    {
+      "element_id": "stab",
+      "role": "CORE",
+      "track_name": "STAB",
+      "engine": "Operator/Wavetable",
+      "preset_or_patch": null,
+      "macros": {
+        "TONE": 0.48,
+        "SPACE": 0.24,
+        "WIDTH": 0.4
+      },
+      "processing_intent": [
+        "short soulful digital stab"
+      ],
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    },
+    {
+      "element_id": "bass",
+      "role": "FOUNDATION",
+      "track_name": "BASS",
+      "engine": "Operator",
+      "preset_or_patch": null,
+      "macros": {
+        "WEIGHT": 0.62,
+        "ATTACK": 0.5
+      },
+      "processing_intent": [
+        "machine-funk bass"
+      ],
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    },
+    {
+      "element_id": "perc",
+      "role": "MOTION",
+      "track_name": "MACHINE_PERC",
+      "engine": "Drum Rack",
+      "preset_or_patch": null,
+      "macros": {
+        "ATTACK": 0.6,
+        "VARIATION": 0.2
+      },
+      "processing_intent": [
+        "micro-mutation every phrase"
+      ],
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    }
+  ]
+}

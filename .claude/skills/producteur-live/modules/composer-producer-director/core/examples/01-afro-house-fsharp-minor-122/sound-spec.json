@@ -1,0 +1,61 @@
+{
+  "schema_version": "18.0",
+  "elements": [
+    {
+      "element_id": "bass",
+      "role": "FOUNDATION",
+      "track_name": "BASS",
+      "engine": "Serum 2",
+      "preset_or_patch": null,
+      "macros": {
+        "TONE": 0.42,
+        "WEIGHT": 0.72,
+        "MOTION": 0.25
+      },
+      "processing_intent": [
+        "clean sub + restrained mid harmonics"
+      ],
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    },
+    {
+      "element_id": "chord",
+      "role": "SUPPORT",
+      "track_name": "CHORD_STAB",
+      "engine": "Ableton Wavetable",
+      "preset_or_patch": null,
+      "macros": {
+        "TONE": 0.5,
+        "SPACE": 0.3,
+        "WIDTH": 0.55
+      },
+      "processing_intent": [
+        "short modal stab"
+      ],
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    },
+    {
+      "element_id": "perc",
+      "role": "MOTION",
+      "track_name": "PERC_MID",
+      "engine": "Drum Rack / samples",
+      "preset_or_patch": null,
+      "macros": {
+        "ATTACK": 0.55,
+        "SPACE": 0.15
+      },
+      "processing_intent": [
+        "preserve transient hierarchy"
+      ],
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    }
+  ]
+}

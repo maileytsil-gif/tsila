@@ -1,0 +1,990 @@
+{
+  "schema_version": "18.0",
+  "project_id": "02-afro-cuban-house-c-minor-124",
+  "session_policy": "discover-current-session",
+  "actions": [
+    {
+      "request_id": "req-0001",
+      "depends_on": [],
+      "requires_capability": "ensure_track",
+      "target": {
+        "kind": "track",
+        "track_signature": "KICK",
+        "clip_signature": null,
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "ensure_track",
+        "payload": {
+          "kind": "midi"
+        }
+      },
+      "postconditions": [
+        "track_resolved_or_created"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0002",
+      "depends_on": [
+        "req-0001"
+      ],
+      "requires_capability": "create_clip",
+      "target": {
+        "kind": "clip",
+        "track_signature": "KICK",
+        "clip_signature": "02-afro-cuban-house-c-minor-124_kick",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "create_clip",
+        "payload": {
+          "start_beat": 0,
+          "length_beats": 8.0
+        }
+      },
+      "postconditions": [
+        "clip_exists_with_length"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0003",
+      "depends_on": [
+        "req-0002"
+      ],
+      "requires_capability": "write_notes",
+      "target": {
+        "kind": "clip",
+        "track_signature": "KICK",
+        "clip_signature": "02-afro-cuban-house-c-minor-124_kick",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "replace_notes",
+        "payload": {
+          "notes": [
+            {
+              "pitch": 36,
+              "start_beat": 0.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 1.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 2.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 3.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 4.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 5.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 6.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 7.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            }
+          ]
+        }
+      },
+      "postconditions": [
+        "roundtrip_notes_equal"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    },
+    {
+      "request_id": "req-0004",
+      "depends_on": [],
+      "requires_capability": "ensure_track",
+      "target": {
+        "kind": "track",
+        "track_signature": "CLAVE_GUIDE",
+        "clip_signature": null,
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "ensure_track",
+        "payload": {
+          "kind": "midi"
+        }
+      },
+      "postconditions": [
+        "track_resolved_or_created"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0005",
+      "depends_on": [
+        "req-0004"
+      ],
+      "requires_capability": "create_clip",
+      "target": {
+        "kind": "clip",
+        "track_signature": "CLAVE_GUIDE",
+        "clip_signature": "02-afro-cuban-house-c-minor-124_clave",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "create_clip",
+        "payload": {
+          "start_beat": 0,
+          "length_beats": 8.0
+        }
+      },
+      "postconditions": [
+        "clip_exists_with_length"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0006",
+      "depends_on": [
+        "req-0005"
+      ],
+      "requires_capability": "write_notes",
+      "target": {
+        "kind": "clip",
+        "track_signature": "CLAVE_GUIDE",
+        "clip_signature": "02-afro-cuban-house-c-minor-124_clave",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "replace_notes",
+        "payload": {
+          "notes": [
+            {
+              "pitch": 37,
+              "start_beat": 0.0,
+              "duration_beats": 0.1,
+              "velocity": 100
+            },
+            {
+              "pitch": 37,
+              "start_beat": 1.5,
+              "duration_beats": 0.1,
+              "velocity": 96
+            },
+            {
+              "pitch": 37,
+              "start_beat": 3.0,
+              "duration_beats": 0.1,
+              "velocity": 103
+            },
+            {
+              "pitch": 37,
+              "start_beat": 5.0,
+              "duration_beats": 0.1,
+              "velocity": 98
+            },
+            {
+              "pitch": 37,
+              "start_beat": 6.0,
+              "duration_beats": 0.1,
+              "velocity": 102
+            }
+          ]
+        }
+      },
+      "postconditions": [
+        "roundtrip_notes_equal"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    },
+    {
+      "request_id": "req-0007",
+      "depends_on": [],
+      "requires_capability": "ensure_track",
+      "target": {
+        "kind": "track",
+        "track_signature": "CONGA_ROLE",
+        "clip_signature": null,
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "ensure_track",
+        "payload": {
+          "kind": "midi"
+        }
+      },
+      "postconditions": [
+        "track_resolved_or_created"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0008",
+      "depends_on": [
+        "req-0007"
+      ],
+      "requires_capability": "create_clip",
+      "target": {
+        "kind": "clip",
+        "track_signature": "CONGA_ROLE",
+        "clip_signature": "02-afro-cuban-house-c-minor-124_conga",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "create_clip",
+        "payload": {
+          "start_beat": 0,
+          "length_beats": 8.0
+        }
+      },
+      "postconditions": [
+        "clip_exists_with_length"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0009",
+      "depends_on": [
+        "req-0008"
+      ],
+      "requires_capability": "write_notes",
+      "target": {
+        "kind": "clip",
+        "track_signature": "CONGA_ROLE",
+        "clip_signature": "02-afro-cuban-house-c-minor-124_conga",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "replace_notes",
+        "payload": {
+          "notes": [
+            {
+              "pitch": 64,
+              "start_beat": 0.75,
+              "duration_beats": 0.1,
+              "velocity": 88
+            },
+            {
+              "pitch": 64,
+              "start_beat": 2.5,
+              "duration_beats": 0.1,
+              "velocity": 98
+            },
+            {
+              "pitch": 64,
+              "start_beat": 3.75,
+              "duration_beats": 0.1,
+              "velocity": 84
+            },
+            {
+              "pitch": 64,
+              "start_beat": 4.5,
+              "duration_beats": 0.1,
+              "velocity": 90
+            },
+            {
+              "pitch": 64,
+              "start_beat": 6.75,
+              "duration_beats": 0.1,
+              "velocity": 100
+            }
+          ]
+        }
+      },
+      "postconditions": [
+        "roundtrip_notes_equal"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    },
+    {
+      "request_id": "req-0010",
+      "depends_on": [],
+      "requires_capability": "ensure_track",
+      "target": {
+        "kind": "track",
+        "track_signature": "SHAKER",
+        "clip_signature": null,
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "ensure_track",
+        "payload": {
+          "kind": "midi"
+        }
+      },
+      "postconditions": [
+        "track_resolved_or_created"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0011",
+      "depends_on": [
+        "req-0010"
+      ],
+      "requires_capability": "create_clip",
+      "target": {
+        "kind": "clip",
+        "track_signature": "SHAKER",
+        "clip_signature": "02-afro-cuban-house-c-minor-124_shaker",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "create_clip",
+        "payload": {
+          "start_beat": 0,
+          "length_beats": 8.0
+        }
+      },
+      "postconditions": [
+        "clip_exists_with_length"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0012",
+      "depends_on": [
+        "req-0011"
+      ],
+      "requires_capability": "write_notes",
+      "target": {
+        "kind": "clip",
+        "track_signature": "SHAKER",
+        "clip_signature": "02-afro-cuban-house-c-minor-124_shaker",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "replace_notes",
+        "payload": {
+          "notes": [
+            {
+              "pitch": 42,
+              "start_beat": 0.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 0.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 1.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 1.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 2.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 2.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 3.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 3.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 4.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 4.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 5.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 5.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 6.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 6.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 7.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 7.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            }
+          ]
+        }
+      },
+      "postconditions": [
+        "roundtrip_notes_equal"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    },
+    {
+      "request_id": "req-0013",
+      "depends_on": [],
+      "requires_capability": "ensure_track",
+      "target": {
+        "kind": "track",
+        "track_signature": "BASS",
+        "clip_signature": null,
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "ensure_track",
+        "payload": {
+          "kind": "midi"
+        }
+      },
+      "postconditions": [
+        "track_resolved_or_created"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0014",
+      "depends_on": [
+        "req-0013"
+      ],
+      "requires_capability": "create_clip",
+      "target": {
+        "kind": "clip",
+        "track_signature": "BASS",
+        "clip_signature": "02-afro-cuban-house-c-minor-124_BASS",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "create_clip",
+        "payload": {
+          "start_beat": 0,
+          "length_beats": 8.0
+        }
+      },
+      "postconditions": [
+        "clip_exists_with_length"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0015",
+      "depends_on": [
+        "req-0014"
+      ],
+      "requires_capability": "write_notes",
+      "target": {
+        "kind": "clip",
+        "track_signature": "BASS",
+        "clip_signature": "02-afro-cuban-house-c-minor-124_BASS",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "replace_notes",
+        "payload": {
+          "notes": [
+            {
+              "pitch": 36,
+              "start_beat": 0.5,
+              "duration_beats": 0.3,
+              "velocity": 105
+            },
+            {
+              "pitch": 39,
+              "start_beat": 1.75,
+              "duration_beats": 0.25,
+              "velocity": 94
+            },
+            {
+              "pitch": 43,
+              "start_beat": 2.5,
+              "duration_beats": 0.35,
+              "velocity": 101
+            },
+            {
+              "pitch": 34,
+              "start_beat": 3.75,
+              "duration_beats": 0.2,
+              "velocity": 90
+            },
+            {
+              "pitch": 36,
+              "start_beat": 4.5,
+              "duration_beats": 0.3,
+              "velocity": 105
+            },
+            {
+              "pitch": 43,
+              "start_beat": 5.75,
+              "duration_beats": 0.25,
+              "velocity": 96
+            },
+            {
+              "pitch": 39,
+              "start_beat": 6.5,
+              "duration_beats": 0.35,
+              "velocity": 101
+            }
+          ]
+        }
+      },
+      "postconditions": [
+        "roundtrip_notes_equal"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    },
+    {
+      "request_id": "req-0016",
+      "depends_on": [],
+      "requires_capability": "ensure_track",
+      "target": {
+        "kind": "track",
+        "track_signature": "MONTUNO_STAB",
+        "clip_signature": null,
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "ensure_track",
+        "payload": {
+          "kind": "midi"
+        }
+      },
+      "postconditions": [
+        "track_resolved_or_created"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0017",
+      "depends_on": [
+        "req-0016"
+      ],
+      "requires_capability": "create_clip",
+      "target": {
+        "kind": "clip",
+        "track_signature": "MONTUNO_STAB",
+        "clip_signature": "02-afro-cuban-house-c-minor-124_HARMONY",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "create_clip",
+        "payload": {
+          "start_beat": 0,
+          "length_beats": 8.0
+        }
+      },
+      "postconditions": [
+        "clip_exists_with_length"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0018",
+      "depends_on": [
+        "req-0017"
+      ],
+      "requires_capability": "write_notes",
+      "target": {
+        "kind": "clip",
+        "track_signature": "MONTUNO_STAB",
+        "clip_signature": "02-afro-cuban-house-c-minor-124_HARMONY",
+        "device_signature": null,
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "replace_notes",
+        "payload": {
+          "notes": [
+            {
+              "pitch": 60,
+              "start_beat": 0.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 63,
+              "start_beat": 0.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 67,
+              "start_beat": 0.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 70,
+              "start_beat": 0.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 74,
+              "start_beat": 0.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 65,
+              "start_beat": 1.75,
+              "duration_beats": 0.35,
+              "velocity": 78
+            },
+            {
+              "pitch": 69,
+              "start_beat": 1.75,
+              "duration_beats": 0.35,
+              "velocity": 78
+            },
+            {
+              "pitch": 75,
+              "start_beat": 1.75,
+              "duration_beats": 0.35,
+              "velocity": 78
+            },
+            {
+              "pitch": 79,
+              "start_beat": 1.75,
+              "duration_beats": 0.35,
+              "velocity": 78
+            },
+            {
+              "pitch": 60,
+              "start_beat": 2.75,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 63,
+              "start_beat": 2.75,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 67,
+              "start_beat": 2.75,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 70,
+              "start_beat": 2.75,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 74,
+              "start_beat": 2.75,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 58,
+              "start_beat": 4.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 62,
+              "start_beat": 4.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 65,
+              "start_beat": 4.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 67,
+              "start_beat": 4.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 72,
+              "start_beat": 4.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 60,
+              "start_beat": 6.0,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 63,
+              "start_beat": 6.0,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 67,
+              "start_beat": 6.0,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 70,
+              "start_beat": 6.0,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 74,
+              "start_beat": 6.0,
+              "duration_beats": 0.4,
+              "velocity": 78
+            }
+          ]
+        }
+      },
+      "postconditions": [
+        "roundtrip_notes_equal"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    },
+    {
+      "request_id": "req-0019",
+      "depends_on": [],
+      "requires_capability": "read_tracks_devices",
+      "target": {
+        "kind": "device",
+        "track_signature": "CLAVE_GUIDE",
+        "clip_signature": null,
+        "device_signature": "sample/Drum Rack",
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "inspect",
+        "payload": {
+          "purpose": "resolve_sound_binding",
+          "macros": {
+            "ATTACK": 0.7,
+            "SPACE": 0.08
+          }
+        }
+      },
+      "postconditions": [
+        "device_or_manual_binding_resolved"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0020",
+      "depends_on": [],
+      "requires_capability": "read_tracks_devices",
+      "target": {
+        "kind": "device",
+        "track_signature": "MONTUNO_STAB",
+        "clip_signature": null,
+        "device_signature": "Ableton Electric or sampled keys",
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "inspect",
+        "payload": {
+          "purpose": "resolve_sound_binding",
+          "macros": {
+            "ATTACK": 0.65,
+            "TONE": 0.58,
+            "SPACE": 0.2
+          }
+        }
+      },
+      "postconditions": [
+        "device_or_manual_binding_resolved"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0021",
+      "depends_on": [],
+      "requires_capability": "read_tracks_devices",
+      "target": {
+        "kind": "device",
+        "track_signature": "BASS",
+        "clip_signature": null,
+        "device_signature": "Operator or Serum 2",
+        "parameter_signature": null
+      },
+      "operation": {
+        "type": "inspect",
+        "payload": {
+          "purpose": "resolve_sound_binding",
+          "macros": {
+            "WEIGHT": 0.68,
+            "ATTACK": 0.45
+          }
+        }
+      },
+      "postconditions": [
+        "device_or_manual_binding_resolved"
+      ],
+      "rollback": {},
+      "risk": "low"
+    },
+    {
+      "request_id": "req-0022",
+      "depends_on": [],
+      "requires_capability": "automation_persistent",
+      "target": {
+        "kind": "device_parameter",
+        "track_signature": "MONTUNO_STAB",
+        "clip_signature": null,
+        "device_signature": "resolve-current-device-or-rack",
+        "parameter_signature": "TONE"
+      },
+      "operation": {
+        "type": "write_persistent_automation",
+        "payload": {
+          "lane_id": "montuno_tone",
+          "track_name": "MONTUNO_STAB",
+          "target_macro": "TONE",
+          "start_beat": 0,
+          "end_beat": 8,
+          "start_value": 0.45,
+          "end_value": 0.62,
+          "curve": "s-curve",
+          "persistence": "persistent_if_supported",
+          "evidence": {
+            "level": "HEUR",
+            "source_ids": []
+          }
+        }
+      },
+      "postconditions": [
+        "readback_or_envelope_verify"
+      ],
+      "rollback": {
+        "type": "restore_snapshot"
+      },
+      "risk": "medium"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "schema_version": "18.0",
+  "unit": "beat (quarter-note = 1.0)",
+  "note": "Documented cells and electronic adaptations are separate objects.",
+  "patterns": [
+    {
+      "pattern_id": "son_clave_3_2",
+      "evidence": {
+        "level": "DOC",
+        "source_ids": [
+          "BERKLEE_CLAVE_001"
+        ]
+      },
+      "meter": "4/4",
+      "bars": 2,
+      "orientation": "3-2",
+      "role": "TIMELINE",
+      "events": [
+        {
+          "bar": 1,
+          "beat": 0.0
+        },
+        {
+          "bar": 1,
+          "beat": 1.5
+        },
+        {
+          "bar": 1,
+          "beat": 3.0
+        },
+        {
+          "bar": 2,
+          "beat": 1.0
+        },
+        {
+          "bar": 2,
+          "beat": 2.0
+        }
+      ]
+    },
+    {
+      "pattern_id": "son_clave_2_3",
+      "evidence": {
+        "level": "DOC",
+        "source_ids": [
+          "BERKLEE_CLAVE_001"
+        ]
+      },
+      "meter": "4/4",
+      "bars": 2,
+      "orientation": "2-3",
+      "role": "TIMELINE",
+      "events": [
+        {
+          "bar": 1,
+          "beat": 1.0
+        },
+        {
+          "bar": 1,
+          "beat": 2.0
+        },
+        {
+          "bar": 2,
+          "beat": 0.0
+        },
+        {
+          "bar": 2,
+          "beat": 1.5
+        },
+        {
+          "bar": 2,
+          "beat": 3.0
+        }
+      ]
+    },
+    {
+      "pattern_id": "tresillo_study",
+      "evidence": {
+        "level": "ANALYSIS",
+        "source_ids": [
+          "BERKLEE_CLAVE_001"
+        ]
+      },
+      "meter": "4/4",
+      "bars": 1,
+      "orientation": null,
+      "role": "SYNCOPATION",
+      "events": [
+        {
+          "bar": 1,
+          "beat": 0.0
+        },
+        {
+          "bar": 1,
+          "beat": 1.5
+        },
+        {
+          "bar": 1,
+          "beat": 3.0
+        }
+      ]
+    },
+    {
+      "pattern_id": "afro_house_interlock_v18",
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": [
+          "BEATPORT_AFRO_001",
+          "SMITHSONIAN_BELL_001"
+        ]
+      },
+      "meter": "4/4",
+      "bars": 1,
+      "orientation": null,
+      "role": "MULTI_ROLE_EXERCISE",
+      "layers": {
+        "BACKBONE": [
+          0.0,
+          1.0,
+          2.0,
+          3.0
+        ],
+        "MID_PERC": [
+          0.75,
+          1.75,
+          2.75,
+          3.75
+        ],
+        "ACCENT": [
+          0.5,
+          2.25,
+          3.5
+        ],
+        "HIGH_TIMEKEEPER": [
+          0,
+          0.5,
+          1,
+          1.5,
+          2,
+          2.5,
+          3,
+          3.5
+        ]
+      }
+    },
+    {
+      "pattern_id": "detroit_machine_syncopation_v18",
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": [
+          "DETROIT_HIST_001"
+        ]
+      },
+      "meter": "4/4",
+      "bars": 1,
+      "orientation": null,
+      "role": "MULTI_ROLE_EXERCISE",
+      "layers": {
+        "CHORD": [
+          0.75,
+          2.5
+        ],
+        "BASS": [
+          0.0,
+          1.75,
+          2.75,
+          3.5
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "18.0",
+  "categories": {
+    "core": [
+      "composer-producer-director",
+      "bass-house-ableton-bridge"
+    ],
+    "music": [
+      "modern-pop-electronic-music-theory",
+      "modern-jazz-chillout-theory",
+      "afro-caribbean-latin-detroit-theory",
+      "bass-house-composition"
+    ],
+    "sound": [
+      "studio-grade-kick-low-end-sound-design",
+      "studio-grade-bass-sound-design",
+      "studio-grade-drums-electronic-percussion",
+      "bass-house-serum2-sound-design",
+      "studio-grade-sample-vocal-break-design",
+      "studio-grade-transition-fx-director"
+    ],
+    "mix": [
+      "bass-house-mixing-mastering"
+    ],
+    "intelligence": [
+      "producer-intelligence"
+    ]
+  },
+  "note": "Skills stay installable at package root; this map is the canonical logical architecture. Historical root clutter moved to /history."
+}

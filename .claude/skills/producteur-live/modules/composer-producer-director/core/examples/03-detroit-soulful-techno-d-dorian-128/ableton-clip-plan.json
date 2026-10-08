@@ -1,0 +1,375 @@
+{
+  "schema_version": "18.0",
+  "project_id": "03-detroit-soulful-techno-d-dorian-128",
+  "bpm": 128,
+  "meter": {
+    "numerator": 4,
+    "denominator": 4
+  },
+  "tracks": [
+    {
+      "track_name": "KICK",
+      "kind": "midi",
+      "clips": [
+        {
+          "clip_name": "03-detroit-soulful-techno-d-dorian-128_kick",
+          "start_beat": 0,
+          "length_beats": 8.0,
+          "notes": [
+            {
+              "pitch": 36,
+              "start_beat": 0.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 1.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 2.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 3.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 4.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 5.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 6.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            },
+            {
+              "pitch": 36,
+              "start_beat": 7.0,
+              "duration_beats": 0.1,
+              "velocity": 116
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_name": "HAT",
+      "kind": "midi",
+      "clips": [
+        {
+          "clip_name": "03-detroit-soulful-techno-d-dorian-128_hat",
+          "start_beat": 0,
+          "length_beats": 8.0,
+          "notes": [
+            {
+              "pitch": 42,
+              "start_beat": 0.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 1.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 2.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 3.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 4.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 5.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 6.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            },
+            {
+              "pitch": 42,
+              "start_beat": 7.505,
+              "duration_beats": 0.06,
+              "velocity": 76
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_name": "MACHINE_PERC",
+      "kind": "midi",
+      "clips": [
+        {
+          "clip_name": "03-detroit-soulful-techno-d-dorian-128_perc",
+          "start_beat": 0,
+          "length_beats": 8.0,
+          "notes": [
+            {
+              "pitch": 39,
+              "start_beat": 0.75,
+              "duration_beats": 0.1,
+              "velocity": 88
+            },
+            {
+              "pitch": 39,
+              "start_beat": 2.5,
+              "duration_beats": 0.1,
+              "velocity": 96
+            },
+            {
+              "pitch": 39,
+              "start_beat": 5.75,
+              "duration_beats": 0.1,
+              "velocity": 90
+            },
+            {
+              "pitch": 39,
+              "start_beat": 7.25,
+              "duration_beats": 0.1,
+              "velocity": 98
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_name": "BASS",
+      "kind": "midi",
+      "clips": [
+        {
+          "clip_name": "03-detroit-soulful-techno-d-dorian-128_BASS",
+          "start_beat": 0,
+          "length_beats": 8.0,
+          "notes": [
+            {
+              "pitch": 38,
+              "start_beat": 0.75,
+              "duration_beats": 0.25,
+              "velocity": 100
+            },
+            {
+              "pitch": 41,
+              "start_beat": 1.75,
+              "duration_beats": 0.25,
+              "velocity": 94
+            },
+            {
+              "pitch": 45,
+              "start_beat": 2.75,
+              "duration_beats": 0.25,
+              "velocity": 102
+            },
+            {
+              "pitch": 38,
+              "start_beat": 4.75,
+              "duration_beats": 0.25,
+              "velocity": 100
+            },
+            {
+              "pitch": 41,
+              "start_beat": 6.5,
+              "duration_beats": 0.3,
+              "velocity": 98
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_name": "STAB",
+      "kind": "midi",
+      "clips": [
+        {
+          "clip_name": "03-detroit-soulful-techno-d-dorian-128_HARMONY",
+          "start_beat": 0,
+          "length_beats": 8.0,
+          "notes": [
+            {
+              "pitch": 50,
+              "start_beat": 0.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 53,
+              "start_beat": 0.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 57,
+              "start_beat": 0.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 60,
+              "start_beat": 0.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 64,
+              "start_beat": 0.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 55,
+              "start_beat": 2.5,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 60,
+              "start_beat": 2.5,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 65,
+              "start_beat": 2.5,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 69,
+              "start_beat": 2.5,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 76,
+              "start_beat": 2.5,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 50,
+              "start_beat": 5.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 53,
+              "start_beat": 5.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 57,
+              "start_beat": 5.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 60,
+              "start_beat": 5.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            },
+            {
+              "pitch": 64,
+              "start_beat": 5.75,
+              "duration_beats": 0.3,
+              "velocity": 78
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sound_bindings": [
+    {
+      "track_name": "STAB",
+      "engine": "Operator/Wavetable",
+      "macros": {
+        "TONE": 0.48,
+        "SPACE": 0.24,
+        "WIDTH": 0.4
+      }
+    },
+    {
+      "track_name": "BASS",
+      "engine": "Operator",
+      "macros": {
+        "WEIGHT": 0.62,
+        "ATTACK": 0.5
+      }
+    },
+    {
+      "track_name": "MACHINE_PERC",
+      "engine": "Drum Rack",
+      "macros": {
+        "ATTACK": 0.6,
+        "VARIATION": 0.2
+      }
+    }
+  ],
+  "automation_lanes": [
+    {
+      "lane_id": "stab_motion",
+      "track_name": "STAB",
+      "target_macro": "MOTION",
+      "start_beat": 0,
+      "end_beat": 8,
+      "start_value": 0.12,
+      "end_value": 0.3,
+      "curve": "ease-in",
+      "persistence": "persistent_if_supported",
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    },
+    {
+      "lane_id": "stab_space",
+      "track_name": "STAB",
+      "target_macro": "SPACE",
+      "start_beat": 4,
+      "end_beat": 8,
+      "start_value": 0.2,
+      "end_value": 0.32,
+      "curve": "ease-out",
+      "persistence": "persistent_if_supported",
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "18.0",
+  "key": "D",
+  "mode": "Dorian",
+  "track_name": "STAB",
+  "events": [
+    {
+      "bar": 1,
+      "beat": 0.75,
+      "duration_beats": 0.3,
+      "symbol": "Dm9",
+      "midi_notes": [
+        50,
+        53,
+        57,
+        60,
+        64
+      ],
+      "velocity": 78
+    },
+    {
+      "bar": 1,
+      "beat": 2.5,
+      "duration_beats": 0.3,
+      "symbol": "G13sus",
+      "midi_notes": [
+        55,
+        60,
+        65,
+        69,
+        76
+      ],
+      "velocity": 78
+    },
+    {
+      "bar": 2,
+      "beat": 1.75,
+      "duration_beats": 0.3,
+      "symbol": "Dm9",
+      "midi_notes": [
+        50,
+        53,
+        57,
+        60,
+        64
+      ],
+      "velocity": 78
+    }
+  ],
+  "evidence": {
+    "level": "HEUR",
+    "source_ids": [
+      "DETROIT_HIST_001"
+    ]
+  }
+}

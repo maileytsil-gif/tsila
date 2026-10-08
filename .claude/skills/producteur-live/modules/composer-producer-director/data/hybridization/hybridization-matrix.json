@@ -1,0 +1,40 @@
+{
+  "schema_version": "18.0",
+  "status_meaning": {
+    "OK": "compatible as an electronic adaptation when clearly labelled",
+    "CAUTION": "possible but requires a dominant foundation and explicit translation",
+    "REJECT": "do not auto-generate from this pairing without additional research/brief"
+  },
+  "rules": [
+    {
+      "foundation": "AFRO_HOUSE_SA",
+      "borrowed": "AFRO_CUBAN",
+      "status": "CAUTION",
+      "condition": "Use one named principle such as clave orientation or restrained montuno-like response; do not claim Cuban authenticity."
+    },
+    {
+      "foundation": "DETROIT_TECHNO",
+      "borrowed": "JAZZ_SOUL_VOICING",
+      "status": "OK",
+      "condition": "Keep machine repetition/mutation as primary identity."
+    },
+    {
+      "foundation": "TECH_HOUSE",
+      "borrowed": "JAMAICAN_DUB_SPACE",
+      "status": "OK",
+      "condition": "Borrow spatial logic, not a generic reggae label."
+    },
+    {
+      "foundation": "BRAZILIAN",
+      "borrowed": "DETROIT_TECHNO",
+      "status": "CAUTION",
+      "condition": "Choose one timing foundation; do not apply two conflicting swing models simultaneously."
+    },
+    {
+      "foundation": "AFRO_CUBAN",
+      "borrowed": "RANDOM_LATIN_LOOP",
+      "status": "REJECT",
+      "condition": "Replace with named role/pattern and explicit source or HEUR adaptation."
+    }
+  ]
+}

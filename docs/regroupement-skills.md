@@ -73,3 +73,17 @@ bash outils/installer.sh --retirer-absents --appliquer
 ```
 
 Relancer Claude Code et Qwen Code, puis trois demandes témoins pour contrôler le déclenchement, qui ne se teste pas en session cloud : « la basse du drop » (sound-designer-serum), « où on en est » (producteur-live › chef-de-projet), « c'est boueux » (ingenieur-mixage). Les commandes `/chef-de-projet`, `/maitriser-suno`… n'existent plus : `/producteur-live` suivi de la demande, ou une demande naturelle qui nomme le module. La mémoire de projet sur le Mac cite les anciens noms : rien à changer, ce sont les noms des modules.
+
+## 7. Modules ajoutés depuis : pack v18 (8 oct. 2026)
+
+Les 13 skills du pack v18 (branche `claude/new-session-x91wej`, 19 sept., jamais fusionnée) sont devenus des modules avec les mêmes conventions (`GUIDE.md`, renvois réécrits, tableau « Modules de ce skill », carte de `producteur-live`) :
+
+| Skill | Modules du pack v18 |
+|---|---|
+| **producteur-live** | composer-producer-director, bass-house-ableton-bridge |
+| **compositeur-arrangeur** | bass-house-composition, modern-pop-electronic-music-theory, modern-jazz-chillout-theory, afro-caribbean-latin-detroit-theory |
+| **producteur-rythmique** | studio-grade-kick-low-end-sound-design, studio-grade-drums-electronic-percussion |
+| **sound-designer-serum** | bass-house-serum2-sound-design, studio-grade-bass-sound-design, studio-grade-sample-vocal-break-design, studio-grade-transition-fx-director |
+| **ingenieur-mixage** | bass-house-mixing-mastering |
+
+Les dossiers de support du pack (`core/`, `data/`, `producer-intelligence/`, `history/`) sont dans le module `composer-producer-director`. Arbitrage, plug-ins absents et recouvrements : `docs/integration-pack-v18.md`.

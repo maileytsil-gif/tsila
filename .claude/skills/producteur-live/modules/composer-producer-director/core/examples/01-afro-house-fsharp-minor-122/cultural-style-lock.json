@@ -1,0 +1,17 @@
+{
+  "schema_version": "18.0",
+  "authenticity_claim": false,
+  "primary_axis": "AFRO_HOUSE_SA",
+  "secondary_axis": "AFRO_CUBAN",
+  "foundation": "South-African-rooted modern Afro House as electronic foundation",
+  "borrowed_principle": "named timeline/interlock principle only",
+  "electronic_translation": "four-on-floor house frame + role-separated percussion + restrained response figure",
+  "hybridization_status": "CAUTION",
+  "evidence": {
+    "level": "HEUR",
+    "source_ids": [
+      "BEATPORT_AFRO_001",
+      "BERKLEE_CLAVE_001"
+    ]
+  }
+}

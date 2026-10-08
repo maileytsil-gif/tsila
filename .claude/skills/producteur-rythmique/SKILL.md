@@ -73,5 +73,7 @@ Style et grille choisis · couches écrites (grille) · swing/vélocités appliq
 | construire-low-end-electronique | grave qui manque de poids, masque le kick, fluctue d'une note à l'autre, disparaît en mono ou ne passe pas en club ; recettes par genre, symptôme → preuve → changement | `modules/construire-low-end-electronique/GUIDE.md` |
 | native-instruments-control | Maschine et Komplete Kontrol en logiciel ou plug-in : presets NKS, patterns, sampling, dépannage ; aucune API, écran au premier plan | `modules/native-instruments-control/GUIDE.md` |
 | produire-avec-maschine-mk3 | produire sur le contrôleur MK3 : kits, patterns, scenes, sampling, Perform FX, fills, transfert MIDI ou audio et multi-sorties vers Live | `modules/produire-avec-maschine-mk3/GUIDE.md` |
+| studio-grade-kick-low-end-sound-design | concevoir un kick de zéro (808, club, pitch-drop), sub tail, rumble techno, modèle « qui tient le sub » ; la mesure et la décision restent à `kick-bass-equilibre` *(pack v18, matière musicale)* | `modules/studio-grade-kick-low-end-sound-design/GUIDE.md` |
+| studio-grade-drums-electronic-percussion | percussions hors kick : clap / snare, hats, shakers, rides, toms, rims, claves, perc FM, glitch ; conception et traitement *(pack v18, matière musicale)* | `modules/studio-grade-drums-electronic-percussion/GUIDE.md` |
 
 L'expressivité des notes (`midi-expressif`) et la théorie du rythme (`theorie-musicale-electronique`) sont des modules de `../compositeur-arrangeur/SKILL.md`.

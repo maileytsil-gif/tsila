@@ -1,0 +1,20 @@
+{
+  "schema_version": "18.0",
+  "lanes": [
+    {
+      "lane_id": "montuno_tone",
+      "track_name": "MONTUNO_STAB",
+      "target_macro": "TONE",
+      "start_beat": 0,
+      "end_beat": 8,
+      "start_value": 0.45,
+      "end_value": 0.62,
+      "curve": "s-curve",
+      "persistence": "persistent_if_supported",
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    }
+  ]
+}

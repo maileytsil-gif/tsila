@@ -1,0 +1,70 @@
+{
+  "schema_version": "18.0",
+  "ownership": "alternating",
+  "track_name": "BASS",
+  "midi_note_default": 36,
+  "events": [
+    {
+      "bar": 1,
+      "beat": 0.5,
+      "duration_beats": 0.3,
+      "midi_note": 36,
+      "velocity": 105,
+      "function": "RESPONSE"
+    },
+    {
+      "bar": 1,
+      "beat": 1.75,
+      "duration_beats": 0.25,
+      "midi_note": 39,
+      "velocity": 94,
+      "function": "ANTICIPATION"
+    },
+    {
+      "bar": 1,
+      "beat": 2.5,
+      "duration_beats": 0.35,
+      "midi_note": 43,
+      "velocity": 101,
+      "function": "ANCHOR"
+    },
+    {
+      "bar": 1,
+      "beat": 3.75,
+      "duration_beats": 0.2,
+      "midi_note": 34,
+      "velocity": 90,
+      "function": "ANTICIPATION"
+    },
+    {
+      "bar": 2,
+      "beat": 0.5,
+      "duration_beats": 0.3,
+      "midi_note": 36,
+      "velocity": 105,
+      "function": "RESPONSE"
+    },
+    {
+      "bar": 2,
+      "beat": 1.75,
+      "duration_beats": 0.25,
+      "midi_note": 43,
+      "velocity": 96,
+      "function": "RESPONSE"
+    },
+    {
+      "bar": 2,
+      "beat": 2.5,
+      "duration_beats": 0.35,
+      "midi_note": 39,
+      "velocity": 101,
+      "function": "ANCHOR"
+    }
+  ],
+  "evidence": {
+    "level": "HEUR",
+    "source_ids": [
+      "BERKLEE_LATIN_PIANO_001"
+    ]
+  }
+}

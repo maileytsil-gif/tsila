@@ -1,0 +1,523 @@
+{
+  "schema_version": "18.0",
+  "project_id": "02-afro-cuban-house-c-minor-124",
+  "bpm": 124,
+  "meter": {
+    "numerator": 4,
+    "denominator": 4
+  },
+  "tracks": [
+    {
+      "track_name": "KICK",
+      "kind": "midi",
+      "clips": [
+        {
+          "clip_name": "02-afro-cuban-house-c-minor-124_kick",
+          "start_beat": 0,
+          "length_beats": 8.0,
+          "notes": [
+            {
+              "pitch": 36,
+              "start_beat": 0.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 1.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 2.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 3.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 4.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 5.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 6.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            },
+            {
+              "pitch": 36,
+              "start_beat": 7.0,
+              "duration_beats": 0.11,
+              "velocity": 114
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_name": "CLAVE_GUIDE",
+      "kind": "midi",
+      "clips": [
+        {
+          "clip_name": "02-afro-cuban-house-c-minor-124_clave",
+          "start_beat": 0,
+          "length_beats": 8.0,
+          "notes": [
+            {
+              "pitch": 37,
+              "start_beat": 0.0,
+              "duration_beats": 0.1,
+              "velocity": 100
+            },
+            {
+              "pitch": 37,
+              "start_beat": 1.5,
+              "duration_beats": 0.1,
+              "velocity": 96
+            },
+            {
+              "pitch": 37,
+              "start_beat": 3.0,
+              "duration_beats": 0.1,
+              "velocity": 103
+            },
+            {
+              "pitch": 37,
+              "start_beat": 5.0,
+              "duration_beats": 0.1,
+              "velocity": 98
+            },
+            {
+              "pitch": 37,
+              "start_beat": 6.0,
+              "duration_beats": 0.1,
+              "velocity": 102
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_name": "CONGA_ROLE",
+      "kind": "midi",
+      "clips": [
+        {
+          "clip_name": "02-afro-cuban-house-c-minor-124_conga",
+          "start_beat": 0,
+          "length_beats": 8.0,
+          "notes": [
+            {
+              "pitch": 64,
+              "start_beat": 0.75,
+              "duration_beats": 0.1,
+              "velocity": 88
+            },
+            {
+              "pitch": 64,
+              "start_beat": 2.5,
+              "duration_beats": 0.1,
+              "velocity": 98
+            },
+            {
+              "pitch": 64,
+              "start_beat": 3.75,
+              "duration_beats": 0.1,
+              "velocity": 84
+            },
+            {
+              "pitch": 64,
+              "start_beat": 4.5,
+              "duration_beats": 0.1,
+              "velocity": 90
+            },
+            {
+              "pitch": 64,
+              "start_beat": 6.75,
+              "duration_beats": 0.1,
+              "velocity": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_name": "SHAKER",
+      "kind": "midi",
+      "clips": [
+        {
+          "clip_name": "02-afro-cuban-house-c-minor-124_shaker",
+          "start_beat": 0,
+          "length_beats": 8.0,
+          "notes": [
+            {
+              "pitch": 42,
+              "start_beat": 0.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 0.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 1.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 1.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 2.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 2.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 3.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 3.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 4.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 4.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 5.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 5.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 6.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 6.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 7.005,
+              "duration_beats": 0.07,
+              "velocity": 70
+            },
+            {
+              "pitch": 42,
+              "start_beat": 7.505,
+              "duration_beats": 0.07,
+              "velocity": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_name": "BASS",
+      "kind": "midi",
+      "clips": [
+        {
+          "clip_name": "02-afro-cuban-house-c-minor-124_BASS",
+          "start_beat": 0,
+          "length_beats": 8.0,
+          "notes": [
+            {
+              "pitch": 36,
+              "start_beat": 0.5,
+              "duration_beats": 0.3,
+              "velocity": 105
+            },
+            {
+              "pitch": 39,
+              "start_beat": 1.75,
+              "duration_beats": 0.25,
+              "velocity": 94
+            },
+            {
+              "pitch": 43,
+              "start_beat": 2.5,
+              "duration_beats": 0.35,
+              "velocity": 101
+            },
+            {
+              "pitch": 34,
+              "start_beat": 3.75,
+              "duration_beats": 0.2,
+              "velocity": 90
+            },
+            {
+              "pitch": 36,
+              "start_beat": 4.5,
+              "duration_beats": 0.3,
+              "velocity": 105
+            },
+            {
+              "pitch": 43,
+              "start_beat": 5.75,
+              "duration_beats": 0.25,
+              "velocity": 96
+            },
+            {
+              "pitch": 39,
+              "start_beat": 6.5,
+              "duration_beats": 0.35,
+              "velocity": 101
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_name": "MONTUNO_STAB",
+      "kind": "midi",
+      "clips": [
+        {
+          "clip_name": "02-afro-cuban-house-c-minor-124_HARMONY",
+          "start_beat": 0,
+          "length_beats": 8.0,
+          "notes": [
+            {
+              "pitch": 60,
+              "start_beat": 0.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 63,
+              "start_beat": 0.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 67,
+              "start_beat": 0.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 70,
+              "start_beat": 0.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 74,
+              "start_beat": 0.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 65,
+              "start_beat": 1.75,
+              "duration_beats": 0.35,
+              "velocity": 78
+            },
+            {
+              "pitch": 69,
+              "start_beat": 1.75,
+              "duration_beats": 0.35,
+              "velocity": 78
+            },
+            {
+              "pitch": 75,
+              "start_beat": 1.75,
+              "duration_beats": 0.35,
+              "velocity": 78
+            },
+            {
+              "pitch": 79,
+              "start_beat": 1.75,
+              "duration_beats": 0.35,
+              "velocity": 78
+            },
+            {
+              "pitch": 60,
+              "start_beat": 2.75,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 63,
+              "start_beat": 2.75,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 67,
+              "start_beat": 2.75,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 70,
+              "start_beat": 2.75,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 74,
+              "start_beat": 2.75,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 58,
+              "start_beat": 4.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 62,
+              "start_beat": 4.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 65,
+              "start_beat": 4.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 67,
+              "start_beat": 4.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 72,
+              "start_beat": 4.5,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 60,
+              "start_beat": 6.0,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 63,
+              "start_beat": 6.0,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 67,
+              "start_beat": 6.0,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 70,
+              "start_beat": 6.0,
+              "duration_beats": 0.4,
+              "velocity": 78
+            },
+            {
+              "pitch": 74,
+              "start_beat": 6.0,
+              "duration_beats": 0.4,
+              "velocity": 78
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sound_bindings": [
+    {
+      "track_name": "CLAVE_GUIDE",
+      "engine": "sample/Drum Rack",
+      "macros": {
+        "ATTACK": 0.7,
+        "SPACE": 0.08
+      }
+    },
+    {
+      "track_name": "MONTUNO_STAB",
+      "engine": "Ableton Electric or sampled keys",
+      "macros": {
+        "ATTACK": 0.65,
+        "TONE": 0.58,
+        "SPACE": 0.2
+      }
+    },
+    {
+      "track_name": "BASS",
+      "engine": "Operator or Serum 2",
+      "macros": {
+        "WEIGHT": 0.68,
+        "ATTACK": 0.45
+      }
+    }
+  ],
+  "automation_lanes": [
+    {
+      "lane_id": "montuno_tone",
+      "track_name": "MONTUNO_STAB",
+      "target_macro": "TONE",
+      "start_beat": 0,
+      "end_beat": 8,
+      "start_value": 0.45,
+      "end_value": 0.62,
+      "curve": "s-curve",
+      "persistence": "persistent_if_supported",
+      "evidence": {
+        "level": "HEUR",
+        "source_ids": []
+      }
+    }
+  ]
+}

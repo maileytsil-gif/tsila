@@ -1,0 +1,459 @@
+{
+  "version": "v11",
+  "status": "HEUR",
+  "progressions": [
+    {
+      "style": "commercial-pop",
+      "key": "C major",
+      "degrees": "I–V6–vi–IV",
+      "chords": [
+        "C",
+        "G/B",
+        "Am",
+        "F"
+      ],
+      "use": "stable verse/chorus loop; smooth bass motion",
+      "status": "HEUR"
+    },
+    {
+      "style": "commercial-pop",
+      "key": "C major",
+      "degrees": "vi–IV–I–V",
+      "chords": [
+        "Am",
+        "F",
+        "C",
+        "G"
+      ],
+      "use": "minor-emotional loop with major payoff",
+      "status": "HEUR"
+    },
+    {
+      "style": "commercial-pop",
+      "key": "C major",
+      "degrees": "I–vi–IV–V",
+      "chords": [
+        "C",
+        "Am",
+        "F",
+        "G"
+      ],
+      "use": "direct functional lift into V",
+      "status": "HEUR"
+    },
+    {
+      "style": "commercial-pop",
+      "key": "C major",
+      "degrees": "IV–I–V–vi",
+      "chords": [
+        "F",
+        "C",
+        "G",
+        "Am"
+      ],
+      "use": "starts away from tonic; useful for chorus lift",
+      "status": "HEUR"
+    },
+    {
+      "style": "commercial-pop",
+      "key": "C major",
+      "degrees": "I–iii–IV–iv",
+      "chords": [
+        "C",
+        "Em",
+        "F",
+        "Fm"
+      ],
+      "use": "borrowed iv for bittersweet color",
+      "status": "HEUR"
+    },
+    {
+      "style": "commercial-pop",
+      "key": "C major",
+      "degrees": "vi–ii–IV–V",
+      "chords": [
+        "Am",
+        "Dm",
+        "F",
+        "G"
+      ],
+      "use": "pre-chorus-like forward motion",
+      "status": "HEUR"
+    },
+    {
+      "style": "dance-pop",
+      "key": "F# minor",
+      "degrees": "i–VI–III–VII",
+      "chords": [
+        "F#m",
+        "D",
+        "A",
+        "E"
+      ],
+      "use": "wide-open EDM/pop loop",
+      "status": "HEUR"
+    },
+    {
+      "style": "dance-pop",
+      "key": "F# minor",
+      "degrees": "VI–III–VII–i",
+      "chords": [
+        "D",
+        "A",
+        "E",
+        "F#m"
+      ],
+      "use": "delays tonic; useful for lift",
+      "status": "HEUR"
+    },
+    {
+      "style": "dance-pop",
+      "key": "F# minor",
+      "degrees": "i–III–VII–VI",
+      "chords": [
+        "F#m",
+        "A",
+        "E",
+        "D"
+      ],
+      "use": "descending emotional contour",
+      "status": "HEUR"
+    },
+    {
+      "style": "dance-pop",
+      "key": "F# minor",
+      "degrees": "i–VII–VI–VII",
+      "chords": [
+        "F#m",
+        "E",
+        "D",
+        "E"
+      ],
+      "use": "compact dance loop",
+      "status": "HEUR"
+    },
+    {
+      "style": "dance-pop",
+      "key": "F# minor",
+      "degrees": "III–VII–i–VI",
+      "chords": [
+        "A",
+        "E",
+        "F#m",
+        "D"
+      ],
+      "use": "major opening with minor center",
+      "status": "HEUR"
+    },
+    {
+      "style": "dance-pop",
+      "key": "F# minor",
+      "degrees": "i–iv–VI–V",
+      "chords": [
+        "F#m",
+        "Bm",
+        "D",
+        "C#"
+      ],
+      "use": "stronger dominant pull via harmonic-minor V",
+      "status": "HEUR"
+    },
+    {
+      "style": "future-house",
+      "key": "A minor",
+      "degrees": "i–VI–III–VII",
+      "chords": [
+        "Am",
+        "F",
+        "C",
+        "G"
+      ],
+      "use": "classic emotional/bouncy loop",
+      "status": "HEUR"
+    },
+    {
+      "style": "future-house",
+      "key": "A minor",
+      "degrees": "i–III–VII–VI",
+      "chords": [
+        "Am",
+        "C",
+        "G",
+        "F"
+      ],
+      "use": "topline-friendly descending energy",
+      "status": "HEUR"
+    },
+    {
+      "style": "future-house",
+      "key": "A minor",
+      "degrees": "VI–VII–i–III",
+      "chords": [
+        "F",
+        "G",
+        "Am",
+        "C"
+      ],
+      "use": "builds toward tonic rather than starting on it",
+      "status": "HEUR"
+    },
+    {
+      "style": "future-house",
+      "key": "A minor",
+      "degrees": "i–VII–VI–VII",
+      "chords": [
+        "Am",
+        "G",
+        "F",
+        "G"
+      ],
+      "use": "compact hook loop",
+      "status": "HEUR"
+    },
+    {
+      "style": "future-house",
+      "key": "A minor",
+      "degrees": "i–iv–VI–VII",
+      "chords": [
+        "Am",
+        "Dm",
+        "F",
+        "G"
+      ],
+      "use": "more functional movement",
+      "status": "HEUR"
+    },
+    {
+      "style": "future-house",
+      "key": "A minor",
+      "degrees": "III–VII–i–VI",
+      "chords": [
+        "C",
+        "G",
+        "Am",
+        "F"
+      ],
+      "use": "major-fronted crossover",
+      "status": "HEUR"
+    },
+    {
+      "style": "bass-house",
+      "key": "F minor",
+      "degrees": "i–♭VII–♭VI–♭VII",
+      "chords": [
+        "Fm",
+        "Eb",
+        "Db",
+        "Eb"
+      ],
+      "use": "modal loop; leaves room for bass hook",
+      "status": "HEUR"
+    },
+    {
+      "style": "bass-house",
+      "key": "F minor",
+      "degrees": "i–♭VI–♭VII–i",
+      "chords": [
+        "Fm",
+        "Db",
+        "Eb",
+        "Fm"
+      ],
+      "use": "direct minor club loop",
+      "status": "HEUR"
+    },
+    {
+      "style": "bass-house",
+      "key": "F minor",
+      "degrees": "i–iv–♭VI–V",
+      "chords": [
+        "Fm",
+        "Bbm",
+        "Db",
+        "C"
+      ],
+      "use": "stronger functional tension",
+      "status": "HEUR"
+    },
+    {
+      "style": "bass-house",
+      "key": "F minor",
+      "degrees": "i–♭III–♭VII–♭VI",
+      "chords": [
+        "Fm",
+        "Ab",
+        "Eb",
+        "Db"
+      ],
+      "use": "anthemic minor contour",
+      "status": "HEUR"
+    },
+    {
+      "style": "bass-house",
+      "key": "F minor",
+      "degrees": "i pedal + upper ♭VI/♭VII",
+      "chords": [
+        "Fm",
+        "Db/F",
+        "Eb/F",
+        "Fm"
+      ],
+      "use": "pedal-root pressure for drop design",
+      "status": "HEUR"
+    },
+    {
+      "style": "bass-house",
+      "key": "F minor",
+      "degrees": "i–♭VII",
+      "chords": [
+        "Fm",
+        "Eb"
+      ],
+      "use": "two-chord minimal frame for sound-design-led drops",
+      "status": "HEUR"
+    },
+    {
+      "style": "tech-house-minimal",
+      "key": "G Dorian",
+      "degrees": "i–IV",
+      "chords": [
+        "Gm",
+        "C"
+      ],
+      "use": "Dorian color via major IV",
+      "status": "HEUR"
+    },
+    {
+      "style": "tech-house-minimal",
+      "key": "G Dorian",
+      "degrees": "i–♭VII",
+      "chords": [
+        "Gm",
+        "F"
+      ],
+      "use": "minimal modal loop",
+      "status": "HEUR"
+    },
+    {
+      "style": "tech-house-minimal",
+      "key": "G Dorian",
+      "degrees": "i pedal",
+      "chords": [
+        "Gm"
+      ],
+      "use": "single-chord vamp; variation via voicing/filter/bass",
+      "status": "HEUR"
+    },
+    {
+      "style": "tech-house-minimal",
+      "key": "G Dorian",
+      "degrees": "i–IV–i–♭VII",
+      "chords": [
+        "Gm",
+        "C",
+        "Gm",
+        "F"
+      ],
+      "use": "slightly wider Dorian loop",
+      "status": "HEUR"
+    },
+    {
+      "style": "tech-house-minimal",
+      "key": "G Dorian",
+      "degrees": "i–ii",
+      "chords": [
+        "Gm",
+        "Am"
+      ],
+      "use": "Dorian step movement; use sparse voicings",
+      "status": "HEUR"
+    },
+    {
+      "style": "tech-house-minimal",
+      "key": "G Dorian",
+      "degrees": "i–v",
+      "chords": [
+        "Gm",
+        "Dm"
+      ],
+      "use": "neutral minor frame",
+      "status": "HEUR"
+    },
+    {
+      "style": "electro",
+      "key": "E minor",
+      "degrees": "i–VI–VII–V",
+      "chords": [
+        "Em",
+        "C",
+        "D",
+        "B"
+      ],
+      "use": "harmonic-minor V creates stronger return",
+      "status": "HEUR"
+    },
+    {
+      "style": "electro",
+      "key": "E minor",
+      "degrees": "i–VI–III–VII",
+      "chords": [
+        "Em",
+        "C",
+        "G",
+        "D"
+      ],
+      "use": "wide, anthem-friendly loop",
+      "status": "HEUR"
+    },
+    {
+      "style": "electro",
+      "key": "E minor",
+      "degrees": "i–VII–VI–V",
+      "chords": [
+        "Em",
+        "D",
+        "C",
+        "B"
+      ],
+      "use": "descending tension staircase",
+      "status": "HEUR"
+    },
+    {
+      "style": "electro",
+      "key": "E minor",
+      "degrees": "i–iv–VI–V",
+      "chords": [
+        "Em",
+        "Am",
+        "C",
+        "B"
+      ],
+      "use": "functional minor motion",
+      "status": "HEUR"
+    },
+    {
+      "style": "electro",
+      "key": "E minor",
+      "degrees": "i–♭II",
+      "chords": [
+        "Em",
+        "F"
+      ],
+      "use": "Phrygian-flavored two-chord tension",
+      "status": "HEUR"
+    },
+    {
+      "style": "electro",
+      "key": "E minor",
+      "degrees": "i pedal + upper VI/VII",
+      "chords": [
+        "Em",
+        "C/E",
+        "D/E",
+        "Em"
+      ],
+      "use": "pedal-root pressure for synth-driven drops",
+      "status": "HEUR"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ableton-clip-plan.schema.json",
+  "title": "AbletonClipPlan v18",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "bpm",
+    "meter",
+    "tracks",
+    "automation_lanes",
+    "sound_bindings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "18.0"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "bpm": {
+      "type": "number"
+    },
+    "meter": {
+      "type": "object"
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "track_name",
+          "kind",
+          "clips"
+        ],
+        "properties": {
+          "track_name": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "midi",
+              "audio"
+            ]
+          },
+          "clips": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "clip_name",
+                "start_beat",
+                "length_beats",
+                "notes"
+              ],
+              "properties": {
+                "clip_name": {
+                  "type": "string"
+                },
+                "start_beat": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "length_beats": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "notes": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "pitch",
+                      "start_beat",
+                      "duration_beats",
+                      "velocity"
+                    ],
+                    "properties": {
+                      "pitch": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 127
+                      },
+                      "start_beat": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "duration_beats": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      },
+                      "velocity": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 127
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "automation_lanes": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "sound_bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "track_name",
+          "engine",
+          "macros"
+        ],
+        "properties": {
+          "track_name": {
+            "type": "string"
+          },
+          "engine": {
+            "type": "string"
+          },
+          "macros": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

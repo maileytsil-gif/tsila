@@ -1,0 +1,45 @@
+{
+  "schema_version": "18.0",
+  "project": {
+    "title": "Detroit Soulful Techno D Dorian 128",
+    "state": "core_loop",
+    "destination": "club"
+  },
+  "music": {
+    "style": "Detroit Soulful Techno",
+    "substyle": null,
+    "bpm": 128,
+    "key": "D",
+    "mode": "Dorian",
+    "emotion": "futurist / soulful",
+    "energy": 7,
+    "duration_target_sec": null
+  },
+  "cultural": {
+    "primary_axis": "DETROIT_TECHNO",
+    "secondary_axis": null,
+    "hybridization_level": "none",
+    "authenticity_claim": false,
+    "notes": "Electronic adaptation; no authenticity claim."
+  },
+  "creative": {
+    "hook_type": "rhythm",
+    "references": [],
+    "must_keep": [
+      "clear groove identity"
+    ],
+    "avoid": [
+      "generic world-house labeling"
+    ],
+    "freedom": "medium"
+  },
+  "low_end": {
+    "ownership": "kick",
+    "rumble": false
+  },
+  "execution": {
+    "ableton_actions_requested": true,
+    "bridge_available": "unknown",
+    "destructive_actions_allowed": false
+  }
+}

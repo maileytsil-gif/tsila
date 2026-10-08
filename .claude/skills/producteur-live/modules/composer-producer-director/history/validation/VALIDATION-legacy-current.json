@@ -1,0 +1,41 @@
+{
+  "version": "10",
+  "new_skill": "modern-pop-electronic-music-theory",
+  "files_total": 209,
+  "required_tags": [
+    "DOC",
+    "ATTRIB",
+    "ANALYSIS",
+    "HEUR",
+    "TEST"
+  ],
+  "domains": [
+    "Modern Pop",
+    "Dance Pop",
+    "Future House",
+    "Bass House",
+    "Tech House",
+    "Minimal House",
+    "Emotional Electronic"
+  ],
+  "theory_modules": [
+    "Scales/Modes",
+    "Scale Degrees",
+    "Chord Vocabulary",
+    "Harmonic Function and Loops",
+    "Voice Leading",
+    "Melody and Hooks",
+    "Bassline/Harmony",
+    "Rhythm/Groove",
+    "Song Form/Energy",
+    "Electronic Drop",
+    "Prosody/Topline",
+    "Tension/Release"
+  ],
+  "current_reference_signals": [
+    "Amy Allen — 2025/2026 Grammy Songwriter of the Year",
+    "Daniel Nigro — 2025 Grammy Producer of the Year",
+    "Cirkut — 2026 Grammy Producer of the Year"
+  ],
+  "status": "documented; creative choices require listening validation"
+}
