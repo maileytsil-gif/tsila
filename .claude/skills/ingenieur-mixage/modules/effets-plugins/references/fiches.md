@@ -10,7 +10,7 @@
 | Waves **J37 Tape** | Formula (815/888/…), Speed, Bias, Saturation, Wow/Flutter, Noise, In/Out Level, Delay | rien | relecture |
 | Waves **MetaFlanger** | Mix, Depth, Rate, FeedBack, WaveForm, Filter… | rien | relecture ; automation `disp` |
 | Waves **F6**, **Curves AQ** | rien | tout | capture |
-| Plugin Alliance **bx_glue** (1.1) | Threshold (dB), Ratio ('2:1','4:1','10:1'), Attack (crans 0,1–30 ; `p.max` = 30), Auto Release On, Output Gain, Sidechain High Pass Filter (Hz), Mono Maker Frequency, Mix, XL Saturation | rien | relecture + crêtes |
+| Plugin Alliance **bx_glue** (1.1) — **INDISPONIBLE pour l’utilisateur (8 oct. 2026) : utiliser TheBus** | Threshold (dB), Ratio ('2:1','4:1','10:1'), Attack (crans 0,1–30 ; `p.max` = 30), Auto Release On, Output Gain, Sidechain High Pass Filter (Hz), Mono Maker Frequency, Mix, XL Saturation | rien | relecture + crêtes |
 | oeksound **soothe3** (1.0.5) | rien | tout ; double-clic sur une valeur + saisie + Entrée fonctionne ; nœuds glissables | capture (zone de réduction) |
 | iZotope **Ozone Imager 2** | Width, Stereoize | bandes | relecture |
 | iZotope **Insight 2**, **Tonal Balance Control 3** | rien | tout (TBC : remplacer l'instance pour « reset ») | capture |
