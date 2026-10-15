@@ -70,7 +70,11 @@ def post(base, route, body, timeout=8, conn=None):
 def spec_from_file(path):
     data = pathlib.Path(path).read_bytes()
     if len(data) > MAX_REQUEST: raise ValueError("spec > 256 Kio : découper")
-    spec = json.loads(data)
+    return validate_spec(json.loads(data))
+
+
+def validate_spec(spec):
+    """(spec, empreinte canonique, nombre d'entrées actives) ; ValueError si la spec est inexploitable."""
     if not isinstance(spec, dict) or not isinstance(spec.get("automations"), list) or not spec["automations"]:
         raise ValueError("spec.automations doit être une liste non vide")
     active = [a for a in spec["automations"] if not (isinstance(a, dict) and a.get("skip"))]
@@ -116,6 +120,27 @@ def check_preview(reply, expected):
     return results
 
 
+def preview_spec(digest, expected, run):
+    """Plan serveur de la spec, rien n'est écrit. `run(dry)` renvoie la réponse de /apply (dict `log` + `results`)."""
+    dry = run(True)
+    plan_digest = plan_fingerprint(check_preview(dry, expected))
+    return {"ok": True, "sha256": digest, "plan_sha256": plan_digest, "log": dry.get("log", []), "preview": dry["results"]}
+
+
+def commit_spec(digest, expected, sha256, plan_sha256, run):
+    """Replanifie, compare aux empreintes du preview relu, puis écrit ; refus si la spec OU le plan diffèrent."""
+    if digest != sha256: raise ValueError("la spec a changé depuis le preview : le refaire et le relire")
+    plan_digest = plan_fingerprint(check_preview(run(True), expected))
+    if plan_digest != plan_sha256: raise ValueError("le Set a changé depuis le preview (plan différent) : refaire preview et relire")
+    applied = run(False)
+    results = applied.get("results") if isinstance(applied, dict) else None
+    if not isinstance(results, list) or len(results) != expected or any(r.get("ok") is not True for r in results):
+        raise ValueError("écriture refusée ou incomplète (chaque entrée est une étape d'annulation séparée) : contrôler dans Live, `lom.py journal`, Cmd+Z si besoin : "
+                         + json.dumps(applied, ensure_ascii=False)[:1500])
+    return {"ok": True, "sha256": digest, "plan_sha256": plan_digest, "log": applied.get("log", []),
+            "codes": [r.get("codes", []) for r in results], "verify_in_live": True}
+
+
 def main(argv=None, out=sys.stdout):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--url", default="http://127.0.0.1:7480")
@@ -135,19 +160,10 @@ def main(argv=None, out=sys.stdout):
         if result.get("ok") is not True: raise ValueError("commande refusée : " + json.dumps(result, ensure_ascii=False)[:1500])
         print(json.dumps(result, ensure_ascii=False, indent=2), file=out); return 0
     spec, digest, expected = spec_from_file(a.spec)
-    if a.action == "commit" and digest != a.sha256: raise ValueError("la spec a changé depuis le preview : le refaire et le relire")
-    dry = post(a.url, "/apply", {"spec": spec, "dry": True}, timeout=240)
-    plan_digest = plan_fingerprint(check_preview(dry, expected))
-    if a.action == "preview":
-        print(json.dumps({"ok": True, "sha256": digest, "plan_sha256": plan_digest, "log": dry.get("log", []), "preview": dry["results"]}, ensure_ascii=False, indent=2), file=out); return 0
-    if plan_digest != a.plan_sha256: raise ValueError("le Set a changé depuis le preview (plan différent) : refaire preview et relire")
-    applied = post(a.url, "/apply", {"spec": spec, "dry": False}, timeout=600)
-    results = applied.get("results") if isinstance(applied, dict) else None
-    if not isinstance(results, list) or len(results) != expected or any(r.get("ok") is not True for r in results):
-        raise ValueError("écriture refusée ou incomplète (chaque entrée est une étape d'annulation séparée) : contrôler dans Live, `lom.py journal`, Cmd+Z si besoin : "
-                         + json.dumps(applied, ensure_ascii=False)[:1500])
-    print(json.dumps({"ok": True, "sha256": digest, "plan_sha256": plan_digest, "log": applied.get("log", []),
-                      "codes": [r.get("codes", []) for r in results], "verify_in_live": True}, ensure_ascii=False, indent=2), file=out); return 0
+    def run(dry): return post(a.url, "/apply", {"spec": spec, "dry": dry}, timeout=240 if dry else 600)
+    if a.action == "preview": out_ = preview_spec(digest, expected, run)
+    else: out_ = commit_spec(digest, expected, a.sha256, a.plan_sha256, run)
+    print(json.dumps(out_, ensure_ascii=False, indent=2), file=out); return 0
 
 
 if __name__ == "__main__":
