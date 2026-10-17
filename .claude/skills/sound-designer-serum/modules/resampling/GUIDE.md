@@ -39,6 +39,25 @@ Ne pas isoler aveuglément une piste par Solo : un sidechain ou un retour peut d
 - **Warp** : inspecter son état après création ou import. Pour une impression fidèle au tempo d'origine, éviter toute déformation involontaire ; pour une boucle à recaler, vérifier le tempo source, le premier temps et choisir le mode selon le matériau.
 - **Réinsertion** : éviter de repasser une prise déjà traitée dans les mêmes effets de bus ou de Main. Ne pas laisser la source et sa copie jouer ensemble si l'objectif est un remplacement ; conserver la source désactivée et récupérable dans ce cas.
 
+## Variations A / B / C hors de Live
+
+Pour proposer vite trois variantes d'une prise déjà sur le disque (resample, bounce, sample), sans enregistrer dans Live : `scripts/variations_wav.py`. Python 3 avec numpy et soundfile, déjà installés sur ce Mac. Le fichier est supposé commencer à 1.1.1, en mesure à 4 temps. Les positions s'écrivent en notation Live (`4.4`, `8.4.3`) et les durées en valeurs de note (`1/16`, `1/32`, `1/8t`, `1/8.`).
+
+| Variante | Geste | Commande type | Usage |
+|---|---|---|---|
+| **A** subtile | fondu cosinus de fin | `fade prise.wav A.wav --bpm 126 --fade-ms 30` | faire respirer la fin avant la suite |
+| **B** créative | stutter : une tranche répétée N fois, fondus de 3 ms, baisse optionnelle à chaque coup | `stutter prise.wav B.wav --bpm 126 --position 4.4 --grille 1/32 --repetitions 4 --decroissance-db 2` | relance de fin de phrase, mesure 4 ou 8 |
+| **C** risquée | **reverse swell** : la note qui suit, inversée, monte vers son attaque | `reverse prise.wav C.wav --bpm 126 --mode swell --cible 5.1 --longueur 1/4` | aspiration avant un drop ou une reprise |
+| C bis | reverse de queue : fin du fichier inversée et mélangée | `reverse prise.wav C.wav --bpm 126 --mode queue --queue-ms 120 --mix 0.7` | fin de one-shot qui se retourne |
+| les trois | A, B et C dans un dossier vide + `RAPPORT.json` | `toutes prise.wav dossier --bpm 126 --position 8.4 --grille 1/16 --mode swell --cible 9.1` | proposer un menu à l'utilisateur |
+
+- **Garde-fous.** La source n'est jamais modifiée. Le script refuse d'écrire sur un fichier existant ou dans un dossier non vide, et une position hors du fichier. En mode `toutes`, il calcule tout avant d'écrire : une erreur ne laisse pas de dossier à moitié rempli. La durée, la fréquence et le nombre de canaux restent ceux de la source. Sortie en WAV 24 bits par défaut, `--format FLOAT` si la prise dépasse déjà 0 dBFS.
+- **Alertes du rapport.** « Zone modifiée silencieuse » : la variante ne change rien d'audible, souvent parce que la fin du fichier est muette ; viser une `--position` ou une `--cible` dans la matière. « Basse stéréo » : écouter le stutter en mono. « Crête ≥ 0 dBFS en 24 bits » : il y a écrêtage.
+- **Musique.** Le stutter et le reverse vont sur la couche médium, jamais sur le sub : garder le sub propre sur sa piste. Un seul stutter ou swell par fin de phrase de 4 ou 8 mesures, laisser de l'air après la dernière répétition. Pour un swell, prendre une `--cible` sur une attaque nette.
+- **Retour dans Live.** Importer chaque variante sur une piste `RESAMPLE - source - A/B/C` au même départ que la source, Warp désactivé si le tempo du fichier est celui du Set. Écouter dans la phrase, avec le kick et à niveau comparable. Garder l'original s'il reste meilleur. Le script mesure des crêtes et des RMS, il n'écoute pas.
+
+Origine : idée reprise du paquet AUDIO REWORK AGENT v3.0 (Codex, testé le 17 oct. 2026 : 105 tests réussis, sûr, mais générateur MIDI et analyse lowend moins bons que `composer-hooks-funk-electro`, `midi-expressif` et `kick-bass-equilibre`). Le script a été réécrit : calage sur la grille, reverse swell, alertes. L'agent JSON, le générateur MIDI et l'analyse lowend du paquet n'ont pas été repris.
+
 ## Vérifier et terminer
 
 Relire l'existence du clip et de son fichier, sa plage, sa durée, ses bornes de boucle, son Warp et son routage. Vérifier un signal non vide, les attaques, la queue et l'alignement ; ne pas compenser une latence supposée sans la mesurer. Si le fichier est accessible, mesurer ses crêtes, son RMS et rechercher un écrêtage avec `../../../ingenieur-mixage/modules/live-export-wav/scripts/analyze_wav.py`, et sa hauteur avec `../synthese-reference/scripts/analyze_synth.py` : les vu-mètres seuls ne prouvent pas l'intégrité du fichier. Instantané des clips avant toute transformation de la source : `../../../producteur-live/modules/memoire-projet/GUIDE.md`.
